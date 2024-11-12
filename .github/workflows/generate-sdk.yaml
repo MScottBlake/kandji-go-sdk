@@ -51,14 +51,13 @@ jobs:
       - name: Generate Client
         uses: openapi-generators/openapitools-generator-action@v1
         with:
+          command-args:
+            --package-name=kandji_${{ env.language }}_sdk
+            --git-repo-id=kandji-${{ env.language }}-sdk
           config-file: kandji-generator-config.yaml
           generator: ${{ env.language }}
           generator-tag: latest-release
           openapi-file: ${{ env.openapi_file }}
-          command-args:
-            --package-name=kandji_${{ env.language }}_sdk
-            --git-repo-id=kandji-${{ env.language }}-sdk
-
 
       - name: Move and remove directory contents if it exists
         run: |
@@ -94,7 +93,7 @@ jobs:
         if: env.continue == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           sign-commits: true
           commit-message: "[auto] Updated Kandji SDK"
           branch: update-sdk
