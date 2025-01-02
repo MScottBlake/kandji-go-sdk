@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateCustomApp
 
-> map[string]interface{} CreateCustomApp(ctx).FileKey(fileKey).InstallEnforcement(installEnforcement).InstallType(installType).Name(name).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).ShowInSelfService(showInSelfService).Execute()
+> map[string]interface{} CreateCustomApp(ctx).Name(name).FileKey(fileKey).InstallType(installType).InstallEnforcement(installEnforcement).ShowInSelfService(showInSelfService).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).Execute()
 
 Create Custom App
 
@@ -34,17 +34,17 @@ import (
 )
 
 func main() {
-	fileKey := "fileKey_example" // string | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
-	installEnforcement := "installEnforcement_example" // string | (Required) Options are install_once, continuously_enforce, no_enforcement
-	installType := "installType_example" // string | (Required) Options are package, zip, image
 	name := "name_example" // string | (Required) The name for this Custom App
+	fileKey := "fileKey_example" // string | (Required) The S3 key from the <code>Upload Custom App</code> endpont used to upload the custom app file.
+	installType := "installType_example" // string | (Required) Options are package, zip, image
+	installEnforcement := "installEnforcement_example" // string | (Required) Options are install_once, continuously_enforce, no_enforcement
+	showInSelfService := "showInSelfService_example" // string | (Optional, default=false) Displays this app in Self Service
 	selfServiceCategoryId := "selfServiceCategoryId_example" // string | (Required for show_in_self_service=true) Self Service Category (by ID) to display app in
 	selfServiceRecommended := "selfServiceRecommended_example" // string | (Optional, default=false) Adds recommended flag to app in Self Service
-	showInSelfService := "showInSelfService_example" // string | (Optional, default=false) Displays this app in Self Service
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomAppsAPI.CreateCustomApp(context.Background()).FileKey(fileKey).InstallEnforcement(installEnforcement).InstallType(installType).Name(name).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).ShowInSelfService(showInSelfService).Execute()
+	resp, r, err := apiClient.CustomAppsAPI.CreateCustomApp(context.Background()).Name(name).FileKey(fileKey).InstallType(installType).InstallEnforcement(installEnforcement).ShowInSelfService(showInSelfService).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CreateCustomApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -65,13 +65,13 @@ Other parameters are passed through a pointer to a apiCreateCustomAppRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileKey** | **string** | (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file. | 
- **installEnforcement** | **string** | (Required) Options are install_once, continuously_enforce, no_enforcement | 
- **installType** | **string** | (Required) Options are package, zip, image | 
  **name** | **string** | (Required) The name for this Custom App | 
+ **fileKey** | **string** | (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file. | 
+ **installType** | **string** | (Required) Options are package, zip, image | 
+ **installEnforcement** | **string** | (Required) Options are install_once, continuously_enforce, no_enforcement | 
+ **showInSelfService** | **string** | (Optional, default&#x3D;false) Displays this app in Self Service | 
  **selfServiceCategoryId** | **string** | (Required for show_in_self_service&#x3D;true) Self Service Category (by ID) to display app in | 
  **selfServiceRecommended** | **string** | (Optional, default&#x3D;false) Adds recommended flag to app in Self Service | 
- **showInSelfService** | **string** | (Optional, default&#x3D;false) Displays this app in Self Service | 
 
 ### Return type
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCustomApp
 
-> map[string]interface{} UpdateCustomApp(ctx, libraryItemId).Active(active).Name(name).Execute()
+> map[string]interface{} UpdateCustomApp(ctx, libraryItemId).Name(name).Active(active).Execute()
 
 Update Custom App
 
@@ -317,12 +317,12 @@ import (
 
 func main() {
 	libraryItemId := "libraryItemId_example" // string | 
-	active := "active_example" // string | (Optional, default=true) Whether this Custom App is active and installable
 	name := "name_example" // string | Renaming a Custom App
+	active := "active_example" // string | (Optional, default=true) Whether this Custom App is active and installable
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomAppsAPI.UpdateCustomApp(context.Background(), libraryItemId).Active(active).Name(name).Execute()
+	resp, r, err := apiClient.CustomAppsAPI.UpdateCustomApp(context.Background(), libraryItemId).Name(name).Active(active).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.UpdateCustomApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -348,8 +348,8 @@ Other parameters are passed through a pointer to a apiUpdateCustomAppRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **active** | **string** | (Optional, default&#x3D;true) Whether this Custom App is active and installable | 
  **name** | **string** | Renaming a Custom App | 
+ **active** | **string** | (Optional, default&#x3D;true) Whether this Custom App is active and installable | 
 
 ### Return type
 

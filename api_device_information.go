@@ -1,15 +1,14 @@
 /*
 Kandji API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
-Contact: mitchelsblake@gmail.com
 */
 
 // Code generated by OpenAPI Generator (https://openapi-generator.tech); DO NOT EDIT.
 
-package kandji_go_sdk
+package kandji_sdk
 
 import (
 	"bytes"
@@ -466,9 +465,9 @@ GetDeviceLibraryItems Get Device Library Items
 <thead>
 <tr>
 <th><strong>Value</strong></th>
- <th><strong>Type</strong></th>
+<th><strong>Type</strong></th>
 <th><strong>Additional Info</strong></th>
- </tr>
+</tr>
 </thead>
 <tbody>
 <tr>
@@ -479,30 +478,30 @@ GetDeviceLibraryItems Get Device Library Items
 <tr>
 <td>CACHED</td>
 <td>string</td>
- <td>Library item downloaded for install but not yet installed</td>
+<td>Library item downloaded for install but not yet installed</td>
 </tr>
- <tr>
+<tr>
 <td>CHANGE_PENDING</td>
 <td>string</td>
 <td>Recovery Password library item has changes that have not yet been applied</td>
 </tr>
 <tr>
 <td>DOWNLOADING</td>
- <td>string</td>
+<td>string</td>
 <td>Library item downloading</td>
 </tr>
 <tr>
 <td>ERROR</td>
- <td>string</td>
+<td>string</td>
 <td>Audit failure</td>
 </tr>
 <tr>
 <td>EXCLUDED</td>
- <td>string</td>
+<td>string</td>
 <td>Not in scope for assignment rule</td>
 </tr>
 <tr>
- <td>INCOMPATIBLE</td>
+<td>INCOMPATIBLE</td>
 <td>string</td>
 <td>Not compatible with device or OS version</td>
 </tr>
@@ -519,7 +518,7 @@ GetDeviceLibraryItems Get Device Library Items
 <tr>
 <td>PENDING</td>
 <td>string</td>
- <td>Waiting on device, not yet installed (All library items except for config profiles)</td>
+<td>Waiting on device, not yet installed (All library items except for config profiles)</td>
 </tr>
 <tr>
 <td>failed</td>
@@ -529,9 +528,9 @@ GetDeviceLibraryItems Get Device Library Items
 <tr>
 <td>pending</td>
 <td>string</td>
- <td>Waiting on device, Configuration profile not yet installed</td>
+<td>Waiting on device, Configuration profile not yet installed</td>
 </tr>
- <tr>
+<tr>
 <td>success</td>
 <td>string</td>
 <td>Configuration profile installed</td>
@@ -747,15 +746,15 @@ GetDeviceParameters Get Device Parameters
 
 <p>This request returns the parameters and their statuses for a specified Device ID</p>
 <p>This endpoint is only applicable to macOS clients.</p>
- <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
- <p><strong>Possible parameter status values</strong></p>
+<p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
+<p><strong>Possible parameter status values</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
 <tr>
 <th><strong>Value</strong></th>
- <th><strong>Type</strong></th>
+<th><strong>Type</strong></th>
 <th><strong>Additional Info</strong></th>
- </tr>
+</tr>
 </thead>
 <tbody>
 <tr>
@@ -771,21 +770,21 @@ GetDeviceParameters Get Device Parameters
 <tr>
 <td>PASS</td>
 <td>string</td>
- <td>Device meets requirements</td>
+<td>Device meets requirements</td>
 </tr>
 <tr>
 <td>PENDING</td>
 <td>string</td>
- <td>Waiting on device. Not yet run.</td>
+<td>Waiting on device. Not yet run.</td>
 </tr>
 <tr>
 <td>REMEDIATED</td>
- <td>string</td>
+<td>string</td>
 <td>Parameter remediated</td>
 </tr>
 <tr>
 <td>WARNING</td>
- <td>string</td>
+<td>string</td>
 <td>Muted alert</td>
 </tr>
 </tbody>
@@ -895,28 +894,28 @@ GetDeviceStatus Get Device Status
 
 <p>This request returns the full status (parameters and library items) for a specified Device ID.</p>
 <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
- <h4 id=&quot;possible-status-values&quot;>Possible status values</h4>
+<h4 id=&quot;possible-status-values&quot;>Possible status values</h4>
 <p><strong>Library items</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
- <thead>
+<thead>
 <tr>
 <th><strong>Value</strong></th>
 <th><strong>Type</strong></th>
- <th><strong>Additional Info</strong></th>
+<th><strong>Additional Info</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
- <td>AVAILABLE</td>
+<td>AVAILABLE</td>
 <td>string</td>
 <td>Library item available in Self Service</td>
- </tr>
+</tr>
 <tr>
 <td>ERROR</td>
 <td>string</td>
 <td>Audit failure</td>
 </tr>
- <tr>
+<tr>
 <td>EXCLUDED</td>
 <td>string</td>
 <td>Not in scope for assignment rule</td>
@@ -929,12 +928,12 @@ GetDeviceStatus Get Device Status
 <tr>
 <td>PASS</td>
 <td>string</td>
- <td>Device meets requirements</td>
+<td>Device meets requirements</td>
 </tr>
 <tr>
 <td>PENDING</td>
 <td>string</td>
- <td>Waiting on device, not yet installed (All library items except for config profiles)</td>
+<td>Waiting on device, not yet installed (All library items except for config profiles)</td>
 </tr>
 <tr>
 <td>failed</td>
@@ -944,19 +943,19 @@ GetDeviceStatus Get Device Status
 <tr>
 <td>pending</td>
 <td>string</td>
- <td>Waiting on device, Configuration profile not yet installed</td>
+<td>Waiting on device, Configuration profile not yet installed</td>
 </tr>
- <tr>
+<tr>
 <td>success</td>
 <td>string</td>
 <td>Configuration profile installed</td>
- </tr>
+</tr>
 </tbody>
 </table>
 </div><p><strong>Parameters</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
- <tr>
+<tr>
 <th><strong>Value</strong></th>
 <th><strong>Type</strong></th>
 <th><strong>Additional Info</strong></th>
@@ -966,31 +965,31 @@ GetDeviceStatus Get Device Status
 <tr>
 <td>ERROR</td>
 <td>string</td>
- <td>Audit failure</td>
+<td>Audit failure</td>
 </tr>
 <tr>
 <td>INCOMPATIBLE</td>
 <td>string</td>
- <td>Not compatible with device or OS version</td>
+<td>Not compatible with device or OS version</td>
 </tr>
 <tr>
 <td>PASS</td>
- <td>string</td>
+<td>string</td>
 <td>Device meets requirements</td>
 </tr>
 <tr>
 <td>PENDING</td>
- <td>string</td>
+<td>string</td>
 <td>Waiting on device. Not yet run.</td>
 </tr>
 <tr>
 <td>REMEDIATED</td>
- <td>string</td>
+<td>string</td>
 <td>Parameter remediated</td>
 </tr>
 <tr>
 <td>WARNING</td>
- <td>string</td>
+<td>string</td>
 <td>Muted alert</td>
 </tr>
 </tbody>
@@ -1159,7 +1158,7 @@ func (r ApiListDevicesRequest) Model(model string) ApiListDevicesRequest {
 	return r
 }
 
-// &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt;  &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt;  &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt;  &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt;  &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt;  &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt;
+// &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt;
 func (r ApiListDevicesRequest) Ordering(ordering string) ApiListDevicesRequest {
 	r.ordering = &ordering
 	return r

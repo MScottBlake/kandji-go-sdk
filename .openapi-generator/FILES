@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -11,6 +10,7 @@ api_custom_scripts.go
 api_device_actions.go
 api_device_information.go
 api_device_secrets.go
+api_in_house_apps.go
 api_library_items.go
 api_lost_mode.go
 api_notes.go
@@ -30,6 +30,7 @@ docs/CustomScriptsAPI.md
 docs/DeviceActionsAPI.md
 docs/DeviceInformationAPI.md
 docs/DeviceSecretsAPI.md
+docs/InHouseAppsAPI.md
 docs/LibraryItemsAPI.md
 docs/LostModeAPI.md
 docs/NotesAPI.md
@@ -43,21 +44,5 @@ git_push.sh
 go.mod
 go.sum
 response.go
-test/api_automated_device_enrollment_integrations_test.go
-test/api_blueprints_test.go
-test/api_custom_apps_test.go
-test/api_custom_profiles_test.go
-test/api_custom_scripts_test.go
-test/api_device_actions_test.go
-test/api_device_information_test.go
-test/api_device_secrets_test.go
-test/api_library_items_test.go
-test/api_lost_mode_test.go
-test/api_notes_test.go
-test/api_prism_test.go
-test/api_self_service_test.go
-test/api_settings_test.go
-test/api_tags_test.go
-test/api_threats_test.go
-test/api_users_test.go
+test/api_in_house_apps_test.go
 utils.go

@@ -1,15 +1,14 @@
 /*
 Kandji API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
-Contact: mitchelsblake@gmail.com
 */
 
 // Code generated by OpenAPI Generator (https://openapi-generator.tech); DO NOT EDIT.
 
-package kandji_go_sdk
+package kandji_sdk
 
 import (
 	"bytes"
@@ -49,19 +48,19 @@ AssignLibraryItem Assign Library Item
 <h3 id=&quot;request-body&quot;>Request Body</h3>
 <ul>
 <li><p><code>library_item_id</code> (string, required)</p>
- </li>
+</li>
 <li><p><code>assignment_node_id</code> (string, required for maps)</p>
- <ul>
+<ul>
 <li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li>
 </ul>
 </li>
 </ul>
- <h3 id=&quot;error-responses&quot;>Error responses</h3>
+<h3 id=&quot;error-responses&quot;>Error responses</h3>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
 <tr>
 <th><strong>Code</strong></th>
- <th><strong>Body</strong></th>
+<th><strong>Body</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -79,8 +78,8 @@ AssignLibraryItem Assign Library Item
 </tr>
 <tr>
 <td></td>
- <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
- </tr>
+<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
+</tr>
 <tr>
 <td></td>
 <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>
@@ -182,17 +181,17 @@ func (a *BlueprintsAPIService) AssignLibraryItemExecute(r ApiAssignLibraryItemRe
 type ApiCreateBlueprintRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
-	enrollmentCodeCode *string
-	enrollmentCodeIsActive *string
 	name *string
-	sourceId *string
+	enrollmentCodeIsActive *string
+	enrollmentCodeCode *string
 	sourceType *string
+	sourceId *string
 	type_ *string
 }
 
-// Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
-func (r ApiCreateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiCreateBlueprintRequest {
-	r.enrollmentCodeCode = &enrollmentCodeCode
+// (required) Set the name of the Blueprint. The name provided must be unique.
+func (r ApiCreateBlueprintRequest) Name(name string) ApiCreateBlueprintRequest {
+	r.name = &name
 	return r
 }
 
@@ -202,21 +201,21 @@ func (r ApiCreateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive
 	return r
 }
 
-// (required) Set the name of the Blueprint. The name provided must be unique.
-func (r ApiCreateBlueprintRequest) Name(name string) ApiCreateBlueprintRequest {
-	r.name = &name
-	return r
-}
-
-// Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.
-func (r ApiCreateBlueprintRequest) SourceId(sourceId string) ApiCreateBlueprintRequest {
-	r.sourceId = &sourceId
+// Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
+func (r ApiCreateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiCreateBlueprintRequest {
+	r.enrollmentCodeCode = &enrollmentCodeCode
 	return r
 }
 
 // Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;.
 func (r ApiCreateBlueprintRequest) SourceType(sourceType string) ApiCreateBlueprintRequest {
 	r.sourceType = &sourceType
+	return r
+}
+
+// Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.
+func (r ApiCreateBlueprintRequest) SourceId(sourceId string) ApiCreateBlueprintRequest {
+	r.sourceId = &sourceId
 	return r
 }
 
@@ -235,7 +234,7 @@ CreateBlueprint Create Blueprint
 
 <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p>
 <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>
- <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
+<p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateBlueprintRequest
@@ -267,20 +266,20 @@ func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.enrollmentCodeCode == nil {
-		return localVarReturnValue, nil, reportError("enrollmentCodeCode is required and must be specified")
+	if r.name == nil {
+		return localVarReturnValue, nil, reportError("name is required and must be specified")
 	}
 	if r.enrollmentCodeIsActive == nil {
 		return localVarReturnValue, nil, reportError("enrollmentCodeIsActive is required and must be specified")
 	}
-	if r.name == nil {
-		return localVarReturnValue, nil, reportError("name is required and must be specified")
-	}
-	if r.sourceId == nil {
-		return localVarReturnValue, nil, reportError("sourceId is required and must be specified")
+	if r.enrollmentCodeCode == nil {
+		return localVarReturnValue, nil, reportError("enrollmentCodeCode is required and must be specified")
 	}
 	if r.sourceType == nil {
 		return localVarReturnValue, nil, reportError("sourceType is required and must be specified")
+	}
+	if r.sourceId == nil {
+		return localVarReturnValue, nil, reportError("sourceId is required and must be specified")
 	}
 	if r.type_ == nil {
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
@@ -303,11 +302,11 @@ func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.code", r.enrollmentCodeCode, "", "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.is_active", r.enrollmentCodeIsActive, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "source.id", r.sourceId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.is_active", r.enrollmentCodeIsActive, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.code", r.enrollmentCodeCode, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "source.type", r.sourceType, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "source.id", r.sourceId, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "type", r.type_, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -680,7 +679,7 @@ GetManualEnrollmentProfile Get Manual Enrollment Profile
 </li>
 <li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p>
 </li>
- </ul>
+</ul>
 <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
 <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
@@ -946,9 +945,9 @@ ListLibraryItems List Library Items
 <li><p><code>count</code> (int): The total count of library items.</p>
 </li>
 <li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>
- </li>
+</li>
 <li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>
- </li>
+</li>
 <li><p><code>results</code> (object): An array containing objects with the following fields:</p>
 <ul>
 <li><p><code>id</code> (str): The ID of the library item.</p>
@@ -1072,23 +1071,23 @@ RemoveLibraryItem Remove Library Item
 <h3 id=&quot;request-body&quot;>Request Body</h3>
 <ul>
 <li><p><code>library_item_id</code> (string, required)</p>
- </li>
+</li>
 <li><p><code>assignment_node_id</code> (string, required for maps)</p>
- </li>
+</li>
 </ul>
 <h3 id=&quot;error-responses&quot;>Error responses</h3>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
- <tr>
+<tr>
 <th><strong>Code</strong></th>
 <th><strong>Body</strong></th>
 </tr>
- </thead>
+</thead>
 <tbody>
 <tr>
 <td>400 - Bad Request</td>
 <td>Bad Request</td>
- </tr>
+</tr>
 <tr>
 <td></td>
 <td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
@@ -1098,9 +1097,9 @@ RemoveLibraryItem Remove Library Item
 <td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>
 </tr>
 <tr>
- <td></td>
+<td></td>
 <td>&quot;Library Item does not exist on Blueprint&quot;</td>
- </tr>
+</tr>
 <tr>
 <td></td>
 <td>&quot;Library Item does not exist in Assignment Node&quot;</td>
@@ -1203,10 +1202,16 @@ type ApiUpdateBlueprintRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
+	name *string
 	description *string
 	enrollmentCodeCode *string
 	enrollmentCodeIsActive *string
-	name *string
+}
+
+// Update the name of the Blueprint
+func (r ApiUpdateBlueprintRequest) Name(name string) ApiUpdateBlueprintRequest {
+	r.name = &name
+	return r
 }
 
 // Update the description of the Blueprint 
@@ -1227,12 +1232,6 @@ func (r ApiUpdateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive
 	return r
 }
 
-// Update the name of the Blueprint
-func (r ApiUpdateBlueprintRequest) Name(name string) ApiUpdateBlueprintRequest {
-	r.name = &name
-	return r
-}
-
 func (r ApiUpdateBlueprintRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.UpdateBlueprintExecute(r)
 }
@@ -1241,7 +1240,7 @@ func (r ApiUpdateBlueprintRequest) Execute() (map[string]interface{}, *http.Resp
 UpdateBlueprint Update Blueprint
 
 <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>
- <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
 <p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1277,6 +1276,9 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+	if r.name == nil {
+		return localVarReturnValue, nil, reportError("name is required and must be specified")
+	}
 	if r.description == nil {
 		return localVarReturnValue, nil, reportError("description is required and must be specified")
 	}
@@ -1285,9 +1287,6 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 	}
 	if r.enrollmentCodeIsActive == nil {
 		return localVarReturnValue, nil, reportError("enrollmentCodeIsActive is required and must be specified")
-	}
-	if r.name == nil {
-		return localVarReturnValue, nil, reportError("name is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1307,10 +1306,10 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "description", r.description, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.code", r.enrollmentCodeCode, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.is_active", r.enrollmentCodeIsActive, "", "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

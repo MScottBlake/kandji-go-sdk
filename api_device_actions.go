@@ -1,15 +1,14 @@
 /*
 Kandji API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p>  </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p>  <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th>  </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td>  <td>The <code>POST</code> method submits an entity to the specified resource.</td>  </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>  <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr>  <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr>  <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td>  </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td>  </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr>  <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr>  <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td>  </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td>  </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td>  <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr>  <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table>  </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4>  <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
-Contact: mitchelsblake@gmail.com
 */
 
 // Code generated by OpenAPI Generator (https://openapi-generator.tech); DO NOT EDIT.
 
-package kandji_go_sdk
+package kandji_sdk
 
 import (
 	"bytes"
@@ -229,7 +228,7 @@ DeleteUser Delete User
 
 <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
- <hr />
+<hr />
 <p><code>DeleteAllUsers</code> - <code>boolean</code></p>
 <p><code>ForceDeletion</code> - <code>boolean</code></p>
 <p><code>UserName</code> - <code>string</code></p>
@@ -333,44 +332,44 @@ func (r ApiEraseDeviceRequest) Execute() (*http.Response, error) {
 EraseDevice Erase Device
 
 <p>This endpoint sends an MDM command to erase the device.</p>
- <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>
+<p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>
 <p><strong>Request Body Parameters: application/json</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
 <tr>
 <th>Key</th>
 <th>Type</th>
- <th>Description</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>PIN</code></td>
- <td><code>string</code></td>
-<td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.</td>
+<td><code>string</code></td>
+<td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.  <br />  <br />Note: This value will be ignored for iOS, iPadOS, and tvOS devices.</td>
 </tr>
 <tr>
 <td><code>PreserveDataPlan</code></td>
- <td><code>boolean</code></td>
+<td><code>boolean</code></td>
 <td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td>
 </tr>
 <tr>
 <td><code>DisallowProximitySetup</code></td>
- <td><code>boolean</code></td>
+<td><code>boolean</code></td>
 <td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td>
 </tr>
 <tr>
 <td><code>ReturnToService</code></td>
- <td><code>object</code></td>
+<td><code>object</code></td>
 <td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td>
 </tr>
 <tr>
 <td>- <code>Enabled</code></td>
- <td><code>boolean</code></td>
+<td><code>boolean</code></td>
 <td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td>
 </tr>
 <tr>
- <td>- <code>ProfileId</code></td>
+<td>- <code>ProfileId</code></td>
 <td><code>string</code></td>
 <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td>
 </tr>
@@ -501,7 +500,7 @@ GetDeviceCommands Get Device Commands
 <li>2 : Command is running</li>
 <li>3 : Command completed</li>
 <li>4 : Command failed</li>
- <li>5 : Command received &quot;Not Now&quot; response</li>
+<li>5 : Command received &quot;Not Now&quot; response</li>
 </ul>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -608,21 +607,21 @@ func (r ApiLockDeviceRequest) Execute() (map[string]interface{}, *http.Response,
 LockDevice Lock Device
 
 <p>This endpoint sends an MDM command to remotely lock a device.</p>
- <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>
- <blockquote>
+<p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>
+<blockquote>
 <p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p>
 </blockquote>
 <p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p>
 <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p>
 <h4 id=&quot;response-properties&quot;>Response properties</h4>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
- <thead>
+<thead>
 <tr>
 <th>Property</th>
 <th>Description</th>
 <th>Type</th>
 </tr>
- </thead>
+</thead>
 <tbody>
 <tr>
 <td>PIN</td>
@@ -845,9 +844,9 @@ func (r ApiRemoteDesktopRequest) Execute() (*http.Response, error) {
 RemoteDesktop Remote Desktop
 
 <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p>
- <p><strong>Request Body Parameters</strong>: application/json</p>
+<p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
- <p><code>EnableRemoteDesktop</code> - <code>boolean</code></p>
+<p><code>EnableRemoteDesktop</code> - <code>boolean</code></p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -1040,7 +1039,7 @@ func (r ApiRestartDeviceRequest) Execute() (*http.Response, error) {
 RestartDevice Restart Device
 
 <p>This endpoint sends an MDM command to remotely restart a device.</p>
- <ul>
+<ul>
 <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p>
 </li>
 <li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p>
@@ -1140,7 +1139,7 @@ func (r ApiSendBlankpushRequest) Execute() (*http.Response, error) {
 SendBlankpush Send Blankpush
 
 <p>This endpoint sends an MDM command to initiate a blank push.</p>
- <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
+<p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -1239,9 +1238,9 @@ func (r ApiSetNameRequest) Execute() (*http.Response, error) {
 SetName Set Name
 
 <p>This endpoint sends an MDM command to set the device name.</p>
- <p><strong>Request Body Parameters</strong>: application/json</p>
+<p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
- <p><code>DeviceName</code> - <code>string</code></p>
+<p><code>DeviceName</code> - <code>string</code></p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -1435,7 +1434,7 @@ UnlockAccount Unlock Account
 
 <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
- <hr />
+<hr />
 <p><code>UserName</code> - <code>string</code></p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

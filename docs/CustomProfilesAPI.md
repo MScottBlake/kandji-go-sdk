@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateCustomProfile
 
-> map[string]interface{} CreateCustomProfile(ctx).Active(active).File(file).Name(name).Execute()
+> map[string]interface{} CreateCustomProfile(ctx).Name(name).File(file).Active(active).Execute()
 
 Create Custom Profile
 
@@ -33,13 +33,13 @@ import (
 )
 
 func main() {
-	active := "active_example" // string | (Optional, default=true) Whether this library item is active
-	file := os.NewFile(1234, "some_file") // *os.File | (Required) The path to the profile's .mobileconfig file
 	name := "name_example" // string | (Required) The profile name
+	file := os.NewFile(1234, "some_file") // *os.File | (Required) The path to the profile's .mobileconfig file
+	active := "active_example" // string | (Optional, default=true) Whether this library item is active
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomProfilesAPI.CreateCustomProfile(context.Background()).Active(active).File(file).Name(name).Execute()
+	resp, r, err := apiClient.CustomProfilesAPI.CreateCustomProfile(context.Background()).Name(name).File(file).Active(active).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.CreateCustomProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,9 +60,9 @@ Other parameters are passed through a pointer to a apiCreateCustomProfileRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **active** | **string** | (Optional, default&#x3D;true) Whether this library item is active | 
- **file** | ***os.File** | (Required) The path to the profile&#39;s .mobileconfig file | 
  **name** | **string** | (Required) The profile name | 
+ **file** | ***os.File** | (Required) The path to the profile&#39;s .mobileconfig file | 
+ **active** | **string** | (Optional, default&#x3D;true) Whether this library item is active | 
 
 ### Return type
 
@@ -241,7 +241,7 @@ import (
 )
 
 func main() {
-	page := "1" // string | Optional page number (when results exceed pagination threshold) (optional)
+	page := "1" // string | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -266,7 +266,7 @@ Other parameters are passed through a pointer to a apiListCustomProfilesRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **string** | Optional page number (when results exceed pagination threshold) | 
+ **page** | **string** | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. | 
 
 ### Return type
 

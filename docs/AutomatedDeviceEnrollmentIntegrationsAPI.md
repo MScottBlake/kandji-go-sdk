@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateAdeIntegration
 
-> map[string]interface{} CreateAdeIntegration(ctx).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
+> map[string]interface{} CreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 
 Create ADE integration
 
@@ -40,13 +40,13 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
+	phone := "phone_example" // string | 
 	email := "email_example" // string | 
 	file := os.NewFile(1234, "some_file") // *os.File | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
-	phone := "phone_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration(context.Background()).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration(context.Background()).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,9 +68,9 @@ Other parameters are passed through a pointer to a apiCreateAdeIntegrationReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprintId** | **string** |  | 
+ **phone** | **string** |  | 
  **email** | **string** |  | 
  **file** | ***os.File** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
- **phone** | **string** |  | 
 
 ### Return type
 
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ## RenewAdeIntegration
 
-> RenewAdeIntegration(ctx, adeTokenId).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
+> RenewAdeIntegration(ctx, adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 
 Renew ADE integration
 
@@ -593,13 +593,13 @@ import (
 func main() {
 	adeTokenId := "adeTokenId_example" // string | 
 	blueprintId := "blueprintId_example" // string | 
+	phone := "phone_example" // string | 
 	email := "email_example" // string | 
 	file := os.NewFile(1234, "some_file") // *os.File | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
-	phone := "phone_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration(context.Background(), adeTokenId).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
+	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration(context.Background(), adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -624,9 +624,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **blueprintId** | **string** |  | 
+ **phone** | **string** |  | 
  **email** | **string** |  | 
  **file** | ***os.File** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
- **phone** | **string** |  | 
 
 ### Return type
 
