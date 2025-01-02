@@ -44,5 +44,4 @@ git_push.sh
 go.mod
 go.sum
 response.go
-test/api_in_house_apps_test.go
 utils.go
