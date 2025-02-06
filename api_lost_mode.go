@@ -24,28 +24,28 @@ import (
 // LostModeAPIService LostModeAPI service
 type LostModeAPIService service
 
-type ApiDisableLostModeRequest struct {
+type ApiLostModeDisableLostModeRequest struct {
 	ctx context.Context
 	ApiService *LostModeAPIService
 	deviceId string
 }
 
-func (r ApiDisableLostModeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DisableLostModeExecute(r)
+func (r ApiLostModeDisableLostModeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LostModeDisableLostModeExecute(r)
 }
 
 /*
-DisableLostMode Disable Lost Mode
+LostModeDisableLostMode Disable Lost Mode
 
 <p>This command will send a request to turn off lost mode on iOS and iPadOS.</p>
 <p>If the command is already pending, the message &quot;<em>Disable lost mode is already pending for this device.</em>&quot; will be in the response.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiDisableLostModeRequest
+ @return ApiLostModeDisableLostModeRequest
 */
-func (a *LostModeAPIService) DisableLostMode(ctx context.Context, deviceId string) ApiDisableLostModeRequest {
-	return ApiDisableLostModeRequest{
+func (a *LostModeAPIService) LostModeDisableLostMode(ctx context.Context, deviceId string) ApiLostModeDisableLostModeRequest {
+	return ApiLostModeDisableLostModeRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -53,14 +53,14 @@ func (a *LostModeAPIService) DisableLostMode(ctx context.Context, deviceId strin
 }
 
 // Execute executes the request
-func (a *LostModeAPIService) DisableLostModeExecute(r ApiDisableLostModeRequest) (*http.Response, error) {
+func (a *LostModeAPIService) LostModeDisableLostModeExecute(r ApiLostModeDisableLostModeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.DisableLostMode")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.LostModeDisableLostMode")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -117,34 +117,34 @@ func (a *LostModeAPIService) DisableLostModeExecute(r ApiDisableLostModeRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiEnableLostModeRequest struct {
+type ApiLostModeEnableLostModeRequest struct {
 	ctx context.Context
 	ApiService *LostModeAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiEnableLostModeRequest) Body(body string) ApiEnableLostModeRequest {
+func (r ApiLostModeEnableLostModeRequest) Body(body string) ApiLostModeEnableLostModeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiEnableLostModeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.EnableLostModeExecute(r)
+func (r ApiLostModeEnableLostModeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LostModeEnableLostModeExecute(r)
 }
 
 /*
-EnableLostMode Enable Lost Mode
+LostModeEnableLostMode Enable Lost Mode
 
 <p>This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.</p>
 <p>Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiEnableLostModeRequest
+ @return ApiLostModeEnableLostModeRequest
 */
-func (a *LostModeAPIService) EnableLostMode(ctx context.Context, deviceId string) ApiEnableLostModeRequest {
-	return ApiEnableLostModeRequest{
+func (a *LostModeAPIService) LostModeEnableLostMode(ctx context.Context, deviceId string) ApiLostModeEnableLostModeRequest {
+	return ApiLostModeEnableLostModeRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -152,14 +152,14 @@ func (a *LostModeAPIService) EnableLostMode(ctx context.Context, deviceId string
 }
 
 // Execute executes the request
-func (a *LostModeAPIService) EnableLostModeExecute(r ApiEnableLostModeRequest) (*http.Response, error) {
+func (a *LostModeAPIService) LostModeEnableLostModeExecute(r ApiLostModeEnableLostModeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.EnableLostMode")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.LostModeEnableLostMode")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -218,28 +218,28 @@ func (a *LostModeAPIService) EnableLostModeExecute(r ApiEnableLostModeRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiPlayLostModeSoundRequest struct {
+type ApiLostModePlayLostModeSoundRequest struct {
 	ctx context.Context
 	ApiService *LostModeAPIService
 	deviceId string
 }
 
-func (r ApiPlayLostModeSoundRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PlayLostModeSoundExecute(r)
+func (r ApiLostModePlayLostModeSoundRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LostModePlayLostModeSoundExecute(r)
 }
 
 /*
-PlayLostModeSound Play Lost Mode Sound
+LostModePlayLostModeSound Play Lost Mode Sound
 
 <p>This command will tell the target iOS or iPadOS device to play the lost mode sound.</p>
 <p><strong>Note</strong>: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiPlayLostModeSoundRequest
+ @return ApiLostModePlayLostModeSoundRequest
 */
-func (a *LostModeAPIService) PlayLostModeSound(ctx context.Context, deviceId string) ApiPlayLostModeSoundRequest {
-	return ApiPlayLostModeSoundRequest{
+func (a *LostModeAPIService) LostModePlayLostModeSound(ctx context.Context, deviceId string) ApiLostModePlayLostModeSoundRequest {
+	return ApiLostModePlayLostModeSoundRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -247,14 +247,14 @@ func (a *LostModeAPIService) PlayLostModeSound(ctx context.Context, deviceId str
 }
 
 // Execute executes the request
-func (a *LostModeAPIService) PlayLostModeSoundExecute(r ApiPlayLostModeSoundRequest) (*http.Response, error) {
+func (a *LostModeAPIService) LostModePlayLostModeSoundExecute(r ApiLostModePlayLostModeSoundRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.PlayLostModeSound")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.LostModePlayLostModeSound")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -311,27 +311,27 @@ func (a *LostModeAPIService) PlayLostModeSoundExecute(r ApiPlayLostModeSoundRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateLocationRequest struct {
+type ApiLostModeUpdateLocationRequest struct {
 	ctx context.Context
 	ApiService *LostModeAPIService
 	deviceId string
 }
 
-func (r ApiUpdateLocationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UpdateLocationExecute(r)
+func (r ApiLostModeUpdateLocationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.LostModeUpdateLocationExecute(r)
 }
 
 /*
-UpdateLocation Update Location
+LostModeUpdateLocation Update Location
 
 This endpoint sends an MDM command to update the location data on iOS and iPadOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiUpdateLocationRequest
+ @return ApiLostModeUpdateLocationRequest
 */
-func (a *LostModeAPIService) UpdateLocation(ctx context.Context, deviceId string) ApiUpdateLocationRequest {
-	return ApiUpdateLocationRequest{
+func (a *LostModeAPIService) LostModeUpdateLocation(ctx context.Context, deviceId string) ApiLostModeUpdateLocationRequest {
+	return ApiLostModeUpdateLocationRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -339,14 +339,14 @@ func (a *LostModeAPIService) UpdateLocation(ctx context.Context, deviceId string
 }
 
 // Execute executes the request
-func (a *LostModeAPIService) UpdateLocationExecute(r ApiUpdateLocationRequest) (*http.Response, error) {
+func (a *LostModeAPIService) LostModeUpdateLocationExecute(r ApiLostModeUpdateLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.UpdateLocation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LostModeAPIService.LostModeUpdateLocation")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

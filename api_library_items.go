@@ -24,7 +24,7 @@ import (
 // LibraryItemsAPIService LibraryItemsAPI service
 type LibraryItemsAPIService service
 
-type ApiGetLibraryItemActivityRequest struct {
+type ApiLibraryItemsGetLibraryItemActivityRequest struct {
 	ctx context.Context
 	ApiService *LibraryItemsAPIService
 	libraryItemId string
@@ -36,41 +36,41 @@ type ApiGetLibraryItemActivityRequest struct {
 }
 
 // Filter actions by this activity type. Choices are: library_item_created, library_item_edited, library_item_deleted, library_item_duplicated, library_item_assignment_changed
-func (r ApiGetLibraryItemActivityRequest) ActivityType(activityType string) ApiGetLibraryItemActivityRequest {
+func (r ApiLibraryItemsGetLibraryItemActivityRequest) ActivityType(activityType string) ApiLibraryItemsGetLibraryItemActivityRequest {
 	r.activityType = &activityType
 	return r
 }
 
 // Filter actions by this user (id)
-func (r ApiGetLibraryItemActivityRequest) UserId(userId string) ApiGetLibraryItemActivityRequest {
+func (r ApiLibraryItemsGetLibraryItemActivityRequest) UserId(userId string) ApiLibraryItemsGetLibraryItemActivityRequest {
 	r.userId = &userId
 	return r
 }
 
 // Filter actions by this user (email)
-func (r ApiGetLibraryItemActivityRequest) UserEmail(userEmail string) ApiGetLibraryItemActivityRequest {
+func (r ApiLibraryItemsGetLibraryItemActivityRequest) UserEmail(userEmail string) ApiLibraryItemsGetLibraryItemActivityRequest {
 	r.userEmail = &userEmail
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiGetLibraryItemActivityRequest) Limit(limit string) ApiGetLibraryItemActivityRequest {
+func (r ApiLibraryItemsGetLibraryItemActivityRequest) Limit(limit string) ApiLibraryItemsGetLibraryItemActivityRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiGetLibraryItemActivityRequest) Offset(offset string) ApiGetLibraryItemActivityRequest {
+func (r ApiLibraryItemsGetLibraryItemActivityRequest) Offset(offset string) ApiLibraryItemsGetLibraryItemActivityRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGetLibraryItemActivityRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetLibraryItemActivityExecute(r)
+func (r ApiLibraryItemsGetLibraryItemActivityRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.LibraryItemsGetLibraryItemActivityExecute(r)
 }
 
 /*
-GetLibraryItemActivity Get Library Item Activity
+LibraryItemsGetLibraryItemActivity Get Library Item Activity
 
 <p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p>
 <p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p>
@@ -79,10 +79,10 @@ GetLibraryItemActivity Get Library Item Activity
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiGetLibraryItemActivityRequest
+ @return ApiLibraryItemsGetLibraryItemActivityRequest
 */
-func (a *LibraryItemsAPIService) GetLibraryItemActivity(ctx context.Context, libraryItemId string) ApiGetLibraryItemActivityRequest {
-	return ApiGetLibraryItemActivityRequest{
+func (a *LibraryItemsAPIService) LibraryItemsGetLibraryItemActivity(ctx context.Context, libraryItemId string) ApiLibraryItemsGetLibraryItemActivityRequest {
+	return ApiLibraryItemsGetLibraryItemActivityRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -91,7 +91,7 @@ func (a *LibraryItemsAPIService) GetLibraryItemActivity(ctx context.Context, lib
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LibraryItemsAPIService) GetLibraryItemActivityExecute(r ApiGetLibraryItemActivityRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LibraryItemsAPIService) LibraryItemsGetLibraryItemActivityExecute(r ApiLibraryItemsGetLibraryItemActivityRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -99,7 +99,7 @@ func (a *LibraryItemsAPIService) GetLibraryItemActivityExecute(r ApiGetLibraryIt
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryItemsAPIService.GetLibraryItemActivity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryItemsAPIService.LibraryItemsGetLibraryItemActivity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -180,7 +180,7 @@ func (a *LibraryItemsAPIService) GetLibraryItemActivityExecute(r ApiGetLibraryIt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLibraryItemStatusesRequest struct {
+type ApiLibraryItemsGetLibraryItemStatusesRequest struct {
 	ctx context.Context
 	ApiService *LibraryItemsAPIService
 	libraryItemId string
@@ -190,29 +190,29 @@ type ApiGetLibraryItemStatusesRequest struct {
 }
 
 // Query for the status of one device.
-func (r ApiGetLibraryItemStatusesRequest) ComputerId(computerId string) ApiGetLibraryItemStatusesRequest {
+func (r ApiLibraryItemsGetLibraryItemStatusesRequest) ComputerId(computerId string) ApiLibraryItemsGetLibraryItemStatusesRequest {
 	r.computerId = &computerId
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiGetLibraryItemStatusesRequest) Limit(limit string) ApiGetLibraryItemStatusesRequest {
+func (r ApiLibraryItemsGetLibraryItemStatusesRequest) Limit(limit string) ApiLibraryItemsGetLibraryItemStatusesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiGetLibraryItemStatusesRequest) Offset(offset string) ApiGetLibraryItemStatusesRequest {
+func (r ApiLibraryItemsGetLibraryItemStatusesRequest) Offset(offset string) ApiLibraryItemsGetLibraryItemStatusesRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGetLibraryItemStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetLibraryItemStatusesExecute(r)
+func (r ApiLibraryItemsGetLibraryItemStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.LibraryItemsGetLibraryItemStatusesExecute(r)
 }
 
 /*
-GetLibraryItemStatuses Get Library Item Statuses
+LibraryItemsGetLibraryItemStatuses Get Library Item Statuses
 
 <p>This endpoint retrieves the statuses related to a specific library item.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -220,10 +220,10 @@ GetLibraryItemStatuses Get Library Item Statuses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiGetLibraryItemStatusesRequest
+ @return ApiLibraryItemsGetLibraryItemStatusesRequest
 */
-func (a *LibraryItemsAPIService) GetLibraryItemStatuses(ctx context.Context, libraryItemId string) ApiGetLibraryItemStatusesRequest {
-	return ApiGetLibraryItemStatusesRequest{
+func (a *LibraryItemsAPIService) LibraryItemsGetLibraryItemStatuses(ctx context.Context, libraryItemId string) ApiLibraryItemsGetLibraryItemStatusesRequest {
+	return ApiLibraryItemsGetLibraryItemStatusesRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -232,7 +232,7 @@ func (a *LibraryItemsAPIService) GetLibraryItemStatuses(ctx context.Context, lib
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *LibraryItemsAPIService) GetLibraryItemStatusesExecute(r ApiGetLibraryItemStatusesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *LibraryItemsAPIService) LibraryItemsGetLibraryItemStatusesExecute(r ApiLibraryItemsGetLibraryItemStatusesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -240,7 +240,7 @@ func (a *LibraryItemsAPIService) GetLibraryItemStatusesExecute(r ApiGetLibraryIt
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryItemsAPIService.GetLibraryItemStatuses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryItemsAPIService.LibraryItemsGetLibraryItemStatuses")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

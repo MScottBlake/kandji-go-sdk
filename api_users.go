@@ -24,29 +24,136 @@ import (
 // UsersAPIService UsersAPI service
 type UsersAPIService service
 
-type ApiGetUserRequest struct {
+type ApiUsersDeleteUserRequest struct {
 	ctx context.Context
 	ApiService *UsersAPIService
 	userId string
 }
 
-func (r ApiGetUserRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetUserExecute(r)
+func (r ApiUsersDeleteUserRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UsersDeleteUserExecute(r)
 }
 
 /*
-GetUser Get User
+UsersDeleteUser Delete User
 
-<p>This endpoint makes a request to retrieve a specified user directory integration user by id.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p>user_id (path parameter): The unique identifier of the user directory integration user.</p>
+<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p>
+<h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3>
+<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot;
+}
+
+</code></pre>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userId
- @return ApiGetUserRequest
+ @return ApiUsersDeleteUserRequest
 */
-func (a *UsersAPIService) GetUser(ctx context.Context, userId string) ApiGetUserRequest {
-	return ApiGetUserRequest{
+func (a *UsersAPIService) UsersDeleteUser(ctx context.Context, userId string) ApiUsersDeleteUserRequest {
+	return ApiUsersDeleteUserRequest{
+		ApiService: a,
+		ctx: ctx,
+		userId: userId,
+	}
+}
+
+// Execute executes the request
+func (a *UsersAPIService) UsersDeleteUserExecute(r ApiUsersDeleteUserRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersDeleteUser")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v1/users/{user_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v map[string]interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiUsersGetUserRequest struct {
+	ctx context.Context
+	ApiService *UsersAPIService
+	userId string
+}
+
+func (r ApiUsersGetUserRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.UsersGetUserExecute(r)
+}
+
+/*
+UsersGetUser Get User
+
+This endpoint makes a request to retrieve a specified user directory integration user by id.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param userId
+ @return ApiUsersGetUserRequest
+*/
+func (a *UsersAPIService) UsersGetUser(ctx context.Context, userId string) ApiUsersGetUserRequest {
+	return ApiUsersGetUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		userId: userId,
@@ -55,7 +162,7 @@ func (a *UsersAPIService) GetUser(ctx context.Context, userId string) ApiGetUser
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *UsersAPIService) GetUserExecute(r ApiGetUserRequest) (map[string]interface{}, *http.Response, error) {
+func (a *UsersAPIService) UsersGetUserExecute(r ApiUsersGetUserRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -63,7 +170,7 @@ func (a *UsersAPIService) GetUserExecute(r ApiGetUserRequest) (map[string]interf
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.GetUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersGetUser")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -129,7 +236,7 @@ func (a *UsersAPIService) GetUserExecute(r ApiGetUserRequest) (map[string]interf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListUsersRequest struct {
+type ApiUsersListUsersRequest struct {
 	ctx context.Context
 	ApiService *UsersAPIService
 	email *string
@@ -139,44 +246,44 @@ type ApiListUsersRequest struct {
 }
 
 // Returns users with email addresses containing the provided string.
-func (r ApiListUsersRequest) Email(email string) ApiListUsersRequest {
+func (r ApiUsersListUsersRequest) Email(email string) ApiUsersListUsersRequest {
 	r.email = &email
 	return r
 }
 
 // Search for a user matching the provided UUID value.
-func (r ApiListUsersRequest) Id(id string) ApiListUsersRequest {
+func (r ApiUsersListUsersRequest) Id(id string) ApiUsersListUsersRequest {
 	r.id = &id
 	return r
 }
 
 // Search for a integration matching the provided UUID value.
-func (r ApiListUsersRequest) IntegrationId(integrationId string) ApiListUsersRequest {
+func (r ApiUsersListUsersRequest) IntegrationId(integrationId string) ApiUsersListUsersRequest {
 	r.integrationId = &integrationId
 	return r
 }
 
 // Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.
-func (r ApiListUsersRequest) Archived(archived string) ApiListUsersRequest {
+func (r ApiUsersListUsersRequest) Archived(archived string) ApiUsersListUsersRequest {
 	r.archived = &archived
 	return r
 }
 
-func (r ApiListUsersRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListUsersExecute(r)
+func (r ApiUsersListUsersRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.UsersListUsersExecute(r)
 }
 
 /*
-ListUsers List Users
+UsersListUsers List Users
 
 <p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p>
 <p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListUsersRequest
+ @return ApiUsersListUsersRequest
 */
-func (a *UsersAPIService) ListUsers(ctx context.Context) ApiListUsersRequest {
-	return ApiListUsersRequest{
+func (a *UsersAPIService) UsersListUsers(ctx context.Context) ApiUsersListUsersRequest {
+	return ApiUsersListUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -184,7 +291,7 @@ func (a *UsersAPIService) ListUsers(ctx context.Context) ApiListUsersRequest {
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (map[string]interface{}, *http.Response, error) {
+func (a *UsersAPIService) UsersListUsersExecute(r ApiUsersListUsersRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -192,7 +299,7 @@ func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (map[string]in
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.ListUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersListUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

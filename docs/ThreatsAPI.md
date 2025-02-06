@@ -4,13 +4,13 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetThreatDetails**](ThreatsAPI.md#GetThreatDetails) | **Get** /api/v1/threat-details | Get Threat Details
+[**ThreatsGetThreatDetails**](ThreatsAPI.md#ThreatsGetThreatDetails) | **Get** /api/v1/threat-details | Get Threat Details
 
 
 
-## GetThreatDetails
+## ThreatsGetThreatDetails
 
-> map[string]interface{} GetThreatDetails(ctx).Classification(classification).DateRange(dateRange).DeviceId(deviceId).Status(status).SortBy(sortBy).Term(term).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} ThreatsGetThreatDetails(ctx).Classification(classification).DateRange(dateRange).DeviceId(deviceId).Status(status).SortBy(sortBy).Term(term).Limit(limit).Offset(offset).Execute()
 
 Get Threat Details
 
@@ -40,13 +40,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ThreatsAPI.GetThreatDetails(context.Background()).Classification(classification).DateRange(dateRange).DeviceId(deviceId).Status(status).SortBy(sortBy).Term(term).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.ThreatsAPI.ThreatsGetThreatDetails(context.Background()).Classification(classification).DateRange(dateRange).DeviceId(deviceId).Status(status).SortBy(sortBy).Term(term).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ThreatsAPI.GetThreatDetails``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ThreatsAPI.ThreatsGetThreatDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetThreatDetails`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ThreatsAPI.GetThreatDetails`: %v\n", resp)
+	// response from `ThreatsGetThreatDetails`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `ThreatsAPI.ThreatsGetThreatDetails`: %v\n", resp)
 }
 ```
 
@@ -56,7 +56,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetThreatDetailsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiThreatsGetThreatDetailsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

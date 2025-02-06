@@ -4,27 +4,27 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ClearPasscode**](DeviceActionsAPI.md#ClearPasscode) | **Post** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
-[**DeleteDevice**](DeviceActionsAPI.md#DeleteDevice) | **Delete** /api/v1/devices/{device_id} | Delete Device
-[**DeleteUser**](DeviceActionsAPI.md#DeleteUser) | **Post** /api/v1/devices/{device_id}/action/deleteuser | Delete User
-[**EraseDevice**](DeviceActionsAPI.md#EraseDevice) | **Post** /api/v1/devices/{device_id}/action/erase | Erase Device
-[**GetDeviceCommands**](DeviceActionsAPI.md#GetDeviceCommands) | **Get** /api/v1/devices/{device_id}/commands | Get Device Commands
-[**LockDevice**](DeviceActionsAPI.md#LockDevice) | **Post** /api/v1/devices/{device_id}/action/lock | Lock Device
-[**ReinstallAgent**](DeviceActionsAPI.md#ReinstallAgent) | **Post** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
-[**RemoteDesktop**](DeviceActionsAPI.md#RemoteDesktop) | **Post** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
-[**RenewMdmProfile**](DeviceActionsAPI.md#RenewMdmProfile) | **Post** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
-[**RestartDevice**](DeviceActionsAPI.md#RestartDevice) | **Post** /api/v1/devices/{device_id}/action/restart | Restart Device
-[**SendBlankpush**](DeviceActionsAPI.md#SendBlankpush) | **Post** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
-[**SetName**](DeviceActionsAPI.md#SetName) | **Post** /api/v1/devices/{device_id}/action/setname | Set Name
-[**Shutdown**](DeviceActionsAPI.md#Shutdown) | **Post** /api/v1/devices/{device_id}/action/shutdown | Shutdown
-[**UnlockAccount**](DeviceActionsAPI.md#UnlockAccount) | **Post** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
-[**UpdateInventory**](DeviceActionsAPI.md#UpdateInventory) | **Post** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
+[**DeviceActionsClearPasscode**](DeviceActionsAPI.md#DeviceActionsClearPasscode) | **Post** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
+[**DeviceActionsDeleteDevice**](DeviceActionsAPI.md#DeviceActionsDeleteDevice) | **Delete** /api/v1/devices/{device_id} | Delete Device
+[**DeviceActionsDeleteUser**](DeviceActionsAPI.md#DeviceActionsDeleteUser) | **Post** /api/v1/devices/{device_id}/action/deleteuser | Delete User
+[**DeviceActionsEraseDevice**](DeviceActionsAPI.md#DeviceActionsEraseDevice) | **Post** /api/v1/devices/{device_id}/action/erase | Erase Device
+[**DeviceActionsGetDeviceCommands**](DeviceActionsAPI.md#DeviceActionsGetDeviceCommands) | **Get** /api/v1/devices/{device_id}/commands | Get Device Commands
+[**DeviceActionsLockDevice**](DeviceActionsAPI.md#DeviceActionsLockDevice) | **Post** /api/v1/devices/{device_id}/action/lock | Lock Device
+[**DeviceActionsReinstallAgent**](DeviceActionsAPI.md#DeviceActionsReinstallAgent) | **Post** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
+[**DeviceActionsRemoteDesktop**](DeviceActionsAPI.md#DeviceActionsRemoteDesktop) | **Post** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
+[**DeviceActionsRenewMdmProfile**](DeviceActionsAPI.md#DeviceActionsRenewMdmProfile) | **Post** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
+[**DeviceActionsRestartDevice**](DeviceActionsAPI.md#DeviceActionsRestartDevice) | **Post** /api/v1/devices/{device_id}/action/restart | Restart Device
+[**DeviceActionsSendBlankpush**](DeviceActionsAPI.md#DeviceActionsSendBlankpush) | **Post** /api/v1/devices/{device_id}/action/blankpush | Send Blankpush
+[**DeviceActionsSetName**](DeviceActionsAPI.md#DeviceActionsSetName) | **Post** /api/v1/devices/{device_id}/action/setname | Set Name
+[**DeviceActionsShutdown**](DeviceActionsAPI.md#DeviceActionsShutdown) | **Post** /api/v1/devices/{device_id}/action/shutdown | Shutdown
+[**DeviceActionsUnlockAccount**](DeviceActionsAPI.md#DeviceActionsUnlockAccount) | **Post** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
+[**DeviceActionsUpdateInventory**](DeviceActionsAPI.md#DeviceActionsUpdateInventory) | **Post** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
 
 
 
-## ClearPasscode
+## DeviceActionsClearPasscode
 
-> ClearPasscode(ctx, deviceId).Execute()
+> DeviceActionsClearPasscode(ctx, deviceId).Execute()
 
 Clear Passcode
 
@@ -47,9 +47,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.ClearPasscode(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsClearPasscode(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.ClearPasscode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsClearPasscode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiClearPasscodeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsClearPasscodeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -90,9 +90,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteDevice
+## DeviceActionsDeleteDevice
 
-> DeleteDevice(ctx, deviceId).Execute()
+> DeviceActionsDeleteDevice(ctx, deviceId).Execute()
 
 Delete Device
 
@@ -115,9 +115,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.DeleteDevice(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsDeleteDevice(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeleteDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsDeleteDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteDeviceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsDeleteDeviceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -158,9 +158,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteUser
+## DeviceActionsDeleteUser
 
-> DeleteUser(ctx, deviceId).Body(body).Execute()
+> DeviceActionsDeleteUser(ctx, deviceId).Body(body).Execute()
 
 Delete User
 
@@ -184,9 +184,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.DeleteUser(context.Background(), deviceId).Body(body).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsDeleteUser(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeleteUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsDeleteUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsDeleteUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -228,9 +228,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## EraseDevice
+## DeviceActionsEraseDevice
 
-> EraseDevice(ctx, deviceId).Body(body).Execute()
+> DeviceActionsEraseDevice(ctx, deviceId).Body(body).Execute()
 
 Erase Device
 
@@ -254,9 +254,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.EraseDevice(context.Background(), deviceId).Body(body).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsEraseDevice(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.EraseDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsEraseDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEraseDeviceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsEraseDeviceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -298,9 +298,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceCommands
+## DeviceActionsGetDeviceCommands
 
-> GetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
+> DeviceActionsGetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
 
 Get Device Commands
 
@@ -325,9 +325,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.GetDeviceCommands(context.Background(), deviceId).Limit(limit).Offset(offset).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsGetDeviceCommands(context.Background(), deviceId).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.GetDeviceCommands``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsGetDeviceCommands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceCommandsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsGetDeviceCommandsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -370,9 +370,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## LockDevice
+## DeviceActionsLockDevice
 
-> map[string]interface{} LockDevice(ctx, deviceId).Body(body).Execute()
+> map[string]interface{} DeviceActionsLockDevice(ctx, deviceId).Body(body).Execute()
 
 Lock Device
 
@@ -396,13 +396,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceActionsAPI.LockDevice(context.Background(), deviceId).Body(body).Execute()
+	resp, r, err := apiClient.DeviceActionsAPI.DeviceActionsLockDevice(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.LockDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsLockDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LockDevice`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceActionsAPI.LockDevice`: %v\n", resp)
+	// response from `DeviceActionsLockDevice`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceActionsAPI.DeviceActionsLockDevice`: %v\n", resp)
 }
 ```
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLockDeviceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsLockDeviceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -442,9 +442,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ReinstallAgent
+## DeviceActionsReinstallAgent
 
-> ReinstallAgent(ctx, deviceId).Execute()
+> DeviceActionsReinstallAgent(ctx, deviceId).Execute()
 
 Reinstall Agent
 
@@ -467,9 +467,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.ReinstallAgent(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsReinstallAgent(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.ReinstallAgent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsReinstallAgent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReinstallAgentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsReinstallAgentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -510,9 +510,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RemoteDesktop
+## DeviceActionsRemoteDesktop
 
-> RemoteDesktop(ctx, deviceId).Body(body).Execute()
+> DeviceActionsRemoteDesktop(ctx, deviceId).Body(body).Execute()
 
 Remote Desktop
 
@@ -536,9 +536,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.RemoteDesktop(context.Background(), deviceId).Body(body).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsRemoteDesktop(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.RemoteDesktop``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsRemoteDesktop``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRemoteDesktopRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsRemoteDesktopRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -580,9 +580,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RenewMdmProfile
+## DeviceActionsRenewMdmProfile
 
-> RenewMdmProfile(ctx, deviceId).Execute()
+> DeviceActionsRenewMdmProfile(ctx, deviceId).Execute()
 
 Renew MDM Profile
 
@@ -605,9 +605,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.RenewMdmProfile(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsRenewMdmProfile(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.RenewMdmProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsRenewMdmProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRenewMdmProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsRenewMdmProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -648,9 +648,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RestartDevice
+## DeviceActionsRestartDevice
 
-> RestartDevice(ctx, deviceId).Body(body).Execute()
+> DeviceActionsRestartDevice(ctx, deviceId).Body(body).Execute()
 
 Restart Device
 
@@ -674,9 +674,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.RestartDevice(context.Background(), deviceId).Body(body).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsRestartDevice(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.RestartDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsRestartDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRestartDeviceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsRestartDeviceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -718,9 +718,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SendBlankpush
+## DeviceActionsSendBlankpush
 
-> SendBlankpush(ctx, deviceId).Execute()
+> DeviceActionsSendBlankpush(ctx, deviceId).Execute()
 
 Send Blankpush
 
@@ -743,9 +743,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.SendBlankpush(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsSendBlankpush(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.SendBlankpush``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsSendBlankpush``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSendBlankpushRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsSendBlankpushRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -786,9 +786,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## SetName
+## DeviceActionsSetName
 
-> SetName(ctx, deviceId).Body(body).Execute()
+> DeviceActionsSetName(ctx, deviceId).Body(body).Execute()
 
 Set Name
 
@@ -812,9 +812,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.SetName(context.Background(), deviceId).Body(body).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsSetName(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.SetName``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsSetName``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSetNameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsSetNameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -856,9 +856,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Shutdown
+## DeviceActionsShutdown
 
-> Shutdown(ctx, deviceId).Execute()
+> DeviceActionsShutdown(ctx, deviceId).Execute()
 
 Shutdown
 
@@ -881,9 +881,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.Shutdown(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsShutdown(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.Shutdown``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsShutdown``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -899,7 +899,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiShutdownRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsShutdownRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -924,9 +924,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UnlockAccount
+## DeviceActionsUnlockAccount
 
-> UnlockAccount(ctx, deviceId).Body(body).Execute()
+> DeviceActionsUnlockAccount(ctx, deviceId).Body(body).Execute()
 
 Unlock Account
 
@@ -950,9 +950,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.UnlockAccount(context.Background(), deviceId).Body(body).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsUnlockAccount(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.UnlockAccount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsUnlockAccount``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -968,7 +968,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUnlockAccountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsUnlockAccountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -994,9 +994,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateInventory
+## DeviceActionsUpdateInventory
 
-> UpdateInventory(ctx, deviceId).Execute()
+> DeviceActionsUpdateInventory(ctx, deviceId).Execute()
 
 Update Inventory
 
@@ -1019,9 +1019,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.UpdateInventory(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceActionsAPI.DeviceActionsUpdateInventory(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.UpdateInventory``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.DeviceActionsUpdateInventory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -1037,7 +1037,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateInventoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceActionsUpdateInventoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

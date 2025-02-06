@@ -25,7 +25,7 @@ import (
 // AutomatedDeviceEnrollmentIntegrationsAPIService AutomatedDeviceEnrollmentIntegrationsAPI service
 type AutomatedDeviceEnrollmentIntegrationsAPIService service
 
-type ApiCreateAdeIntegrationRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	blueprintId *string
@@ -34,42 +34,42 @@ type ApiCreateAdeIntegrationRequest struct {
 	file *os.File
 }
 
-func (r ApiCreateAdeIntegrationRequest) BlueprintId(blueprintId string) ApiCreateAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest) BlueprintId(blueprintId string) ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest {
 	r.blueprintId = &blueprintId
 	return r
 }
 
-func (r ApiCreateAdeIntegrationRequest) Phone(phone string) ApiCreateAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest) Phone(phone string) ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest {
 	r.phone = &phone
 	return r
 }
 
-func (r ApiCreateAdeIntegrationRequest) Email(email string) ApiCreateAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest) Email(email string) ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest {
 	r.email = &email
 	return r
 }
 
 // This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
-func (r ApiCreateAdeIntegrationRequest) File(file *os.File) ApiCreateAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest) File(file *os.File) ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest {
 	r.file = file
 	return r
 }
 
-func (r ApiCreateAdeIntegrationRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CreateAdeIntegrationExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationExecute(r)
 }
 
 /*
-CreateAdeIntegration Create ADE integration
+AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration Create ADE integration
 
 <p>This request will create a new ADE integration.</p>
 <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateAdeIntegrationRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegration(ctx context.Context) ApiCreateAdeIntegrationRequest {
-	return ApiCreateAdeIntegrationRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration(ctx context.Context) ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -77,7 +77,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegration(c
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationExecute(r ApiCreateAdeIntegrationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationExecute(r ApiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -85,7 +85,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationEx
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.CreateAdeIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -180,18 +180,18 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteAdeIntegrationRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	adeTokenId string
 }
 
-func (r ApiDeleteAdeIntegrationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteAdeIntegrationExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationExecute(r)
 }
 
 /*
-DeleteAdeIntegration Delete ADE integration
+AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration Delete ADE integration
 
 <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
 <p>This is a HIGHLY destructive action.</p>
@@ -200,10 +200,10 @@ DeleteAdeIntegration Delete ADE integration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adeTokenId
- @return ApiDeleteAdeIntegrationRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DeleteAdeIntegration(ctx context.Context, adeTokenId string) ApiDeleteAdeIntegrationRequest {
-	return ApiDeleteAdeIntegrationRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration(ctx context.Context, adeTokenId string) ApiAutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 		adeTokenId: adeTokenId,
@@ -211,14 +211,14 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DeleteAdeIntegration(c
 }
 
 // Execute executes the request
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DeleteAdeIntegrationExecute(r ApiDeleteAdeIntegrationRequest) (*http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationExecute(r ApiAutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.DeleteAdeIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -275,26 +275,26 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DeleteAdeIntegrationEx
 	return localVarHTTPResponse, nil
 }
 
-type ApiDownloadAdePublicKeyRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 }
 
-func (r ApiDownloadAdePublicKeyRequest) Execute() (string, *http.Response, error) {
-	return r.ApiService.DownloadAdePublicKeyExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyRequest) Execute() (string, *http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyExecute(r)
 }
 
 /*
-DownloadAdePublicKey Download ADE public key
+AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey Download ADE public key
 
 <p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p>
 <p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDownloadAdePublicKeyRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DownloadAdePublicKey(ctx context.Context) ApiDownloadAdePublicKeyRequest {
-	return ApiDownloadAdePublicKeyRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey(ctx context.Context) ApiAutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -302,7 +302,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DownloadAdePublicKey(c
 
 // Execute executes the request
 //  @return string
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DownloadAdePublicKeyExecute(r ApiDownloadAdePublicKeyRequest) (string, *http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyExecute(r ApiAutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -310,7 +310,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DownloadAdePublicKeyEx
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.DownloadAdePublicKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -375,27 +375,27 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DownloadAdePublicKeyEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetAdeDeviceRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsGetAdeDeviceRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	deviceId string
 }
 
-func (r ApiGetAdeDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetAdeDeviceExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsGetAdeDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsGetAdeDeviceExecute(r)
 }
 
 /*
-GetAdeDevice Get ADE device
+AutomatedDeviceEnrollmentIntegrationsGetAdeDevice Get ADE device
 
 Get information about a specific Automated Device Enrollment device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetAdeDeviceRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsGetAdeDeviceRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDevice(ctx context.Context, deviceId string) ApiGetAdeDeviceRequest {
-	return ApiGetAdeDeviceRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsGetAdeDevice(ctx context.Context, deviceId string) ApiAutomatedDeviceEnrollmentIntegrationsGetAdeDeviceRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsGetAdeDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -404,7 +404,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDevice(ctx conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDeviceExecute(r ApiGetAdeDeviceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsGetAdeDeviceExecute(r ApiAutomatedDeviceEnrollmentIntegrationsGetAdeDeviceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -412,7 +412,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDeviceExecute(r 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.GetAdeDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsGetAdeDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -478,27 +478,27 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDeviceExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetAdeIntegrationRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	adeTokenId string
 }
 
-func (r ApiGetAdeIntegrationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetAdeIntegrationExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationExecute(r)
 }
 
 /*
-GetAdeIntegration Get ADE integration
+AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration Get ADE integration
 
 This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adeTokenId
- @return ApiGetAdeIntegrationRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeIntegration(ctx context.Context, adeTokenId string) ApiGetAdeIntegrationRequest {
-	return ApiGetAdeIntegrationRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration(ctx context.Context, adeTokenId string) ApiAutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 		adeTokenId: adeTokenId,
@@ -506,14 +506,14 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeIntegration(ctx 
 }
 
 // Execute executes the request
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeIntegrationExecute(r ApiGetAdeIntegrationRequest) (*http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationExecute(r ApiAutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.GetAdeIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -570,7 +570,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeIntegrationExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiListAdeDevicesRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	blueprintId *string
@@ -585,73 +585,73 @@ type ApiListAdeDevicesRequest struct {
 }
 
 // Return results &amp;quot;containing&amp;quot; the specified blueprint id
-func (r ApiListAdeDevicesRequest) BlueprintId(blueprintId string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) BlueprintId(blueprintId string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.blueprintId = &blueprintId
 	return r
 }
 
 // &amp;quot;exact&amp;quot; match on kandji user ID number
-func (r ApiListAdeDevicesRequest) UserId(userId string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) UserId(userId string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.userId = &userId
 	return r
 }
 
 // The ADE token UUID
-func (r ApiListAdeDevicesRequest) DepAccount(depAccount string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) DepAccount(depAccount string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.depAccount = &depAccount
 	return r
 }
 
 // Mac, iPhone, iPad, AppleTV, iPod
-func (r ApiListAdeDevicesRequest) DeviceFamily(deviceFamily string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) DeviceFamily(deviceFamily string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.deviceFamily = &deviceFamily
 	return r
 }
 
 // Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot;
-func (r ApiListAdeDevicesRequest) Model(model string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) Model(model string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.model = &model
 	return r
 }
 
 // OSX, iOS, tvOS
-func (r ApiListAdeDevicesRequest) Os(os string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) Os(os string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.os = &os
 	return r
 }
 
 // The automated device enrollment profile assignment status - assigned, empty, pushed, removed
-func (r ApiListAdeDevicesRequest) ProfileStatus(profileStatus string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) ProfileStatus(profileStatus string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.profileStatus = &profileStatus
 	return r
 }
 
 // Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
-func (r ApiListAdeDevicesRequest) SerialNumber(serialNumber string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) SerialNumber(serialNumber string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.serialNumber = &serialNumber
 	return r
 }
 
 // Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page.
-func (r ApiListAdeDevicesRequest) Page(page string) ApiListAdeDevicesRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) Page(page string) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiListAdeDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListAdeDevicesExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsListAdeDevicesExecute(r)
 }
 
 /*
-ListAdeDevices List ADE devices
+AutomatedDeviceEnrollmentIntegrationsListAdeDevices List ADE devices
 
 Get a list of Automated Device Enrollment devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAdeDevicesRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevices(ctx context.Context) ApiListAdeDevicesRequest {
-	return ApiListAdeDevicesRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsListAdeDevices(ctx context.Context) ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -659,7 +659,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevices(ctx con
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsListAdeDevicesExecute(r ApiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -667,7 +667,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.ListAdeDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsListAdeDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -769,39 +769,39 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListAdeIntegrationsRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 }
 
-func (r ApiListAdeIntegrationsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ListAdeIntegrationsExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsExecute(r)
 }
 
 /*
-ListAdeIntegrations List ADE integrations
+AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations List ADE integrations
 
 This request returns a list of configured ADE integrations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListAdeIntegrationsRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeIntegrations(ctx context.Context) ApiListAdeIntegrationsRequest {
-	return ApiListAdeIntegrationsRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations(ctx context.Context) ApiAutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeIntegrationsExecute(r ApiListAdeIntegrationsRequest) (*http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsExecute(r ApiAutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.ListAdeIntegrations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -857,7 +857,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeIntegrationsExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiListDevicesAssociatedToAdeTokenRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	adeTokenId string
@@ -865,17 +865,17 @@ type ApiListDevicesAssociatedToAdeTokenRequest struct {
 }
 
 // Use the &lt;code&gt;page&lt;/code&gt; parameter to page through results or to request a specific page. By default, if a page is not specified, page 1 is returned. Note: 300 device records are returned per page of results. Alternatively, the &lt;code&gt;next&lt;/code&gt; and &lt;code&gt;previous&lt;/code&gt; key attributes in the response can be used to request the next page of results or return to the previous page.
-func (r ApiListDevicesAssociatedToAdeTokenRequest) Page(page string) ApiListDevicesAssociatedToAdeTokenRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest) Page(page string) ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiListDevicesAssociatedToAdeTokenRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListDevicesAssociatedToAdeTokenExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenExecute(r)
 }
 
 /*
-ListDevicesAssociatedToAdeToken List devices associated to ADE token
+AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken List devices associated to ADE token
 
 <p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p>
 <p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>
@@ -883,10 +883,10 @@ ListDevicesAssociatedToAdeToken List devices associated to ADE token
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adeTokenId
- @return ApiListDevicesAssociatedToAdeTokenRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedToAdeToken(ctx context.Context, adeTokenId string) ApiListDevicesAssociatedToAdeTokenRequest {
-	return ApiListDevicesAssociatedToAdeTokenRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken(ctx context.Context, adeTokenId string) ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest{
 		ApiService: a,
 		ctx: ctx,
 		adeTokenId: adeTokenId,
@@ -895,7 +895,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedT
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedToAdeTokenExecute(r ApiListDevicesAssociatedToAdeTokenRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenExecute(r ApiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -903,7 +903,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedT
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.ListDevicesAssociatedToAdeToken")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -972,7 +972,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedT
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRenewAdeIntegrationRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	adeTokenId string
@@ -982,43 +982,43 @@ type ApiRenewAdeIntegrationRequest struct {
 	file *os.File
 }
 
-func (r ApiRenewAdeIntegrationRequest) BlueprintId(blueprintId string) ApiRenewAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest) BlueprintId(blueprintId string) ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest {
 	r.blueprintId = &blueprintId
 	return r
 }
 
-func (r ApiRenewAdeIntegrationRequest) Phone(phone string) ApiRenewAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest) Phone(phone string) ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest {
 	r.phone = &phone
 	return r
 }
 
-func (r ApiRenewAdeIntegrationRequest) Email(email string) ApiRenewAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest) Email(email string) ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest {
 	r.email = &email
 	return r
 }
 
 // This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
-func (r ApiRenewAdeIntegrationRequest) File(file *os.File) ApiRenewAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest) File(file *os.File) ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest {
 	r.file = file
 	return r
 }
 
-func (r ApiRenewAdeIntegrationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.RenewAdeIntegrationExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationExecute(r)
 }
 
 /*
-RenewAdeIntegration Renew ADE integration
+AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration Renew ADE integration
 
 <p>This request will renew an existing ADE integration.</p>
 <p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adeTokenId
- @return ApiRenewAdeIntegrationRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegration(ctx context.Context, adeTokenId string) ApiRenewAdeIntegrationRequest {
-	return ApiRenewAdeIntegrationRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration(ctx context.Context, adeTokenId string) ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 		adeTokenId: adeTokenId,
@@ -1026,14 +1026,14 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegration(ct
 }
 
 // Execute executes the request
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegrationExecute(r ApiRenewAdeIntegrationRequest) (*http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationExecute(r ApiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.RenewAdeIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1120,24 +1120,24 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegrationExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateAdeDeviceRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiUpdateAdeDeviceRequest) Body(body string) ApiUpdateAdeDeviceRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest) Body(body string) ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateAdeDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UpdateAdeDeviceExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceExecute(r)
 }
 
 /*
-UpdateAdeDevice Update ADE device
+AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice Update ADE device
 
 <p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -1145,10 +1145,10 @@ UpdateAdeDevice Update ADE device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiUpdateAdeDeviceRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDevice(ctx context.Context, deviceId string) ApiUpdateAdeDeviceRequest {
-	return ApiUpdateAdeDeviceRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice(ctx context.Context, deviceId string) ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1157,7 +1157,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDevice(ctx co
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDeviceExecute(r ApiUpdateAdeDeviceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceExecute(r ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1165,7 +1165,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDeviceExecute
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.UpdateAdeDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1233,34 +1233,34 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDeviceExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateAdeIntegrationRequest struct {
+type ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest struct {
 	ctx context.Context
 	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
 	adeTokenId string
 	body *string
 }
 
-func (r ApiUpdateAdeIntegrationRequest) Body(body string) ApiUpdateAdeIntegrationRequest {
+func (r ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest) Body(body string) ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateAdeIntegrationRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UpdateAdeIntegrationExecute(r)
+func (r ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationExecute(r)
 }
 
 /*
-UpdateAdeIntegration Update ADE integration
+AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration Update ADE integration
 
 <p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p>
 <p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adeTokenId
- @return ApiUpdateAdeIntegrationRequest
+ @return ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest
 */
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeIntegration(ctx context.Context, adeTokenId string) ApiUpdateAdeIntegrationRequest {
-	return ApiUpdateAdeIntegrationRequest{
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration(ctx context.Context, adeTokenId string) ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest {
+	return ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest{
 		ApiService: a,
 		ctx: ctx,
 		adeTokenId: adeTokenId,
@@ -1268,14 +1268,14 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeIntegration(c
 }
 
 // Execute executes the request
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeIntegrationExecute(r ApiUpdateAdeIntegrationRequest) (*http.Response, error) {
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationExecute(r ApiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.UpdateAdeIntegration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

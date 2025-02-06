@@ -23,26 +23,26 @@ import (
 // SelfServiceAPIService SelfServiceAPI service
 type SelfServiceAPIService service
 
-type ApiListSelfServiceCategoriesRequest struct {
+type ApiSelfServiceListSelfServiceCategoriesRequest struct {
 	ctx context.Context
 	ApiService *SelfServiceAPIService
 }
 
-func (r ApiListSelfServiceCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListSelfServiceCategoriesExecute(r)
+func (r ApiSelfServiceListSelfServiceCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.SelfServiceListSelfServiceCategoriesExecute(r)
 }
 
 /*
-ListSelfServiceCategories List Self Service Categories
+SelfServiceListSelfServiceCategories List Self Service Categories
 
 <p>This endpoint retrieves a list of self-service categories and their associated IDs.</p>
 <p>If you are planning to make a Library item available in Self Service under a specific category, you can call this endpoint to get the category ID and then use that ID when creating or updating the library item via the Kandji API.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListSelfServiceCategoriesRequest
+ @return ApiSelfServiceListSelfServiceCategoriesRequest
 */
-func (a *SelfServiceAPIService) ListSelfServiceCategories(ctx context.Context) ApiListSelfServiceCategoriesRequest {
-	return ApiListSelfServiceCategoriesRequest{
+func (a *SelfServiceAPIService) SelfServiceListSelfServiceCategories(ctx context.Context) ApiSelfServiceListSelfServiceCategoriesRequest {
+	return ApiSelfServiceListSelfServiceCategoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -50,7 +50,7 @@ func (a *SelfServiceAPIService) ListSelfServiceCategories(ctx context.Context) A
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SelfServiceAPIService) ListSelfServiceCategoriesExecute(r ApiListSelfServiceCategoriesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SelfServiceAPIService) SelfServiceListSelfServiceCategoriesExecute(r ApiSelfServiceListSelfServiceCategoriesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -58,7 +58,7 @@ func (a *SelfServiceAPIService) ListSelfServiceCategoriesExecute(r ApiListSelfSe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SelfServiceAPIService.ListSelfServiceCategories")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SelfServiceAPIService.SelfServiceListSelfServiceCategories")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

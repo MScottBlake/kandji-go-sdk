@@ -24,7 +24,7 @@ import (
 // CustomAppsAPIService CustomAppsAPI service
 type CustomAppsAPIService service
 
-type ApiCreateCustomAppRequest struct {
+type ApiCustomAppsCreateCustomAppRequest struct {
 	ctx context.Context
 	ApiService *CustomAppsAPIService
 	name *string
@@ -37,62 +37,62 @@ type ApiCreateCustomAppRequest struct {
 }
 
 // (Required) The name for this Custom App
-func (r ApiCreateCustomAppRequest) Name(name string) ApiCreateCustomAppRequest {
+func (r ApiCustomAppsCreateCustomAppRequest) Name(name string) ApiCustomAppsCreateCustomAppRequest {
 	r.name = &name
 	return r
 }
 
 // (Required) The S3 key from the &lt;code&gt;Upload Custom App&lt;/code&gt; endpont used to upload the custom app file.
-func (r ApiCreateCustomAppRequest) FileKey(fileKey string) ApiCreateCustomAppRequest {
+func (r ApiCustomAppsCreateCustomAppRequest) FileKey(fileKey string) ApiCustomAppsCreateCustomAppRequest {
 	r.fileKey = &fileKey
 	return r
 }
 
 // (Required) Options are package, zip, image
-func (r ApiCreateCustomAppRequest) InstallType(installType string) ApiCreateCustomAppRequest {
+func (r ApiCustomAppsCreateCustomAppRequest) InstallType(installType string) ApiCustomAppsCreateCustomAppRequest {
 	r.installType = &installType
 	return r
 }
 
 // (Required) Options are install_once, continuously_enforce, no_enforcement
-func (r ApiCreateCustomAppRequest) InstallEnforcement(installEnforcement string) ApiCreateCustomAppRequest {
+func (r ApiCustomAppsCreateCustomAppRequest) InstallEnforcement(installEnforcement string) ApiCustomAppsCreateCustomAppRequest {
 	r.installEnforcement = &installEnforcement
 	return r
 }
 
 // (Optional, default&#x3D;false) Displays this app in Self Service
-func (r ApiCreateCustomAppRequest) ShowInSelfService(showInSelfService string) ApiCreateCustomAppRequest {
+func (r ApiCustomAppsCreateCustomAppRequest) ShowInSelfService(showInSelfService string) ApiCustomAppsCreateCustomAppRequest {
 	r.showInSelfService = &showInSelfService
 	return r
 }
 
 // (Required for show_in_self_service&#x3D;true) Self Service Category (by ID) to display app in
-func (r ApiCreateCustomAppRequest) SelfServiceCategoryId(selfServiceCategoryId string) ApiCreateCustomAppRequest {
+func (r ApiCustomAppsCreateCustomAppRequest) SelfServiceCategoryId(selfServiceCategoryId string) ApiCustomAppsCreateCustomAppRequest {
 	r.selfServiceCategoryId = &selfServiceCategoryId
 	return r
 }
 
 // (Optional, default&#x3D;false) Adds recommended flag to app in Self Service
-func (r ApiCreateCustomAppRequest) SelfServiceRecommended(selfServiceRecommended string) ApiCreateCustomAppRequest {
+func (r ApiCustomAppsCreateCustomAppRequest) SelfServiceRecommended(selfServiceRecommended string) ApiCustomAppsCreateCustomAppRequest {
 	r.selfServiceRecommended = &selfServiceRecommended
 	return r
 }
 
-func (r ApiCreateCustomAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CreateCustomAppExecute(r)
+func (r ApiCustomAppsCreateCustomAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomAppsCreateCustomAppExecute(r)
 }
 
 /*
-CreateCustomApp Create Custom App
+CustomAppsCreateCustomApp Create Custom App
 
 <p>This request allows you to create a custom app in the Kandji library.</p>
 <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateCustomAppRequest
+ @return ApiCustomAppsCreateCustomAppRequest
 */
-func (a *CustomAppsAPIService) CreateCustomApp(ctx context.Context) ApiCreateCustomAppRequest {
-	return ApiCreateCustomAppRequest{
+func (a *CustomAppsAPIService) CustomAppsCreateCustomApp(ctx context.Context) ApiCustomAppsCreateCustomAppRequest {
+	return ApiCustomAppsCreateCustomAppRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -100,7 +100,7 @@ func (a *CustomAppsAPIService) CreateCustomApp(ctx context.Context) ApiCreateCus
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAppsAPIService) CreateCustomAppExecute(r ApiCreateCustomAppRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAppsAPIService) CustomAppsCreateCustomAppExecute(r ApiCustomAppsCreateCustomAppRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -108,7 +108,7 @@ func (a *CustomAppsAPIService) CreateCustomAppExecute(r ApiCreateCustomAppReques
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.CreateCustomApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.CustomAppsCreateCustomApp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -201,18 +201,18 @@ func (a *CustomAppsAPIService) CreateCustomAppExecute(r ApiCreateCustomAppReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteCustomAppRequest struct {
+type ApiCustomAppsDeleteCustomAppRequest struct {
 	ctx context.Context
 	ApiService *CustomAppsAPIService
 	libraryItemId string
 }
 
-func (r ApiDeleteCustomAppRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteCustomAppExecute(r)
+func (r ApiCustomAppsDeleteCustomAppRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CustomAppsDeleteCustomAppExecute(r)
 }
 
 /*
-DeleteCustomApp Delete Custom App
+CustomAppsDeleteCustomApp Delete Custom App
 
 <p>NOTICE: This is permanent so be careful.</p>
 <p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>
@@ -221,10 +221,10 @@ DeleteCustomApp Delete Custom App
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiDeleteCustomAppRequest
+ @return ApiCustomAppsDeleteCustomAppRequest
 */
-func (a *CustomAppsAPIService) DeleteCustomApp(ctx context.Context, libraryItemId string) ApiDeleteCustomAppRequest {
-	return ApiDeleteCustomAppRequest{
+func (a *CustomAppsAPIService) CustomAppsDeleteCustomApp(ctx context.Context, libraryItemId string) ApiCustomAppsDeleteCustomAppRequest {
+	return ApiCustomAppsDeleteCustomAppRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -232,14 +232,14 @@ func (a *CustomAppsAPIService) DeleteCustomApp(ctx context.Context, libraryItemI
 }
 
 // Execute executes the request
-func (a *CustomAppsAPIService) DeleteCustomAppExecute(r ApiDeleteCustomAppRequest) (*http.Response, error) {
+func (a *CustomAppsAPIService) CustomAppsDeleteCustomAppExecute(r ApiCustomAppsDeleteCustomAppRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.DeleteCustomApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.CustomAppsDeleteCustomApp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -306,18 +306,18 @@ func (a *CustomAppsAPIService) DeleteCustomAppExecute(r ApiDeleteCustomAppReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetCustomAppRequest struct {
+type ApiCustomAppsGetCustomAppRequest struct {
 	ctx context.Context
 	ApiService *CustomAppsAPIService
 	libraryItemId string
 }
 
-func (r ApiGetCustomAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetCustomAppExecute(r)
+func (r ApiCustomAppsGetCustomAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomAppsGetCustomAppExecute(r)
 }
 
 /*
-GetCustomApp Get Custom App
+CustomAppsGetCustomApp Get Custom App
 
 <p>This endpoint retrieves details about a specific custom app from the Kandji library.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -325,10 +325,10 @@ GetCustomApp Get Custom App
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiGetCustomAppRequest
+ @return ApiCustomAppsGetCustomAppRequest
 */
-func (a *CustomAppsAPIService) GetCustomApp(ctx context.Context, libraryItemId string) ApiGetCustomAppRequest {
-	return ApiGetCustomAppRequest{
+func (a *CustomAppsAPIService) CustomAppsGetCustomApp(ctx context.Context, libraryItemId string) ApiCustomAppsGetCustomAppRequest {
+	return ApiCustomAppsGetCustomAppRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -337,7 +337,7 @@ func (a *CustomAppsAPIService) GetCustomApp(ctx context.Context, libraryItemId s
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAppsAPIService) GetCustomAppExecute(r ApiGetCustomAppRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAppsAPIService) CustomAppsGetCustomAppExecute(r ApiCustomAppsGetCustomAppRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -345,7 +345,7 @@ func (a *CustomAppsAPIService) GetCustomAppExecute(r ApiGetCustomAppRequest) (ma
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.GetCustomApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.CustomAppsGetCustomApp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -411,32 +411,32 @@ func (a *CustomAppsAPIService) GetCustomAppExecute(r ApiGetCustomAppRequest) (ma
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListCustomAppsRequest struct {
+type ApiCustomAppsListCustomAppsRequest struct {
 	ctx context.Context
 	ApiService *CustomAppsAPIService
 	page *string
 }
 
 // Optional page number. Used when results exceed pagination threshold. A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request.
-func (r ApiListCustomAppsRequest) Page(page string) ApiListCustomAppsRequest {
+func (r ApiCustomAppsListCustomAppsRequest) Page(page string) ApiCustomAppsListCustomAppsRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiListCustomAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListCustomAppsExecute(r)
+func (r ApiCustomAppsListCustomAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomAppsListCustomAppsExecute(r)
 }
 
 /*
-ListCustomApps List Custom Apps
+CustomAppsListCustomApps List Custom Apps
 
 This endpoint makes a request to retrieve a list of custom apps from the Kandji library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCustomAppsRequest
+ @return ApiCustomAppsListCustomAppsRequest
 */
-func (a *CustomAppsAPIService) ListCustomApps(ctx context.Context) ApiListCustomAppsRequest {
-	return ApiListCustomAppsRequest{
+func (a *CustomAppsAPIService) CustomAppsListCustomApps(ctx context.Context) ApiCustomAppsListCustomAppsRequest {
+	return ApiCustomAppsListCustomAppsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -444,7 +444,7 @@ func (a *CustomAppsAPIService) ListCustomApps(ctx context.Context) ApiListCustom
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAppsAPIService) ListCustomAppsExecute(r ApiListCustomAppsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAppsAPIService) CustomAppsListCustomAppsExecute(r ApiCustomAppsListCustomAppsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -452,7 +452,7 @@ func (a *CustomAppsAPIService) ListCustomAppsExecute(r ApiListCustomAppsRequest)
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.ListCustomApps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.CustomAppsListCustomApps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -520,7 +520,7 @@ func (a *CustomAppsAPIService) ListCustomAppsExecute(r ApiListCustomAppsRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateCustomAppRequest struct {
+type ApiCustomAppsUpdateCustomAppRequest struct {
 	ctx context.Context
 	ApiService *CustomAppsAPIService
 	libraryItemId string
@@ -529,23 +529,23 @@ type ApiUpdateCustomAppRequest struct {
 }
 
 // Renaming a Custom App
-func (r ApiUpdateCustomAppRequest) Name(name string) ApiUpdateCustomAppRequest {
+func (r ApiCustomAppsUpdateCustomAppRequest) Name(name string) ApiCustomAppsUpdateCustomAppRequest {
 	r.name = &name
 	return r
 }
 
 // (Optional, default&#x3D;true) Whether this Custom App is active and installable
-func (r ApiUpdateCustomAppRequest) Active(active string) ApiUpdateCustomAppRequest {
+func (r ApiCustomAppsUpdateCustomAppRequest) Active(active string) ApiCustomAppsUpdateCustomAppRequest {
 	r.active = &active
 	return r
 }
 
-func (r ApiUpdateCustomAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UpdateCustomAppExecute(r)
+func (r ApiCustomAppsUpdateCustomAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomAppsUpdateCustomAppExecute(r)
 }
 
 /*
-UpdateCustomApp Update Custom App
+CustomAppsUpdateCustomApp Update Custom App
 
 <p>This request allows you to update a custom app in the Kandji library.</p>
 <p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
@@ -554,10 +554,10 @@ UpdateCustomApp Update Custom App
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiUpdateCustomAppRequest
+ @return ApiCustomAppsUpdateCustomAppRequest
 */
-func (a *CustomAppsAPIService) UpdateCustomApp(ctx context.Context, libraryItemId string) ApiUpdateCustomAppRequest {
-	return ApiUpdateCustomAppRequest{
+func (a *CustomAppsAPIService) CustomAppsUpdateCustomApp(ctx context.Context, libraryItemId string) ApiCustomAppsUpdateCustomAppRequest {
+	return ApiCustomAppsUpdateCustomAppRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -566,7 +566,7 @@ func (a *CustomAppsAPIService) UpdateCustomApp(ctx context.Context, libraryItemI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomAppsAPIService) UpdateCustomAppExecute(r ApiUpdateCustomAppRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomAppsAPIService) CustomAppsUpdateCustomAppExecute(r ApiCustomAppsUpdateCustomAppRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -574,7 +574,7 @@ func (a *CustomAppsAPIService) UpdateCustomAppExecute(r ApiUpdateCustomAppReques
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.UpdateCustomApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.CustomAppsUpdateCustomApp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -648,23 +648,23 @@ func (a *CustomAppsAPIService) UpdateCustomAppExecute(r ApiUpdateCustomAppReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUploadCustomAppRequest struct {
+type ApiCustomAppsUploadCustomAppRequest struct {
 	ctx context.Context
 	ApiService *CustomAppsAPIService
 	body *string
 }
 
-func (r ApiUploadCustomAppRequest) Body(body string) ApiUploadCustomAppRequest {
+func (r ApiCustomAppsUploadCustomAppRequest) Body(body string) ApiCustomAppsUploadCustomAppRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUploadCustomAppRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UploadCustomAppExecute(r)
+func (r ApiCustomAppsUploadCustomAppRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CustomAppsUploadCustomAppExecute(r)
 }
 
 /*
-UploadCustomApp Upload Custom App
+CustomAppsUploadCustomApp Upload Custom App
 
 <p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p>
 <p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p>
@@ -672,24 +672,24 @@ UploadCustomApp Upload Custom App
 <p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUploadCustomAppRequest
+ @return ApiCustomAppsUploadCustomAppRequest
 */
-func (a *CustomAppsAPIService) UploadCustomApp(ctx context.Context) ApiUploadCustomAppRequest {
-	return ApiUploadCustomAppRequest{
+func (a *CustomAppsAPIService) CustomAppsUploadCustomApp(ctx context.Context) ApiCustomAppsUploadCustomAppRequest {
+	return ApiCustomAppsUploadCustomAppRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomAppsAPIService) UploadCustomAppExecute(r ApiUploadCustomAppRequest) (*http.Response, error) {
+func (a *CustomAppsAPIService) CustomAppsUploadCustomAppExecute(r ApiCustomAppsUploadCustomAppRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.UploadCustomApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomAppsAPIService.CustomAppsUploadCustomApp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

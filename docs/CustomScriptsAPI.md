@@ -4,17 +4,17 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCustomScript**](CustomScriptsAPI.md#CreateCustomScript) | **Post** /api/v1/library/custom-scripts | Create Custom Script
-[**DeleteCustomScript**](CustomScriptsAPI.md#DeleteCustomScript) | **Delete** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
-[**GetCustomScript**](CustomScriptsAPI.md#GetCustomScript) | **Get** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
-[**ListCustomScripts**](CustomScriptsAPI.md#ListCustomScripts) | **Get** /api/v1/library/custom-scripts | List Custom Scripts
-[**UpdateCustomScript**](CustomScriptsAPI.md#UpdateCustomScript) | **Patch** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
+[**CustomScriptsCreateCustomScript**](CustomScriptsAPI.md#CustomScriptsCreateCustomScript) | **Post** /api/v1/library/custom-scripts | Create Custom Script
+[**CustomScriptsDeleteCustomScript**](CustomScriptsAPI.md#CustomScriptsDeleteCustomScript) | **Delete** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
+[**CustomScriptsGetCustomScript**](CustomScriptsAPI.md#CustomScriptsGetCustomScript) | **Get** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
+[**CustomScriptsListCustomScripts**](CustomScriptsAPI.md#CustomScriptsListCustomScripts) | **Get** /api/v1/library/custom-scripts | List Custom Scripts
+[**CustomScriptsUpdateCustomScript**](CustomScriptsAPI.md#CustomScriptsUpdateCustomScript) | **Patch** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
 
 
 
-## CreateCustomScript
+## CustomScriptsCreateCustomScript
 
-> map[string]interface{} CreateCustomScript(ctx).Body(body).Execute()
+> map[string]interface{} CustomScriptsCreateCustomScript(ctx).Body(body).Execute()
 
 Create Custom Script
 
@@ -37,13 +37,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomScriptsAPI.CreateCustomScript(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.CustomScriptsAPI.CustomScriptsCreateCustomScript(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.CreateCustomScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.CustomScriptsCreateCustomScript``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateCustomScript`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.CreateCustomScript`: %v\n", resp)
+	// response from `CustomScriptsCreateCustomScript`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.CustomScriptsCreateCustomScript`: %v\n", resp)
 }
 ```
 
@@ -53,7 +53,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateCustomScriptRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomScriptsCreateCustomScriptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteCustomScript
+## CustomScriptsDeleteCustomScript
 
-> DeleteCustomScript(ctx, libraryItemId).Execute()
+> CustomScriptsDeleteCustomScript(ctx, libraryItemId).Execute()
 
 Delete Custom Script
 
@@ -103,9 +103,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomScriptsAPI.DeleteCustomScript(context.Background(), libraryItemId).Execute()
+	r, err := apiClient.CustomScriptsAPI.CustomScriptsDeleteCustomScript(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.DeleteCustomScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.CustomScriptsDeleteCustomScript``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteCustomScriptRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomScriptsDeleteCustomScriptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -146,9 +146,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomScript
+## CustomScriptsGetCustomScript
 
-> map[string]interface{} GetCustomScript(ctx, libraryItemId).Execute()
+> map[string]interface{} CustomScriptsGetCustomScript(ctx, libraryItemId).Execute()
 
 Get Custom Script
 
@@ -171,13 +171,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomScriptsAPI.GetCustomScript(context.Background(), libraryItemId).Execute()
+	resp, r, err := apiClient.CustomScriptsAPI.CustomScriptsGetCustomScript(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.GetCustomScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.CustomScriptsGetCustomScript``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCustomScript`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.GetCustomScript`: %v\n", resp)
+	// response from `CustomScriptsGetCustomScript`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.CustomScriptsGetCustomScript`: %v\n", resp)
 }
 ```
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomScriptRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomScriptsGetCustomScriptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -216,9 +216,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListCustomScripts
+## CustomScriptsListCustomScripts
 
-> map[string]interface{} ListCustomScripts(ctx).Page(page).Execute()
+> map[string]interface{} CustomScriptsListCustomScripts(ctx).Page(page).Execute()
 
 List Custom Scripts
 
@@ -241,13 +241,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomScriptsAPI.ListCustomScripts(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.CustomScriptsAPI.CustomScriptsListCustomScripts(context.Background()).Page(page).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.ListCustomScripts``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.CustomScriptsListCustomScripts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListCustomScripts`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.ListCustomScripts`: %v\n", resp)
+	// response from `CustomScriptsListCustomScripts`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.CustomScriptsListCustomScripts`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListCustomScriptsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomScriptsListCustomScriptsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,9 +282,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateCustomScript
+## CustomScriptsUpdateCustomScript
 
-> map[string]interface{} UpdateCustomScript(ctx, libraryItemId).Body(body).Execute()
+> map[string]interface{} CustomScriptsUpdateCustomScript(ctx, libraryItemId).Body(body).Execute()
 
 Update Custom Script
 
@@ -308,13 +308,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomScriptsAPI.UpdateCustomScript(context.Background(), libraryItemId).Body(body).Execute()
+	resp, r, err := apiClient.CustomScriptsAPI.CustomScriptsUpdateCustomScript(context.Background(), libraryItemId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.UpdateCustomScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomScriptsAPI.CustomScriptsUpdateCustomScript``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateCustomScript`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.UpdateCustomScript`: %v\n", resp)
+	// response from `CustomScriptsUpdateCustomScript`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomScriptsAPI.CustomScriptsUpdateCustomScript`: %v\n", resp)
 }
 ```
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateCustomScriptRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomScriptsUpdateCustomScriptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

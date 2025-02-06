@@ -24,18 +24,18 @@ import (
 // DeviceSecretsAPIService DeviceSecretsAPI service
 type DeviceSecretsAPIService service
 
-type ApiGetActivationLockBypassCodeRequest struct {
+type ApiDeviceSecretsGetActivationLockBypassCodeRequest struct {
 	ctx context.Context
 	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
-func (r ApiGetActivationLockBypassCodeRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetActivationLockBypassCodeExecute(r)
+func (r ApiDeviceSecretsGetActivationLockBypassCodeRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceSecretsGetActivationLockBypassCodeExecute(r)
 }
 
 /*
-GetActivationLockBypassCode Get Activation Lock Bypass Code
+DeviceSecretsGetActivationLockBypassCode Get Activation Lock Bypass Code
 
 <p>This request allows you to retrieve the Activation Lock Bypass code.</p>
 <p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p>
@@ -45,10 +45,10 @@ GetActivationLockBypassCode Get Activation Lock Bypass Code
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetActivationLockBypassCodeRequest
+ @return ApiDeviceSecretsGetActivationLockBypassCodeRequest
 */
-func (a *DeviceSecretsAPIService) GetActivationLockBypassCode(ctx context.Context, deviceId string) ApiGetActivationLockBypassCodeRequest {
-	return ApiGetActivationLockBypassCodeRequest{
+func (a *DeviceSecretsAPIService) DeviceSecretsGetActivationLockBypassCode(ctx context.Context, deviceId string) ApiDeviceSecretsGetActivationLockBypassCodeRequest {
+	return ApiDeviceSecretsGetActivationLockBypassCodeRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -57,7 +57,7 @@ func (a *DeviceSecretsAPIService) GetActivationLockBypassCode(ctx context.Contex
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceSecretsAPIService) GetActivationLockBypassCodeExecute(r ApiGetActivationLockBypassCodeRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceSecretsAPIService) DeviceSecretsGetActivationLockBypassCodeExecute(r ApiDeviceSecretsGetActivationLockBypassCodeRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -65,7 +65,7 @@ func (a *DeviceSecretsAPIService) GetActivationLockBypassCodeExecute(r ApiGetAct
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetActivationLockBypassCode")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.DeviceSecretsGetActivationLockBypassCode")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -131,18 +131,18 @@ func (a *DeviceSecretsAPIService) GetActivationLockBypassCodeExecute(r ApiGetAct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetFilevaultRecoveryKeyRequest struct {
+type ApiDeviceSecretsGetFilevaultRecoveryKeyRequest struct {
 	ctx context.Context
 	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
-func (r ApiGetFilevaultRecoveryKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetFilevaultRecoveryKeyExecute(r)
+func (r ApiDeviceSecretsGetFilevaultRecoveryKeyRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceSecretsGetFilevaultRecoveryKeyExecute(r)
 }
 
 /*
-GetFilevaultRecoveryKey Get FileVault Recovery Key
+DeviceSecretsGetFilevaultRecoveryKey Get FileVault Recovery Key
 
 <p>This request allows you to retrieve the FileVault Recovery key for a macOS device.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -150,10 +150,10 @@ GetFilevaultRecoveryKey Get FileVault Recovery Key
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetFilevaultRecoveryKeyRequest
+ @return ApiDeviceSecretsGetFilevaultRecoveryKeyRequest
 */
-func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKey(ctx context.Context, deviceId string) ApiGetFilevaultRecoveryKeyRequest {
-	return ApiGetFilevaultRecoveryKeyRequest{
+func (a *DeviceSecretsAPIService) DeviceSecretsGetFilevaultRecoveryKey(ctx context.Context, deviceId string) ApiDeviceSecretsGetFilevaultRecoveryKeyRequest {
+	return ApiDeviceSecretsGetFilevaultRecoveryKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -162,7 +162,7 @@ func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKey(ctx context.Context, d
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKeyExecute(r ApiGetFilevaultRecoveryKeyRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceSecretsAPIService) DeviceSecretsGetFilevaultRecoveryKeyExecute(r ApiDeviceSecretsGetFilevaultRecoveryKeyRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -170,7 +170,7 @@ func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKeyExecute(r ApiGetFilevau
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetFilevaultRecoveryKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.DeviceSecretsGetFilevaultRecoveryKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,18 +236,18 @@ func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKeyExecute(r ApiGetFilevau
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRecoveryLockPasswordRequest struct {
+type ApiDeviceSecretsGetRecoveryLockPasswordRequest struct {
 	ctx context.Context
 	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
-func (r ApiGetRecoveryLockPasswordRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetRecoveryLockPasswordExecute(r)
+func (r ApiDeviceSecretsGetRecoveryLockPasswordRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceSecretsGetRecoveryLockPasswordExecute(r)
 }
 
 /*
-GetRecoveryLockPassword Get Recovery Lock Password
+DeviceSecretsGetRecoveryLockPassword Get Recovery Lock Password
 
 <p>This request returns the Recovery Lock password for a Mac with an Apple Silicon processor and the legacy EFI firmware password for a Mac with an Intel processor.</p>
 <p>For more details on setting and managing Recovery passwords, see this <a href=&quot;https://support.kandji.io/support/solutions/articles/72000560472-configure-the-recovery-password-library-item&quot;>Kandji support article</a>.</p>
@@ -256,10 +256,10 @@ GetRecoveryLockPassword Get Recovery Lock Password
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetRecoveryLockPasswordRequest
+ @return ApiDeviceSecretsGetRecoveryLockPasswordRequest
 */
-func (a *DeviceSecretsAPIService) GetRecoveryLockPassword(ctx context.Context, deviceId string) ApiGetRecoveryLockPasswordRequest {
-	return ApiGetRecoveryLockPasswordRequest{
+func (a *DeviceSecretsAPIService) DeviceSecretsGetRecoveryLockPassword(ctx context.Context, deviceId string) ApiDeviceSecretsGetRecoveryLockPasswordRequest {
+	return ApiDeviceSecretsGetRecoveryLockPasswordRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -268,7 +268,7 @@ func (a *DeviceSecretsAPIService) GetRecoveryLockPassword(ctx context.Context, d
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceSecretsAPIService) GetRecoveryLockPasswordExecute(r ApiGetRecoveryLockPasswordRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceSecretsAPIService) DeviceSecretsGetRecoveryLockPasswordExecute(r ApiDeviceSecretsGetRecoveryLockPasswordRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -276,7 +276,7 @@ func (a *DeviceSecretsAPIService) GetRecoveryLockPasswordExecute(r ApiGetRecover
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetRecoveryLockPassword")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.DeviceSecretsGetRecoveryLockPassword")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -342,18 +342,18 @@ func (a *DeviceSecretsAPIService) GetRecoveryLockPasswordExecute(r ApiGetRecover
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUnlockPinRequest struct {
+type ApiDeviceSecretsGetUnlockPinRequest struct {
 	ctx context.Context
 	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
-func (r ApiGetUnlockPinRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetUnlockPinExecute(r)
+func (r ApiDeviceSecretsGetUnlockPinRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceSecretsGetUnlockPinExecute(r)
 }
 
 /*
-GetUnlockPin Get Unlock Pin
+DeviceSecretsGetUnlockPin Get Unlock Pin
 
 <p>This request allows you to retrieve the device unlock pin for a macOS device.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -361,10 +361,10 @@ GetUnlockPin Get Unlock Pin
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetUnlockPinRequest
+ @return ApiDeviceSecretsGetUnlockPinRequest
 */
-func (a *DeviceSecretsAPIService) GetUnlockPin(ctx context.Context, deviceId string) ApiGetUnlockPinRequest {
-	return ApiGetUnlockPinRequest{
+func (a *DeviceSecretsAPIService) DeviceSecretsGetUnlockPin(ctx context.Context, deviceId string) ApiDeviceSecretsGetUnlockPinRequest {
+	return ApiDeviceSecretsGetUnlockPinRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -373,7 +373,7 @@ func (a *DeviceSecretsAPIService) GetUnlockPin(ctx context.Context, deviceId str
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceSecretsAPIService) GetUnlockPinExecute(r ApiGetUnlockPinRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceSecretsAPIService) DeviceSecretsGetUnlockPinExecute(r ApiDeviceSecretsGetUnlockPinRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -381,7 +381,7 @@ func (a *DeviceSecretsAPIService) GetUnlockPinExecute(r ApiGetUnlockPinRequest) 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetUnlockPin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.DeviceSecretsGetUnlockPin")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

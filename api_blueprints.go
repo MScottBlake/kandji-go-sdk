@@ -24,24 +24,24 @@ import (
 // BlueprintsAPIService BlueprintsAPI service
 type BlueprintsAPIService service
 
-type ApiAssignLibraryItemRequest struct {
+type ApiBlueprintsAssignLibraryItemRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
 	body *string
 }
 
-func (r ApiAssignLibraryItemRequest) Body(body string) ApiAssignLibraryItemRequest {
+func (r ApiBlueprintsAssignLibraryItemRequest) Body(body string) ApiBlueprintsAssignLibraryItemRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiAssignLibraryItemRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.AssignLibraryItemExecute(r)
+func (r ApiBlueprintsAssignLibraryItemRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BlueprintsAssignLibraryItemExecute(r)
 }
 
 /*
-AssignLibraryItem Assign Library Item
+BlueprintsAssignLibraryItem Assign Library Item
 
 <p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -91,10 +91,10 @@ AssignLibraryItem Assign Library Item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
- @return ApiAssignLibraryItemRequest
+ @return ApiBlueprintsAssignLibraryItemRequest
 */
-func (a *BlueprintsAPIService) AssignLibraryItem(ctx context.Context, blueprintId string) ApiAssignLibraryItemRequest {
-	return ApiAssignLibraryItemRequest{
+func (a *BlueprintsAPIService) BlueprintsAssignLibraryItem(ctx context.Context, blueprintId string) ApiBlueprintsAssignLibraryItemRequest {
+	return ApiBlueprintsAssignLibraryItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		blueprintId: blueprintId,
@@ -103,7 +103,7 @@ func (a *BlueprintsAPIService) AssignLibraryItem(ctx context.Context, blueprintI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BlueprintsAPIService) AssignLibraryItemExecute(r ApiAssignLibraryItemRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsAssignLibraryItemExecute(r ApiBlueprintsAssignLibraryItemRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -111,7 +111,7 @@ func (a *BlueprintsAPIService) AssignLibraryItemExecute(r ApiAssignLibraryItemRe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.AssignLibraryItem")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsAssignLibraryItem")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -179,7 +179,7 @@ func (a *BlueprintsAPIService) AssignLibraryItemExecute(r ApiAssignLibraryItemRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCreateBlueprintRequest struct {
+type ApiBlueprintsCreateBlueprintRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	name *string
@@ -191,57 +191,57 @@ type ApiCreateBlueprintRequest struct {
 }
 
 // (required) Set the name of the Blueprint. The name provided must be unique.
-func (r ApiCreateBlueprintRequest) Name(name string) ApiCreateBlueprintRequest {
+func (r ApiBlueprintsCreateBlueprintRequest) Name(name string) ApiBlueprintsCreateBlueprintRequest {
 	r.name = &name
 	return r
 }
 
 // (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal
-func (r ApiCreateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive string) ApiCreateBlueprintRequest {
+func (r ApiBlueprintsCreateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive string) ApiBlueprintsCreateBlueprintRequest {
 	r.enrollmentCodeIsActive = &enrollmentCodeIsActive
 	return r
 }
 
 // Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
-func (r ApiCreateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiCreateBlueprintRequest {
+func (r ApiBlueprintsCreateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiBlueprintsCreateBlueprintRequest {
 	r.enrollmentCodeCode = &enrollmentCodeCode
 	return r
 }
 
 // Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;.
-func (r ApiCreateBlueprintRequest) SourceType(sourceType string) ApiCreateBlueprintRequest {
+func (r ApiBlueprintsCreateBlueprintRequest) SourceType(sourceType string) ApiBlueprintsCreateBlueprintRequest {
 	r.sourceType = &sourceType
 	return r
 }
 
 // Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.
-func (r ApiCreateBlueprintRequest) SourceId(sourceId string) ApiCreateBlueprintRequest {
+func (r ApiBlueprintsCreateBlueprintRequest) SourceId(sourceId string) ApiBlueprintsCreateBlueprintRequest {
 	r.sourceId = &sourceId
 	return r
 }
 
 // Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt;
-func (r ApiCreateBlueprintRequest) Type_(type_ string) ApiCreateBlueprintRequest {
+func (r ApiBlueprintsCreateBlueprintRequest) Type_(type_ string) ApiBlueprintsCreateBlueprintRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiCreateBlueprintRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CreateBlueprintExecute(r)
+func (r ApiBlueprintsCreateBlueprintRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BlueprintsCreateBlueprintExecute(r)
 }
 
 /*
-CreateBlueprint Create Blueprint
+BlueprintsCreateBlueprint Create Blueprint
 
 <p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p>
 <p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>
 <p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateBlueprintRequest
+ @return ApiBlueprintsCreateBlueprintRequest
 */
-func (a *BlueprintsAPIService) CreateBlueprint(ctx context.Context) ApiCreateBlueprintRequest {
-	return ApiCreateBlueprintRequest{
+func (a *BlueprintsAPIService) BlueprintsCreateBlueprint(ctx context.Context) ApiBlueprintsCreateBlueprintRequest {
+	return ApiBlueprintsCreateBlueprintRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -249,7 +249,7 @@ func (a *BlueprintsAPIService) CreateBlueprint(ctx context.Context) ApiCreateBlu
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsCreateBlueprintExecute(r ApiBlueprintsCreateBlueprintRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -257,7 +257,7 @@ func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintReques
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.CreateBlueprint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsCreateBlueprint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -356,18 +356,18 @@ func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteBlueprintRequest struct {
+type ApiBlueprintsDeleteBlueprintRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
 }
 
-func (r ApiDeleteBlueprintRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteBlueprintExecute(r)
+func (r ApiBlueprintsDeleteBlueprintRequest) Execute() (*http.Response, error) {
+	return r.ApiService.BlueprintsDeleteBlueprintExecute(r)
 }
 
 /*
-DeleteBlueprint Delete Blueprint
+BlueprintsDeleteBlueprint Delete Blueprint
 
 <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
 <p>This is a HIGHLY destructive action.</p>
@@ -377,10 +377,10 @@ DeleteBlueprint Delete Blueprint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
- @return ApiDeleteBlueprintRequest
+ @return ApiBlueprintsDeleteBlueprintRequest
 */
-func (a *BlueprintsAPIService) DeleteBlueprint(ctx context.Context, blueprintId string) ApiDeleteBlueprintRequest {
-	return ApiDeleteBlueprintRequest{
+func (a *BlueprintsAPIService) BlueprintsDeleteBlueprint(ctx context.Context, blueprintId string) ApiBlueprintsDeleteBlueprintRequest {
+	return ApiBlueprintsDeleteBlueprintRequest{
 		ApiService: a,
 		ctx: ctx,
 		blueprintId: blueprintId,
@@ -388,14 +388,14 @@ func (a *BlueprintsAPIService) DeleteBlueprint(ctx context.Context, blueprintId 
 }
 
 // Execute executes the request
-func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintRequest) (*http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsDeleteBlueprintExecute(r ApiBlueprintsDeleteBlueprintRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.DeleteBlueprint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsDeleteBlueprint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -452,18 +452,18 @@ func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetBlueprintRequest struct {
+type ApiBlueprintsGetBlueprintRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
 }
 
-func (r ApiGetBlueprintRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetBlueprintExecute(r)
+func (r ApiBlueprintsGetBlueprintRequest) Execute() (*http.Response, error) {
+	return r.ApiService.BlueprintsGetBlueprintExecute(r)
 }
 
 /*
-GetBlueprint Get Blueprint
+BlueprintsGetBlueprint Get Blueprint
 
 <p>This request returns information about a specific blueprint based on blueprint ID.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -471,10 +471,10 @@ GetBlueprint Get Blueprint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
- @return ApiGetBlueprintRequest
+ @return ApiBlueprintsGetBlueprintRequest
 */
-func (a *BlueprintsAPIService) GetBlueprint(ctx context.Context, blueprintId string) ApiGetBlueprintRequest {
-	return ApiGetBlueprintRequest{
+func (a *BlueprintsAPIService) BlueprintsGetBlueprint(ctx context.Context, blueprintId string) ApiBlueprintsGetBlueprintRequest {
+	return ApiBlueprintsGetBlueprintRequest{
 		ApiService: a,
 		ctx: ctx,
 		blueprintId: blueprintId,
@@ -482,14 +482,14 @@ func (a *BlueprintsAPIService) GetBlueprint(ctx context.Context, blueprintId str
 }
 
 // Execute executes the request
-func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsGetBlueprintExecute(r ApiBlueprintsGetBlueprintRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.GetBlueprint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsGetBlueprint")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -546,7 +546,7 @@ func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetBlueprintTemplatesRequest struct {
+type ApiBlueprintsGetBlueprintTemplatesRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	limit *string
@@ -554,43 +554,43 @@ type ApiGetBlueprintTemplatesRequest struct {
 }
 
 // Number of results to return per page.
-func (r ApiGetBlueprintTemplatesRequest) Limit(limit string) ApiGetBlueprintTemplatesRequest {
+func (r ApiBlueprintsGetBlueprintTemplatesRequest) Limit(limit string) ApiBlueprintsGetBlueprintTemplatesRequest {
 	r.limit = &limit
 	return r
 }
 
 // The initial index from which to return the results.
-func (r ApiGetBlueprintTemplatesRequest) Offset(offset string) ApiGetBlueprintTemplatesRequest {
+func (r ApiBlueprintsGetBlueprintTemplatesRequest) Offset(offset string) ApiBlueprintsGetBlueprintTemplatesRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGetBlueprintTemplatesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetBlueprintTemplatesExecute(r)
+func (r ApiBlueprintsGetBlueprintTemplatesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.BlueprintsGetBlueprintTemplatesExecute(r)
 }
 
 /*
-GetBlueprintTemplates Get Blueprint Templates
+BlueprintsGetBlueprintTemplates Get Blueprint Templates
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBlueprintTemplatesRequest
+ @return ApiBlueprintsGetBlueprintTemplatesRequest
 */
-func (a *BlueprintsAPIService) GetBlueprintTemplates(ctx context.Context) ApiGetBlueprintTemplatesRequest {
-	return ApiGetBlueprintTemplatesRequest{
+func (a *BlueprintsAPIService) BlueprintsGetBlueprintTemplates(ctx context.Context) ApiBlueprintsGetBlueprintTemplatesRequest {
+	return ApiBlueprintsGetBlueprintTemplatesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BlueprintsAPIService) GetBlueprintTemplatesExecute(r ApiGetBlueprintTemplatesRequest) (*http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsGetBlueprintTemplatesExecute(r ApiBlueprintsGetBlueprintTemplatesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.GetBlueprintTemplates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsGetBlueprintTemplates")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -652,7 +652,7 @@ func (a *BlueprintsAPIService) GetBlueprintTemplatesExecute(r ApiGetBlueprintTem
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetManualEnrollmentProfileRequest struct {
+type ApiBlueprintsGetManualEnrollmentProfileRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
@@ -660,17 +660,17 @@ type ApiGetManualEnrollmentProfileRequest struct {
 }
 
 // Use the &lt;code&gt;sso&lt;/code&gt; query parameter, set to &lt;code&gt;true&lt;/code&gt;, to return a URL instead of the manual enrollment profile. This parameter should only be used for blueprints in which &amp;quot;Require Authentication&amp;quot; is configured for Manual Enrollment. The returned URL must be used to authenticate via SSO to receive an enrollment profile.
-func (r ApiGetManualEnrollmentProfileRequest) Sso(sso string) ApiGetManualEnrollmentProfileRequest {
+func (r ApiBlueprintsGetManualEnrollmentProfileRequest) Sso(sso string) ApiBlueprintsGetManualEnrollmentProfileRequest {
 	r.sso = &sso
 	return r
 }
 
-func (r ApiGetManualEnrollmentProfileRequest) Execute() (string, *http.Response, error) {
-	return r.ApiService.GetManualEnrollmentProfileExecute(r)
+func (r ApiBlueprintsGetManualEnrollmentProfileRequest) Execute() (string, *http.Response, error) {
+	return r.ApiService.BlueprintsGetManualEnrollmentProfileExecute(r)
 }
 
 /*
-GetManualEnrollmentProfile Get Manual Enrollment Profile
+BlueprintsGetManualEnrollmentProfile Get Manual Enrollment Profile
 
 <p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p>
 <p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p>
@@ -687,10 +687,10 @@ GetManualEnrollmentProfile Get Manual Enrollment Profile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
- @return ApiGetManualEnrollmentProfileRequest
+ @return ApiBlueprintsGetManualEnrollmentProfileRequest
 */
-func (a *BlueprintsAPIService) GetManualEnrollmentProfile(ctx context.Context, blueprintId string) ApiGetManualEnrollmentProfileRequest {
-	return ApiGetManualEnrollmentProfileRequest{
+func (a *BlueprintsAPIService) BlueprintsGetManualEnrollmentProfile(ctx context.Context, blueprintId string) ApiBlueprintsGetManualEnrollmentProfileRequest {
+	return ApiBlueprintsGetManualEnrollmentProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		blueprintId: blueprintId,
@@ -699,7 +699,7 @@ func (a *BlueprintsAPIService) GetManualEnrollmentProfile(ctx context.Context, b
 
 // Execute executes the request
 //  @return string
-func (a *BlueprintsAPIService) GetManualEnrollmentProfileExecute(r ApiGetManualEnrollmentProfileRequest) (string, *http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsGetManualEnrollmentProfileExecute(r ApiBlueprintsGetManualEnrollmentProfileRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -707,7 +707,7 @@ func (a *BlueprintsAPIService) GetManualEnrollmentProfileExecute(r ApiGetManualE
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.GetManualEnrollmentProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsGetManualEnrollmentProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -776,7 +776,7 @@ func (a *BlueprintsAPIService) GetManualEnrollmentProfileExecute(r ApiGetManualE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListBlueprintsRequest struct {
+type ApiBlueprintsListBlueprintsRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	id *string
@@ -787,49 +787,49 @@ type ApiListBlueprintsRequest struct {
 }
 
 // Look up a specific Blueprint by its ID
-func (r ApiListBlueprintsRequest) Id(id string) ApiListBlueprintsRequest {
+func (r ApiBlueprintsListBlueprintsRequest) Id(id string) ApiBlueprintsListBlueprintsRequest {
 	r.id = &id
 	return r
 }
 
 // Specify a list of Blueprint IDs to limit the results to.  Multiple values may be separated by commas. There is a double underscore (&lt;code&gt;__&lt;/code&gt;) between id and in
-func (r ApiListBlueprintsRequest) IdIn(idIn string) ApiListBlueprintsRequest {
+func (r ApiBlueprintsListBlueprintsRequest) IdIn(idIn string) ApiBlueprintsListBlueprintsRequest {
 	r.idIn = &idIn
 	return r
 }
 
 // Return Blueprint names &amp;quot;containing&amp;quot; the specified search string.
-func (r ApiListBlueprintsRequest) Name(name string) ApiListBlueprintsRequest {
+func (r ApiBlueprintsListBlueprintsRequest) Name(name string) ApiBlueprintsListBlueprintsRequest {
 	r.name = &name
 	return r
 }
 
 // Number of results to return per page.
-func (r ApiListBlueprintsRequest) Limit(limit string) ApiListBlueprintsRequest {
+func (r ApiBlueprintsListBlueprintsRequest) Limit(limit string) ApiBlueprintsListBlueprintsRequest {
 	r.limit = &limit
 	return r
 }
 
 // The initial index from which to return the results.
-func (r ApiListBlueprintsRequest) Offset(offset string) ApiListBlueprintsRequest {
+func (r ApiBlueprintsListBlueprintsRequest) Offset(offset string) ApiBlueprintsListBlueprintsRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiListBlueprintsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListBlueprintsExecute(r)
+func (r ApiBlueprintsListBlueprintsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BlueprintsListBlueprintsExecute(r)
 }
 
 /*
-ListBlueprints List Blueprints
+BlueprintsListBlueprints List Blueprints
 
 This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListBlueprintsRequest
+ @return ApiBlueprintsListBlueprintsRequest
 */
-func (a *BlueprintsAPIService) ListBlueprints(ctx context.Context) ApiListBlueprintsRequest {
-	return ApiListBlueprintsRequest{
+func (a *BlueprintsAPIService) BlueprintsListBlueprints(ctx context.Context) ApiBlueprintsListBlueprintsRequest {
+	return ApiBlueprintsListBlueprintsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -837,7 +837,7 @@ func (a *BlueprintsAPIService) ListBlueprints(ctx context.Context) ApiListBluepr
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsListBlueprintsExecute(r ApiBlueprintsListBlueprintsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -845,7 +845,7 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.ListBlueprints")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsListBlueprints")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -925,18 +925,18 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListLibraryItemsRequest struct {
+type ApiBlueprintsListLibraryItemsRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
 }
 
-func (r ApiListLibraryItemsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListLibraryItemsExecute(r)
+func (r ApiBlueprintsListLibraryItemsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BlueprintsListLibraryItemsExecute(r)
 }
 
 /*
-ListLibraryItems List Library Items
+BlueprintsListLibraryItems List Library Items
 
 <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -961,10 +961,10 @@ ListLibraryItems List Library Items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
- @return ApiListLibraryItemsRequest
+ @return ApiBlueprintsListLibraryItemsRequest
 */
-func (a *BlueprintsAPIService) ListLibraryItems(ctx context.Context, blueprintId string) ApiListLibraryItemsRequest {
-	return ApiListLibraryItemsRequest{
+func (a *BlueprintsAPIService) BlueprintsListLibraryItems(ctx context.Context, blueprintId string) ApiBlueprintsListLibraryItemsRequest {
+	return ApiBlueprintsListLibraryItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 		blueprintId: blueprintId,
@@ -973,7 +973,7 @@ func (a *BlueprintsAPIService) ListLibraryItems(ctx context.Context, blueprintId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsListLibraryItemsExecute(r ApiBlueprintsListLibraryItemsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -981,7 +981,7 @@ func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequ
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.ListLibraryItems")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsListLibraryItems")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1047,24 +1047,24 @@ func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRemoveLibraryItemRequest struct {
+type ApiBlueprintsRemoveLibraryItemRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
 	body *string
 }
 
-func (r ApiRemoveLibraryItemRequest) Body(body string) ApiRemoveLibraryItemRequest {
+func (r ApiBlueprintsRemoveLibraryItemRequest) Body(body string) ApiBlueprintsRemoveLibraryItemRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiRemoveLibraryItemRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.RemoveLibraryItemExecute(r)
+func (r ApiBlueprintsRemoveLibraryItemRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BlueprintsRemoveLibraryItemExecute(r)
 }
 
 /*
-RemoveLibraryItem Remove Library Item
+BlueprintsRemoveLibraryItem Remove Library Item
 
 <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -1111,10 +1111,10 @@ RemoveLibraryItem Remove Library Item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
- @return ApiRemoveLibraryItemRequest
+ @return ApiBlueprintsRemoveLibraryItemRequest
 */
-func (a *BlueprintsAPIService) RemoveLibraryItem(ctx context.Context, blueprintId string) ApiRemoveLibraryItemRequest {
-	return ApiRemoveLibraryItemRequest{
+func (a *BlueprintsAPIService) BlueprintsRemoveLibraryItem(ctx context.Context, blueprintId string) ApiBlueprintsRemoveLibraryItemRequest {
+	return ApiBlueprintsRemoveLibraryItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		blueprintId: blueprintId,
@@ -1123,7 +1123,7 @@ func (a *BlueprintsAPIService) RemoveLibraryItem(ctx context.Context, blueprintI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BlueprintsAPIService) RemoveLibraryItemExecute(r ApiRemoveLibraryItemRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsRemoveLibraryItemExecute(r ApiBlueprintsRemoveLibraryItemRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1131,7 +1131,7 @@ func (a *BlueprintsAPIService) RemoveLibraryItemExecute(r ApiRemoveLibraryItemRe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.RemoveLibraryItem")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsRemoveLibraryItem")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1199,7 +1199,7 @@ func (a *BlueprintsAPIService) RemoveLibraryItemExecute(r ApiRemoveLibraryItemRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateBlueprintRequest struct {
+type ApiBlueprintsUpdateBlueprintRequest struct {
 	ctx context.Context
 	ApiService *BlueprintsAPIService
 	blueprintId string
@@ -1210,35 +1210,35 @@ type ApiUpdateBlueprintRequest struct {
 }
 
 // Update the name of the Blueprint
-func (r ApiUpdateBlueprintRequest) Name(name string) ApiUpdateBlueprintRequest {
+func (r ApiBlueprintsUpdateBlueprintRequest) Name(name string) ApiBlueprintsUpdateBlueprintRequest {
 	r.name = &name
 	return r
 }
 
 // Update the description of the Blueprint 
-func (r ApiUpdateBlueprintRequest) Description(description string) ApiUpdateBlueprintRequest {
+func (r ApiBlueprintsUpdateBlueprintRequest) Description(description string) ApiBlueprintsUpdateBlueprintRequest {
 	r.description = &description
 	return r
 }
 
 // Update the enrollment code of the Blueprint 
-func (r ApiUpdateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiUpdateBlueprintRequest {
+func (r ApiBlueprintsUpdateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiBlueprintsUpdateBlueprintRequest {
 	r.enrollmentCodeCode = &enrollmentCodeCode
 	return r
 }
 
 // Disable the Blueprint for manual device enrollment from the enrollment portal.
-func (r ApiUpdateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive string) ApiUpdateBlueprintRequest {
+func (r ApiBlueprintsUpdateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive string) ApiBlueprintsUpdateBlueprintRequest {
 	r.enrollmentCodeIsActive = &enrollmentCodeIsActive
 	return r
 }
 
-func (r ApiUpdateBlueprintRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UpdateBlueprintExecute(r)
+func (r ApiBlueprintsUpdateBlueprintRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.BlueprintsUpdateBlueprintExecute(r)
 }
 
 /*
-UpdateBlueprint Update Blueprint
+BlueprintsUpdateBlueprint Update Blueprint
 
 <p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -1246,10 +1246,10 @@ UpdateBlueprint Update Blueprint
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
- @return ApiUpdateBlueprintRequest
+ @return ApiBlueprintsUpdateBlueprintRequest
 */
-func (a *BlueprintsAPIService) UpdateBlueprint(ctx context.Context, blueprintId string) ApiUpdateBlueprintRequest {
-	return ApiUpdateBlueprintRequest{
+func (a *BlueprintsAPIService) BlueprintsUpdateBlueprint(ctx context.Context, blueprintId string) ApiBlueprintsUpdateBlueprintRequest {
+	return ApiBlueprintsUpdateBlueprintRequest{
 		ApiService: a,
 		ctx: ctx,
 		blueprintId: blueprintId,
@@ -1258,7 +1258,7 @@ func (a *BlueprintsAPIService) UpdateBlueprint(ctx context.Context, blueprintId 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintRequest) (map[string]interface{}, *http.Response, error) {
+func (a *BlueprintsAPIService) BlueprintsUpdateBlueprintExecute(r ApiBlueprintsUpdateBlueprintRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -1266,7 +1266,7 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.UpdateBlueprint")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.BlueprintsUpdateBlueprint")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

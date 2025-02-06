@@ -24,33 +24,33 @@ import (
 // NotesAPIService NotesAPI service
 type NotesAPIService service
 
-type ApiCreateDeviceNoteRequest struct {
+type ApiNotesCreateDeviceNoteRequest struct {
 	ctx context.Context
 	ApiService *NotesAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiCreateDeviceNoteRequest) Body(body string) ApiCreateDeviceNoteRequest {
+func (r ApiNotesCreateDeviceNoteRequest) Body(body string) ApiNotesCreateDeviceNoteRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiCreateDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CreateDeviceNoteExecute(r)
+func (r ApiNotesCreateDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.NotesCreateDeviceNoteExecute(r)
 }
 
 /*
-CreateDeviceNote Create Device Note
+NotesCreateDeviceNote Create Device Note
 
 This request creates a note for the specified device ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiCreateDeviceNoteRequest
+ @return ApiNotesCreateDeviceNoteRequest
 */
-func (a *NotesAPIService) CreateDeviceNote(ctx context.Context, deviceId string) ApiCreateDeviceNoteRequest {
-	return ApiCreateDeviceNoteRequest{
+func (a *NotesAPIService) NotesCreateDeviceNote(ctx context.Context, deviceId string) ApiNotesCreateDeviceNoteRequest {
+	return ApiNotesCreateDeviceNoteRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -59,7 +59,7 @@ func (a *NotesAPIService) CreateDeviceNote(ctx context.Context, deviceId string)
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NotesAPIService) CreateDeviceNoteExecute(r ApiCreateDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NotesAPIService) NotesCreateDeviceNoteExecute(r ApiNotesCreateDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -67,7 +67,7 @@ func (a *NotesAPIService) CreateDeviceNoteExecute(r ApiCreateDeviceNoteRequest) 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.CreateDeviceNote")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.NotesCreateDeviceNote")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -135,29 +135,29 @@ func (a *NotesAPIService) CreateDeviceNoteExecute(r ApiCreateDeviceNoteRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteDeviceNoteRequest struct {
+type ApiNotesDeleteDeviceNoteRequest struct {
 	ctx context.Context
 	ApiService *NotesAPIService
 	deviceId string
 	noteId string
 }
 
-func (r ApiDeleteDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.DeleteDeviceNoteExecute(r)
+func (r ApiNotesDeleteDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.NotesDeleteDeviceNoteExecute(r)
 }
 
 /*
-DeleteDeviceNote Delete Device Note
+NotesDeleteDeviceNote Delete Device Note
 
 This request deletes a specified note (Note ID) for the specified Device ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
  @param noteId
- @return ApiDeleteDeviceNoteRequest
+ @return ApiNotesDeleteDeviceNoteRequest
 */
-func (a *NotesAPIService) DeleteDeviceNote(ctx context.Context, deviceId string, noteId string) ApiDeleteDeviceNoteRequest {
-	return ApiDeleteDeviceNoteRequest{
+func (a *NotesAPIService) NotesDeleteDeviceNote(ctx context.Context, deviceId string, noteId string) ApiNotesDeleteDeviceNoteRequest {
+	return ApiNotesDeleteDeviceNoteRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -167,7 +167,7 @@ func (a *NotesAPIService) DeleteDeviceNote(ctx context.Context, deviceId string,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NotesAPIService) DeleteDeviceNoteExecute(r ApiDeleteDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NotesAPIService) NotesDeleteDeviceNoteExecute(r ApiNotesDeleteDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -175,7 +175,7 @@ func (a *NotesAPIService) DeleteDeviceNoteExecute(r ApiDeleteDeviceNoteRequest) 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.DeleteDeviceNote")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.NotesDeleteDeviceNote")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -242,27 +242,27 @@ func (a *NotesAPIService) DeleteDeviceNoteExecute(r ApiDeleteDeviceNoteRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceNotesRequest struct {
+type ApiNotesGetDeviceNotesRequest struct {
 	ctx context.Context
 	ApiService *NotesAPIService
 	deviceId string
 }
 
-func (r ApiGetDeviceNotesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceNotesExecute(r)
+func (r ApiNotesGetDeviceNotesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.NotesGetDeviceNotesExecute(r)
 }
 
 /*
-GetDeviceNotes Get Device Notes
+NotesGetDeviceNotes Get Device Notes
 
 This request gets all notes for the specified Device ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceNotesRequest
+ @return ApiNotesGetDeviceNotesRequest
 */
-func (a *NotesAPIService) GetDeviceNotes(ctx context.Context, deviceId string) ApiGetDeviceNotesRequest {
-	return ApiGetDeviceNotesRequest{
+func (a *NotesAPIService) NotesGetDeviceNotes(ctx context.Context, deviceId string) ApiNotesGetDeviceNotesRequest {
+	return ApiNotesGetDeviceNotesRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -271,7 +271,7 @@ func (a *NotesAPIService) GetDeviceNotes(ctx context.Context, deviceId string) A
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NotesAPIService) GetDeviceNotesExecute(r ApiGetDeviceNotesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NotesAPIService) NotesGetDeviceNotesExecute(r ApiNotesGetDeviceNotesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -279,7 +279,7 @@ func (a *NotesAPIService) GetDeviceNotesExecute(r ApiGetDeviceNotesRequest) (map
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.GetDeviceNotes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.NotesGetDeviceNotes")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -345,29 +345,29 @@ func (a *NotesAPIService) GetDeviceNotesExecute(r ApiGetDeviceNotesRequest) (map
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRetrieveDeviceNoteRequest struct {
+type ApiNotesRetrieveDeviceNoteRequest struct {
 	ctx context.Context
 	ApiService *NotesAPIService
 	deviceId string
 	noteId string
 }
 
-func (r ApiRetrieveDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.RetrieveDeviceNoteExecute(r)
+func (r ApiNotesRetrieveDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.NotesRetrieveDeviceNoteExecute(r)
 }
 
 /*
-RetrieveDeviceNote Retrieve Device Note
+NotesRetrieveDeviceNote Retrieve Device Note
 
 This request retrieves a specified note (Note ID) for the specified Device ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
  @param noteId
- @return ApiRetrieveDeviceNoteRequest
+ @return ApiNotesRetrieveDeviceNoteRequest
 */
-func (a *NotesAPIService) RetrieveDeviceNote(ctx context.Context, deviceId string, noteId string) ApiRetrieveDeviceNoteRequest {
-	return ApiRetrieveDeviceNoteRequest{
+func (a *NotesAPIService) NotesRetrieveDeviceNote(ctx context.Context, deviceId string, noteId string) ApiNotesRetrieveDeviceNoteRequest {
+	return ApiNotesRetrieveDeviceNoteRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -377,7 +377,7 @@ func (a *NotesAPIService) RetrieveDeviceNote(ctx context.Context, deviceId strin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NotesAPIService) RetrieveDeviceNoteExecute(r ApiRetrieveDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NotesAPIService) NotesRetrieveDeviceNoteExecute(r ApiNotesRetrieveDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -385,7 +385,7 @@ func (a *NotesAPIService) RetrieveDeviceNoteExecute(r ApiRetrieveDeviceNoteReque
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.RetrieveDeviceNote")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.NotesRetrieveDeviceNote")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -452,7 +452,7 @@ func (a *NotesAPIService) RetrieveDeviceNoteExecute(r ApiRetrieveDeviceNoteReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateDeviceNoteRequest struct {
+type ApiNotesUpdateDeviceNoteRequest struct {
 	ctx context.Context
 	ApiService *NotesAPIService
 	deviceId string
@@ -460,27 +460,27 @@ type ApiUpdateDeviceNoteRequest struct {
 	body *string
 }
 
-func (r ApiUpdateDeviceNoteRequest) Body(body string) ApiUpdateDeviceNoteRequest {
+func (r ApiNotesUpdateDeviceNoteRequest) Body(body string) ApiNotesUpdateDeviceNoteRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UpdateDeviceNoteExecute(r)
+func (r ApiNotesUpdateDeviceNoteRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.NotesUpdateDeviceNoteExecute(r)
 }
 
 /*
-UpdateDeviceNote Update Device Note
+NotesUpdateDeviceNote Update Device Note
 
 This request patches a specified note (Note ID) for the specified Device ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
  @param noteId
- @return ApiUpdateDeviceNoteRequest
+ @return ApiNotesUpdateDeviceNoteRequest
 */
-func (a *NotesAPIService) UpdateDeviceNote(ctx context.Context, deviceId string, noteId string) ApiUpdateDeviceNoteRequest {
-	return ApiUpdateDeviceNoteRequest{
+func (a *NotesAPIService) NotesUpdateDeviceNote(ctx context.Context, deviceId string, noteId string) ApiNotesUpdateDeviceNoteRequest {
+	return ApiNotesUpdateDeviceNoteRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -490,7 +490,7 @@ func (a *NotesAPIService) UpdateDeviceNote(ctx context.Context, deviceId string,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *NotesAPIService) UpdateDeviceNoteExecute(r ApiUpdateDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
+func (a *NotesAPIService) NotesUpdateDeviceNoteExecute(r ApiNotesUpdateDeviceNoteRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -498,7 +498,7 @@ func (a *NotesAPIService) UpdateDeviceNoteExecute(r ApiUpdateDeviceNoteRequest) 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.UpdateDeviceNote")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NotesAPIService.NotesUpdateDeviceNote")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -24,27 +24,27 @@ import (
 // DeviceInformationAPIService DeviceInformationAPI service
 type DeviceInformationAPIService service
 
-type ApiCancelLostModeRequest struct {
+type ApiDeviceInformationCancelLostModeRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
 }
 
-func (r ApiCancelLostModeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CancelLostModeExecute(r)
+func (r ApiDeviceInformationCancelLostModeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceInformationCancelLostModeExecute(r)
 }
 
 /*
-CancelLostMode Cancel Lost Mode
+DeviceInformationCancelLostMode Cancel Lost Mode
 
 This endpoint can be used to send a cancelation request if Lost Mode is in an error state for a given iOS or iPadOS device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiCancelLostModeRequest
+ @return ApiDeviceInformationCancelLostModeRequest
 */
-func (a *DeviceInformationAPIService) CancelLostMode(ctx context.Context, deviceId string) ApiCancelLostModeRequest {
-	return ApiCancelLostModeRequest{
+func (a *DeviceInformationAPIService) DeviceInformationCancelLostMode(ctx context.Context, deviceId string) ApiDeviceInformationCancelLostModeRequest {
+	return ApiDeviceInformationCancelLostModeRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -52,14 +52,14 @@ func (a *DeviceInformationAPIService) CancelLostMode(ctx context.Context, device
 }
 
 // Execute executes the request
-func (a *DeviceInformationAPIService) CancelLostModeExecute(r ApiCancelLostModeRequest) (*http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationCancelLostModeExecute(r ApiDeviceInformationCancelLostModeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.CancelLostMode")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationCancelLostMode")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -116,7 +116,7 @@ func (a *DeviceInformationAPIService) CancelLostModeExecute(r ApiCancelLostModeR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceActivityRequest struct {
+type ApiDeviceInformationGetDeviceActivityRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
@@ -125,32 +125,32 @@ type ApiGetDeviceActivityRequest struct {
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiGetDeviceActivityRequest) Limit(limit string) ApiGetDeviceActivityRequest {
+func (r ApiDeviceInformationGetDeviceActivityRequest) Limit(limit string) ApiDeviceInformationGetDeviceActivityRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiGetDeviceActivityRequest) Offset(offset string) ApiGetDeviceActivityRequest {
+func (r ApiDeviceInformationGetDeviceActivityRequest) Offset(offset string) ApiDeviceInformationGetDeviceActivityRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGetDeviceActivityRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceActivityExecute(r)
+func (r ApiDeviceInformationGetDeviceActivityRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationGetDeviceActivityExecute(r)
 }
 
 /*
-GetDeviceActivity Get Device Activity
+DeviceInformationGetDeviceActivity Get Device Activity
 
 This request returns the device activity for a specified Device ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceActivityRequest
+ @return ApiDeviceInformationGetDeviceActivityRequest
 */
-func (a *DeviceInformationAPIService) GetDeviceActivity(ctx context.Context, deviceId string) ApiGetDeviceActivityRequest {
-	return ApiGetDeviceActivityRequest{
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceActivity(ctx context.Context, deviceId string) ApiDeviceInformationGetDeviceActivityRequest {
+	return ApiDeviceInformationGetDeviceActivityRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -159,7 +159,7 @@ func (a *DeviceInformationAPIService) GetDeviceActivity(ctx context.Context, dev
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceActivityExecute(r ApiGetDeviceActivityRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceActivityExecute(r ApiDeviceInformationGetDeviceActivityRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -167,7 +167,7 @@ func (a *DeviceInformationAPIService) GetDeviceActivityExecute(r ApiGetDeviceAct
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceActivity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationGetDeviceActivity")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -240,28 +240,28 @@ func (a *DeviceInformationAPIService) GetDeviceActivityExecute(r ApiGetDeviceAct
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceAppsRequest struct {
+type ApiDeviceInformationGetDeviceAppsRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
 }
 
-func (r ApiGetDeviceAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceAppsExecute(r)
+func (r ApiDeviceInformationGetDeviceAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationGetDeviceAppsExecute(r)
 }
 
 /*
-GetDeviceApps Get Device Apps
+DeviceInformationGetDeviceApps Get Device Apps
 
 <p>This request returns a list of all installed apps for a specified Device ID.</p>
 <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceAppsRequest
+ @return ApiDeviceInformationGetDeviceAppsRequest
 */
-func (a *DeviceInformationAPIService) GetDeviceApps(ctx context.Context, deviceId string) ApiGetDeviceAppsRequest {
-	return ApiGetDeviceAppsRequest{
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceApps(ctx context.Context, deviceId string) ApiDeviceInformationGetDeviceAppsRequest {
+	return ApiDeviceInformationGetDeviceAppsRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -270,7 +270,7 @@ func (a *DeviceInformationAPIService) GetDeviceApps(ctx context.Context, deviceI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceAppsExecute(r ApiGetDeviceAppsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceAppsExecute(r ApiDeviceInformationGetDeviceAppsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -278,7 +278,7 @@ func (a *DeviceInformationAPIService) GetDeviceAppsExecute(r ApiGetDeviceAppsReq
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceApps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationGetDeviceApps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -344,27 +344,27 @@ func (a *DeviceInformationAPIService) GetDeviceAppsExecute(r ApiGetDeviceAppsReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceDetailsRequest struct {
+type ApiDeviceInformationGetDeviceDetailsRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
 }
 
-func (r ApiGetDeviceDetailsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceDetailsExecute(r)
+func (r ApiDeviceInformationGetDeviceDetailsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationGetDeviceDetailsExecute(r)
 }
 
 /*
-GetDeviceDetails Get Device Details
+DeviceInformationGetDeviceDetails Get Device Details
 
 This request returns the device details for a specified Device ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceDetailsRequest
+ @return ApiDeviceInformationGetDeviceDetailsRequest
 */
-func (a *DeviceInformationAPIService) GetDeviceDetails(ctx context.Context, deviceId string) ApiGetDeviceDetailsRequest {
-	return ApiGetDeviceDetailsRequest{
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceDetails(ctx context.Context, deviceId string) ApiDeviceInformationGetDeviceDetailsRequest {
+	return ApiDeviceInformationGetDeviceDetailsRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -373,7 +373,7 @@ func (a *DeviceInformationAPIService) GetDeviceDetails(ctx context.Context, devi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceDetailsExecute(r ApiGetDeviceDetailsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceDetailsExecute(r ApiDeviceInformationGetDeviceDetailsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -381,7 +381,7 @@ func (a *DeviceInformationAPIService) GetDeviceDetailsExecute(r ApiGetDeviceDeta
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceDetails")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationGetDeviceDetails")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -447,18 +447,18 @@ func (a *DeviceInformationAPIService) GetDeviceDetailsExecute(r ApiGetDeviceDeta
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceLibraryItemsRequest struct {
+type ApiDeviceInformationGetDeviceLibraryItemsRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
 }
 
-func (r ApiGetDeviceLibraryItemsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceLibraryItemsExecute(r)
+func (r ApiDeviceInformationGetDeviceLibraryItemsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationGetDeviceLibraryItemsExecute(r)
 }
 
 /*
-GetDeviceLibraryItems Get Device Library Items
+DeviceInformationGetDeviceLibraryItems Get Device Library Items
 
 <p>This request gets all library items and their statuses for a specified Device ID</p>
 <h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4>
@@ -542,10 +542,10 @@ GetDeviceLibraryItems Get Device Library Items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceLibraryItemsRequest
+ @return ApiDeviceInformationGetDeviceLibraryItemsRequest
 */
-func (a *DeviceInformationAPIService) GetDeviceLibraryItems(ctx context.Context, deviceId string) ApiGetDeviceLibraryItemsRequest {
-	return ApiGetDeviceLibraryItemsRequest{
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceLibraryItems(ctx context.Context, deviceId string) ApiDeviceInformationGetDeviceLibraryItemsRequest {
+	return ApiDeviceInformationGetDeviceLibraryItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -554,7 +554,7 @@ func (a *DeviceInformationAPIService) GetDeviceLibraryItems(ctx context.Context,
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceLibraryItemsExecute(r ApiGetDeviceLibraryItemsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceLibraryItemsExecute(r ApiDeviceInformationGetDeviceLibraryItemsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -562,7 +562,7 @@ func (a *DeviceInformationAPIService) GetDeviceLibraryItemsExecute(r ApiGetDevic
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceLibraryItems")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationGetDeviceLibraryItems")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -628,28 +628,28 @@ func (a *DeviceInformationAPIService) GetDeviceLibraryItemsExecute(r ApiGetDevic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceLostModeDetailsRequest struct {
+type ApiDeviceInformationGetDeviceLostModeDetailsRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
 }
 
-func (r ApiGetDeviceLostModeDetailsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceLostModeDetailsExecute(r)
+func (r ApiDeviceInformationGetDeviceLostModeDetailsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationGetDeviceLostModeDetailsExecute(r)
 }
 
 /*
-GetDeviceLostModeDetails Get Device Lost Mode details
+DeviceInformationGetDeviceLostModeDetails Get Device Lost Mode details
 
 <p>This request returns the device lost mode details for a specified Device ID.</p>
 <p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceLostModeDetailsRequest
+ @return ApiDeviceInformationGetDeviceLostModeDetailsRequest
 */
-func (a *DeviceInformationAPIService) GetDeviceLostModeDetails(ctx context.Context, deviceId string) ApiGetDeviceLostModeDetailsRequest {
-	return ApiGetDeviceLostModeDetailsRequest{
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceLostModeDetails(ctx context.Context, deviceId string) ApiDeviceInformationGetDeviceLostModeDetailsRequest {
+	return ApiDeviceInformationGetDeviceLostModeDetailsRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -658,7 +658,7 @@ func (a *DeviceInformationAPIService) GetDeviceLostModeDetails(ctx context.Conte
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceLostModeDetailsExecute(r ApiGetDeviceLostModeDetailsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceLostModeDetailsExecute(r ApiDeviceInformationGetDeviceLostModeDetailsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -666,7 +666,7 @@ func (a *DeviceInformationAPIService) GetDeviceLostModeDetailsExecute(r ApiGetDe
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceLostModeDetails")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationGetDeviceLostModeDetails")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -732,18 +732,18 @@ func (a *DeviceInformationAPIService) GetDeviceLostModeDetailsExecute(r ApiGetDe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceParametersRequest struct {
+type ApiDeviceInformationGetDeviceParametersRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
 }
 
-func (r ApiGetDeviceParametersRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceParametersExecute(r)
+func (r ApiDeviceInformationGetDeviceParametersRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationGetDeviceParametersExecute(r)
 }
 
 /*
-GetDeviceParameters Get Device Parameters
+DeviceInformationGetDeviceParameters Get Device Parameters
 
 <p>This request returns the parameters and their statuses for a specified Device ID</p>
 <p>This endpoint is only applicable to macOS clients.</p>
@@ -794,10 +794,10 @@ GetDeviceParameters Get Device Parameters
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceParametersRequest
+ @return ApiDeviceInformationGetDeviceParametersRequest
 */
-func (a *DeviceInformationAPIService) GetDeviceParameters(ctx context.Context, deviceId string) ApiGetDeviceParametersRequest {
-	return ApiGetDeviceParametersRequest{
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceParameters(ctx context.Context, deviceId string) ApiDeviceInformationGetDeviceParametersRequest {
+	return ApiDeviceInformationGetDeviceParametersRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -806,7 +806,7 @@ func (a *DeviceInformationAPIService) GetDeviceParameters(ctx context.Context, d
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceParametersExecute(r ApiGetDeviceParametersRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceParametersExecute(r ApiDeviceInformationGetDeviceParametersRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -814,7 +814,7 @@ func (a *DeviceInformationAPIService) GetDeviceParametersExecute(r ApiGetDeviceP
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceParameters")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationGetDeviceParameters")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -880,18 +880,18 @@ func (a *DeviceInformationAPIService) GetDeviceParametersExecute(r ApiGetDeviceP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceStatusRequest struct {
+type ApiDeviceInformationGetDeviceStatusRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	deviceId string
 }
 
-func (r ApiGetDeviceStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetDeviceStatusExecute(r)
+func (r ApiDeviceInformationGetDeviceStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationGetDeviceStatusExecute(r)
 }
 
 /*
-GetDeviceStatus Get Device Status
+DeviceInformationGetDeviceStatus Get Device Status
 
 <p>This request returns the full status (parameters and library items) for a specified Device ID.</p>
 <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
@@ -999,10 +999,10 @@ GetDeviceStatus Get Device Status
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceStatusRequest
+ @return ApiDeviceInformationGetDeviceStatusRequest
 */
-func (a *DeviceInformationAPIService) GetDeviceStatus(ctx context.Context, deviceId string) ApiGetDeviceStatusRequest {
-	return ApiGetDeviceStatusRequest{
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceStatus(ctx context.Context, deviceId string) ApiDeviceInformationGetDeviceStatusRequest {
+	return ApiDeviceInformationGetDeviceStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1011,7 +1011,7 @@ func (a *DeviceInformationAPIService) GetDeviceStatus(ctx context.Context, devic
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceStatusExecute(r ApiGetDeviceStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationGetDeviceStatusExecute(r ApiDeviceInformationGetDeviceStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1019,7 +1019,7 @@ func (a *DeviceInformationAPIService) GetDeviceStatusExecute(r ApiGetDeviceStatu
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationGetDeviceStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1085,7 +1085,7 @@ func (a *DeviceInformationAPIService) GetDeviceStatusExecute(r ApiGetDeviceStatu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListDevicesRequest struct {
+type ApiDeviceInformationListDevicesRequest struct {
 	ctx context.Context
 	ApiService *DeviceInformationAPIService
 	limit *string
@@ -1112,146 +1112,146 @@ type ApiListDevicesRequest struct {
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiListDevicesRequest) Limit(limit string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) Limit(limit string) ApiDeviceInformationListDevicesRequest {
 	r.limit = &limit
 	return r
 }
 
 // 
-func (r ApiListDevicesRequest) AssetTag(assetTag string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) AssetTag(assetTag string) ApiDeviceInformationListDevicesRequest {
 	r.assetTag = &assetTag
 	return r
 }
 
 // Return results &amp;quot;containing&amp;quot; the specified blueprint id
-func (r ApiListDevicesRequest) BlueprintId(blueprintId string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) BlueprintId(blueprintId string) ApiDeviceInformationListDevicesRequest {
 	r.blueprintId = &blueprintId
 	return r
 }
 
 // 
-func (r ApiListDevicesRequest) DeviceId(deviceId string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) DeviceId(deviceId string) ApiDeviceInformationListDevicesRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // 
-func (r ApiListDevicesRequest) DeviceName(deviceName string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) DeviceName(deviceName string) ApiDeviceInformationListDevicesRequest {
 	r.deviceName = &deviceName
 	return r
 }
 
 // &lt;p&gt;Query for devices that either have FileVault on (true) or off (false). This parameter only applies to macOS. &lt;/p&gt; &lt;p&gt;An empty list &lt;code&gt;[]&lt;/code&gt; will be returned if no devices are found with the given parameter value.&lt;/p&gt;
-func (r ApiListDevicesRequest) FilevaultEnabled(filevaultEnabled string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) FilevaultEnabled(filevaultEnabled string) ApiDeviceInformationListDevicesRequest {
 	r.filevaultEnabled = &filevaultEnabled
 	return r
 }
 
 // Search for a specific device by MAC address
-func (r ApiListDevicesRequest) MacAddress(macAddress string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) MacAddress(macAddress string) ApiDeviceInformationListDevicesRequest {
 	r.macAddress = &macAddress
 	return r
 }
 
 // Return model results &amp;quot;containing&amp;quot; the specified model string.
-func (r ApiListDevicesRequest) Model(model string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) Model(model string) ApiDeviceInformationListDevicesRequest {
 	r.model = &model
 	return r
 }
 
 // &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt;
-func (r ApiListDevicesRequest) Ordering(ordering string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) Ordering(ordering string) ApiDeviceInformationListDevicesRequest {
 	r.ordering = &ordering
 	return r
 }
 
 // Return all device records with the specified OS version
-func (r ApiListDevicesRequest) OsVersion(osVersion string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) OsVersion(osVersion string) ApiDeviceInformationListDevicesRequest {
 	r.osVersion = &osVersion
 	return r
 }
 
 // Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt;
-func (r ApiListDevicesRequest) Platform(platform string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) Platform(platform string) ApiDeviceInformationListDevicesRequest {
 	r.platform = &platform
 	return r
 }
 
 // Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned.
-func (r ApiListDevicesRequest) SerialNumber(serialNumber string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) SerialNumber(serialNumber string) ApiDeviceInformationListDevicesRequest {
 	r.serialNumber = &serialNumber
 	return r
 }
 
 // Return results for given tag name. Case sensitive.
-func (r ApiListDevicesRequest) TagName(tagName string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) TagName(tagName string) ApiDeviceInformationListDevicesRequest {
 	r.tagName = &tagName
 	return r
 }
 
 // Return results for given tag names separate by commas. Case sensitive.
-func (r ApiListDevicesRequest) TagNameIn(tagNameIn string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) TagNameIn(tagNameIn string) ApiDeviceInformationListDevicesRequest {
 	r.tagNameIn = &tagNameIn
 	return r
 }
 
 // Search for a tag by its ID. Case sensitive.
-func (r ApiListDevicesRequest) TagId(tagId string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) TagId(tagId string) ApiDeviceInformationListDevicesRequest {
 	r.tagId = &tagId
 	return r
 }
 
 // Return results for given tag IDs separated by commas. Case sensitive.
-func (r ApiListDevicesRequest) TagIdIn(tagIdIn string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) TagIdIn(tagIdIn string) ApiDeviceInformationListDevicesRequest {
 	r.tagIdIn = &tagIdIn
 	return r
 }
 
 // Return results &amp;quot;containing&amp;quot; the user name
-func (r ApiListDevicesRequest) User(user string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) User(user string) ApiDeviceInformationListDevicesRequest {
 	r.user = &user
 	return r
 }
 
 // Return results &amp;quot;containing&amp;quot; search on email address
-func (r ApiListDevicesRequest) UserEmail(userEmail string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) UserEmail(userEmail string) ApiDeviceInformationListDevicesRequest {
 	r.userEmail = &userEmail
 	return r
 }
 
 // &amp;quot;exact&amp;quot; match on kandji user ID number
-func (r ApiListDevicesRequest) UserId(userId string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) UserId(userId string) ApiDeviceInformationListDevicesRequest {
 	r.userId = &userId
 	return r
 }
 
 // Return results &amp;quot;containing&amp;quot; the assigned user Display Name
-func (r ApiListDevicesRequest) UserName(userName string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) UserName(userName string) ApiDeviceInformationListDevicesRequest {
 	r.userName = &userName
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiListDevicesRequest) Offset(offset string) ApiListDevicesRequest {
+func (r ApiDeviceInformationListDevicesRequest) Offset(offset string) ApiDeviceInformationListDevicesRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiListDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListDevicesExecute(r)
+func (r ApiDeviceInformationListDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceInformationListDevicesExecute(r)
 }
 
 /*
-ListDevices List Devices
+DeviceInformationListDevices List Devices
 
 <p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p>
 <p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListDevicesRequest
+ @return ApiDeviceInformationListDevicesRequest
 */
-func (a *DeviceInformationAPIService) ListDevices(ctx context.Context) ApiListDevicesRequest {
-	return ApiListDevicesRequest{
+func (a *DeviceInformationAPIService) DeviceInformationListDevices(ctx context.Context) ApiDeviceInformationListDevicesRequest {
+	return ApiDeviceInformationListDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1259,7 +1259,7 @@ func (a *DeviceInformationAPIService) ListDevices(ctx context.Context) ApiListDe
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceInformationAPIService) ListDevicesExecute(r ApiListDevicesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceInformationAPIService) DeviceInformationListDevicesExecute(r ApiDeviceInformationListDevicesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1267,7 +1267,7 @@ func (a *DeviceInformationAPIService) ListDevicesExecute(r ApiListDevicesRequest
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.ListDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.DeviceInformationListDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

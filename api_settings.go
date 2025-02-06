@@ -23,25 +23,25 @@ import (
 // SettingsAPIService SettingsAPI service
 type SettingsAPIService service
 
-type ApiLicensingRequest struct {
+type ApiSettingsLicensingRequest struct {
 	ctx context.Context
 	ApiService *SettingsAPIService
 }
 
-func (r ApiLicensingRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.LicensingExecute(r)
+func (r ApiSettingsLicensingRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.SettingsLicensingExecute(r)
 }
 
 /*
-Licensing Licensing
+SettingsLicensing Licensing
 
 Returns Kandji tenant licensing and utilization information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLicensingRequest
+ @return ApiSettingsLicensingRequest
 */
-func (a *SettingsAPIService) Licensing(ctx context.Context) ApiLicensingRequest {
-	return ApiLicensingRequest{
+func (a *SettingsAPIService) SettingsLicensing(ctx context.Context) ApiSettingsLicensingRequest {
+	return ApiSettingsLicensingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -49,7 +49,7 @@ func (a *SettingsAPIService) Licensing(ctx context.Context) ApiLicensingRequest 
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *SettingsAPIService) LicensingExecute(r ApiLicensingRequest) (map[string]interface{}, *http.Response, error) {
+func (a *SettingsAPIService) SettingsLicensingExecute(r ApiSettingsLicensingRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *SettingsAPIService) LicensingExecute(r ApiLicensingRequest) (map[string
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.Licensing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.SettingsLicensing")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

@@ -24,31 +24,31 @@ import (
 // TagsAPIService TagsAPI service
 type TagsAPIService service
 
-type ApiCreateTagRequest struct {
+type ApiTagsCreateTagRequest struct {
 	ctx context.Context
 	ApiService *TagsAPIService
 	body *string
 }
 
-func (r ApiCreateTagRequest) Body(body string) ApiCreateTagRequest {
+func (r ApiTagsCreateTagRequest) Body(body string) ApiTagsCreateTagRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiCreateTagRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CreateTagExecute(r)
+func (r ApiTagsCreateTagRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.TagsCreateTagExecute(r)
 }
 
 /*
-CreateTag Create Tag
+TagsCreateTag Create Tag
 
 Create a tag. Can only create one tag per request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateTagRequest
+ @return ApiTagsCreateTagRequest
 */
-func (a *TagsAPIService) CreateTag(ctx context.Context) ApiCreateTagRequest {
-	return ApiCreateTagRequest{
+func (a *TagsAPIService) TagsCreateTag(ctx context.Context) ApiTagsCreateTagRequest {
+	return ApiTagsCreateTagRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -56,7 +56,7 @@ func (a *TagsAPIService) CreateTag(ctx context.Context) ApiCreateTagRequest {
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TagsAPIService) CreateTagExecute(r ApiCreateTagRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TagsAPIService) TagsCreateTagExecute(r ApiTagsCreateTagRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -64,7 +64,7 @@ func (a *TagsAPIService) CreateTagExecute(r ApiCreateTagRequest) (map[string]int
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.CreateTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.TagsCreateTag")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -131,18 +131,18 @@ func (a *TagsAPIService) CreateTagExecute(r ApiCreateTagRequest) (map[string]int
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteTagRequest struct {
+type ApiTagsDeleteTagRequest struct {
 	ctx context.Context
 	ApiService *TagsAPIService
 	tagId string
 }
 
-func (r ApiDeleteTagRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteTagExecute(r)
+func (r ApiTagsDeleteTagRequest) Execute() (*http.Response, error) {
+	return r.ApiService.TagsDeleteTagExecute(r)
 }
 
 /*
-DeleteTag Delete Tag
+TagsDeleteTag Delete Tag
 
 <p>Delete a tag.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -150,10 +150,10 @@ DeleteTag Delete Tag
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tagId
- @return ApiDeleteTagRequest
+ @return ApiTagsDeleteTagRequest
 */
-func (a *TagsAPIService) DeleteTag(ctx context.Context, tagId string) ApiDeleteTagRequest {
-	return ApiDeleteTagRequest{
+func (a *TagsAPIService) TagsDeleteTag(ctx context.Context, tagId string) ApiTagsDeleteTagRequest {
+	return ApiTagsDeleteTagRequest{
 		ApiService: a,
 		ctx: ctx,
 		tagId: tagId,
@@ -161,14 +161,14 @@ func (a *TagsAPIService) DeleteTag(ctx context.Context, tagId string) ApiDeleteT
 }
 
 // Execute executes the request
-func (a *TagsAPIService) DeleteTagExecute(r ApiDeleteTagRequest) (*http.Response, error) {
+func (a *TagsAPIService) TagsDeleteTagExecute(r ApiTagsDeleteTagRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.DeleteTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.TagsDeleteTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -225,32 +225,32 @@ func (a *TagsAPIService) DeleteTagExecute(r ApiDeleteTagRequest) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetTagsRequest struct {
+type ApiTagsGetTagsRequest struct {
 	ctx context.Context
 	ApiService *TagsAPIService
 	search *string
 }
 
 // Return resultes containing a given tag search string.
-func (r ApiGetTagsRequest) Search(search string) ApiGetTagsRequest {
+func (r ApiTagsGetTagsRequest) Search(search string) ApiTagsGetTagsRequest {
 	r.search = &search
 	return r
 }
 
-func (r ApiGetTagsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetTagsExecute(r)
+func (r ApiTagsGetTagsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.TagsGetTagsExecute(r)
 }
 
 /*
-GetTags Get Tags
+TagsGetTags Get Tags
 
 Return configured tags.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTagsRequest
+ @return ApiTagsGetTagsRequest
 */
-func (a *TagsAPIService) GetTags(ctx context.Context) ApiGetTagsRequest {
-	return ApiGetTagsRequest{
+func (a *TagsAPIService) TagsGetTags(ctx context.Context) ApiTagsGetTagsRequest {
+	return ApiTagsGetTagsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -258,7 +258,7 @@ func (a *TagsAPIService) GetTags(ctx context.Context) ApiGetTagsRequest {
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TagsAPIService) TagsGetTagsExecute(r ApiTagsGetTagsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -266,7 +266,7 @@ func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (map[string]interfa
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.GetTags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.TagsGetTags")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -335,24 +335,24 @@ func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (map[string]interfa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateTagRequest struct {
+type ApiTagsUpdateTagRequest struct {
 	ctx context.Context
 	ApiService *TagsAPIService
 	tagId string
 	body *string
 }
 
-func (r ApiUpdateTagRequest) Body(body string) ApiUpdateTagRequest {
+func (r ApiTagsUpdateTagRequest) Body(body string) ApiTagsUpdateTagRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateTagRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UpdateTagExecute(r)
+func (r ApiTagsUpdateTagRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.TagsUpdateTagExecute(r)
 }
 
 /*
-UpdateTag Update Tag
+TagsUpdateTag Update Tag
 
 <p>Update tag name.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -360,10 +360,10 @@ UpdateTag Update Tag
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tagId
- @return ApiUpdateTagRequest
+ @return ApiTagsUpdateTagRequest
 */
-func (a *TagsAPIService) UpdateTag(ctx context.Context, tagId string) ApiUpdateTagRequest {
-	return ApiUpdateTagRequest{
+func (a *TagsAPIService) TagsUpdateTag(ctx context.Context, tagId string) ApiTagsUpdateTagRequest {
+	return ApiTagsUpdateTagRequest{
 		ApiService: a,
 		ctx: ctx,
 		tagId: tagId,
@@ -372,7 +372,7 @@ func (a *TagsAPIService) UpdateTag(ctx context.Context, tagId string) ApiUpdateT
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *TagsAPIService) UpdateTagExecute(r ApiUpdateTagRequest) (map[string]interface{}, *http.Response, error) {
+func (a *TagsAPIService) TagsUpdateTagExecute(r ApiTagsUpdateTagRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -380,7 +380,7 @@ func (a *TagsAPIService) UpdateTagExecute(r ApiUpdateTagRequest) (map[string]int
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.UpdateTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.TagsUpdateTag")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

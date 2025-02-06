@@ -4,18 +4,18 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCustomApp**](CustomAppsAPI.md#CreateCustomApp) | **Post** /api/v1/library/custom-apps | Create Custom App
-[**DeleteCustomApp**](CustomAppsAPI.md#DeleteCustomApp) | **Delete** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
-[**GetCustomApp**](CustomAppsAPI.md#GetCustomApp) | **Get** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
-[**ListCustomApps**](CustomAppsAPI.md#ListCustomApps) | **Get** /api/v1/library/custom-apps | List Custom Apps
-[**UpdateCustomApp**](CustomAppsAPI.md#UpdateCustomApp) | **Patch** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
-[**UploadCustomApp**](CustomAppsAPI.md#UploadCustomApp) | **Post** /api/v1/library/custom-apps/upload | Upload Custom App
+[**CustomAppsCreateCustomApp**](CustomAppsAPI.md#CustomAppsCreateCustomApp) | **Post** /api/v1/library/custom-apps | Create Custom App
+[**CustomAppsDeleteCustomApp**](CustomAppsAPI.md#CustomAppsDeleteCustomApp) | **Delete** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
+[**CustomAppsGetCustomApp**](CustomAppsAPI.md#CustomAppsGetCustomApp) | **Get** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
+[**CustomAppsListCustomApps**](CustomAppsAPI.md#CustomAppsListCustomApps) | **Get** /api/v1/library/custom-apps | List Custom Apps
+[**CustomAppsUpdateCustomApp**](CustomAppsAPI.md#CustomAppsUpdateCustomApp) | **Patch** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
+[**CustomAppsUploadCustomApp**](CustomAppsAPI.md#CustomAppsUploadCustomApp) | **Post** /api/v1/library/custom-apps/upload | Upload Custom App
 
 
 
-## CreateCustomApp
+## CustomAppsCreateCustomApp
 
-> map[string]interface{} CreateCustomApp(ctx).Name(name).FileKey(fileKey).InstallType(installType).InstallEnforcement(installEnforcement).ShowInSelfService(showInSelfService).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).Execute()
+> map[string]interface{} CustomAppsCreateCustomApp(ctx).Name(name).FileKey(fileKey).InstallType(installType).InstallEnforcement(installEnforcement).ShowInSelfService(showInSelfService).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).Execute()
 
 Create Custom App
 
@@ -44,13 +44,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomAppsAPI.CreateCustomApp(context.Background()).Name(name).FileKey(fileKey).InstallType(installType).InstallEnforcement(installEnforcement).ShowInSelfService(showInSelfService).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).Execute()
+	resp, r, err := apiClient.CustomAppsAPI.CustomAppsCreateCustomApp(context.Background()).Name(name).FileKey(fileKey).InstallType(installType).InstallEnforcement(installEnforcement).ShowInSelfService(showInSelfService).SelfServiceCategoryId(selfServiceCategoryId).SelfServiceRecommended(selfServiceRecommended).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CreateCustomApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CustomAppsCreateCustomApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateCustomApp`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.CreateCustomApp`: %v\n", resp)
+	// response from `CustomAppsCreateCustomApp`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.CustomAppsCreateCustomApp`: %v\n", resp)
 }
 ```
 
@@ -60,7 +60,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateCustomAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomAppsCreateCustomAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -91,9 +91,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteCustomApp
+## CustomAppsDeleteCustomApp
 
-> DeleteCustomApp(ctx, libraryItemId).Execute()
+> CustomAppsDeleteCustomApp(ctx, libraryItemId).Execute()
 
 Delete Custom App
 
@@ -116,9 +116,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomAppsAPI.DeleteCustomApp(context.Background(), libraryItemId).Execute()
+	r, err := apiClient.CustomAppsAPI.CustomAppsDeleteCustomApp(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.DeleteCustomApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CustomAppsDeleteCustomApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteCustomAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomAppsDeleteCustomAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -159,9 +159,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCustomApp
+## CustomAppsGetCustomApp
 
-> map[string]interface{} GetCustomApp(ctx, libraryItemId).Execute()
+> map[string]interface{} CustomAppsGetCustomApp(ctx, libraryItemId).Execute()
 
 Get Custom App
 
@@ -184,13 +184,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomAppsAPI.GetCustomApp(context.Background(), libraryItemId).Execute()
+	resp, r, err := apiClient.CustomAppsAPI.CustomAppsGetCustomApp(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.GetCustomApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CustomAppsGetCustomApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCustomApp`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.GetCustomApp`: %v\n", resp)
+	// response from `CustomAppsGetCustomApp`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.CustomAppsGetCustomApp`: %v\n", resp)
 }
 ```
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetCustomAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomAppsGetCustomAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -229,9 +229,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListCustomApps
+## CustomAppsListCustomApps
 
-> map[string]interface{} ListCustomApps(ctx).Page(page).Execute()
+> map[string]interface{} CustomAppsListCustomApps(ctx).Page(page).Execute()
 
 List Custom Apps
 
@@ -254,13 +254,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomAppsAPI.ListCustomApps(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.CustomAppsAPI.CustomAppsListCustomApps(context.Background()).Page(page).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.ListCustomApps``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CustomAppsListCustomApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListCustomApps`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.ListCustomApps`: %v\n", resp)
+	// response from `CustomAppsListCustomApps`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.CustomAppsListCustomApps`: %v\n", resp)
 }
 ```
 
@@ -270,7 +270,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListCustomAppsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomAppsListCustomAppsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -295,9 +295,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateCustomApp
+## CustomAppsUpdateCustomApp
 
-> map[string]interface{} UpdateCustomApp(ctx, libraryItemId).Name(name).Active(active).Execute()
+> map[string]interface{} CustomAppsUpdateCustomApp(ctx, libraryItemId).Name(name).Active(active).Execute()
 
 Update Custom App
 
@@ -322,13 +322,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomAppsAPI.UpdateCustomApp(context.Background(), libraryItemId).Name(name).Active(active).Execute()
+	resp, r, err := apiClient.CustomAppsAPI.CustomAppsUpdateCustomApp(context.Background(), libraryItemId).Name(name).Active(active).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.UpdateCustomApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CustomAppsUpdateCustomApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateCustomApp`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.UpdateCustomApp`: %v\n", resp)
+	// response from `CustomAppsUpdateCustomApp`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomAppsAPI.CustomAppsUpdateCustomApp`: %v\n", resp)
 }
 ```
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateCustomAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomAppsUpdateCustomAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -369,9 +369,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UploadCustomApp
+## CustomAppsUploadCustomApp
 
-> UploadCustomApp(ctx).Body(body).Execute()
+> CustomAppsUploadCustomApp(ctx).Body(body).Execute()
 
 Upload Custom App
 
@@ -394,9 +394,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomAppsAPI.UploadCustomApp(context.Background()).Body(body).Execute()
+	r, err := apiClient.CustomAppsAPI.CustomAppsUploadCustomApp(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.UploadCustomApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomAppsAPI.CustomAppsUploadCustomApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -408,7 +408,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUploadCustomAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCustomAppsUploadCustomAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

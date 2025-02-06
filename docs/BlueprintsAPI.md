@@ -4,22 +4,22 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AssignLibraryItem**](BlueprintsAPI.md#AssignLibraryItem) | **Post** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
-[**CreateBlueprint**](BlueprintsAPI.md#CreateBlueprint) | **Post** /api/v1/blueprints | Create Blueprint
-[**DeleteBlueprint**](BlueprintsAPI.md#DeleteBlueprint) | **Delete** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
-[**GetBlueprint**](BlueprintsAPI.md#GetBlueprint) | **Get** /api/v1/blueprints/{blueprint_id} | Get Blueprint
-[**GetBlueprintTemplates**](BlueprintsAPI.md#GetBlueprintTemplates) | **Get** /api/v1/blueprints/templates/ | Get Blueprint Templates
-[**GetManualEnrollmentProfile**](BlueprintsAPI.md#GetManualEnrollmentProfile) | **Get** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
-[**ListBlueprints**](BlueprintsAPI.md#ListBlueprints) | **Get** /api/v1/blueprints | List Blueprints
-[**ListLibraryItems**](BlueprintsAPI.md#ListLibraryItems) | **Get** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
-[**RemoveLibraryItem**](BlueprintsAPI.md#RemoveLibraryItem) | **Post** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
-[**UpdateBlueprint**](BlueprintsAPI.md#UpdateBlueprint) | **Patch** /api/v1/blueprints/{blueprint_id} | Update Blueprint
+[**BlueprintsAssignLibraryItem**](BlueprintsAPI.md#BlueprintsAssignLibraryItem) | **Post** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
+[**BlueprintsCreateBlueprint**](BlueprintsAPI.md#BlueprintsCreateBlueprint) | **Post** /api/v1/blueprints | Create Blueprint
+[**BlueprintsDeleteBlueprint**](BlueprintsAPI.md#BlueprintsDeleteBlueprint) | **Delete** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
+[**BlueprintsGetBlueprint**](BlueprintsAPI.md#BlueprintsGetBlueprint) | **Get** /api/v1/blueprints/{blueprint_id} | Get Blueprint
+[**BlueprintsGetBlueprintTemplates**](BlueprintsAPI.md#BlueprintsGetBlueprintTemplates) | **Get** /api/v1/blueprints/templates/ | Get Blueprint Templates
+[**BlueprintsGetManualEnrollmentProfile**](BlueprintsAPI.md#BlueprintsGetManualEnrollmentProfile) | **Get** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
+[**BlueprintsListBlueprints**](BlueprintsAPI.md#BlueprintsListBlueprints) | **Get** /api/v1/blueprints | List Blueprints
+[**BlueprintsListLibraryItems**](BlueprintsAPI.md#BlueprintsListLibraryItems) | **Get** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
+[**BlueprintsRemoveLibraryItem**](BlueprintsAPI.md#BlueprintsRemoveLibraryItem) | **Post** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
+[**BlueprintsUpdateBlueprint**](BlueprintsAPI.md#BlueprintsUpdateBlueprint) | **Patch** /api/v1/blueprints/{blueprint_id} | Update Blueprint
 
 
 
-## AssignLibraryItem
+## BlueprintsAssignLibraryItem
 
-> map[string]interface{} AssignLibraryItem(ctx, blueprintId).Body(body).Execute()
+> map[string]interface{} BlueprintsAssignLibraryItem(ctx, blueprintId).Body(body).Execute()
 
 Assign Library Item
 
@@ -43,13 +43,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.AssignLibraryItem(context.Background(), blueprintId).Body(body).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.BlueprintsAssignLibraryItem(context.Background(), blueprintId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.AssignLibraryItem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsAssignLibraryItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AssignLibraryItem`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.AssignLibraryItem`: %v\n", resp)
+	// response from `BlueprintsAssignLibraryItem`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.BlueprintsAssignLibraryItem`: %v\n", resp)
 }
 ```
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAssignLibraryItemRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsAssignLibraryItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateBlueprint
+## BlueprintsCreateBlueprint
 
-> map[string]interface{} CreateBlueprint(ctx).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
+> map[string]interface{} BlueprintsCreateBlueprint(ctx).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
 
 Create Blueprint
 
@@ -119,13 +119,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.CreateBlueprint(context.Background()).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.BlueprintsCreateBlueprint(context.Background()).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.CreateBlueprint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsCreateBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateBlueprint`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.CreateBlueprint`: %v\n", resp)
+	// response from `BlueprintsCreateBlueprint`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.BlueprintsCreateBlueprint`: %v\n", resp)
 }
 ```
 
@@ -135,7 +135,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateBlueprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsCreateBlueprintRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -165,9 +165,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteBlueprint
+## BlueprintsDeleteBlueprint
 
-> DeleteBlueprint(ctx, blueprintId).Execute()
+> BlueprintsDeleteBlueprint(ctx, blueprintId).Execute()
 
 Delete Blueprint
 
@@ -190,9 +190,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BlueprintsAPI.DeleteBlueprint(context.Background(), blueprintId).Execute()
+	r, err := apiClient.BlueprintsAPI.BlueprintsDeleteBlueprint(context.Background(), blueprintId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.DeleteBlueprint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsDeleteBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteBlueprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsDeleteBlueprintRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -233,9 +233,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetBlueprint
+## BlueprintsGetBlueprint
 
-> GetBlueprint(ctx, blueprintId).Execute()
+> BlueprintsGetBlueprint(ctx, blueprintId).Execute()
 
 Get Blueprint
 
@@ -258,9 +258,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BlueprintsAPI.GetBlueprint(context.Background(), blueprintId).Execute()
+	r, err := apiClient.BlueprintsAPI.BlueprintsGetBlueprint(context.Background(), blueprintId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.GetBlueprint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsGetBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBlueprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsGetBlueprintRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -301,9 +301,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetBlueprintTemplates
+## BlueprintsGetBlueprintTemplates
 
-> GetBlueprintTemplates(ctx).Limit(limit).Offset(offset).Execute()
+> BlueprintsGetBlueprintTemplates(ctx).Limit(limit).Offset(offset).Execute()
 
 Get Blueprint Templates
 
@@ -325,9 +325,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BlueprintsAPI.GetBlueprintTemplates(context.Background()).Limit(limit).Offset(offset).Execute()
+	r, err := apiClient.BlueprintsAPI.BlueprintsGetBlueprintTemplates(context.Background()).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.GetBlueprintTemplates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsGetBlueprintTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -339,7 +339,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBlueprintTemplatesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsGetBlueprintTemplatesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -365,9 +365,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetManualEnrollmentProfile
+## BlueprintsGetManualEnrollmentProfile
 
-> string GetManualEnrollmentProfile(ctx, blueprintId).Sso(sso).Execute()
+> string BlueprintsGetManualEnrollmentProfile(ctx, blueprintId).Sso(sso).Execute()
 
 Get Manual Enrollment Profile
 
@@ -391,13 +391,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.GetManualEnrollmentProfile(context.Background(), blueprintId).Sso(sso).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.BlueprintsGetManualEnrollmentProfile(context.Background(), blueprintId).Sso(sso).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.GetManualEnrollmentProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsGetManualEnrollmentProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetManualEnrollmentProfile`: string
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.GetManualEnrollmentProfile`: %v\n", resp)
+	// response from `BlueprintsGetManualEnrollmentProfile`: string
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.BlueprintsGetManualEnrollmentProfile`: %v\n", resp)
 }
 ```
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetManualEnrollmentProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsGetManualEnrollmentProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -437,9 +437,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListBlueprints
+## BlueprintsListBlueprints
 
-> map[string]interface{} ListBlueprints(ctx).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} BlueprintsListBlueprints(ctx).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
 
 List Blueprints
 
@@ -466,13 +466,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.ListBlueprints(context.Background()).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.BlueprintsListBlueprints(context.Background()).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.ListBlueprints``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsListBlueprints``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListBlueprints`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.ListBlueprints`: %v\n", resp)
+	// response from `BlueprintsListBlueprints`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.BlueprintsListBlueprints`: %v\n", resp)
 }
 ```
 
@@ -482,7 +482,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListBlueprintsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsListBlueprintsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -511,9 +511,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListLibraryItems
+## BlueprintsListLibraryItems
 
-> map[string]interface{} ListLibraryItems(ctx, blueprintId).Execute()
+> map[string]interface{} BlueprintsListLibraryItems(ctx, blueprintId).Execute()
 
 List Library Items
 
@@ -536,13 +536,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.ListLibraryItems(context.Background(), blueprintId).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.BlueprintsListLibraryItems(context.Background(), blueprintId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.ListLibraryItems``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsListLibraryItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListLibraryItems`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.ListLibraryItems`: %v\n", resp)
+	// response from `BlueprintsListLibraryItems`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.BlueprintsListLibraryItems`: %v\n", resp)
 }
 ```
 
@@ -556,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListLibraryItemsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsListLibraryItemsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -581,9 +581,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RemoveLibraryItem
+## BlueprintsRemoveLibraryItem
 
-> map[string]interface{} RemoveLibraryItem(ctx, blueprintId).Body(body).Execute()
+> map[string]interface{} BlueprintsRemoveLibraryItem(ctx, blueprintId).Body(body).Execute()
 
 Remove Library Item
 
@@ -607,13 +607,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.RemoveLibraryItem(context.Background(), blueprintId).Body(body).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.BlueprintsRemoveLibraryItem(context.Background(), blueprintId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.RemoveLibraryItem``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsRemoveLibraryItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RemoveLibraryItem`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.RemoveLibraryItem`: %v\n", resp)
+	// response from `BlueprintsRemoveLibraryItem`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.BlueprintsRemoveLibraryItem`: %v\n", resp)
 }
 ```
 
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRemoveLibraryItemRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsRemoveLibraryItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -653,9 +653,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateBlueprint
+## BlueprintsUpdateBlueprint
 
-> map[string]interface{} UpdateBlueprint(ctx, blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
+> map[string]interface{} BlueprintsUpdateBlueprint(ctx, blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
 
 Update Blueprint
 
@@ -682,13 +682,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.UpdateBlueprint(context.Background(), blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.BlueprintsUpdateBlueprint(context.Background(), blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.UpdateBlueprint``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.BlueprintsUpdateBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateBlueprint`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.UpdateBlueprint`: %v\n", resp)
+	// response from `BlueprintsUpdateBlueprint`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.BlueprintsUpdateBlueprint`: %v\n", resp)
 }
 ```
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateBlueprintRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBlueprintsUpdateBlueprintRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

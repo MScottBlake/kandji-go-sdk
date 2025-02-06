@@ -24,7 +24,7 @@ import (
 // InHouseAppsAPIService InHouseAppsAPI service
 type InHouseAppsAPIService service
 
-type ApiCreateInhouseAppRequest struct {
+type ApiInhouseAppsCreateInhouseAppRequest struct {
 	ctx context.Context
 	ApiService *InHouseAppsAPIService
 	contentType *string
@@ -32,46 +32,46 @@ type ApiCreateInhouseAppRequest struct {
 }
 
 // 
-func (r ApiCreateInhouseAppRequest) ContentType(contentType string) ApiCreateInhouseAppRequest {
+func (r ApiInhouseAppsCreateInhouseAppRequest) ContentType(contentType string) ApiInhouseAppsCreateInhouseAppRequest {
 	r.contentType = &contentType
 	return r
 }
 
-func (r ApiCreateInhouseAppRequest) Body(body string) ApiCreateInhouseAppRequest {
+func (r ApiInhouseAppsCreateInhouseAppRequest) Body(body string) ApiInhouseAppsCreateInhouseAppRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiCreateInhouseAppRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreateInhouseAppExecute(r)
+func (r ApiInhouseAppsCreateInhouseAppRequest) Execute() (*http.Response, error) {
+	return r.ApiService.InhouseAppsCreateInhouseAppExecute(r)
 }
 
 /*
-CreateInhouseApp Create In-House App
+InhouseAppsCreateInhouseApp Create In-House App
 
 <p>After uploading the .ipa app file to S3, this request allows you to create the In-House App in the Kandji library.</p>
 <p>You must have already generated a <code>file_key</code> via <code>Create In-House App</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload In-House App to S3</code> example.</p>
 <p>The <code>name</code> key can be an arbitrary value used for setting the name of the Library Item as it appears in Kandji</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateInhouseAppRequest
+ @return ApiInhouseAppsCreateInhouseAppRequest
 */
-func (a *InHouseAppsAPIService) CreateInhouseApp(ctx context.Context) ApiCreateInhouseAppRequest {
-	return ApiCreateInhouseAppRequest{
+func (a *InHouseAppsAPIService) InhouseAppsCreateInhouseApp(ctx context.Context) ApiInhouseAppsCreateInhouseAppRequest {
+	return ApiInhouseAppsCreateInhouseAppRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InHouseAppsAPIService) CreateInhouseAppExecute(r ApiCreateInhouseAppRequest) (*http.Response, error) {
+func (a *InHouseAppsAPIService) InhouseAppsCreateInhouseAppExecute(r ApiInhouseAppsCreateInhouseAppRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.CreateInhouseApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.InhouseAppsCreateInhouseApp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -133,18 +133,18 @@ func (a *InHouseAppsAPIService) CreateInhouseAppExecute(r ApiCreateInhouseAppReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteInhouseAppRequest struct {
+type ApiInhouseAppsDeleteInhouseAppRequest struct {
 	ctx context.Context
 	ApiService *InHouseAppsAPIService
 	libraryItemId string
 }
 
-func (r ApiDeleteInhouseAppRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteInhouseAppExecute(r)
+func (r ApiInhouseAppsDeleteInhouseAppRequest) Execute() (*http.Response, error) {
+	return r.ApiService.InhouseAppsDeleteInhouseAppExecute(r)
 }
 
 /*
-DeleteInhouseApp Delete In-House App
+InhouseAppsDeleteInhouseApp Delete In-House App
 
 <p>NOTICE: This is permanent so be careful.</p>
 <p>This endpoint sends a request to delete a specific In-House App Library Item from Kandji.</p>
@@ -153,10 +153,10 @@ DeleteInhouseApp Delete In-House App
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiDeleteInhouseAppRequest
+ @return ApiInhouseAppsDeleteInhouseAppRequest
 */
-func (a *InHouseAppsAPIService) DeleteInhouseApp(ctx context.Context, libraryItemId string) ApiDeleteInhouseAppRequest {
-	return ApiDeleteInhouseAppRequest{
+func (a *InHouseAppsAPIService) InhouseAppsDeleteInhouseApp(ctx context.Context, libraryItemId string) ApiInhouseAppsDeleteInhouseAppRequest {
+	return ApiInhouseAppsDeleteInhouseAppRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -164,14 +164,14 @@ func (a *InHouseAppsAPIService) DeleteInhouseApp(ctx context.Context, libraryIte
 }
 
 // Execute executes the request
-func (a *InHouseAppsAPIService) DeleteInhouseAppExecute(r ApiDeleteInhouseAppRequest) (*http.Response, error) {
+func (a *InHouseAppsAPIService) InhouseAppsDeleteInhouseAppExecute(r ApiInhouseAppsDeleteInhouseAppRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.DeleteInhouseApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.InhouseAppsDeleteInhouseApp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -228,18 +228,18 @@ func (a *InHouseAppsAPIService) DeleteInhouseAppExecute(r ApiDeleteInhouseAppReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetInhouseAppRequest struct {
+type ApiInhouseAppsGetInhouseAppRequest struct {
 	ctx context.Context
 	ApiService *InHouseAppsAPIService
 	libraryItemId string
 }
 
-func (r ApiGetInhouseAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetInhouseAppExecute(r)
+func (r ApiInhouseAppsGetInhouseAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.InhouseAppsGetInhouseAppExecute(r)
 }
 
 /*
-GetInhouseApp Get In-House App
+InhouseAppsGetInhouseApp Get In-House App
 
 <p>This endpoint retrieves details about a specific In-House App from the Kandji Library.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -247,10 +247,10 @@ GetInhouseApp Get In-House App
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiGetInhouseAppRequest
+ @return ApiInhouseAppsGetInhouseAppRequest
 */
-func (a *InHouseAppsAPIService) GetInhouseApp(ctx context.Context, libraryItemId string) ApiGetInhouseAppRequest {
-	return ApiGetInhouseAppRequest{
+func (a *InHouseAppsAPIService) InhouseAppsGetInhouseApp(ctx context.Context, libraryItemId string) ApiInhouseAppsGetInhouseAppRequest {
+	return ApiInhouseAppsGetInhouseAppRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -259,7 +259,7 @@ func (a *InHouseAppsAPIService) GetInhouseApp(ctx context.Context, libraryItemId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InHouseAppsAPIService) GetInhouseAppExecute(r ApiGetInhouseAppRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InHouseAppsAPIService) InhouseAppsGetInhouseAppExecute(r ApiInhouseAppsGetInhouseAppRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -267,7 +267,7 @@ func (a *InHouseAppsAPIService) GetInhouseAppExecute(r ApiGetInhouseAppRequest) 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.GetInhouseApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.InhouseAppsGetInhouseApp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -333,32 +333,32 @@ func (a *InHouseAppsAPIService) GetInhouseAppExecute(r ApiGetInhouseAppRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListInhouseAppsRequest struct {
+type ApiInhouseAppsListInhouseAppsRequest struct {
 	ctx context.Context
 	ApiService *InHouseAppsAPIService
 	page *string
 }
 
 // Optional page number. Used when results exceed pagination threshold. A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 app records returned per request.
-func (r ApiListInhouseAppsRequest) Page(page string) ApiListInhouseAppsRequest {
+func (r ApiInhouseAppsListInhouseAppsRequest) Page(page string) ApiInhouseAppsListInhouseAppsRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiListInhouseAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListInhouseAppsExecute(r)
+func (r ApiInhouseAppsListInhouseAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.InhouseAppsListInhouseAppsExecute(r)
 }
 
 /*
-ListInhouseApps List In-House Apps
+InhouseAppsListInhouseApps List In-House Apps
 
 This endpoint makes a request to retrieve a list of In-House Apps from the Kandji library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListInhouseAppsRequest
+ @return ApiInhouseAppsListInhouseAppsRequest
 */
-func (a *InHouseAppsAPIService) ListInhouseApps(ctx context.Context) ApiListInhouseAppsRequest {
-	return ApiListInhouseAppsRequest{
+func (a *InHouseAppsAPIService) InhouseAppsListInhouseApps(ctx context.Context) ApiInhouseAppsListInhouseAppsRequest {
+	return ApiInhouseAppsListInhouseAppsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -366,7 +366,7 @@ func (a *InHouseAppsAPIService) ListInhouseApps(ctx context.Context) ApiListInho
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InHouseAppsAPIService) ListInhouseAppsExecute(r ApiListInhouseAppsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InHouseAppsAPIService) InhouseAppsListInhouseAppsExecute(r ApiInhouseAppsListInhouseAppsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -374,7 +374,7 @@ func (a *InHouseAppsAPIService) ListInhouseAppsExecute(r ApiListInhouseAppsReque
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.ListInhouseApps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.InhouseAppsListInhouseApps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -442,7 +442,7 @@ func (a *InHouseAppsAPIService) ListInhouseAppsExecute(r ApiListInhouseAppsReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateInhouseAppRequest struct {
+type ApiInhouseAppsUpdateInhouseAppRequest struct {
 	ctx context.Context
 	ApiService *InHouseAppsAPIService
 	libraryItemId string
@@ -451,22 +451,22 @@ type ApiUpdateInhouseAppRequest struct {
 }
 
 // 
-func (r ApiUpdateInhouseAppRequest) ContentType(contentType string) ApiUpdateInhouseAppRequest {
+func (r ApiInhouseAppsUpdateInhouseAppRequest) ContentType(contentType string) ApiInhouseAppsUpdateInhouseAppRequest {
 	r.contentType = &contentType
 	return r
 }
 
-func (r ApiUpdateInhouseAppRequest) Body(body string) ApiUpdateInhouseAppRequest {
+func (r ApiInhouseAppsUpdateInhouseAppRequest) Body(body string) ApiInhouseAppsUpdateInhouseAppRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateInhouseAppRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UpdateInhouseAppExecute(r)
+func (r ApiInhouseAppsUpdateInhouseAppRequest) Execute() (*http.Response, error) {
+	return r.ApiService.InhouseAppsUpdateInhouseAppExecute(r)
 }
 
 /*
-UpdateInhouseApp Update In-House App
+InhouseAppsUpdateInhouseApp Update In-House App
 
 <p>This request allows you to update an existing In-house App in the Kandji library.</p>
 <p>Must have already generated a <code>file_key</code> via <code>Create In-House App</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload In-House App to S3</code> example.</p>
@@ -475,10 +475,10 @@ UpdateInhouseApp Update In-House App
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiUpdateInhouseAppRequest
+ @return ApiInhouseAppsUpdateInhouseAppRequest
 */
-func (a *InHouseAppsAPIService) UpdateInhouseApp(ctx context.Context, libraryItemId string) ApiUpdateInhouseAppRequest {
-	return ApiUpdateInhouseAppRequest{
+func (a *InHouseAppsAPIService) InhouseAppsUpdateInhouseApp(ctx context.Context, libraryItemId string) ApiInhouseAppsUpdateInhouseAppRequest {
+	return ApiInhouseAppsUpdateInhouseAppRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -486,14 +486,14 @@ func (a *InHouseAppsAPIService) UpdateInhouseApp(ctx context.Context, libraryIte
 }
 
 // Execute executes the request
-func (a *InHouseAppsAPIService) UpdateInhouseAppExecute(r ApiUpdateInhouseAppRequest) (*http.Response, error) {
+func (a *InHouseAppsAPIService) InhouseAppsUpdateInhouseAppExecute(r ApiInhouseAppsUpdateInhouseAppRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.UpdateInhouseApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.InhouseAppsUpdateInhouseApp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -556,7 +556,7 @@ func (a *InHouseAppsAPIService) UpdateInhouseAppExecute(r ApiUpdateInhouseAppReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiUploadInhouseAppRequest struct {
+type ApiInhouseAppsUploadInhouseAppRequest struct {
 	ctx context.Context
 	ApiService *InHouseAppsAPIService
 	contentType *string
@@ -564,22 +564,22 @@ type ApiUploadInhouseAppRequest struct {
 }
 
 // 
-func (r ApiUploadInhouseAppRequest) ContentType(contentType string) ApiUploadInhouseAppRequest {
+func (r ApiInhouseAppsUploadInhouseAppRequest) ContentType(contentType string) ApiInhouseAppsUploadInhouseAppRequest {
 	r.contentType = &contentType
 	return r
 }
 
-func (r ApiUploadInhouseAppRequest) Body(body string) ApiUploadInhouseAppRequest {
+func (r ApiInhouseAppsUploadInhouseAppRequest) Body(body string) ApiInhouseAppsUploadInhouseAppRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUploadInhouseAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UploadInhouseAppExecute(r)
+func (r ApiInhouseAppsUploadInhouseAppRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.InhouseAppsUploadInhouseAppExecute(r)
 }
 
 /*
-UploadInhouseApp Upload In-House App
+InhouseAppsUploadInhouseApp Upload In-House App
 
 <p>This request retrieves the S3 upload details needed for uploading the in-house app .ipa file to Amazon S3.</p>
 <p>Creates a pre-signed <code>post_url</code> to upload a new In-house App to S3.</p>
@@ -588,10 +588,10 @@ UploadInhouseApp Upload In-House App
 <p>The returned <code>id</code> value can be used to check the upload status in the <code>Upload In-House App Status</code> endpoint after calling the <code>Upload In-House App to S3</code> endpoint.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUploadInhouseAppRequest
+ @return ApiInhouseAppsUploadInhouseAppRequest
 */
-func (a *InHouseAppsAPIService) UploadInhouseApp(ctx context.Context) ApiUploadInhouseAppRequest {
-	return ApiUploadInhouseAppRequest{
+func (a *InHouseAppsAPIService) InhouseAppsUploadInhouseApp(ctx context.Context) ApiInhouseAppsUploadInhouseAppRequest {
+	return ApiInhouseAppsUploadInhouseAppRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -599,7 +599,7 @@ func (a *InHouseAppsAPIService) UploadInhouseApp(ctx context.Context) ApiUploadI
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InHouseAppsAPIService) UploadInhouseAppExecute(r ApiUploadInhouseAppRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InHouseAppsAPIService) InhouseAppsUploadInhouseAppExecute(r ApiInhouseAppsUploadInhouseAppRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -607,7 +607,7 @@ func (a *InHouseAppsAPIService) UploadInhouseAppExecute(r ApiUploadInhouseAppReq
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.UploadInhouseApp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.InhouseAppsUploadInhouseApp")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -678,18 +678,18 @@ func (a *InHouseAppsAPIService) UploadInhouseAppExecute(r ApiUploadInhouseAppReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUploadInhouseAppStatusRequest struct {
+type ApiInhouseAppsUploadInhouseAppStatusRequest struct {
 	ctx context.Context
 	ApiService *InHouseAppsAPIService
 	pendingUploadId string
 }
 
-func (r ApiUploadInhouseAppStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UploadInhouseAppStatusExecute(r)
+func (r ApiInhouseAppsUploadInhouseAppStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.InhouseAppsUploadInhouseAppStatusExecute(r)
 }
 
 /*
-UploadInhouseAppStatus Upload In-House App Status
+InhouseAppsUploadInhouseAppStatus Upload In-House App Status
 
 <p>This endpoint retrieves current upload status of an In-House App .ipa file to Amazon S3 from the <code>Upload In-House App to S3</code> endpoint</p>
 <p>The app .ipa file has successfully uploaded and is ready for the <code>Create In-House App</code> endpoint when the <code>status</code> returned is <code>VALIDATED</code></p>
@@ -700,10 +700,10 @@ UploadInhouseAppStatus Upload In-House App Status
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pendingUploadId
- @return ApiUploadInhouseAppStatusRequest
+ @return ApiInhouseAppsUploadInhouseAppStatusRequest
 */
-func (a *InHouseAppsAPIService) UploadInhouseAppStatus(ctx context.Context, pendingUploadId string) ApiUploadInhouseAppStatusRequest {
-	return ApiUploadInhouseAppStatusRequest{
+func (a *InHouseAppsAPIService) InhouseAppsUploadInhouseAppStatus(ctx context.Context, pendingUploadId string) ApiInhouseAppsUploadInhouseAppStatusRequest {
+	return ApiInhouseAppsUploadInhouseAppStatusRequest{
 		ApiService: a,
 		ctx: ctx,
 		pendingUploadId: pendingUploadId,
@@ -712,7 +712,7 @@ func (a *InHouseAppsAPIService) UploadInhouseAppStatus(ctx context.Context, pend
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *InHouseAppsAPIService) UploadInhouseAppStatusExecute(r ApiUploadInhouseAppStatusRequest) (map[string]interface{}, *http.Response, error) {
+func (a *InHouseAppsAPIService) InhouseAppsUploadInhouseAppStatusExecute(r ApiInhouseAppsUploadInhouseAppStatusRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -720,7 +720,7 @@ func (a *InHouseAppsAPIService) UploadInhouseAppStatusExecute(r ApiUploadInhouse
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.UploadInhouseAppStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InHouseAppsAPIService.InhouseAppsUploadInhouseAppStatus")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

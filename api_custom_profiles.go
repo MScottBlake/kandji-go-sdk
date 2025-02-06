@@ -25,7 +25,7 @@ import (
 // CustomProfilesAPIService CustomProfilesAPI service
 type CustomProfilesAPIService service
 
-type ApiCreateCustomProfileRequest struct {
+type ApiCustomProfilesCreateCustomProfileRequest struct {
 	ctx context.Context
 	ApiService *CustomProfilesAPIService
 	name *string
@@ -34,37 +34,37 @@ type ApiCreateCustomProfileRequest struct {
 }
 
 // (Required) The profile name
-func (r ApiCreateCustomProfileRequest) Name(name string) ApiCreateCustomProfileRequest {
+func (r ApiCustomProfilesCreateCustomProfileRequest) Name(name string) ApiCustomProfilesCreateCustomProfileRequest {
 	r.name = &name
 	return r
 }
 
 // (Required) The path to the profile&#39;s .mobileconfig file
-func (r ApiCreateCustomProfileRequest) File(file *os.File) ApiCreateCustomProfileRequest {
+func (r ApiCustomProfilesCreateCustomProfileRequest) File(file *os.File) ApiCustomProfilesCreateCustomProfileRequest {
 	r.file = file
 	return r
 }
 
 // (Optional, default&#x3D;true) Whether this library item is active
-func (r ApiCreateCustomProfileRequest) Active(active string) ApiCreateCustomProfileRequest {
+func (r ApiCustomProfilesCreateCustomProfileRequest) Active(active string) ApiCustomProfilesCreateCustomProfileRequest {
 	r.active = &active
 	return r
 }
 
-func (r ApiCreateCustomProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CreateCustomProfileExecute(r)
+func (r ApiCustomProfilesCreateCustomProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomProfilesCreateCustomProfileExecute(r)
 }
 
 /*
-CreateCustomProfile Create Custom Profile
+CustomProfilesCreateCustomProfile Create Custom Profile
 
 This request allows you to create a custom profile in the Kandji library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateCustomProfileRequest
+ @return ApiCustomProfilesCreateCustomProfileRequest
 */
-func (a *CustomProfilesAPIService) CreateCustomProfile(ctx context.Context) ApiCreateCustomProfileRequest {
-	return ApiCreateCustomProfileRequest{
+func (a *CustomProfilesAPIService) CustomProfilesCreateCustomProfile(ctx context.Context) ApiCustomProfilesCreateCustomProfileRequest {
+	return ApiCustomProfilesCreateCustomProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -72,7 +72,7 @@ func (a *CustomProfilesAPIService) CreateCustomProfile(ctx context.Context) ApiC
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomProfilesAPIService) CreateCustomProfileExecute(r ApiCreateCustomProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomProfilesAPIService) CustomProfilesCreateCustomProfileExecute(r ApiCustomProfilesCreateCustomProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -80,7 +80,7 @@ func (a *CustomProfilesAPIService) CreateCustomProfileExecute(r ApiCreateCustomP
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.CreateCustomProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.CustomProfilesCreateCustomProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -171,18 +171,18 @@ func (a *CustomProfilesAPIService) CreateCustomProfileExecute(r ApiCreateCustomP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteCustomProfileRequest struct {
+type ApiCustomProfilesDeleteCustomProfileRequest struct {
 	ctx context.Context
 	ApiService *CustomProfilesAPIService
 	libraryItemId string
 }
 
-func (r ApiDeleteCustomProfileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteCustomProfileExecute(r)
+func (r ApiCustomProfilesDeleteCustomProfileRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CustomProfilesDeleteCustomProfileExecute(r)
 }
 
 /*
-DeleteCustomProfile Delete Custom Profile
+CustomProfilesDeleteCustomProfile Delete Custom Profile
 
 <p>NOTICE: This is permanent so be careful.</p>
 <p>This endpoint sends a request to delete a specific custom profile from the Kandji library.</p>
@@ -191,10 +191,10 @@ DeleteCustomProfile Delete Custom Profile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiDeleteCustomProfileRequest
+ @return ApiCustomProfilesDeleteCustomProfileRequest
 */
-func (a *CustomProfilesAPIService) DeleteCustomProfile(ctx context.Context, libraryItemId string) ApiDeleteCustomProfileRequest {
-	return ApiDeleteCustomProfileRequest{
+func (a *CustomProfilesAPIService) CustomProfilesDeleteCustomProfile(ctx context.Context, libraryItemId string) ApiCustomProfilesDeleteCustomProfileRequest {
+	return ApiCustomProfilesDeleteCustomProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -202,14 +202,14 @@ func (a *CustomProfilesAPIService) DeleteCustomProfile(ctx context.Context, libr
 }
 
 // Execute executes the request
-func (a *CustomProfilesAPIService) DeleteCustomProfileExecute(r ApiDeleteCustomProfileRequest) (*http.Response, error) {
+func (a *CustomProfilesAPIService) CustomProfilesDeleteCustomProfileExecute(r ApiCustomProfilesDeleteCustomProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.DeleteCustomProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.CustomProfilesDeleteCustomProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -276,18 +276,18 @@ func (a *CustomProfilesAPIService) DeleteCustomProfileExecute(r ApiDeleteCustomP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetCustomProfileRequest struct {
+type ApiCustomProfilesGetCustomProfileRequest struct {
 	ctx context.Context
 	ApiService *CustomProfilesAPIService
 	libraryItemId string
 }
 
-func (r ApiGetCustomProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetCustomProfileExecute(r)
+func (r ApiCustomProfilesGetCustomProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomProfilesGetCustomProfileExecute(r)
 }
 
 /*
-GetCustomProfile Get Custom Profile
+CustomProfilesGetCustomProfile Get Custom Profile
 
 <p>This endpoint retrieves details about a specific custom profile from the Kandji library.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -295,10 +295,10 @@ GetCustomProfile Get Custom Profile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiGetCustomProfileRequest
+ @return ApiCustomProfilesGetCustomProfileRequest
 */
-func (a *CustomProfilesAPIService) GetCustomProfile(ctx context.Context, libraryItemId string) ApiGetCustomProfileRequest {
-	return ApiGetCustomProfileRequest{
+func (a *CustomProfilesAPIService) CustomProfilesGetCustomProfile(ctx context.Context, libraryItemId string) ApiCustomProfilesGetCustomProfileRequest {
+	return ApiCustomProfilesGetCustomProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -307,7 +307,7 @@ func (a *CustomProfilesAPIService) GetCustomProfile(ctx context.Context, library
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomProfilesAPIService) GetCustomProfileExecute(r ApiGetCustomProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomProfilesAPIService) CustomProfilesGetCustomProfileExecute(r ApiCustomProfilesGetCustomProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *CustomProfilesAPIService) GetCustomProfileExecute(r ApiGetCustomProfile
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.GetCustomProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.CustomProfilesGetCustomProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -381,32 +381,32 @@ func (a *CustomProfilesAPIService) GetCustomProfileExecute(r ApiGetCustomProfile
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListCustomProfilesRequest struct {
+type ApiCustomProfilesListCustomProfilesRequest struct {
 	ctx context.Context
 	ApiService *CustomProfilesAPIService
 	page *string
 }
 
 // Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.
-func (r ApiListCustomProfilesRequest) Page(page string) ApiListCustomProfilesRequest {
+func (r ApiCustomProfilesListCustomProfilesRequest) Page(page string) ApiCustomProfilesListCustomProfilesRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiListCustomProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListCustomProfilesExecute(r)
+func (r ApiCustomProfilesListCustomProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomProfilesListCustomProfilesExecute(r)
 }
 
 /*
-ListCustomProfiles List Custom Profiles
+CustomProfilesListCustomProfiles List Custom Profiles
 
 This endpoint makes a request to retrieve a list of custom profiles from the Kandji library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCustomProfilesRequest
+ @return ApiCustomProfilesListCustomProfilesRequest
 */
-func (a *CustomProfilesAPIService) ListCustomProfiles(ctx context.Context) ApiListCustomProfilesRequest {
-	return ApiListCustomProfilesRequest{
+func (a *CustomProfilesAPIService) CustomProfilesListCustomProfiles(ctx context.Context) ApiCustomProfilesListCustomProfilesRequest {
+	return ApiCustomProfilesListCustomProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -414,7 +414,7 @@ func (a *CustomProfilesAPIService) ListCustomProfiles(ctx context.Context) ApiLi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomProfilesAPIService) ListCustomProfilesExecute(r ApiListCustomProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomProfilesAPIService) CustomProfilesListCustomProfilesExecute(r ApiCustomProfilesListCustomProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -422,7 +422,7 @@ func (a *CustomProfilesAPIService) ListCustomProfilesExecute(r ApiListCustomProf
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.ListCustomProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.CustomProfilesListCustomProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -490,18 +490,18 @@ func (a *CustomProfilesAPIService) ListCustomProfilesExecute(r ApiListCustomProf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateCustomProfileRequest struct {
+type ApiCustomProfilesUpdateCustomProfileRequest struct {
 	ctx context.Context
 	ApiService *CustomProfilesAPIService
 	libraryItemId string
 }
 
-func (r ApiUpdateCustomProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UpdateCustomProfileExecute(r)
+func (r ApiCustomProfilesUpdateCustomProfileRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomProfilesUpdateCustomProfileExecute(r)
 }
 
 /*
-UpdateCustomProfile Update Custom Profile
+CustomProfilesUpdateCustomProfile Update Custom Profile
 
 <p>This request allows you to update a custom profile in the Kandji library.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -509,10 +509,10 @@ UpdateCustomProfile Update Custom Profile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiUpdateCustomProfileRequest
+ @return ApiCustomProfilesUpdateCustomProfileRequest
 */
-func (a *CustomProfilesAPIService) UpdateCustomProfile(ctx context.Context, libraryItemId string) ApiUpdateCustomProfileRequest {
-	return ApiUpdateCustomProfileRequest{
+func (a *CustomProfilesAPIService) CustomProfilesUpdateCustomProfile(ctx context.Context, libraryItemId string) ApiCustomProfilesUpdateCustomProfileRequest {
+	return ApiCustomProfilesUpdateCustomProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -521,7 +521,7 @@ func (a *CustomProfilesAPIService) UpdateCustomProfile(ctx context.Context, libr
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomProfilesAPIService) UpdateCustomProfileExecute(r ApiUpdateCustomProfileRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomProfilesAPIService) CustomProfilesUpdateCustomProfileExecute(r ApiCustomProfilesUpdateCustomProfileRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -529,7 +529,7 @@ func (a *CustomProfilesAPIService) UpdateCustomProfileExecute(r ApiUpdateCustomP
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.UpdateCustomProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomProfilesAPIService.CustomProfilesUpdateCustomProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

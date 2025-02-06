@@ -4,21 +4,21 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelLostMode**](DeviceInformationAPI.md#CancelLostMode) | **Delete** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
-[**GetDeviceActivity**](DeviceInformationAPI.md#GetDeviceActivity) | **Get** /api/v1/devices/{device_id}/activity | Get Device Activity
-[**GetDeviceApps**](DeviceInformationAPI.md#GetDeviceApps) | **Get** /api/v1/devices/{device_id}/apps | Get Device Apps
-[**GetDeviceDetails**](DeviceInformationAPI.md#GetDeviceDetails) | **Get** /api/v1/devices/{device_id}/details | Get Device Details
-[**GetDeviceLibraryItems**](DeviceInformationAPI.md#GetDeviceLibraryItems) | **Get** /api/v1/devices/{device_id}/library-items | Get Device Library Items
-[**GetDeviceLostModeDetails**](DeviceInformationAPI.md#GetDeviceLostModeDetails) | **Get** /api/v1/devices/{device_id}/details/lostmode | Get Device Lost Mode details
-[**GetDeviceParameters**](DeviceInformationAPI.md#GetDeviceParameters) | **Get** /api/v1/devices/{device_id}/parameters | Get Device Parameters
-[**GetDeviceStatus**](DeviceInformationAPI.md#GetDeviceStatus) | **Get** /api/v1/devices/{device_id}/status | Get Device Status
-[**ListDevices**](DeviceInformationAPI.md#ListDevices) | **Get** /api/v1/devices | List Devices
+[**DeviceInformationCancelLostMode**](DeviceInformationAPI.md#DeviceInformationCancelLostMode) | **Delete** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
+[**DeviceInformationGetDeviceActivity**](DeviceInformationAPI.md#DeviceInformationGetDeviceActivity) | **Get** /api/v1/devices/{device_id}/activity | Get Device Activity
+[**DeviceInformationGetDeviceApps**](DeviceInformationAPI.md#DeviceInformationGetDeviceApps) | **Get** /api/v1/devices/{device_id}/apps | Get Device Apps
+[**DeviceInformationGetDeviceDetails**](DeviceInformationAPI.md#DeviceInformationGetDeviceDetails) | **Get** /api/v1/devices/{device_id}/details | Get Device Details
+[**DeviceInformationGetDeviceLibraryItems**](DeviceInformationAPI.md#DeviceInformationGetDeviceLibraryItems) | **Get** /api/v1/devices/{device_id}/library-items | Get Device Library Items
+[**DeviceInformationGetDeviceLostModeDetails**](DeviceInformationAPI.md#DeviceInformationGetDeviceLostModeDetails) | **Get** /api/v1/devices/{device_id}/details/lostmode | Get Device Lost Mode details
+[**DeviceInformationGetDeviceParameters**](DeviceInformationAPI.md#DeviceInformationGetDeviceParameters) | **Get** /api/v1/devices/{device_id}/parameters | Get Device Parameters
+[**DeviceInformationGetDeviceStatus**](DeviceInformationAPI.md#DeviceInformationGetDeviceStatus) | **Get** /api/v1/devices/{device_id}/status | Get Device Status
+[**DeviceInformationListDevices**](DeviceInformationAPI.md#DeviceInformationListDevices) | **Get** /api/v1/devices | List Devices
 
 
 
-## CancelLostMode
+## DeviceInformationCancelLostMode
 
-> CancelLostMode(ctx, deviceId).Execute()
+> DeviceInformationCancelLostMode(ctx, deviceId).Execute()
 
 Cancel Lost Mode
 
@@ -41,9 +41,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceInformationAPI.CancelLostMode(context.Background(), deviceId).Execute()
+	r, err := apiClient.DeviceInformationAPI.DeviceInformationCancelLostMode(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.CancelLostMode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationCancelLostMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCancelLostModeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationCancelLostModeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -84,9 +84,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceActivity
+## DeviceInformationGetDeviceActivity
 
-> map[string]interface{} GetDeviceActivity(ctx, deviceId).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} DeviceInformationGetDeviceActivity(ctx, deviceId).Limit(limit).Offset(offset).Execute()
 
 Get Device Activity
 
@@ -111,13 +111,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.GetDeviceActivity(context.Background(), deviceId).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationGetDeviceActivity(context.Background(), deviceId).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceActivity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationGetDeviceActivity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceActivity`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceActivity`: %v\n", resp)
+	// response from `DeviceInformationGetDeviceActivity`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationGetDeviceActivity`: %v\n", resp)
 }
 ```
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceActivityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationGetDeviceActivityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -158,9 +158,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceApps
+## DeviceInformationGetDeviceApps
 
-> map[string]interface{} GetDeviceApps(ctx, deviceId).Execute()
+> map[string]interface{} DeviceInformationGetDeviceApps(ctx, deviceId).Execute()
 
 Get Device Apps
 
@@ -183,13 +183,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.GetDeviceApps(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationGetDeviceApps(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceApps``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationGetDeviceApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceApps`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceApps`: %v\n", resp)
+	// response from `DeviceInformationGetDeviceApps`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationGetDeviceApps`: %v\n", resp)
 }
 ```
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceAppsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationGetDeviceAppsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -228,9 +228,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceDetails
+## DeviceInformationGetDeviceDetails
 
-> map[string]interface{} GetDeviceDetails(ctx, deviceId).Execute()
+> map[string]interface{} DeviceInformationGetDeviceDetails(ctx, deviceId).Execute()
 
 Get Device Details
 
@@ -253,13 +253,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.GetDeviceDetails(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationGetDeviceDetails(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceDetails``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationGetDeviceDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceDetails`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceDetails`: %v\n", resp)
+	// response from `DeviceInformationGetDeviceDetails`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationGetDeviceDetails`: %v\n", resp)
 }
 ```
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceDetailsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationGetDeviceDetailsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -298,9 +298,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceLibraryItems
+## DeviceInformationGetDeviceLibraryItems
 
-> map[string]interface{} GetDeviceLibraryItems(ctx, deviceId).Execute()
+> map[string]interface{} DeviceInformationGetDeviceLibraryItems(ctx, deviceId).Execute()
 
 Get Device Library Items
 
@@ -323,13 +323,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.GetDeviceLibraryItems(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationGetDeviceLibraryItems(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceLibraryItems``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationGetDeviceLibraryItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceLibraryItems`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceLibraryItems`: %v\n", resp)
+	// response from `DeviceInformationGetDeviceLibraryItems`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationGetDeviceLibraryItems`: %v\n", resp)
 }
 ```
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceLibraryItemsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationGetDeviceLibraryItemsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -368,9 +368,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceLostModeDetails
+## DeviceInformationGetDeviceLostModeDetails
 
-> map[string]interface{} GetDeviceLostModeDetails(ctx, deviceId).Execute()
+> map[string]interface{} DeviceInformationGetDeviceLostModeDetails(ctx, deviceId).Execute()
 
 Get Device Lost Mode details
 
@@ -393,13 +393,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.GetDeviceLostModeDetails(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationGetDeviceLostModeDetails(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceLostModeDetails``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationGetDeviceLostModeDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceLostModeDetails`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceLostModeDetails`: %v\n", resp)
+	// response from `DeviceInformationGetDeviceLostModeDetails`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationGetDeviceLostModeDetails`: %v\n", resp)
 }
 ```
 
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceLostModeDetailsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationGetDeviceLostModeDetailsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -438,9 +438,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceParameters
+## DeviceInformationGetDeviceParameters
 
-> map[string]interface{} GetDeviceParameters(ctx, deviceId).Execute()
+> map[string]interface{} DeviceInformationGetDeviceParameters(ctx, deviceId).Execute()
 
 Get Device Parameters
 
@@ -463,13 +463,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.GetDeviceParameters(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationGetDeviceParameters(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceParameters``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationGetDeviceParameters``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceParameters`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceParameters`: %v\n", resp)
+	// response from `DeviceInformationGetDeviceParameters`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationGetDeviceParameters`: %v\n", resp)
 }
 ```
 
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceParametersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationGetDeviceParametersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -508,9 +508,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetDeviceStatus
+## DeviceInformationGetDeviceStatus
 
-> map[string]interface{} GetDeviceStatus(ctx, deviceId).Execute()
+> map[string]interface{} DeviceInformationGetDeviceStatus(ctx, deviceId).Execute()
 
 Get Device Status
 
@@ -533,13 +533,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.GetDeviceStatus(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationGetDeviceStatus(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationGetDeviceStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceStatus`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceStatus`: %v\n", resp)
+	// response from `DeviceInformationGetDeviceStatus`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationGetDeviceStatus`: %v\n", resp)
 }
 ```
 
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDeviceStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationGetDeviceStatusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -578,9 +578,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListDevices
+## DeviceInformationListDevices
 
-> map[string]interface{} ListDevices(ctx).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserId(userId).UserName(userName).Offset(offset).Execute()
+> map[string]interface{} DeviceInformationListDevices(ctx).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserId(userId).UserName(userName).Offset(offset).Execute()
 
 List Devices
 
@@ -623,13 +623,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.ListDevices(context.Background()).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserId(userId).UserName(userName).Offset(offset).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.DeviceInformationListDevices(context.Background()).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserId(userId).UserName(userName).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.ListDevices``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.DeviceInformationListDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDevices`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.ListDevices`: %v\n", resp)
+	// response from `DeviceInformationListDevices`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.DeviceInformationListDevices`: %v\n", resp)
 }
 ```
 
@@ -639,7 +639,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListDevicesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationListDevicesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

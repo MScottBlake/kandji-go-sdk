@@ -24,27 +24,27 @@ import (
 // DeviceActionsAPIService DeviceActionsAPI service
 type DeviceActionsAPIService service
 
-type ApiClearPasscodeRequest struct {
+type ApiDeviceActionsClearPasscodeRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
-func (r ApiClearPasscodeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ClearPasscodeExecute(r)
+func (r ApiDeviceActionsClearPasscodeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsClearPasscodeExecute(r)
 }
 
 /*
-ClearPasscode Clear Passcode
+DeviceActionsClearPasscode Clear Passcode
 
 This endpoint sends an MDM command to clear a device passcode. Available for iPhone and iPad.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiClearPasscodeRequest
+ @return ApiDeviceActionsClearPasscodeRequest
 */
-func (a *DeviceActionsAPIService) ClearPasscode(ctx context.Context, deviceId string) ApiClearPasscodeRequest {
-	return ApiClearPasscodeRequest{
+func (a *DeviceActionsAPIService) DeviceActionsClearPasscode(ctx context.Context, deviceId string) ApiDeviceActionsClearPasscodeRequest {
+	return ApiDeviceActionsClearPasscodeRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -52,14 +52,14 @@ func (a *DeviceActionsAPIService) ClearPasscode(ctx context.Context, deviceId st
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) ClearPasscodeExecute(r ApiClearPasscodeRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsClearPasscodeExecute(r ApiDeviceActionsClearPasscodeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.ClearPasscode")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsClearPasscode")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -116,27 +116,27 @@ func (a *DeviceActionsAPIService) ClearPasscodeExecute(r ApiClearPasscodeRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteDeviceRequest struct {
+type ApiDeviceActionsDeleteDeviceRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
-func (r ApiDeleteDeviceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteDeviceExecute(r)
+func (r ApiDeviceActionsDeleteDeviceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsDeleteDeviceExecute(r)
 }
 
 /*
-DeleteDevice Delete Device
+DeviceActionsDeleteDevice Delete Device
 
 This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiDeleteDeviceRequest
+ @return ApiDeviceActionsDeleteDeviceRequest
 */
-func (a *DeviceActionsAPIService) DeleteDevice(ctx context.Context, deviceId string) ApiDeleteDeviceRequest {
-	return ApiDeleteDeviceRequest{
+func (a *DeviceActionsAPIService) DeviceActionsDeleteDevice(ctx context.Context, deviceId string) ApiDeviceActionsDeleteDeviceRequest {
+	return ApiDeviceActionsDeleteDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -144,14 +144,14 @@ func (a *DeviceActionsAPIService) DeleteDevice(ctx context.Context, deviceId str
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) DeleteDeviceExecute(r ApiDeleteDeviceRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsDeleteDeviceExecute(r ApiDeviceActionsDeleteDeviceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeleteDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsDeleteDevice")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -208,24 +208,24 @@ func (a *DeviceActionsAPIService) DeleteDeviceExecute(r ApiDeleteDeviceRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteUserRequest struct {
+type ApiDeviceActionsDeleteUserRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiDeleteUserRequest) Body(body string) ApiDeleteUserRequest {
+func (r ApiDeviceActionsDeleteUserRequest) Body(body string) ApiDeviceActionsDeleteUserRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiDeleteUserRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteUserExecute(r)
+func (r ApiDeviceActionsDeleteUserRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsDeleteUserExecute(r)
 }
 
 /*
-DeleteUser Delete User
+DeviceActionsDeleteUser Delete User
 
 <p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
@@ -236,10 +236,10 @@ DeleteUser Delete User
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiDeleteUserRequest
+ @return ApiDeviceActionsDeleteUserRequest
 */
-func (a *DeviceActionsAPIService) DeleteUser(ctx context.Context, deviceId string) ApiDeleteUserRequest {
-	return ApiDeleteUserRequest{
+func (a *DeviceActionsAPIService) DeviceActionsDeleteUser(ctx context.Context, deviceId string) ApiDeviceActionsDeleteUserRequest {
+	return ApiDeviceActionsDeleteUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -247,14 +247,14 @@ func (a *DeviceActionsAPIService) DeleteUser(ctx context.Context, deviceId strin
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsDeleteUserExecute(r ApiDeviceActionsDeleteUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeleteUser")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsDeleteUser")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -313,24 +313,24 @@ func (a *DeviceActionsAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiEraseDeviceRequest struct {
+type ApiDeviceActionsEraseDeviceRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiEraseDeviceRequest) Body(body string) ApiEraseDeviceRequest {
+func (r ApiDeviceActionsEraseDeviceRequest) Body(body string) ApiDeviceActionsEraseDeviceRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiEraseDeviceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.EraseDeviceExecute(r)
+func (r ApiDeviceActionsEraseDeviceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsEraseDeviceExecute(r)
 }
 
 /*
-EraseDevice Erase Device
+DeviceActionsEraseDevice Erase Device
 
 <p>This endpoint sends an MDM command to erase the device.</p>
 <p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>
@@ -380,10 +380,10 @@ EraseDevice Erase Device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiEraseDeviceRequest
+ @return ApiDeviceActionsEraseDeviceRequest
 */
-func (a *DeviceActionsAPIService) EraseDevice(ctx context.Context, deviceId string) ApiEraseDeviceRequest {
-	return ApiEraseDeviceRequest{
+func (a *DeviceActionsAPIService) DeviceActionsEraseDevice(ctx context.Context, deviceId string) ApiDeviceActionsEraseDeviceRequest {
+	return ApiDeviceActionsEraseDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -391,14 +391,14 @@ func (a *DeviceActionsAPIService) EraseDevice(ctx context.Context, deviceId stri
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) EraseDeviceExecute(r ApiEraseDeviceRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsEraseDeviceExecute(r ApiDeviceActionsEraseDeviceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.EraseDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsEraseDevice")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -467,7 +467,7 @@ func (a *DeviceActionsAPIService) EraseDeviceExecute(r ApiEraseDeviceRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceCommandsRequest struct {
+type ApiDeviceActionsGetDeviceCommandsRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
@@ -476,23 +476,23 @@ type ApiGetDeviceCommandsRequest struct {
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiGetDeviceCommandsRequest) Limit(limit string) ApiGetDeviceCommandsRequest {
+func (r ApiDeviceActionsGetDeviceCommandsRequest) Limit(limit string) ApiDeviceActionsGetDeviceCommandsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiGetDeviceCommandsRequest) Offset(offset string) ApiGetDeviceCommandsRequest {
+func (r ApiDeviceActionsGetDeviceCommandsRequest) Offset(offset string) ApiDeviceActionsGetDeviceCommandsRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGetDeviceCommandsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetDeviceCommandsExecute(r)
+func (r ApiDeviceActionsGetDeviceCommandsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsGetDeviceCommandsExecute(r)
 }
 
 /*
-GetDeviceCommands Get Device Commands
+DeviceActionsGetDeviceCommands Get Device Commands
 
 <p>This endpoint sends a request to get information about the commands sent to a given device ID.</p>
 <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3>
@@ -506,10 +506,10 @@ GetDeviceCommands Get Device Commands
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiGetDeviceCommandsRequest
+ @return ApiDeviceActionsGetDeviceCommandsRequest
 */
-func (a *DeviceActionsAPIService) GetDeviceCommands(ctx context.Context, deviceId string) ApiGetDeviceCommandsRequest {
-	return ApiGetDeviceCommandsRequest{
+func (a *DeviceActionsAPIService) DeviceActionsGetDeviceCommands(ctx context.Context, deviceId string) ApiDeviceActionsGetDeviceCommandsRequest {
+	return ApiDeviceActionsGetDeviceCommandsRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -517,14 +517,14 @@ func (a *DeviceActionsAPIService) GetDeviceCommands(ctx context.Context, deviceI
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsGetDeviceCommandsExecute(r ApiDeviceActionsGetDeviceCommandsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.GetDeviceCommands")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsGetDeviceCommands")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -588,24 +588,24 @@ func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommand
 	return localVarHTTPResponse, nil
 }
 
-type ApiLockDeviceRequest struct {
+type ApiDeviceActionsLockDeviceRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiLockDeviceRequest) Body(body string) ApiLockDeviceRequest {
+func (r ApiDeviceActionsLockDeviceRequest) Body(body string) ApiDeviceActionsLockDeviceRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiLockDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.LockDeviceExecute(r)
+func (r ApiDeviceActionsLockDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.DeviceActionsLockDeviceExecute(r)
 }
 
 /*
-LockDevice Lock Device
+DeviceActionsLockDevice Lock Device
 
 <p>This endpoint sends an MDM command to remotely lock a device.</p>
 <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>
@@ -635,10 +635,10 @@ LockDevice Lock Device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiLockDeviceRequest
+ @return ApiDeviceActionsLockDeviceRequest
 */
-func (a *DeviceActionsAPIService) LockDevice(ctx context.Context, deviceId string) ApiLockDeviceRequest {
-	return ApiLockDeviceRequest{
+func (a *DeviceActionsAPIService) DeviceActionsLockDevice(ctx context.Context, deviceId string) ApiDeviceActionsLockDeviceRequest {
+	return ApiDeviceActionsLockDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -647,7 +647,7 @@ func (a *DeviceActionsAPIService) LockDevice(ctx context.Context, deviceId strin
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *DeviceActionsAPIService) LockDeviceExecute(r ApiLockDeviceRequest) (map[string]interface{}, *http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsLockDeviceExecute(r ApiDeviceActionsLockDeviceRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -655,7 +655,7 @@ func (a *DeviceActionsAPIService) LockDeviceExecute(r ApiLockDeviceRequest) (map
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.LockDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsLockDevice")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -733,27 +733,27 @@ func (a *DeviceActionsAPIService) LockDeviceExecute(r ApiLockDeviceRequest) (map
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiReinstallAgentRequest struct {
+type ApiDeviceActionsReinstallAgentRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
-func (r ApiReinstallAgentRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ReinstallAgentExecute(r)
+func (r ApiDeviceActionsReinstallAgentRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsReinstallAgentExecute(r)
 }
 
 /*
-ReinstallAgent Reinstall Agent
+DeviceActionsReinstallAgent Reinstall Agent
 
 This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiReinstallAgentRequest
+ @return ApiDeviceActionsReinstallAgentRequest
 */
-func (a *DeviceActionsAPIService) ReinstallAgent(ctx context.Context, deviceId string) ApiReinstallAgentRequest {
-	return ApiReinstallAgentRequest{
+func (a *DeviceActionsAPIService) DeviceActionsReinstallAgent(ctx context.Context, deviceId string) ApiDeviceActionsReinstallAgentRequest {
+	return ApiDeviceActionsReinstallAgentRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -761,14 +761,14 @@ func (a *DeviceActionsAPIService) ReinstallAgent(ctx context.Context, deviceId s
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) ReinstallAgentExecute(r ApiReinstallAgentRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsReinstallAgentExecute(r ApiDeviceActionsReinstallAgentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.ReinstallAgent")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsReinstallAgent")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -825,24 +825,24 @@ func (a *DeviceActionsAPIService) ReinstallAgentExecute(r ApiReinstallAgentReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiRemoteDesktopRequest struct {
+type ApiDeviceActionsRemoteDesktopRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiRemoteDesktopRequest) Body(body string) ApiRemoteDesktopRequest {
+func (r ApiDeviceActionsRemoteDesktopRequest) Body(body string) ApiDeviceActionsRemoteDesktopRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiRemoteDesktopRequest) Execute() (*http.Response, error) {
-	return r.ApiService.RemoteDesktopExecute(r)
+func (r ApiDeviceActionsRemoteDesktopRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsRemoteDesktopExecute(r)
 }
 
 /*
-RemoteDesktop Remote Desktop
+DeviceActionsRemoteDesktop Remote Desktop
 
 <p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
@@ -851,10 +851,10 @@ RemoteDesktop Remote Desktop
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiRemoteDesktopRequest
+ @return ApiDeviceActionsRemoteDesktopRequest
 */
-func (a *DeviceActionsAPIService) RemoteDesktop(ctx context.Context, deviceId string) ApiRemoteDesktopRequest {
-	return ApiRemoteDesktopRequest{
+func (a *DeviceActionsAPIService) DeviceActionsRemoteDesktop(ctx context.Context, deviceId string) ApiDeviceActionsRemoteDesktopRequest {
+	return ApiDeviceActionsRemoteDesktopRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -862,14 +862,14 @@ func (a *DeviceActionsAPIService) RemoteDesktop(ctx context.Context, deviceId st
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) RemoteDesktopExecute(r ApiRemoteDesktopRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsRemoteDesktopExecute(r ApiDeviceActionsRemoteDesktopRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.RemoteDesktop")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsRemoteDesktop")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -928,27 +928,27 @@ func (a *DeviceActionsAPIService) RemoteDesktopExecute(r ApiRemoteDesktopRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiRenewMdmProfileRequest struct {
+type ApiDeviceActionsRenewMdmProfileRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
-func (r ApiRenewMdmProfileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.RenewMdmProfileExecute(r)
+func (r ApiDeviceActionsRenewMdmProfileRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsRenewMdmProfileExecute(r)
 }
 
 /*
-RenewMdmProfile Renew MDM Profile
+DeviceActionsRenewMdmProfile Renew MDM Profile
 
 This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiRenewMdmProfileRequest
+ @return ApiDeviceActionsRenewMdmProfileRequest
 */
-func (a *DeviceActionsAPIService) RenewMdmProfile(ctx context.Context, deviceId string) ApiRenewMdmProfileRequest {
-	return ApiRenewMdmProfileRequest{
+func (a *DeviceActionsAPIService) DeviceActionsRenewMdmProfile(ctx context.Context, deviceId string) ApiDeviceActionsRenewMdmProfileRequest {
+	return ApiDeviceActionsRenewMdmProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -956,14 +956,14 @@ func (a *DeviceActionsAPIService) RenewMdmProfile(ctx context.Context, deviceId 
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) RenewMdmProfileExecute(r ApiRenewMdmProfileRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsRenewMdmProfileExecute(r ApiDeviceActionsRenewMdmProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.RenewMdmProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsRenewMdmProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1020,24 +1020,24 @@ func (a *DeviceActionsAPIService) RenewMdmProfileExecute(r ApiRenewMdmProfileReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiRestartDeviceRequest struct {
+type ApiDeviceActionsRestartDeviceRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiRestartDeviceRequest) Body(body string) ApiRestartDeviceRequest {
+func (r ApiDeviceActionsRestartDeviceRequest) Body(body string) ApiDeviceActionsRestartDeviceRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiRestartDeviceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.RestartDeviceExecute(r)
+func (r ApiDeviceActionsRestartDeviceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsRestartDeviceExecute(r)
 }
 
 /*
-RestartDevice Restart Device
+DeviceActionsRestartDevice Restart Device
 
 <p>This endpoint sends an MDM command to remotely restart a device.</p>
 <ul>
@@ -1049,10 +1049,10 @@ RestartDevice Restart Device
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiRestartDeviceRequest
+ @return ApiDeviceActionsRestartDeviceRequest
 */
-func (a *DeviceActionsAPIService) RestartDevice(ctx context.Context, deviceId string) ApiRestartDeviceRequest {
-	return ApiRestartDeviceRequest{
+func (a *DeviceActionsAPIService) DeviceActionsRestartDevice(ctx context.Context, deviceId string) ApiDeviceActionsRestartDeviceRequest {
+	return ApiDeviceActionsRestartDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1060,14 +1060,14 @@ func (a *DeviceActionsAPIService) RestartDevice(ctx context.Context, deviceId st
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) RestartDeviceExecute(r ApiRestartDeviceRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsRestartDeviceExecute(r ApiDeviceActionsRestartDeviceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.RestartDevice")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsRestartDevice")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1126,28 +1126,28 @@ func (a *DeviceActionsAPIService) RestartDeviceExecute(r ApiRestartDeviceRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiSendBlankpushRequest struct {
+type ApiDeviceActionsSendBlankpushRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
-func (r ApiSendBlankpushRequest) Execute() (*http.Response, error) {
-	return r.ApiService.SendBlankpushExecute(r)
+func (r ApiDeviceActionsSendBlankpushRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsSendBlankpushExecute(r)
 }
 
 /*
-SendBlankpush Send Blankpush
+DeviceActionsSendBlankpush Send Blankpush
 
 <p>This endpoint sends an MDM command to initiate a blank push.</p>
 <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiSendBlankpushRequest
+ @return ApiDeviceActionsSendBlankpushRequest
 */
-func (a *DeviceActionsAPIService) SendBlankpush(ctx context.Context, deviceId string) ApiSendBlankpushRequest {
-	return ApiSendBlankpushRequest{
+func (a *DeviceActionsAPIService) DeviceActionsSendBlankpush(ctx context.Context, deviceId string) ApiDeviceActionsSendBlankpushRequest {
+	return ApiDeviceActionsSendBlankpushRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1155,14 +1155,14 @@ func (a *DeviceActionsAPIService) SendBlankpush(ctx context.Context, deviceId st
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) SendBlankpushExecute(r ApiSendBlankpushRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsSendBlankpushExecute(r ApiDeviceActionsSendBlankpushRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.SendBlankpush")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsSendBlankpush")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1219,24 +1219,24 @@ func (a *DeviceActionsAPIService) SendBlankpushExecute(r ApiSendBlankpushRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiSetNameRequest struct {
+type ApiDeviceActionsSetNameRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiSetNameRequest) Body(body string) ApiSetNameRequest {
+func (r ApiDeviceActionsSetNameRequest) Body(body string) ApiDeviceActionsSetNameRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiSetNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.SetNameExecute(r)
+func (r ApiDeviceActionsSetNameRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsSetNameExecute(r)
 }
 
 /*
-SetName Set Name
+DeviceActionsSetName Set Name
 
 <p>This endpoint sends an MDM command to set the device name.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
@@ -1245,10 +1245,10 @@ SetName Set Name
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiSetNameRequest
+ @return ApiDeviceActionsSetNameRequest
 */
-func (a *DeviceActionsAPIService) SetName(ctx context.Context, deviceId string) ApiSetNameRequest {
-	return ApiSetNameRequest{
+func (a *DeviceActionsAPIService) DeviceActionsSetName(ctx context.Context, deviceId string) ApiDeviceActionsSetNameRequest {
+	return ApiDeviceActionsSetNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1256,14 +1256,14 @@ func (a *DeviceActionsAPIService) SetName(ctx context.Context, deviceId string) 
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) SetNameExecute(r ApiSetNameRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsSetNameExecute(r ApiDeviceActionsSetNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.SetName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsSetName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1322,27 +1322,27 @@ func (a *DeviceActionsAPIService) SetNameExecute(r ApiSetNameRequest) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-type ApiShutdownRequest struct {
+type ApiDeviceActionsShutdownRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
-func (r ApiShutdownRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ShutdownExecute(r)
+func (r ApiDeviceActionsShutdownRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsShutdownExecute(r)
 }
 
 /*
-Shutdown Shutdown
+DeviceActionsShutdown Shutdown
 
 This endpoint sends an MDM command to shutdown a device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiShutdownRequest
+ @return ApiDeviceActionsShutdownRequest
 */
-func (a *DeviceActionsAPIService) Shutdown(ctx context.Context, deviceId string) ApiShutdownRequest {
-	return ApiShutdownRequest{
+func (a *DeviceActionsAPIService) DeviceActionsShutdown(ctx context.Context, deviceId string) ApiDeviceActionsShutdownRequest {
+	return ApiDeviceActionsShutdownRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1350,14 +1350,14 @@ func (a *DeviceActionsAPIService) Shutdown(ctx context.Context, deviceId string)
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) ShutdownExecute(r ApiShutdownRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsShutdownExecute(r ApiDeviceActionsShutdownRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.Shutdown")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsShutdown")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1414,24 +1414,24 @@ func (a *DeviceActionsAPIService) ShutdownExecute(r ApiShutdownRequest) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiUnlockAccountRequest struct {
+type ApiDeviceActionsUnlockAccountRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
 
-func (r ApiUnlockAccountRequest) Body(body string) ApiUnlockAccountRequest {
+func (r ApiDeviceActionsUnlockAccountRequest) Body(body string) ApiDeviceActionsUnlockAccountRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUnlockAccountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UnlockAccountExecute(r)
+func (r ApiDeviceActionsUnlockAccountRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsUnlockAccountExecute(r)
 }
 
 /*
-UnlockAccount Unlock Account
+DeviceActionsUnlockAccount Unlock Account
 
 <p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
@@ -1440,10 +1440,10 @@ UnlockAccount Unlock Account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiUnlockAccountRequest
+ @return ApiDeviceActionsUnlockAccountRequest
 */
-func (a *DeviceActionsAPIService) UnlockAccount(ctx context.Context, deviceId string) ApiUnlockAccountRequest {
-	return ApiUnlockAccountRequest{
+func (a *DeviceActionsAPIService) DeviceActionsUnlockAccount(ctx context.Context, deviceId string) ApiDeviceActionsUnlockAccountRequest {
+	return ApiDeviceActionsUnlockAccountRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1451,14 +1451,14 @@ func (a *DeviceActionsAPIService) UnlockAccount(ctx context.Context, deviceId st
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) UnlockAccountExecute(r ApiUnlockAccountRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsUnlockAccountExecute(r ApiDeviceActionsUnlockAccountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.UnlockAccount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsUnlockAccount")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1517,27 +1517,27 @@ func (a *DeviceActionsAPIService) UnlockAccountExecute(r ApiUnlockAccountRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateInventoryRequest struct {
+type ApiDeviceActionsUpdateInventoryRequest struct {
 	ctx context.Context
 	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
-func (r ApiUpdateInventoryRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UpdateInventoryExecute(r)
+func (r ApiDeviceActionsUpdateInventoryRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeviceActionsUpdateInventoryExecute(r)
 }
 
 /*
-UpdateInventory Update Inventory
+DeviceActionsUpdateInventory Update Inventory
 
 This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
- @return ApiUpdateInventoryRequest
+ @return ApiDeviceActionsUpdateInventoryRequest
 */
-func (a *DeviceActionsAPIService) UpdateInventory(ctx context.Context, deviceId string) ApiUpdateInventoryRequest {
-	return ApiUpdateInventoryRequest{
+func (a *DeviceActionsAPIService) DeviceActionsUpdateInventory(ctx context.Context, deviceId string) ApiDeviceActionsUpdateInventoryRequest {
+	return ApiDeviceActionsUpdateInventoryRequest{
 		ApiService: a,
 		ctx: ctx,
 		deviceId: deviceId,
@@ -1545,14 +1545,14 @@ func (a *DeviceActionsAPIService) UpdateInventory(ctx context.Context, deviceId 
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) UpdateInventoryExecute(r ApiUpdateInventoryRequest) (*http.Response, error) {
+func (a *DeviceActionsAPIService) DeviceActionsUpdateInventoryExecute(r ApiDeviceActionsUpdateInventoryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.UpdateInventory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.DeviceActionsUpdateInventory")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

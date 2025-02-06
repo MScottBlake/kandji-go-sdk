@@ -24,7 +24,7 @@ import (
 // PrismAPIService PrismAPI service
 type PrismAPIService service
 
-type ApiActivationLockRequest struct {
+type ApiPrismActivationLockRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -36,69 +36,69 @@ type ApiActivationLockRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiActivationLockRequest) BlueprintIds(blueprintIds string) ApiActivationLockRequest {
+func (r ApiPrismActivationLockRequest) BlueprintIds(blueprintIds string) ApiPrismActivationLockRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiActivationLockRequest) DeviceFamilies(deviceFamilies string) ApiActivationLockRequest {
+func (r ApiPrismActivationLockRequest) DeviceFamilies(deviceFamilies string) ApiPrismActivationLockRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiActivationLockRequest) Filter(filter string) ApiActivationLockRequest {
+func (r ApiPrismActivationLockRequest) Filter(filter string) ApiPrismActivationLockRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiActivationLockRequest) SortBy(sortBy string) ApiActivationLockRequest {
+func (r ApiPrismActivationLockRequest) SortBy(sortBy string) ApiPrismActivationLockRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiActivationLockRequest) Limit(limit string) ApiActivationLockRequest {
+func (r ApiPrismActivationLockRequest) Limit(limit string) ApiPrismActivationLockRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiActivationLockRequest) Offset(offset string) ApiActivationLockRequest {
+func (r ApiPrismActivationLockRequest) Offset(offset string) ApiPrismActivationLockRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiActivationLockRequest) Execute() (*http.Response, error) {
-	return r.ApiService.ActivationLockExecute(r)
+func (r ApiPrismActivationLockRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PrismActivationLockExecute(r)
 }
 
 /*
-ActivationLock Activation lock
+PrismActivationLock Activation lock
 
 Get activation lock attributes for devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiActivationLockRequest
+ @return ApiPrismActivationLockRequest
 */
-func (a *PrismAPIService) ActivationLock(ctx context.Context) ApiActivationLockRequest {
-	return ApiActivationLockRequest{
+func (a *PrismAPIService) PrismActivationLock(ctx context.Context) ApiPrismActivationLockRequest {
+	return ApiPrismActivationLockRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*http.Response, error) {
+func (a *PrismAPIService) PrismActivationLockExecute(r ApiPrismActivationLockRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.ActivationLock")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismActivationLock")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -172,7 +172,7 @@ func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiApplicationFirewallRequest struct {
+type ApiPrismApplicationFirewallRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -184,55 +184,55 @@ type ApiApplicationFirewallRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiApplicationFirewallRequest) BlueprintIds(blueprintIds string) ApiApplicationFirewallRequest {
+func (r ApiPrismApplicationFirewallRequest) BlueprintIds(blueprintIds string) ApiPrismApplicationFirewallRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiApplicationFirewallRequest) DeviceFamilies(deviceFamilies string) ApiApplicationFirewallRequest {
+func (r ApiPrismApplicationFirewallRequest) DeviceFamilies(deviceFamilies string) ApiPrismApplicationFirewallRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiApplicationFirewallRequest) Filter(filter string) ApiApplicationFirewallRequest {
+func (r ApiPrismApplicationFirewallRequest) Filter(filter string) ApiPrismApplicationFirewallRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiApplicationFirewallRequest) SortBy(sortBy string) ApiApplicationFirewallRequest {
+func (r ApiPrismApplicationFirewallRequest) SortBy(sortBy string) ApiPrismApplicationFirewallRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiApplicationFirewallRequest) Limit(limit string) ApiApplicationFirewallRequest {
+func (r ApiPrismApplicationFirewallRequest) Limit(limit string) ApiPrismApplicationFirewallRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiApplicationFirewallRequest) Offset(offset string) ApiApplicationFirewallRequest {
+func (r ApiPrismApplicationFirewallRequest) Offset(offset string) ApiPrismApplicationFirewallRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiApplicationFirewallRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ApplicationFirewallExecute(r)
+func (r ApiPrismApplicationFirewallRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismApplicationFirewallExecute(r)
 }
 
 /*
-ApplicationFirewall Application firewall
+PrismApplicationFirewall Application firewall
 
 Get Application Firewall details for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApplicationFirewallRequest
+ @return ApiPrismApplicationFirewallRequest
 */
-func (a *PrismAPIService) ApplicationFirewall(ctx context.Context) ApiApplicationFirewallRequest {
-	return ApiApplicationFirewallRequest{
+func (a *PrismAPIService) PrismApplicationFirewall(ctx context.Context) ApiPrismApplicationFirewallRequest {
+	return ApiPrismApplicationFirewallRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -240,7 +240,7 @@ func (a *PrismAPIService) ApplicationFirewall(ctx context.Context) ApiApplicatio
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismApplicationFirewallExecute(r ApiPrismApplicationFirewallRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -248,7 +248,7 @@ func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallReq
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.ApplicationFirewall")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismApplicationFirewall")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -331,7 +331,7 @@ func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApplicationsRequest struct {
+type ApiPrismApplicationsRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -343,55 +343,55 @@ type ApiApplicationsRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiApplicationsRequest) BlueprintIds(blueprintIds string) ApiApplicationsRequest {
+func (r ApiPrismApplicationsRequest) BlueprintIds(blueprintIds string) ApiPrismApplicationsRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiApplicationsRequest) DeviceFamilies(deviceFamilies string) ApiApplicationsRequest {
+func (r ApiPrismApplicationsRequest) DeviceFamilies(deviceFamilies string) ApiPrismApplicationsRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiApplicationsRequest) Filter(filter string) ApiApplicationsRequest {
+func (r ApiPrismApplicationsRequest) Filter(filter string) ApiPrismApplicationsRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiApplicationsRequest) SortBy(sortBy string) ApiApplicationsRequest {
+func (r ApiPrismApplicationsRequest) SortBy(sortBy string) ApiPrismApplicationsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiApplicationsRequest) Limit(limit string) ApiApplicationsRequest {
+func (r ApiPrismApplicationsRequest) Limit(limit string) ApiPrismApplicationsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiApplicationsRequest) Offset(offset string) ApiApplicationsRequest {
+func (r ApiPrismApplicationsRequest) Offset(offset string) ApiPrismApplicationsRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiApplicationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ApplicationsExecute(r)
+func (r ApiPrismApplicationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismApplicationsExecute(r)
 }
 
 /*
-Applications Applications
+PrismApplications Applications
 
 Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApplicationsRequest
+ @return ApiPrismApplicationsRequest
 */
-func (a *PrismAPIService) Applications(ctx context.Context) ApiApplicationsRequest {
-	return ApiApplicationsRequest{
+func (a *PrismAPIService) PrismApplications(ctx context.Context) ApiPrismApplicationsRequest {
+	return ApiPrismApplicationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -399,7 +399,7 @@ func (a *PrismAPIService) Applications(ctx context.Context) ApiApplicationsReque
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismApplicationsExecute(r ApiPrismApplicationsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -407,7 +407,7 @@ func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (map[str
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Applications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismApplications")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -490,7 +490,7 @@ func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (map[str
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCertificatesRequest struct {
+type ApiPrismCertificatesRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -502,55 +502,55 @@ type ApiCertificatesRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiCertificatesRequest) BlueprintIds(blueprintIds string) ApiCertificatesRequest {
+func (r ApiPrismCertificatesRequest) BlueprintIds(blueprintIds string) ApiPrismCertificatesRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiCertificatesRequest) DeviceFamilies(deviceFamilies string) ApiCertificatesRequest {
+func (r ApiPrismCertificatesRequest) DeviceFamilies(deviceFamilies string) ApiPrismCertificatesRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiCertificatesRequest) Filter(filter string) ApiCertificatesRequest {
+func (r ApiPrismCertificatesRequest) Filter(filter string) ApiPrismCertificatesRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiCertificatesRequest) SortBy(sortBy string) ApiCertificatesRequest {
+func (r ApiPrismCertificatesRequest) SortBy(sortBy string) ApiPrismCertificatesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiCertificatesRequest) Limit(limit string) ApiCertificatesRequest {
+func (r ApiPrismCertificatesRequest) Limit(limit string) ApiPrismCertificatesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiCertificatesRequest) Offset(offset string) ApiCertificatesRequest {
+func (r ApiPrismCertificatesRequest) Offset(offset string) ApiPrismCertificatesRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiCertificatesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CertificatesExecute(r)
+func (r ApiPrismCertificatesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismCertificatesExecute(r)
 }
 
 /*
-Certificates Certificates
+PrismCertificates Certificates
 
 Get certificate details.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCertificatesRequest
+ @return ApiPrismCertificatesRequest
 */
-func (a *PrismAPIService) Certificates(ctx context.Context) ApiCertificatesRequest {
-	return ApiCertificatesRequest{
+func (a *PrismAPIService) PrismCertificates(ctx context.Context) ApiPrismCertificatesRequest {
+	return ApiPrismCertificatesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -558,7 +558,7 @@ func (a *PrismAPIService) Certificates(ctx context.Context) ApiCertificatesReque
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismCertificatesExecute(r ApiPrismCertificatesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -566,7 +566,7 @@ func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (map[str
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Certificates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismCertificates")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -649,34 +649,34 @@ func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (map[str
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCountRequest struct {
+type ApiPrismCountRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	category *string
 }
 
 // &lt;p&gt;Return the count of records for the specified category.  If a category contains spaces substitute the spaces for underscores (&amp;quot;_&amp;quot;) when using the API query.&lt;/p&gt; &lt;p&gt;Examples: apps device_information kernel_extensions system_extensions&lt;/p&gt;
-func (r ApiCountRequest) Category(category string) ApiCountRequest {
+func (r ApiPrismCountRequest) Category(category string) ApiPrismCountRequest {
 	r.category = &category
 	return r
 }
 
-func (r ApiCountRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CountExecute(r)
+func (r ApiPrismCountRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismCountExecute(r)
 }
 
 /*
-Count Count
+PrismCount Count
 
 <p>Get the total record count for the specified Prism category.</p>
 <p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p>
 <p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCountRequest
+ @return ApiPrismCountRequest
 */
-func (a *PrismAPIService) Count(ctx context.Context) ApiCountRequest {
-	return ApiCountRequest{
+func (a *PrismAPIService) PrismCount(ctx context.Context) ApiPrismCountRequest {
+	return ApiPrismCountRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -684,7 +684,7 @@ func (a *PrismAPIService) Count(ctx context.Context) ApiCountRequest {
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) CountExecute(r ApiCountRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismCountExecute(r ApiPrismCountRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -692,7 +692,7 @@ func (a *PrismAPIService) CountExecute(r ApiCountRequest) (map[string]interface{
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Count")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismCount")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -761,7 +761,7 @@ func (a *PrismAPIService) CountExecute(r ApiCountRequest) (map[string]interface{
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDesktopAndScreensaverRequest struct {
+type ApiPrismDesktopAndScreensaverRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -773,55 +773,55 @@ type ApiDesktopAndScreensaverRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiDesktopAndScreensaverRequest) BlueprintIds(blueprintIds string) ApiDesktopAndScreensaverRequest {
+func (r ApiPrismDesktopAndScreensaverRequest) BlueprintIds(blueprintIds string) ApiPrismDesktopAndScreensaverRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiDesktopAndScreensaverRequest) DeviceFamilies(deviceFamilies string) ApiDesktopAndScreensaverRequest {
+func (r ApiPrismDesktopAndScreensaverRequest) DeviceFamilies(deviceFamilies string) ApiPrismDesktopAndScreensaverRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiDesktopAndScreensaverRequest) Filter(filter string) ApiDesktopAndScreensaverRequest {
+func (r ApiPrismDesktopAndScreensaverRequest) Filter(filter string) ApiPrismDesktopAndScreensaverRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiDesktopAndScreensaverRequest) SortBy(sortBy string) ApiDesktopAndScreensaverRequest {
+func (r ApiPrismDesktopAndScreensaverRequest) SortBy(sortBy string) ApiPrismDesktopAndScreensaverRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiDesktopAndScreensaverRequest) Limit(limit string) ApiDesktopAndScreensaverRequest {
+func (r ApiPrismDesktopAndScreensaverRequest) Limit(limit string) ApiPrismDesktopAndScreensaverRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiDesktopAndScreensaverRequest) Offset(offset string) ApiDesktopAndScreensaverRequest {
+func (r ApiPrismDesktopAndScreensaverRequest) Offset(offset string) ApiPrismDesktopAndScreensaverRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiDesktopAndScreensaverRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.DesktopAndScreensaverExecute(r)
+func (r ApiPrismDesktopAndScreensaverRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismDesktopAndScreensaverExecute(r)
 }
 
 /*
-DesktopAndScreensaver Desktop and Screensaver
+PrismDesktopAndScreensaver Desktop and Screensaver
 
 Get Desktop and Screensaver details for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDesktopAndScreensaverRequest
+ @return ApiPrismDesktopAndScreensaverRequest
 */
-func (a *PrismAPIService) DesktopAndScreensaver(ctx context.Context) ApiDesktopAndScreensaverRequest {
-	return ApiDesktopAndScreensaverRequest{
+func (a *PrismAPIService) PrismDesktopAndScreensaver(ctx context.Context) ApiPrismDesktopAndScreensaverRequest {
+	return ApiPrismDesktopAndScreensaverRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -829,7 +829,7 @@ func (a *PrismAPIService) DesktopAndScreensaver(ctx context.Context) ApiDesktopA
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) DesktopAndScreensaverExecute(r ApiDesktopAndScreensaverRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismDesktopAndScreensaverExecute(r ApiPrismDesktopAndScreensaverRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -837,7 +837,7 @@ func (a *PrismAPIService) DesktopAndScreensaverExecute(r ApiDesktopAndScreensave
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.DesktopAndScreensaver")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismDesktopAndScreensaver")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -920,7 +920,7 @@ func (a *PrismAPIService) DesktopAndScreensaverExecute(r ApiDesktopAndScreensave
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeviceInformationRequest struct {
+type ApiPrismDeviceInformationRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -933,60 +933,60 @@ type ApiDeviceInformationRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiDeviceInformationRequest) BlueprintIds(blueprintIds string) ApiDeviceInformationRequest {
+func (r ApiPrismDeviceInformationRequest) BlueprintIds(blueprintIds string) ApiPrismDeviceInformationRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiDeviceInformationRequest) DeviceFamilies(deviceFamilies string) ApiDeviceInformationRequest {
+func (r ApiPrismDeviceInformationRequest) DeviceFamilies(deviceFamilies string) ApiPrismDeviceInformationRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // &lt;p&gt;JSON schema object containing one or more key value pairs.&lt;/p&gt; &lt;p&gt;Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.&lt;/p&gt;
-func (r ApiDeviceInformationRequest) Filter(filter string) ApiDeviceInformationRequest {
+func (r ApiPrismDeviceInformationRequest) Filter(filter string) ApiPrismDeviceInformationRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiDeviceInformationRequest) SortBy(sortBy string) ApiDeviceInformationRequest {
+func (r ApiPrismDeviceInformationRequest) SortBy(sortBy string) ApiPrismDeviceInformationRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiDeviceInformationRequest) Limit(limit string) ApiDeviceInformationRequest {
+func (r ApiPrismDeviceInformationRequest) Limit(limit string) ApiPrismDeviceInformationRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiDeviceInformationRequest) Offset(offset string) ApiDeviceInformationRequest {
+func (r ApiPrismDeviceInformationRequest) Offset(offset string) ApiPrismDeviceInformationRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiDeviceInformationRequest) Body(body string) ApiDeviceInformationRequest {
+func (r ApiPrismDeviceInformationRequest) Body(body string) ApiPrismDeviceInformationRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiDeviceInformationRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.DeviceInformationExecute(r)
+func (r ApiPrismDeviceInformationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismDeviceInformationExecute(r)
 }
 
 /*
-DeviceInformation Device information
+PrismDeviceInformation Device information
 
 Get attributes about devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeviceInformationRequest
+ @return ApiPrismDeviceInformationRequest
 */
-func (a *PrismAPIService) DeviceInformation(ctx context.Context) ApiDeviceInformationRequest {
-	return ApiDeviceInformationRequest{
+func (a *PrismAPIService) PrismDeviceInformation(ctx context.Context) ApiPrismDeviceInformationRequest {
+	return ApiPrismDeviceInformationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -994,7 +994,7 @@ func (a *PrismAPIService) DeviceInformation(ctx context.Context) ApiDeviceInform
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismDeviceInformationExecute(r ApiPrismDeviceInformationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1002,7 +1002,7 @@ func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.DeviceInformation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismDeviceInformation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1087,7 +1087,7 @@ func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiFilevaultRequest struct {
+type ApiPrismFilevaultRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -1099,55 +1099,55 @@ type ApiFilevaultRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiFilevaultRequest) BlueprintIds(blueprintIds string) ApiFilevaultRequest {
+func (r ApiPrismFilevaultRequest) BlueprintIds(blueprintIds string) ApiPrismFilevaultRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiFilevaultRequest) DeviceFamilies(deviceFamilies string) ApiFilevaultRequest {
+func (r ApiPrismFilevaultRequest) DeviceFamilies(deviceFamilies string) ApiPrismFilevaultRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiFilevaultRequest) Filter(filter string) ApiFilevaultRequest {
+func (r ApiPrismFilevaultRequest) Filter(filter string) ApiPrismFilevaultRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiFilevaultRequest) SortBy(sortBy string) ApiFilevaultRequest {
+func (r ApiPrismFilevaultRequest) SortBy(sortBy string) ApiPrismFilevaultRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiFilevaultRequest) Limit(limit string) ApiFilevaultRequest {
+func (r ApiPrismFilevaultRequest) Limit(limit string) ApiPrismFilevaultRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiFilevaultRequest) Offset(offset string) ApiFilevaultRequest {
+func (r ApiPrismFilevaultRequest) Offset(offset string) ApiPrismFilevaultRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiFilevaultRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.FilevaultExecute(r)
+func (r ApiPrismFilevaultRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismFilevaultExecute(r)
 }
 
 /*
-Filevault FileVault
+PrismFilevault FileVault
 
 Get FileVault information for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiFilevaultRequest
+ @return ApiPrismFilevaultRequest
 */
-func (a *PrismAPIService) Filevault(ctx context.Context) ApiFilevaultRequest {
-	return ApiFilevaultRequest{
+func (a *PrismAPIService) PrismFilevault(ctx context.Context) ApiPrismFilevaultRequest {
+	return ApiPrismFilevaultRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1155,7 +1155,7 @@ func (a *PrismAPIService) Filevault(ctx context.Context) ApiFilevaultRequest {
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismFilevaultExecute(r ApiPrismFilevaultRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1163,7 +1163,7 @@ func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (map[string]in
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Filevault")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismFilevault")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1246,7 +1246,7 @@ func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (map[string]in
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGatekeeperAndXprotectRequest struct {
+type ApiPrismGatekeeperAndXprotectRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -1258,55 +1258,55 @@ type ApiGatekeeperAndXprotectRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiGatekeeperAndXprotectRequest) BlueprintIds(blueprintIds string) ApiGatekeeperAndXprotectRequest {
+func (r ApiPrismGatekeeperAndXprotectRequest) BlueprintIds(blueprintIds string) ApiPrismGatekeeperAndXprotectRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Results are limited to Mac only as Gatekeeper and XProtect are not applicable for other platfroms.
-func (r ApiGatekeeperAndXprotectRequest) DeviceFamilies(deviceFamilies string) ApiGatekeeperAndXprotectRequest {
+func (r ApiPrismGatekeeperAndXprotectRequest) DeviceFamilies(deviceFamilies string) ApiPrismGatekeeperAndXprotectRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiGatekeeperAndXprotectRequest) Filter(filter string) ApiGatekeeperAndXprotectRequest {
+func (r ApiPrismGatekeeperAndXprotectRequest) Filter(filter string) ApiPrismGatekeeperAndXprotectRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiGatekeeperAndXprotectRequest) SortBy(sortBy string) ApiGatekeeperAndXprotectRequest {
+func (r ApiPrismGatekeeperAndXprotectRequest) SortBy(sortBy string) ApiPrismGatekeeperAndXprotectRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiGatekeeperAndXprotectRequest) Limit(limit string) ApiGatekeeperAndXprotectRequest {
+func (r ApiPrismGatekeeperAndXprotectRequest) Limit(limit string) ApiPrismGatekeeperAndXprotectRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiGatekeeperAndXprotectRequest) Offset(offset string) ApiGatekeeperAndXprotectRequest {
+func (r ApiPrismGatekeeperAndXprotectRequest) Offset(offset string) ApiPrismGatekeeperAndXprotectRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiGatekeeperAndXprotectRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GatekeeperAndXprotectExecute(r)
+func (r ApiPrismGatekeeperAndXprotectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismGatekeeperAndXprotectExecute(r)
 }
 
 /*
-GatekeeperAndXprotect Gatekeeper and XProtect
+PrismGatekeeperAndXprotect Gatekeeper and XProtect
 
 Get Gatekeeper and XProtect attributes for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGatekeeperAndXprotectRequest
+ @return ApiPrismGatekeeperAndXprotectRequest
 */
-func (a *PrismAPIService) GatekeeperAndXprotect(ctx context.Context) ApiGatekeeperAndXprotectRequest {
-	return ApiGatekeeperAndXprotectRequest{
+func (a *PrismAPIService) PrismGatekeeperAndXprotect(ctx context.Context) ApiPrismGatekeeperAndXprotectRequest {
+	return ApiPrismGatekeeperAndXprotectRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1314,7 +1314,7 @@ func (a *PrismAPIService) GatekeeperAndXprotect(ctx context.Context) ApiGatekeep
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismGatekeeperAndXprotectExecute(r ApiPrismGatekeeperAndXprotectRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1322,7 +1322,7 @@ func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotec
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.GatekeeperAndXprotect")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismGatekeeperAndXprotect")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1405,18 +1405,18 @@ func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetCategoryExportRequest struct {
+type ApiPrismGetCategoryExportRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	exportId string
 }
 
-func (r ApiGetCategoryExportRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetCategoryExportExecute(r)
+func (r ApiPrismGetCategoryExportRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismGetCategoryExportExecute(r)
 }
 
 /*
-GetCategoryExport Get category export
+PrismGetCategoryExport Get category export
 
 <p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -1424,10 +1424,10 @@ GetCategoryExport Get category export
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param exportId
- @return ApiGetCategoryExportRequest
+ @return ApiPrismGetCategoryExportRequest
 */
-func (a *PrismAPIService) GetCategoryExport(ctx context.Context, exportId string) ApiGetCategoryExportRequest {
-	return ApiGetCategoryExportRequest{
+func (a *PrismAPIService) PrismGetCategoryExport(ctx context.Context, exportId string) ApiPrismGetCategoryExportRequest {
+	return ApiPrismGetCategoryExportRequest{
 		ApiService: a,
 		ctx: ctx,
 		exportId: exportId,
@@ -1436,7 +1436,7 @@ func (a *PrismAPIService) GetCategoryExport(ctx context.Context, exportId string
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) GetCategoryExportExecute(r ApiGetCategoryExportRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismGetCategoryExportExecute(r ApiPrismGetCategoryExportRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1444,7 +1444,7 @@ func (a *PrismAPIService) GetCategoryExportExecute(r ApiGetCategoryExportRequest
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.GetCategoryExport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismGetCategoryExport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1510,7 +1510,7 @@ func (a *PrismAPIService) GetCategoryExportExecute(r ApiGetCategoryExportRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiInstalledProfilesRequest struct {
+type ApiPrismInstalledProfilesRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -1522,55 +1522,55 @@ type ApiInstalledProfilesRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiInstalledProfilesRequest) BlueprintIds(blueprintIds string) ApiInstalledProfilesRequest {
+func (r ApiPrismInstalledProfilesRequest) BlueprintIds(blueprintIds string) ApiPrismInstalledProfilesRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiInstalledProfilesRequest) DeviceFamilies(deviceFamilies string) ApiInstalledProfilesRequest {
+func (r ApiPrismInstalledProfilesRequest) DeviceFamilies(deviceFamilies string) ApiPrismInstalledProfilesRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiInstalledProfilesRequest) Filter(filter string) ApiInstalledProfilesRequest {
+func (r ApiPrismInstalledProfilesRequest) Filter(filter string) ApiPrismInstalledProfilesRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiInstalledProfilesRequest) SortBy(sortBy string) ApiInstalledProfilesRequest {
+func (r ApiPrismInstalledProfilesRequest) SortBy(sortBy string) ApiPrismInstalledProfilesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiInstalledProfilesRequest) Limit(limit string) ApiInstalledProfilesRequest {
+func (r ApiPrismInstalledProfilesRequest) Limit(limit string) ApiPrismInstalledProfilesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiInstalledProfilesRequest) Offset(offset string) ApiInstalledProfilesRequest {
+func (r ApiPrismInstalledProfilesRequest) Offset(offset string) ApiPrismInstalledProfilesRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiInstalledProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.InstalledProfilesExecute(r)
+func (r ApiPrismInstalledProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismInstalledProfilesExecute(r)
 }
 
 /*
-InstalledProfiles Installed profiles
+PrismInstalledProfiles Installed profiles
 
 Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiInstalledProfilesRequest
+ @return ApiPrismInstalledProfilesRequest
 */
-func (a *PrismAPIService) InstalledProfiles(ctx context.Context) ApiInstalledProfilesRequest {
-	return ApiInstalledProfilesRequest{
+func (a *PrismAPIService) PrismInstalledProfiles(ctx context.Context) ApiPrismInstalledProfilesRequest {
+	return ApiPrismInstalledProfilesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1578,7 +1578,7 @@ func (a *PrismAPIService) InstalledProfiles(ctx context.Context) ApiInstalledPro
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) InstalledProfilesExecute(r ApiInstalledProfilesRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismInstalledProfilesExecute(r ApiPrismInstalledProfilesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1586,7 +1586,7 @@ func (a *PrismAPIService) InstalledProfilesExecute(r ApiInstalledProfilesRequest
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.InstalledProfiles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismInstalledProfiles")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1669,7 +1669,7 @@ func (a *PrismAPIService) InstalledProfilesExecute(r ApiInstalledProfilesRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiKernelExtensionsRequest struct {
+type ApiPrismKernelExtensionsRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -1681,55 +1681,55 @@ type ApiKernelExtensionsRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiKernelExtensionsRequest) BlueprintIds(blueprintIds string) ApiKernelExtensionsRequest {
+func (r ApiPrismKernelExtensionsRequest) BlueprintIds(blueprintIds string) ApiPrismKernelExtensionsRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiKernelExtensionsRequest) DeviceFamilies(deviceFamilies string) ApiKernelExtensionsRequest {
+func (r ApiPrismKernelExtensionsRequest) DeviceFamilies(deviceFamilies string) ApiPrismKernelExtensionsRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // SON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiKernelExtensionsRequest) Filter(filter string) ApiKernelExtensionsRequest {
+func (r ApiPrismKernelExtensionsRequest) Filter(filter string) ApiPrismKernelExtensionsRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiKernelExtensionsRequest) SortBy(sortBy string) ApiKernelExtensionsRequest {
+func (r ApiPrismKernelExtensionsRequest) SortBy(sortBy string) ApiPrismKernelExtensionsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiKernelExtensionsRequest) Limit(limit string) ApiKernelExtensionsRequest {
+func (r ApiPrismKernelExtensionsRequest) Limit(limit string) ApiPrismKernelExtensionsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiKernelExtensionsRequest) Offset(offset string) ApiKernelExtensionsRequest {
+func (r ApiPrismKernelExtensionsRequest) Offset(offset string) ApiPrismKernelExtensionsRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiKernelExtensionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.KernelExtensionsExecute(r)
+func (r ApiPrismKernelExtensionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismKernelExtensionsExecute(r)
 }
 
 /*
-KernelExtensions Kernel Extensions
+PrismKernelExtensions Kernel Extensions
 
 Get Kernel Extension attributes for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiKernelExtensionsRequest
+ @return ApiPrismKernelExtensionsRequest
 */
-func (a *PrismAPIService) KernelExtensions(ctx context.Context) ApiKernelExtensionsRequest {
-	return ApiKernelExtensionsRequest{
+func (a *PrismAPIService) PrismKernelExtensions(ctx context.Context) ApiPrismKernelExtensionsRequest {
+	return ApiPrismKernelExtensionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1737,7 +1737,7 @@ func (a *PrismAPIService) KernelExtensions(ctx context.Context) ApiKernelExtensi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) KernelExtensionsExecute(r ApiKernelExtensionsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismKernelExtensionsExecute(r ApiPrismKernelExtensionsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1745,7 +1745,7 @@ func (a *PrismAPIService) KernelExtensionsExecute(r ApiKernelExtensionsRequest) 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.KernelExtensions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismKernelExtensions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1828,7 +1828,7 @@ func (a *PrismAPIService) KernelExtensionsExecute(r ApiKernelExtensionsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiLaunchAgentsAndDaemonsRequest struct {
+type ApiPrismLaunchAgentsAndDaemonsRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -1840,55 +1840,55 @@ type ApiLaunchAgentsAndDaemonsRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiLaunchAgentsAndDaemonsRequest) BlueprintIds(blueprintIds string) ApiLaunchAgentsAndDaemonsRequest {
+func (r ApiPrismLaunchAgentsAndDaemonsRequest) BlueprintIds(blueprintIds string) ApiPrismLaunchAgentsAndDaemonsRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiLaunchAgentsAndDaemonsRequest) DeviceFamilies(deviceFamilies string) ApiLaunchAgentsAndDaemonsRequest {
+func (r ApiPrismLaunchAgentsAndDaemonsRequest) DeviceFamilies(deviceFamilies string) ApiPrismLaunchAgentsAndDaemonsRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiLaunchAgentsAndDaemonsRequest) Filter(filter string) ApiLaunchAgentsAndDaemonsRequest {
+func (r ApiPrismLaunchAgentsAndDaemonsRequest) Filter(filter string) ApiPrismLaunchAgentsAndDaemonsRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiLaunchAgentsAndDaemonsRequest) SortBy(sortBy string) ApiLaunchAgentsAndDaemonsRequest {
+func (r ApiPrismLaunchAgentsAndDaemonsRequest) SortBy(sortBy string) ApiPrismLaunchAgentsAndDaemonsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiLaunchAgentsAndDaemonsRequest) Limit(limit string) ApiLaunchAgentsAndDaemonsRequest {
+func (r ApiPrismLaunchAgentsAndDaemonsRequest) Limit(limit string) ApiPrismLaunchAgentsAndDaemonsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiLaunchAgentsAndDaemonsRequest) Offset(offset string) ApiLaunchAgentsAndDaemonsRequest {
+func (r ApiPrismLaunchAgentsAndDaemonsRequest) Offset(offset string) ApiPrismLaunchAgentsAndDaemonsRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiLaunchAgentsAndDaemonsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.LaunchAgentsAndDaemonsExecute(r)
+func (r ApiPrismLaunchAgentsAndDaemonsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismLaunchAgentsAndDaemonsExecute(r)
 }
 
 /*
-LaunchAgentsAndDaemons Launch Agents and Daemons
+PrismLaunchAgentsAndDaemons Launch Agents and Daemons
 
 Get Launch Agents and Daemons installed on macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLaunchAgentsAndDaemonsRequest
+ @return ApiPrismLaunchAgentsAndDaemonsRequest
 */
-func (a *PrismAPIService) LaunchAgentsAndDaemons(ctx context.Context) ApiLaunchAgentsAndDaemonsRequest {
-	return ApiLaunchAgentsAndDaemonsRequest{
+func (a *PrismAPIService) PrismLaunchAgentsAndDaemons(ctx context.Context) ApiPrismLaunchAgentsAndDaemonsRequest {
+	return ApiPrismLaunchAgentsAndDaemonsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1896,7 +1896,7 @@ func (a *PrismAPIService) LaunchAgentsAndDaemons(ctx context.Context) ApiLaunchA
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaemonsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismLaunchAgentsAndDaemonsExecute(r ApiPrismLaunchAgentsAndDaemonsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1904,7 +1904,7 @@ func (a *PrismAPIService) LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaem
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.LaunchAgentsAndDaemons")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismLaunchAgentsAndDaemons")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1987,7 +1987,7 @@ func (a *PrismAPIService) LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaem
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiLocalUsersRequest struct {
+type ApiPrismLocalUsersRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -1999,55 +1999,55 @@ type ApiLocalUsersRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiLocalUsersRequest) BlueprintIds(blueprintIds string) ApiLocalUsersRequest {
+func (r ApiPrismLocalUsersRequest) BlueprintIds(blueprintIds string) ApiPrismLocalUsersRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiLocalUsersRequest) DeviceFamilies(deviceFamilies string) ApiLocalUsersRequest {
+func (r ApiPrismLocalUsersRequest) DeviceFamilies(deviceFamilies string) ApiPrismLocalUsersRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiLocalUsersRequest) Filter(filter string) ApiLocalUsersRequest {
+func (r ApiPrismLocalUsersRequest) Filter(filter string) ApiPrismLocalUsersRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiLocalUsersRequest) SortBy(sortBy string) ApiLocalUsersRequest {
+func (r ApiPrismLocalUsersRequest) SortBy(sortBy string) ApiPrismLocalUsersRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiLocalUsersRequest) Limit(limit string) ApiLocalUsersRequest {
+func (r ApiPrismLocalUsersRequest) Limit(limit string) ApiPrismLocalUsersRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiLocalUsersRequest) Offset(offset string) ApiLocalUsersRequest {
+func (r ApiPrismLocalUsersRequest) Offset(offset string) ApiPrismLocalUsersRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiLocalUsersRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.LocalUsersExecute(r)
+func (r ApiPrismLocalUsersRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismLocalUsersExecute(r)
 }
 
 /*
-LocalUsers Local users
+PrismLocalUsers Local users
 
 Get Local Users detials for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLocalUsersRequest
+ @return ApiPrismLocalUsersRequest
 */
-func (a *PrismAPIService) LocalUsers(ctx context.Context) ApiLocalUsersRequest {
-	return ApiLocalUsersRequest{
+func (a *PrismAPIService) PrismLocalUsers(ctx context.Context) ApiPrismLocalUsersRequest {
+	return ApiPrismLocalUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2055,7 +2055,7 @@ func (a *PrismAPIService) LocalUsers(ctx context.Context) ApiLocalUsersRequest {
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) LocalUsersExecute(r ApiLocalUsersRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismLocalUsersExecute(r ApiPrismLocalUsersRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2063,7 +2063,7 @@ func (a *PrismAPIService) LocalUsersExecute(r ApiLocalUsersRequest) (map[string]
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.LocalUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismLocalUsers")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2146,23 +2146,23 @@ func (a *PrismAPIService) LocalUsersExecute(r ApiLocalUsersRequest) (map[string]
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRequestCategoryExportRequest struct {
+type ApiPrismRequestCategoryExportRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	body *string
 }
 
-func (r ApiRequestCategoryExportRequest) Body(body string) ApiRequestCategoryExportRequest {
+func (r ApiPrismRequestCategoryExportRequest) Body(body string) ApiPrismRequestCategoryExportRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiRequestCategoryExportRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.RequestCategoryExportExecute(r)
+func (r ApiPrismRequestCategoryExportRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismRequestCategoryExportExecute(r)
 }
 
 /*
-RequestCategoryExport Request category export
+PrismRequestCategoryExport Request category export
 
 <p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p>
 <p><strong>Request Body Parameters: application/json</strong></p>
@@ -2211,10 +2211,10 @@ RequestCategoryExport Request category export
 </div>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRequestCategoryExportRequest
+ @return ApiPrismRequestCategoryExportRequest
 */
-func (a *PrismAPIService) RequestCategoryExport(ctx context.Context) ApiRequestCategoryExportRequest {
-	return ApiRequestCategoryExportRequest{
+func (a *PrismAPIService) PrismRequestCategoryExport(ctx context.Context) ApiPrismRequestCategoryExportRequest {
+	return ApiPrismRequestCategoryExportRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2222,7 +2222,7 @@ func (a *PrismAPIService) RequestCategoryExport(ctx context.Context) ApiRequestC
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) RequestCategoryExportExecute(r ApiRequestCategoryExportRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismRequestCategoryExportExecute(r ApiPrismRequestCategoryExportRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2230,7 +2230,7 @@ func (a *PrismAPIService) RequestCategoryExportExecute(r ApiRequestCategoryExpor
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.RequestCategoryExport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismRequestCategoryExport")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2307,7 +2307,7 @@ func (a *PrismAPIService) RequestCategoryExportExecute(r ApiRequestCategoryExpor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiStartupSettingsRequest struct {
+type ApiPrismStartupSettingsRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -2319,55 +2319,55 @@ type ApiStartupSettingsRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiStartupSettingsRequest) BlueprintIds(blueprintIds string) ApiStartupSettingsRequest {
+func (r ApiPrismStartupSettingsRequest) BlueprintIds(blueprintIds string) ApiPrismStartupSettingsRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiStartupSettingsRequest) DeviceFamilies(deviceFamilies string) ApiStartupSettingsRequest {
+func (r ApiPrismStartupSettingsRequest) DeviceFamilies(deviceFamilies string) ApiPrismStartupSettingsRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiStartupSettingsRequest) Filter(filter string) ApiStartupSettingsRequest {
+func (r ApiPrismStartupSettingsRequest) Filter(filter string) ApiPrismStartupSettingsRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiStartupSettingsRequest) SortBy(sortBy string) ApiStartupSettingsRequest {
+func (r ApiPrismStartupSettingsRequest) SortBy(sortBy string) ApiPrismStartupSettingsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiStartupSettingsRequest) Limit(limit string) ApiStartupSettingsRequest {
+func (r ApiPrismStartupSettingsRequest) Limit(limit string) ApiPrismStartupSettingsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return
-func (r ApiStartupSettingsRequest) Offset(offset string) ApiStartupSettingsRequest {
+func (r ApiPrismStartupSettingsRequest) Offset(offset string) ApiPrismStartupSettingsRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiStartupSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.StartupSettingsExecute(r)
+func (r ApiPrismStartupSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismStartupSettingsExecute(r)
 }
 
 /*
-StartupSettings Startup settings
+PrismStartupSettings Startup settings
 
 Get Startup settings for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiStartupSettingsRequest
+ @return ApiPrismStartupSettingsRequest
 */
-func (a *PrismAPIService) StartupSettings(ctx context.Context) ApiStartupSettingsRequest {
-	return ApiStartupSettingsRequest{
+func (a *PrismAPIService) PrismStartupSettings(ctx context.Context) ApiPrismStartupSettingsRequest {
+	return ApiPrismStartupSettingsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2375,7 +2375,7 @@ func (a *PrismAPIService) StartupSettings(ctx context.Context) ApiStartupSetting
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) StartupSettingsExecute(r ApiStartupSettingsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismStartupSettingsExecute(r ApiPrismStartupSettingsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2383,7 +2383,7 @@ func (a *PrismAPIService) StartupSettingsExecute(r ApiStartupSettingsRequest) (m
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.StartupSettings")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismStartupSettings")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2466,7 +2466,7 @@ func (a *PrismAPIService) StartupSettingsExecute(r ApiStartupSettingsRequest) (m
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSystemExtensionsRequest struct {
+type ApiPrismSystemExtensionsRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -2478,55 +2478,55 @@ type ApiSystemExtensionsRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiSystemExtensionsRequest) BlueprintIds(blueprintIds string) ApiSystemExtensionsRequest {
+func (r ApiPrismSystemExtensionsRequest) BlueprintIds(blueprintIds string) ApiPrismSystemExtensionsRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiSystemExtensionsRequest) DeviceFamilies(deviceFamilies string) ApiSystemExtensionsRequest {
+func (r ApiPrismSystemExtensionsRequest) DeviceFamilies(deviceFamilies string) ApiPrismSystemExtensionsRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiSystemExtensionsRequest) Filter(filter string) ApiSystemExtensionsRequest {
+func (r ApiPrismSystemExtensionsRequest) Filter(filter string) ApiPrismSystemExtensionsRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiSystemExtensionsRequest) SortBy(sortBy string) ApiSystemExtensionsRequest {
+func (r ApiPrismSystemExtensionsRequest) SortBy(sortBy string) ApiPrismSystemExtensionsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiSystemExtensionsRequest) Limit(limit string) ApiSystemExtensionsRequest {
+func (r ApiPrismSystemExtensionsRequest) Limit(limit string) ApiPrismSystemExtensionsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiSystemExtensionsRequest) Offset(offset string) ApiSystemExtensionsRequest {
+func (r ApiPrismSystemExtensionsRequest) Offset(offset string) ApiPrismSystemExtensionsRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiSystemExtensionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.SystemExtensionsExecute(r)
+func (r ApiPrismSystemExtensionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismSystemExtensionsExecute(r)
 }
 
 /*
-SystemExtensions System Extensions
+PrismSystemExtensions System Extensions
 
 Get System Extension attributes for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSystemExtensionsRequest
+ @return ApiPrismSystemExtensionsRequest
 */
-func (a *PrismAPIService) SystemExtensions(ctx context.Context) ApiSystemExtensionsRequest {
-	return ApiSystemExtensionsRequest{
+func (a *PrismAPIService) PrismSystemExtensions(ctx context.Context) ApiPrismSystemExtensionsRequest {
+	return ApiPrismSystemExtensionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2534,7 +2534,7 @@ func (a *PrismAPIService) SystemExtensions(ctx context.Context) ApiSystemExtensi
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) SystemExtensionsExecute(r ApiSystemExtensionsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismSystemExtensionsExecute(r ApiPrismSystemExtensionsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2542,7 +2542,7 @@ func (a *PrismAPIService) SystemExtensionsExecute(r ApiSystemExtensionsRequest) 
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.SystemExtensions")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismSystemExtensions")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2625,7 +2625,7 @@ func (a *PrismAPIService) SystemExtensionsExecute(r ApiSystemExtensionsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiTransparencyDatabaseRequest struct {
+type ApiPrismTransparencyDatabaseRequest struct {
 	ctx context.Context
 	ApiService *PrismAPIService
 	blueprintIds *string
@@ -2637,55 +2637,55 @@ type ApiTransparencyDatabaseRequest struct {
 }
 
 // Filter results by one or more blueprint IDs separated by commas.
-func (r ApiTransparencyDatabaseRequest) BlueprintIds(blueprintIds string) ApiTransparencyDatabaseRequest {
+func (r ApiPrismTransparencyDatabaseRequest) BlueprintIds(blueprintIds string) ApiPrismTransparencyDatabaseRequest {
 	r.blueprintIds = &blueprintIds
 	return r
 }
 
 // Filter results by one or more device families separate by commas.
-func (r ApiTransparencyDatabaseRequest) DeviceFamilies(deviceFamilies string) ApiTransparencyDatabaseRequest {
+func (r ApiPrismTransparencyDatabaseRequest) DeviceFamilies(deviceFamilies string) ApiPrismTransparencyDatabaseRequest {
 	r.deviceFamilies = &deviceFamilies
 	return r
 }
 
 // JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
-func (r ApiTransparencyDatabaseRequest) Filter(filter string) ApiTransparencyDatabaseRequest {
+func (r ApiPrismTransparencyDatabaseRequest) Filter(filter string) ApiPrismTransparencyDatabaseRequest {
 	r.filter = &filter
 	return r
 }
 
 // Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
-func (r ApiTransparencyDatabaseRequest) SortBy(sortBy string) ApiTransparencyDatabaseRequest {
+func (r ApiPrismTransparencyDatabaseRequest) SortBy(sortBy string) ApiPrismTransparencyDatabaseRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
-func (r ApiTransparencyDatabaseRequest) Limit(limit string) ApiTransparencyDatabaseRequest {
+func (r ApiPrismTransparencyDatabaseRequest) Limit(limit string) ApiPrismTransparencyDatabaseRequest {
 	r.limit = &limit
 	return r
 }
 
 // Specify the starting record to return.
-func (r ApiTransparencyDatabaseRequest) Offset(offset string) ApiTransparencyDatabaseRequest {
+func (r ApiPrismTransparencyDatabaseRequest) Offset(offset string) ApiPrismTransparencyDatabaseRequest {
 	r.offset = &offset
 	return r
 }
 
-func (r ApiTransparencyDatabaseRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.TransparencyDatabaseExecute(r)
+func (r ApiPrismTransparencyDatabaseRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.PrismTransparencyDatabaseExecute(r)
 }
 
 /*
-TransparencyDatabase Transparency database
+PrismTransparencyDatabase Transparency database
 
 Get Transparency Database (TCC) attributes for macOS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTransparencyDatabaseRequest
+ @return ApiPrismTransparencyDatabaseRequest
 */
-func (a *PrismAPIService) TransparencyDatabase(ctx context.Context) ApiTransparencyDatabaseRequest {
-	return ApiTransparencyDatabaseRequest{
+func (a *PrismAPIService) PrismTransparencyDatabase(ctx context.Context) ApiPrismTransparencyDatabaseRequest {
+	return ApiPrismTransparencyDatabaseRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2693,7 +2693,7 @@ func (a *PrismAPIService) TransparencyDatabase(ctx context.Context) ApiTranspare
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PrismAPIService) TransparencyDatabaseExecute(r ApiTransparencyDatabaseRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PrismAPIService) PrismTransparencyDatabaseExecute(r ApiPrismTransparencyDatabaseRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2701,7 +2701,7 @@ func (a *PrismAPIService) TransparencyDatabaseExecute(r ApiTransparencyDatabaseR
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.TransparencyDatabase")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.PrismTransparencyDatabase")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

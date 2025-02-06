@@ -4,14 +4,83 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetUser**](UsersAPI.md#GetUser) | **Get** /api/v1/users/{user_id} | Get User
-[**ListUsers**](UsersAPI.md#ListUsers) | **Get** /api/v1/users | List Users
+[**UsersDeleteUser**](UsersAPI.md#UsersDeleteUser) | **Delete** /api/v1/users/{user_id} | Delete User
+[**UsersGetUser**](UsersAPI.md#UsersGetUser) | **Get** /api/v1/users/{user_id} | Get User
+[**UsersListUsers**](UsersAPI.md#UsersListUsers) | **Get** /api/v1/users | List Users
 
 
 
-## GetUser
+## UsersDeleteUser
 
-> map[string]interface{} GetUser(ctx, userId).Execute()
+> UsersDeleteUser(ctx, userId).Execute()
+
+Delete User
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/MScottBlake/kandji-go-sdk"
+)
+
+func main() {
+	userId := "userId_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UsersDeleteUser(context.Background(), userId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersDeleteUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersDeleteUserRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersGetUser
+
+> map[string]interface{} UsersGetUser(ctx, userId).Execute()
 
 Get User
 
@@ -34,13 +103,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.GetUser(context.Background(), userId).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGetUser(context.Background(), userId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.GetUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUser`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.GetUser`: %v\n", resp)
+	// response from `UsersGetUser`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersGetUser`: %v\n", resp)
 }
 ```
 
@@ -54,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUsersGetUserRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -79,9 +148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListUsers
+## UsersListUsers
 
-> map[string]interface{} ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
+> map[string]interface{} UsersListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
 
 List Users
 
@@ -107,13 +176,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.ListUsers(context.Background()).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersListUsers(context.Background()).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.ListUsers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersListUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListUsers`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.ListUsers`: %v\n", resp)
+	// response from `UsersListUsers`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.UsersListUsers`: %v\n", resp)
 }
 ```
 
@@ -123,7 +192,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListUsersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUsersListUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

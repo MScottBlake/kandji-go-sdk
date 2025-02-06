@@ -24,31 +24,31 @@ import (
 // CustomScriptsAPIService CustomScriptsAPI service
 type CustomScriptsAPIService service
 
-type ApiCreateCustomScriptRequest struct {
+type ApiCustomScriptsCreateCustomScriptRequest struct {
 	ctx context.Context
 	ApiService *CustomScriptsAPIService
 	body *string
 }
 
-func (r ApiCreateCustomScriptRequest) Body(body string) ApiCreateCustomScriptRequest {
+func (r ApiCustomScriptsCreateCustomScriptRequest) Body(body string) ApiCustomScriptsCreateCustomScriptRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiCreateCustomScriptRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.CreateCustomScriptExecute(r)
+func (r ApiCustomScriptsCreateCustomScriptRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomScriptsCreateCustomScriptExecute(r)
 }
 
 /*
-CreateCustomScript Create Custom Script
+CustomScriptsCreateCustomScript Create Custom Script
 
 This request allows you to create a custom script in the Kandji library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateCustomScriptRequest
+ @return ApiCustomScriptsCreateCustomScriptRequest
 */
-func (a *CustomScriptsAPIService) CreateCustomScript(ctx context.Context) ApiCreateCustomScriptRequest {
-	return ApiCreateCustomScriptRequest{
+func (a *CustomScriptsAPIService) CustomScriptsCreateCustomScript(ctx context.Context) ApiCustomScriptsCreateCustomScriptRequest {
+	return ApiCustomScriptsCreateCustomScriptRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -56,7 +56,7 @@ func (a *CustomScriptsAPIService) CreateCustomScript(ctx context.Context) ApiCre
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomScriptsAPIService) CreateCustomScriptExecute(r ApiCreateCustomScriptRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomScriptsAPIService) CustomScriptsCreateCustomScriptExecute(r ApiCustomScriptsCreateCustomScriptRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -64,7 +64,7 @@ func (a *CustomScriptsAPIService) CreateCustomScriptExecute(r ApiCreateCustomScr
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.CreateCustomScript")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.CustomScriptsCreateCustomScript")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -131,18 +131,18 @@ func (a *CustomScriptsAPIService) CreateCustomScriptExecute(r ApiCreateCustomScr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteCustomScriptRequest struct {
+type ApiCustomScriptsDeleteCustomScriptRequest struct {
 	ctx context.Context
 	ApiService *CustomScriptsAPIService
 	libraryItemId string
 }
 
-func (r ApiDeleteCustomScriptRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteCustomScriptExecute(r)
+func (r ApiCustomScriptsDeleteCustomScriptRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CustomScriptsDeleteCustomScriptExecute(r)
 }
 
 /*
-DeleteCustomScript Delete Custom Script
+CustomScriptsDeleteCustomScript Delete Custom Script
 
 <p>NOTICE: This is permanent so be careful.</p>
 <p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p>
@@ -151,10 +151,10 @@ DeleteCustomScript Delete Custom Script
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiDeleteCustomScriptRequest
+ @return ApiCustomScriptsDeleteCustomScriptRequest
 */
-func (a *CustomScriptsAPIService) DeleteCustomScript(ctx context.Context, libraryItemId string) ApiDeleteCustomScriptRequest {
-	return ApiDeleteCustomScriptRequest{
+func (a *CustomScriptsAPIService) CustomScriptsDeleteCustomScript(ctx context.Context, libraryItemId string) ApiCustomScriptsDeleteCustomScriptRequest {
+	return ApiCustomScriptsDeleteCustomScriptRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -162,14 +162,14 @@ func (a *CustomScriptsAPIService) DeleteCustomScript(ctx context.Context, librar
 }
 
 // Execute executes the request
-func (a *CustomScriptsAPIService) DeleteCustomScriptExecute(r ApiDeleteCustomScriptRequest) (*http.Response, error) {
+func (a *CustomScriptsAPIService) CustomScriptsDeleteCustomScriptExecute(r ApiCustomScriptsDeleteCustomScriptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.DeleteCustomScript")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.CustomScriptsDeleteCustomScript")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -236,18 +236,18 @@ func (a *CustomScriptsAPIService) DeleteCustomScriptExecute(r ApiDeleteCustomScr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetCustomScriptRequest struct {
+type ApiCustomScriptsGetCustomScriptRequest struct {
 	ctx context.Context
 	ApiService *CustomScriptsAPIService
 	libraryItemId string
 }
 
-func (r ApiGetCustomScriptRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.GetCustomScriptExecute(r)
+func (r ApiCustomScriptsGetCustomScriptRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomScriptsGetCustomScriptExecute(r)
 }
 
 /*
-GetCustomScript Get Custom Script
+CustomScriptsGetCustomScript Get Custom Script
 
 <p>This endpoint retrieves details about a specific custom script from the Kandji library.</p>
 <h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
@@ -255,10 +255,10 @@ GetCustomScript Get Custom Script
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiGetCustomScriptRequest
+ @return ApiCustomScriptsGetCustomScriptRequest
 */
-func (a *CustomScriptsAPIService) GetCustomScript(ctx context.Context, libraryItemId string) ApiGetCustomScriptRequest {
-	return ApiGetCustomScriptRequest{
+func (a *CustomScriptsAPIService) CustomScriptsGetCustomScript(ctx context.Context, libraryItemId string) ApiCustomScriptsGetCustomScriptRequest {
+	return ApiCustomScriptsGetCustomScriptRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -267,7 +267,7 @@ func (a *CustomScriptsAPIService) GetCustomScript(ctx context.Context, libraryIt
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomScriptsAPIService) GetCustomScriptExecute(r ApiGetCustomScriptRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomScriptsAPIService) CustomScriptsGetCustomScriptExecute(r ApiCustomScriptsGetCustomScriptRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -275,7 +275,7 @@ func (a *CustomScriptsAPIService) GetCustomScriptExecute(r ApiGetCustomScriptReq
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.GetCustomScript")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.CustomScriptsGetCustomScript")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -341,32 +341,32 @@ func (a *CustomScriptsAPIService) GetCustomScriptExecute(r ApiGetCustomScriptReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListCustomScriptsRequest struct {
+type ApiCustomScriptsListCustomScriptsRequest struct {
 	ctx context.Context
 	ApiService *CustomScriptsAPIService
 	page *string
 }
 
 // Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request.
-func (r ApiListCustomScriptsRequest) Page(page string) ApiListCustomScriptsRequest {
+func (r ApiCustomScriptsListCustomScriptsRequest) Page(page string) ApiCustomScriptsListCustomScriptsRequest {
 	r.page = &page
 	return r
 }
 
-func (r ApiListCustomScriptsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListCustomScriptsExecute(r)
+func (r ApiCustomScriptsListCustomScriptsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomScriptsListCustomScriptsExecute(r)
 }
 
 /*
-ListCustomScripts List Custom Scripts
+CustomScriptsListCustomScripts List Custom Scripts
 
 This endpoint makes a request to retrieve a list of custom scripts from the Kandji library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListCustomScriptsRequest
+ @return ApiCustomScriptsListCustomScriptsRequest
 */
-func (a *CustomScriptsAPIService) ListCustomScripts(ctx context.Context) ApiListCustomScriptsRequest {
-	return ApiListCustomScriptsRequest{
+func (a *CustomScriptsAPIService) CustomScriptsListCustomScripts(ctx context.Context) ApiCustomScriptsListCustomScriptsRequest {
+	return ApiCustomScriptsListCustomScriptsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -374,7 +374,7 @@ func (a *CustomScriptsAPIService) ListCustomScripts(ctx context.Context) ApiList
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomScriptsAPIService) ListCustomScriptsExecute(r ApiListCustomScriptsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomScriptsAPIService) CustomScriptsListCustomScriptsExecute(r ApiCustomScriptsListCustomScriptsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -382,7 +382,7 @@ func (a *CustomScriptsAPIService) ListCustomScriptsExecute(r ApiListCustomScript
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.ListCustomScripts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.CustomScriptsListCustomScripts")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -450,33 +450,33 @@ func (a *CustomScriptsAPIService) ListCustomScriptsExecute(r ApiListCustomScript
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateCustomScriptRequest struct {
+type ApiCustomScriptsUpdateCustomScriptRequest struct {
 	ctx context.Context
 	ApiService *CustomScriptsAPIService
 	libraryItemId string
 	body *string
 }
 
-func (r ApiUpdateCustomScriptRequest) Body(body string) ApiUpdateCustomScriptRequest {
+func (r ApiCustomScriptsUpdateCustomScriptRequest) Body(body string) ApiCustomScriptsUpdateCustomScriptRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateCustomScriptRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.UpdateCustomScriptExecute(r)
+func (r ApiCustomScriptsUpdateCustomScriptRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CustomScriptsUpdateCustomScriptExecute(r)
 }
 
 /*
-UpdateCustomScript Update Custom Script
+CustomScriptsUpdateCustomScript Update Custom Script
 
 This request allows you to update a custom script in the Kandji library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param libraryItemId
- @return ApiUpdateCustomScriptRequest
+ @return ApiCustomScriptsUpdateCustomScriptRequest
 */
-func (a *CustomScriptsAPIService) UpdateCustomScript(ctx context.Context, libraryItemId string) ApiUpdateCustomScriptRequest {
-	return ApiUpdateCustomScriptRequest{
+func (a *CustomScriptsAPIService) CustomScriptsUpdateCustomScript(ctx context.Context, libraryItemId string) ApiCustomScriptsUpdateCustomScriptRequest {
+	return ApiCustomScriptsUpdateCustomScriptRequest{
 		ApiService: a,
 		ctx: ctx,
 		libraryItemId: libraryItemId,
@@ -485,7 +485,7 @@ func (a *CustomScriptsAPIService) UpdateCustomScript(ctx context.Context, librar
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *CustomScriptsAPIService) UpdateCustomScriptExecute(r ApiUpdateCustomScriptRequest) (map[string]interface{}, *http.Response, error) {
+func (a *CustomScriptsAPIService) CustomScriptsUpdateCustomScriptExecute(r ApiCustomScriptsUpdateCustomScriptRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
@@ -493,7 +493,7 @@ func (a *CustomScriptsAPIService) UpdateCustomScriptExecute(r ApiUpdateCustomScr
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.UpdateCustomScript")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomScriptsAPIService.CustomScriptsUpdateCustomScript")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
