@@ -4,19 +4,19 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**InhouseAppsCreateInhouseApp**](InHouseAppsAPI.md#InhouseAppsCreateInhouseApp) | **Post** /api/v1/library/ipa-apps | Create In-House App
-[**InhouseAppsDeleteInhouseApp**](InHouseAppsAPI.md#InhouseAppsDeleteInhouseApp) | **Delete** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
-[**InhouseAppsGetInhouseApp**](InHouseAppsAPI.md#InhouseAppsGetInhouseApp) | **Get** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
-[**InhouseAppsListInhouseApps**](InHouseAppsAPI.md#InhouseAppsListInhouseApps) | **Get** /api/v1/library/ipa-apps | List In-House Apps
-[**InhouseAppsUpdateInhouseApp**](InHouseAppsAPI.md#InhouseAppsUpdateInhouseApp) | **Patch** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
-[**InhouseAppsUploadInhouseApp**](InHouseAppsAPI.md#InhouseAppsUploadInhouseApp) | **Post** /api/v1/library/ipa-apps/upload | Upload In-House App
-[**InhouseAppsUploadInhouseAppStatus**](InHouseAppsAPI.md#InhouseAppsUploadInhouseAppStatus) | **Get** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
+[**CreateInhouseApp**](InHouseAppsAPI.md#CreateInhouseApp) | **Post** /api/v1/library/ipa-apps | Create In-House App
+[**DeleteInhouseApp**](InHouseAppsAPI.md#DeleteInhouseApp) | **Delete** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
+[**GetInhouseApp**](InHouseAppsAPI.md#GetInhouseApp) | **Get** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
+[**ListInhouseApps**](InHouseAppsAPI.md#ListInhouseApps) | **Get** /api/v1/library/ipa-apps | List In-House Apps
+[**UpdateInhouseApp**](InHouseAppsAPI.md#UpdateInhouseApp) | **Patch** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
+[**UploadInhouseApp**](InHouseAppsAPI.md#UploadInhouseApp) | **Post** /api/v1/library/ipa-apps/upload | Upload In-House App
+[**UploadInhouseAppStatus**](InHouseAppsAPI.md#UploadInhouseAppStatus) | **Get** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
 
 
 
-## InhouseAppsCreateInhouseApp
+## CreateInhouseApp
 
-> InhouseAppsCreateInhouseApp(ctx).ContentType(contentType).Body(body).Execute()
+> CreateInhouseApp(ctx).ContentType(contentType).Body(body).Execute()
 
 Create In-House App
 
@@ -40,9 +40,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.InHouseAppsAPI.InhouseAppsCreateInhouseApp(context.Background()).ContentType(contentType).Body(body).Execute()
+	r, err := apiClient.InHouseAppsAPI.CreateInhouseApp(context.Background()).ContentType(contentType).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.InhouseAppsCreateInhouseApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.CreateInhouseApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -54,7 +54,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiInhouseAppsCreateInhouseAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateInhouseAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -80,9 +80,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## InhouseAppsDeleteInhouseApp
+## DeleteInhouseApp
 
-> InhouseAppsDeleteInhouseApp(ctx, libraryItemId).Execute()
+> DeleteInhouseApp(ctx, libraryItemId).Execute()
 
 Delete In-House App
 
@@ -105,9 +105,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.InHouseAppsAPI.InhouseAppsDeleteInhouseApp(context.Background(), libraryItemId).Execute()
+	r, err := apiClient.InHouseAppsAPI.DeleteInhouseApp(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.InhouseAppsDeleteInhouseApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.DeleteInhouseApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiInhouseAppsDeleteInhouseAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteInhouseAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## InhouseAppsGetInhouseApp
+## GetInhouseApp
 
-> map[string]interface{} InhouseAppsGetInhouseApp(ctx, libraryItemId).Execute()
+> map[string]interface{} GetInhouseApp(ctx, libraryItemId).Execute()
 
 Get In-House App
 
@@ -173,13 +173,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InHouseAppsAPI.InhouseAppsGetInhouseApp(context.Background(), libraryItemId).Execute()
+	resp, r, err := apiClient.InHouseAppsAPI.GetInhouseApp(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.InhouseAppsGetInhouseApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.GetInhouseApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InhouseAppsGetInhouseApp`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.InhouseAppsGetInhouseApp`: %v\n", resp)
+	// response from `GetInhouseApp`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.GetInhouseApp`: %v\n", resp)
 }
 ```
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiInhouseAppsGetInhouseAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetInhouseAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -218,9 +218,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## InhouseAppsListInhouseApps
+## ListInhouseApps
 
-> map[string]interface{} InhouseAppsListInhouseApps(ctx).Page(page).Execute()
+> map[string]interface{} ListInhouseApps(ctx).Page(page).Execute()
 
 List In-House Apps
 
@@ -243,13 +243,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InHouseAppsAPI.InhouseAppsListInhouseApps(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.InHouseAppsAPI.ListInhouseApps(context.Background()).Page(page).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.InhouseAppsListInhouseApps``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.ListInhouseApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InhouseAppsListInhouseApps`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.InhouseAppsListInhouseApps`: %v\n", resp)
+	// response from `ListInhouseApps`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.ListInhouseApps`: %v\n", resp)
 }
 ```
 
@@ -259,7 +259,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiInhouseAppsListInhouseAppsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListInhouseAppsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -284,9 +284,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## InhouseAppsUpdateInhouseApp
+## UpdateInhouseApp
 
-> InhouseAppsUpdateInhouseApp(ctx, libraryItemId).ContentType(contentType).Body(body).Execute()
+> UpdateInhouseApp(ctx, libraryItemId).ContentType(contentType).Body(body).Execute()
 
 Update In-House App
 
@@ -311,9 +311,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.InHouseAppsAPI.InhouseAppsUpdateInhouseApp(context.Background(), libraryItemId).ContentType(contentType).Body(body).Execute()
+	r, err := apiClient.InHouseAppsAPI.UpdateInhouseApp(context.Background(), libraryItemId).ContentType(contentType).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.InhouseAppsUpdateInhouseApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.UpdateInhouseApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiInhouseAppsUpdateInhouseAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateInhouseAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -356,9 +356,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## InhouseAppsUploadInhouseApp
+## UploadInhouseApp
 
-> map[string]interface{} InhouseAppsUploadInhouseApp(ctx).ContentType(contentType).Body(body).Execute()
+> map[string]interface{} UploadInhouseApp(ctx).ContentType(contentType).Body(body).Execute()
 
 Upload In-House App
 
@@ -382,13 +382,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InHouseAppsAPI.InhouseAppsUploadInhouseApp(context.Background()).ContentType(contentType).Body(body).Execute()
+	resp, r, err := apiClient.InHouseAppsAPI.UploadInhouseApp(context.Background()).ContentType(contentType).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.InhouseAppsUploadInhouseApp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.UploadInhouseApp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InhouseAppsUploadInhouseApp`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.InhouseAppsUploadInhouseApp`: %v\n", resp)
+	// response from `UploadInhouseApp`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.UploadInhouseApp`: %v\n", resp)
 }
 ```
 
@@ -398,7 +398,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiInhouseAppsUploadInhouseAppRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUploadInhouseAppRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -424,9 +424,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## InhouseAppsUploadInhouseAppStatus
+## UploadInhouseAppStatus
 
-> map[string]interface{} InhouseAppsUploadInhouseAppStatus(ctx, pendingUploadId).Execute()
+> map[string]interface{} UploadInhouseAppStatus(ctx, pendingUploadId).Execute()
 
 Upload In-House App Status
 
@@ -449,13 +449,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.InHouseAppsAPI.InhouseAppsUploadInhouseAppStatus(context.Background(), pendingUploadId).Execute()
+	resp, r, err := apiClient.InHouseAppsAPI.UploadInhouseAppStatus(context.Background(), pendingUploadId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.InhouseAppsUploadInhouseAppStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InHouseAppsAPI.UploadInhouseAppStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InhouseAppsUploadInhouseAppStatus`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.InhouseAppsUploadInhouseAppStatus`: %v\n", resp)
+	// response from `UploadInhouseAppStatus`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `InHouseAppsAPI.UploadInhouseAppStatus`: %v\n", resp)
 }
 ```
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiInhouseAppsUploadInhouseAppStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUploadInhouseAppStatusRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

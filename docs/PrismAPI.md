@@ -4,30 +4,30 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PrismActivationLock**](PrismAPI.md#PrismActivationLock) | **Get** /api/v1/prism/activation_lock | Activation lock
-[**PrismApplicationFirewall**](PrismAPI.md#PrismApplicationFirewall) | **Get** /api/v1/prism/application_firewall | Application firewall
-[**PrismApplications**](PrismAPI.md#PrismApplications) | **Get** /api/v1/prism/apps | Applications
-[**PrismCertificates**](PrismAPI.md#PrismCertificates) | **Get** /api/v1/prism/certificates | Certificates
-[**PrismCount**](PrismAPI.md#PrismCount) | **Get** /api/v1/prism/count | Count
-[**PrismDesktopAndScreensaver**](PrismAPI.md#PrismDesktopAndScreensaver) | **Get** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
-[**PrismDeviceInformation**](PrismAPI.md#PrismDeviceInformation) | **Get** /api/v1/prism/device_information | Device information
-[**PrismFilevault**](PrismAPI.md#PrismFilevault) | **Get** /api/v1/prism/filevault | FileVault
-[**PrismGatekeeperAndXprotect**](PrismAPI.md#PrismGatekeeperAndXprotect) | **Get** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
-[**PrismGetCategoryExport**](PrismAPI.md#PrismGetCategoryExport) | **Get** /api/v1/prism/export/{export_id} | Get category export
-[**PrismInstalledProfiles**](PrismAPI.md#PrismInstalledProfiles) | **Get** /api/v1/prism/installed_profiles | Installed profiles
-[**PrismKernelExtensions**](PrismAPI.md#PrismKernelExtensions) | **Get** /api/v1/prism/kernel_extensions | Kernel Extensions
-[**PrismLaunchAgentsAndDaemons**](PrismAPI.md#PrismLaunchAgentsAndDaemons) | **Get** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
-[**PrismLocalUsers**](PrismAPI.md#PrismLocalUsers) | **Get** /api/v1/prism/local_users | Local users
-[**PrismRequestCategoryExport**](PrismAPI.md#PrismRequestCategoryExport) | **Post** /api/v1/prism/export | Request category export
-[**PrismStartupSettings**](PrismAPI.md#PrismStartupSettings) | **Get** /api/v1/prism/startup_settings | Startup settings
-[**PrismSystemExtensions**](PrismAPI.md#PrismSystemExtensions) | **Get** /api/v1/prism/system_extensions | System Extensions
-[**PrismTransparencyDatabase**](PrismAPI.md#PrismTransparencyDatabase) | **Get** /api/v1/prism/transparency_database | Transparency database
+[**ActivationLock**](PrismAPI.md#ActivationLock) | **Get** /api/v1/prism/activation_lock | Activation lock
+[**ApplicationFirewall**](PrismAPI.md#ApplicationFirewall) | **Get** /api/v1/prism/application_firewall | Application firewall
+[**Applications**](PrismAPI.md#Applications) | **Get** /api/v1/prism/apps | Applications
+[**Certificates**](PrismAPI.md#Certificates) | **Get** /api/v1/prism/certificates | Certificates
+[**Count**](PrismAPI.md#Count) | **Get** /api/v1/prism/count | Count
+[**DesktopAndScreensaver**](PrismAPI.md#DesktopAndScreensaver) | **Get** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
+[**DeviceInformation**](PrismAPI.md#DeviceInformation) | **Get** /api/v1/prism/device_information | Device information
+[**Filevault**](PrismAPI.md#Filevault) | **Get** /api/v1/prism/filevault | FileVault
+[**GatekeeperAndXprotect**](PrismAPI.md#GatekeeperAndXprotect) | **Get** /api/v1/prism/gatekeeper_and_xprotect | Gatekeeper and XProtect
+[**GetCategoryExport**](PrismAPI.md#GetCategoryExport) | **Get** /api/v1/prism/export/{export_id} | Get category export
+[**InstalledProfiles**](PrismAPI.md#InstalledProfiles) | **Get** /api/v1/prism/installed_profiles | Installed profiles
+[**KernelExtensions**](PrismAPI.md#KernelExtensions) | **Get** /api/v1/prism/kernel_extensions | Kernel Extensions
+[**LaunchAgentsAndDaemons**](PrismAPI.md#LaunchAgentsAndDaemons) | **Get** /api/v1/prism/launch_agents_and_daemons | Launch Agents and Daemons
+[**LocalUsers**](PrismAPI.md#LocalUsers) | **Get** /api/v1/prism/local_users | Local users
+[**RequestCategoryExport**](PrismAPI.md#RequestCategoryExport) | **Post** /api/v1/prism/export | Request category export
+[**StartupSettings**](PrismAPI.md#StartupSettings) | **Get** /api/v1/prism/startup_settings | Startup settings
+[**SystemExtensions**](PrismAPI.md#SystemExtensions) | **Get** /api/v1/prism/system_extensions | System Extensions
+[**TransparencyDatabase**](PrismAPI.md#TransparencyDatabase) | **Get** /api/v1/prism/transparency_database | Transparency database
 
 
 
-## PrismActivationLock
+## ActivationLock
 
-> PrismActivationLock(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> ActivationLock(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Activation lock
 
@@ -55,9 +55,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PrismAPI.PrismActivationLock(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	r, err := apiClient.PrismAPI.ActivationLock(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismActivationLock``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.ActivationLock``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -69,7 +69,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismActivationLockRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiActivationLockRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -99,9 +99,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismApplicationFirewall
+## ApplicationFirewall
 
-> map[string]interface{} PrismApplicationFirewall(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} ApplicationFirewall(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Application firewall
 
@@ -129,13 +129,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismApplicationFirewall(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.ApplicationFirewall(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismApplicationFirewall``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.ApplicationFirewall``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismApplicationFirewall`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismApplicationFirewall`: %v\n", resp)
+	// response from `ApplicationFirewall`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.ApplicationFirewall`: %v\n", resp)
 }
 ```
 
@@ -145,7 +145,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismApplicationFirewallRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApplicationFirewallRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -175,9 +175,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismApplications
+## Applications
 
-> map[string]interface{} PrismApplications(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} Applications(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Applications
 
@@ -205,13 +205,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismApplications(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.Applications(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismApplications``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Applications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismApplications`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismApplications`: %v\n", resp)
+	// response from `Applications`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Applications`: %v\n", resp)
 }
 ```
 
@@ -221,7 +221,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiApplicationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -251,9 +251,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismCertificates
+## Certificates
 
-> map[string]interface{} PrismCertificates(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} Certificates(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Certificates
 
@@ -281,13 +281,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismCertificates(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.Certificates(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismCertificates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Certificates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismCertificates`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismCertificates`: %v\n", resp)
+	// response from `Certificates`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Certificates`: %v\n", resp)
 }
 ```
 
@@ -297,7 +297,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismCertificatesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCertificatesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -327,9 +327,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismCount
+## Count
 
-> map[string]interface{} PrismCount(ctx).Category(category).Execute()
+> map[string]interface{} Count(ctx).Category(category).Execute()
 
 Count
 
@@ -352,13 +352,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismCount(context.Background()).Category(category).Execute()
+	resp, r, err := apiClient.PrismAPI.Count(context.Background()).Category(category).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismCount``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Count``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismCount`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismCount`: %v\n", resp)
+	// response from `Count`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Count`: %v\n", resp)
 }
 ```
 
@@ -368,7 +368,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismCountRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCountRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -393,9 +393,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismDesktopAndScreensaver
+## DesktopAndScreensaver
 
-> map[string]interface{} PrismDesktopAndScreensaver(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} DesktopAndScreensaver(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Desktop and Screensaver
 
@@ -423,13 +423,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismDesktopAndScreensaver(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.DesktopAndScreensaver(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismDesktopAndScreensaver``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.DesktopAndScreensaver``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismDesktopAndScreensaver`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismDesktopAndScreensaver`: %v\n", resp)
+	// response from `DesktopAndScreensaver`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.DesktopAndScreensaver`: %v\n", resp)
 }
 ```
 
@@ -439,7 +439,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismDesktopAndScreensaverRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDesktopAndScreensaverRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -469,9 +469,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismDeviceInformation
+## DeviceInformation
 
-> map[string]interface{} PrismDeviceInformation(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Body(body).Execute()
+> map[string]interface{} DeviceInformation(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Body(body).Execute()
 
 Device information
 
@@ -500,13 +500,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismDeviceInformation(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Body(body).Execute()
+	resp, r, err := apiClient.PrismAPI.DeviceInformation(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismDeviceInformation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.DeviceInformation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismDeviceInformation`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismDeviceInformation`: %v\n", resp)
+	// response from `DeviceInformation`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.DeviceInformation`: %v\n", resp)
 }
 ```
 
@@ -516,7 +516,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismDeviceInformationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeviceInformationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -547,9 +547,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismFilevault
+## Filevault
 
-> map[string]interface{} PrismFilevault(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} Filevault(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 FileVault
 
@@ -577,13 +577,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismFilevault(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.Filevault(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismFilevault``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Filevault``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismFilevault`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismFilevault`: %v\n", resp)
+	// response from `Filevault`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Filevault`: %v\n", resp)
 }
 ```
 
@@ -593,7 +593,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismFilevaultRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiFilevaultRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -623,9 +623,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismGatekeeperAndXprotect
+## GatekeeperAndXprotect
 
-> map[string]interface{} PrismGatekeeperAndXprotect(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} GatekeeperAndXprotect(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Gatekeeper and XProtect
 
@@ -653,13 +653,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismGatekeeperAndXprotect(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.GatekeeperAndXprotect(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismGatekeeperAndXprotect``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.GatekeeperAndXprotect``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismGatekeeperAndXprotect`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismGatekeeperAndXprotect`: %v\n", resp)
+	// response from `GatekeeperAndXprotect`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.GatekeeperAndXprotect`: %v\n", resp)
 }
 ```
 
@@ -669,7 +669,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismGatekeeperAndXprotectRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGatekeeperAndXprotectRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -699,9 +699,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismGetCategoryExport
+## GetCategoryExport
 
-> map[string]interface{} PrismGetCategoryExport(ctx, exportId).Execute()
+> map[string]interface{} GetCategoryExport(ctx, exportId).Execute()
 
 Get category export
 
@@ -724,13 +724,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismGetCategoryExport(context.Background(), exportId).Execute()
+	resp, r, err := apiClient.PrismAPI.GetCategoryExport(context.Background(), exportId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismGetCategoryExport``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.GetCategoryExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismGetCategoryExport`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismGetCategoryExport`: %v\n", resp)
+	// response from `GetCategoryExport`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.GetCategoryExport`: %v\n", resp)
 }
 ```
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismGetCategoryExportRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCategoryExportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -769,9 +769,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismInstalledProfiles
+## InstalledProfiles
 
-> map[string]interface{} PrismInstalledProfiles(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} InstalledProfiles(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Installed profiles
 
@@ -799,13 +799,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismInstalledProfiles(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.InstalledProfiles(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismInstalledProfiles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.InstalledProfiles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismInstalledProfiles`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismInstalledProfiles`: %v\n", resp)
+	// response from `InstalledProfiles`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.InstalledProfiles`: %v\n", resp)
 }
 ```
 
@@ -815,7 +815,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismInstalledProfilesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiInstalledProfilesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -845,9 +845,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismKernelExtensions
+## KernelExtensions
 
-> map[string]interface{} PrismKernelExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} KernelExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Kernel Extensions
 
@@ -875,13 +875,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismKernelExtensions(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.KernelExtensions(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismKernelExtensions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.KernelExtensions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismKernelExtensions`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismKernelExtensions`: %v\n", resp)
+	// response from `KernelExtensions`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.KernelExtensions`: %v\n", resp)
 }
 ```
 
@@ -891,7 +891,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismKernelExtensionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKernelExtensionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -921,9 +921,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismLaunchAgentsAndDaemons
+## LaunchAgentsAndDaemons
 
-> map[string]interface{} PrismLaunchAgentsAndDaemons(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} LaunchAgentsAndDaemons(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Launch Agents and Daemons
 
@@ -951,13 +951,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismLaunchAgentsAndDaemons(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.LaunchAgentsAndDaemons(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismLaunchAgentsAndDaemons``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.LaunchAgentsAndDaemons``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismLaunchAgentsAndDaemons`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismLaunchAgentsAndDaemons`: %v\n", resp)
+	// response from `LaunchAgentsAndDaemons`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.LaunchAgentsAndDaemons`: %v\n", resp)
 }
 ```
 
@@ -967,7 +967,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismLaunchAgentsAndDaemonsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLaunchAgentsAndDaemonsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -997,9 +997,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismLocalUsers
+## LocalUsers
 
-> map[string]interface{} PrismLocalUsers(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} LocalUsers(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Local users
 
@@ -1027,13 +1027,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismLocalUsers(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.LocalUsers(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismLocalUsers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.LocalUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismLocalUsers`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismLocalUsers`: %v\n", resp)
+	// response from `LocalUsers`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.LocalUsers`: %v\n", resp)
 }
 ```
 
@@ -1043,7 +1043,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismLocalUsersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiLocalUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1073,9 +1073,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismRequestCategoryExport
+## RequestCategoryExport
 
-> map[string]interface{} PrismRequestCategoryExport(ctx).Body(body).Execute()
+> map[string]interface{} RequestCategoryExport(ctx).Body(body).Execute()
 
 Request category export
 
@@ -1098,13 +1098,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismRequestCategoryExport(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.PrismAPI.RequestCategoryExport(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismRequestCategoryExport``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.RequestCategoryExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismRequestCategoryExport`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismRequestCategoryExport`: %v\n", resp)
+	// response from `RequestCategoryExport`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.RequestCategoryExport`: %v\n", resp)
 }
 ```
 
@@ -1114,7 +1114,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismRequestCategoryExportRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRequestCategoryExportRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1139,9 +1139,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismStartupSettings
+## StartupSettings
 
-> map[string]interface{} PrismStartupSettings(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} StartupSettings(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Startup settings
 
@@ -1169,13 +1169,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismStartupSettings(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.StartupSettings(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismStartupSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.StartupSettings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismStartupSettings`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismStartupSettings`: %v\n", resp)
+	// response from `StartupSettings`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.StartupSettings`: %v\n", resp)
 }
 ```
 
@@ -1185,7 +1185,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismStartupSettingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiStartupSettingsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1215,9 +1215,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismSystemExtensions
+## SystemExtensions
 
-> map[string]interface{} PrismSystemExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} SystemExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 System Extensions
 
@@ -1245,13 +1245,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismSystemExtensions(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.SystemExtensions(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismSystemExtensions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.SystemExtensions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismSystemExtensions`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismSystemExtensions`: %v\n", resp)
+	// response from `SystemExtensions`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.SystemExtensions`: %v\n", resp)
 }
 ```
 
@@ -1261,7 +1261,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismSystemExtensionsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSystemExtensionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1291,9 +1291,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## PrismTransparencyDatabase
+## TransparencyDatabase
 
-> map[string]interface{} PrismTransparencyDatabase(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} TransparencyDatabase(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Transparency database
 
@@ -1321,13 +1321,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PrismAPI.PrismTransparencyDatabase(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.TransparencyDatabase(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.PrismTransparencyDatabase``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.TransparencyDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PrismTransparencyDatabase`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.PrismTransparencyDatabase`: %v\n", resp)
+	// response from `TransparencyDatabase`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.TransparencyDatabase`: %v\n", resp)
 }
 ```
 
@@ -1337,7 +1337,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPrismTransparencyDatabaseRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiTransparencyDatabaseRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

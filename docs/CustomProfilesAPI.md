@@ -4,17 +4,17 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CustomProfilesCreateCustomProfile**](CustomProfilesAPI.md#CustomProfilesCreateCustomProfile) | **Post** /api/v1/library/custom-profiles | Create Custom Profile
-[**CustomProfilesDeleteCustomProfile**](CustomProfilesAPI.md#CustomProfilesDeleteCustomProfile) | **Delete** /api/v1/library/custom-profiles/{library_item_id} | Delete Custom Profile
-[**CustomProfilesGetCustomProfile**](CustomProfilesAPI.md#CustomProfilesGetCustomProfile) | **Get** /api/v1/library/custom-profiles/{library_item_id} | Get Custom Profile
-[**CustomProfilesListCustomProfiles**](CustomProfilesAPI.md#CustomProfilesListCustomProfiles) | **Get** /api/v1/library/custom-profiles | List Custom Profiles
-[**CustomProfilesUpdateCustomProfile**](CustomProfilesAPI.md#CustomProfilesUpdateCustomProfile) | **Patch** /api/v1/library/custom-profiles/{library_item_id} | Update Custom Profile
+[**CreateCustomProfile**](CustomProfilesAPI.md#CreateCustomProfile) | **Post** /api/v1/library/custom-profiles | Create Custom Profile
+[**DeleteCustomProfile**](CustomProfilesAPI.md#DeleteCustomProfile) | **Delete** /api/v1/library/custom-profiles/{library_item_id} | Delete Custom Profile
+[**GetCustomProfile**](CustomProfilesAPI.md#GetCustomProfile) | **Get** /api/v1/library/custom-profiles/{library_item_id} | Get Custom Profile
+[**ListCustomProfiles**](CustomProfilesAPI.md#ListCustomProfiles) | **Get** /api/v1/library/custom-profiles | List Custom Profiles
+[**UpdateCustomProfile**](CustomProfilesAPI.md#UpdateCustomProfile) | **Patch** /api/v1/library/custom-profiles/{library_item_id} | Update Custom Profile
 
 
 
-## CustomProfilesCreateCustomProfile
+## CreateCustomProfile
 
-> map[string]interface{} CustomProfilesCreateCustomProfile(ctx).Name(name).File(file).Active(active).Execute()
+> map[string]interface{} CreateCustomProfile(ctx).Name(name).File(file).Active(active).Execute()
 
 Create Custom Profile
 
@@ -39,13 +39,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomProfilesAPI.CustomProfilesCreateCustomProfile(context.Background()).Name(name).File(file).Active(active).Execute()
+	resp, r, err := apiClient.CustomProfilesAPI.CreateCustomProfile(context.Background()).Name(name).File(file).Active(active).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.CustomProfilesCreateCustomProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.CreateCustomProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CustomProfilesCreateCustomProfile`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.CustomProfilesCreateCustomProfile`: %v\n", resp)
+	// response from `CreateCustomProfile`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.CreateCustomProfile`: %v\n", resp)
 }
 ```
 
@@ -55,7 +55,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomProfilesCreateCustomProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCustomProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CustomProfilesDeleteCustomProfile
+## DeleteCustomProfile
 
-> CustomProfilesDeleteCustomProfile(ctx, libraryItemId).Execute()
+> DeleteCustomProfile(ctx, libraryItemId).Execute()
 
 Delete Custom Profile
 
@@ -107,9 +107,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.CustomProfilesAPI.CustomProfilesDeleteCustomProfile(context.Background(), libraryItemId).Execute()
+	r, err := apiClient.CustomProfilesAPI.DeleteCustomProfile(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.CustomProfilesDeleteCustomProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.DeleteCustomProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomProfilesDeleteCustomProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCustomProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -150,9 +150,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CustomProfilesGetCustomProfile
+## GetCustomProfile
 
-> map[string]interface{} CustomProfilesGetCustomProfile(ctx, libraryItemId).Execute()
+> map[string]interface{} GetCustomProfile(ctx, libraryItemId).Execute()
 
 Get Custom Profile
 
@@ -175,13 +175,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomProfilesAPI.CustomProfilesGetCustomProfile(context.Background(), libraryItemId).Execute()
+	resp, r, err := apiClient.CustomProfilesAPI.GetCustomProfile(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.CustomProfilesGetCustomProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.GetCustomProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CustomProfilesGetCustomProfile`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.CustomProfilesGetCustomProfile`: %v\n", resp)
+	// response from `GetCustomProfile`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.GetCustomProfile`: %v\n", resp)
 }
 ```
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomProfilesGetCustomProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCustomProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -220,9 +220,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CustomProfilesListCustomProfiles
+## ListCustomProfiles
 
-> map[string]interface{} CustomProfilesListCustomProfiles(ctx).Page(page).Execute()
+> map[string]interface{} ListCustomProfiles(ctx).Page(page).Execute()
 
 List Custom Profiles
 
@@ -245,13 +245,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomProfilesAPI.CustomProfilesListCustomProfiles(context.Background()).Page(page).Execute()
+	resp, r, err := apiClient.CustomProfilesAPI.ListCustomProfiles(context.Background()).Page(page).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.CustomProfilesListCustomProfiles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.ListCustomProfiles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CustomProfilesListCustomProfiles`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.CustomProfilesListCustomProfiles`: %v\n", resp)
+	// response from `ListCustomProfiles`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.ListCustomProfiles`: %v\n", resp)
 }
 ```
 
@@ -261,7 +261,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomProfilesListCustomProfilesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListCustomProfilesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -286,9 +286,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CustomProfilesUpdateCustomProfile
+## UpdateCustomProfile
 
-> map[string]interface{} CustomProfilesUpdateCustomProfile(ctx, libraryItemId).Execute()
+> map[string]interface{} UpdateCustomProfile(ctx, libraryItemId).Execute()
 
 Update Custom Profile
 
@@ -311,13 +311,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CustomProfilesAPI.CustomProfilesUpdateCustomProfile(context.Background(), libraryItemId).Execute()
+	resp, r, err := apiClient.CustomProfilesAPI.UpdateCustomProfile(context.Background(), libraryItemId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.CustomProfilesUpdateCustomProfile``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CustomProfilesAPI.UpdateCustomProfile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CustomProfilesUpdateCustomProfile`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.CustomProfilesUpdateCustomProfile`: %v\n", resp)
+	// response from `UpdateCustomProfile`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomProfilesAPI.UpdateCustomProfile`: %v\n", resp)
 }
 ```
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCustomProfilesUpdateCustomProfileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCustomProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

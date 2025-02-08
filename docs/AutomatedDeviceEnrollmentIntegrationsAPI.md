@@ -4,23 +4,23 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration) | **Post** /api/v1/integrations/apple/ade/ | Create ADE integration
-[**AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration) | **Delete** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
-[**AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey) | **Get** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
-[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsGetAdeDevice) | **Get** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
-[**AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration) | **Get** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsListAdeDevices) | **Get** /api/v1/integrations/apple/ade/devices | List ADE devices
-[**AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations) | **Get** /api/v1/integrations/apple/ade | List ADE integrations
-[**AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken) | **Get** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
-[**AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration) | **Post** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
-[**AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice) | **Patch** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
-[**AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration) | **Patch** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
+[**CreateAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#CreateAdeIntegration) | **Post** /api/v1/integrations/apple/ade/ | Create ADE integration
+[**DeleteAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#DeleteAdeIntegration) | **Delete** /api/v1/integrations/apple/ade/{ade_token_id} | Delete ADE integration
+[**DownloadAdePublicKey**](AutomatedDeviceEnrollmentIntegrationsAPI.md#DownloadAdePublicKey) | **Get** /api/v1/integrations/apple/ade/public_key/ | Download ADE public key
+[**GetAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#GetAdeDevice) | **Get** /api/v1/integrations/apple/ade/devices/{device_id} | Get ADE device
+[**GetAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#GetAdeIntegration) | **Get** /api/v1/integrations/apple/ade/{ade_token_id} | Get ADE integration
+[**ListAdeDevices**](AutomatedDeviceEnrollmentIntegrationsAPI.md#ListAdeDevices) | **Get** /api/v1/integrations/apple/ade/devices | List ADE devices
+[**ListAdeIntegrations**](AutomatedDeviceEnrollmentIntegrationsAPI.md#ListAdeIntegrations) | **Get** /api/v1/integrations/apple/ade | List ADE integrations
+[**ListDevicesAssociatedToAdeToken**](AutomatedDeviceEnrollmentIntegrationsAPI.md#ListDevicesAssociatedToAdeToken) | **Get** /api/v1/integrations/apple/ade/{ade_token_id}/devices | List devices associated to ADE token
+[**RenewAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#RenewAdeIntegration) | **Post** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
+[**UpdateAdeDevice**](AutomatedDeviceEnrollmentIntegrationsAPI.md#UpdateAdeDevice) | **Patch** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
+[**UpdateAdeIntegration**](AutomatedDeviceEnrollmentIntegrationsAPI.md#UpdateAdeIntegration) | **Patch** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
 
 
 
-## AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration
+## CreateAdeIntegration
 
-> map[string]interface{} AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+> map[string]interface{} CreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 
 Create ADE integration
 
@@ -46,13 +46,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration(context.Background()).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration(context.Background()).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration`: %v\n", resp)
+	// response from `CreateAdeIntegration`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration`: %v\n", resp)
 }
 ```
 
@@ -62,7 +62,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAdeIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -90,9 +90,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration
+## DeleteAdeIntegration
 
-> AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration(ctx, adeTokenId).Execute()
+> DeleteAdeIntegration(ctx, adeTokenId).Execute()
 
 Delete ADE integration
 
@@ -115,9 +115,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration(context.Background(), adeTokenId).Execute()
+	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.DeleteAdeIntegration(context.Background(), adeTokenId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.DeleteAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsDeleteAdeIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAdeIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -158,9 +158,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey
+## DownloadAdePublicKey
 
-> string AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey(ctx).Execute()
+> string DownloadAdePublicKey(ctx).Execute()
 
 Download ADE public key
 
@@ -182,13 +182,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey(context.Background()).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.DownloadAdePublicKey(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.DownloadAdePublicKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey`: string
-	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKey`: %v\n", resp)
+	// response from `DownloadAdePublicKey`: string
+	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.DownloadAdePublicKey`: %v\n", resp)
 }
 ```
 
@@ -198,7 +198,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsDownloadAdePublicKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDownloadAdePublicKeyRequest struct via the builder pattern
 
 
 ### Return type
@@ -219,9 +219,9 @@ Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentI
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsGetAdeDevice
+## GetAdeDevice
 
-> map[string]interface{} AutomatedDeviceEnrollmentIntegrationsGetAdeDevice(ctx, deviceId).Execute()
+> map[string]interface{} GetAdeDevice(ctx, deviceId).Execute()
 
 Get ADE device
 
@@ -244,13 +244,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsGetAdeDevice(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeDevice(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsGetAdeDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AutomatedDeviceEnrollmentIntegrationsGetAdeDevice`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsGetAdeDevice`: %v\n", resp)
+	// response from `GetAdeDevice`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeDevice`: %v\n", resp)
 }
 ```
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsGetAdeDeviceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAdeDeviceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -289,9 +289,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration
+## GetAdeIntegration
 
-> AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration(ctx, adeTokenId).Execute()
+> GetAdeIntegration(ctx, adeTokenId).Execute()
 
 Get ADE integration
 
@@ -314,9 +314,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration(context.Background(), adeTokenId).Execute()
+	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeIntegration(context.Background(), adeTokenId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsGetAdeIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsGetAdeIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAdeIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -357,9 +357,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsListAdeDevices
+## ListAdeDevices
 
-> map[string]interface{} AutomatedDeviceEnrollmentIntegrationsListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
+> map[string]interface{} ListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
 
 List ADE devices
 
@@ -390,13 +390,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListAdeDevices(context.Background()).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices(context.Background()).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListAdeDevices``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AutomatedDeviceEnrollmentIntegrationsListAdeDevices`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListAdeDevices`: %v\n", resp)
+	// response from `ListAdeDevices`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices`: %v\n", resp)
 }
 ```
 
@@ -406,7 +406,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsListAdeDevicesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAdeDevicesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -439,9 +439,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations
+## ListAdeIntegrations
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations(ctx).Execute()
+> ListAdeIntegrations(ctx).Execute()
 
 List ADE integrations
 
@@ -463,9 +463,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations(context.Background()).Execute()
+	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeIntegrations(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListAdeIntegrations``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeIntegrations``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -477,7 +477,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsListAdeIntegrationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAdeIntegrationsRequest struct via the builder pattern
 
 
 ### Return type
@@ -498,9 +498,9 @@ Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentI
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken
+## ListDevicesAssociatedToAdeToken
 
-> map[string]interface{} AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken(ctx, adeTokenId).Page(page).Execute()
+> map[string]interface{} ListDevicesAssociatedToAdeToken(ctx, adeTokenId).Page(page).Execute()
 
 List devices associated to ADE token
 
@@ -524,13 +524,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken(context.Background(), adeTokenId).Page(page).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.ListDevicesAssociatedToAdeToken(context.Background(), adeTokenId).Page(page).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListDevicesAssociatedToAdeToken``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken`: %v\n", resp)
+	// response from `ListDevicesAssociatedToAdeToken`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.ListDevicesAssociatedToAdeToken`: %v\n", resp)
 }
 ```
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeTokenRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListDevicesAssociatedToAdeTokenRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -570,9 +570,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration
+## RenewAdeIntegration
 
-> AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration(ctx, adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+> RenewAdeIntegration(ctx, adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 
 Renew ADE integration
 
@@ -599,9 +599,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration(context.Background(), adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration(context.Background(), adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsRenewAdeIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -617,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsRenewAdeIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRenewAdeIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -646,9 +646,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice
+## UpdateAdeDevice
 
-> map[string]interface{} AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice(ctx, deviceId).Body(body).Execute()
+> map[string]interface{} UpdateAdeDevice(ctx, deviceId).Body(body).Execute()
 
 Update ADE device
 
@@ -672,13 +672,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice(context.Background(), deviceId).Body(body).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeDevice(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsUpdateAdeDevice`: %v\n", resp)
+	// response from `UpdateAdeDevice`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeDevice`: %v\n", resp)
 }
 ```
 
@@ -692,7 +692,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsUpdateAdeDeviceRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAdeDeviceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -718,9 +718,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration
+## UpdateAdeIntegration
 
-> AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration(ctx, adeTokenId).Body(body).Execute()
+> UpdateAdeIntegration(ctx, adeTokenId).Body(body).Execute()
 
 Update ADE integration
 
@@ -744,9 +744,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration(context.Background(), adeTokenId).Body(body).Execute()
+	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeIntegration(context.Background(), adeTokenId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.AutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -762,7 +762,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAutomatedDeviceEnrollmentIntegrationsUpdateAdeIntegrationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAdeIntegrationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -4,16 +4,16 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**LostModeDisableLostMode**](LostModeAPI.md#LostModeDisableLostMode) | **Post** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
-[**LostModeEnableLostMode**](LostModeAPI.md#LostModeEnableLostMode) | **Post** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
-[**LostModePlayLostModeSound**](LostModeAPI.md#LostModePlayLostModeSound) | **Post** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
-[**LostModeUpdateLocation**](LostModeAPI.md#LostModeUpdateLocation) | **Post** /api/v1/devices/{device_id}/action/updatelocation | Update Location
+[**DisableLostMode**](LostModeAPI.md#DisableLostMode) | **Post** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
+[**EnableLostMode**](LostModeAPI.md#EnableLostMode) | **Post** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
+[**PlayLostModeSound**](LostModeAPI.md#PlayLostModeSound) | **Post** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
+[**UpdateLocation**](LostModeAPI.md#UpdateLocation) | **Post** /api/v1/devices/{device_id}/action/updatelocation | Update Location
 
 
 
-## LostModeDisableLostMode
+## DisableLostMode
 
-> LostModeDisableLostMode(ctx, deviceId).Execute()
+> DisableLostMode(ctx, deviceId).Execute()
 
 Disable Lost Mode
 
@@ -36,9 +36,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LostModeAPI.LostModeDisableLostMode(context.Background(), deviceId).Execute()
+	r, err := apiClient.LostModeAPI.DisableLostMode(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.LostModeDisableLostMode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.DisableLostMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLostModeDisableLostModeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDisableLostModeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -79,9 +79,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## LostModeEnableLostMode
+## EnableLostMode
 
-> LostModeEnableLostMode(ctx, deviceId).Body(body).Execute()
+> EnableLostMode(ctx, deviceId).Body(body).Execute()
 
 Enable Lost Mode
 
@@ -105,9 +105,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LostModeAPI.LostModeEnableLostMode(context.Background(), deviceId).Body(body).Execute()
+	r, err := apiClient.LostModeAPI.EnableLostMode(context.Background(), deviceId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.LostModeEnableLostMode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.EnableLostMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLostModeEnableLostModeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEnableLostModeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -149,9 +149,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## LostModePlayLostModeSound
+## PlayLostModeSound
 
-> LostModePlayLostModeSound(ctx, deviceId).Execute()
+> PlayLostModeSound(ctx, deviceId).Execute()
 
 Play Lost Mode Sound
 
@@ -174,9 +174,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LostModeAPI.LostModePlayLostModeSound(context.Background(), deviceId).Execute()
+	r, err := apiClient.LostModeAPI.PlayLostModeSound(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.LostModePlayLostModeSound``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.PlayLostModeSound``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLostModePlayLostModeSoundRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPlayLostModeSoundRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## LostModeUpdateLocation
+## UpdateLocation
 
-> LostModeUpdateLocation(ctx, deviceId).Execute()
+> UpdateLocation(ctx, deviceId).Execute()
 
 Update Location
 
@@ -242,9 +242,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LostModeAPI.LostModeUpdateLocation(context.Background(), deviceId).Execute()
+	r, err := apiClient.LostModeAPI.UpdateLocation(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.LostModeUpdateLocation``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LostModeAPI.UpdateLocation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLostModeUpdateLocationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateLocationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

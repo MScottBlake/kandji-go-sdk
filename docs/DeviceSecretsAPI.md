@@ -4,16 +4,16 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeviceSecretsGetActivationLockBypassCode**](DeviceSecretsAPI.md#DeviceSecretsGetActivationLockBypassCode) | **Get** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
-[**DeviceSecretsGetFilevaultRecoveryKey**](DeviceSecretsAPI.md#DeviceSecretsGetFilevaultRecoveryKey) | **Get** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
-[**DeviceSecretsGetRecoveryLockPassword**](DeviceSecretsAPI.md#DeviceSecretsGetRecoveryLockPassword) | **Get** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
-[**DeviceSecretsGetUnlockPin**](DeviceSecretsAPI.md#DeviceSecretsGetUnlockPin) | **Get** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
+[**GetActivationLockBypassCode**](DeviceSecretsAPI.md#GetActivationLockBypassCode) | **Get** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
+[**GetFilevaultRecoveryKey**](DeviceSecretsAPI.md#GetFilevaultRecoveryKey) | **Get** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
+[**GetRecoveryLockPassword**](DeviceSecretsAPI.md#GetRecoveryLockPassword) | **Get** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
+[**GetUnlockPin**](DeviceSecretsAPI.md#GetUnlockPin) | **Get** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
 
 
 
-## DeviceSecretsGetActivationLockBypassCode
+## GetActivationLockBypassCode
 
-> map[string]interface{} DeviceSecretsGetActivationLockBypassCode(ctx, deviceId).Execute()
+> map[string]interface{} GetActivationLockBypassCode(ctx, deviceId).Execute()
 
 Get Activation Lock Bypass Code
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceSecretsAPI.DeviceSecretsGetActivationLockBypassCode(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceSecretsAPI.GetActivationLockBypassCode(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.DeviceSecretsGetActivationLockBypassCode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetActivationLockBypassCode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeviceSecretsGetActivationLockBypassCode`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.DeviceSecretsGetActivationLockBypassCode`: %v\n", resp)
+	// response from `GetActivationLockBypassCode`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetActivationLockBypassCode`: %v\n", resp)
 }
 ```
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeviceSecretsGetActivationLockBypassCodeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetActivationLockBypassCodeRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -81,9 +81,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeviceSecretsGetFilevaultRecoveryKey
+## GetFilevaultRecoveryKey
 
-> map[string]interface{} DeviceSecretsGetFilevaultRecoveryKey(ctx, deviceId).Execute()
+> map[string]interface{} GetFilevaultRecoveryKey(ctx, deviceId).Execute()
 
 Get FileVault Recovery Key
 
@@ -106,13 +106,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceSecretsAPI.DeviceSecretsGetFilevaultRecoveryKey(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceSecretsAPI.GetFilevaultRecoveryKey(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.DeviceSecretsGetFilevaultRecoveryKey``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetFilevaultRecoveryKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeviceSecretsGetFilevaultRecoveryKey`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.DeviceSecretsGetFilevaultRecoveryKey`: %v\n", resp)
+	// response from `GetFilevaultRecoveryKey`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetFilevaultRecoveryKey`: %v\n", resp)
 }
 ```
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeviceSecretsGetFilevaultRecoveryKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetFilevaultRecoveryKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -151,9 +151,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeviceSecretsGetRecoveryLockPassword
+## GetRecoveryLockPassword
 
-> map[string]interface{} DeviceSecretsGetRecoveryLockPassword(ctx, deviceId).Execute()
+> map[string]interface{} GetRecoveryLockPassword(ctx, deviceId).Execute()
 
 Get Recovery Lock Password
 
@@ -176,13 +176,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceSecretsAPI.DeviceSecretsGetRecoveryLockPassword(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceSecretsAPI.GetRecoveryLockPassword(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.DeviceSecretsGetRecoveryLockPassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetRecoveryLockPassword``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeviceSecretsGetRecoveryLockPassword`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.DeviceSecretsGetRecoveryLockPassword`: %v\n", resp)
+	// response from `GetRecoveryLockPassword`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetRecoveryLockPassword`: %v\n", resp)
 }
 ```
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeviceSecretsGetRecoveryLockPasswordRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRecoveryLockPasswordRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -221,9 +221,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeviceSecretsGetUnlockPin
+## GetUnlockPin
 
-> map[string]interface{} DeviceSecretsGetUnlockPin(ctx, deviceId).Execute()
+> map[string]interface{} GetUnlockPin(ctx, deviceId).Execute()
 
 Get Unlock Pin
 
@@ -246,13 +246,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceSecretsAPI.DeviceSecretsGetUnlockPin(context.Background(), deviceId).Execute()
+	resp, r, err := apiClient.DeviceSecretsAPI.GetUnlockPin(context.Background(), deviceId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.DeviceSecretsGetUnlockPin``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetUnlockPin``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeviceSecretsGetUnlockPin`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.DeviceSecretsGetUnlockPin`: %v\n", resp)
+	// response from `GetUnlockPin`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetUnlockPin`: %v\n", resp)
 }
 ```
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeviceSecretsGetUnlockPinRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetUnlockPinRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -4,16 +4,16 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**TagsCreateTag**](TagsAPI.md#TagsCreateTag) | **Post** /api/v1/tags | Create Tag
-[**TagsDeleteTag**](TagsAPI.md#TagsDeleteTag) | **Delete** /api/v1/tags/{tag_id} | Delete Tag
-[**TagsGetTags**](TagsAPI.md#TagsGetTags) | **Get** /api/v1/tags | Get Tags
-[**TagsUpdateTag**](TagsAPI.md#TagsUpdateTag) | **Patch** /api/v1/tags/{tag_id} | Update Tag
+[**CreateTag**](TagsAPI.md#CreateTag) | **Post** /api/v1/tags | Create Tag
+[**DeleteTag**](TagsAPI.md#DeleteTag) | **Delete** /api/v1/tags/{tag_id} | Delete Tag
+[**GetTags**](TagsAPI.md#GetTags) | **Get** /api/v1/tags | Get Tags
+[**UpdateTag**](TagsAPI.md#UpdateTag) | **Patch** /api/v1/tags/{tag_id} | Update Tag
 
 
 
-## TagsCreateTag
+## CreateTag
 
-> map[string]interface{} TagsCreateTag(ctx).Body(body).Execute()
+> map[string]interface{} CreateTag(ctx).Body(body).Execute()
 
 Create Tag
 
@@ -36,13 +36,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TagsAPI.TagsCreateTag(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.TagsAPI.CreateTag(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.TagsCreateTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.CreateTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TagsCreateTag`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.TagsCreateTag`: %v\n", resp)
+	// response from `CreateTag`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.CreateTag`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTagsCreateTagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TagsDeleteTag
+## DeleteTag
 
-> TagsDeleteTag(ctx, tagId).Execute()
+> DeleteTag(ctx, tagId).Execute()
 
 Delete Tag
 
@@ -102,9 +102,9 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.TagsAPI.TagsDeleteTag(context.Background(), tagId).Execute()
+	r, err := apiClient.TagsAPI.DeleteTag(context.Background(), tagId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.TagsDeleteTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.DeleteTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTagsDeleteTagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -145,9 +145,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TagsGetTags
+## GetTags
 
-> map[string]interface{} TagsGetTags(ctx).Search(search).Execute()
+> map[string]interface{} GetTags(ctx).Search(search).Execute()
 
 Get Tags
 
@@ -170,13 +170,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TagsAPI.TagsGetTags(context.Background()).Search(search).Execute()
+	resp, r, err := apiClient.TagsAPI.GetTags(context.Background()).Search(search).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.TagsGetTags``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.GetTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TagsGetTags`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.TagsGetTags`: %v\n", resp)
+	// response from `GetTags`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.GetTags`: %v\n", resp)
 }
 ```
 
@@ -186,7 +186,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTagsGetTagsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTagsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -211,9 +211,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## TagsUpdateTag
+## UpdateTag
 
-> map[string]interface{} TagsUpdateTag(ctx, tagId).Body(body).Execute()
+> map[string]interface{} UpdateTag(ctx, tagId).Body(body).Execute()
 
 Update Tag
 
@@ -237,13 +237,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.TagsAPI.TagsUpdateTag(context.Background(), tagId).Body(body).Execute()
+	resp, r, err := apiClient.TagsAPI.UpdateTag(context.Background(), tagId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.TagsUpdateTag``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.UpdateTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TagsUpdateTag`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.TagsUpdateTag`: %v\n", resp)
+	// response from `UpdateTag`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.UpdateTag`: %v\n", resp)
 }
 ```
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTagsUpdateTagRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateTagRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

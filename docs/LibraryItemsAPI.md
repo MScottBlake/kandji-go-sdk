@@ -4,14 +4,14 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**LibraryItemsGetLibraryItemActivity**](LibraryItemsAPI.md#LibraryItemsGetLibraryItemActivity) | **Get** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
-[**LibraryItemsGetLibraryItemStatuses**](LibraryItemsAPI.md#LibraryItemsGetLibraryItemStatuses) | **Get** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
+[**GetLibraryItemActivity**](LibraryItemsAPI.md#GetLibraryItemActivity) | **Get** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
+[**GetLibraryItemStatuses**](LibraryItemsAPI.md#GetLibraryItemStatuses) | **Get** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
 
 
 
-## LibraryItemsGetLibraryItemActivity
+## GetLibraryItemActivity
 
-> map[string]interface{} LibraryItemsGetLibraryItemActivity(ctx, libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} GetLibraryItemActivity(ctx, libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
 
 Get Library Item Activity
 
@@ -39,13 +39,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LibraryItemsAPI.LibraryItemsGetLibraryItemActivity(context.Background(), libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.LibraryItemsAPI.GetLibraryItemActivity(context.Background(), libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.LibraryItemsGetLibraryItemActivity``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.GetLibraryItemActivity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LibraryItemsGetLibraryItemActivity`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.LibraryItemsGetLibraryItemActivity`: %v\n", resp)
+	// response from `GetLibraryItemActivity`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.GetLibraryItemActivity`: %v\n", resp)
 }
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLibraryItemsGetLibraryItemActivityRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLibraryItemActivityRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -89,9 +89,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## LibraryItemsGetLibraryItemStatuses
+## GetLibraryItemStatuses
 
-> map[string]interface{} LibraryItemsGetLibraryItemStatuses(ctx, libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} GetLibraryItemStatuses(ctx, libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
 
 Get Library Item Statuses
 
@@ -117,13 +117,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LibraryItemsAPI.LibraryItemsGetLibraryItemStatuses(context.Background(), libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.LibraryItemsAPI.GetLibraryItemStatuses(context.Background(), libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.LibraryItemsGetLibraryItemStatuses``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.GetLibraryItemStatuses``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LibraryItemsGetLibraryItemStatuses`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.LibraryItemsGetLibraryItemStatuses`: %v\n", resp)
+	// response from `GetLibraryItemStatuses`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.GetLibraryItemStatuses`: %v\n", resp)
 }
 ```
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLibraryItemsGetLibraryItemStatusesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetLibraryItemStatusesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

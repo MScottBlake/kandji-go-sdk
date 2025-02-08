@@ -4,13 +4,13 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SelfServiceListSelfServiceCategories**](SelfServiceAPI.md#SelfServiceListSelfServiceCategories) | **Get** /api/v1/self-service/categories | List Self Service Categories
+[**ListSelfServiceCategories**](SelfServiceAPI.md#ListSelfServiceCategories) | **Get** /api/v1/self-service/categories | List Self Service Categories
 
 
 
-## SelfServiceListSelfServiceCategories
+## ListSelfServiceCategories
 
-> map[string]interface{} SelfServiceListSelfServiceCategories(ctx).Execute()
+> map[string]interface{} ListSelfServiceCategories(ctx).Execute()
 
 List Self Service Categories
 
@@ -32,13 +32,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SelfServiceAPI.SelfServiceListSelfServiceCategories(context.Background()).Execute()
+	resp, r, err := apiClient.SelfServiceAPI.ListSelfServiceCategories(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SelfServiceAPI.SelfServiceListSelfServiceCategories``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SelfServiceAPI.ListSelfServiceCategories``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SelfServiceListSelfServiceCategories`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `SelfServiceAPI.SelfServiceListSelfServiceCategories`: %v\n", resp)
+	// response from `ListSelfServiceCategories`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `SelfServiceAPI.ListSelfServiceCategories`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSelfServiceListSelfServiceCategoriesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSelfServiceCategoriesRequest struct via the builder pattern
 
 
 ### Return type
