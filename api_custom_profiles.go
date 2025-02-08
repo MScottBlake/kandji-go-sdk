@@ -22,12 +22,94 @@ import (
 )
 
 
+type CustomProfilesAPI interface {
+
+	/*
+	CreateCustomProfile Create Custom Profile
+
+	This request allows you to create a custom profile in the Kandji library.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateCustomProfileRequest
+	*/
+	CreateCustomProfile(ctx context.Context) ApiCreateCustomProfileRequest
+
+	// CreateCustomProfileExecute executes the request
+	//  @return map[string]interface{}
+	CreateCustomProfileExecute(r ApiCreateCustomProfileRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	DeleteCustomProfile Delete Custom Profile
+
+	<p>NOTICE: This is permanent so be careful.</p>
+<p>This endpoint sends a request to delete a specific custom profile from the Kandji library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiDeleteCustomProfileRequest
+	*/
+	DeleteCustomProfile(ctx context.Context, libraryItemId string) ApiDeleteCustomProfileRequest
+
+	// DeleteCustomProfileExecute executes the request
+	DeleteCustomProfileExecute(r ApiDeleteCustomProfileRequest) (*http.Response, error)
+
+	/*
+	GetCustomProfile Get Custom Profile
+
+	<p>This endpoint retrieves details about a specific custom profile from the Kandji library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiGetCustomProfileRequest
+	*/
+	GetCustomProfile(ctx context.Context, libraryItemId string) ApiGetCustomProfileRequest
+
+	// GetCustomProfileExecute executes the request
+	//  @return map[string]interface{}
+	GetCustomProfileExecute(r ApiGetCustomProfileRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	ListCustomProfiles List Custom Profiles
+
+	This endpoint makes a request to retrieve a list of custom profiles from the Kandji library.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCustomProfilesRequest
+	*/
+	ListCustomProfiles(ctx context.Context) ApiListCustomProfilesRequest
+
+	// ListCustomProfilesExecute executes the request
+	//  @return map[string]interface{}
+	ListCustomProfilesExecute(r ApiListCustomProfilesRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UpdateCustomProfile Update Custom Profile
+
+	<p>This request allows you to update a custom profile in the Kandji library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiUpdateCustomProfileRequest
+	*/
+	UpdateCustomProfile(ctx context.Context, libraryItemId string) ApiUpdateCustomProfileRequest
+
+	// UpdateCustomProfileExecute executes the request
+	//  @return map[string]interface{}
+	UpdateCustomProfileExecute(r ApiUpdateCustomProfileRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // CustomProfilesAPIService CustomProfilesAPI service
 type CustomProfilesAPIService service
 
 type ApiCreateCustomProfileRequest struct {
 	ctx context.Context
-	ApiService *CustomProfilesAPIService
+	ApiService CustomProfilesAPI
 	name *string
 	file *os.File
 	active *string
@@ -173,7 +255,7 @@ func (a *CustomProfilesAPIService) CreateCustomProfileExecute(r ApiCreateCustomP
 
 type ApiDeleteCustomProfileRequest struct {
 	ctx context.Context
-	ApiService *CustomProfilesAPIService
+	ApiService CustomProfilesAPI
 	libraryItemId string
 }
 
@@ -278,7 +360,7 @@ func (a *CustomProfilesAPIService) DeleteCustomProfileExecute(r ApiDeleteCustomP
 
 type ApiGetCustomProfileRequest struct {
 	ctx context.Context
-	ApiService *CustomProfilesAPIService
+	ApiService CustomProfilesAPI
 	libraryItemId string
 }
 
@@ -383,7 +465,7 @@ func (a *CustomProfilesAPIService) GetCustomProfileExecute(r ApiGetCustomProfile
 
 type ApiListCustomProfilesRequest struct {
 	ctx context.Context
-	ApiService *CustomProfilesAPIService
+	ApiService CustomProfilesAPI
 	page *string
 }
 
@@ -492,7 +574,7 @@ func (a *CustomProfilesAPIService) ListCustomProfilesExecute(r ApiListCustomProf
 
 type ApiUpdateCustomProfileRequest struct {
 	ctx context.Context
-	ApiService *CustomProfilesAPIService
+	ApiService CustomProfilesAPI
 	libraryItemId string
 }
 

@@ -21,12 +21,133 @@ import (
 )
 
 
+type InHouseAppsAPI interface {
+
+	/*
+	CreateInhouseApp Create In-House App
+
+	<p>After uploading the .ipa app file to S3, this request allows you to create the In-House App in the Kandji library.</p>
+<p>You must have already generated a <code>file_key</code> via <code>Create In-House App</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload In-House App to S3</code> example.</p>
+<p>The <code>name</code> key can be an arbitrary value used for setting the name of the Library Item as it appears in Kandji</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateInhouseAppRequest
+	*/
+	CreateInhouseApp(ctx context.Context) ApiCreateInhouseAppRequest
+
+	// CreateInhouseAppExecute executes the request
+	CreateInhouseAppExecute(r ApiCreateInhouseAppRequest) (*http.Response, error)
+
+	/*
+	DeleteInhouseApp Delete In-House App
+
+	<p>NOTICE: This is permanent so be careful.</p>
+<p>This endpoint sends a request to delete a specific In-House App Library Item from Kandji.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the Library Item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiDeleteInhouseAppRequest
+	*/
+	DeleteInhouseApp(ctx context.Context, libraryItemId string) ApiDeleteInhouseAppRequest
+
+	// DeleteInhouseAppExecute executes the request
+	DeleteInhouseAppExecute(r ApiDeleteInhouseAppRequest) (*http.Response, error)
+
+	/*
+	GetInhouseApp Get In-House App
+
+	<p>This endpoint retrieves details about a specific In-House App from the Kandji Library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the Library Item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiGetInhouseAppRequest
+	*/
+	GetInhouseApp(ctx context.Context, libraryItemId string) ApiGetInhouseAppRequest
+
+	// GetInhouseAppExecute executes the request
+	//  @return map[string]interface{}
+	GetInhouseAppExecute(r ApiGetInhouseAppRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	ListInhouseApps List In-House Apps
+
+	This endpoint makes a request to retrieve a list of In-House Apps from the Kandji library.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListInhouseAppsRequest
+	*/
+	ListInhouseApps(ctx context.Context) ApiListInhouseAppsRequest
+
+	// ListInhouseAppsExecute executes the request
+	//  @return map[string]interface{}
+	ListInhouseAppsExecute(r ApiListInhouseAppsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UpdateInhouseApp Update In-House App
+
+	<p>This request allows you to update an existing In-house App in the Kandji library.</p>
+<p>Must have already generated a <code>file_key</code> via <code>Create In-House App</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload In-House App to S3</code> example.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiUpdateInhouseAppRequest
+	*/
+	UpdateInhouseApp(ctx context.Context, libraryItemId string) ApiUpdateInhouseAppRequest
+
+	// UpdateInhouseAppExecute executes the request
+	UpdateInhouseAppExecute(r ApiUpdateInhouseAppRequest) (*http.Response, error)
+
+	/*
+	UploadInhouseApp Upload In-House App
+
+	<p>This request retrieves the S3 upload details needed for uploading the in-house app .ipa file to Amazon S3.</p>
+<p>Creates a pre-signed <code>post_url</code> to upload a new In-house App to S3.</p>
+<p>The provided <code>filename</code> will be used to calculate a unique <code>file_key</code> in S3.</p>
+<p>A separate request will have to be made to the <code>Upload In-House App to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload In-House App</code> response.</p>
+<p>The returned <code>id</code> value can be used to check the upload status in the <code>Upload In-House App Status</code> endpoint after calling the <code>Upload In-House App to S3</code> endpoint.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUploadInhouseAppRequest
+	*/
+	UploadInhouseApp(ctx context.Context) ApiUploadInhouseAppRequest
+
+	// UploadInhouseAppExecute executes the request
+	//  @return map[string]interface{}
+	UploadInhouseAppExecute(r ApiUploadInhouseAppRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UploadInhouseAppStatus Upload In-House App Status
+
+	<p>This endpoint retrieves current upload status of an In-House App .ipa file to Amazon S3 from the <code>Upload In-House App to S3</code> endpoint</p>
+<p>The app .ipa file has successfully uploaded and is ready for the <code>Create In-House App</code> endpoint when the <code>status</code> returned is <code>VALIDATED</code></p>
+<p>If the <code>status</code> returned is <code>UPLOADING</code> or VALIDATING, the upload is still being processed. Retry again after 1 second.</p>
+<p>If the <code>status</code> returned is <code>UPLOAD_FAILED</code> or <code>VALIDATE_FAILED</code> then re-attempt the <code>Upload In-House App to S3</code> endpoint.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>pending_upload_id</code> (path parameter): This should be the <code>id</code> from the <code>Upload to In-House App</code> API response</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pendingUploadId
+	@return ApiUploadInhouseAppStatusRequest
+	*/
+	UploadInhouseAppStatus(ctx context.Context, pendingUploadId string) ApiUploadInhouseAppStatusRequest
+
+	// UploadInhouseAppStatusExecute executes the request
+	//  @return map[string]interface{}
+	UploadInhouseAppStatusExecute(r ApiUploadInhouseAppStatusRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // InHouseAppsAPIService InHouseAppsAPI service
 type InHouseAppsAPIService service
 
 type ApiCreateInhouseAppRequest struct {
 	ctx context.Context
-	ApiService *InHouseAppsAPIService
+	ApiService InHouseAppsAPI
 	contentType *string
 	body *string
 }
@@ -135,7 +256,7 @@ func (a *InHouseAppsAPIService) CreateInhouseAppExecute(r ApiCreateInhouseAppReq
 
 type ApiDeleteInhouseAppRequest struct {
 	ctx context.Context
-	ApiService *InHouseAppsAPIService
+	ApiService InHouseAppsAPI
 	libraryItemId string
 }
 
@@ -230,7 +351,7 @@ func (a *InHouseAppsAPIService) DeleteInhouseAppExecute(r ApiDeleteInhouseAppReq
 
 type ApiGetInhouseAppRequest struct {
 	ctx context.Context
-	ApiService *InHouseAppsAPIService
+	ApiService InHouseAppsAPI
 	libraryItemId string
 }
 
@@ -335,7 +456,7 @@ func (a *InHouseAppsAPIService) GetInhouseAppExecute(r ApiGetInhouseAppRequest) 
 
 type ApiListInhouseAppsRequest struct {
 	ctx context.Context
-	ApiService *InHouseAppsAPIService
+	ApiService InHouseAppsAPI
 	page *string
 }
 
@@ -444,7 +565,7 @@ func (a *InHouseAppsAPIService) ListInhouseAppsExecute(r ApiListInhouseAppsReque
 
 type ApiUpdateInhouseAppRequest struct {
 	ctx context.Context
-	ApiService *InHouseAppsAPIService
+	ApiService InHouseAppsAPI
 	libraryItemId string
 	contentType *string
 	body *string
@@ -558,7 +679,7 @@ func (a *InHouseAppsAPIService) UpdateInhouseAppExecute(r ApiUpdateInhouseAppReq
 
 type ApiUploadInhouseAppRequest struct {
 	ctx context.Context
-	ApiService *InHouseAppsAPIService
+	ApiService InHouseAppsAPI
 	contentType *string
 	body *string
 }
@@ -680,7 +801,7 @@ func (a *InHouseAppsAPIService) UploadInhouseAppExecute(r ApiUploadInhouseAppReq
 
 type ApiUploadInhouseAppStatusRequest struct {
 	ctx context.Context
-	ApiService *InHouseAppsAPIService
+	ApiService InHouseAppsAPI
 	pendingUploadId string
 }
 

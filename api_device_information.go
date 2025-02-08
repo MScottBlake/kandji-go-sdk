@@ -21,12 +21,376 @@ import (
 )
 
 
+type DeviceInformationAPI interface {
+
+	/*
+	CancelLostMode Cancel Lost Mode
+
+	This endpoint can be used to send a cancelation request if Lost Mode is in an error state for a given iOS or iPadOS device.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiCancelLostModeRequest
+	*/
+	CancelLostMode(ctx context.Context, deviceId string) ApiCancelLostModeRequest
+
+	// CancelLostModeExecute executes the request
+	CancelLostModeExecute(r ApiCancelLostModeRequest) (*http.Response, error)
+
+	/*
+	GetDeviceActivity Get Device Activity
+
+	This request returns the device activity for a specified Device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceActivityRequest
+	*/
+	GetDeviceActivity(ctx context.Context, deviceId string) ApiGetDeviceActivityRequest
+
+	// GetDeviceActivityExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceActivityExecute(r ApiGetDeviceActivityRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetDeviceApps Get Device Apps
+
+	<p>This request returns a list of all installed apps for a specified Device ID.</p>
+<p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceAppsRequest
+	*/
+	GetDeviceApps(ctx context.Context, deviceId string) ApiGetDeviceAppsRequest
+
+	// GetDeviceAppsExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceAppsExecute(r ApiGetDeviceAppsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetDeviceDetails Get Device Details
+
+	This request returns the device details for a specified Device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceDetailsRequest
+	*/
+	GetDeviceDetails(ctx context.Context, deviceId string) ApiGetDeviceDetailsRequest
+
+	// GetDeviceDetailsExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceDetailsExecute(r ApiGetDeviceDetailsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetDeviceLibraryItems Get Device Library Items
+
+	<p>This request gets all library items and their statuses for a specified Device ID</p>
+<h4 id=&quot;possible-library-item-status-values&quot;>Possible library item status values</h4>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVAILABLE</td>
+<td>string</td>
+<td>Library item available in Self Service</td>
+</tr>
+<tr>
+<td>CACHED</td>
+<td>string</td>
+<td>Library item downloaded for install but not yet installed</td>
+</tr>
+<tr>
+<td>CHANGE_PENDING</td>
+<td>string</td>
+<td>Recovery Password library item has changes that have not yet been applied</td>
+</tr>
+<tr>
+<td>DOWNLOADING</td>
+<td>string</td>
+<td>Library item downloading</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>EXCLUDED</td>
+<td>string</td>
+<td>Not in scope for assignment rule</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>INSTALLING</td>
+<td>string</td>
+<td>Library item installing</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device, not yet installed (All library items except for config profiles)</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>string</td>
+<td>Configuration profile failed to install</td>
+</tr>
+<tr>
+<td>pending</td>
+<td>string</td>
+<td>Waiting on device, Configuration profile not yet installed</td>
+</tr>
+<tr>
+<td>success</td>
+<td>string</td>
+<td>Configuration profile installed</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceLibraryItemsRequest
+	*/
+	GetDeviceLibraryItems(ctx context.Context, deviceId string) ApiGetDeviceLibraryItemsRequest
+
+	// GetDeviceLibraryItemsExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceLibraryItemsExecute(r ApiGetDeviceLibraryItemsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetDeviceLostModeDetails Get Device Lost Mode details
+
+	<p>This request returns the device lost mode details for a specified Device ID.</p>
+<p><strong>Note</strong>: Lost Mode is is only available for iOS and iPadOS. For more information, please see this <a href=&quot;https://support.kandji.io/a/solutions/articles/72000573873&quot;>Kandji support artilcle</a>.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceLostModeDetailsRequest
+	*/
+	GetDeviceLostModeDetails(ctx context.Context, deviceId string) ApiGetDeviceLostModeDetailsRequest
+
+	// GetDeviceLostModeDetailsExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceLostModeDetailsExecute(r ApiGetDeviceLostModeDetailsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetDeviceParameters Get Device Parameters
+
+	<p>This request returns the parameters and their statuses for a specified Device ID</p>
+<p>This endpoint is only applicable to macOS clients.</p>
+<p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
+<p><strong>Possible parameter status values</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device. Not yet run.</td>
+</tr>
+<tr>
+<td>REMEDIATED</td>
+<td>string</td>
+<td>Parameter remediated</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>string</td>
+<td>Muted alert</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceParametersRequest
+	*/
+	GetDeviceParameters(ctx context.Context, deviceId string) ApiGetDeviceParametersRequest
+
+	// GetDeviceParametersExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceParametersExecute(r ApiGetDeviceParametersRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetDeviceStatus Get Device Status
+
+	<p>This request returns the full status (parameters and library items) for a specified Device ID.</p>
+<p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
+<h4 id=&quot;possible-status-values&quot;>Possible status values</h4>
+<p><strong>Library items</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AVAILABLE</td>
+<td>string</td>
+<td>Library item available in Self Service</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>EXCLUDED</td>
+<td>string</td>
+<td>Not in scope for assignment rule</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device, not yet installed (All library items except for config profiles)</td>
+</tr>
+<tr>
+<td>failed</td>
+<td>string</td>
+<td>Configuration profile failed to install</td>
+</tr>
+<tr>
+<td>pending</td>
+<td>string</td>
+<td>Waiting on device, Configuration profile not yet installed</td>
+</tr>
+<tr>
+<td>success</td>
+<td>string</td>
+<td>Configuration profile installed</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Parameters</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Additional Info</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ERROR</td>
+<td>string</td>
+<td>Audit failure</td>
+</tr>
+<tr>
+<td>INCOMPATIBLE</td>
+<td>string</td>
+<td>Not compatible with device or OS version</td>
+</tr>
+<tr>
+<td>PASS</td>
+<td>string</td>
+<td>Device meets requirements</td>
+</tr>
+<tr>
+<td>PENDING</td>
+<td>string</td>
+<td>Waiting on device. Not yet run.</td>
+</tr>
+<tr>
+<td>REMEDIATED</td>
+<td>string</td>
+<td>Parameter remediated</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>string</td>
+<td>Muted alert</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceStatusRequest
+	*/
+	GetDeviceStatus(ctx context.Context, deviceId string) ApiGetDeviceStatusRequest
+
+	// GetDeviceStatusExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceStatusExecute(r ApiGetDeviceStatusRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	ListDevices List Devices
+
+	<p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p>
+<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListDevicesRequest
+	*/
+	ListDevices(ctx context.Context) ApiListDevicesRequest
+
+	// ListDevicesExecute executes the request
+	//  @return map[string]interface{}
+	ListDevicesExecute(r ApiListDevicesRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // DeviceInformationAPIService DeviceInformationAPI service
 type DeviceInformationAPIService service
 
 type ApiCancelLostModeRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 }
 
@@ -118,7 +482,7 @@ func (a *DeviceInformationAPIService) CancelLostModeExecute(r ApiCancelLostModeR
 
 type ApiGetDeviceActivityRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 	limit *string
 	offset *string
@@ -242,7 +606,7 @@ func (a *DeviceInformationAPIService) GetDeviceActivityExecute(r ApiGetDeviceAct
 
 type ApiGetDeviceAppsRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 }
 
@@ -346,7 +710,7 @@ func (a *DeviceInformationAPIService) GetDeviceAppsExecute(r ApiGetDeviceAppsReq
 
 type ApiGetDeviceDetailsRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 }
 
@@ -449,7 +813,7 @@ func (a *DeviceInformationAPIService) GetDeviceDetailsExecute(r ApiGetDeviceDeta
 
 type ApiGetDeviceLibraryItemsRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 }
 
@@ -630,7 +994,7 @@ func (a *DeviceInformationAPIService) GetDeviceLibraryItemsExecute(r ApiGetDevic
 
 type ApiGetDeviceLostModeDetailsRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 }
 
@@ -734,7 +1098,7 @@ func (a *DeviceInformationAPIService) GetDeviceLostModeDetailsExecute(r ApiGetDe
 
 type ApiGetDeviceParametersRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 }
 
@@ -882,7 +1246,7 @@ func (a *DeviceInformationAPIService) GetDeviceParametersExecute(r ApiGetDeviceP
 
 type ApiGetDeviceStatusRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	deviceId string
 }
 
@@ -1087,7 +1451,7 @@ func (a *DeviceInformationAPIService) GetDeviceStatusExecute(r ApiGetDeviceStatu
 
 type ApiListDevicesRequest struct {
 	ctx context.Context
-	ApiService *DeviceInformationAPIService
+	ApiService DeviceInformationAPI
 	limit *string
 	assetTag *string
 	blueprintId *string

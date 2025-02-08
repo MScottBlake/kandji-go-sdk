@@ -20,12 +20,30 @@ import (
 )
 
 
+type SelfServiceAPI interface {
+
+	/*
+	ListSelfServiceCategories List Self Service Categories
+
+	<p>This endpoint retrieves a list of self-service categories and their associated IDs.</p>
+<p>If you are planning to make a Library item available in Self Service under a specific category, you can call this endpoint to get the category ID and then use that ID when creating or updating the library item via the Kandji API.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListSelfServiceCategoriesRequest
+	*/
+	ListSelfServiceCategories(ctx context.Context) ApiListSelfServiceCategoriesRequest
+
+	// ListSelfServiceCategoriesExecute executes the request
+	//  @return map[string]interface{}
+	ListSelfServiceCategoriesExecute(r ApiListSelfServiceCategoriesRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // SelfServiceAPIService SelfServiceAPI service
 type SelfServiceAPIService service
 
 type ApiListSelfServiceCategoriesRequest struct {
 	ctx context.Context
-	ApiService *SelfServiceAPIService
+	ApiService SelfServiceAPI
 }
 
 func (r ApiListSelfServiceCategoriesRequest) Execute() (map[string]interface{}, *http.Response, error) {

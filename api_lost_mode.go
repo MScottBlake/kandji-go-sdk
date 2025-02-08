@@ -21,12 +21,74 @@ import (
 )
 
 
+type LostModeAPI interface {
+
+	/*
+	DisableLostMode Disable Lost Mode
+
+	<p>This command will send a request to turn off lost mode on iOS and iPadOS.</p>
+<p>If the command is already pending, the message &quot;<em>Disable lost mode is already pending for this device.</em>&quot; will be in the response.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiDisableLostModeRequest
+	*/
+	DisableLostMode(ctx context.Context, deviceId string) ApiDisableLostModeRequest
+
+	// DisableLostModeExecute executes the request
+	DisableLostModeExecute(r ApiDisableLostModeRequest) (*http.Response, error)
+
+	/*
+	EnableLostMode Enable Lost Mode
+
+	<p>This endpoint sends an MDM command to remotely turn on lost mode on iOS and iPadOS.</p>
+<p>Optionally, a JSON payload can be sent in the request to set a lock message, phone number, and footnote on the target device.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiEnableLostModeRequest
+	*/
+	EnableLostMode(ctx context.Context, deviceId string) ApiEnableLostModeRequest
+
+	// EnableLostModeExecute executes the request
+	EnableLostModeExecute(r ApiEnableLostModeRequest) (*http.Response, error)
+
+	/*
+	PlayLostModeSound Play Lost Mode Sound
+
+	<p>This command will tell the target iOS or iPadOS device to play the lost mode sound.</p>
+<p><strong>Note</strong>: The Lost Mode sound will play for 2 minutes, even if the device is in silent mode. Anyone finding the device can silence the sound by pressing any of its side buttons.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiPlayLostModeSoundRequest
+	*/
+	PlayLostModeSound(ctx context.Context, deviceId string) ApiPlayLostModeSoundRequest
+
+	// PlayLostModeSoundExecute executes the request
+	PlayLostModeSoundExecute(r ApiPlayLostModeSoundRequest) (*http.Response, error)
+
+	/*
+	UpdateLocation Update Location
+
+	This endpoint sends an MDM command to update the location data on iOS and iPadOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiUpdateLocationRequest
+	*/
+	UpdateLocation(ctx context.Context, deviceId string) ApiUpdateLocationRequest
+
+	// UpdateLocationExecute executes the request
+	UpdateLocationExecute(r ApiUpdateLocationRequest) (*http.Response, error)
+}
+
 // LostModeAPIService LostModeAPI service
 type LostModeAPIService service
 
 type ApiDisableLostModeRequest struct {
 	ctx context.Context
-	ApiService *LostModeAPIService
+	ApiService LostModeAPI
 	deviceId string
 }
 
@@ -119,7 +181,7 @@ func (a *LostModeAPIService) DisableLostModeExecute(r ApiDisableLostModeRequest)
 
 type ApiEnableLostModeRequest struct {
 	ctx context.Context
-	ApiService *LostModeAPIService
+	ApiService LostModeAPI
 	deviceId string
 	body *string
 }
@@ -220,7 +282,7 @@ func (a *LostModeAPIService) EnableLostModeExecute(r ApiEnableLostModeRequest) (
 
 type ApiPlayLostModeSoundRequest struct {
 	ctx context.Context
-	ApiService *LostModeAPIService
+	ApiService LostModeAPI
 	deviceId string
 }
 
@@ -313,7 +375,7 @@ func (a *LostModeAPIService) PlayLostModeSoundExecute(r ApiPlayLostModeSoundRequ
 
 type ApiUpdateLocationRequest struct {
 	ctx context.Context
-	ApiService *LostModeAPIService
+	ApiService LostModeAPI
 	deviceId string
 }
 

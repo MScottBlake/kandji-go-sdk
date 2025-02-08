@@ -21,12 +21,315 @@ import (
 )
 
 
+type PrismAPI interface {
+
+	/*
+	ActivationLock Activation lock
+
+	Get activation lock attributes for devices.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiActivationLockRequest
+	*/
+	ActivationLock(ctx context.Context) ApiActivationLockRequest
+
+	// ActivationLockExecute executes the request
+	ActivationLockExecute(r ApiActivationLockRequest) (*http.Response, error)
+
+	/*
+	ApplicationFirewall Application firewall
+
+	Get Application Firewall details for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApplicationFirewallRequest
+	*/
+	ApplicationFirewall(ctx context.Context) ApiApplicationFirewallRequest
+
+	// ApplicationFirewallExecute executes the request
+	//  @return map[string]interface{}
+	ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	Applications Applications
+
+	Get the applications installed on macOS, iOS, iPadOS, and tvOS devices.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiApplicationsRequest
+	*/
+	Applications(ctx context.Context) ApiApplicationsRequest
+
+	// ApplicationsExecute executes the request
+	//  @return map[string]interface{}
+	ApplicationsExecute(r ApiApplicationsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	Certificates Certificates
+
+	Get certificate details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCertificatesRequest
+	*/
+	Certificates(ctx context.Context) ApiCertificatesRequest
+
+	// CertificatesExecute executes the request
+	//  @return map[string]interface{}
+	CertificatesExecute(r ApiCertificatesRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	Count Count
+
+	<p>Get the total record count for the specified Prism category.</p>
+<p>If a category contains spaces substitute the spaces for underscores (&quot;_&quot;) when using the API query.</p>
+<p>Example: <code>Device information</code> becomes <code>device_information</code>.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCountRequest
+	*/
+	Count(ctx context.Context) ApiCountRequest
+
+	// CountExecute executes the request
+	//  @return map[string]interface{}
+	CountExecute(r ApiCountRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	DesktopAndScreensaver Desktop and Screensaver
+
+	Get Desktop and Screensaver details for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDesktopAndScreensaverRequest
+	*/
+	DesktopAndScreensaver(ctx context.Context) ApiDesktopAndScreensaverRequest
+
+	// DesktopAndScreensaverExecute executes the request
+	//  @return map[string]interface{}
+	DesktopAndScreensaverExecute(r ApiDesktopAndScreensaverRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	DeviceInformation Device information
+
+	Get attributes about devices.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDeviceInformationRequest
+	*/
+	DeviceInformation(ctx context.Context) ApiDeviceInformationRequest
+
+	// DeviceInformationExecute executes the request
+	//  @return map[string]interface{}
+	DeviceInformationExecute(r ApiDeviceInformationRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	Filevault FileVault
+
+	Get FileVault information for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiFilevaultRequest
+	*/
+	Filevault(ctx context.Context) ApiFilevaultRequest
+
+	// FilevaultExecute executes the request
+	//  @return map[string]interface{}
+	FilevaultExecute(r ApiFilevaultRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GatekeeperAndXprotect Gatekeeper and XProtect
+
+	Get Gatekeeper and XProtect attributes for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGatekeeperAndXprotectRequest
+	*/
+	GatekeeperAndXprotect(ctx context.Context) ApiGatekeeperAndXprotectRequest
+
+	// GatekeeperAndXprotectExecute executes the request
+	//  @return map[string]interface{}
+	GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetCategoryExport Get category export
+
+	<p>Get an export request's status. To download the export, use the <code>signed_url</code>. This will download a CSV file containing the exported category information.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p>export_id (path parameter): The unique identifier of the the export job.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param exportId
+	@return ApiGetCategoryExportRequest
+	*/
+	GetCategoryExport(ctx context.Context, exportId string) ApiGetCategoryExportRequest
+
+	// GetCategoryExportExecute executes the request
+	//  @return map[string]interface{}
+	GetCategoryExportExecute(r ApiGetCategoryExportRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	InstalledProfiles Installed profiles
+
+	Get Installed Profiles attributes for macOS, iOS, iPadOS, and tvOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiInstalledProfilesRequest
+	*/
+	InstalledProfiles(ctx context.Context) ApiInstalledProfilesRequest
+
+	// InstalledProfilesExecute executes the request
+	//  @return map[string]interface{}
+	InstalledProfilesExecute(r ApiInstalledProfilesRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	KernelExtensions Kernel Extensions
+
+	Get Kernel Extension attributes for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiKernelExtensionsRequest
+	*/
+	KernelExtensions(ctx context.Context) ApiKernelExtensionsRequest
+
+	// KernelExtensionsExecute executes the request
+	//  @return map[string]interface{}
+	KernelExtensionsExecute(r ApiKernelExtensionsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	LaunchAgentsAndDaemons Launch Agents and Daemons
+
+	Get Launch Agents and Daemons installed on macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiLaunchAgentsAndDaemonsRequest
+	*/
+	LaunchAgentsAndDaemons(ctx context.Context) ApiLaunchAgentsAndDaemonsRequest
+
+	// LaunchAgentsAndDaemonsExecute executes the request
+	//  @return map[string]interface{}
+	LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaemonsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	LocalUsers Local users
+
+	Get Local Users detials for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiLocalUsersRequest
+	*/
+	LocalUsers(ctx context.Context) ApiLocalUsersRequest
+
+	// LocalUsersExecute executes the request
+	//  @return map[string]interface{}
+	LocalUsersExecute(r ApiLocalUsersRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	RequestCategoryExport Request category export
+
+	<p>Request export of a category. The <code>id</code> key is used when checking the export status using the <em>Request category export</em> endpoint.</p>
+<p><strong>Request Body Parameters: application/json</strong></p>
+<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Possible value(s)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blueprint_ids</code></td>
+<td><code>array</code></td>
+<td><code>[&quot;string&quot;, &quot;string&quot;, &quot;string&quot;]</code></td>
+<td>List of one or more comma separate blueprint IDs.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td><code>apps</code> ,  <br /><code>activation_lock</code> ,  <br /><code>desktop_and_screensaver</code> ,  <br /><code>device_information</code> ,  <br /><code>gatekeeper_and_xprotect</code> ,  <br /><code>installed_profiles</code> ,  <br /><code>kernel_extensions</code> ,  <br /><code>local_users</code> ,  <br /><code>launch_agents_and_daemons</code> ,  <br /><code>system_extensions</code> ,  <br /><code>startup_settings</code> ,  <br /><code>transparency_database</code></td>
+<td>Only one category per export reqest.</td>
+</tr>
+<tr>
+<td><code>device_families</code></td>
+<td><code>array</code></td>
+<td><code>[&quot;Mac&quot;, &quot;iPhone&quot;, &quot;iPad&quot;, &quot;tvOS&quot;]</code></td>
+<td>List of one or more comma separted string values for device families.</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>object</code></td>
+<td><code>{&quot;apple_silicon&quot;: {&quot;eq&quot;: true}, &quot;device__name&quot;: {&quot;like&quot;: [&quot;this&quot;, &quot;or_this&quot;]}}</code></td>
+<td>JSON schema object containing one or more key value pairs.  <br />  <br /><strong>Note</strong>: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.</td>
+</tr>
+<tr>
+<td><code>sort_by</code></td>
+<td><code>string</code></td>
+<td></td>
+<td>Sort results by the name of a given response body key in either ascending (default behavior) or descending(`-`) order.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiRequestCategoryExportRequest
+	*/
+	RequestCategoryExport(ctx context.Context) ApiRequestCategoryExportRequest
+
+	// RequestCategoryExportExecute executes the request
+	//  @return map[string]interface{}
+	RequestCategoryExportExecute(r ApiRequestCategoryExportRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	StartupSettings Startup settings
+
+	Get Startup settings for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiStartupSettingsRequest
+	*/
+	StartupSettings(ctx context.Context) ApiStartupSettingsRequest
+
+	// StartupSettingsExecute executes the request
+	//  @return map[string]interface{}
+	StartupSettingsExecute(r ApiStartupSettingsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	SystemExtensions System Extensions
+
+	Get System Extension attributes for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiSystemExtensionsRequest
+	*/
+	SystemExtensions(ctx context.Context) ApiSystemExtensionsRequest
+
+	// SystemExtensionsExecute executes the request
+	//  @return map[string]interface{}
+	SystemExtensionsExecute(r ApiSystemExtensionsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	TransparencyDatabase Transparency database
+
+	Get Transparency Database (TCC) attributes for macOS.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTransparencyDatabaseRequest
+	*/
+	TransparencyDatabase(ctx context.Context) ApiTransparencyDatabaseRequest
+
+	// TransparencyDatabaseExecute executes the request
+	//  @return map[string]interface{}
+	TransparencyDatabaseExecute(r ApiTransparencyDatabaseRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // PrismAPIService PrismAPI service
 type PrismAPIService service
 
 type ApiActivationLockRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -174,7 +477,7 @@ func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*ht
 
 type ApiApplicationFirewallRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -333,7 +636,7 @@ func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallReq
 
 type ApiApplicationsRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -492,7 +795,7 @@ func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (map[str
 
 type ApiCertificatesRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -651,7 +954,7 @@ func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (map[str
 
 type ApiCountRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	category *string
 }
 
@@ -763,7 +1066,7 @@ func (a *PrismAPIService) CountExecute(r ApiCountRequest) (map[string]interface{
 
 type ApiDesktopAndScreensaverRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -922,7 +1225,7 @@ func (a *PrismAPIService) DesktopAndScreensaverExecute(r ApiDesktopAndScreensave
 
 type ApiDeviceInformationRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -1089,7 +1392,7 @@ func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest
 
 type ApiFilevaultRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -1248,7 +1551,7 @@ func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (map[string]in
 
 type ApiGatekeeperAndXprotectRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -1407,7 +1710,7 @@ func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotec
 
 type ApiGetCategoryExportRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	exportId string
 }
 
@@ -1512,7 +1815,7 @@ func (a *PrismAPIService) GetCategoryExportExecute(r ApiGetCategoryExportRequest
 
 type ApiInstalledProfilesRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -1671,7 +1974,7 @@ func (a *PrismAPIService) InstalledProfilesExecute(r ApiInstalledProfilesRequest
 
 type ApiKernelExtensionsRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -1830,7 +2133,7 @@ func (a *PrismAPIService) KernelExtensionsExecute(r ApiKernelExtensionsRequest) 
 
 type ApiLaunchAgentsAndDaemonsRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -1989,7 +2292,7 @@ func (a *PrismAPIService) LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaem
 
 type ApiLocalUsersRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -2148,7 +2451,7 @@ func (a *PrismAPIService) LocalUsersExecute(r ApiLocalUsersRequest) (map[string]
 
 type ApiRequestCategoryExportRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	body *string
 }
 
@@ -2309,7 +2612,7 @@ func (a *PrismAPIService) RequestCategoryExportExecute(r ApiRequestCategoryExpor
 
 type ApiStartupSettingsRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -2468,7 +2771,7 @@ func (a *PrismAPIService) StartupSettingsExecute(r ApiStartupSettingsRequest) (m
 
 type ApiSystemExtensionsRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string
@@ -2627,7 +2930,7 @@ func (a *PrismAPIService) SystemExtensionsExecute(r ApiSystemExtensionsRequest) 
 
 type ApiTransparencyDatabaseRequest struct {
 	ctx context.Context
-	ApiService *PrismAPIService
+	ApiService PrismAPI
 	blueprintIds *string
 	deviceFamilies *string
 	filter *string

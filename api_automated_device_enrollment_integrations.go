@@ -22,12 +22,182 @@ import (
 )
 
 
+type AutomatedDeviceEnrollmentIntegrationsAPI interface {
+
+	/*
+	CreateAdeIntegration Create ADE integration
+
+	<p>This request will create a new ADE integration.</p>
+<p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> downloaded from ABM are required and must be sent in the request.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateAdeIntegrationRequest
+	*/
+	CreateAdeIntegration(ctx context.Context) ApiCreateAdeIntegrationRequest
+
+	// CreateAdeIntegrationExecute executes the request
+	//  @return map[string]interface{}
+	CreateAdeIntegrationExecute(r ApiCreateAdeIntegrationRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	DeleteAdeIntegration Delete ADE integration
+
+	<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
+<p>This is a HIGHLY destructive action.</p>
+<p>Deleting an ADE token will unassign the associated device records from Kandji. For currently enrolled devices that were assigned to Kandji via the delete ADE integration will not be impacted until they are wiped and reprovisioned. This action is essentially the same as removing an ADE token from MDM and then adding it back.</p>
+<p>If applicable, be sure to reassign the device records in ABM.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adeTokenId
+	@return ApiDeleteAdeIntegrationRequest
+	*/
+	DeleteAdeIntegration(ctx context.Context, adeTokenId string) ApiDeleteAdeIntegrationRequest
+
+	// DeleteAdeIntegrationExecute executes the request
+	DeleteAdeIntegrationExecute(r ApiDeleteAdeIntegrationRequest) (*http.Response, error)
+
+	/*
+	DownloadAdePublicKey Download ADE public key
+
+	<p>This request returns the public key used to create an MDM server connection in Apple Business Manager.</p>
+<p>The encoded information needs to be saved to a file with the <code>.pem</code> format and then uploaded to ABM.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDownloadAdePublicKeyRequest
+	*/
+	DownloadAdePublicKey(ctx context.Context) ApiDownloadAdePublicKeyRequest
+
+	// DownloadAdePublicKeyExecute executes the request
+	//  @return string
+	DownloadAdePublicKeyExecute(r ApiDownloadAdePublicKeyRequest) (string, *http.Response, error)
+
+	/*
+	GetAdeDevice Get ADE device
+
+	Get information about a specific Automated Device Enrollment device.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetAdeDeviceRequest
+	*/
+	GetAdeDevice(ctx context.Context, deviceId string) ApiGetAdeDeviceRequest
+
+	// GetAdeDeviceExecute executes the request
+	//  @return map[string]interface{}
+	GetAdeDeviceExecute(r ApiGetAdeDeviceRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetAdeIntegration Get ADE integration
+
+	This request returns a specific ADE integration based on the <code>ade_token_id</code> passed.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adeTokenId
+	@return ApiGetAdeIntegrationRequest
+	*/
+	GetAdeIntegration(ctx context.Context, adeTokenId string) ApiGetAdeIntegrationRequest
+
+	// GetAdeIntegrationExecute executes the request
+	GetAdeIntegrationExecute(r ApiGetAdeIntegrationRequest) (*http.Response, error)
+
+	/*
+	ListAdeDevices List ADE devices
+
+	Get a list of Automated Device Enrollment devices.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAdeDevicesRequest
+	*/
+	ListAdeDevices(ctx context.Context) ApiListAdeDevicesRequest
+
+	// ListAdeDevicesExecute executes the request
+	//  @return map[string]interface{}
+	ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	ListAdeIntegrations List ADE integrations
+
+	This request returns a list of configured ADE integrations.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListAdeIntegrationsRequest
+	*/
+	ListAdeIntegrations(ctx context.Context) ApiListAdeIntegrationsRequest
+
+	// ListAdeIntegrationsExecute executes the request
+	ListAdeIntegrationsExecute(r ApiListAdeIntegrationsRequest) (*http.Response, error)
+
+	/*
+	ListDevicesAssociatedToAdeToken List devices associated to ADE token
+
+	<p>This request returns a list of devices associated with a specified <code>ade_token_id</code> as well as their enrollment status.</p>
+<p>When the <code>mdm_device</code> key value is <code>null</code>, this can be taken as an indication that the device is awaiting enrollment into Kandji.</p>
+<p>When data is present within the mdm_device dictionary, you can reference the <code>device_id</code> as the ID of the enrolled device record.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adeTokenId
+	@return ApiListDevicesAssociatedToAdeTokenRequest
+	*/
+	ListDevicesAssociatedToAdeToken(ctx context.Context, adeTokenId string) ApiListDevicesAssociatedToAdeTokenRequest
+
+	// ListDevicesAssociatedToAdeTokenExecute executes the request
+	//  @return map[string]interface{}
+	ListDevicesAssociatedToAdeTokenExecute(r ApiListDevicesAssociatedToAdeTokenRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	RenewAdeIntegration Renew ADE integration
+
+	<p>This request will renew an existing ADE integration.</p>
+<p>The default <code>blueprint_id</code>, <code>phone</code> number, <code>email</code> address, and MDM server token <code>file</code> from the associated MDM server in ABM are required and must be sent in the request.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adeTokenId
+	@return ApiRenewAdeIntegrationRequest
+	*/
+	RenewAdeIntegration(ctx context.Context, adeTokenId string) ApiRenewAdeIntegrationRequest
+
+	// RenewAdeIntegrationExecute executes the request
+	RenewAdeIntegrationExecute(r ApiRenewAdeIntegrationRequest) (*http.Response, error)
+
+	/*
+	UpdateAdeDevice Update ADE device
+
+	<p>Update a specific Automated Device Enrollment device's blueprint assignment, user assignment, and asset tag.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiUpdateAdeDeviceRequest
+	*/
+	UpdateAdeDevice(ctx context.Context, deviceId string) ApiUpdateAdeDeviceRequest
+
+	// UpdateAdeDeviceExecute executes the request
+	//  @return map[string]interface{}
+	UpdateAdeDeviceExecute(r ApiUpdateAdeDeviceRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UpdateAdeIntegration Update ADE integration
+
+	<p>This request will update the default blueprint, phone number, and email address in an existing ADE integration.</p>
+<p>The default <code>blueprint_id</code>, <code>phone</code> number, and <code>email</code> address must be sent in the request.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adeTokenId
+	@return ApiUpdateAdeIntegrationRequest
+	*/
+	UpdateAdeIntegration(ctx context.Context, adeTokenId string) ApiUpdateAdeIntegrationRequest
+
+	// UpdateAdeIntegrationExecute executes the request
+	UpdateAdeIntegrationExecute(r ApiUpdateAdeIntegrationRequest) (*http.Response, error)
+}
+
 // AutomatedDeviceEnrollmentIntegrationsAPIService AutomatedDeviceEnrollmentIntegrationsAPI service
 type AutomatedDeviceEnrollmentIntegrationsAPIService service
 
 type ApiCreateAdeIntegrationRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	blueprintId *string
 	phone *string
 	email *string
@@ -182,7 +352,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationEx
 
 type ApiDeleteAdeIntegrationRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	adeTokenId string
 }
 
@@ -277,7 +447,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DeleteAdeIntegrationEx
 
 type ApiDownloadAdePublicKeyRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 }
 
 func (r ApiDownloadAdePublicKeyRequest) Execute() (string, *http.Response, error) {
@@ -377,7 +547,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) DownloadAdePublicKeyEx
 
 type ApiGetAdeDeviceRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	deviceId string
 }
 
@@ -480,7 +650,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDeviceExecute(r 
 
 type ApiGetAdeIntegrationRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	adeTokenId string
 }
 
@@ -572,7 +742,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeIntegrationExecu
 
 type ApiListAdeDevicesRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	blueprintId *string
 	userId *string
 	depAccount *string
@@ -771,7 +941,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(
 
 type ApiListAdeIntegrationsRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 }
 
 func (r ApiListAdeIntegrationsRequest) Execute() (*http.Response, error) {
@@ -859,7 +1029,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeIntegrationsExe
 
 type ApiListDevicesAssociatedToAdeTokenRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	adeTokenId string
 	page *string
 }
@@ -974,7 +1144,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedT
 
 type ApiRenewAdeIntegrationRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	adeTokenId string
 	blueprintId *string
 	phone *string
@@ -1122,7 +1292,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegrationExe
 
 type ApiUpdateAdeDeviceRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	deviceId string
 	body *string
 }
@@ -1235,7 +1405,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDeviceExecute
 
 type ApiUpdateAdeIntegrationRequest struct {
 	ctx context.Context
-	ApiService *AutomatedDeviceEnrollmentIntegrationsAPIService
+	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	adeTokenId string
 	body *string
 }

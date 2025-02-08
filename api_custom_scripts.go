@@ -21,12 +21,92 @@ import (
 )
 
 
+type CustomScriptsAPI interface {
+
+	/*
+	CreateCustomScript Create Custom Script
+
+	This request allows you to create a custom script in the Kandji library.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateCustomScriptRequest
+	*/
+	CreateCustomScript(ctx context.Context) ApiCreateCustomScriptRequest
+
+	// CreateCustomScriptExecute executes the request
+	//  @return map[string]interface{}
+	CreateCustomScriptExecute(r ApiCreateCustomScriptRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	DeleteCustomScript Delete Custom Script
+
+	<p>NOTICE: This is permanent so be careful.</p>
+<p>This endpoint sends a request to delete a specific custom scripts from the Kandji library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiDeleteCustomScriptRequest
+	*/
+	DeleteCustomScript(ctx context.Context, libraryItemId string) ApiDeleteCustomScriptRequest
+
+	// DeleteCustomScriptExecute executes the request
+	DeleteCustomScriptExecute(r ApiDeleteCustomScriptRequest) (*http.Response, error)
+
+	/*
+	GetCustomScript Get Custom Script
+
+	<p>This endpoint retrieves details about a specific custom script from the Kandji library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiGetCustomScriptRequest
+	*/
+	GetCustomScript(ctx context.Context, libraryItemId string) ApiGetCustomScriptRequest
+
+	// GetCustomScriptExecute executes the request
+	//  @return map[string]interface{}
+	GetCustomScriptExecute(r ApiGetCustomScriptRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	ListCustomScripts List Custom Scripts
+
+	This endpoint makes a request to retrieve a list of custom scripts from the Kandji library.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCustomScriptsRequest
+	*/
+	ListCustomScripts(ctx context.Context) ApiListCustomScriptsRequest
+
+	// ListCustomScriptsExecute executes the request
+	//  @return map[string]interface{}
+	ListCustomScriptsExecute(r ApiListCustomScriptsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UpdateCustomScript Update Custom Script
+
+	This request allows you to update a custom script in the Kandji library.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiUpdateCustomScriptRequest
+	*/
+	UpdateCustomScript(ctx context.Context, libraryItemId string) ApiUpdateCustomScriptRequest
+
+	// UpdateCustomScriptExecute executes the request
+	//  @return map[string]interface{}
+	UpdateCustomScriptExecute(r ApiUpdateCustomScriptRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // CustomScriptsAPIService CustomScriptsAPI service
 type CustomScriptsAPIService service
 
 type ApiCreateCustomScriptRequest struct {
 	ctx context.Context
-	ApiService *CustomScriptsAPIService
+	ApiService CustomScriptsAPI
 	body *string
 }
 
@@ -133,7 +213,7 @@ func (a *CustomScriptsAPIService) CreateCustomScriptExecute(r ApiCreateCustomScr
 
 type ApiDeleteCustomScriptRequest struct {
 	ctx context.Context
-	ApiService *CustomScriptsAPIService
+	ApiService CustomScriptsAPI
 	libraryItemId string
 }
 
@@ -238,7 +318,7 @@ func (a *CustomScriptsAPIService) DeleteCustomScriptExecute(r ApiDeleteCustomScr
 
 type ApiGetCustomScriptRequest struct {
 	ctx context.Context
-	ApiService *CustomScriptsAPIService
+	ApiService CustomScriptsAPI
 	libraryItemId string
 }
 
@@ -343,7 +423,7 @@ func (a *CustomScriptsAPIService) GetCustomScriptExecute(r ApiGetCustomScriptReq
 
 type ApiListCustomScriptsRequest struct {
 	ctx context.Context
-	ApiService *CustomScriptsAPIService
+	ApiService CustomScriptsAPI
 	page *string
 }
 
@@ -452,7 +532,7 @@ func (a *CustomScriptsAPIService) ListCustomScriptsExecute(r ApiListCustomScript
 
 type ApiUpdateCustomScriptRequest struct {
 	ctx context.Context
-	ApiService *CustomScriptsAPIService
+	ApiService CustomScriptsAPI
 	libraryItemId string
 	body *string
 }

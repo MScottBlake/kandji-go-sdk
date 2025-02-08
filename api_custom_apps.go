@@ -21,12 +21,112 @@ import (
 )
 
 
+type CustomAppsAPI interface {
+
+	/*
+	CreateCustomApp Create Custom App
+
+	<p>This request allows you to create a custom app in the Kandji library.</p>
+<p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCreateCustomAppRequest
+	*/
+	CreateCustomApp(ctx context.Context) ApiCreateCustomAppRequest
+
+	// CreateCustomAppExecute executes the request
+	//  @return map[string]interface{}
+	CreateCustomAppExecute(r ApiCreateCustomAppRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	DeleteCustomApp Delete Custom App
+
+	<p>NOTICE: This is permanent so be careful.</p>
+<p>This endpoint sends a request to delete a specific custom app from the Kandji library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiDeleteCustomAppRequest
+	*/
+	DeleteCustomApp(ctx context.Context, libraryItemId string) ApiDeleteCustomAppRequest
+
+	// DeleteCustomAppExecute executes the request
+	DeleteCustomAppExecute(r ApiDeleteCustomAppRequest) (*http.Response, error)
+
+	/*
+	GetCustomApp Get Custom App
+
+	<p>This endpoint retrieves details about a specific custom app from the Kandji library.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiGetCustomAppRequest
+	*/
+	GetCustomApp(ctx context.Context, libraryItemId string) ApiGetCustomAppRequest
+
+	// GetCustomAppExecute executes the request
+	//  @return map[string]interface{}
+	GetCustomAppExecute(r ApiGetCustomAppRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	ListCustomApps List Custom Apps
+
+	This endpoint makes a request to retrieve a list of custom apps from the Kandji library.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiListCustomAppsRequest
+	*/
+	ListCustomApps(ctx context.Context) ApiListCustomAppsRequest
+
+	// ListCustomAppsExecute executes the request
+	//  @return map[string]interface{}
+	ListCustomAppsExecute(r ApiListCustomAppsRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UpdateCustomApp Update Custom App
+
+	<p>This request allows you to update a custom app in the Kandji library.</p>
+<p>Must have already generated a <code>file_key</code> via <code>Create custom app</code> endpoint and uploaded the file to S3 using a request similar to the <code>Upload to S3</code> example.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiUpdateCustomAppRequest
+	*/
+	UpdateCustomApp(ctx context.Context, libraryItemId string) ApiUpdateCustomAppRequest
+
+	// UpdateCustomAppExecute executes the request
+	//  @return map[string]interface{}
+	UpdateCustomAppExecute(r ApiUpdateCustomAppRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UploadCustomApp Upload Custom App
+
+	<p>This request retrieves the S3 upload details need for uploading the app to Amazon S3.</p>
+<p>Creates a pre-signed <code>post_url</code> to upload a new Custom App to S3.</p>
+<p>The provided <code>name</code> will be used to calculate a unique <code>file_key</code> in S3.</p>
+<p>A separate request will have to be made to the <code>Upload to S3</code> endpoint to upload the file to S3 directly using the <code>post_url</code> and <code>post_data</code> from the <code>Upload Custom App</code> response.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUploadCustomAppRequest
+	*/
+	UploadCustomApp(ctx context.Context) ApiUploadCustomAppRequest
+
+	// UploadCustomAppExecute executes the request
+	UploadCustomAppExecute(r ApiUploadCustomAppRequest) (*http.Response, error)
+}
+
 // CustomAppsAPIService CustomAppsAPI service
 type CustomAppsAPIService service
 
 type ApiCreateCustomAppRequest struct {
 	ctx context.Context
-	ApiService *CustomAppsAPIService
+	ApiService CustomAppsAPI
 	name *string
 	fileKey *string
 	installType *string
@@ -203,7 +303,7 @@ func (a *CustomAppsAPIService) CreateCustomAppExecute(r ApiCreateCustomAppReques
 
 type ApiDeleteCustomAppRequest struct {
 	ctx context.Context
-	ApiService *CustomAppsAPIService
+	ApiService CustomAppsAPI
 	libraryItemId string
 }
 
@@ -308,7 +408,7 @@ func (a *CustomAppsAPIService) DeleteCustomAppExecute(r ApiDeleteCustomAppReques
 
 type ApiGetCustomAppRequest struct {
 	ctx context.Context
-	ApiService *CustomAppsAPIService
+	ApiService CustomAppsAPI
 	libraryItemId string
 }
 
@@ -413,7 +513,7 @@ func (a *CustomAppsAPIService) GetCustomAppExecute(r ApiGetCustomAppRequest) (ma
 
 type ApiListCustomAppsRequest struct {
 	ctx context.Context
-	ApiService *CustomAppsAPIService
+	ApiService CustomAppsAPI
 	page *string
 }
 
@@ -522,7 +622,7 @@ func (a *CustomAppsAPIService) ListCustomAppsExecute(r ApiListCustomAppsRequest)
 
 type ApiUpdateCustomAppRequest struct {
 	ctx context.Context
-	ApiService *CustomAppsAPIService
+	ApiService CustomAppsAPI
 	libraryItemId string
 	name *string
 	active *string
@@ -650,7 +750,7 @@ func (a *CustomAppsAPIService) UpdateCustomAppExecute(r ApiUpdateCustomAppReques
 
 type ApiUploadCustomAppRequest struct {
 	ctx context.Context
-	ApiService *CustomAppsAPIService
+	ApiService CustomAppsAPI
 	body *string
 }
 

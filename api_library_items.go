@@ -21,12 +21,50 @@ import (
 )
 
 
+type LibraryItemsAPI interface {
+
+	/*
+	GetLibraryItemActivity Get Library Item Activity
+
+	<p>This endpoint retrieves the activity related to a specific library item. Activity is listed from newest to oldest.</p>
+<p>To see a delta of the activity events between now and the last request, you can store the newest entry from the previous request and then look for that entry in the next request. Any entry post that will be the delta.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiGetLibraryItemActivityRequest
+	*/
+	GetLibraryItemActivity(ctx context.Context, libraryItemId string) ApiGetLibraryItemActivityRequest
+
+	// GetLibraryItemActivityExecute executes the request
+	//  @return map[string]interface{}
+	GetLibraryItemActivityExecute(r ApiGetLibraryItemActivityRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetLibraryItemStatuses Get Library Item Statuses
+
+	<p>This endpoint retrieves the statuses related to a specific library item.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>library_item_id</code> (path parameter): The unique identifier of the library item.</p>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param libraryItemId
+	@return ApiGetLibraryItemStatusesRequest
+	*/
+	GetLibraryItemStatuses(ctx context.Context, libraryItemId string) ApiGetLibraryItemStatusesRequest
+
+	// GetLibraryItemStatusesExecute executes the request
+	//  @return map[string]interface{}
+	GetLibraryItemStatusesExecute(r ApiGetLibraryItemStatusesRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // LibraryItemsAPIService LibraryItemsAPI service
 type LibraryItemsAPIService service
 
 type ApiGetLibraryItemActivityRequest struct {
 	ctx context.Context
-	ApiService *LibraryItemsAPIService
+	ApiService LibraryItemsAPI
 	libraryItemId string
 	activityType *string
 	userId *string
@@ -182,7 +220,7 @@ func (a *LibraryItemsAPIService) GetLibraryItemActivityExecute(r ApiGetLibraryIt
 
 type ApiGetLibraryItemStatusesRequest struct {
 	ctx context.Context
-	ApiService *LibraryItemsAPIService
+	ApiService LibraryItemsAPI
 	libraryItemId string
 	computerId *string
 	limit *string

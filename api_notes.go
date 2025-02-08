@@ -21,12 +21,93 @@ import (
 )
 
 
+type NotesAPI interface {
+
+	/*
+	CreateDeviceNote Create Device Note
+
+	This request creates a note for the specified device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiCreateDeviceNoteRequest
+	*/
+	CreateDeviceNote(ctx context.Context, deviceId string) ApiCreateDeviceNoteRequest
+
+	// CreateDeviceNoteExecute executes the request
+	//  @return map[string]interface{}
+	CreateDeviceNoteExecute(r ApiCreateDeviceNoteRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	DeleteDeviceNote Delete Device Note
+
+	This request deletes a specified note (Note ID) for the specified Device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@param noteId
+	@return ApiDeleteDeviceNoteRequest
+	*/
+	DeleteDeviceNote(ctx context.Context, deviceId string, noteId string) ApiDeleteDeviceNoteRequest
+
+	// DeleteDeviceNoteExecute executes the request
+	//  @return map[string]interface{}
+	DeleteDeviceNoteExecute(r ApiDeleteDeviceNoteRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	GetDeviceNotes Get Device Notes
+
+	This request gets all notes for the specified Device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceNotesRequest
+	*/
+	GetDeviceNotes(ctx context.Context, deviceId string) ApiGetDeviceNotesRequest
+
+	// GetDeviceNotesExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceNotesExecute(r ApiGetDeviceNotesRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	RetrieveDeviceNote Retrieve Device Note
+
+	This request retrieves a specified note (Note ID) for the specified Device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@param noteId
+	@return ApiRetrieveDeviceNoteRequest
+	*/
+	RetrieveDeviceNote(ctx context.Context, deviceId string, noteId string) ApiRetrieveDeviceNoteRequest
+
+	// RetrieveDeviceNoteExecute executes the request
+	//  @return map[string]interface{}
+	RetrieveDeviceNoteExecute(r ApiRetrieveDeviceNoteRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UpdateDeviceNote Update Device Note
+
+	This request patches a specified note (Note ID) for the specified Device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@param noteId
+	@return ApiUpdateDeviceNoteRequest
+	*/
+	UpdateDeviceNote(ctx context.Context, deviceId string, noteId string) ApiUpdateDeviceNoteRequest
+
+	// UpdateDeviceNoteExecute executes the request
+	//  @return map[string]interface{}
+	UpdateDeviceNoteExecute(r ApiUpdateDeviceNoteRequest) (map[string]interface{}, *http.Response, error)
+}
+
 // NotesAPIService NotesAPI service
 type NotesAPIService service
 
 type ApiCreateDeviceNoteRequest struct {
 	ctx context.Context
-	ApiService *NotesAPIService
+	ApiService NotesAPI
 	deviceId string
 	body *string
 }
@@ -137,7 +218,7 @@ func (a *NotesAPIService) CreateDeviceNoteExecute(r ApiCreateDeviceNoteRequest) 
 
 type ApiDeleteDeviceNoteRequest struct {
 	ctx context.Context
-	ApiService *NotesAPIService
+	ApiService NotesAPI
 	deviceId string
 	noteId string
 }
@@ -244,7 +325,7 @@ func (a *NotesAPIService) DeleteDeviceNoteExecute(r ApiDeleteDeviceNoteRequest) 
 
 type ApiGetDeviceNotesRequest struct {
 	ctx context.Context
-	ApiService *NotesAPIService
+	ApiService NotesAPI
 	deviceId string
 }
 
@@ -347,7 +428,7 @@ func (a *NotesAPIService) GetDeviceNotesExecute(r ApiGetDeviceNotesRequest) (map
 
 type ApiRetrieveDeviceNoteRequest struct {
 	ctx context.Context
-	ApiService *NotesAPIService
+	ApiService NotesAPI
 	deviceId string
 	noteId string
 }
@@ -454,7 +535,7 @@ func (a *NotesAPIService) RetrieveDeviceNoteExecute(r ApiRetrieveDeviceNoteReque
 
 type ApiUpdateDeviceNoteRequest struct {
 	ctx context.Context
-	ApiService *NotesAPIService
+	ApiService NotesAPI
 	deviceId string
 	noteId string
 	body *string
