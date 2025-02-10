@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-	body := "body_example" // string |  (optional)
+	body := "{"name":"accuhive_01"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -233,7 +233,7 @@ import (
 
 func main() {
 	tagId := "tagId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"name":"accuhive_02"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

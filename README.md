@@ -232,22 +232,6 @@ Class | Method | HTTP request | Description
 *BlueprintsAPI* | [**ListLibraryItems**](docs/BlueprintsAPI.md#listlibraryitems) | **Get** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
 *BlueprintsAPI* | [**RemoveLibraryItem**](docs/BlueprintsAPI.md#removelibraryitem) | **Post** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
 *BlueprintsAPI* | [**UpdateBlueprint**](docs/BlueprintsAPI.md#updateblueprint) | **Patch** /api/v1/blueprints/{blueprint_id} | Update Blueprint
-*CustomAppsAPI* | [**CreateCustomApp**](docs/CustomAppsAPI.md#createcustomapp) | **Post** /api/v1/library/custom-apps | Create Custom App
-*CustomAppsAPI* | [**DeleteCustomApp**](docs/CustomAppsAPI.md#deletecustomapp) | **Delete** /api/v1/library/custom-apps/{library_item_id} | Delete Custom App
-*CustomAppsAPI* | [**GetCustomApp**](docs/CustomAppsAPI.md#getcustomapp) | **Get** /api/v1/library/custom-apps/{library_item_id} | Get Custom App
-*CustomAppsAPI* | [**ListCustomApps**](docs/CustomAppsAPI.md#listcustomapps) | **Get** /api/v1/library/custom-apps | List Custom Apps
-*CustomAppsAPI* | [**UpdateCustomApp**](docs/CustomAppsAPI.md#updatecustomapp) | **Patch** /api/v1/library/custom-apps/{library_item_id} | Update Custom App
-*CustomAppsAPI* | [**UploadCustomApp**](docs/CustomAppsAPI.md#uploadcustomapp) | **Post** /api/v1/library/custom-apps/upload | Upload Custom App
-*CustomProfilesAPI* | [**CreateCustomProfile**](docs/CustomProfilesAPI.md#createcustomprofile) | **Post** /api/v1/library/custom-profiles | Create Custom Profile
-*CustomProfilesAPI* | [**DeleteCustomProfile**](docs/CustomProfilesAPI.md#deletecustomprofile) | **Delete** /api/v1/library/custom-profiles/{library_item_id} | Delete Custom Profile
-*CustomProfilesAPI* | [**GetCustomProfile**](docs/CustomProfilesAPI.md#getcustomprofile) | **Get** /api/v1/library/custom-profiles/{library_item_id} | Get Custom Profile
-*CustomProfilesAPI* | [**ListCustomProfiles**](docs/CustomProfilesAPI.md#listcustomprofiles) | **Get** /api/v1/library/custom-profiles | List Custom Profiles
-*CustomProfilesAPI* | [**UpdateCustomProfile**](docs/CustomProfilesAPI.md#updatecustomprofile) | **Patch** /api/v1/library/custom-profiles/{library_item_id} | Update Custom Profile
-*CustomScriptsAPI* | [**CreateCustomScript**](docs/CustomScriptsAPI.md#createcustomscript) | **Post** /api/v1/library/custom-scripts | Create Custom Script
-*CustomScriptsAPI* | [**DeleteCustomScript**](docs/CustomScriptsAPI.md#deletecustomscript) | **Delete** /api/v1/library/custom-scripts/{library_item_id} | Delete Custom Script
-*CustomScriptsAPI* | [**GetCustomScript**](docs/CustomScriptsAPI.md#getcustomscript) | **Get** /api/v1/library/custom-scripts/{library_item_id} | Get Custom Script
-*CustomScriptsAPI* | [**ListCustomScripts**](docs/CustomScriptsAPI.md#listcustomscripts) | **Get** /api/v1/library/custom-scripts | List Custom Scripts
-*CustomScriptsAPI* | [**UpdateCustomScript**](docs/CustomScriptsAPI.md#updatecustomscript) | **Patch** /api/v1/library/custom-scripts/{library_item_id} | Update Custom Script
 *DeviceActionsAPI* | [**ClearPasscode**](docs/DeviceActionsAPI.md#clearpasscode) | **Post** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
 *DeviceActionsAPI* | [**DeleteDevice**](docs/DeviceActionsAPI.md#deletedevice) | **Delete** /api/v1/devices/{device_id} | Delete Device
 *DeviceActionsAPI* | [**DeleteUser**](docs/DeviceActionsAPI.md#deleteuser) | **Post** /api/v1/devices/{device_id}/action/deleteuser | Delete User
@@ -264,6 +248,7 @@ Class | Method | HTTP request | Description
 *DeviceActionsAPI* | [**UnlockAccount**](docs/DeviceActionsAPI.md#unlockaccount) | **Post** /api/v1/devices/{device_id}/action/unlockaccount | Unlock Account
 *DeviceActionsAPI* | [**UpdateInventory**](docs/DeviceActionsAPI.md#updateinventory) | **Post** /api/v1/devices/{device_id}/action/updateinventory | Update Inventory
 *DeviceInformationAPI* | [**CancelLostMode**](docs/DeviceInformationAPI.md#cancellostmode) | **Delete** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
+*DeviceInformationAPI* | [**GetDevice**](docs/DeviceInformationAPI.md#getdevice) | **Get** /api/v1/devices/{device_id} | Get Device
 *DeviceInformationAPI* | [**GetDeviceActivity**](docs/DeviceInformationAPI.md#getdeviceactivity) | **Get** /api/v1/devices/{device_id}/activity | Get Device Activity
 *DeviceInformationAPI* | [**GetDeviceApps**](docs/DeviceInformationAPI.md#getdeviceapps) | **Get** /api/v1/devices/{device_id}/apps | Get Device Apps
 *DeviceInformationAPI* | [**GetDeviceDetails**](docs/DeviceInformationAPI.md#getdevicedetails) | **Get** /api/v1/devices/{device_id}/details | Get Device Details
@@ -272,28 +257,13 @@ Class | Method | HTTP request | Description
 *DeviceInformationAPI* | [**GetDeviceParameters**](docs/DeviceInformationAPI.md#getdeviceparameters) | **Get** /api/v1/devices/{device_id}/parameters | Get Device Parameters
 *DeviceInformationAPI* | [**GetDeviceStatus**](docs/DeviceInformationAPI.md#getdevicestatus) | **Get** /api/v1/devices/{device_id}/status | Get Device Status
 *DeviceInformationAPI* | [**ListDevices**](docs/DeviceInformationAPI.md#listdevices) | **Get** /api/v1/devices | List Devices
+*DeviceInformationAPI* | [**UpdateDevice**](docs/DeviceInformationAPI.md#updatedevice) | **Patch** /api/v1/devices/{device_id} | Update Device
 *DeviceSecretsAPI* | [**GetActivationLockBypassCode**](docs/DeviceSecretsAPI.md#getactivationlockbypasscode) | **Get** /api/v1/devices/{device_id}/secrets/bypasscode | Get Activation Lock Bypass Code
 *DeviceSecretsAPI* | [**GetFilevaultRecoveryKey**](docs/DeviceSecretsAPI.md#getfilevaultrecoverykey) | **Get** /api/v1/devices/{device_id}/secrets/filevaultkey | Get FileVault Recovery Key
 *DeviceSecretsAPI* | [**GetRecoveryLockPassword**](docs/DeviceSecretsAPI.md#getrecoverylockpassword) | **Get** /api/v1/devices/{device_id}/secrets/recoverypassword | Get Recovery Lock Password
 *DeviceSecretsAPI* | [**GetUnlockPin**](docs/DeviceSecretsAPI.md#getunlockpin) | **Get** /api/v1/devices/{device_id}/secrets/unlockpin | Get Unlock Pin
-*InHouseAppsAPI* | [**CreateInhouseApp**](docs/InHouseAppsAPI.md#createinhouseapp) | **Post** /api/v1/library/ipa-apps | Create In-House App
-*InHouseAppsAPI* | [**DeleteInhouseApp**](docs/InHouseAppsAPI.md#deleteinhouseapp) | **Delete** /api/v1/library/ipa-apps/{library_item_id} | Delete In-House App
-*InHouseAppsAPI* | [**GetInhouseApp**](docs/InHouseAppsAPI.md#getinhouseapp) | **Get** /api/v1/library/ipa-apps/{library_item_id} | Get In-House App
-*InHouseAppsAPI* | [**ListInhouseApps**](docs/InHouseAppsAPI.md#listinhouseapps) | **Get** /api/v1/library/ipa-apps | List In-House Apps
-*InHouseAppsAPI* | [**UpdateInhouseApp**](docs/InHouseAppsAPI.md#updateinhouseapp) | **Patch** /api/v1/library/ipa-apps/{library_item_id} | Update In-House App
-*InHouseAppsAPI* | [**UploadInhouseApp**](docs/InHouseAppsAPI.md#uploadinhouseapp) | **Post** /api/v1/library/ipa-apps/upload | Upload In-House App
-*InHouseAppsAPI* | [**UploadInhouseAppStatus**](docs/InHouseAppsAPI.md#uploadinhouseappstatus) | **Get** /api/v1/library/ipa-apps/upload/{pending_upload_id}/status | Upload In-House App Status
 *LibraryItemsAPI* | [**GetLibraryItemActivity**](docs/LibraryItemsAPI.md#getlibraryitemactivity) | **Get** /api/v1/library/library-items/{library_item_id}/activity | Get Library Item Activity
 *LibraryItemsAPI* | [**GetLibraryItemStatuses**](docs/LibraryItemsAPI.md#getlibraryitemstatuses) | **Get** /api/v1/library/library-items/{library_item_id}/status | Get Library Item Statuses
-*LostModeAPI* | [**DisableLostMode**](docs/LostModeAPI.md#disablelostmode) | **Post** /api/v1/devices/{device_id}/action/disablelostmode | Disable Lost Mode
-*LostModeAPI* | [**EnableLostMode**](docs/LostModeAPI.md#enablelostmode) | **Post** /api/v1/devices/{device_id}/action/enablelostmode | Enable Lost Mode
-*LostModeAPI* | [**PlayLostModeSound**](docs/LostModeAPI.md#playlostmodesound) | **Post** /api/v1/devices/{device_id}/action/playlostmodesound | Play Lost Mode Sound
-*LostModeAPI* | [**UpdateLocation**](docs/LostModeAPI.md#updatelocation) | **Post** /api/v1/devices/{device_id}/action/updatelocation | Update Location
-*NotesAPI* | [**CreateDeviceNote**](docs/NotesAPI.md#createdevicenote) | **Post** /api/v1/devices/{device_id}/notes | Create Device Note
-*NotesAPI* | [**DeleteDeviceNote**](docs/NotesAPI.md#deletedevicenote) | **Delete** /api/v1/devices/{device_id}/notes/{note_id} | Delete Device Note
-*NotesAPI* | [**GetDeviceNotes**](docs/NotesAPI.md#getdevicenotes) | **Get** /api/v1/devices/{device_id}/notes | Get Device Notes
-*NotesAPI* | [**RetrieveDeviceNote**](docs/NotesAPI.md#retrievedevicenote) | **Get** /api/v1/devices/{device_id}/notes/{note_id} | Retrieve Device Note
-*NotesAPI* | [**UpdateDeviceNote**](docs/NotesAPI.md#updatedevicenote) | **Patch** /api/v1/devices/{device_id}/notes/{note_id} | Update Device Note
 *PrismAPI* | [**ActivationLock**](docs/PrismAPI.md#activationlock) | **Get** /api/v1/prism/activation_lock | Activation lock
 *PrismAPI* | [**ApplicationFirewall**](docs/PrismAPI.md#applicationfirewall) | **Get** /api/v1/prism/application_firewall | Application firewall
 *PrismAPI* | [**Applications**](docs/PrismAPI.md#applications) | **Get** /api/v1/prism/apps | Applications
@@ -312,7 +282,6 @@ Class | Method | HTTP request | Description
 *PrismAPI* | [**StartupSettings**](docs/PrismAPI.md#startupsettings) | **Get** /api/v1/prism/startup_settings | Startup settings
 *PrismAPI* | [**SystemExtensions**](docs/PrismAPI.md#systemextensions) | **Get** /api/v1/prism/system_extensions | System Extensions
 *PrismAPI* | [**TransparencyDatabase**](docs/PrismAPI.md#transparencydatabase) | **Get** /api/v1/prism/transparency_database | Transparency database
-*SelfServiceAPI* | [**ListSelfServiceCategories**](docs/SelfServiceAPI.md#listselfservicecategories) | **Get** /api/v1/self-service/categories | List Self Service Categories
 *SettingsAPI* | [**Licensing**](docs/SettingsAPI.md#licensing) | **Get** /api/v1/settings/licensing | Licensing
 *TagsAPI* | [**CreateTag**](docs/TagsAPI.md#createtag) | **Post** /api/v1/tags | Create Tag
 *TagsAPI* | [**DeleteTag**](docs/TagsAPI.md#deletetag) | **Delete** /api/v1/tags/{tag_id} | Delete Tag

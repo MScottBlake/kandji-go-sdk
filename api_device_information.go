@@ -38,6 +38,21 @@ type DeviceInformationAPI interface {
 	CancelLostModeExecute(r ApiCancelLostModeRequest) (*http.Response, error)
 
 	/*
+	GetDevice Get Device
+
+	This request returns the high-level information for a specified Device ID.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiGetDeviceRequest
+	*/
+	GetDevice(ctx context.Context, deviceId string) ApiGetDeviceRequest
+
+	// GetDeviceExecute executes the request
+	//  @return map[string]interface{}
+	GetDeviceExecute(r ApiGetDeviceRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
 	GetDeviceActivity Get Device Activity
 
 	This request returns the device activity for a specified Device ID.
@@ -383,6 +398,51 @@ type DeviceInformationAPI interface {
 	// ListDevicesExecute executes the request
 	//  @return map[string]interface{}
 	ListDevicesExecute(r ApiListDevicesRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
+	UpdateDevice Update Device
+
+	<p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p>
+<p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+<h3 id=&quot;additional-information&quot;>Additional information</h3>
+<p>User ID can be found using the <code>list users</code> API</p>
+<p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p>
+<p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p>
+<p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p>
+<p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p>
+<h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4>
+<p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;asset_tag&quot;: null
+}
+
+</code></pre>
+<h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4>
+<p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;user&quot;: null
+}
+
+</code></pre>
+<h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4>
+<p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;tags&quot;: []
+}
+
+</code></pre>
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiUpdateDeviceRequest
+	*/
+	UpdateDevice(ctx context.Context, deviceId string) ApiUpdateDeviceRequest
+
+	// UpdateDeviceExecute executes the request
+	//  @return map[string]interface{}
+	UpdateDeviceExecute(r ApiUpdateDeviceRequest) (map[string]interface{}, *http.Response, error)
 }
 
 // DeviceInformationAPIService DeviceInformationAPI service
@@ -478,6 +538,109 @@ func (a *DeviceInformationAPIService) CancelLostModeExecute(r ApiCancelLostModeR
 	}
 
 	return localVarHTTPResponse, nil
+}
+
+type ApiGetDeviceRequest struct {
+	ctx context.Context
+	ApiService DeviceInformationAPI
+	deviceId string
+}
+
+func (r ApiGetDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.GetDeviceExecute(r)
+}
+
+/*
+GetDevice Get Device
+
+This request returns the high-level information for a specified Device ID.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param deviceId
+ @return ApiGetDeviceRequest
+*/
+func (a *DeviceInformationAPIService) GetDevice(ctx context.Context, deviceId string) ApiGetDeviceRequest {
+	return ApiGetDeviceRequest{
+		ApiService: a,
+		ctx: ctx,
+		deviceId: deviceId,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *DeviceInformationAPIService) GetDeviceExecute(r ApiGetDeviceRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDevice")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v1/devices/{device_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", url.PathEscape(parameterValueToString(r.deviceId, "deviceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiGetDeviceActivityRequest struct {
@@ -1723,6 +1886,147 @@ func (a *DeviceInformationAPIService) ListDevicesExecute(r ApiListDevicesRequest
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateDeviceRequest struct {
+	ctx context.Context
+	ApiService DeviceInformationAPI
+	deviceId string
+	body *string
+}
+
+func (r ApiUpdateDeviceRequest) Body(body string) ApiUpdateDeviceRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiUpdateDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.UpdateDeviceExecute(r)
+}
+
+/*
+UpdateDevice Update Device
+
+<p>This request allows you to update device information, such as the assigned blueprint, user, Asset Tag, and Tags. It is not required to use all attributes in a given request. For example if you only want to update the assigned blueprint, you only need to pass the <code>blueprint_id</code> in the request payload.</p>
+<p><strong>NOTE</strong>: With the introduction of a UUID value for user ID in the <a href=&quot;https://api-docs.kandji.io/#b107eb0a-b586-414f-bc4c-3d2b304cfd5f&quot;>Users API</a>, the Device PATCH endpoint will support both the depricated user ID integer value and the new user ID UUID value when updating the user assignment for a device. The ability to update user assignment via the integer ID value will be removed starting January 2025.</p>
+<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
+<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
+<h3 id=&quot;additional-information&quot;>Additional information</h3>
+<p>User ID can be found using the <code>list users</code> API</p>
+<p>A Blueprint ID can be found using the <code>list blueprints</code> API or in the URL path while on a Blueprint overview page.</p>
+<p>For example, for this URL <a href=&quot;https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4&quot;>https://subdomain.kandji.io/blueprints/6391086e-85a1-4820-813c-f9c75025fff4</a></p>
+<p>The Blueprint ID would be <code>6391086e-85a1-4820-813c-f9c75025fff4</code></p>
+<p>An example script that leverages this API can be found in the <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/update-device-record&quot;>Kandji Support GitHub</a></p>
+<h4 id=&quot;clearing-the-device-asset-tag&quot;>Clearing the device asset tag</h4>
+<p>To clear a device asset tag, set the <code>asset_tag</code> value to <code>null</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;asset_tag&quot;: null
+}
+
+</code></pre>
+<h4 id=&quot;clearing-the-assigned-user-attribute&quot;>Clearing the assigned user attribute</h4>
+<p>To clear the assigned user for a given device, set the <code>user</code> value to <code>null</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;user&quot;: null
+}
+
+</code></pre>
+<h4 id=&quot;clearing-all-tags&quot;>Clearing all tags</h4>
+<p>To clear the assigned tags for a given device, set the <code>tags</code> value to an empty list <code>[]</code> in the JSON payload.</p>
+<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
+    &quot;tags&quot;: []
+}
+
+</code></pre>
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param deviceId
+ @return ApiUpdateDeviceRequest
+*/
+func (a *DeviceInformationAPIService) UpdateDevice(ctx context.Context, deviceId string) ApiUpdateDeviceRequest {
+	return ApiUpdateDeviceRequest{
+		ApiService: a,
+		ctx: ctx,
+		deviceId: deviceId,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *DeviceInformationAPIService) UpdateDeviceExecute(r ApiUpdateDeviceRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.UpdateDevice")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v1/devices/{device_id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", url.PathEscape(parameterValueToString(r.deviceId, "deviceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

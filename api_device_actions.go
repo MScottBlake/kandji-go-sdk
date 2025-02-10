@@ -148,7 +148,8 @@ type DeviceActionsAPI interface {
 	GetDeviceCommands(ctx context.Context, deviceId string) ApiGetDeviceCommandsRequest
 
 	// GetDeviceCommandsExecute executes the request
-	GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*http.Response, error)
+	//  @return map[string]interface{}
+	GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 	LockDevice Lock Device
@@ -798,7 +799,7 @@ func (r ApiGetDeviceCommandsRequest) Offset(offset string) ApiGetDeviceCommandsR
 	return r
 }
 
-func (r ApiGetDeviceCommandsRequest) Execute() (*http.Response, error) {
+func (r ApiGetDeviceCommandsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetDeviceCommandsExecute(r)
 }
 
@@ -828,16 +829,18 @@ func (a *DeviceActionsAPIService) GetDeviceCommands(ctx context.Context, deviceI
 }
 
 // Execute executes the request
-func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*http.Response, error) {
+//  @return map[string]interface{}
+func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.GetDeviceCommands")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v1/devices/{device_id}/commands"
@@ -847,7 +850,7 @@ func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommand
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.limit == nil {
-		return nil, reportError("limit is required and must be specified")
+		return localVarReturnValue, nil, reportError("limit is required and must be specified")
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
@@ -864,7 +867,7 @@ func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommand
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -873,19 +876,19 @@ func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommand
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -893,10 +896,19 @@ func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommand
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiLockDeviceRequest struct {

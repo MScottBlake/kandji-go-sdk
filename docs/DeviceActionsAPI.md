@@ -180,7 +180,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"DeleteAllUsers":false,"ForceDeletion":false,"UserName":"testuser"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -250,7 +250,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"PIN":"123456","PreserveDataPlan":true,"DisallowProximitySetup":false,"ReturnToService":{"Enabled":false,"ProfileId":""}}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceCommands
 
-> GetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} GetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
 
 Get Device Commands
 
@@ -325,11 +325,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DeviceActionsAPI.GetDeviceCommands(context.Background(), deviceId).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.DeviceActionsAPI.GetDeviceCommands(context.Background(), deviceId).Limit(limit).Offset(offset).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.GetDeviceCommands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetDeviceCommands`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceActionsAPI.GetDeviceCommands`: %v\n", resp)
 }
 ```
 
@@ -354,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -363,7 +365,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -392,7 +394,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"Message":"This device is locked!","PhoneNumber":"1234567890"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -532,7 +534,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"EnableRemoteDesktop":true}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -670,7 +672,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"RebuildKernelCache":false,"NotifyUser":false}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -808,7 +810,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"DeviceName":"Test Mac Mini"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -946,7 +948,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"UserName":"LocalUserToUnlock"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

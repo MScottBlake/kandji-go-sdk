@@ -668,7 +668,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","asset_tag":"123456","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -740,7 +740,7 @@ import (
 
 func main() {
 	adeTokenId := "adeTokenId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","phone":"1234567890","email":"example@accuhive.io"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

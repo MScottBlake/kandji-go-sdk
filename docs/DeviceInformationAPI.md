@@ -5,6 +5,7 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelLostMode**](DeviceInformationAPI.md#CancelLostMode) | **Delete** /api/v1/devices/{device_id}/details/lostmode | Cancel Lost Mode
+[**GetDevice**](DeviceInformationAPI.md#GetDevice) | **Get** /api/v1/devices/{device_id} | Get Device
 [**GetDeviceActivity**](DeviceInformationAPI.md#GetDeviceActivity) | **Get** /api/v1/devices/{device_id}/activity | Get Device Activity
 [**GetDeviceApps**](DeviceInformationAPI.md#GetDeviceApps) | **Get** /api/v1/devices/{device_id}/apps | Get Device Apps
 [**GetDeviceDetails**](DeviceInformationAPI.md#GetDeviceDetails) | **Get** /api/v1/devices/{device_id}/details | Get Device Details
@@ -13,6 +14,7 @@ Method | HTTP request | Description
 [**GetDeviceParameters**](DeviceInformationAPI.md#GetDeviceParameters) | **Get** /api/v1/devices/{device_id}/parameters | Get Device Parameters
 [**GetDeviceStatus**](DeviceInformationAPI.md#GetDeviceStatus) | **Get** /api/v1/devices/{device_id}/status | Get Device Status
 [**ListDevices**](DeviceInformationAPI.md#ListDevices) | **Get** /api/v1/devices | List Devices
+[**UpdateDevice**](DeviceInformationAPI.md#UpdateDevice) | **Patch** /api/v1/devices/{device_id} | Update Device
 
 
 
@@ -78,6 +80,76 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetDevice
+
+> map[string]interface{} GetDevice(ctx, deviceId).Execute()
+
+Get Device
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/MScottBlake/kandji-go-sdk"
+)
+
+func main() {
+	deviceId := "deviceId_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceInformationAPI.GetDevice(context.Background(), deviceId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetDevice`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDevice`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**deviceId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDeviceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -677,6 +749,78 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateDevice
+
+> map[string]interface{} UpdateDevice(ctx, deviceId).Body(body).Execute()
+
+Update Device
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/MScottBlake/kandji-go-sdk"
+)
+
+func main() {
+	deviceId := "deviceId_example" // string | 
+	body := "{"user":"5344c996-8823-4b37-8d6e-8515fc7c3a0a","asset_tag":"1040","blueprint_id":"be1a4d67-91d8-4d19-a927-c8be6e77b6b2","tags":["tag1","tag2","tag3","tag4","tag5"]}" // string |  (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.DeviceInformationAPI.UpdateDevice(context.Background(), deviceId).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.UpdateDevice``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `UpdateDevice`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.UpdateDevice`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**deviceId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDeviceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | **string** |  | 
+
+### Return type
+
+**map[string]interface{}**
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

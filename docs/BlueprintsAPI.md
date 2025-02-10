@@ -39,7 +39,7 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{"library_item_id":"{library_item_id}","assignment_node_id":"{assignment_node_id}"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## GetBlueprint
 
-> GetBlueprint(ctx, blueprintId).Execute()
+> map[string]interface{} GetBlueprint(ctx, blueprintId).Execute()
 
 Get Blueprint
 
@@ -258,11 +258,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.BlueprintsAPI.GetBlueprint(context.Background(), blueprintId).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.GetBlueprint(context.Background(), blueprintId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.GetBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetBlueprint`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.GetBlueprint`: %v\n", resp)
 }
 ```
 
@@ -285,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -294,7 +296,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -603,7 +605,7 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	body := "body_example" // string |  (optional)
+	body := "{library_item_id={library_item_id}, assignment_node_id={assignment_node_id}}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

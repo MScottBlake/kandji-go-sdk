@@ -34,7 +34,8 @@ type PrismAPI interface {
 	ActivationLock(ctx context.Context) ApiActivationLockRequest
 
 	// ActivationLockExecute executes the request
-	ActivationLockExecute(r ApiActivationLockRequest) (*http.Response, error)
+	//  @return map[string]interface{}
+	ActivationLockExecute(r ApiActivationLockRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 	ApplicationFirewall Application firewall
@@ -374,7 +375,7 @@ func (r ApiActivationLockRequest) Offset(offset string) ApiActivationLockRequest
 	return r
 }
 
-func (r ApiActivationLockRequest) Execute() (*http.Response, error) {
+func (r ApiActivationLockRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ActivationLockExecute(r)
 }
 
@@ -394,16 +395,18 @@ func (a *PrismAPIService) ActivationLock(ctx context.Context) ApiActivationLockR
 }
 
 // Execute executes the request
-func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*http.Response, error) {
+//  @return map[string]interface{}
+func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.ActivationLock")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v1/prism/activation_lock"
@@ -440,7 +443,7 @@ func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*ht
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -449,19 +452,19 @@ func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*ht
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -469,10 +472,19 @@ func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*ht
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiApplicationFirewallRequest struct {

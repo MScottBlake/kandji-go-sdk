@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 ## ActivationLock
 
-> ActivationLock(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> map[string]interface{} ActivationLock(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Activation lock
 
@@ -55,11 +55,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PrismAPI.ActivationLock(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	resp, r, err := apiClient.PrismAPI.ActivationLock(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.ActivationLock``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ActivationLock`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.ActivationLock`: %v\n", resp)
 }
 ```
 
@@ -83,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -92,7 +94,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -496,7 +498,7 @@ func main() {
 	sortBy := "serial_number" // string | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
 	limit := "limit_example" // string | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
 	offset := "offset_example" // string | Specify the starting record to return (optional)
-	body := "body_example" // string |  (optional)
+	body := "{}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1094,7 +1096,7 @@ import (
 )
 
 func main() {
-	body := "body_example" // string |  (optional)
+	body := "{"blueprint_ids":["string","string","string"],"device_families":["Mac"],"category":"device_information","filter":{},"sort_by":"device__nam"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

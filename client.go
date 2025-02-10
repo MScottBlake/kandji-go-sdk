@@ -54,29 +54,15 @@ type APIClient struct {
 
 	BlueprintsAPI BlueprintsAPI
 
-	CustomAppsAPI CustomAppsAPI
-
-	CustomProfilesAPI CustomProfilesAPI
-
-	CustomScriptsAPI CustomScriptsAPI
-
 	DeviceActionsAPI DeviceActionsAPI
 
 	DeviceInformationAPI DeviceInformationAPI
 
 	DeviceSecretsAPI DeviceSecretsAPI
 
-	InHouseAppsAPI InHouseAppsAPI
-
 	LibraryItemsAPI LibraryItemsAPI
 
-	LostModeAPI LostModeAPI
-
-	NotesAPI NotesAPI
-
 	PrismAPI PrismAPI
-
-	SelfServiceAPI SelfServiceAPI
 
 	SettingsAPI SettingsAPI
 
@@ -105,18 +91,11 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.AutomatedDeviceEnrollmentIntegrationsAPI = (*AutomatedDeviceEnrollmentIntegrationsAPIService)(&c.common)
 	c.BlueprintsAPI = (*BlueprintsAPIService)(&c.common)
-	c.CustomAppsAPI = (*CustomAppsAPIService)(&c.common)
-	c.CustomProfilesAPI = (*CustomProfilesAPIService)(&c.common)
-	c.CustomScriptsAPI = (*CustomScriptsAPIService)(&c.common)
 	c.DeviceActionsAPI = (*DeviceActionsAPIService)(&c.common)
 	c.DeviceInformationAPI = (*DeviceInformationAPIService)(&c.common)
 	c.DeviceSecretsAPI = (*DeviceSecretsAPIService)(&c.common)
-	c.InHouseAppsAPI = (*InHouseAppsAPIService)(&c.common)
 	c.LibraryItemsAPI = (*LibraryItemsAPIService)(&c.common)
-	c.LostModeAPI = (*LostModeAPIService)(&c.common)
-	c.NotesAPI = (*NotesAPIService)(&c.common)
 	c.PrismAPI = (*PrismAPIService)(&c.common)
-	c.SelfServiceAPI = (*SelfServiceAPIService)(&c.common)
 	c.SettingsAPI = (*SettingsAPIService)(&c.common)
 	c.TagsAPI = (*TagsAPIService)(&c.common)
 	c.ThreatsAPI = (*ThreatsAPIService)(&c.common)
