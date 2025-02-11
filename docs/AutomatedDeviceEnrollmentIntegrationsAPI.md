@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateAdeIntegration
 
-> CreateIntegration200Response CreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response CreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 
 Create ADE integration
 
@@ -51,7 +51,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateAdeIntegration`: CreateIntegration200Response
+	// response from `CreateAdeIntegration`: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration`: %v\n", resp)
 }
 ```
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateIntegration200Response**](CreateIntegration200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ Other parameters are passed through a pointer to a apiDownloadAdePublicKeyReques
 
 ## GetAdeDevice
 
-> Success200Response1 GetAdeDevice(ctx, deviceId).Execute()
+> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response GetAdeDevice(ctx, deviceId).Execute()
 
 Get ADE device
 
@@ -249,7 +249,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAdeDevice`: Success200Response1
+	// response from `GetAdeDevice`: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeDevice`: %v\n", resp)
 }
 ```
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response1**](Success200Response1.md)
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ## ListAdeDevices
 
-> Success200Response ListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response ListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
 
 List ADE devices
 
@@ -395,7 +395,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAdeDevices`: Success200Response
+	// response from `ListAdeDevices`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices`: %v\n", resp)
 }
 ```
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response**](Success200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -500,7 +500,7 @@ Other parameters are passed through a pointer to a apiListAdeIntegrationsRequest
 
 ## ListDevicesAssociatedToAdeToken
 
-> ListAssociatedDevicesNullMdmDevice200Response ListDevicesAssociatedToAdeToken(ctx, adeTokenId).Page(page).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response ListDevicesAssociatedToAdeToken(ctx, adeTokenId).Page(page).Execute()
 
 List devices associated to ADE token
 
@@ -529,7 +529,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListDevicesAssociatedToAdeToken``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDevicesAssociatedToAdeToken`: ListAssociatedDevicesNullMdmDevice200Response
+	// response from `ListDevicesAssociatedToAdeToken`: AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.ListDevicesAssociatedToAdeToken`: %v\n", resp)
 }
 ```
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListAssociatedDevicesNullMdmDevice200Response**](ListAssociatedDevicesNullMdmDevice200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response**](AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response.md)
 
 ### Authorization
 
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAdeDevice
 
-> UpdateUserAssignment200Response UpdateAdeDevice(ctx, deviceId).Body(body).Execute()
+> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response UpdateAdeDevice(ctx, deviceId).Body(body).Execute()
 
 Update ADE device
 
@@ -677,7 +677,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateAdeDevice`: UpdateUserAssignment200Response
+	// response from `UpdateAdeDevice`: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeDevice`: %v\n", resp)
 }
 ```
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UpdateUserAssignment200Response**](UpdateUserAssignment200Response.md)
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 

@@ -36,8 +36,8 @@ type AutomatedDeviceEnrollmentIntegrationsAPI interface {
 	CreateAdeIntegration(ctx context.Context) ApiCreateAdeIntegrationRequest
 
 	// CreateAdeIntegrationExecute executes the request
-	//  @return CreateIntegration200Response
-	CreateAdeIntegrationExecute(r ApiCreateAdeIntegrationRequest) (*CreateIntegration200Response, *http.Response, error)
+	//  @return AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
+	CreateAdeIntegrationExecute(r ApiCreateAdeIntegrationRequest) (*AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response, *http.Response, error)
 
 	/*
 	DeleteAdeIntegration Delete ADE integration
@@ -83,8 +83,8 @@ type AutomatedDeviceEnrollmentIntegrationsAPI interface {
 	GetAdeDevice(ctx context.Context, deviceId string) ApiGetAdeDeviceRequest
 
 	// GetAdeDeviceExecute executes the request
-	//  @return Success200Response1
-	GetAdeDeviceExecute(r ApiGetAdeDeviceRequest) (*Success200Response1, *http.Response, error)
+	//  @return AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+	GetAdeDeviceExecute(r ApiGetAdeDeviceRequest) (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response, *http.Response, error)
 
 	/*
 	GetAdeIntegration Get ADE integration
@@ -111,8 +111,8 @@ type AutomatedDeviceEnrollmentIntegrationsAPI interface {
 	ListAdeDevices(ctx context.Context) ApiListAdeDevicesRequest
 
 	// ListAdeDevicesExecute executes the request
-	//  @return Success200Response
-	ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*Success200Response, *http.Response, error)
+	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
 
 	/*
 	ListAdeIntegrations List ADE integrations
@@ -141,8 +141,8 @@ type AutomatedDeviceEnrollmentIntegrationsAPI interface {
 	ListDevicesAssociatedToAdeToken(ctx context.Context, adeTokenId string) ApiListDevicesAssociatedToAdeTokenRequest
 
 	// ListDevicesAssociatedToAdeTokenExecute executes the request
-	//  @return ListAssociatedDevicesNullMdmDevice200Response
-	ListDevicesAssociatedToAdeTokenExecute(r ApiListDevicesAssociatedToAdeTokenRequest) (*ListAssociatedDevicesNullMdmDevice200Response, *http.Response, error)
+	//  @return AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
+	ListDevicesAssociatedToAdeTokenExecute(r ApiListDevicesAssociatedToAdeTokenRequest) (*AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response, *http.Response, error)
 
 	/*
 	RenewAdeIntegration Renew ADE integration
@@ -173,8 +173,8 @@ type AutomatedDeviceEnrollmentIntegrationsAPI interface {
 	UpdateAdeDevice(ctx context.Context, deviceId string) ApiUpdateAdeDeviceRequest
 
 	// UpdateAdeDeviceExecute executes the request
-	//  @return UpdateUserAssignment200Response
-	UpdateAdeDeviceExecute(r ApiUpdateAdeDeviceRequest) (*UpdateUserAssignment200Response, *http.Response, error)
+	//  @return AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+	UpdateAdeDeviceExecute(r ApiUpdateAdeDeviceRequest) (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response, *http.Response, error)
 
 	/*
 	UpdateAdeIntegration Update ADE integration
@@ -225,7 +225,7 @@ func (r ApiCreateAdeIntegrationRequest) File(file *os.File) ApiCreateAdeIntegrat
 	return r
 }
 
-func (r ApiCreateAdeIntegrationRequest) Execute() (*CreateIntegration200Response, *http.Response, error) {
+func (r ApiCreateAdeIntegrationRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response, *http.Response, error) {
 	return r.ApiService.CreateAdeIntegrationExecute(r)
 }
 
@@ -246,13 +246,13 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegration(c
 }
 
 // Execute executes the request
-//  @return CreateIntegration200Response
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationExecute(r ApiCreateAdeIntegrationRequest) (*CreateIntegration200Response, *http.Response, error) {
+//  @return AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationExecute(r ApiCreateAdeIntegrationRequest) (*AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CreateIntegration200Response
+		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.CreateAdeIntegration")
@@ -551,7 +551,7 @@ type ApiGetAdeDeviceRequest struct {
 	deviceId string
 }
 
-func (r ApiGetAdeDeviceRequest) Execute() (*Success200Response1, *http.Response, error) {
+func (r ApiGetAdeDeviceRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response, *http.Response, error) {
 	return r.ApiService.GetAdeDeviceExecute(r)
 }
 
@@ -573,13 +573,13 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDevice(ctx conte
 }
 
 // Execute executes the request
-//  @return Success200Response1
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDeviceExecute(r ApiGetAdeDeviceRequest) (*Success200Response1, *http.Response, error) {
+//  @return AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) GetAdeDeviceExecute(r ApiGetAdeDeviceRequest) (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Success200Response1
+		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.GetAdeDevice")
@@ -808,7 +808,7 @@ func (r ApiListAdeDevicesRequest) Page(page string) ApiListAdeDevicesRequest {
 	return r
 }
 
-func (r ApiListAdeDevicesRequest) Execute() (*Success200Response, *http.Response, error) {
+func (r ApiListAdeDevicesRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
 	return r.ApiService.ListAdeDevicesExecute(r)
 }
 
@@ -828,13 +828,13 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevices(ctx con
 }
 
 // Execute executes the request
-//  @return Success200Response
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*Success200Response, *http.Response, error) {
+//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Success200Response
+		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.ListAdeDevices")
@@ -915,7 +915,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InvalidUuid400Response
+			var v AutomatedDeviceEnrollmentIntegrationsListAdeDevices400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1040,7 +1040,7 @@ func (r ApiListDevicesAssociatedToAdeTokenRequest) Page(page string) ApiListDevi
 	return r
 }
 
-func (r ApiListDevicesAssociatedToAdeTokenRequest) Execute() (*ListAssociatedDevicesNullMdmDevice200Response, *http.Response, error) {
+func (r ApiListDevicesAssociatedToAdeTokenRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response, *http.Response, error) {
 	return r.ApiService.ListDevicesAssociatedToAdeTokenExecute(r)
 }
 
@@ -1064,13 +1064,13 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedT
 }
 
 // Execute executes the request
-//  @return ListAssociatedDevicesNullMdmDevice200Response
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedToAdeTokenExecute(r ApiListDevicesAssociatedToAdeTokenRequest) (*ListAssociatedDevicesNullMdmDevice200Response, *http.Response, error) {
+//  @return AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListDevicesAssociatedToAdeTokenExecute(r ApiListDevicesAssociatedToAdeTokenRequest) (*AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListAssociatedDevicesNullMdmDevice200Response
+		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.ListDevicesAssociatedToAdeToken")
@@ -1302,7 +1302,7 @@ func (r ApiUpdateAdeDeviceRequest) Body(body string) ApiUpdateAdeDeviceRequest {
 	return r
 }
 
-func (r ApiUpdateAdeDeviceRequest) Execute() (*UpdateUserAssignment200Response, *http.Response, error) {
+func (r ApiUpdateAdeDeviceRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response, *http.Response, error) {
 	return r.ApiService.UpdateAdeDeviceExecute(r)
 }
 
@@ -1326,13 +1326,13 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDevice(ctx co
 }
 
 // Execute executes the request
-//  @return UpdateUserAssignment200Response
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDeviceExecute(r ApiUpdateAdeDeviceRequest) (*UpdateUserAssignment200Response, *http.Response, error) {
+//  @return AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) UpdateAdeDeviceExecute(r ApiUpdateAdeDeviceRequest) (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UpdateUserAssignment200Response
+		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.UpdateAdeDevice")

@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## GetDevice
 
-> GetIpad200Response GetDevice(ctx, deviceId).Execute()
+> DeviceInformationGetDevice200Response GetDevice(ctx, deviceId).Execute()
 
 Get Device
 
@@ -116,7 +116,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDevice`: GetIpad200Response
+	// response from `GetDevice`: DeviceInformationGetDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDevice`: %v\n", resp)
 }
 ```
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetIpad200Response**](GetIpad200Response.md)
+[**DeviceInformationGetDevice200Response**](DeviceInformationGetDevice200Response.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceActivity
 
-> GetDeviceActivity200Response GetDeviceActivity(ctx, deviceId).Limit(limit).Offset(offset).Execute()
+> DeviceInformationGetDeviceActivity200Response GetDeviceActivity(ctx, deviceId).Limit(limit).Offset(offset).Execute()
 
 Get Device Activity
 
@@ -188,7 +188,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceActivity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceActivity`: GetDeviceActivity200Response
+	// response from `GetDeviceActivity`: DeviceInformationGetDeviceActivity200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceActivity`: %v\n", resp)
 }
 ```
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceActivity200Response**](GetDeviceActivity200Response.md)
+[**DeviceInformationGetDeviceActivity200Response**](DeviceInformationGetDeviceActivity200Response.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceApps
 
-> IpadApps200Response GetDeviceApps(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceApps200Response GetDeviceApps(ctx, deviceId).Execute()
 
 Get Device Apps
 
@@ -260,7 +260,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceApps`: IpadApps200Response
+	// response from `GetDeviceApps`: DeviceInformationGetDeviceApps200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceApps`: %v\n", resp)
 }
 ```
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IpadApps200Response**](IpadApps200Response.md)
+[**DeviceInformationGetDeviceApps200Response**](DeviceInformationGetDeviceApps200Response.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceDetails
 
-> IphoneOrIpadInLostMode200Response GetDeviceDetails(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceDetails200Response GetDeviceDetails(ctx, deviceId).Execute()
 
 Get Device Details
 
@@ -330,7 +330,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceDetails`: IphoneOrIpadInLostMode200Response
+	// response from `GetDeviceDetails`: DeviceInformationGetDeviceDetails200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceDetails`: %v\n", resp)
 }
 ```
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IphoneOrIpadInLostMode200Response**](IphoneOrIpadInLostMode200Response.md)
+[**DeviceInformationGetDeviceDetails200Response**](DeviceInformationGetDeviceDetails200Response.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceLibraryItems
 
-> EdrStatus200Response GetDeviceLibraryItems(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceLibraryItems200Response GetDeviceLibraryItems(ctx, deviceId).Execute()
 
 Get Device Library Items
 
@@ -400,7 +400,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceLibraryItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceLibraryItems`: EdrStatus200Response
+	// response from `GetDeviceLibraryItems`: DeviceInformationGetDeviceLibraryItems200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceLibraryItems`: %v\n", resp)
 }
 ```
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EdrStatus200Response**](EdrStatus200Response.md)
+[**DeviceInformationGetDeviceLibraryItems200Response**](DeviceInformationGetDeviceLibraryItems200Response.md)
 
 ### Authorization
 
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceLostModeDetails
 
-> GetDeviceLostModeDetails200Response GetDeviceLostModeDetails(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceLostModeDetails200Response GetDeviceLostModeDetails(ctx, deviceId).Execute()
 
 Get Device Lost Mode details
 
@@ -470,7 +470,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceLostModeDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceLostModeDetails`: GetDeviceLostModeDetails200Response
+	// response from `GetDeviceLostModeDetails`: DeviceInformationGetDeviceLostModeDetails200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceLostModeDetails`: %v\n", resp)
 }
 ```
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceLostModeDetails200Response**](GetDeviceLostModeDetails200Response.md)
+[**DeviceInformationGetDeviceLostModeDetails200Response**](DeviceInformationGetDeviceLostModeDetails200Response.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceParameters
 
-> GetDeviceParameters200Response GetDeviceParameters(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceParameters200Response GetDeviceParameters(ctx, deviceId).Execute()
 
 Get Device Parameters
 
@@ -540,7 +540,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceParameters``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceParameters`: GetDeviceParameters200Response
+	// response from `GetDeviceParameters`: DeviceInformationGetDeviceParameters200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceParameters`: %v\n", resp)
 }
 ```
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceParameters200Response**](GetDeviceParameters200Response.md)
+[**DeviceInformationGetDeviceParameters200Response**](DeviceInformationGetDeviceParameters200Response.md)
 
 ### Authorization
 
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceStatus
 
-> GetDeviceStatus200Response GetDeviceStatus(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceStatus200Response GetDeviceStatus(ctx, deviceId).Execute()
 
 Get Device Status
 
@@ -610,7 +610,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceStatus`: GetDeviceStatus200Response
+	// response from `GetDeviceStatus`: DeviceInformationGetDeviceStatus200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceStatus`: %v\n", resp)
 }
 ```
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDeviceStatus200Response**](GetDeviceStatus200Response.md)
+[**DeviceInformationGetDeviceStatus200Response**](DeviceInformationGetDeviceStatus200Response.md)
 
 ### Authorization
 
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDevice
 
-> ClearAllTags200Response UpdateDevice(ctx, deviceId).Body(body).Execute()
+> DeviceInformationUpdateDevice200Response UpdateDevice(ctx, deviceId).Body(body).Execute()
 
 Update Device
 
@@ -787,7 +787,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.UpdateDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateDevice`: ClearAllTags200Response
+	// response from `UpdateDevice`: DeviceInformationUpdateDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.UpdateDevice`: %v\n", resp)
 }
 ```
@@ -812,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClearAllTags200Response**](ClearAllTags200Response.md)
+[**DeviceInformationUpdateDevice200Response**](DeviceInformationUpdateDevice200Response.md)
 
 ### Authorization
 

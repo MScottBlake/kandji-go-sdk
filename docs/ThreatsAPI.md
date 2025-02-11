@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetThreatDetails
 
-> UsingTermParam200Response GetThreatDetails(ctx).Classification(classification).DateRange(dateRange).DeviceId(deviceId).Status(status).SortBy(sortBy).Term(term).Limit(limit).Offset(offset).Execute()
+> ThreatsGetThreatDetails200Response GetThreatDetails(ctx).Classification(classification).DateRange(dateRange).DeviceId(deviceId).Status(status).SortBy(sortBy).Term(term).Limit(limit).Offset(offset).Execute()
 
 Get Threat Details
 
@@ -45,7 +45,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ThreatsAPI.GetThreatDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetThreatDetails`: UsingTermParam200Response
+	// response from `GetThreatDetails`: ThreatsGetThreatDetails200Response
 	fmt.Fprintf(os.Stdout, "Response from `ThreatsAPI.GetThreatDetails`: %v\n", resp)
 }
 ```
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsingTermParam200Response**](UsingTermParam200Response.md)
+[**ThreatsGetThreatDetails200Response**](ThreatsGetThreatDetails200Response.md)
 
 ### Authorization
 

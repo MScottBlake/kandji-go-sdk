@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 ## ActivationLock
 
-> Success200Response9 ActivationLock(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response ActivationLock(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Activation lock
 
@@ -60,7 +60,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.ActivationLock``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ActivationLock`: Success200Response9
+	// response from `ActivationLock`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.ActivationLock`: %v\n", resp)
 }
 ```
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response9**](Success200Response9.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ## ApplicationFirewall
 
-> Success200Response9 ApplicationFirewall(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response ApplicationFirewall(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Application firewall
 
@@ -136,7 +136,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.ApplicationFirewall``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApplicationFirewall`: Success200Response9
+	// response from `ApplicationFirewall`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.ApplicationFirewall`: %v\n", resp)
 }
 ```
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response9**](Success200Response9.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ## Applications
 
-> Success200Response10 Applications(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismApplications200Response Applications(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Applications
 
@@ -212,7 +212,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Applications``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Applications`: Success200Response10
+	// response from `Applications`: PrismApplications200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Applications`: %v\n", resp)
 }
 ```
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response10**](Success200Response10.md)
+[**PrismApplications200Response**](PrismApplications200Response.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ## Certificates
 
-> Success200Response9 Certificates(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response Certificates(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Certificates
 
@@ -288,7 +288,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Certificates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Certificates`: Success200Response9
+	// response from `Certificates`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Certificates`: %v\n", resp)
 }
 ```
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response9**](Success200Response9.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ## Count
 
-> Success200Response13 Count(ctx).Category(category).Execute()
+> PrismCount200Response Count(ctx).Category(category).Execute()
 
 Count
 
@@ -359,7 +359,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Count``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Count`: Success200Response13
+	// response from `Count`: PrismCount200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Count`: %v\n", resp)
 }
 ```
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response13**](Success200Response13.md)
+[**PrismCount200Response**](PrismCount200Response.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 ## DesktopAndScreensaver
 
-> Success200Response9 DesktopAndScreensaver(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response DesktopAndScreensaver(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Desktop and Screensaver
 
@@ -430,7 +430,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.DesktopAndScreensaver``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DesktopAndScreensaver`: Success200Response9
+	// response from `DesktopAndScreensaver`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.DesktopAndScreensaver`: %v\n", resp)
 }
 ```
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response9**](Success200Response9.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ## DeviceInformation
 
-> GetDevicesInABlueprintSortedBySerialNumber200Response DeviceInformation(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Body(body).Execute()
+> PrismDeviceInformation200Response DeviceInformation(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Body(body).Execute()
 
 Device information
 
@@ -507,7 +507,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.DeviceInformation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeviceInformation`: GetDevicesInABlueprintSortedBySerialNumber200Response
+	// response from `DeviceInformation`: PrismDeviceInformation200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.DeviceInformation`: %v\n", resp)
 }
 ```
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetDevicesInABlueprintSortedBySerialNumber200Response**](GetDevicesInABlueprintSortedBySerialNumber200Response.md)
+[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
 
 ### Authorization
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ## Filevault
 
-> Success200Response11 Filevault(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismDeviceInformation200Response Filevault(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 FileVault
 
@@ -584,7 +584,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Filevault``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Filevault`: Success200Response11
+	// response from `Filevault`: PrismDeviceInformation200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Filevault`: %v\n", resp)
 }
 ```
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response11**](Success200Response11.md)
+[**PrismDeviceInformation200Response**](PrismDeviceInformation200Response.md)
 
 ### Authorization
 
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ## GatekeeperAndXprotect
 
-> Success200Response9 GatekeeperAndXprotect(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response GatekeeperAndXprotect(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Gatekeeper and XProtect
 
@@ -660,7 +660,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.GatekeeperAndXprotect``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GatekeeperAndXprotect`: Success200Response9
+	// response from `GatekeeperAndXprotect`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.GatekeeperAndXprotect`: %v\n", resp)
 }
 ```
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response9**](Success200Response9.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
 ## GetCategoryExport
 
-> ExampleExportStatusCheck200Response GetCategoryExport(ctx, exportId).Execute()
+> PrismGetCategoryExport200Response GetCategoryExport(ctx, exportId).Execute()
 
 Get category export
 
@@ -731,7 +731,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.GetCategoryExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCategoryExport`: ExampleExportStatusCheck200Response
+	// response from `GetCategoryExport`: PrismGetCategoryExport200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.GetCategoryExport`: %v\n", resp)
 }
 ```
@@ -755,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExampleExportStatusCheck200Response**](ExampleExportStatusCheck200Response.md)
+[**PrismGetCategoryExport200Response**](PrismGetCategoryExport200Response.md)
 
 ### Authorization
 
@@ -773,7 +773,7 @@ Name | Type | Description  | Notes
 
 ## InstalledProfiles
 
-> Success200Response9 InstalledProfiles(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response InstalledProfiles(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Installed profiles
 
@@ -806,7 +806,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.InstalledProfiles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InstalledProfiles`: Success200Response9
+	// response from `InstalledProfiles`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.InstalledProfiles`: %v\n", resp)
 }
 ```
@@ -831,7 +831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response9**](Success200Response9.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -849,7 +849,7 @@ Name | Type | Description  | Notes
 
 ## KernelExtensions
 
-> SuccessNoKernelExtensions200Response KernelExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response KernelExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Kernel Extensions
 
@@ -882,7 +882,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.KernelExtensions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `KernelExtensions`: SuccessNoKernelExtensions200Response
+	// response from `KernelExtensions`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.KernelExtensions`: %v\n", resp)
 }
 ```
@@ -907,7 +907,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SuccessNoKernelExtensions200Response**](SuccessNoKernelExtensions200Response.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -925,7 +925,7 @@ Name | Type | Description  | Notes
 
 ## LaunchAgentsAndDaemons
 
-> Success200Response9 LaunchAgentsAndDaemons(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response LaunchAgentsAndDaemons(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Launch Agents and Daemons
 
@@ -958,7 +958,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.LaunchAgentsAndDaemons``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LaunchAgentsAndDaemons`: Success200Response9
+	// response from `LaunchAgentsAndDaemons`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.LaunchAgentsAndDaemons`: %v\n", resp)
 }
 ```
@@ -983,7 +983,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response9**](Success200Response9.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1001,7 +1001,7 @@ Name | Type | Description  | Notes
 
 ## LocalUsers
 
-> Success200Response12 LocalUsers(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismLocalUsers200Response LocalUsers(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Local users
 
@@ -1034,7 +1034,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.LocalUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LocalUsers`: Success200Response12
+	// response from `LocalUsers`: PrismLocalUsers200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.LocalUsers`: %v\n", resp)
 }
 ```
@@ -1059,7 +1059,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Success200Response12**](Success200Response12.md)
+[**PrismLocalUsers200Response**](PrismLocalUsers200Response.md)
 
 ### Authorization
 
@@ -1077,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ## RequestCategoryExport
 
-> DeviceInfoForAllIpads200Response RequestCategoryExport(ctx).Body(body).Execute()
+> PrismRequestCategoryExport200Response RequestCategoryExport(ctx).Body(body).Execute()
 
 Request category export
 
@@ -1105,7 +1105,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.RequestCategoryExport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RequestCategoryExport`: DeviceInfoForAllIpads200Response
+	// response from `RequestCategoryExport`: PrismRequestCategoryExport200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.RequestCategoryExport`: %v\n", resp)
 }
 ```
@@ -1125,7 +1125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInfoForAllIpads200Response**](DeviceInfoForAllIpads200Response.md)
+[**PrismRequestCategoryExport200Response**](PrismRequestCategoryExport200Response.md)
 
 ### Authorization
 
@@ -1143,7 +1143,7 @@ Name | Type | Description  | Notes
 
 ## StartupSettings
 
-> StartupSettings200Response StartupSettings(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response StartupSettings(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Startup settings
 
@@ -1176,7 +1176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.StartupSettings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `StartupSettings`: StartupSettings200Response
+	// response from `StartupSettings`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.StartupSettings`: %v\n", resp)
 }
 ```
@@ -1201,7 +1201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StartupSettings200Response**](StartupSettings200Response.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1219,7 +1219,7 @@ Name | Type | Description  | Notes
 
 ## SystemExtensions
 
-> SystemExtensions200Response SystemExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response SystemExtensions(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 System Extensions
 
@@ -1252,7 +1252,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.SystemExtensions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SystemExtensions`: SystemExtensions200Response
+	// response from `SystemExtensions`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.SystemExtensions`: %v\n", resp)
 }
 ```
@@ -1277,7 +1277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SystemExtensions200Response**](SystemExtensions200Response.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 ## TransparencyDatabase
 
-> TransparencyDatabase200Response TransparencyDatabase(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+> PrismActivationLock200Response TransparencyDatabase(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
 
 Transparency database
 
@@ -1328,7 +1328,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.TransparencyDatabase``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TransparencyDatabase`: TransparencyDatabase200Response
+	// response from `TransparencyDatabase`: PrismActivationLock200Response
 	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.TransparencyDatabase`: %v\n", resp)
 }
 ```
@@ -1353,7 +1353,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TransparencyDatabase200Response**](TransparencyDatabase200Response.md)
+[**PrismActivationLock200Response**](PrismActivationLock200Response.md)
 
 ### Authorization
 
