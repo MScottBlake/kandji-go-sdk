@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetActivationLockBypassCode
 
-> DeviceSecretsGetActivationLockBypassCode200Response GetActivationLockBypassCode(ctx, deviceId).Execute()
+> Success200Response5 GetActivationLockBypassCode(ctx, deviceId).Execute()
 
 Get Activation Lock Bypass Code
 
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetActivationLockBypassCode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetActivationLockBypassCode`: DeviceSecretsGetActivationLockBypassCode200Response
+	// response from `GetActivationLockBypassCode`: Success200Response5
 	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetActivationLockBypassCode`: %v\n", resp)
 }
 ```
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetActivationLockBypassCode200Response**](DeviceSecretsGetActivationLockBypassCode200Response.md)
+[**Success200Response5**](Success200Response5.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## GetFilevaultRecoveryKey
 
-> DeviceSecretsGetFilevaultRecoveryKey200Response GetFilevaultRecoveryKey(ctx, deviceId).Execute()
+> Success200Response6 GetFilevaultRecoveryKey(ctx, deviceId).Execute()
 
 Get FileVault Recovery Key
 
@@ -111,7 +111,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetFilevaultRecoveryKey``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetFilevaultRecoveryKey`: DeviceSecretsGetFilevaultRecoveryKey200Response
+	// response from `GetFilevaultRecoveryKey`: Success200Response6
 	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetFilevaultRecoveryKey`: %v\n", resp)
 }
 ```
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetFilevaultRecoveryKey200Response**](DeviceSecretsGetFilevaultRecoveryKey200Response.md)
+[**Success200Response6**](Success200Response6.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GetRecoveryLockPassword
 
-> DeviceSecretsGetRecoveryLockPassword200Response GetRecoveryLockPassword(ctx, deviceId).Execute()
+> Success200Response8 GetRecoveryLockPassword(ctx, deviceId).Execute()
 
 Get Recovery Lock Password
 
@@ -181,7 +181,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetRecoveryLockPassword``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRecoveryLockPassword`: DeviceSecretsGetRecoveryLockPassword200Response
+	// response from `GetRecoveryLockPassword`: Success200Response8
 	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetRecoveryLockPassword`: %v\n", resp)
 }
 ```
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetRecoveryLockPassword200Response**](DeviceSecretsGetRecoveryLockPassword200Response.md)
+[**Success200Response8**](Success200Response8.md)
 
 ### Authorization
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ## GetUnlockPin
 
-> DeviceSecretsGetUnlockPin200Response GetUnlockPin(ctx, deviceId).Execute()
+> Success200Response7 GetUnlockPin(ctx, deviceId).Execute()
 
 Get Unlock Pin
 
@@ -251,7 +251,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceSecretsAPI.GetUnlockPin``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUnlockPin`: DeviceSecretsGetUnlockPin200Response
+	// response from `GetUnlockPin`: Success200Response7
 	fmt.Fprintf(os.Stdout, "Response from `DeviceSecretsAPI.GetUnlockPin`: %v\n", resp)
 }
 ```
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceSecretsGetUnlockPin200Response**](DeviceSecretsGetUnlockPin200Response.md)
+[**Success200Response7**](Success200Response7.md)
 
 ### Authorization
 

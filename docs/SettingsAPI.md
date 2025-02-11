@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## Licensing
 
-> SettingsLicensing200Response Licensing(ctx).Execute()
+> Success200Response17 Licensing(ctx).Execute()
 
 Licensing
 
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.Licensing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Licensing`: SettingsLicensing200Response
+	// response from `Licensing`: Success200Response17
 	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.Licensing`: %v\n", resp)
 }
 ```
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiLicensingRequest struct vi
 
 ### Return type
 
-[**SettingsLicensing200Response**](SettingsLicensing200Response.md)
+[**Success200Response17**](Success200Response17.md)
 
 ### Authorization
 

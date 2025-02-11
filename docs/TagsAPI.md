@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateTag
 
-> TagsCreateTag201Response CreateTag(ctx).Body(body).Execute()
+> Success201Response1 CreateTag(ctx).Body(body).Execute()
 
 Create Tag
 
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.CreateTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateTag`: TagsCreateTag201Response
+	// response from `CreateTag`: Success201Response1
 	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.CreateTag`: %v\n", resp)
 }
 ```
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**Success201Response1**](Success201Response1.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ## GetTags
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response GetTags(ctx).Search(search).Execute()
+> Success200Response GetTags(ctx).Search(search).Execute()
 
 Get Tags
 
@@ -175,7 +175,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.GetTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTags`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `GetTags`: Success200Response
 	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.GetTags`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**Success200Response**](Success200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTag
 
-> TagsCreateTag201Response UpdateTag(ctx, tagId).Body(body).Execute()
+> Success200Response14 UpdateTag(ctx, tagId).Body(body).Execute()
 
 Update Tag
 
@@ -242,7 +242,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.UpdateTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateTag`: TagsCreateTag201Response
+	// response from `UpdateTag`: Success200Response14
 	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.UpdateTag`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**Success200Response14**](Success200Response14.md)
 
 ### Authorization
 

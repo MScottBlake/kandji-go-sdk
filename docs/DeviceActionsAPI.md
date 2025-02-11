@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceCommands
 
-> DeviceActionsGetDeviceCommands200Response GetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
+> GetDeviceCommands200Response GetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
 
 Get Device Commands
 
@@ -330,7 +330,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.GetDeviceCommands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceCommands`: DeviceActionsGetDeviceCommands200Response
+	// response from `GetDeviceCommands`: GetDeviceCommands200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceActionsAPI.GetDeviceCommands`: %v\n", resp)
 }
 ```
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceActionsGetDeviceCommands200Response**](DeviceActionsGetDeviceCommands200Response.md)
+[**GetDeviceCommands200Response**](GetDeviceCommands200Response.md)
 
 ### Authorization
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ## LockDevice
 
-> DeviceActionsLockDevice200Response LockDevice(ctx, deviceId).Body(body).Execute()
+> Success200Response4 LockDevice(ctx, deviceId).Body(body).Execute()
 
 Lock Device
 
@@ -403,7 +403,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.LockDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LockDevice`: DeviceActionsLockDevice200Response
+	// response from `LockDevice`: Success200Response4
 	fmt.Fprintf(os.Stdout, "Response from `DeviceActionsAPI.LockDevice`: %v\n", resp)
 }
 ```
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceActionsLockDevice200Response**](DeviceActionsLockDevice200Response.md)
+[**Success200Response4**](Success200Response4.md)
 
 ### Authorization
 

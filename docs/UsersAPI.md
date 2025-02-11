@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GetUser
 
-> UsersGetUser200Response GetUser(ctx, userId).Execute()
+> Success200Response16 GetUser(ctx, userId).Execute()
 
 Get User
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.GetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUser`: UsersGetUser200Response
+	// response from `GetUser`: Success200Response16
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.GetUser`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersGetUser200Response**](UsersGetUser200Response.md)
+[**Success200Response16**](Success200Response16.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ListUsers
 
-> UsersListUsers200Response ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
+> Success200Response15 ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
 
 List Users
 
@@ -181,7 +181,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.ListUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListUsers`: UsersListUsers200Response
+	// response from `ListUsers`: Success200Response15
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.ListUsers`: %v\n", resp)
 }
 ```
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersListUsers200Response**](UsersListUsers200Response.md)
+[**Success200Response15**](Success200Response15.md)
 
 ### Authorization
 

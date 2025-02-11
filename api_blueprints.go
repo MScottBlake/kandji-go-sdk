@@ -95,8 +95,8 @@ type BlueprintsAPI interface {
 	CreateBlueprint(ctx context.Context) ApiCreateBlueprintRequest
 
 	// CreateBlueprintExecute executes the request
-	//  @return BlueprintsCreateBlueprint201Response
-	CreateBlueprintExecute(r ApiCreateBlueprintRequest) (*BlueprintsCreateBlueprint201Response, *http.Response, error)
+	//  @return Success201Response
+	CreateBlueprintExecute(r ApiCreateBlueprintRequest) (*Success201Response, *http.Response, error)
 
 	/*
 	DeleteBlueprint Delete Blueprint
@@ -130,8 +130,8 @@ type BlueprintsAPI interface {
 	GetBlueprint(ctx context.Context, blueprintId string) ApiGetBlueprintRequest
 
 	// GetBlueprintExecute executes the request
-	//  @return BlueprintsGetBlueprint200Response
-	GetBlueprintExecute(r ApiGetBlueprintRequest) (*BlueprintsGetBlueprint200Response, *http.Response, error)
+	//  @return Success200Response2
+	GetBlueprintExecute(r ApiGetBlueprintRequest) (*Success200Response2, *http.Response, error)
 
 	/*
 	GetBlueprintTemplates Get Blueprint Templates
@@ -181,8 +181,8 @@ type BlueprintsAPI interface {
 	ListBlueprints(ctx context.Context) ApiListBlueprintsRequest
 
 	// ListBlueprintsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	ListBlueprintsExecute(r ApiListBlueprintsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
+	//  @return Success200Response
+	ListBlueprintsExecute(r ApiListBlueprintsRequest) (*Success200Response, *http.Response, error)
 
 	/*
 	ListLibraryItems List Library Items
@@ -215,8 +215,8 @@ type BlueprintsAPI interface {
 	ListLibraryItems(ctx context.Context, blueprintId string) ApiListLibraryItemsRequest
 
 	// ListLibraryItemsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
+	//  @return Success200Response
+	ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*Success200Response, *http.Response, error)
 
 	/*
 	RemoveLibraryItem Remove Library Item
@@ -288,8 +288,8 @@ type BlueprintsAPI interface {
 	UpdateBlueprint(ctx context.Context, blueprintId string) ApiUpdateBlueprintRequest
 
 	// UpdateBlueprintExecute executes the request
-	//  @return BlueprintsUpdateBlueprint200Response
-	UpdateBlueprintExecute(r ApiUpdateBlueprintRequest) (*BlueprintsUpdateBlueprint200Response, *http.Response, error)
+	//  @return Success200Response3
+	UpdateBlueprintExecute(r ApiUpdateBlueprintRequest) (*Success200Response3, *http.Response, error)
 }
 
 // BlueprintsAPIService BlueprintsAPI service
@@ -497,7 +497,7 @@ func (r ApiCreateBlueprintRequest) Type_(type_ string) ApiCreateBlueprintRequest
 	return r
 }
 
-func (r ApiCreateBlueprintRequest) Execute() (*BlueprintsCreateBlueprint201Response, *http.Response, error) {
+func (r ApiCreateBlueprintRequest) Execute() (*Success201Response, *http.Response, error) {
 	return r.ApiService.CreateBlueprintExecute(r)
 }
 
@@ -519,13 +519,13 @@ func (a *BlueprintsAPIService) CreateBlueprint(ctx context.Context) ApiCreateBlu
 }
 
 // Execute executes the request
-//  @return BlueprintsCreateBlueprint201Response
-func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintRequest) (*BlueprintsCreateBlueprint201Response, *http.Response, error) {
+//  @return Success201Response
+func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintRequest) (*Success201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BlueprintsCreateBlueprint201Response
+		localVarReturnValue  *Success201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.CreateBlueprint")
@@ -729,7 +729,7 @@ type ApiGetBlueprintRequest struct {
 	blueprintId string
 }
 
-func (r ApiGetBlueprintRequest) Execute() (*BlueprintsGetBlueprint200Response, *http.Response, error) {
+func (r ApiGetBlueprintRequest) Execute() (*Success200Response2, *http.Response, error) {
 	return r.ApiService.GetBlueprintExecute(r)
 }
 
@@ -753,13 +753,13 @@ func (a *BlueprintsAPIService) GetBlueprint(ctx context.Context, blueprintId str
 }
 
 // Execute executes the request
-//  @return BlueprintsGetBlueprint200Response
-func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*BlueprintsGetBlueprint200Response, *http.Response, error) {
+//  @return Success200Response2
+func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*Success200Response2, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BlueprintsGetBlueprint200Response
+		localVarReturnValue  *Success200Response2
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.GetBlueprint")
@@ -1098,7 +1098,7 @@ func (r ApiListBlueprintsRequest) Offset(offset string) ApiListBlueprintsRequest
 	return r
 }
 
-func (r ApiListBlueprintsRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+func (r ApiListBlueprintsRequest) Execute() (*Success200Response, *http.Response, error) {
 	return r.ApiService.ListBlueprintsExecute(r)
 }
 
@@ -1118,13 +1118,13 @@ func (a *BlueprintsAPIService) ListBlueprints(ctx context.Context) ApiListBluepr
 }
 
 // Execute executes the request
-//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+//  @return Success200Response
+func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest) (*Success200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+		localVarReturnValue  *Success200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.ListBlueprints")
@@ -1213,7 +1213,7 @@ type ApiListLibraryItemsRequest struct {
 	blueprintId string
 }
 
-func (r ApiListLibraryItemsRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+func (r ApiListLibraryItemsRequest) Execute() (*Success200Response, *http.Response, error) {
 	return r.ApiService.ListLibraryItemsExecute(r)
 }
 
@@ -1254,13 +1254,13 @@ func (a *BlueprintsAPIService) ListLibraryItems(ctx context.Context, blueprintId
 }
 
 // Execute executes the request
-//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+//  @return Success200Response
+func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*Success200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+		localVarReturnValue  *Success200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.ListLibraryItems")
@@ -1515,7 +1515,7 @@ func (r ApiUpdateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive
 	return r
 }
 
-func (r ApiUpdateBlueprintRequest) Execute() (*BlueprintsUpdateBlueprint200Response, *http.Response, error) {
+func (r ApiUpdateBlueprintRequest) Execute() (*Success200Response3, *http.Response, error) {
 	return r.ApiService.UpdateBlueprintExecute(r)
 }
 
@@ -1539,13 +1539,13 @@ func (a *BlueprintsAPIService) UpdateBlueprint(ctx context.Context, blueprintId 
 }
 
 // Execute executes the request
-//  @return BlueprintsUpdateBlueprint200Response
-func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintRequest) (*BlueprintsUpdateBlueprint200Response, *http.Response, error) {
+//  @return Success200Response3
+func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintRequest) (*Success200Response3, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BlueprintsUpdateBlueprint200Response
+		localVarReturnValue  *Success200Response3
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.UpdateBlueprint")

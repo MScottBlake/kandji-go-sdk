@@ -418,6 +418,7 @@ paths:
                   HA2a80rO+vlrUn8GR31yTlpazvalccuSuTpIO9VLxweB
                   -----END CERTIFICATE-----
               schema:
+                title: downloadPublicKey_200_Response
                 type: string
           description: OK
           headers:
@@ -614,7 +615,7 @@ paths:
                   device_counts:
                     total: 0
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response'
+                $ref: '#/components/schemas/createIntegration_200_Response'
           description: OK
           headers:
             Date:
@@ -1717,7 +1718,7 @@ paths:
                     failed_assignment_attempts: 0
                     assignment_status_received_at: 2022-06-30T19:09:58.070000Z
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listDevicesAssociatedToAdeToken_200_response'
+                $ref: '#/components/schemas/listAssociatedDevicesNullMdmDevice_200_Response'
           description: OK
           headers:
             Date:
@@ -2033,7 +2034,7 @@ paths:
                     blueprint: c4d2da33-99f0-4ed4-b7a5-731f78b0c1e2
                     user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
+                $ref: '#/components/schemas/success_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -2053,7 +2054,7 @@ paths:
                   dep_account:
                   - Enter a valid UUID.
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_400_response'
+                $ref: '#/components/schemas/invalidUuid_400_Response'
           description: Bad Request
           headers:
             Content-Type:
@@ -2125,7 +2126,7 @@ paths:
                   blueprint: c4d2da33-99f0-4ed4-b7a5-731f78b0c1e2
                   user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response'
+                $ref: '#/components/schemas/success_200_Response_1'
           description: OK
           headers:
             Content-Type:
@@ -2209,7 +2210,7 @@ paths:
                   blueprint: b38787e4-401c-4c4b-86dc-f1cca2072531
                   user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response'
+                $ref: '#/components/schemas/updateUserAssignment_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -2331,7 +2332,7 @@ paths:
                       is_active: true
                     type: map
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
+                $ref: '#/components/schemas/success_200_Response'
           description: OK
           headers:
             Date:
@@ -2500,7 +2501,7 @@ paths:
                     is_active: true
                   type: map
               schema:
-                $ref: '#/components/schemas/blueprints_createBlueprint_201_response'
+                $ref: '#/components/schemas/success_201_Response'
           description: Created
           headers:
             Content-Type:
@@ -2519,6 +2520,7 @@ paths:
                 value:
                 - Blueprint type does not match the source blueprint type
               schema:
+                title: 400TypeDoesNotMatchSourceidBlueprintType_400_Response
                 type: object
           description: Bad Request
           headers:
@@ -2603,7 +2605,7 @@ paths:
                     is_active: true
                   type: classic
               schema:
-                $ref: '#/components/schemas/blueprints_getBlueprint_200_response'
+                $ref: '#/components/schemas/success_200_Response_2'
           description: OK
           headers:
             Date:
@@ -2783,7 +2785,7 @@ paths:
                     code: "999858"
                     is_active: false
               schema:
-                $ref: '#/components/schemas/blueprints_updateBlueprint_200_response'
+                $ref: '#/components/schemas/success_200_Response_3'
           description: OK
           headers:
             Date:
@@ -2972,6 +2974,7 @@ paths:
               example:
                 value: <Raw Manual Enrollment .mobileconfig file>
               schema:
+                title: getManualEnrollmentProfile_200_Response
                 type: string
           description: OK
           headers:
@@ -3331,7 +3334,7 @@ paths:
                   - id: 994dbaf3-839a-4c11-8f80-3e0b6daee473
                     name: agent_debug_logging
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
+                $ref: '#/components/schemas/success_200_Response'
           description: OK
           headers:
             Connection:
@@ -3704,6 +3707,7 @@ paths:
                 - e3d94912-d8bd-474b-9b90-c32288f84f99
                 - 0563461d-de5d-4218-9350-43e624f607ee
               schema:
+                title: successClassic_200_Response
                 type: object
           description: OK
           headers:
@@ -3902,6 +3906,7 @@ paths:
                 - a6063468-48aa-4e52-a098-fd9c7902201e
                 - e3d94912-d8bd-474b-9b90-c32288f84f99
               schema:
+                title: successClassic_200_Response
                 type: object
           description: OK
           headers:
@@ -4381,6 +4386,7 @@ paths:
                   lost_mode_status: ""
                   tags: []
               schema:
+                title: listIpadOnly_200_Response
                 type: object
           description: OK
           headers:
@@ -4476,7 +4482,7 @@ paths:
                   tags:
                   - accuhive_02
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDevice_200_response'
+                $ref: '#/components/schemas/getIpad_200_Response'
           description: OK
           headers:
             Date:
@@ -4703,7 +4709,7 @@ paths:
                   lost_mode_status: ""
                   tags: []
               schema:
-                $ref: '#/components/schemas/deviceInformation_updateDevice_200_response'
+                $ref: '#/components/schemas/clearAllTags_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -4847,7 +4853,7 @@ paths:
                     subscriptions: null
                   tags: []
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response'
+                $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -4935,7 +4941,7 @@ paths:
                     sound_status: SUCCESS
                     sound_status_at: 2022-12-13T20:21:38.992261Z
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceLostModeDetails_200_response'
+                $ref: '#/components/schemas/getDeviceLostModeDetails_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -6317,7 +6323,7 @@ paths:
                         is_removed: false
                       user: null
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceActivity_200_response'
+                $ref: '#/components/schemas/getDeviceActivity_200_Response'
           description: OK
           headers:
             Date:
@@ -6495,7 +6501,7 @@ paths:
                     path: ""
                     version: "47"
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceApps_200_response'
+                $ref: '#/components/schemas/ipadApps_200_Response'
           description: OK
           headers:
             Date:
@@ -6790,7 +6796,7 @@ paths:
                       baseline_scan_runtime: "Kandji checked 339,254 files in 3 minutes,\
                         \ 41 seconds."
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceLibraryItems_200_response'
+                $ref: '#/components/schemas/edrStatus_200_Response'
           description: OK
           headers:
             Date:
@@ -7004,7 +7010,7 @@ paths:
                     category: User Accounts & Authentication
                     subcategory: User Accounts
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceParameters_200_response'
+                $ref: '#/components/schemas/getDeviceParameters_200_Response'
           description: OK
           headers:
             Date:
@@ -7386,7 +7392,7 @@ paths:
                     category: User Accounts & Authentication
                     subcategory: User Accounts
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceStatus_200_response'
+                $ref: '#/components/schemas/getDeviceStatus_200_Response'
           description: OK
           headers:
             Date:
@@ -7795,6 +7801,7 @@ paths:
               example:
                 value: The specified profile is not in scope for the device
               schema:
+                title: rtsProfileNotInScope_400_Response
                 type: object
           description: Bad Request
           headers:
@@ -7959,7 +7966,7 @@ paths:
                       priority: 0
                     - {}
               schema:
-                $ref: '#/components/schemas/deviceActions_getDeviceCommands_200_response'
+                $ref: '#/components/schemas/getDeviceCommands_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -8035,7 +8042,7 @@ paths:
                 value:
                   PIN: "496406"
               schema:
-                $ref: '#/components/schemas/deviceActions_lockDevice_200_response'
+                $ref: '#/components/schemas/success_200_Response_4'
           description: OK
           headers:
             Date:
@@ -8173,6 +8180,7 @@ paths:
               example:
                 value: This device is already locked.
               schema:
+                title: deviceAlreadyLocked_400_Response
                 type: object
           description: Bad Request
           headers:
@@ -9471,7 +9479,7 @@ paths:
                   user_based_albc: A00M6-04XTY-YDMG-JNTE-EMZ3-FTJ5
                   device_based_albc: A00M6-04XTY-YDMG-JNTE-EMZ3-FTJ5
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getActivationLockBypassCode_200_response'
+                $ref: '#/components/schemas/success_200_Response_5'
           description: OK
           headers:
             Date:
@@ -9636,7 +9644,7 @@ paths:
                 value:
                   key: 9A2U-CDK6-P6NH-FAB3-LTUH-2MYP
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getFilevaultRecoveryKey_200_response'
+                $ref: '#/components/schemas/success_200_Response_6'
           description: OK
           headers:
             Date:
@@ -9801,7 +9809,7 @@ paths:
                 value:
                   pin: "192746"
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getUnlockPin_200_response'
+                $ref: '#/components/schemas/success_200_Response_7'
           description: OK
           headers:
             Date:
@@ -9967,7 +9975,7 @@ paths:
                 value:
                   recovery_password: AAAAA-BBBBB-CCCC-1111-2222-3333
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getRecoveryLockPassword_200_response'
+                $ref: '#/components/schemas/success_200_Response_8'
           description: OK
           headers:
             Date:
@@ -10250,7 +10258,7 @@ paths:
                     user_email: accuhive@kandji.io`
                     details: null
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
+                $ref: '#/components/schemas/success_200_Response'
           description: OK
           headers:
             Connection:
@@ -10667,7 +10675,7 @@ paths:
                     edr_status: null
                     type: threat-security-policy
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
+                $ref: '#/components/schemas/edrStatus_200_Response_1'
           description: OK
           headers:
             Connection:
@@ -11099,7 +11107,7 @@ paths:
                     is_activation_lock_supported: true
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/success_200_Response_9'
           description: OK
           headers:
             Connection:
@@ -11465,7 +11473,7 @@ paths:
                     team_id: null
                   cursor: NzgyZjQwNTQtYjk3MS00YmVjLTg1MGItN2JmMTNjZTgwNmZlfDIyMzc1M2VkLTE3NjgtNGU1Zi05ZGRjLTUxNDhiYmQyZGY1NQ==
               schema:
-                $ref: '#/components/schemas/prism_applications_200_response'
+                $ref: '#/components/schemas/success_200_Response_10'
           description: OK
           headers:
             Connection:
@@ -11823,7 +11831,7 @@ paths:
                     unloading: false
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/success_200_Response_9'
           description: OK
           headers:
             Date:
@@ -12098,7 +12106,7 @@ paths:
                     identity_certificate: true
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/success_200_Response_9'
           description: OK
           headers:
             Connection:
@@ -12493,7 +12501,7 @@ paths:
                     bottom_right_hot_corner_modifier: No Modifiers
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/success_200_Response_9'
           description: OK
           headers:
             Date:
@@ -12830,7 +12838,7 @@ paths:
                     display_os_version: 14.1.1
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_deviceInformation_200_response'
+                $ref: '#/components/schemas/getDevicesInABlueprintSortedBySerialNumber_200_Response'
           description: OK
           headers:
             Date:
@@ -13106,7 +13114,7 @@ paths:
                     updated_at: 2023-06-29T20:55:57.168486+00:00
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_deviceInformation_200_response'
+                $ref: '#/components/schemas/success_200_Response_11'
           description: OK
           headers:
             Date:
@@ -13401,7 +13409,7 @@ paths:
                     malware_removal_tool_version: "1.93"
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/success_200_Response_9'
           description: OK
           headers:
             Date:
@@ -14359,7 +14367,7 @@ paths:
                       organization: "Kandji, Inc."
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/success_200_Response_9'
           description: OK
           headers:
             Date:
@@ -14619,7 +14627,7 @@ paths:
                   data: []
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/successNoKernelExtensions_200_Response'
           description: OK
           headers:
             Date:
@@ -15229,7 +15237,7 @@ paths:
                     disabled: null
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/success_200_Response_9'
           description: OK
           headers:
             Date:
@@ -15523,7 +15531,7 @@ paths:
                     home_folder_secure: false
                   cursor: NzgyZjQwNTQtYjk3MS00YmVjLTg1MGItN2JmMTNjZTgwNmZlfDc4
               schema:
-                $ref: '#/components/schemas/prism_localUsers_200_response'
+                $ref: '#/components/schemas/success_200_Response_12'
           description: OK
           headers:
             Date:
@@ -15833,7 +15841,7 @@ paths:
                     user_manages_kext: null
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/startupSettings_200_Response'
           description: OK
           headers:
             Date:
@@ -16143,7 +16151,7 @@ paths:
                     user_manages_kext: null
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/systemExtensions_200_Response'
           description: OK
           headers:
             Date:
@@ -16439,7 +16447,7 @@ paths:
                     updated_at: 2023-11-08T16:19:01.040860+00:00
                   cursor: null
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: '#/components/schemas/transparencyDatabase_200_Response'
           description: OK
           headers:
             Date:
@@ -16690,7 +16698,7 @@ paths:
                   created_at: 2023-09-15T17:26:33.578350+00:00
                   updated_at: 2023-09-15T17:26:33.578350+00:00
               schema:
-                $ref: '#/components/schemas/prism_requestCategoryExport_200_response'
+                $ref: '#/components/schemas/deviceInfoForAllIpads_200_Response'
           description: OK
           headers:
             Date:
@@ -16853,7 +16861,7 @@ paths:
                 value:
                   detail: "Invalid category: application_firewal"
               schema:
-                $ref: '#/components/schemas/prism_requestCategoryExport_400_response'
+                $ref: '#/components/schemas/badCategoryRequest_400_Response'
           description: Bad Request
           headers:
             Date:
@@ -17046,7 +17054,7 @@ paths:
                   created_at: 2023-09-14T20:57:59.298293+00:00
                   updated_at: 2023-09-14T20:58:00.341603+00:00
               schema:
-                $ref: '#/components/schemas/prism_getCategoryExport_200_response'
+                $ref: '#/components/schemas/exampleExportStatusCheck_200_Response'
           description: OK
           headers:
             Date:
@@ -17242,7 +17250,7 @@ paths:
                   count: 3
                   approximate: false
               schema:
-                $ref: '#/components/schemas/prism_count_200_response'
+                $ref: '#/components/schemas/success_200_Response_13'
           description: OK
           headers:
             Date:
@@ -17438,7 +17446,7 @@ paths:
                   - id: 4fe23c39-7a9a-435c-bab3-d2e9fd1974c6
                     name: accuhive_02
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
+                $ref: '#/components/schemas/success_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -17478,7 +17486,7 @@ paths:
                   id: 1467cc35-39e3-435d-8816-34c849c15bc3
                   name: accuhive_01
               schema:
-                $ref: '#/components/schemas/tags_createTag_201_response'
+                $ref: '#/components/schemas/success_201_Response_1'
           description: Created
           headers:
             Content-Type:
@@ -17559,7 +17567,7 @@ paths:
                   id: 4fe23c39-7a9a-435c-bab3-d2e9fd1974c6
                   name: accuhive_02
               schema:
-                $ref: '#/components/schemas/tags_createTag_201_response'
+                $ref: '#/components/schemas/success_200_Response_14'
           description: OK
           headers:
             Content-Type:
@@ -17740,7 +17748,7 @@ paths:
                     pup_posture: protect
                     malware_posture: protect
               schema:
-                $ref: '#/components/schemas/threats_getThreatDetails_200_response'
+                $ref: '#/components/schemas/usingTermParam_200_Response'
           description: OK
           headers:
             Content-Type:
@@ -17859,7 +17867,7 @@ paths:
                     device_count: 0
                     updated_at: 2024-09-06T17:00:04.503814Z
               schema:
-                $ref: '#/components/schemas/users_listUsers_200_response'
+                $ref: '#/components/schemas/success_200_Response_15'
           description: OK
           headers:
             Content-Type:
@@ -17921,7 +17929,7 @@ paths:
                 value:
                   detail: User still assigned to one or more devices.
               schema:
-                $ref: '#/components/schemas/prism_requestCategoryExport_400_response'
+                $ref: '#/components/schemas/userAssignedToDevice_400_Response'
           description: Bad Request
           headers:
             Content-Type:
@@ -17978,7 +17986,7 @@ paths:
                   device_count: 2
                   updated_at: 2024-09-06T21:00:04.304280Z
               schema:
-                $ref: '#/components/schemas/users_getUser_200_response'
+                $ref: '#/components/schemas/success_200_Response_16'
           description: OK
           headers:
             Content-Type:
@@ -18022,7 +18030,7 @@ paths:
                       ios_ipados: 0
                   tenantOverLicenseLimit: false
               schema:
-                $ref: '#/components/schemas/settings_licensing_200_response'
+                $ref: '#/components/schemas/success_200_Response_17'
           description: OK
           headers:
             Content-Type:
@@ -18041,10 +18049,74 @@ paths:
       - Settings
 components:
   schemas:
-    deviceActions_getDeviceCommands_200_response:
+    success_201_Response_1:
+      example:
+        name: name
+        id: id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      title: success_201_Response
+    createIntegration_200_Response_device_counts:
+      example:
+        total: 6
+      properties:
+        total:
+          type: integer
+    userAssignedToDevice_400_Response:
+      example:
+        detail: detail
+      properties:
+        detail:
+          type: string
+      title: userAssignedToDevice_400_Response
+    success_200_Response_17_limits_max_devices_per_platform:
+      example:
+        ios_ipados: 9
+        macos: 7
+      properties:
+        macos:
+          type: integer
+        ios_ipados:
+          type: integer
+    iphoneOrIpadInLostMode_200_Response_recovery_information:
+      example:
+        firmware_password_pending: 7
+        firmware_password_exist: 4
+        recovery_lock_enabled: 2
+        password_rotation_scheduled: ""
+      properties:
+        recovery_lock_enabled:
+          type: integer
+        firmware_password_exist:
+          type: integer
+        firmware_password_pending:
+          type: integer
+        password_rotation_scheduled: {}
+    ipadApps_200_Response:
       example:
         device_id: device_id
-        commands:
+        apps: ""
+      properties:
+        device_id:
+          type: string
+        apps: {}
+      title: ipadApps_200_Response
+    success_200_Response_1_dep_account:
+      example:
+        server_name: server_name
+        id: id
+      properties:
+        id:
+          type: string
+        server_name:
+          type: string
+    getDeviceActivity_200_Response:
+      example:
+        device_id: device_id
+        activity:
           next: ""
           previous: ""
           count: 0
@@ -18052,271 +18124,10 @@ components:
       properties:
         device_id:
           type: string
-        commands:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
-    settings_licensing_200_response:
-      example:
-        tenantOverLicenseLimit: 3
-        counts:
-          computers_count: 0
-          ipados_count: 1
-          tvos_count: 5
-          ios_count: 6
-          macos_count: 5
-        limits:
-          plan_type: plan_type
-          max_devices: 2
-          max_devices_per_platform:
-            ios_ipados: 9
-            macos: 7
-      properties:
-        counts:
-          $ref: '#/components/schemas/settings_licensing_200_response_counts'
-        limits:
-          $ref: '#/components/schemas/settings_licensing_200_response_limits'
-        tenantOverLicenseLimit:
-          type: integer
-    deviceInformation_getDeviceDetails_200_response_activation_lock:
-      example:
-        user_activation_lock_enabled: 6
-        device_activation_lock_enabled: 1
-        activation_lock_supported: 5
-        bypass_code_failed: 0
-        activation_lock_allowed_while_supervised: 5
-      properties:
-        bypass_code_failed:
-          type: integer
-        user_activation_lock_enabled:
-          type: integer
-        device_activation_lock_enabled:
-          type: integer
-        activation_lock_allowed_while_supervised:
-          type: integer
-        activation_lock_supported:
-          type: integer
-    deviceInformation_getDeviceDetails_200_response_cellular:
-      example:
-        subscriptions: ""
-        voice_roaming: 1
-        cellular_technology: 1
-        data_roaming: 1
-      properties:
-        voice_roaming:
-          type: integer
-        data_roaming:
-          type: integer
-        cellular_technology:
-          type: integer
-        subscriptions: {}
-    prism_getCategoryExport_200_response:
-      example:
-        args:
-          filter: "{}"
-          columns: ""
-          sort_by: sort_by
-          device_families: ""
-          blueprint_ids: ""
-        path: path
-        signed_url: signed_url
-        error_msg: ""
-        updated_at: updated_at
-        created_at: created_at
-        id: id
-        category: category
-        status: status
-      properties:
-        id:
-          type: string
-        status:
-          type: string
-        category:
-          type: string
-        args:
-          $ref: '#/components/schemas/prism_requestCategoryExport_200_response_args'
-        error_msg: {}
-        path:
-          type: string
-        signed_url:
-          type: string
-        created_at:
-          type: string
-        updated_at:
-          type: string
-    deviceInformation_getDeviceDetails_200_response_kandji_agent:
-      example:
-        agent_version: agent_version
-        agent_installed: agent_installed
-        install_date: install_date
-        last_check_in: last_check_in
-      properties:
-        agent_installed:
-          type: string
-        install_date:
-          type: string
-        last_check_in:
-          type: string
-        agent_version:
-          type: string
-    users_getUser_200_response_integration:
-      example:
-        name: name
-        id: 1
-        type: type
-        uuid: uuid
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-        uuid:
-          type: string
-        type:
-          type: string
-    deviceInformation_getDeviceLibraryItems_200_response:
-      example:
-        device_id: device_id
-        library_items: ""
-      properties:
-        device_id:
-          type: string
-        library_items: {}
-    deviceSecrets_getFilevaultRecoveryKey_200_response:
-      example:
-        key: key
-      properties:
-        key:
-          type: string
-    prism_count_200_response:
-      example:
-        approximate: 6
-        count: 0
-      properties:
-        count:
-          type: integer
-        approximate:
-          type: integer
-    deviceInformation_getDevice_200_response:
-      example:
-        asset_tag: asset_tag
-        agent_installed: 1
-        device_id: device_id
-        os_version: os_version
-        serial_number: serial_number
-        mdm_enabled: 6
-        is_removed: 5
-        blueprint_name: blueprint_name
-        supplemental_build_version: supplemental_build_version
-        platform: platform
-        blueprint_id: blueprint_id
-        tags: ""
-        agent_version: agent_version
-        device_name: device_name
-        last_enrollment: last_enrollment
-        supplemental_os_version_extra: supplemental_os_version_extra
-        first_enrollment: first_enrollment
-        model: model
-        is_missing: 5
-        user:
-          is_archived: 0
-          name: name
-          id: id
-          email: email
-        last_check_in: last_check_in
-      properties:
-        device_id:
-          type: string
-        device_name:
-          type: string
-        model:
-          type: string
-        serial_number:
-          type: string
-        platform:
-          type: string
-        os_version:
-          type: string
-        supplemental_build_version:
-          type: string
-        supplemental_os_version_extra:
-          type: string
-        last_check_in:
-          type: string
-        user:
-          $ref: '#/components/schemas/deviceInformation_getDevice_200_response_user'
-        asset_tag:
-          type: string
-        blueprint_id:
-          type: string
-        mdm_enabled:
-          type: integer
-        agent_installed:
-          type: integer
-        is_missing:
-          type: integer
-        is_removed:
-          type: integer
-        agent_version:
-          type: string
-        first_enrollment:
-          type: string
-        last_enrollment:
-          type: string
-        blueprint_name:
-          type: string
-        tags: {}
-    prism_requestCategoryExport_400_response:
-      example:
-        detail: detail
-      properties:
-        detail:
-          type: string
-    users_getUser_200_response:
-      example:
-        deprecated_user_id: deprecated_user_id
-        archived: 6
-        updated_at: updated_at
-        integration:
-          name: name
-          id: 1
-          type: type
-          uuid: uuid
-        name: name
-        active: 0
-        created_at: created_at
-        id: id
-        department: ""
-        job_title: ""
-        email: email
-        device_count: 5
-      properties:
-        active:
-          type: integer
-        archived:
-          type: integer
-        created_at:
-          type: string
-        department: {}
-        deprecated_user_id:
-          type: string
-        email:
-          type: string
-        id:
-          type: string
-        integration:
-          $ref: '#/components/schemas/users_getUser_200_response_integration'
-        job_title: {}
-        name:
-          type: string
-        device_count:
-          type: integer
-        updated_at:
-          type: string
-    automatedDeviceEnrollmentIntegrations_listAdeDevices_400_response:
-      example:
-        dep_account: ""
-      properties:
-        dep_account: {}
-    blueprints_createBlueprint_201_response:
+        activity:
+          $ref: '#/components/schemas/getDeviceActivity_200_Response_activity'
+      title: getDeviceActivity_200_Response
+    success_201_Response:
       example:
         color: color
         name: name
@@ -18343,55 +18154,11 @@ components:
           properties: {}
           type: object
         enrollment_code:
-          $ref: '#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code'
+          $ref: '#/components/schemas/success_201_Response_enrollment_code'
         type:
           type: string
-    deviceInformation_getDeviceDetails_200_response_apple_business_manager:
-      example:
-        color: color
-        os: os
-        device_assigned_date: device_assigned_date
-        description: description
-        device_family: device_family
-        model: model
-        serial_number: serial_number
-        device_assigned_by: device_assigned_by
-      properties:
-        model:
-          type: string
-        color:
-          type: string
-        description:
-          type: string
-        serial_number:
-          type: string
-        device_family:
-          type: string
-        os:
-          type: string
-        device_assigned_date:
-          type: string
-        device_assigned_by:
-          type: string
-    settings_licensing_200_response_counts:
-      example:
-        computers_count: 0
-        ipados_count: 1
-        tvos_count: 5
-        ios_count: 6
-        macos_count: 5
-      properties:
-        computers_count:
-          type: integer
-        ios_count:
-          type: integer
-        ipados_count:
-          type: integer
-        macos_count:
-          type: integer
-        tvos_count:
-          type: integer
-    deviceInformation_updateDevice_200_response:
+      title: success_201_Response
+    clearAllTags_200_Response:
       example:
         asset_tag: asset_tag
         agent_installed: 6
@@ -18453,56 +18220,70 @@ components:
         lost_mode_status:
           type: string
         tags: {}
-    deviceSecrets_getActivationLockBypassCode_200_response:
+      title: clearAllTags_200_Response
+    iphoneOrIpadInLostMode_200_Response_lost_mode:
       example:
-        user_based_albc: user_based_albc
-        device_based_albc: device_based_albc
+        sound_status: sound_status
+        last_location_status: last_location_status
+        enabled_by: enabled_by
+        enable_status_at: enable_status_at
+        disabled_by: disabled_by
+        lock_screen_footnote: lock_screen_footnote
+        disable_status: disable_status
+        disable_status_at: disable_status_at
+        last_location:
+          latitude: latitude
+          longitude: longitude
+        last_location_at: last_location_at
+        lost_mode_status: lost_mode_status
+        sound_status_at: sound_status_at
+        lock_screen_phone_number: lock_screen_phone_number
+        lock_screen_message: lock_screen_message
+        last_location_status_at: last_location_status_at
       properties:
-        user_based_albc:
+        lost_mode_status:
           type: string
-        device_based_albc:
+        enabled_by:
           type: string
-    automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_blueprint:
+        enable_status_at:
+          type: string
+        lock_screen_message:
+          type: string
+        lock_screen_phone_number:
+          type: string
+        lock_screen_footnote:
+          type: string
+        disable_status:
+          type: string
+        disabled_by:
+          type: string
+        disable_status_at:
+          type: string
+        last_location_status:
+          type: string
+        last_location_status_at:
+          type: string
+        last_location:
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_lost_mode_last_location'
+        last_location_at:
+          type: string
+        sound_status:
+          type: string
+        sound_status_at:
+          type: string
+    iphoneOrIpadInLostMode_200_Response_hardware_overview:
       example:
-        color: color
-        name: name
-        icon: icon
-        id: id
+        model_identifier: model_identifier
+        serial_number: serial_number
+        uuid: uuid
       properties:
-        id:
+        uuid:
           type: string
-        name:
+        serial_number:
           type: string
-        icon:
+        model_identifier:
           type: string
-        color:
-          type: string
-    deviceInformation_getDevice_200_response_user:
-      example:
-        is_archived: 0
-        name: name
-        id: id
-        email: email
-      properties:
-        email:
-          type: string
-        name:
-          type: string
-        id:
-          type: string
-        is_archived:
-          type: integer
-    deviceInformation_getDeviceStatus_200_response:
-      example:
-        device_id: device_id
-        library_items: ""
-        parameters: ""
-      properties:
-        device_id:
-          type: string
-        library_items: {}
-        parameters: {}
-    prism_activationLock_200_response:
+    successNoKernelExtensions_200_Response:
       example:
         cursor: ""
         total: 6
@@ -18517,140 +18298,8 @@ components:
           type: integer
         data: {}
         cursor: {}
-    automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_device_counts:
-      example:
-        total: 6
-      properties:
-        total:
-          type: integer
-    prism_requestCategoryExport_200_response_args:
-      example:
-        filter: "{}"
-        columns: ""
-        sort_by: sort_by
-        device_families: ""
-        blueprint_ids: ""
-      properties:
-        filter:
-          properties: {}
-          type: object
-        columns: {}
-        sort_by:
-          type: string
-        blueprint_ids: {}
-        device_families: {}
-    automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response:
-      example:
-        asset_tag: asset_tag
-        mdm_device:
-          enrolled_at: enrolled_at
-          name: name
-          deferred_install: 6
-          is_missing: 1
-          is_removed: 5
-          id: id
-          enrollment_status: 0
-        color: color
-        os: os
-        device_assigned_date: device_assigned_date
-        description: description
-        device_family: device_family
-        failed_assignment_attempts: 5
-        serial_number: serial_number
-        assignment_status_received_at: assignment_status_received_at
-        device_assigned_by: device_assigned_by
-        blueprint_id: blueprint_id
-        blueprint: blueprint
-        profile_status: profile_status
-        last_assignment_status: last_assignment_status
-        user_id: user_id
-        model: model
-        id: id
-        profile_assign_time: profile_assign_time
-        user: user
-        dep_account:
-          server_name: server_name
-          id: id
-        profile_push_time: profile_push_time
-      properties:
-        blueprint_id:
-          type: string
-        mdm_device:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_mdm_device'
-        user_id:
-          type: string
-        dep_account:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_dep_account'
-        asset_tag:
-          type: string
-        color:
-          type: string
-        description:
-          type: string
-        device_assigned_by:
-          type: string
-        device_assigned_date:
-          type: string
-        device_family:
-          type: string
-        model:
-          type: string
-        os:
-          type: string
-        profile_assign_time:
-          type: string
-        profile_push_time:
-          type: string
-        profile_status:
-          type: string
-        serial_number:
-          type: string
-        id:
-          type: string
-        last_assignment_status:
-          type: string
-        failed_assignment_attempts:
-          type: integer
-        assignment_status_received_at:
-          type: string
-        blueprint:
-          type: string
-        user:
-          type: string
-    blueprints_updateBlueprint_200_response:
-      example:
-        computers_count: 0
-        color: color
-        name: name
-        icon: icon
-        description: description
-        missing_computers_count: 6
-        id: id
-        params: "{}"
-        enrollment_code:
-          code: code
-          is_active: 0
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        icon:
-          type: string
-        color:
-          type: string
-        description:
-          type: string
-        params:
-          properties: {}
-          type: object
-        computers_count:
-          type: integer
-        missing_computers_count:
-          type: integer
-        enrollment_code:
-          $ref: '#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code'
-    prism_requestCategoryExport_200_response:
+      title: successNoKernelExtensions_200_Response
+    exampleExportStatusCheck_200_Response:
       example:
         args:
           filter: "{}"
@@ -18658,8 +18307,8 @@ components:
           sort_by: sort_by
           device_families: ""
           blueprint_ids: ""
-        path: ""
-        signed_url: ""
+        path: path
+        signed_url: signed_url
         error_msg: ""
         updated_at: updated_at
         created_at: created_at
@@ -18674,76 +18323,36 @@ components:
         category:
           type: string
         args:
-          $ref: '#/components/schemas/prism_requestCategoryExport_200_response_args'
+          $ref: '#/components/schemas/deviceInfoForAllIpads_200_Response_args'
         error_msg: {}
-        path: {}
-        signed_url: {}
+        path:
+          type: string
+        signed_url:
+          type: string
         created_at:
           type: string
         updated_at:
           type: string
-    deviceInformation_getDeviceDetails_200_response_lost_mode_last_location:
+      title: exampleExportStatusCheck_200_Response
+    success_201_Response_enrollment_code:
       example:
-        latitude: latitude
-        longitude: longitude
+        code: code
+        is_active: 0
       properties:
-        latitude:
+        code:
           type: string
-        longitude:
-          type: string
-    deviceInformation_getDeviceDetails_200_response_security_information:
+        is_active:
+          type: integer
+    createIntegration_200_Response_defaults:
       example:
-        remote_desktop_enabled: ""
+        phone: phone
+        email: email
       properties:
-        remote_desktop_enabled: {}
-    blueprints_createBlueprint_request:
-      properties:
-        name:
-          description: (required) Set the name of the Blueprint. The name provided
-            must be unique.
-          example: Test Template123
+        email:
           type: string
-        enrollment_code.is_active:
-          description: (required) Enable or Disable the Blueprint for manual device
-            enrollment from the enrollment portal
-          example: "true"
+        phone:
           type: string
-        enrollment_code.code:
-          description: "Optionally, set the enrollment code of the Blueprint. This\
-            \ key is not required. If an enrollment code is not supplied in the payload\
-            \ body, it will be randomly generated. The enrollment code will be returned\
-            \ in the response and visible in the Web app."
-          example: "897526"
-          type: string
-        source.type:
-          description: "Set the source to create the blueprint from. Possible options:\
-            \ <code>template</code> and <code>blueprint</code>."
-          example: blueprint
-          type: string
-        source.id:
-          description: "Set either the source template ID, or the source Blueprint\
-            \ ID to clone an existing template or blueprint."
-          example: "16"
-          type: string
-        type:
-          description: "Choose the type of blueprint to create. Options: <code>classic</code>\
-            \ or <code>map</code>"
-          example: map
-          type: string
-      required:
-      - enrollment_code.code
-      - enrollment_code.is_active
-      - name
-      - source.id
-      - source.type
-      - type
-    deviceSecrets_getUnlockPin_200_response:
-      example:
-        pin: pin
-      properties:
-        pin:
-          type: string
-    deviceInformation_getDeviceDetails_200_response_filevault:
+    iphoneOrIpadInLostMode_200_Response_filevault:
       example:
         filevault_recoverykey_type: filevault_recoverykey_type
         filevault_regen_required: 7
@@ -18760,36 +18369,22 @@ components:
           type: string
         filevault_regen_required:
           type: integer
-    deviceInformation_getDeviceDetails_200_response_hardware_overview:
+    edrStatus_200_Response_1:
       example:
-        model_identifier: model_identifier
-        serial_number: serial_number
-        uuid: uuid
+        next: ""
+        previous: ""
+        count: 0
+        results: ""
       properties:
-        uuid:
-          type: string
-        serial_number:
-          type: string
-        model_identifier:
-          type: string
-    deviceSecrets_getRecoveryLockPassword_200_response:
+        count:
+          type: integer
+        next: {}
+        previous: {}
+        results: {}
+      title: edrStatus_200_Response
+    startupSettings_200_Response:
       example:
-        recovery_password: recovery_password
-      properties:
-        recovery_password:
-          type: string
-    tags_createTag_201_response:
-      example:
-        name: name
-        id: id
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    prism_applications_200_response:
-      example:
-        cursor: cursor
+        cursor: ""
         total: 6
         offset: ""
         data: ""
@@ -18801,88 +18396,36 @@ components:
         total:
           type: integer
         data: {}
-        cursor:
-          type: string
-    threats_getThreatDetails_200_response:
+        cursor: {}
+      title: startupSettings_200_Response
+    iphoneOrIpadInLostMode_200_Response_apple_business_manager:
       example:
-        next: ""
-        malware_count: 6
-        previous: ""
-        count: 0
-        pup_count: 1
-        results: ""
-      properties:
-        count:
-          type: integer
-        next: {}
-        previous: {}
-        malware_count:
-          type: integer
-        pup_count:
-          type: integer
-        results: {}
-    automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_defaults:
-      example:
-        phone: phone
-        email: email
-      properties:
-        email:
-          type: string
-        phone:
-          type: string
-    blueprints_getBlueprint_200_response:
-      example:
-        computers_count: 0
         color: color
-        name: name
-        icon: icon
+        os: os
+        device_assigned_date: device_assigned_date
         description: description
-        id: id
-        params: "{}"
-        type: type
-        enrollment_code:
-          code: code
-          is_active: 0
+        device_family: device_family
+        model: model
+        serial_number: serial_number
+        device_assigned_by: device_assigned_by
       properties:
-        id:
-          type: string
-        name:
-          type: string
-        icon:
+        model:
           type: string
         color:
           type: string
         description:
           type: string
-        params:
-          properties: {}
-          type: object
-        computers_count:
-          type: integer
-        enrollment_code:
-          $ref: '#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code'
-        type:
+        serial_number:
           type: string
-    users_listUsers_200_response:
-      example:
-        next: next
-        previous: ""
-        results: ""
-      properties:
-        next:
+        device_family:
           type: string
-        previous: {}
-        results: {}
-    deviceInformation_getDeviceDetails_200_response_automated_device_enrollment:
-      example:
-        auto_enrolled: 3
-        auto_enroll_eligible: 9
-      properties:
-        auto_enroll_eligible:
-          type: integer
-        auto_enrolled:
-          type: integer
-    deviceInformation_getDeviceDetails_200_response:
+        os:
+          type: string
+        device_assigned_date:
+          type: string
+        device_assigned_by:
+          type: string
+    iphoneOrIpadInLostMode_200_Response:
       example:
         activation_lock:
           user_activation_lock_enabled: 6
@@ -18980,171 +18523,119 @@ components:
           password_rotation_scheduled: ""
       properties:
         general:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_general'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_general'
         mdm:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_mdm'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_mdm'
         activation_lock:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_activation_lock'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_activation_lock'
         filevault:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_filevault'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_filevault'
         lost_mode:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_lost_mode'
         automated_device_enrollment:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_automated_device_enrollment'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_automated_device_enrollment'
         kandji_agent:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_kandji_agent'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_kandji_agent'
         hardware_overview:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_hardware_overview'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_hardware_overview'
         volumes: {}
         network:
           properties: {}
           type: object
         recovery_information:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_recovery_information'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_recovery_information'
         users:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_users'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_users'
         installed_profiles: {}
         apple_business_manager:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_apple_business_manager'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_apple_business_manager'
         security_information:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_security_information'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_security_information'
         cellular:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_cellular'
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_cellular'
         tags: {}
-    deviceActions_lockDevice_200_response:
+      title: iphoneOrIpadInLostMode_200_Response
+    success_200_Response_6:
       example:
-        PIN: PIN
+        key: key
       properties:
-        PIN:
+        key:
           type: string
-    blueprints_updateBlueprint_request:
-      properties:
-        name:
-          description: Update the name of the Blueprint
-          example: Default Blueprint
-          type: string
-        description:
-          description: 'Update the description of the Blueprint '
-          example: An example blueprint description
-          type: string
-        enrollment_code.code:
-          description: 'Update the enrollment code of the Blueprint '
-          example: "999857"
-          type: string
-        enrollment_code.is_active:
-          description: Disable the Blueprint for manual device enrollment from the
-            enrollment portal.
-          example: "false"
-          type: string
-      required:
-      - description
-      - enrollment_code.code
-      - enrollment_code.is_active
-      - name
-    blueprints_createBlueprint_201_response_enrollment_code:
+      title: success_200_Response
+    iphoneOrIpadInLostMode_200_Response_cellular:
       example:
-        code: code
-        is_active: 0
+        subscriptions: ""
+        voice_roaming: 1
+        cellular_technology: 1
+        data_roaming: 1
       properties:
-        code:
-          type: string
-        is_active:
+        voice_roaming:
           type: integer
-    deviceInformation_getDeviceApps_200_response:
-      example:
-        device_id: device_id
-        apps: ""
-      properties:
-        device_id:
-          type: string
-        apps: {}
-    deviceInformation_getDeviceDetails_200_response_users:
-      example:
-        regular_users: ""
-        system_users: ""
-      properties:
-        regular_users: {}
-        system_users: {}
-    settings_licensing_200_response_limits_max_devices_per_platform:
-      example:
-        ios_ipados: 9
-        macos: 7
-      properties:
-        macos:
+        data_roaming:
           type: integer
-        ios_ipados:
+        cellular_technology:
           type: integer
-    deviceInformation_getDeviceActivity_200_response:
+        subscriptions: {}
+    success_200_Response_5:
       example:
-        device_id: device_id
-        activity:
-          next: ""
-          previous: ""
-          count: 0
-          results: ""
+        user_based_albc: user_based_albc
+        device_based_albc: device_based_albc
       properties:
-        device_id:
+        user_based_albc:
           type: string
-        activity:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response'
-    prism_localUsers_200_response:
+        device_based_albc:
+          type: string
+      title: success_200_Response
+    success_200_Response_8:
       example:
-        cursor: cursor
-        total: 1
-        offset: 0
+        recovery_password: recovery_password
+      properties:
+        recovery_password:
+          type: string
+      title: success_200_Response
+    success_200_Response_7:
+      example:
+        pin: pin
+      properties:
+        pin:
+          type: string
+      title: success_200_Response
+    success_200_Response_9:
+      example:
+        cursor: ""
+        total: 6
+        offset: ""
         data: ""
-        limit: 6
+        limit: 0
       properties:
-        offset:
-          type: integer
+        offset: {}
         limit:
           type: integer
         total:
           type: integer
         data: {}
-        cursor:
-          type: string
-    deviceInformation_getDeviceDetails_200_response_recovery_information:
+        cursor: {}
+      title: success_200_Response
+    usingTermParam_200_Response:
       example:
-        firmware_password_pending: 7
-        firmware_password_exist: 4
-        recovery_lock_enabled: 2
-        password_rotation_scheduled: ""
+        next: ""
+        malware_count: 6
+        previous: ""
+        count: 0
+        pup_count: 1
+        results: ""
       properties:
-        recovery_lock_enabled:
+        count:
           type: integer
-        firmware_password_exist:
+        next: {}
+        previous: {}
+        malware_count:
           type: integer
-        firmware_password_pending:
+        pup_count:
           type: integer
-        password_rotation_scheduled: {}
-    deviceInformation_getDeviceLostModeDetails_200_response:
-      example:
-        lost_mode:
-          sound_status: sound_status
-          last_location_status: last_location_status
-          enabled_by: enabled_by
-          enable_status_at: enable_status_at
-          disabled_by: disabled_by
-          lock_screen_footnote: lock_screen_footnote
-          disable_status: disable_status
-          disable_status_at: disable_status_at
-          last_location:
-            latitude: latitude
-            longitude: longitude
-          last_location_at: last_location_at
-          lost_mode_status: lost_mode_status
-          sound_status_at: sound_status_at
-          lock_screen_phone_number: lock_screen_phone_number
-          lock_screen_message: lock_screen_message
-          last_location_status_at: last_location_status_at
-        device_id: device_id
-      properties:
-        device_id:
-          type: string
-        lost_mode:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode'
-    deviceInformation_getDeviceDetails_200_response_general:
+        results: {}
+      title: usingTermParam_200_Response
+    iphoneOrIpadInLostMode_200_Response_general:
       example:
         asset_tag: asset_tag
         device_id: device_id
@@ -19198,7 +18689,7 @@ components:
           type: string
         blueprint_uuid:
           type: string
-    prism_deviceInformation_200_response:
+    getDevicesInABlueprintSortedBySerialNumber_200_Response:
       example:
         cursor: ""
         total: 1
@@ -19214,7 +18705,386 @@ components:
           type: integer
         data: {}
         cursor: {}
-    automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response:
+      title: getDevicesInABlueprintSortedBySerialNumber_200_Response
+    success_200_Response_17:
+      example:
+        tenantOverLicenseLimit: 3
+        counts:
+          computers_count: 0
+          ipados_count: 1
+          tvos_count: 5
+          ios_count: 6
+          macos_count: 5
+        limits:
+          plan_type: plan_type
+          max_devices: 2
+          max_devices_per_platform:
+            ios_ipados: 9
+            macos: 7
+      properties:
+        counts:
+          $ref: '#/components/schemas/success_200_Response_17_counts'
+        limits:
+          $ref: '#/components/schemas/success_200_Response_17_limits'
+        tenantOverLicenseLimit:
+          type: integer
+      title: success_200_Response
+    success_200_Response_16:
+      example:
+        deprecated_user_id: deprecated_user_id
+        archived: 6
+        updated_at: updated_at
+        integration:
+          name: name
+          id: 1
+          type: type
+          uuid: uuid
+        name: name
+        active: 0
+        created_at: created_at
+        id: id
+        department: ""
+        job_title: ""
+        email: email
+        device_count: 5
+      properties:
+        active:
+          type: integer
+        archived:
+          type: integer
+        created_at:
+          type: string
+        department: {}
+        deprecated_user_id:
+          type: string
+        email:
+          type: string
+        id:
+          type: string
+        integration:
+          $ref: '#/components/schemas/success_200_Response_16_integration'
+        job_title: {}
+        name:
+          type: string
+        device_count:
+          type: integer
+        updated_at:
+          type: string
+      title: success_200_Response
+    success_200_Response_15:
+      example:
+        next: next
+        previous: ""
+        results: ""
+      properties:
+        next:
+          type: string
+        previous: {}
+        results: {}
+      title: success_200_Response
+    createIntegration_200_Response_blueprint:
+      example:
+        color: color
+        name: name
+        icon: icon
+        id: id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        icon:
+          type: string
+        color:
+          type: string
+    success_200_Response_14:
+      example:
+        name: name
+        id: id
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      title: success_200_Response
+    getDeviceLostModeDetails_200_Response:
+      example:
+        lost_mode:
+          sound_status: sound_status
+          last_location_status: last_location_status
+          enabled_by: enabled_by
+          enable_status_at: enable_status_at
+          disabled_by: disabled_by
+          lock_screen_footnote: lock_screen_footnote
+          disable_status: disable_status
+          disable_status_at: disable_status_at
+          last_location:
+            latitude: latitude
+            longitude: longitude
+          last_location_at: last_location_at
+          lost_mode_status: lost_mode_status
+          sound_status_at: sound_status_at
+          lock_screen_phone_number: lock_screen_phone_number
+          lock_screen_message: lock_screen_message
+          last_location_status_at: last_location_status_at
+        device_id: device_id
+      properties:
+        device_id:
+          type: string
+        lost_mode:
+          $ref: '#/components/schemas/iphoneOrIpadInLostMode_200_Response_lost_mode'
+      title: getDeviceLostModeDetails_200_Response
+    updateUserAssignment_200_Response:
+      example:
+        asset_tag: asset_tag
+        mdm_device:
+          enrolled_at: enrolled_at
+          name: name
+          deferred_install: 6
+          is_missing: 1
+          is_removed: 5
+          id: id
+          enrollment_status: 0
+        color: color
+        os: os
+        device_assigned_date: device_assigned_date
+        description: description
+        device_family: device_family
+        failed_assignment_attempts: 0
+        serial_number: serial_number
+        assignment_status_received_at: assignment_status_received_at
+        device_assigned_by: device_assigned_by
+        blueprint_id: blueprint_id
+        blueprint: blueprint
+        profile_status: profile_status
+        last_assignment_status: last_assignment_status
+        user_id: user_id
+        model: model
+        id: id
+        profile_assign_time: profile_assign_time
+        user: user
+        dep_account:
+          server_name: server_name
+          id: id
+        profile_push_time: profile_push_time
+      properties:
+        blueprint_id:
+          type: string
+        mdm_device:
+          $ref: '#/components/schemas/success_200_Response_1_mdm_device'
+        user_id:
+          type: string
+        dep_account:
+          $ref: '#/components/schemas/success_200_Response_1_dep_account'
+        asset_tag:
+          type: string
+        color:
+          type: string
+        description:
+          type: string
+        device_assigned_by:
+          type: string
+        device_assigned_date:
+          type: string
+        device_family:
+          type: string
+        model:
+          type: string
+        os:
+          type: string
+        profile_assign_time:
+          type: string
+        profile_push_time:
+          type: string
+        profile_status:
+          type: string
+        serial_number:
+          type: string
+        id:
+          type: string
+        last_assignment_status:
+          type: string
+        failed_assignment_attempts:
+          type: integer
+        assignment_status_received_at:
+          type: string
+        blueprint:
+          type: string
+        user:
+          type: string
+      title: updateUserAssignment_200_Response
+    getDeviceCommands_200_Response:
+      example:
+        device_id: device_id
+        commands:
+          next: ""
+          previous: ""
+          count: 0
+          results: ""
+      properties:
+        device_id:
+          type: string
+        commands:
+          $ref: '#/components/schemas/getDeviceActivity_200_Response_activity'
+      title: getDeviceCommands_200_Response
+    blueprints_createBlueprint_request:
+      properties:
+        name:
+          description: (required) Set the name of the Blueprint. The name provided
+            must be unique.
+          example: Test Template123
+          type: string
+        enrollment_code.is_active:
+          description: (required) Enable or Disable the Blueprint for manual device
+            enrollment from the enrollment portal
+          example: "true"
+          type: string
+        enrollment_code.code:
+          description: "Optionally, set the enrollment code of the Blueprint. This\
+            \ key is not required. If an enrollment code is not supplied in the payload\
+            \ body, it will be randomly generated. The enrollment code will be returned\
+            \ in the response and visible in the Web app."
+          example: "897526"
+          type: string
+        source.type:
+          description: "Set the source to create the blueprint from. Possible options:\
+            \ <code>template</code> and <code>blueprint</code>."
+          example: blueprint
+          type: string
+        source.id:
+          description: "Set either the source template ID, or the source Blueprint\
+            \ ID to clone an existing template or blueprint."
+          example: "16"
+          type: string
+        type:
+          description: "Choose the type of blueprint to create. Options: <code>classic</code>\
+            \ or <code>map</code>"
+          example: map
+          type: string
+      required:
+      - enrollment_code.code
+      - enrollment_code.is_active
+      - name
+      - source.id
+      - source.type
+      - type
+    iphoneOrIpadInLostMode_200_Response_activation_lock:
+      example:
+        user_activation_lock_enabled: 6
+        device_activation_lock_enabled: 1
+        activation_lock_supported: 5
+        bypass_code_failed: 0
+        activation_lock_allowed_while_supervised: 5
+      properties:
+        bypass_code_failed:
+          type: integer
+        user_activation_lock_enabled:
+          type: integer
+        device_activation_lock_enabled:
+          type: integer
+        activation_lock_allowed_while_supervised:
+          type: integer
+        activation_lock_supported:
+          type: integer
+    success_200_Response_13:
+      example:
+        approximate: 6
+        count: 0
+      properties:
+        count:
+          type: integer
+        approximate:
+          type: integer
+      title: success_200_Response
+    getIpad_200_Response_user:
+      example:
+        is_archived: 0
+        name: name
+        id: id
+        email: email
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+        id:
+          type: string
+        is_archived:
+          type: integer
+    success_200_Response_12:
+      example:
+        cursor: cursor
+        total: 1
+        offset: 0
+        data: ""
+        limit: 6
+      properties:
+        offset:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        data: {}
+        cursor:
+          type: string
+      title: success_200_Response
+    success_200_Response_11:
+      example:
+        cursor: ""
+        total: 1
+        offset: 0
+        data: ""
+        limit: 6
+      properties:
+        offset:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        data: {}
+        cursor: {}
+      title: success_200_Response
+    success_200_Response_17_limits:
+      example:
+        plan_type: plan_type
+        max_devices: 2
+        max_devices_per_platform:
+          ios_ipados: 9
+          macos: 7
+      properties:
+        plan_type:
+          type: string
+        max_devices:
+          type: integer
+        max_devices_per_platform:
+          $ref: '#/components/schemas/success_200_Response_17_limits_max_devices_per_platform'
+    success_200_Response_10:
+      example:
+        cursor: cursor
+        total: 6
+        offset: ""
+        data: ""
+        limit: 0
+      properties:
+        offset: {}
+        limit:
+          type: integer
+        total:
+          type: integer
+        data: {}
+        cursor:
+          type: string
+      title: success_200_Response
+    iphoneOrIpadInLostMode_200_Response_users:
+      example:
+        regular_users: ""
+        system_users: ""
+      properties:
+        regular_users: {}
+        system_users: {}
+    createIntegration_200_Response:
       example:
         server_name: server_name
         device_counts:
@@ -19246,7 +19116,7 @@ components:
         id:
           type: string
         blueprint:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_blueprint'
+          $ref: '#/components/schemas/createIntegration_200_Response_blueprint'
         access_token_expiry:
           type: string
         server_name:
@@ -19269,7 +19139,7 @@ components:
           type: string
         last_device_sync: {}
         defaults:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_defaults'
+          $ref: '#/components/schemas/createIntegration_200_Response_defaults'
         days_left:
           type: integer
         status:
@@ -19277,72 +19147,390 @@ components:
         status_reason: {}
         status_received_at: {}
         device_counts:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_device_counts'
-    settings_licensing_200_response_limits:
+          $ref: '#/components/schemas/createIntegration_200_Response_device_counts'
+      title: createIntegration_200_Response
+    iphoneOrIpadInLostMode_200_Response_automated_device_enrollment:
       example:
-        plan_type: plan_type
-        max_devices: 2
-        max_devices_per_platform:
-          ios_ipados: 9
-          macos: 7
+        auto_enrolled: 3
+        auto_enroll_eligible: 9
       properties:
-        plan_type:
-          type: string
-        max_devices:
+        auto_enroll_eligible:
           type: integer
-        max_devices_per_platform:
-          $ref: '#/components/schemas/settings_licensing_200_response_limits_max_devices_per_platform'
-    deviceInformation_getDeviceDetails_200_response_lost_mode:
+        auto_enrolled:
+          type: integer
+    getDeviceActivity_200_Response_activity:
       example:
-        sound_status: sound_status
-        last_location_status: last_location_status
-        enabled_by: enabled_by
-        enable_status_at: enable_status_at
-        disabled_by: disabled_by
-        lock_screen_footnote: lock_screen_footnote
-        disable_status: disable_status
-        disable_status_at: disable_status_at
-        last_location:
-          latitude: latitude
-          longitude: longitude
-        last_location_at: last_location_at
-        lost_mode_status: lost_mode_status
-        sound_status_at: sound_status_at
-        lock_screen_phone_number: lock_screen_phone_number
-        lock_screen_message: lock_screen_message
-        last_location_status_at: last_location_status_at
+        next: ""
+        previous: ""
+        count: 0
+        results: ""
       properties:
-        lost_mode_status:
+        count:
+          type: integer
+        next: {}
+        previous: {}
+        results: {}
+    transparencyDatabase_200_Response:
+      example:
+        cursor: ""
+        total: 6
+        offset: ""
+        data: ""
+        limit: 0
+      properties:
+        offset: {}
+        limit:
+          type: integer
+        total:
+          type: integer
+        data: {}
+        cursor: {}
+      title: transparencyDatabase_200_Response
+    getIpad_200_Response:
+      example:
+        asset_tag: asset_tag
+        agent_installed: 1
+        device_id: device_id
+        os_version: os_version
+        serial_number: serial_number
+        mdm_enabled: 6
+        is_removed: 5
+        blueprint_name: blueprint_name
+        supplemental_build_version: supplemental_build_version
+        platform: platform
+        blueprint_id: blueprint_id
+        tags: ""
+        agent_version: agent_version
+        device_name: device_name
+        last_enrollment: last_enrollment
+        supplemental_os_version_extra: supplemental_os_version_extra
+        first_enrollment: first_enrollment
+        model: model
+        is_missing: 5
+        user:
+          is_archived: 0
+          name: name
+          id: id
+          email: email
+        last_check_in: last_check_in
+      properties:
+        device_id:
           type: string
-        enabled_by:
+        device_name:
           type: string
-        enable_status_at:
+        model:
           type: string
-        lock_screen_message:
+        serial_number:
           type: string
-        lock_screen_phone_number:
+        platform:
           type: string
-        lock_screen_footnote:
+        os_version:
           type: string
-        disable_status:
+        supplemental_build_version:
           type: string
-        disabled_by:
+        supplemental_os_version_extra:
           type: string
-        disable_status_at:
+        last_check_in:
           type: string
-        last_location_status:
+        user:
+          $ref: '#/components/schemas/getIpad_200_Response_user'
+        asset_tag:
           type: string
-        last_location_status_at:
+        blueprint_id:
           type: string
-        last_location:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode_last_location'
-        last_location_at:
+        mdm_enabled:
+          type: integer
+        agent_installed:
+          type: integer
+        is_missing:
+          type: integer
+        is_removed:
+          type: integer
+        agent_version:
           type: string
-        sound_status:
+        first_enrollment:
           type: string
-        sound_status_at:
+        last_enrollment:
           type: string
-    automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_mdm_device:
+        blueprint_name:
+          type: string
+        tags: {}
+      title: getIpad_200_Response
+    badCategoryRequest_400_Response:
+      example:
+        detail: detail
+      properties:
+        detail:
+          type: string
+      title: badCategoryRequest_400_Response
+    listAssociatedDevicesNullMdmDevice_200_Response:
+      example:
+        next: next
+        previous: ""
+        count: 0
+        results: ""
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+        previous: {}
+        results: {}
+      title: listAssociatedDevicesNullMdmDevice_200_Response
+    success_200_Response:
+      example:
+        next: ""
+        previous: ""
+        count: 0
+        results: ""
+      properties:
+        count:
+          type: integer
+        next: {}
+        previous: {}
+        results: {}
+      title: success_200_Response
+    blueprints_updateBlueprint_request:
+      properties:
+        name:
+          description: Update the name of the Blueprint
+          example: Default Blueprint
+          type: string
+        description:
+          description: 'Update the description of the Blueprint '
+          example: An example blueprint description
+          type: string
+        enrollment_code.code:
+          description: 'Update the enrollment code of the Blueprint '
+          example: "999857"
+          type: string
+        enrollment_code.is_active:
+          description: Disable the Blueprint for manual device enrollment from the
+            enrollment portal.
+          example: "false"
+          type: string
+      required:
+      - description
+      - enrollment_code.code
+      - enrollment_code.is_active
+      - name
+    deviceInfoForAllIpads_200_Response:
+      example:
+        args:
+          filter: "{}"
+          columns: ""
+          sort_by: sort_by
+          device_families: ""
+          blueprint_ids: ""
+        path: ""
+        signed_url: ""
+        error_msg: ""
+        updated_at: updated_at
+        created_at: created_at
+        id: id
+        category: category
+        status: status
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        category:
+          type: string
+        args:
+          $ref: '#/components/schemas/deviceInfoForAllIpads_200_Response_args'
+        error_msg: {}
+        path: {}
+        signed_url: {}
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      title: deviceInfoForAllIpads_200_Response
+    getDeviceStatus_200_Response:
+      example:
+        device_id: device_id
+        library_items: ""
+        parameters: ""
+      properties:
+        device_id:
+          type: string
+        library_items: {}
+        parameters: {}
+      title: getDeviceStatus_200_Response
+    success_200_Response_2:
+      example:
+        computers_count: 0
+        color: color
+        name: name
+        icon: icon
+        description: description
+        id: id
+        params: "{}"
+        type: type
+        enrollment_code:
+          code: code
+          is_active: 0
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        icon:
+          type: string
+        color:
+          type: string
+        description:
+          type: string
+        params:
+          properties: {}
+          type: object
+        computers_count:
+          type: integer
+        enrollment_code:
+          $ref: '#/components/schemas/success_201_Response_enrollment_code'
+        type:
+          type: string
+      title: success_200_Response
+    success_200_Response_1:
+      example:
+        asset_tag: asset_tag
+        mdm_device:
+          enrolled_at: enrolled_at
+          name: name
+          deferred_install: 6
+          is_missing: 1
+          is_removed: 5
+          id: id
+          enrollment_status: 0
+        color: color
+        os: os
+        device_assigned_date: device_assigned_date
+        description: description
+        device_family: device_family
+        failed_assignment_attempts: 5
+        serial_number: serial_number
+        assignment_status_received_at: assignment_status_received_at
+        device_assigned_by: device_assigned_by
+        blueprint_id: blueprint_id
+        blueprint: blueprint
+        profile_status: profile_status
+        last_assignment_status: last_assignment_status
+        user_id: user_id
+        model: model
+        id: id
+        profile_assign_time: profile_assign_time
+        user: user
+        dep_account:
+          server_name: server_name
+          id: id
+        profile_push_time: profile_push_time
+      properties:
+        blueprint_id:
+          type: string
+        mdm_device:
+          $ref: '#/components/schemas/success_200_Response_1_mdm_device'
+        user_id:
+          type: string
+        dep_account:
+          $ref: '#/components/schemas/success_200_Response_1_dep_account'
+        asset_tag:
+          type: string
+        color:
+          type: string
+        description:
+          type: string
+        device_assigned_by:
+          type: string
+        device_assigned_date:
+          type: string
+        device_family:
+          type: string
+        model:
+          type: string
+        os:
+          type: string
+        profile_assign_time:
+          type: string
+        profile_push_time:
+          type: string
+        profile_status:
+          type: string
+        serial_number:
+          type: string
+        id:
+          type: string
+        last_assignment_status:
+          type: string
+        failed_assignment_attempts:
+          type: integer
+        assignment_status_received_at:
+          type: string
+        blueprint:
+          type: string
+        user:
+          type: string
+      title: success_200_Response
+    success_200_Response_4:
+      example:
+        PIN: PIN
+      properties:
+        PIN:
+          type: string
+      title: success_200_Response
+    success_200_Response_3:
+      example:
+        computers_count: 0
+        color: color
+        name: name
+        icon: icon
+        description: description
+        missing_computers_count: 6
+        id: id
+        params: "{}"
+        enrollment_code:
+          code: code
+          is_active: 0
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        icon:
+          type: string
+        color:
+          type: string
+        description:
+          type: string
+        params:
+          properties: {}
+          type: object
+        computers_count:
+          type: integer
+        missing_computers_count:
+          type: integer
+        enrollment_code:
+          $ref: '#/components/schemas/success_201_Response_enrollment_code'
+      title: success_200_Response
+    success_200_Response_17_counts:
+      example:
+        computers_count: 0
+        ipados_count: 1
+        tvos_count: 5
+        ios_count: 6
+        macos_count: 5
+      properties:
+        computers_count:
+          type: integer
+        ios_count:
+          type: integer
+        ipados_count:
+          type: integer
+        macos_count:
+          type: integer
+        tvos_count:
+          type: integer
+    success_200_Response_1_mdm_device:
       example:
         enrolled_at: enrolled_at
         name: name
@@ -19366,7 +19554,23 @@ components:
           type: integer
         is_removed:
           type: integer
-    deviceInformation_getDeviceDetails_200_response_mdm:
+    deviceInfoForAllIpads_200_Response_args:
+      example:
+        filter: "{}"
+        columns: ""
+        sort_by: sort_by
+        device_families: ""
+        blueprint_ids: ""
+      properties:
+        filter:
+          properties: {}
+          type: object
+        columns: {}
+        sort_by:
+          type: string
+        blueprint_ids: {}
+        device_families: {}
+    iphoneOrIpadInLostMode_200_Response_mdm:
       example:
         supervised: supervised
         mdm_enabled_user: ""
@@ -19383,19 +19587,81 @@ components:
         last_check_in:
           type: string
         mdm_enabled_user: {}
-    automatedDeviceEnrollmentIntegrations_listDevicesAssociatedToAdeToken_200_response:
+    iphoneOrIpadInLostMode_200_Response_kandji_agent:
       example:
-        next: next
-        previous: ""
-        count: 0
-        results: ""
+        agent_version: agent_version
+        agent_installed: agent_installed
+        install_date: install_date
+        last_check_in: last_check_in
       properties:
-        count:
-          type: integer
-        next:
+        agent_installed:
           type: string
-        previous: {}
-        results: {}
+        install_date:
+          type: string
+        last_check_in:
+          type: string
+        agent_version:
+          type: string
+    iphoneOrIpadInLostMode_200_Response_security_information:
+      example:
+        remote_desktop_enabled: ""
+      properties:
+        remote_desktop_enabled: {}
+    getDeviceParameters_200_Response:
+      example:
+        device_id: device_id
+        parameters: ""
+      properties:
+        device_id:
+          type: string
+        parameters: {}
+      title: getDeviceParameters_200_Response
+    invalidUuid_400_Response:
+      example:
+        dep_account: ""
+      properties:
+        dep_account: {}
+      title: invalidUuid_400_Response
+    systemExtensions_200_Response:
+      example:
+        cursor: ""
+        total: 6
+        offset: ""
+        data: ""
+        limit: 0
+      properties:
+        offset: {}
+        limit:
+          type: integer
+        total:
+          type: integer
+        data: {}
+        cursor: {}
+      title: systemExtensions_200_Response
+    success_200_Response_16_integration:
+      example:
+        name: name
+        id: 1
+        type: type
+        uuid: uuid
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        uuid:
+          type: string
+        type:
+          type: string
+    edrStatus_200_Response:
+      example:
+        device_id: device_id
+        library_items: ""
+      properties:
+        device_id:
+          type: string
+        library_items: {}
+      title: edrStatus_200_Response
     automatedDeviceEnrollmentIntegrations_createAdeIntegration_request:
       properties:
         blueprint_id:
@@ -19417,18 +19683,6 @@ components:
       - email
       - file
       - phone
-    automatedDeviceEnrollmentIntegrations_listAdeDevices_200_response:
-      example:
-        next: ""
-        previous: ""
-        count: 0
-        results: ""
-      properties:
-        count:
-          type: integer
-        next: {}
-        previous: {}
-        results: {}
     automatedDeviceEnrollmentIntegrations_renewAdeIntegration_request:
       properties:
         blueprint_id:
@@ -19450,22 +19704,14 @@ components:
       - email
       - file
       - phone
-    deviceInformation_getDeviceParameters_200_response:
+    iphoneOrIpadInLostMode_200_Response_lost_mode_last_location:
       example:
-        device_id: device_id
-        parameters: ""
+        latitude: latitude
+        longitude: longitude
       properties:
-        device_id:
+        latitude:
           type: string
-        parameters: {}
-    automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_dep_account:
-      example:
-        server_name: server_name
-        id: id
-      properties:
-        id:
-          type: string
-        server_name:
+        longitude:
           type: string
   securitySchemes:
     bearer:
