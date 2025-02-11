@@ -38,8 +38,8 @@ type LibraryItemsAPI interface {
 	GetLibraryItemActivity(ctx context.Context, libraryItemId string) ApiGetLibraryItemActivityRequest
 
 	// GetLibraryItemActivityExecute executes the request
-	//  @return map[string]interface{}
-	GetLibraryItemActivityExecute(r ApiGetLibraryItemActivityRequest) (map[string]interface{}, *http.Response, error)
+	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	GetLibraryItemActivityExecute(r ApiGetLibraryItemActivityRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
 
 	/*
 	GetLibraryItemStatuses Get Library Item Statuses
@@ -55,8 +55,8 @@ type LibraryItemsAPI interface {
 	GetLibraryItemStatuses(ctx context.Context, libraryItemId string) ApiGetLibraryItemStatusesRequest
 
 	// GetLibraryItemStatusesExecute executes the request
-	//  @return map[string]interface{}
-	GetLibraryItemStatusesExecute(r ApiGetLibraryItemStatusesRequest) (map[string]interface{}, *http.Response, error)
+	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	GetLibraryItemStatusesExecute(r ApiGetLibraryItemStatusesRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
 }
 
 // LibraryItemsAPIService LibraryItemsAPI service
@@ -103,7 +103,7 @@ func (r ApiGetLibraryItemActivityRequest) Offset(offset string) ApiGetLibraryIte
 	return r
 }
 
-func (r ApiGetLibraryItemActivityRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetLibraryItemActivityRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
 	return r.ApiService.GetLibraryItemActivityExecute(r)
 }
 
@@ -128,13 +128,13 @@ func (a *LibraryItemsAPIService) GetLibraryItemActivity(ctx context.Context, lib
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *LibraryItemsAPIService) GetLibraryItemActivityExecute(r ApiGetLibraryItemActivityRequest) (map[string]interface{}, *http.Response, error) {
+//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+func (a *LibraryItemsAPIService) GetLibraryItemActivityExecute(r ApiGetLibraryItemActivityRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryItemsAPIService.GetLibraryItemActivity")
@@ -245,7 +245,7 @@ func (r ApiGetLibraryItemStatusesRequest) Offset(offset string) ApiGetLibraryIte
 	return r
 }
 
-func (r ApiGetLibraryItemStatusesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetLibraryItemStatusesRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
 	return r.ApiService.GetLibraryItemStatusesExecute(r)
 }
 
@@ -269,13 +269,13 @@ func (a *LibraryItemsAPIService) GetLibraryItemStatuses(ctx context.Context, lib
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *LibraryItemsAPIService) GetLibraryItemStatusesExecute(r ApiGetLibraryItemStatusesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+func (a *LibraryItemsAPIService) GetLibraryItemStatusesExecute(r ApiGetLibraryItemStatusesRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryItemsAPIService.GetLibraryItemStatuses")

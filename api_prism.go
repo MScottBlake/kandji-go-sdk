@@ -34,8 +34,8 @@ type PrismAPI interface {
 	ActivationLock(ctx context.Context) ApiActivationLockRequest
 
 	// ActivationLockExecute executes the request
-	//  @return map[string]interface{}
-	ActivationLockExecute(r ApiActivationLockRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	ActivationLockExecute(r ApiActivationLockRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	ApplicationFirewall Application firewall
@@ -48,8 +48,8 @@ type PrismAPI interface {
 	ApplicationFirewall(ctx context.Context) ApiApplicationFirewallRequest
 
 	// ApplicationFirewallExecute executes the request
-	//  @return map[string]interface{}
-	ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	Applications Applications
@@ -62,8 +62,8 @@ type PrismAPI interface {
 	Applications(ctx context.Context) ApiApplicationsRequest
 
 	// ApplicationsExecute executes the request
-	//  @return map[string]interface{}
-	ApplicationsExecute(r ApiApplicationsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismApplications200Response
+	ApplicationsExecute(r ApiApplicationsRequest) (*PrismApplications200Response, *http.Response, error)
 
 	/*
 	Certificates Certificates
@@ -76,8 +76,8 @@ type PrismAPI interface {
 	Certificates(ctx context.Context) ApiCertificatesRequest
 
 	// CertificatesExecute executes the request
-	//  @return map[string]interface{}
-	CertificatesExecute(r ApiCertificatesRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	CertificatesExecute(r ApiCertificatesRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	Count Count
@@ -92,8 +92,8 @@ type PrismAPI interface {
 	Count(ctx context.Context) ApiCountRequest
 
 	// CountExecute executes the request
-	//  @return map[string]interface{}
-	CountExecute(r ApiCountRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismCount200Response
+	CountExecute(r ApiCountRequest) (*PrismCount200Response, *http.Response, error)
 
 	/*
 	DesktopAndScreensaver Desktop and Screensaver
@@ -106,8 +106,8 @@ type PrismAPI interface {
 	DesktopAndScreensaver(ctx context.Context) ApiDesktopAndScreensaverRequest
 
 	// DesktopAndScreensaverExecute executes the request
-	//  @return map[string]interface{}
-	DesktopAndScreensaverExecute(r ApiDesktopAndScreensaverRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	DesktopAndScreensaverExecute(r ApiDesktopAndScreensaverRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	DeviceInformation Device information
@@ -120,8 +120,8 @@ type PrismAPI interface {
 	DeviceInformation(ctx context.Context) ApiDeviceInformationRequest
 
 	// DeviceInformationExecute executes the request
-	//  @return map[string]interface{}
-	DeviceInformationExecute(r ApiDeviceInformationRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismDeviceInformation200Response
+	DeviceInformationExecute(r ApiDeviceInformationRequest) (*PrismDeviceInformation200Response, *http.Response, error)
 
 	/*
 	Filevault FileVault
@@ -134,8 +134,8 @@ type PrismAPI interface {
 	Filevault(ctx context.Context) ApiFilevaultRequest
 
 	// FilevaultExecute executes the request
-	//  @return map[string]interface{}
-	FilevaultExecute(r ApiFilevaultRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismDeviceInformation200Response
+	FilevaultExecute(r ApiFilevaultRequest) (*PrismDeviceInformation200Response, *http.Response, error)
 
 	/*
 	GatekeeperAndXprotect Gatekeeper and XProtect
@@ -148,8 +148,8 @@ type PrismAPI interface {
 	GatekeeperAndXprotect(ctx context.Context) ApiGatekeeperAndXprotectRequest
 
 	// GatekeeperAndXprotectExecute executes the request
-	//  @return map[string]interface{}
-	GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	GetCategoryExport Get category export
@@ -165,8 +165,8 @@ type PrismAPI interface {
 	GetCategoryExport(ctx context.Context, exportId string) ApiGetCategoryExportRequest
 
 	// GetCategoryExportExecute executes the request
-	//  @return map[string]interface{}
-	GetCategoryExportExecute(r ApiGetCategoryExportRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismGetCategoryExport200Response
+	GetCategoryExportExecute(r ApiGetCategoryExportRequest) (*PrismGetCategoryExport200Response, *http.Response, error)
 
 	/*
 	InstalledProfiles Installed profiles
@@ -179,8 +179,8 @@ type PrismAPI interface {
 	InstalledProfiles(ctx context.Context) ApiInstalledProfilesRequest
 
 	// InstalledProfilesExecute executes the request
-	//  @return map[string]interface{}
-	InstalledProfilesExecute(r ApiInstalledProfilesRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	InstalledProfilesExecute(r ApiInstalledProfilesRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	KernelExtensions Kernel Extensions
@@ -193,8 +193,8 @@ type PrismAPI interface {
 	KernelExtensions(ctx context.Context) ApiKernelExtensionsRequest
 
 	// KernelExtensionsExecute executes the request
-	//  @return map[string]interface{}
-	KernelExtensionsExecute(r ApiKernelExtensionsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	KernelExtensionsExecute(r ApiKernelExtensionsRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	LaunchAgentsAndDaemons Launch Agents and Daemons
@@ -207,8 +207,8 @@ type PrismAPI interface {
 	LaunchAgentsAndDaemons(ctx context.Context) ApiLaunchAgentsAndDaemonsRequest
 
 	// LaunchAgentsAndDaemonsExecute executes the request
-	//  @return map[string]interface{}
-	LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaemonsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaemonsRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	LocalUsers Local users
@@ -221,8 +221,8 @@ type PrismAPI interface {
 	LocalUsers(ctx context.Context) ApiLocalUsersRequest
 
 	// LocalUsersExecute executes the request
-	//  @return map[string]interface{}
-	LocalUsersExecute(r ApiLocalUsersRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismLocalUsers200Response
+	LocalUsersExecute(r ApiLocalUsersRequest) (*PrismLocalUsers200Response, *http.Response, error)
 
 	/*
 	RequestCategoryExport Request category export
@@ -279,8 +279,8 @@ type PrismAPI interface {
 	RequestCategoryExport(ctx context.Context) ApiRequestCategoryExportRequest
 
 	// RequestCategoryExportExecute executes the request
-	//  @return map[string]interface{}
-	RequestCategoryExportExecute(r ApiRequestCategoryExportRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismRequestCategoryExport200Response
+	RequestCategoryExportExecute(r ApiRequestCategoryExportRequest) (*PrismRequestCategoryExport200Response, *http.Response, error)
 
 	/*
 	StartupSettings Startup settings
@@ -293,8 +293,8 @@ type PrismAPI interface {
 	StartupSettings(ctx context.Context) ApiStartupSettingsRequest
 
 	// StartupSettingsExecute executes the request
-	//  @return map[string]interface{}
-	StartupSettingsExecute(r ApiStartupSettingsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	StartupSettingsExecute(r ApiStartupSettingsRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	SystemExtensions System Extensions
@@ -307,8 +307,8 @@ type PrismAPI interface {
 	SystemExtensions(ctx context.Context) ApiSystemExtensionsRequest
 
 	// SystemExtensionsExecute executes the request
-	//  @return map[string]interface{}
-	SystemExtensionsExecute(r ApiSystemExtensionsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	SystemExtensionsExecute(r ApiSystemExtensionsRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	TransparencyDatabase Transparency database
@@ -321,8 +321,8 @@ type PrismAPI interface {
 	TransparencyDatabase(ctx context.Context) ApiTransparencyDatabaseRequest
 
 	// TransparencyDatabaseExecute executes the request
-	//  @return map[string]interface{}
-	TransparencyDatabaseExecute(r ApiTransparencyDatabaseRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	TransparencyDatabaseExecute(r ApiTransparencyDatabaseRequest) (*PrismActivationLock200Response, *http.Response, error)
 }
 
 // PrismAPIService PrismAPI service
@@ -375,7 +375,7 @@ func (r ApiActivationLockRequest) Offset(offset string) ApiActivationLockRequest
 	return r
 }
 
-func (r ApiActivationLockRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiActivationLockRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.ActivationLockExecute(r)
 }
 
@@ -395,13 +395,13 @@ func (a *PrismAPIService) ActivationLock(ctx context.Context) ApiActivationLockR
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) ActivationLockExecute(r ApiActivationLockRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.ActivationLock")
@@ -534,7 +534,7 @@ func (r ApiApplicationFirewallRequest) Offset(offset string) ApiApplicationFirew
 	return r
 }
 
-func (r ApiApplicationFirewallRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiApplicationFirewallRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.ApplicationFirewallExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *PrismAPIService) ApplicationFirewall(ctx context.Context) ApiApplicatio
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.ApplicationFirewall")
@@ -693,7 +693,7 @@ func (r ApiApplicationsRequest) Offset(offset string) ApiApplicationsRequest {
 	return r
 }
 
-func (r ApiApplicationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiApplicationsRequest) Execute() (*PrismApplications200Response, *http.Response, error) {
 	return r.ApiService.ApplicationsExecute(r)
 }
 
@@ -713,13 +713,13 @@ func (a *PrismAPIService) Applications(ctx context.Context) ApiApplicationsReque
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismApplications200Response
+func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (*PrismApplications200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismApplications200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Applications")
@@ -852,7 +852,7 @@ func (r ApiCertificatesRequest) Offset(offset string) ApiCertificatesRequest {
 	return r
 }
 
-func (r ApiCertificatesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiCertificatesRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.CertificatesExecute(r)
 }
 
@@ -872,13 +872,13 @@ func (a *PrismAPIService) Certificates(ctx context.Context) ApiCertificatesReque
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Certificates")
@@ -976,7 +976,7 @@ func (r ApiCountRequest) Category(category string) ApiCountRequest {
 	return r
 }
 
-func (r ApiCountRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiCountRequest) Execute() (*PrismCount200Response, *http.Response, error) {
 	return r.ApiService.CountExecute(r)
 }
 
@@ -998,13 +998,13 @@ func (a *PrismAPIService) Count(ctx context.Context) ApiCountRequest {
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) CountExecute(r ApiCountRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismCount200Response
+func (a *PrismAPIService) CountExecute(r ApiCountRequest) (*PrismCount200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismCount200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Count")
@@ -1123,7 +1123,7 @@ func (r ApiDesktopAndScreensaverRequest) Offset(offset string) ApiDesktopAndScre
 	return r
 }
 
-func (r ApiDesktopAndScreensaverRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiDesktopAndScreensaverRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.DesktopAndScreensaverExecute(r)
 }
 
@@ -1143,13 +1143,13 @@ func (a *PrismAPIService) DesktopAndScreensaver(ctx context.Context) ApiDesktopA
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) DesktopAndScreensaverExecute(r ApiDesktopAndScreensaverRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) DesktopAndScreensaverExecute(r ApiDesktopAndScreensaverRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.DesktopAndScreensaver")
@@ -1288,7 +1288,7 @@ func (r ApiDeviceInformationRequest) Body(body string) ApiDeviceInformationReque
 	return r
 }
 
-func (r ApiDeviceInformationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiDeviceInformationRequest) Execute() (*PrismDeviceInformation200Response, *http.Response, error) {
 	return r.ApiService.DeviceInformationExecute(r)
 }
 
@@ -1308,13 +1308,13 @@ func (a *PrismAPIService) DeviceInformation(ctx context.Context) ApiDeviceInform
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismDeviceInformation200Response
+func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest) (*PrismDeviceInformation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismDeviceInformation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.DeviceInformation")
@@ -1449,7 +1449,7 @@ func (r ApiFilevaultRequest) Offset(offset string) ApiFilevaultRequest {
 	return r
 }
 
-func (r ApiFilevaultRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiFilevaultRequest) Execute() (*PrismDeviceInformation200Response, *http.Response, error) {
 	return r.ApiService.FilevaultExecute(r)
 }
 
@@ -1469,13 +1469,13 @@ func (a *PrismAPIService) Filevault(ctx context.Context) ApiFilevaultRequest {
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismDeviceInformation200Response
+func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (*PrismDeviceInformation200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismDeviceInformation200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Filevault")
@@ -1608,7 +1608,7 @@ func (r ApiGatekeeperAndXprotectRequest) Offset(offset string) ApiGatekeeperAndX
 	return r
 }
 
-func (r ApiGatekeeperAndXprotectRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGatekeeperAndXprotectRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.GatekeeperAndXprotectExecute(r)
 }
 
@@ -1628,13 +1628,13 @@ func (a *PrismAPIService) GatekeeperAndXprotect(ctx context.Context) ApiGatekeep
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.GatekeeperAndXprotect")
@@ -1726,7 +1726,7 @@ type ApiGetCategoryExportRequest struct {
 	exportId string
 }
 
-func (r ApiGetCategoryExportRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetCategoryExportRequest) Execute() (*PrismGetCategoryExport200Response, *http.Response, error) {
 	return r.ApiService.GetCategoryExportExecute(r)
 }
 
@@ -1750,13 +1750,13 @@ func (a *PrismAPIService) GetCategoryExport(ctx context.Context, exportId string
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) GetCategoryExportExecute(r ApiGetCategoryExportRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismGetCategoryExport200Response
+func (a *PrismAPIService) GetCategoryExportExecute(r ApiGetCategoryExportRequest) (*PrismGetCategoryExport200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismGetCategoryExport200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.GetCategoryExport")
@@ -1872,7 +1872,7 @@ func (r ApiInstalledProfilesRequest) Offset(offset string) ApiInstalledProfilesR
 	return r
 }
 
-func (r ApiInstalledProfilesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiInstalledProfilesRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.InstalledProfilesExecute(r)
 }
 
@@ -1892,13 +1892,13 @@ func (a *PrismAPIService) InstalledProfiles(ctx context.Context) ApiInstalledPro
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) InstalledProfilesExecute(r ApiInstalledProfilesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) InstalledProfilesExecute(r ApiInstalledProfilesRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.InstalledProfiles")
@@ -2031,7 +2031,7 @@ func (r ApiKernelExtensionsRequest) Offset(offset string) ApiKernelExtensionsReq
 	return r
 }
 
-func (r ApiKernelExtensionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiKernelExtensionsRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.KernelExtensionsExecute(r)
 }
 
@@ -2051,13 +2051,13 @@ func (a *PrismAPIService) KernelExtensions(ctx context.Context) ApiKernelExtensi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) KernelExtensionsExecute(r ApiKernelExtensionsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) KernelExtensionsExecute(r ApiKernelExtensionsRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.KernelExtensions")
@@ -2190,7 +2190,7 @@ func (r ApiLaunchAgentsAndDaemonsRequest) Offset(offset string) ApiLaunchAgentsA
 	return r
 }
 
-func (r ApiLaunchAgentsAndDaemonsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiLaunchAgentsAndDaemonsRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.LaunchAgentsAndDaemonsExecute(r)
 }
 
@@ -2210,13 +2210,13 @@ func (a *PrismAPIService) LaunchAgentsAndDaemons(ctx context.Context) ApiLaunchA
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaemonsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) LaunchAgentsAndDaemonsExecute(r ApiLaunchAgentsAndDaemonsRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.LaunchAgentsAndDaemons")
@@ -2349,7 +2349,7 @@ func (r ApiLocalUsersRequest) Offset(offset string) ApiLocalUsersRequest {
 	return r
 }
 
-func (r ApiLocalUsersRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiLocalUsersRequest) Execute() (*PrismLocalUsers200Response, *http.Response, error) {
 	return r.ApiService.LocalUsersExecute(r)
 }
 
@@ -2369,13 +2369,13 @@ func (a *PrismAPIService) LocalUsers(ctx context.Context) ApiLocalUsersRequest {
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) LocalUsersExecute(r ApiLocalUsersRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismLocalUsers200Response
+func (a *PrismAPIService) LocalUsersExecute(r ApiLocalUsersRequest) (*PrismLocalUsers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismLocalUsers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.LocalUsers")
@@ -2472,7 +2472,7 @@ func (r ApiRequestCategoryExportRequest) Body(body string) ApiRequestCategoryExp
 	return r
 }
 
-func (r ApiRequestCategoryExportRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiRequestCategoryExportRequest) Execute() (*PrismRequestCategoryExport200Response, *http.Response, error) {
 	return r.ApiService.RequestCategoryExportExecute(r)
 }
 
@@ -2536,13 +2536,13 @@ func (a *PrismAPIService) RequestCategoryExport(ctx context.Context) ApiRequestC
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) RequestCategoryExportExecute(r ApiRequestCategoryExportRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismRequestCategoryExport200Response
+func (a *PrismAPIService) RequestCategoryExportExecute(r ApiRequestCategoryExportRequest) (*PrismRequestCategoryExport200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismRequestCategoryExport200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.RequestCategoryExport")
@@ -2598,7 +2598,7 @@ func (a *PrismAPIService) RequestCategoryExportExecute(r ApiRequestCategoryExpor
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v map[string]interface{}
+			var v PrismRequestCategoryExport400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2669,7 +2669,7 @@ func (r ApiStartupSettingsRequest) Offset(offset string) ApiStartupSettingsReque
 	return r
 }
 
-func (r ApiStartupSettingsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiStartupSettingsRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.StartupSettingsExecute(r)
 }
 
@@ -2689,13 +2689,13 @@ func (a *PrismAPIService) StartupSettings(ctx context.Context) ApiStartupSetting
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) StartupSettingsExecute(r ApiStartupSettingsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) StartupSettingsExecute(r ApiStartupSettingsRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.StartupSettings")
@@ -2828,7 +2828,7 @@ func (r ApiSystemExtensionsRequest) Offset(offset string) ApiSystemExtensionsReq
 	return r
 }
 
-func (r ApiSystemExtensionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiSystemExtensionsRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.SystemExtensionsExecute(r)
 }
 
@@ -2848,13 +2848,13 @@ func (a *PrismAPIService) SystemExtensions(ctx context.Context) ApiSystemExtensi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) SystemExtensionsExecute(r ApiSystemExtensionsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) SystemExtensionsExecute(r ApiSystemExtensionsRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.SystemExtensions")
@@ -2987,7 +2987,7 @@ func (r ApiTransparencyDatabaseRequest) Offset(offset string) ApiTransparencyDat
 	return r
 }
 
-func (r ApiTransparencyDatabaseRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiTransparencyDatabaseRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.TransparencyDatabaseExecute(r)
 }
 
@@ -3007,13 +3007,13 @@ func (a *PrismAPIService) TransparencyDatabase(ctx context.Context) ApiTranspare
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) TransparencyDatabaseExecute(r ApiTransparencyDatabaseRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) TransparencyDatabaseExecute(r ApiTransparencyDatabaseRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.TransparencyDatabase")

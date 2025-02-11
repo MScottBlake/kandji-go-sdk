@@ -49,8 +49,8 @@ type DeviceInformationAPI interface {
 	GetDevice(ctx context.Context, deviceId string) ApiGetDeviceRequest
 
 	// GetDeviceExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceExecute(r ApiGetDeviceRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDevice200Response
+	GetDeviceExecute(r ApiGetDeviceRequest) (*DeviceInformationGetDevice200Response, *http.Response, error)
 
 	/*
 	GetDeviceActivity Get Device Activity
@@ -64,8 +64,8 @@ type DeviceInformationAPI interface {
 	GetDeviceActivity(ctx context.Context, deviceId string) ApiGetDeviceActivityRequest
 
 	// GetDeviceActivityExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceActivityExecute(r ApiGetDeviceActivityRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDeviceActivity200Response
+	GetDeviceActivityExecute(r ApiGetDeviceActivityRequest) (*DeviceInformationGetDeviceActivity200Response, *http.Response, error)
 
 	/*
 	GetDeviceApps Get Device Apps
@@ -80,8 +80,8 @@ type DeviceInformationAPI interface {
 	GetDeviceApps(ctx context.Context, deviceId string) ApiGetDeviceAppsRequest
 
 	// GetDeviceAppsExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceAppsExecute(r ApiGetDeviceAppsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDeviceApps200Response
+	GetDeviceAppsExecute(r ApiGetDeviceAppsRequest) (*DeviceInformationGetDeviceApps200Response, *http.Response, error)
 
 	/*
 	GetDeviceDetails Get Device Details
@@ -95,8 +95,8 @@ type DeviceInformationAPI interface {
 	GetDeviceDetails(ctx context.Context, deviceId string) ApiGetDeviceDetailsRequest
 
 	// GetDeviceDetailsExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceDetailsExecute(r ApiGetDeviceDetailsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDeviceDetails200Response
+	GetDeviceDetailsExecute(r ApiGetDeviceDetailsRequest) (*DeviceInformationGetDeviceDetails200Response, *http.Response, error)
 
 	/*
 	GetDeviceLibraryItems Get Device Library Items
@@ -188,8 +188,8 @@ type DeviceInformationAPI interface {
 	GetDeviceLibraryItems(ctx context.Context, deviceId string) ApiGetDeviceLibraryItemsRequest
 
 	// GetDeviceLibraryItemsExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceLibraryItemsExecute(r ApiGetDeviceLibraryItemsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDeviceLibraryItems200Response
+	GetDeviceLibraryItemsExecute(r ApiGetDeviceLibraryItemsRequest) (*DeviceInformationGetDeviceLibraryItems200Response, *http.Response, error)
 
 	/*
 	GetDeviceLostModeDetails Get Device Lost Mode details
@@ -204,8 +204,8 @@ type DeviceInformationAPI interface {
 	GetDeviceLostModeDetails(ctx context.Context, deviceId string) ApiGetDeviceLostModeDetailsRequest
 
 	// GetDeviceLostModeDetailsExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceLostModeDetailsExecute(r ApiGetDeviceLostModeDetailsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDeviceLostModeDetails200Response
+	GetDeviceLostModeDetailsExecute(r ApiGetDeviceLostModeDetailsRequest) (*DeviceInformationGetDeviceLostModeDetails200Response, *http.Response, error)
 
 	/*
 	GetDeviceParameters Get Device Parameters
@@ -264,8 +264,8 @@ type DeviceInformationAPI interface {
 	GetDeviceParameters(ctx context.Context, deviceId string) ApiGetDeviceParametersRequest
 
 	// GetDeviceParametersExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceParametersExecute(r ApiGetDeviceParametersRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDeviceParameters200Response
+	GetDeviceParametersExecute(r ApiGetDeviceParametersRequest) (*DeviceInformationGetDeviceParameters200Response, *http.Response, error)
 
 	/*
 	GetDeviceStatus Get Device Status
@@ -381,8 +381,8 @@ type DeviceInformationAPI interface {
 	GetDeviceStatus(ctx context.Context, deviceId string) ApiGetDeviceStatusRequest
 
 	// GetDeviceStatusExecute executes the request
-	//  @return map[string]interface{}
-	GetDeviceStatusExecute(r ApiGetDeviceStatusRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationGetDeviceStatus200Response
+	GetDeviceStatusExecute(r ApiGetDeviceStatusRequest) (*DeviceInformationGetDeviceStatus200Response, *http.Response, error)
 
 	/*
 	ListDevices List Devices
@@ -441,8 +441,8 @@ type DeviceInformationAPI interface {
 	UpdateDevice(ctx context.Context, deviceId string) ApiUpdateDeviceRequest
 
 	// UpdateDeviceExecute executes the request
-	//  @return map[string]interface{}
-	UpdateDeviceExecute(r ApiUpdateDeviceRequest) (map[string]interface{}, *http.Response, error)
+	//  @return DeviceInformationUpdateDevice200Response
+	UpdateDeviceExecute(r ApiUpdateDeviceRequest) (*DeviceInformationUpdateDevice200Response, *http.Response, error)
 }
 
 // DeviceInformationAPIService DeviceInformationAPI service
@@ -546,7 +546,7 @@ type ApiGetDeviceRequest struct {
 	deviceId string
 }
 
-func (r ApiGetDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceRequest) Execute() (*DeviceInformationGetDevice200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceExecute(r)
 }
 
@@ -568,13 +568,13 @@ func (a *DeviceInformationAPIService) GetDevice(ctx context.Context, deviceId st
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceExecute(r ApiGetDeviceRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDevice200Response
+func (a *DeviceInformationAPIService) GetDeviceExecute(r ApiGetDeviceRequest) (*DeviceInformationGetDevice200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDevice200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDevice")
@@ -663,7 +663,7 @@ func (r ApiGetDeviceActivityRequest) Offset(offset string) ApiGetDeviceActivityR
 	return r
 }
 
-func (r ApiGetDeviceActivityRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceActivityRequest) Execute() (*DeviceInformationGetDeviceActivity200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceActivityExecute(r)
 }
 
@@ -685,13 +685,13 @@ func (a *DeviceInformationAPIService) GetDeviceActivity(ctx context.Context, dev
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceActivityExecute(r ApiGetDeviceActivityRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDeviceActivity200Response
+func (a *DeviceInformationAPIService) GetDeviceActivityExecute(r ApiGetDeviceActivityRequest) (*DeviceInformationGetDeviceActivity200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDeviceActivity200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceActivity")
@@ -773,7 +773,7 @@ type ApiGetDeviceAppsRequest struct {
 	deviceId string
 }
 
-func (r ApiGetDeviceAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceAppsRequest) Execute() (*DeviceInformationGetDeviceApps200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceAppsExecute(r)
 }
 
@@ -796,13 +796,13 @@ func (a *DeviceInformationAPIService) GetDeviceApps(ctx context.Context, deviceI
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceAppsExecute(r ApiGetDeviceAppsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDeviceApps200Response
+func (a *DeviceInformationAPIService) GetDeviceAppsExecute(r ApiGetDeviceAppsRequest) (*DeviceInformationGetDeviceApps200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDeviceApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceApps")
@@ -877,7 +877,7 @@ type ApiGetDeviceDetailsRequest struct {
 	deviceId string
 }
 
-func (r ApiGetDeviceDetailsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceDetailsRequest) Execute() (*DeviceInformationGetDeviceDetails200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceDetailsExecute(r)
 }
 
@@ -899,13 +899,13 @@ func (a *DeviceInformationAPIService) GetDeviceDetails(ctx context.Context, devi
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceDetailsExecute(r ApiGetDeviceDetailsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDeviceDetails200Response
+func (a *DeviceInformationAPIService) GetDeviceDetailsExecute(r ApiGetDeviceDetailsRequest) (*DeviceInformationGetDeviceDetails200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDeviceDetails200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceDetails")
@@ -980,7 +980,7 @@ type ApiGetDeviceLibraryItemsRequest struct {
 	deviceId string
 }
 
-func (r ApiGetDeviceLibraryItemsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceLibraryItemsRequest) Execute() (*DeviceInformationGetDeviceLibraryItems200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceLibraryItemsExecute(r)
 }
 
@@ -1080,13 +1080,13 @@ func (a *DeviceInformationAPIService) GetDeviceLibraryItems(ctx context.Context,
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceLibraryItemsExecute(r ApiGetDeviceLibraryItemsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDeviceLibraryItems200Response
+func (a *DeviceInformationAPIService) GetDeviceLibraryItemsExecute(r ApiGetDeviceLibraryItemsRequest) (*DeviceInformationGetDeviceLibraryItems200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDeviceLibraryItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceLibraryItems")
@@ -1161,7 +1161,7 @@ type ApiGetDeviceLostModeDetailsRequest struct {
 	deviceId string
 }
 
-func (r ApiGetDeviceLostModeDetailsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceLostModeDetailsRequest) Execute() (*DeviceInformationGetDeviceLostModeDetails200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceLostModeDetailsExecute(r)
 }
 
@@ -1184,13 +1184,13 @@ func (a *DeviceInformationAPIService) GetDeviceLostModeDetails(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceLostModeDetailsExecute(r ApiGetDeviceLostModeDetailsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDeviceLostModeDetails200Response
+func (a *DeviceInformationAPIService) GetDeviceLostModeDetailsExecute(r ApiGetDeviceLostModeDetailsRequest) (*DeviceInformationGetDeviceLostModeDetails200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDeviceLostModeDetails200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceLostModeDetails")
@@ -1265,7 +1265,7 @@ type ApiGetDeviceParametersRequest struct {
 	deviceId string
 }
 
-func (r ApiGetDeviceParametersRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceParametersRequest) Execute() (*DeviceInformationGetDeviceParameters200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceParametersExecute(r)
 }
 
@@ -1332,13 +1332,13 @@ func (a *DeviceInformationAPIService) GetDeviceParameters(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceParametersExecute(r ApiGetDeviceParametersRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDeviceParameters200Response
+func (a *DeviceInformationAPIService) GetDeviceParametersExecute(r ApiGetDeviceParametersRequest) (*DeviceInformationGetDeviceParameters200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDeviceParameters200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceParameters")
@@ -1413,7 +1413,7 @@ type ApiGetDeviceStatusRequest struct {
 	deviceId string
 }
 
-func (r ApiGetDeviceStatusRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiGetDeviceStatusRequest) Execute() (*DeviceInformationGetDeviceStatus200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceStatusExecute(r)
 }
 
@@ -1537,13 +1537,13 @@ func (a *DeviceInformationAPIService) GetDeviceStatus(ctx context.Context, devic
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) GetDeviceStatusExecute(r ApiGetDeviceStatusRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationGetDeviceStatus200Response
+func (a *DeviceInformationAPIService) GetDeviceStatusExecute(r ApiGetDeviceStatusRequest) (*DeviceInformationGetDeviceStatus200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationGetDeviceStatus200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.GetDeviceStatus")
@@ -1935,7 +1935,7 @@ func (r ApiUpdateDeviceRequest) Body(body string) ApiUpdateDeviceRequest {
 	return r
 }
 
-func (r ApiUpdateDeviceRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiUpdateDeviceRequest) Execute() (*DeviceInformationUpdateDevice200Response, *http.Response, error) {
 	return r.ApiService.UpdateDeviceExecute(r)
 }
 
@@ -1987,13 +1987,13 @@ func (a *DeviceInformationAPIService) UpdateDevice(ctx context.Context, deviceId
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *DeviceInformationAPIService) UpdateDeviceExecute(r ApiUpdateDeviceRequest) (map[string]interface{}, *http.Response, error) {
+//  @return DeviceInformationUpdateDevice200Response
+func (a *DeviceInformationAPIService) UpdateDeviceExecute(r ApiUpdateDeviceRequest) (*DeviceInformationUpdateDevice200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *DeviceInformationUpdateDevice200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceInformationAPIService.UpdateDevice")
