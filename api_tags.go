@@ -21,76 +21,12 @@ import (
 )
 
 
-type TagsAPI interface {
-
-	/*
-	CreateTag Create Tag
-
-	Create a tag. Can only create one tag per request.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateTagRequest
-	*/
-	CreateTag(ctx context.Context) ApiCreateTagRequest
-
-	// CreateTagExecute executes the request
-	//  @return TagsCreateTag201Response
-	CreateTagExecute(r ApiCreateTagRequest) (*TagsCreateTag201Response, *http.Response, error)
-
-	/*
-	DeleteTag Delete Tag
-
-	<p>Delete a tag.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param tagId
-	@return ApiDeleteTagRequest
-	*/
-	DeleteTag(ctx context.Context, tagId string) ApiDeleteTagRequest
-
-	// DeleteTagExecute executes the request
-	DeleteTagExecute(r ApiDeleteTagRequest) (*http.Response, error)
-
-	/*
-	GetTags Get Tags
-
-	Return configured tags.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetTagsRequest
-	*/
-	GetTags(ctx context.Context) ApiGetTagsRequest
-
-	// GetTagsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	GetTagsExecute(r ApiGetTagsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
-
-	/*
-	UpdateTag Update Tag
-
-	<p>Update tag name.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>tag_id</code> (path parameter): The unique identifier of the tag.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param tagId
-	@return ApiUpdateTagRequest
-	*/
-	UpdateTag(ctx context.Context, tagId string) ApiUpdateTagRequest
-
-	// UpdateTagExecute executes the request
-	//  @return TagsCreateTag201Response
-	UpdateTagExecute(r ApiUpdateTagRequest) (*TagsCreateTag201Response, *http.Response, error)
-}
-
 // TagsAPIService TagsAPI service
 type TagsAPIService service
 
 type ApiCreateTagRequest struct {
 	ctx context.Context
-	ApiService TagsAPI
+	ApiService *TagsAPIService
 	body *string
 }
 
@@ -197,7 +133,7 @@ func (a *TagsAPIService) CreateTagExecute(r ApiCreateTagRequest) (*TagsCreateTag
 
 type ApiDeleteTagRequest struct {
 	ctx context.Context
-	ApiService TagsAPI
+	ApiService *TagsAPIService
 	tagId string
 }
 
@@ -291,7 +227,7 @@ func (a *TagsAPIService) DeleteTagExecute(r ApiDeleteTagRequest) (*http.Response
 
 type ApiGetTagsRequest struct {
 	ctx context.Context
-	ApiService TagsAPI
+	ApiService *TagsAPIService
 	search *string
 }
 
@@ -401,7 +337,7 @@ func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*AutomatedDeviceEn
 
 type ApiUpdateTagRequest struct {
 	ctx context.Context
-	ApiService TagsAPI
+	ApiService *TagsAPIService
 	tagId string
 	body *string
 }

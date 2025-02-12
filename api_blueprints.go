@@ -21,283 +21,12 @@ import (
 )
 
 
-type BlueprintsAPI interface {
-
-	/*
-	AssignLibraryItem Assign Library Item
-
-	<p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-<h3 id=&quot;request-body&quot;>Request Body</h3>
-<ul>
-<li><p><code>library_item_id</code> (string, required)</p>
-</li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
-<ul>
-<li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li>
-</ul>
-</li>
-</ul>
-<h3 id=&quot;error-responses&quot;>Error responses</h3>
-<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
-<thead>
-<tr>
-<th><strong>Code</strong></th>
-<th><strong>Body</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400 - Bad Request</td>
-<td>Bad Request</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists on Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists in Assignment Node&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiAssignLibraryItemRequest
-	*/
-	AssignLibraryItem(ctx context.Context, blueprintId string) ApiAssignLibraryItemRequest
-
-	// AssignLibraryItemExecute executes the request
-	//  @return map[string]interface{}
-	AssignLibraryItemExecute(r ApiAssignLibraryItemRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	CreateBlueprint Create Blueprint
-
-	<p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p>
-<p>optionally, <code>type: map</code> can be used when creating a new Assignment Map blueprint.</p>
-<p>Note: If cloning an existing blueprint,`type` value and the type of sourced (`source.id`) blueprint must match and `source.type` value must be set to `blueprint`.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiCreateBlueprintRequest
-	*/
-	CreateBlueprint(ctx context.Context) ApiCreateBlueprintRequest
-
-	// CreateBlueprintExecute executes the request
-	//  @return BlueprintsCreateBlueprint201Response
-	CreateBlueprintExecute(r ApiCreateBlueprintRequest) (*BlueprintsCreateBlueprint201Response, *http.Response, error)
-
-	/*
-	DeleteBlueprint Delete Blueprint
-
-	<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
-<p>This is a HIGHLY destructive action.</p>
-<p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiDeleteBlueprintRequest
-	*/
-	DeleteBlueprint(ctx context.Context, blueprintId string) ApiDeleteBlueprintRequest
-
-	// DeleteBlueprintExecute executes the request
-	DeleteBlueprintExecute(r ApiDeleteBlueprintRequest) (*http.Response, error)
-
-	/*
-	GetBlueprint Get Blueprint
-
-	<p>This request returns information about a specific blueprint based on blueprint ID.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiGetBlueprintRequest
-	*/
-	GetBlueprint(ctx context.Context, blueprintId string) ApiGetBlueprintRequest
-
-	// GetBlueprintExecute executes the request
-	//  @return BlueprintsGetBlueprint200Response
-	GetBlueprintExecute(r ApiGetBlueprintRequest) (*BlueprintsGetBlueprint200Response, *http.Response, error)
-
-	/*
-	GetBlueprintTemplates Get Blueprint Templates
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetBlueprintTemplatesRequest
-	*/
-	GetBlueprintTemplates(ctx context.Context) ApiGetBlueprintTemplatesRequest
-
-	// GetBlueprintTemplatesExecute executes the request
-	GetBlueprintTemplatesExecute(r ApiGetBlueprintTemplatesRequest) (*http.Response, error)
-
-	/*
-	GetManualEnrollmentProfile Get Manual Enrollment Profile
-
-	<p>This request returns the manual enrollment profile (.mobileconfig file) for a specified Blueprint.</p>
-<p>This request will return the enrollment profile even if &quot;Require Authentication&quot; is configured for the Blueprint in Manual Enrollment.</p>
-<p>The enrollment profile will be returned in raw form with response headers:</p>
-<ul>
-<li><p><code>Content-Type</code> = <code>application/x-apple-aspen-config</code></p>
-</li>
-<li><p><code>Content-Disposition</code> = <code>attachment;filename=kandji-enroll.mobileconfig</code></p>
-</li>
-</ul>
-<p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiGetManualEnrollmentProfileRequest
-	*/
-	GetManualEnrollmentProfile(ctx context.Context, blueprintId string) ApiGetManualEnrollmentProfileRequest
-
-	// GetManualEnrollmentProfileExecute executes the request
-	//  @return string
-	GetManualEnrollmentProfileExecute(r ApiGetManualEnrollmentProfileRequest) (string, *http.Response, error)
-
-	/*
-	ListBlueprints List Blueprints
-
-	This request returns a list of a blueprint records in the Kandji tenant. Optional query parameters can be specified to filter the results.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiListBlueprintsRequest
-	*/
-	ListBlueprints(ctx context.Context) ApiListBlueprintsRequest
-
-	// ListBlueprintsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	ListBlueprintsExecute(r ApiListBlueprintsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
-
-	/*
-	ListLibraryItems List Library Items
-
-	<p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-<h3 id=&quot;response-fields&quot;>Response fields</h3>
-<ul>
-<li><p><code>count</code> (int): The total count of library items.</p>
-</li>
-<li><p><code>next</code> (str): The URL for the next page of results, if available. If not available will value will be <code>null</code>.</p>
-</li>
-<li><p><code>previous</code> (str): The URL for the previous page of results, if available. If not available will value will be <code>null</code>.</p>
-</li>
-<li><p><code>results</code> (object): An array containing objects with the following fields:</p>
-<ul>
-<li><p><code>id</code> (str): The ID of the library item.</p>
-</li>
-<li><p><code>name</code> (str): The name of the library item.</p>
-</li>
-</ul>
-</li>
-</ul>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiListLibraryItemsRequest
-	*/
-	ListLibraryItems(ctx context.Context, blueprintId string) ApiListLibraryItemsRequest
-
-	// ListLibraryItemsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
-
-	/*
-	RemoveLibraryItem Remove Library Item
-
-	<p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-<h3 id=&quot;request-body&quot;>Request Body</h3>
-<ul>
-<li><p><code>library_item_id</code> (string, required)</p>
-</li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
-</li>
-</ul>
-<h3 id=&quot;error-responses&quot;>Error responses</h3>
-<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
-<thead>
-<tr>
-<th><strong>Code</strong></th>
-<th><strong>Body</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400 - Bad Request</td>
-<td>Bad Request</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item does not exist on Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item does not exist in Assignment Node&quot;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiRemoveLibraryItemRequest
-	*/
-	RemoveLibraryItem(ctx context.Context, blueprintId string) ApiRemoveLibraryItemRequest
-
-	// RemoveLibraryItemExecute executes the request
-	//  @return map[string]interface{}
-	RemoveLibraryItemExecute(r ApiRemoveLibraryItemRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
-	UpdateBlueprint Update Blueprint
-
-	<p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiUpdateBlueprintRequest
-	*/
-	UpdateBlueprint(ctx context.Context, blueprintId string) ApiUpdateBlueprintRequest
-
-	// UpdateBlueprintExecute executes the request
-	//  @return BlueprintsUpdateBlueprint200Response
-	UpdateBlueprintExecute(r ApiUpdateBlueprintRequest) (*BlueprintsUpdateBlueprint200Response, *http.Response, error)
-}
-
 // BlueprintsAPIService BlueprintsAPI service
 type BlueprintsAPIService service
 
 type ApiAssignLibraryItemRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	blueprintId string
 	body *string
 }
@@ -452,7 +181,7 @@ func (a *BlueprintsAPIService) AssignLibraryItemExecute(r ApiAssignLibraryItemRe
 
 type ApiCreateBlueprintRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	name *string
 	enrollmentCodeIsActive *string
 	enrollmentCodeCode *string
@@ -629,7 +358,7 @@ func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintReques
 
 type ApiDeleteBlueprintRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	blueprintId string
 }
 
@@ -725,7 +454,7 @@ func (a *BlueprintsAPIService) DeleteBlueprintExecute(r ApiDeleteBlueprintReques
 
 type ApiGetBlueprintRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	blueprintId string
 }
 
@@ -830,7 +559,7 @@ func (a *BlueprintsAPIService) GetBlueprintExecute(r ApiGetBlueprintRequest) (*B
 
 type ApiGetBlueprintTemplatesRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	limit *string
 	offset *string
 }
@@ -936,7 +665,7 @@ func (a *BlueprintsAPIService) GetBlueprintTemplatesExecute(r ApiGetBlueprintTem
 
 type ApiGetManualEnrollmentProfileRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	blueprintId string
 	sso *string
 }
@@ -1060,7 +789,7 @@ func (a *BlueprintsAPIService) GetManualEnrollmentProfileExecute(r ApiGetManualE
 
 type ApiListBlueprintsRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	id *string
 	idIn *string
 	name *string
@@ -1209,7 +938,7 @@ func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest)
 
 type ApiListLibraryItemsRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	blueprintId string
 }
 
@@ -1331,7 +1060,7 @@ func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequ
 
 type ApiRemoveLibraryItemRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	blueprintId string
 	body *string
 }
@@ -1483,7 +1212,7 @@ func (a *BlueprintsAPIService) RemoveLibraryItemExecute(r ApiRemoveLibraryItemRe
 
 type ApiUpdateBlueprintRequest struct {
 	ctx context.Context
-	ApiService BlueprintsAPI
+	ApiService *BlueprintsAPIService
 	blueprintId string
 	name *string
 	description *string

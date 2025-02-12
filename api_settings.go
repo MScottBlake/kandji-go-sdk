@@ -20,29 +20,12 @@ import (
 )
 
 
-type SettingsAPI interface {
-
-	/*
-	Licensing Licensing
-
-	Returns Kandji tenant licensing and utilization information.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiLicensingRequest
-	*/
-	Licensing(ctx context.Context) ApiLicensingRequest
-
-	// LicensingExecute executes the request
-	//  @return SettingsLicensing200Response
-	LicensingExecute(r ApiLicensingRequest) (*SettingsLicensing200Response, *http.Response, error)
-}
-
 // SettingsAPIService SettingsAPI service
 type SettingsAPIService service
 
 type ApiLicensingRequest struct {
 	ctx context.Context
-	ApiService SettingsAPI
+	ApiService *SettingsAPIService
 }
 
 func (r ApiLicensingRequest) Execute() (*SettingsLicensing200Response, *http.Response, error) {

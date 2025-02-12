@@ -50,27 +50,27 @@ type APIClient struct {
 
 	// API Services
 
-	AutomatedDeviceEnrollmentIntegrationsAPI AutomatedDeviceEnrollmentIntegrationsAPI
+	AutomatedDeviceEnrollmentIntegrationsAPI *AutomatedDeviceEnrollmentIntegrationsAPIService
 
-	BlueprintsAPI BlueprintsAPI
+	BlueprintsAPI *BlueprintsAPIService
 
-	DeviceActionsAPI DeviceActionsAPI
+	DeviceActionsAPI *DeviceActionsAPIService
 
-	DeviceInformationAPI DeviceInformationAPI
+	DeviceInformationAPI *DeviceInformationAPIService
 
-	DeviceSecretsAPI DeviceSecretsAPI
+	DeviceSecretsAPI *DeviceSecretsAPIService
 
-	LibraryItemsAPI LibraryItemsAPI
+	LibraryItemsAPI *LibraryItemsAPIService
 
-	PrismAPI PrismAPI
+	PrismAPI *PrismAPIService
 
-	SettingsAPI SettingsAPI
+	SettingsAPI *SettingsAPIService
 
-	TagsAPI TagsAPI
+	TagsAPI *TagsAPIService
 
-	ThreatsAPI ThreatsAPI
+	ThreatsAPI *ThreatsAPIService
 
-	UsersAPI UsersAPI
+	UsersAPI *UsersAPIService
 }
 
 type service struct {

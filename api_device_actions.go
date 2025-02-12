@@ -21,324 +21,12 @@ import (
 )
 
 
-type DeviceActionsAPI interface {
-
-	/*
-	ClearPasscode Clear Passcode
-
-	This endpoint sends an MDM command to clear a device passcode. Available for iPhone and iPad.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiClearPasscodeRequest
-	*/
-	ClearPasscode(ctx context.Context, deviceId string) ApiClearPasscodeRequest
-
-	// ClearPasscodeExecute executes the request
-	ClearPasscodeExecute(r ApiClearPasscodeRequest) (*http.Response, error)
-
-	/*
-	DeleteDevice Delete Device
-
-	This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiDeleteDeviceRequest
-	*/
-	DeleteDevice(ctx context.Context, deviceId string) ApiDeleteDeviceRequest
-
-	// DeleteDeviceExecute executes the request
-	DeleteDeviceExecute(r ApiDeleteDeviceRequest) (*http.Response, error)
-
-	/*
-	DeleteUser Delete User
-
-	<p>This endpoint sends an MDM command to delete a local user account on macOS and Shared iPad (Device Supervision via Automated Device Enrollment is required).</p>
-<p><strong>Request Body Parameters</strong>: application/json</p>
-<hr />
-<p><code>DeleteAllUsers</code> - <code>boolean</code></p>
-<p><code>ForceDeletion</code> - <code>boolean</code></p>
-<p><code>UserName</code> - <code>string</code></p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiDeleteUserRequest
-	*/
-	DeleteUser(ctx context.Context, deviceId string) ApiDeleteUserRequest
-
-	// DeleteUserExecute executes the request
-	DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error)
-
-	/*
-	EraseDevice Erase Device
-
-	<p>This endpoint sends an MDM command to erase the device.</p>
-<p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>
-<p><strong>Request Body Parameters: application/json</strong></p>
-<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PIN</code></td>
-<td><code>string</code></td>
-<td>The six-character PIN for Find My. This value is available in macOS 10.8 and later.  <br />  <br />Note: This value will be ignored for iOS, iPadOS, and tvOS devices.</td>
-</tr>
-<tr>
-<td><code>PreserveDataPlan</code></td>
-<td><code>boolean</code></td>
-<td>If true, preserve the data plan on an iPhone or iPad with eSIM functionality, if one exists. This value is available in iOS 11 and later.  <br />  <br />Default: true</td>
-</tr>
-<tr>
-<td><code>DisallowProximitySetup</code></td>
-<td><code>boolean</code></td>
-<td>If true, disable Proximity Setup on the next reboot and skip the pane in Setup Assistant. This value is available in iOS 11 and later. Prior to iOS 14, don’t use this option with any other option.  <br />  <br />Default: false</td>
-</tr>
-<tr>
-<td><code>ReturnToService</code></td>
-<td><code>object</code></td>
-<td>(iOS 17 and later and iPadOS 17 and later and with Shared iPad ) When sending the erase device command to mobile devices, use this key to enable Return to Service. Include an optional Wi-Fi payload ProfileId to allow the device to connect to a Wi-Fi network automatically after being erased. If a Wi-Fi ProfileId is not provided and the mobile device is not tethered to a Mac to share the network connection, the end-user will be required to select a Wi-Fi network to complete the setup.  <br />  <br />If sent to any macOS computer or to mobile devices on iOS 16 or iPadOS 16 and below, the RTS keys will be ignored, and only the erase device command will be issued to the device.</td>
-</tr>
-<tr>
-<td>- <code>Enabled</code></td>
-<td><code>boolean</code></td>
-<td>(Required) If true, the device tries to re-enroll itself automatically after erasure. The user needs to deactivate all activation locks for this feature to work correctly.</td>
-</tr>
-<tr>
-<td>- <code>ProfileId</code></td>
-<td><code>string</code></td>
-<td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiEraseDeviceRequest
-	*/
-	EraseDevice(ctx context.Context, deviceId string) ApiEraseDeviceRequest
-
-	// EraseDeviceExecute executes the request
-	EraseDeviceExecute(r ApiEraseDeviceRequest) (*http.Response, error)
-
-	/*
-	GetDeviceCommands Get Device Commands
-
-	<p>This endpoint sends a request to get information about the commands sent to a given device ID.</p>
-<h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3>
-<ul>
-<li>1 : Command is Pending</li>
-<li>2 : Command is running</li>
-<li>3 : Command completed</li>
-<li>4 : Command failed</li>
-<li>5 : Command received &quot;Not Now&quot; response</li>
-</ul>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiGetDeviceCommandsRequest
-	*/
-	GetDeviceCommands(ctx context.Context, deviceId string) ApiGetDeviceCommandsRequest
-
-	// GetDeviceCommandsExecute executes the request
-	//  @return DeviceActionsGetDeviceCommands200Response
-	GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*DeviceActionsGetDeviceCommands200Response, *http.Response, error)
-
-	/*
-	LockDevice Lock Device
-
-	<p>This endpoint sends an MDM command to remotely lock a device.</p>
-<p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>
-<blockquote>
-<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p>
-</blockquote>
-<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p>
-<p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p>
-<h4 id=&quot;response-properties&quot;>Response properties</h4>
-<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PIN</td>
-<td>Six digit pin code used to unlock a Mac.</td>
-<td>String</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiLockDeviceRequest
-	*/
-	LockDevice(ctx context.Context, deviceId string) ApiLockDeviceRequest
-
-	// LockDeviceExecute executes the request
-	//  @return DeviceActionsLockDevice200Response
-	LockDeviceExecute(r ApiLockDeviceRequest) (*DeviceActionsLockDevice200Response, *http.Response, error)
-
-	/*
-	ReinstallAgent Reinstall Agent
-
-	This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiReinstallAgentRequest
-	*/
-	ReinstallAgent(ctx context.Context, deviceId string) ApiReinstallAgentRequest
-
-	// ReinstallAgentExecute executes the request
-	ReinstallAgentExecute(r ApiReinstallAgentRequest) (*http.Response, error)
-
-	/*
-	RemoteDesktop Remote Desktop
-
-	<p>This endpoint sends an MDM command to control the Remote Management status on a Mac. This MDM command turns on (or turns off) Remote Management with <em>Observe</em> and <em>Control</em> permissions given to all users*.*</p>
-<p><strong>Request Body Parameters</strong>: application/json</p>
-<hr />
-<p><code>EnableRemoteDesktop</code> - <code>boolean</code></p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiRemoteDesktopRequest
-	*/
-	RemoteDesktop(ctx context.Context, deviceId string) ApiRemoteDesktopRequest
-
-	// RemoteDesktopExecute executes the request
-	RemoteDesktopExecute(r ApiRemoteDesktopRequest) (*http.Response, error)
-
-	/*
-	RenewMdmProfile Renew MDM Profile
-
-	This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiRenewMdmProfileRequest
-	*/
-	RenewMdmProfile(ctx context.Context, deviceId string) ApiRenewMdmProfileRequest
-
-	// RenewMdmProfileExecute executes the request
-	RenewMdmProfileExecute(r ApiRenewMdmProfileRequest) (*http.Response, error)
-
-	/*
-	RestartDevice Restart Device
-
-	<p>This endpoint sends an MDM command to remotely restart a device.</p>
-<ul>
-<li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p>
-</li>
-<li><p><code>NotifyUser</code> - If <code>true</code>, notifies the user to restart the device at their convenience. Forced restart if the device is at <code>loginwindow</code> with no logged-in users. The user can dismiss the notification and ignore the request. No further notifications display unless you resend the command. This value is available in macOS 11.3 and later. Default: false</p>
-</li>
-</ul>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiRestartDeviceRequest
-	*/
-	RestartDevice(ctx context.Context, deviceId string) ApiRestartDeviceRequest
-
-	// RestartDeviceExecute executes the request
-	RestartDeviceExecute(r ApiRestartDeviceRequest) (*http.Response, error)
-
-	/*
-	SendBlankpush Send Blankpush
-
-	<p>This endpoint sends an MDM command to initiate a blank push.</p>
-<p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiSendBlankpushRequest
-	*/
-	SendBlankpush(ctx context.Context, deviceId string) ApiSendBlankpushRequest
-
-	// SendBlankpushExecute executes the request
-	SendBlankpushExecute(r ApiSendBlankpushRequest) (*http.Response, error)
-
-	/*
-	SetName Set Name
-
-	<p>This endpoint sends an MDM command to set the device name.</p>
-<p><strong>Request Body Parameters</strong>: application/json</p>
-<hr />
-<p><code>DeviceName</code> - <code>string</code></p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiSetNameRequest
-	*/
-	SetName(ctx context.Context, deviceId string) ApiSetNameRequest
-
-	// SetNameExecute executes the request
-	SetNameExecute(r ApiSetNameRequest) (*http.Response, error)
-
-	/*
-	Shutdown Shutdown
-
-	This endpoint sends an MDM command to shutdown a device.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiShutdownRequest
-	*/
-	Shutdown(ctx context.Context, deviceId string) ApiShutdownRequest
-
-	// ShutdownExecute executes the request
-	ShutdownExecute(r ApiShutdownRequest) (*http.Response, error)
-
-	/*
-	UnlockAccount Unlock Account
-
-	<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p>
-<p><strong>Request Body Parameters</strong>: application/json</p>
-<hr />
-<p><code>UserName</code> - <code>string</code></p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiUnlockAccountRequest
-	*/
-	UnlockAccount(ctx context.Context, deviceId string) ApiUnlockAccountRequest
-
-	// UnlockAccountExecute executes the request
-	UnlockAccountExecute(r ApiUnlockAccountRequest) (*http.Response, error)
-
-	/*
-	UpdateInventory Update Inventory
-
-	This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiUpdateInventoryRequest
-	*/
-	UpdateInventory(ctx context.Context, deviceId string) ApiUpdateInventoryRequest
-
-	// UpdateInventoryExecute executes the request
-	UpdateInventoryExecute(r ApiUpdateInventoryRequest) (*http.Response, error)
-}
-
 // DeviceActionsAPIService DeviceActionsAPI service
 type DeviceActionsAPIService service
 
 type ApiClearPasscodeRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
@@ -430,7 +118,7 @@ func (a *DeviceActionsAPIService) ClearPasscodeExecute(r ApiClearPasscodeRequest
 
 type ApiDeleteDeviceRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
@@ -522,7 +210,7 @@ func (a *DeviceActionsAPIService) DeleteDeviceExecute(r ApiDeleteDeviceRequest) 
 
 type ApiDeleteUserRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
@@ -627,7 +315,7 @@ func (a *DeviceActionsAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*ht
 
 type ApiEraseDeviceRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
@@ -781,7 +469,7 @@ func (a *DeviceActionsAPIService) EraseDeviceExecute(r ApiEraseDeviceRequest) (*
 
 type ApiGetDeviceCommandsRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	limit *string
 	offset *string
@@ -913,7 +601,7 @@ func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommand
 
 type ApiLockDeviceRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
@@ -1058,7 +746,7 @@ func (a *DeviceActionsAPIService) LockDeviceExecute(r ApiLockDeviceRequest) (*De
 
 type ApiReinstallAgentRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
@@ -1150,7 +838,7 @@ func (a *DeviceActionsAPIService) ReinstallAgentExecute(r ApiReinstallAgentReque
 
 type ApiRemoteDesktopRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
@@ -1253,7 +941,7 @@ func (a *DeviceActionsAPIService) RemoteDesktopExecute(r ApiRemoteDesktopRequest
 
 type ApiRenewMdmProfileRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
@@ -1345,7 +1033,7 @@ func (a *DeviceActionsAPIService) RenewMdmProfileExecute(r ApiRenewMdmProfileReq
 
 type ApiRestartDeviceRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
@@ -1451,7 +1139,7 @@ func (a *DeviceActionsAPIService) RestartDeviceExecute(r ApiRestartDeviceRequest
 
 type ApiSendBlankpushRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
@@ -1544,7 +1232,7 @@ func (a *DeviceActionsAPIService) SendBlankpushExecute(r ApiSendBlankpushRequest
 
 type ApiSetNameRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
@@ -1647,7 +1335,7 @@ func (a *DeviceActionsAPIService) SetNameExecute(r ApiSetNameRequest) (*http.Res
 
 type ApiShutdownRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 
@@ -1739,7 +1427,7 @@ func (a *DeviceActionsAPIService) ShutdownExecute(r ApiShutdownRequest) (*http.R
 
 type ApiUnlockAccountRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 	body *string
 }
@@ -1842,7 +1530,7 @@ func (a *DeviceActionsAPIService) UnlockAccountExecute(r ApiUnlockAccountRequest
 
 type ApiUpdateInventoryRequest struct {
 	ctx context.Context
-	ApiService DeviceActionsAPI
+	ApiService *DeviceActionsAPIService
 	deviceId string
 }
 

@@ -21,66 +21,12 @@ import (
 )
 
 
-type UsersAPI interface {
-
-	/*
-	DeleteUser Delete User
-
-	<p>This endpoint makes a request to delete a specified user directory integration user by id (uuid).</p>
-<h3 id=&quot;user-still-assigned-to-device&quot;>User still assigned to device</h3>
-<p>You will see the following response (400 bad request), if a user is still assigned to one or more devices in Kandji. The user will need to be unassigned from the device either manually through the Kandji tenant or programatically using the Update device API endpoint.</p>
-<pre class=&quot;click-to-expand-wrapper is-snippet-wrapper&quot;><code class=&quot;language-json&quot;>{
-    &quot;detail&quot;: &quot;User still assigned to one or more devices.&quot;
-}
-
-</code></pre>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param userId
-	@return ApiDeleteUserRequest
-	*/
-	DeleteUser(ctx context.Context, userId string) ApiDeleteUserRequest
-
-	// DeleteUserExecute executes the request
-	DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error)
-
-	/*
-	GetUser Get User
-
-	This endpoint makes a request to retrieve a specified user directory integration user by id.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param userId
-	@return ApiGetUserRequest
-	*/
-	GetUser(ctx context.Context, userId string) ApiGetUserRequest
-
-	// GetUserExecute executes the request
-	//  @return UsersGetUser200Response
-	GetUserExecute(r ApiGetUserRequest) (*UsersGetUser200Response, *http.Response, error)
-
-	/*
-	ListUsers List Users
-
-	<p>This endpoint makes a request to retrieve a list of users from user directory integrations.</p>
-<p>A maximum of 300 records are returned per request, and pagination can be performed leveraging the URLs provided in the <code>next</code> and <code>previous</code> keys in the response. If there are no more results available, the respective key will be <code>null</code>.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiListUsersRequest
-	*/
-	ListUsers(ctx context.Context) ApiListUsersRequest
-
-	// ListUsersExecute executes the request
-	//  @return UsersListUsers200Response
-	ListUsersExecute(r ApiListUsersRequest) (*UsersListUsers200Response, *http.Response, error)
-}
-
 // UsersAPIService UsersAPI service
 type UsersAPIService service
 
 type ApiDeleteUserRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	userId string
 }
 
@@ -189,7 +135,7 @@ func (a *UsersAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respo
 
 type ApiGetUserRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	userId string
 }
 
@@ -292,7 +238,7 @@ func (a *UsersAPIService) GetUserExecute(r ApiGetUserRequest) (*UsersGetUser200R
 
 type ApiListUsersRequest struct {
 	ctx context.Context
-	ApiService UsersAPI
+	ApiService *UsersAPIService
 	email *string
 	id *string
 	integrationId *string

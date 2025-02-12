@@ -20,29 +20,12 @@ import (
 )
 
 
-type ThreatsAPI interface {
-
-	/*
-	GetThreatDetails Get Threat Details
-
-	Get threat details.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetThreatDetailsRequest
-	*/
-	GetThreatDetails(ctx context.Context) ApiGetThreatDetailsRequest
-
-	// GetThreatDetailsExecute executes the request
-	//  @return ThreatsGetThreatDetails200Response
-	GetThreatDetailsExecute(r ApiGetThreatDetailsRequest) (*ThreatsGetThreatDetails200Response, *http.Response, error)
-}
-
 // ThreatsAPIService ThreatsAPI service
 type ThreatsAPIService service
 
 type ApiGetThreatDetailsRequest struct {
 	ctx context.Context
-	ApiService ThreatsAPI
+	ApiService *ThreatsAPIService
 	classification *string
 	dateRange *string
 	deviceId *string

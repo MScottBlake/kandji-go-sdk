@@ -21,86 +21,12 @@ import (
 )
 
 
-type DeviceSecretsAPI interface {
-
-	/*
-	GetActivationLockBypassCode Get Activation Lock Bypass Code
-
-	<p>This request allows you to retrieve the Activation Lock Bypass code.</p>
-<p>user_based_albc is the user-based Activation Lock bypass code for when Activation Lock is enabled using an personal Apple ID and Find My.</p>
-<p>device_based_albc is the device-based Activation Lock bypass code for when Activation Lock is enabled by the MDM server.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiGetActivationLockBypassCodeRequest
-	*/
-	GetActivationLockBypassCode(ctx context.Context, deviceId string) ApiGetActivationLockBypassCodeRequest
-
-	// GetActivationLockBypassCodeExecute executes the request
-	//  @return DeviceSecretsGetActivationLockBypassCode200Response
-	GetActivationLockBypassCodeExecute(r ApiGetActivationLockBypassCodeRequest) (*DeviceSecretsGetActivationLockBypassCode200Response, *http.Response, error)
-
-	/*
-	GetFilevaultRecoveryKey Get FileVault Recovery Key
-
-	<p>This request allows you to retrieve the FileVault Recovery key for a macOS device.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiGetFilevaultRecoveryKeyRequest
-	*/
-	GetFilevaultRecoveryKey(ctx context.Context, deviceId string) ApiGetFilevaultRecoveryKeyRequest
-
-	// GetFilevaultRecoveryKeyExecute executes the request
-	//  @return DeviceSecretsGetFilevaultRecoveryKey200Response
-	GetFilevaultRecoveryKeyExecute(r ApiGetFilevaultRecoveryKeyRequest) (*DeviceSecretsGetFilevaultRecoveryKey200Response, *http.Response, error)
-
-	/*
-	GetRecoveryLockPassword Get Recovery Lock Password
-
-	<p>This request returns the Recovery Lock password for a Mac with an Apple Silicon processor and the legacy EFI firmware password for a Mac with an Intel processor.</p>
-<p>For more details on setting and managing Recovery passwords, see this <a href=&quot;https://support.kandji.io/support/solutions/articles/72000560472-configure-the-recovery-password-library-item&quot;>Kandji support article</a>.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiGetRecoveryLockPasswordRequest
-	*/
-	GetRecoveryLockPassword(ctx context.Context, deviceId string) ApiGetRecoveryLockPasswordRequest
-
-	// GetRecoveryLockPasswordExecute executes the request
-	//  @return DeviceSecretsGetRecoveryLockPassword200Response
-	GetRecoveryLockPasswordExecute(r ApiGetRecoveryLockPasswordRequest) (*DeviceSecretsGetRecoveryLockPassword200Response, *http.Response, error)
-
-	/*
-	GetUnlockPin Get Unlock Pin
-
-	<p>This request allows you to retrieve the device unlock pin for a macOS device.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>device_id</code> (path parameter): The unique identifier of the device.</p>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param deviceId
-	@return ApiGetUnlockPinRequest
-	*/
-	GetUnlockPin(ctx context.Context, deviceId string) ApiGetUnlockPinRequest
-
-	// GetUnlockPinExecute executes the request
-	//  @return DeviceSecretsGetUnlockPin200Response
-	GetUnlockPinExecute(r ApiGetUnlockPinRequest) (*DeviceSecretsGetUnlockPin200Response, *http.Response, error)
-}
-
 // DeviceSecretsAPIService DeviceSecretsAPI service
 type DeviceSecretsAPIService service
 
 type ApiGetActivationLockBypassCodeRequest struct {
 	ctx context.Context
-	ApiService DeviceSecretsAPI
+	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
@@ -207,7 +133,7 @@ func (a *DeviceSecretsAPIService) GetActivationLockBypassCodeExecute(r ApiGetAct
 
 type ApiGetFilevaultRecoveryKeyRequest struct {
 	ctx context.Context
-	ApiService DeviceSecretsAPI
+	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
@@ -312,7 +238,7 @@ func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKeyExecute(r ApiGetFilevau
 
 type ApiGetRecoveryLockPasswordRequest struct {
 	ctx context.Context
-	ApiService DeviceSecretsAPI
+	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
@@ -418,7 +344,7 @@ func (a *DeviceSecretsAPIService) GetRecoveryLockPasswordExecute(r ApiGetRecover
 
 type ApiGetUnlockPinRequest struct {
 	ctx context.Context
-	ApiService DeviceSecretsAPI
+	ApiService *DeviceSecretsAPIService
 	deviceId string
 }
 
