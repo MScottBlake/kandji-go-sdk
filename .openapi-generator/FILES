@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -155,15 +154,4 @@ model_users_get_user_200_response.go
 model_users_get_user_200_response_integration.go
 model_users_list_users_200_response.go
 response.go
-test/api_automated_device_enrollment_integrations_test.go
-test/api_blueprints_test.go
-test/api_device_actions_test.go
-test/api_device_information_test.go
-test/api_device_secrets_test.go
-test/api_library_items_test.go
-test/api_prism_test.go
-test/api_settings_test.go
-test/api_tags_test.go
-test/api_threats_test.go
-test/api_users_test.go
 utils.go
