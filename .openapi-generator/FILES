@@ -13,6 +13,7 @@ api_settings.go
 api_tags.go
 api_threats.go
 api_users.go
+api_vulnerabilities.go
 client.go
 configuration.go
 docs/AutomatedDeviceEnrollmentIntegrationsAPI.md
@@ -88,6 +89,10 @@ docs/UsersAPI.md
 docs/UsersGetUser200Response.md
 docs/UsersGetUser200ResponseIntegration.md
 docs/UsersListUsers200Response.md
+docs/VulnerabilitiesAPI.md
+docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
+docs/VulnerabilitiesListDetections200Response.md
+docs/VulnerabilitiesListVulnerabilities200Response.md
 git_push.sh
 go.mod
 go.sum
@@ -153,5 +158,9 @@ model_threats_get_threat_details_200_response.go
 model_users_get_user_200_response.go
 model_users_get_user_200_response_integration.go
 model_users_list_users_200_response.go
+model_vulnerabilities_get_vulnerability_description_200_response.go
+model_vulnerabilities_list_detections_200_response.go
+model_vulnerabilities_list_vulnerabilities_200_response.go
 response.go
+test/api_vulnerabilities_test.go
 utils.go

@@ -71,6 +71,8 @@ type APIClient struct {
 	ThreatsAPI ThreatsAPI
 
 	UsersAPI UsersAPI
+
+	VulnerabilitiesAPI VulnerabilitiesAPI
 }
 
 type service struct {
@@ -100,6 +102,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.TagsAPI = (*TagsAPIService)(&c.common)
 	c.ThreatsAPI = (*ThreatsAPIService)(&c.common)
 	c.UsersAPI = (*UsersAPIService)(&c.common)
+	c.VulnerabilitiesAPI = (*VulnerabilitiesAPIService)(&c.common)
 
 	return c
 }
