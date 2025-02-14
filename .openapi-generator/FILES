@@ -162,5 +162,4 @@ model_vulnerabilities_get_vulnerability_description_200_response.go
 model_vulnerabilities_list_detections_200_response.go
 model_vulnerabilities_list_vulnerabilities_200_response.go
 response.go
-test/api_vulnerabilities_test.go
 utils.go
