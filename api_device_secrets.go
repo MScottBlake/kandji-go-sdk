@@ -39,8 +39,8 @@ type DeviceSecretsAPI interface {
 	GetActivationLockBypassCode(ctx context.Context, deviceId string) ApiGetActivationLockBypassCodeRequest
 
 	// GetActivationLockBypassCodeExecute executes the request
-	//  @return DeviceSecretsGetActivationLockBypassCode200Response
-	GetActivationLockBypassCodeExecute(r ApiGetActivationLockBypassCodeRequest) (*DeviceSecretsGetActivationLockBypassCode200Response, *http.Response, error)
+	//  @return InlineObject19
+	GetActivationLockBypassCodeExecute(r ApiGetActivationLockBypassCodeRequest) (*InlineObject19, *http.Response, error)
 
 	/*
 	GetFilevaultRecoveryKey Get FileVault Recovery Key
@@ -56,8 +56,8 @@ type DeviceSecretsAPI interface {
 	GetFilevaultRecoveryKey(ctx context.Context, deviceId string) ApiGetFilevaultRecoveryKeyRequest
 
 	// GetFilevaultRecoveryKeyExecute executes the request
-	//  @return DeviceSecretsGetFilevaultRecoveryKey200Response
-	GetFilevaultRecoveryKeyExecute(r ApiGetFilevaultRecoveryKeyRequest) (*DeviceSecretsGetFilevaultRecoveryKey200Response, *http.Response, error)
+	//  @return InlineObject20
+	GetFilevaultRecoveryKeyExecute(r ApiGetFilevaultRecoveryKeyRequest) (*InlineObject20, *http.Response, error)
 
 	/*
 	GetRecoveryLockPassword Get Recovery Lock Password
@@ -74,8 +74,8 @@ type DeviceSecretsAPI interface {
 	GetRecoveryLockPassword(ctx context.Context, deviceId string) ApiGetRecoveryLockPasswordRequest
 
 	// GetRecoveryLockPasswordExecute executes the request
-	//  @return DeviceSecretsGetRecoveryLockPassword200Response
-	GetRecoveryLockPasswordExecute(r ApiGetRecoveryLockPasswordRequest) (*DeviceSecretsGetRecoveryLockPassword200Response, *http.Response, error)
+	//  @return InlineObject22
+	GetRecoveryLockPasswordExecute(r ApiGetRecoveryLockPasswordRequest) (*InlineObject22, *http.Response, error)
 
 	/*
 	GetUnlockPin Get Unlock Pin
@@ -91,8 +91,8 @@ type DeviceSecretsAPI interface {
 	GetUnlockPin(ctx context.Context, deviceId string) ApiGetUnlockPinRequest
 
 	// GetUnlockPinExecute executes the request
-	//  @return DeviceSecretsGetUnlockPin200Response
-	GetUnlockPinExecute(r ApiGetUnlockPinRequest) (*DeviceSecretsGetUnlockPin200Response, *http.Response, error)
+	//  @return InlineObject21
+	GetUnlockPinExecute(r ApiGetUnlockPinRequest) (*InlineObject21, *http.Response, error)
 }
 
 // DeviceSecretsAPIService DeviceSecretsAPI service
@@ -104,7 +104,7 @@ type ApiGetActivationLockBypassCodeRequest struct {
 	deviceId string
 }
 
-func (r ApiGetActivationLockBypassCodeRequest) Execute() (*DeviceSecretsGetActivationLockBypassCode200Response, *http.Response, error) {
+func (r ApiGetActivationLockBypassCodeRequest) Execute() (*InlineObject19, *http.Response, error) {
 	return r.ApiService.GetActivationLockBypassCodeExecute(r)
 }
 
@@ -130,13 +130,13 @@ func (a *DeviceSecretsAPIService) GetActivationLockBypassCode(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return DeviceSecretsGetActivationLockBypassCode200Response
-func (a *DeviceSecretsAPIService) GetActivationLockBypassCodeExecute(r ApiGetActivationLockBypassCodeRequest) (*DeviceSecretsGetActivationLockBypassCode200Response, *http.Response, error) {
+//  @return InlineObject19
+func (a *DeviceSecretsAPIService) GetActivationLockBypassCodeExecute(r ApiGetActivationLockBypassCodeRequest) (*InlineObject19, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DeviceSecretsGetActivationLockBypassCode200Response
+		localVarReturnValue  *InlineObject19
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetActivationLockBypassCode")
@@ -211,7 +211,7 @@ type ApiGetFilevaultRecoveryKeyRequest struct {
 	deviceId string
 }
 
-func (r ApiGetFilevaultRecoveryKeyRequest) Execute() (*DeviceSecretsGetFilevaultRecoveryKey200Response, *http.Response, error) {
+func (r ApiGetFilevaultRecoveryKeyRequest) Execute() (*InlineObject20, *http.Response, error) {
 	return r.ApiService.GetFilevaultRecoveryKeyExecute(r)
 }
 
@@ -235,13 +235,13 @@ func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKey(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return DeviceSecretsGetFilevaultRecoveryKey200Response
-func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKeyExecute(r ApiGetFilevaultRecoveryKeyRequest) (*DeviceSecretsGetFilevaultRecoveryKey200Response, *http.Response, error) {
+//  @return InlineObject20
+func (a *DeviceSecretsAPIService) GetFilevaultRecoveryKeyExecute(r ApiGetFilevaultRecoveryKeyRequest) (*InlineObject20, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DeviceSecretsGetFilevaultRecoveryKey200Response
+		localVarReturnValue  *InlineObject20
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetFilevaultRecoveryKey")
@@ -316,7 +316,7 @@ type ApiGetRecoveryLockPasswordRequest struct {
 	deviceId string
 }
 
-func (r ApiGetRecoveryLockPasswordRequest) Execute() (*DeviceSecretsGetRecoveryLockPassword200Response, *http.Response, error) {
+func (r ApiGetRecoveryLockPasswordRequest) Execute() (*InlineObject22, *http.Response, error) {
 	return r.ApiService.GetRecoveryLockPasswordExecute(r)
 }
 
@@ -341,13 +341,13 @@ func (a *DeviceSecretsAPIService) GetRecoveryLockPassword(ctx context.Context, d
 }
 
 // Execute executes the request
-//  @return DeviceSecretsGetRecoveryLockPassword200Response
-func (a *DeviceSecretsAPIService) GetRecoveryLockPasswordExecute(r ApiGetRecoveryLockPasswordRequest) (*DeviceSecretsGetRecoveryLockPassword200Response, *http.Response, error) {
+//  @return InlineObject22
+func (a *DeviceSecretsAPIService) GetRecoveryLockPasswordExecute(r ApiGetRecoveryLockPasswordRequest) (*InlineObject22, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DeviceSecretsGetRecoveryLockPassword200Response
+		localVarReturnValue  *InlineObject22
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetRecoveryLockPassword")
@@ -422,7 +422,7 @@ type ApiGetUnlockPinRequest struct {
 	deviceId string
 }
 
-func (r ApiGetUnlockPinRequest) Execute() (*DeviceSecretsGetUnlockPin200Response, *http.Response, error) {
+func (r ApiGetUnlockPinRequest) Execute() (*InlineObject21, *http.Response, error) {
 	return r.ApiService.GetUnlockPinExecute(r)
 }
 
@@ -446,13 +446,13 @@ func (a *DeviceSecretsAPIService) GetUnlockPin(ctx context.Context, deviceId str
 }
 
 // Execute executes the request
-//  @return DeviceSecretsGetUnlockPin200Response
-func (a *DeviceSecretsAPIService) GetUnlockPinExecute(r ApiGetUnlockPinRequest) (*DeviceSecretsGetUnlockPin200Response, *http.Response, error) {
+//  @return InlineObject21
+func (a *DeviceSecretsAPIService) GetUnlockPinExecute(r ApiGetUnlockPinRequest) (*InlineObject21, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DeviceSecretsGetUnlockPin200Response
+		localVarReturnValue  *InlineObject21
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceSecretsAPIService.GetUnlockPin")

@@ -180,7 +180,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"DeleteAllUsers":false,"ForceDeletion":false,"UserName":"testuser"}" // string |  (optional)
+	body := "{DeleteAllUsers=false, ForceDeletion=false, UserName=testuser}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -250,7 +250,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"PIN":"123456","PreserveDataPlan":true,"DisallowProximitySetup":false,"ReturnToService":{"Enabled":false,"ProfileId":""}}" // string |  (optional)
+	body := "{PIN=123456, PreserveDataPlan=true, DisallowProximitySetup=false, ReturnToService={Enabled=false, ProfileId=}}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceCommands
 
-> DeviceActionsGetDeviceCommands200Response GetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
+> InlineObject17 GetDeviceCommands(ctx, deviceId).Limit(limit).Offset(offset).Execute()
 
 Get Device Commands
 
@@ -330,7 +330,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.GetDeviceCommands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceCommands`: DeviceActionsGetDeviceCommands200Response
+	// response from `GetDeviceCommands`: InlineObject17
 	fmt.Fprintf(os.Stdout, "Response from `DeviceActionsAPI.GetDeviceCommands`: %v\n", resp)
 }
 ```
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceActionsGetDeviceCommands200Response**](DeviceActionsGetDeviceCommands200Response.md)
+[**InlineObject17**](InlineObject17.md)
 
 ### Authorization
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ## LockDevice
 
-> DeviceActionsLockDevice200Response LockDevice(ctx, deviceId).Body(body).Execute()
+> InlineObject18 LockDevice(ctx, deviceId).Body(body).Execute()
 
 Lock Device
 
@@ -394,7 +394,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"Message":"This device is locked!","PhoneNumber":"1234567890"}" // string |  (optional)
+	body := "{Message=This device is locked!, PhoneNumber=1234567890}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -403,7 +403,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.LockDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LockDevice`: DeviceActionsLockDevice200Response
+	// response from `LockDevice`: InlineObject18
 	fmt.Fprintf(os.Stdout, "Response from `DeviceActionsAPI.LockDevice`: %v\n", resp)
 }
 ```
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceActionsLockDevice200Response**](DeviceActionsLockDevice200Response.md)
+[**InlineObject18**](InlineObject18.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"EnableRemoteDesktop":true}" // string |  (optional)
+	body := "{EnableRemoteDesktop=true}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -672,7 +672,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"RebuildKernelCache":false,"NotifyUser":false}" // string |  (optional)
+	body := "{RebuildKernelCache=false, NotifyUser=false}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -810,7 +810,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"DeviceName":"Test Mac Mini"}" // string |  (optional)
+	body := "{DeviceName=Test Mac Mini}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -948,7 +948,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"UserName":"LocalUserToUnlock"}" // string |  (optional)
+	body := "{UserName=LocalUserToUnlock}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

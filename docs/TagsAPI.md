@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateTag
 
-> TagsCreateTag201Response CreateTag(ctx).Body(body).Execute()
+> InlineObject31 CreateTag(ctx).Body(body).Execute()
 
 Create Tag
 
@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-	body := "{"name":"accuhive_01"}" // string |  (optional)
+	body := "{name=accuhive_01}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.CreateTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateTag`: TagsCreateTag201Response
+	// response from `CreateTag`: InlineObject31
 	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.CreateTag`: %v\n", resp)
 }
 ```
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**InlineObject31**](InlineObject31.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ## GetTags
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response GetTags(ctx).Search(search).Execute()
+> InlineObject2 GetTags(ctx).Search(search).Execute()
 
 Get Tags
 
@@ -175,7 +175,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.GetTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTags`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `GetTags`: InlineObject2
 	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.GetTags`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**InlineObject2**](InlineObject2.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTag
 
-> TagsCreateTag201Response UpdateTag(ctx, tagId).Body(body).Execute()
+> InlineObject31 UpdateTag(ctx, tagId).Body(body).Execute()
 
 Update Tag
 
@@ -233,7 +233,7 @@ import (
 
 func main() {
 	tagId := "tagId_example" // string | 
-	body := "{"name":"accuhive_02"}" // string |  (optional)
+	body := "{name=accuhive_02}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -242,7 +242,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.UpdateTag``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateTag`: TagsCreateTag201Response
+	// response from `UpdateTag`: InlineObject31
 	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.UpdateTag`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagsCreateTag201Response**](TagsCreateTag201Response.md)
+[**InlineObject31**](InlineObject31.md)
 
 ### Authorization
 

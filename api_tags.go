@@ -34,8 +34,8 @@ type TagsAPI interface {
 	CreateTag(ctx context.Context) ApiCreateTagRequest
 
 	// CreateTagExecute executes the request
-	//  @return TagsCreateTag201Response
-	CreateTagExecute(r ApiCreateTagRequest) (*TagsCreateTag201Response, *http.Response, error)
+	//  @return InlineObject31
+	CreateTagExecute(r ApiCreateTagRequest) (*InlineObject31, *http.Response, error)
 
 	/*
 	DeleteTag Delete Tag
@@ -64,8 +64,8 @@ type TagsAPI interface {
 	GetTags(ctx context.Context) ApiGetTagsRequest
 
 	// GetTagsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	GetTagsExecute(r ApiGetTagsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
+	//  @return InlineObject2
+	GetTagsExecute(r ApiGetTagsRequest) (*InlineObject2, *http.Response, error)
 
 	/*
 	UpdateTag Update Tag
@@ -81,8 +81,8 @@ type TagsAPI interface {
 	UpdateTag(ctx context.Context, tagId string) ApiUpdateTagRequest
 
 	// UpdateTagExecute executes the request
-	//  @return TagsCreateTag201Response
-	UpdateTagExecute(r ApiUpdateTagRequest) (*TagsCreateTag201Response, *http.Response, error)
+	//  @return InlineObject31
+	UpdateTagExecute(r ApiUpdateTagRequest) (*InlineObject31, *http.Response, error)
 }
 
 // TagsAPIService TagsAPI service
@@ -99,7 +99,7 @@ func (r ApiCreateTagRequest) Body(body string) ApiCreateTagRequest {
 	return r
 }
 
-func (r ApiCreateTagRequest) Execute() (*TagsCreateTag201Response, *http.Response, error) {
+func (r ApiCreateTagRequest) Execute() (*InlineObject31, *http.Response, error) {
 	return r.ApiService.CreateTagExecute(r)
 }
 
@@ -119,13 +119,13 @@ func (a *TagsAPIService) CreateTag(ctx context.Context) ApiCreateTagRequest {
 }
 
 // Execute executes the request
-//  @return TagsCreateTag201Response
-func (a *TagsAPIService) CreateTagExecute(r ApiCreateTagRequest) (*TagsCreateTag201Response, *http.Response, error) {
+//  @return InlineObject31
+func (a *TagsAPIService) CreateTagExecute(r ApiCreateTagRequest) (*InlineObject31, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TagsCreateTag201Response
+		localVarReturnValue  *InlineObject31
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.CreateTag")
@@ -301,7 +301,7 @@ func (r ApiGetTagsRequest) Search(search string) ApiGetTagsRequest {
 	return r
 }
 
-func (r ApiGetTagsRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+func (r ApiGetTagsRequest) Execute() (*InlineObject2, *http.Response, error) {
 	return r.ApiService.GetTagsExecute(r)
 }
 
@@ -321,13 +321,13 @@ func (a *TagsAPIService) GetTags(ctx context.Context) ApiGetTagsRequest {
 }
 
 // Execute executes the request
-//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+//  @return InlineObject2
+func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*InlineObject2, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+		localVarReturnValue  *InlineObject2
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.GetTags")
@@ -411,7 +411,7 @@ func (r ApiUpdateTagRequest) Body(body string) ApiUpdateTagRequest {
 	return r
 }
 
-func (r ApiUpdateTagRequest) Execute() (*TagsCreateTag201Response, *http.Response, error) {
+func (r ApiUpdateTagRequest) Execute() (*InlineObject31, *http.Response, error) {
 	return r.ApiService.UpdateTagExecute(r)
 }
 
@@ -435,13 +435,13 @@ func (a *TagsAPIService) UpdateTag(ctx context.Context, tagId string) ApiUpdateT
 }
 
 // Execute executes the request
-//  @return TagsCreateTag201Response
-func (a *TagsAPIService) UpdateTagExecute(r ApiUpdateTagRequest) (*TagsCreateTag201Response, *http.Response, error) {
+//  @return InlineObject31
+func (a *TagsAPIService) UpdateTagExecute(r ApiUpdateTagRequest) (*InlineObject31, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TagsCreateTag201Response
+		localVarReturnValue  *InlineObject31
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.UpdateTag")
