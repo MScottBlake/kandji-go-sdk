@@ -148,8 +148,8 @@ type DeviceActionsAPI interface {
 	GetDeviceCommands(ctx context.Context, deviceId string) ApiGetDeviceCommandsRequest
 
 	// GetDeviceCommandsExecute executes the request
-	//  @return InlineObject17
-	GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*InlineObject17, *http.Response, error)
+	//  @return DeviceActionsGetDeviceCommands200Response
+	GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*DeviceActionsGetDeviceCommands200Response, *http.Response, error)
 
 	/*
 	LockDevice Lock Device
@@ -187,8 +187,8 @@ type DeviceActionsAPI interface {
 	LockDevice(ctx context.Context, deviceId string) ApiLockDeviceRequest
 
 	// LockDeviceExecute executes the request
-	//  @return InlineObject18
-	LockDeviceExecute(r ApiLockDeviceRequest) (*InlineObject18, *http.Response, error)
+	//  @return DeviceActionsLockDevice200Response
+	LockDeviceExecute(r ApiLockDeviceRequest) (*DeviceActionsLockDevice200Response, *http.Response, error)
 
 	/*
 	ReinstallAgent Reinstall Agent
@@ -799,7 +799,7 @@ func (r ApiGetDeviceCommandsRequest) Offset(offset string) ApiGetDeviceCommandsR
 	return r
 }
 
-func (r ApiGetDeviceCommandsRequest) Execute() (*InlineObject17, *http.Response, error) {
+func (r ApiGetDeviceCommandsRequest) Execute() (*DeviceActionsGetDeviceCommands200Response, *http.Response, error) {
 	return r.ApiService.GetDeviceCommandsExecute(r)
 }
 
@@ -829,13 +829,13 @@ func (a *DeviceActionsAPIService) GetDeviceCommands(ctx context.Context, deviceI
 }
 
 // Execute executes the request
-//  @return InlineObject17
-func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*InlineObject17, *http.Response, error) {
+//  @return DeviceActionsGetDeviceCommands200Response
+func (a *DeviceActionsAPIService) GetDeviceCommandsExecute(r ApiGetDeviceCommandsRequest) (*DeviceActionsGetDeviceCommands200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject17
+		localVarReturnValue  *DeviceActionsGetDeviceCommands200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.GetDeviceCommands")
@@ -923,7 +923,7 @@ func (r ApiLockDeviceRequest) Body(body string) ApiLockDeviceRequest {
 	return r
 }
 
-func (r ApiLockDeviceRequest) Execute() (*InlineObject18, *http.Response, error) {
+func (r ApiLockDeviceRequest) Execute() (*DeviceActionsLockDevice200Response, *http.Response, error) {
 	return r.ApiService.LockDeviceExecute(r)
 }
 
@@ -969,13 +969,13 @@ func (a *DeviceActionsAPIService) LockDevice(ctx context.Context, deviceId strin
 }
 
 // Execute executes the request
-//  @return InlineObject18
-func (a *DeviceActionsAPIService) LockDeviceExecute(r ApiLockDeviceRequest) (*InlineObject18, *http.Response, error) {
+//  @return DeviceActionsLockDevice200Response
+func (a *DeviceActionsAPIService) LockDeviceExecute(r ApiLockDeviceRequest) (*DeviceActionsLockDevice200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject18
+		localVarReturnValue  *DeviceActionsLockDevice200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.LockDevice")

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetLibraryItemActivity
 
-> InlineObject2 GetLibraryItemActivity(ctx, libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response GetLibraryItemActivity(ctx, libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
 
 Get Library Item Activity
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.GetLibraryItemActivity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLibraryItemActivity`: InlineObject2
+	// response from `GetLibraryItemActivity`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.GetLibraryItemActivity`: %v\n", resp)
 }
 ```
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject2**](InlineObject2.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## GetLibraryItemStatuses
 
-> InlineObject2 GetLibraryItemStatuses(ctx, libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response GetLibraryItemStatuses(ctx, libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
 
 Get Library Item Statuses
 
@@ -122,7 +122,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.GetLibraryItemStatuses``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLibraryItemStatuses`: InlineObject2
+	// response from `GetLibraryItemStatuses`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.GetLibraryItemStatuses`: %v\n", resp)
 }
 ```
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject2**](InlineObject2.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 

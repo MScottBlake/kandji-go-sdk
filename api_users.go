@@ -56,8 +56,8 @@ type UsersAPI interface {
 	GetUser(ctx context.Context, userId string) ApiGetUserRequest
 
 	// GetUserExecute executes the request
-	//  @return InlineObject37
-	GetUserExecute(r ApiGetUserRequest) (*InlineObject37, *http.Response, error)
+	//  @return UsersGetUser200Response
+	GetUserExecute(r ApiGetUserRequest) (*UsersGetUser200Response, *http.Response, error)
 
 	/*
 	ListUsers List Users
@@ -71,8 +71,8 @@ type UsersAPI interface {
 	ListUsers(ctx context.Context) ApiListUsersRequest
 
 	// ListUsersExecute executes the request
-	//  @return InlineObject36
-	ListUsersExecute(r ApiListUsersRequest) (*InlineObject36, *http.Response, error)
+	//  @return UsersListUsers200Response
+	ListUsersExecute(r ApiListUsersRequest) (*UsersListUsers200Response, *http.Response, error)
 }
 
 // UsersAPIService UsersAPI service
@@ -172,7 +172,7 @@ func (a *UsersAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v InlineObject28
+			var v PrismRequestCategoryExport400Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -193,7 +193,7 @@ type ApiGetUserRequest struct {
 	userId string
 }
 
-func (r ApiGetUserRequest) Execute() (*InlineObject37, *http.Response, error) {
+func (r ApiGetUserRequest) Execute() (*UsersGetUser200Response, *http.Response, error) {
 	return r.ApiService.GetUserExecute(r)
 }
 
@@ -215,13 +215,13 @@ func (a *UsersAPIService) GetUser(ctx context.Context, userId string) ApiGetUser
 }
 
 // Execute executes the request
-//  @return InlineObject37
-func (a *UsersAPIService) GetUserExecute(r ApiGetUserRequest) (*InlineObject37, *http.Response, error) {
+//  @return UsersGetUser200Response
+func (a *UsersAPIService) GetUserExecute(r ApiGetUserRequest) (*UsersGetUser200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject37
+		localVarReturnValue  *UsersGetUser200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.GetUser")
@@ -323,7 +323,7 @@ func (r ApiListUsersRequest) Archived(archived string) ApiListUsersRequest {
 	return r
 }
 
-func (r ApiListUsersRequest) Execute() (*InlineObject36, *http.Response, error) {
+func (r ApiListUsersRequest) Execute() (*UsersListUsers200Response, *http.Response, error) {
 	return r.ApiService.ListUsersExecute(r)
 }
 
@@ -344,13 +344,13 @@ func (a *UsersAPIService) ListUsers(ctx context.Context) ApiListUsersRequest {
 }
 
 // Execute executes the request
-//  @return InlineObject36
-func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*InlineObject36, *http.Response, error) {
+//  @return UsersListUsers200Response
+func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*UsersListUsers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject36
+		localVarReturnValue  *UsersListUsers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.ListUsers")

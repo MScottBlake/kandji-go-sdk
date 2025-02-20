@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GetUser
 
-> InlineObject37 GetUser(ctx, userId).Execute()
+> UsersGetUser200Response GetUser(ctx, userId).Execute()
 
 Get User
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.GetUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUser`: InlineObject37
+	// response from `GetUser`: UsersGetUser200Response
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.GetUser`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject37**](InlineObject37.md)
+[**UsersGetUser200Response**](UsersGetUser200Response.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ListUsers
 
-> InlineObject36 ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
+> UsersListUsers200Response ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
 
 List Users
 
@@ -181,7 +181,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.ListUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListUsers`: InlineObject36
+	// response from `ListUsers`: UsersListUsers200Response
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.ListUsers`: %v\n", resp)
 }
 ```
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject36**](InlineObject36.md)
+[**UsersListUsers200Response**](UsersListUsers200Response.md)
 
 ### Authorization
 

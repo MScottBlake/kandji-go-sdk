@@ -33,8 +33,8 @@ type ThreatsAPI interface {
 	GetThreatDetails(ctx context.Context) ApiGetThreatDetailsRequest
 
 	// GetThreatDetailsExecute executes the request
-	//  @return InlineObject32
-	GetThreatDetailsExecute(r ApiGetThreatDetailsRequest) (*InlineObject32, *http.Response, error)
+	//  @return ThreatsGetThreatDetails200Response
+	GetThreatDetailsExecute(r ApiGetThreatDetailsRequest) (*ThreatsGetThreatDetails200Response, *http.Response, error)
 }
 
 // ThreatsAPIService ThreatsAPI service
@@ -101,7 +101,7 @@ func (r ApiGetThreatDetailsRequest) Offset(offset string) ApiGetThreatDetailsReq
 	return r
 }
 
-func (r ApiGetThreatDetailsRequest) Execute() (*InlineObject32, *http.Response, error) {
+func (r ApiGetThreatDetailsRequest) Execute() (*ThreatsGetThreatDetails200Response, *http.Response, error) {
 	return r.ApiService.GetThreatDetailsExecute(r)
 }
 
@@ -121,13 +121,13 @@ func (a *ThreatsAPIService) GetThreatDetails(ctx context.Context) ApiGetThreatDe
 }
 
 // Execute executes the request
-//  @return InlineObject32
-func (a *ThreatsAPIService) GetThreatDetailsExecute(r ApiGetThreatDetailsRequest) (*InlineObject32, *http.Response, error) {
+//  @return ThreatsGetThreatDetails200Response
+func (a *ThreatsAPIService) GetThreatDetailsExecute(r ApiGetThreatDetailsRequest) (*ThreatsGetThreatDetails200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject32
+		localVarReturnValue  *ThreatsGetThreatDetails200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThreatsAPIService.GetThreatDetails")

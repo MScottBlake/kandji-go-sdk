@@ -35,8 +35,8 @@ type VulnerabilitiesAPI interface {
 	GetVulnerabilityDescription(ctx context.Context, cveId string) ApiGetVulnerabilityDescriptionRequest
 
 	// GetVulnerabilityDescriptionExecute executes the request
-	//  @return InlineObject35
-	GetVulnerabilityDescriptionExecute(r ApiGetVulnerabilityDescriptionRequest) (*InlineObject35, *http.Response, error)
+	//  @return VulnerabilitiesGetVulnerabilityDescription200Response
+	GetVulnerabilityDescriptionExecute(r ApiGetVulnerabilityDescriptionRequest) (*VulnerabilitiesGetVulnerabilityDescription200Response, *http.Response, error)
 
 	/*
 	ListAffectedApplications List Affected Applications
@@ -79,8 +79,8 @@ type VulnerabilitiesAPI interface {
 	ListDetections(ctx context.Context) ApiListDetectionsRequest
 
 	// ListDetectionsExecute executes the request
-	//  @return InlineObject33
-	ListDetectionsExecute(r ApiListDetectionsRequest) (*InlineObject33, *http.Response, error)
+	//  @return VulnerabilitiesListDetections200Response
+	ListDetectionsExecute(r ApiListDetectionsRequest) (*VulnerabilitiesListDetections200Response, *http.Response, error)
 
 	/*
 	ListVulnerabilities List Vulnerabilities
@@ -93,8 +93,8 @@ type VulnerabilitiesAPI interface {
 	ListVulnerabilities(ctx context.Context) ApiListVulnerabilitiesRequest
 
 	// ListVulnerabilitiesExecute executes the request
-	//  @return InlineObject34
-	ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*InlineObject34, *http.Response, error)
+	//  @return VulnerabilitiesListVulnerabilities200Response
+	ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error)
 }
 
 // VulnerabilitiesAPIService VulnerabilitiesAPI service
@@ -106,7 +106,7 @@ type ApiGetVulnerabilityDescriptionRequest struct {
 	cveId string
 }
 
-func (r ApiGetVulnerabilityDescriptionRequest) Execute() (*InlineObject35, *http.Response, error) {
+func (r ApiGetVulnerabilityDescriptionRequest) Execute() (*VulnerabilitiesGetVulnerabilityDescription200Response, *http.Response, error) {
 	return r.ApiService.GetVulnerabilityDescriptionExecute(r)
 }
 
@@ -128,13 +128,13 @@ func (a *VulnerabilitiesAPIService) GetVulnerabilityDescription(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return InlineObject35
-func (a *VulnerabilitiesAPIService) GetVulnerabilityDescriptionExecute(r ApiGetVulnerabilityDescriptionRequest) (*InlineObject35, *http.Response, error) {
+//  @return VulnerabilitiesGetVulnerabilityDescription200Response
+func (a *VulnerabilitiesAPIService) GetVulnerabilityDescriptionExecute(r ApiGetVulnerabilityDescriptionRequest) (*VulnerabilitiesGetVulnerabilityDescription200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject35
+		localVarReturnValue  *VulnerabilitiesGetVulnerabilityDescription200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.GetVulnerabilityDescription")
@@ -515,7 +515,7 @@ func (r ApiListDetectionsRequest) Filter(filter string) ApiListDetectionsRequest
 	return r
 }
 
-func (r ApiListDetectionsRequest) Execute() (*InlineObject33, *http.Response, error) {
+func (r ApiListDetectionsRequest) Execute() (*VulnerabilitiesListDetections200Response, *http.Response, error) {
 	return r.ApiService.ListDetectionsExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *VulnerabilitiesAPIService) ListDetections(ctx context.Context) ApiListD
 }
 
 // Execute executes the request
-//  @return InlineObject33
-func (a *VulnerabilitiesAPIService) ListDetectionsExecute(r ApiListDetectionsRequest) (*InlineObject33, *http.Response, error) {
+//  @return VulnerabilitiesListDetections200Response
+func (a *VulnerabilitiesAPIService) ListDetectionsExecute(r ApiListDetectionsRequest) (*VulnerabilitiesListDetections200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject33
+		localVarReturnValue  *VulnerabilitiesListDetections200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListDetections")
@@ -651,7 +651,7 @@ func (r ApiListVulnerabilitiesRequest) Filter(filter string) ApiListVulnerabilit
 	return r
 }
 
-func (r ApiListVulnerabilitiesRequest) Execute() (*InlineObject34, *http.Response, error) {
+func (r ApiListVulnerabilitiesRequest) Execute() (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error) {
 	return r.ApiService.ListVulnerabilitiesExecute(r)
 }
 
@@ -671,13 +671,13 @@ func (a *VulnerabilitiesAPIService) ListVulnerabilities(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return InlineObject34
-func (a *VulnerabilitiesAPIService) ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*InlineObject34, *http.Response, error) {
+//  @return VulnerabilitiesListVulnerabilities200Response
+func (a *VulnerabilitiesAPIService) ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject34
+		localVarReturnValue  *VulnerabilitiesListVulnerabilities200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListVulnerabilities")

@@ -39,7 +39,7 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	body := "{library_item_id={library_item_id}, assignment_node_id={assignment_node_id}}" // string |  (optional)
+	body := "{"library_item_id":"{library_item_id}","assignment_node_id":"{assignment_node_id}"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## CreateBlueprint
 
-> InlineObject5 CreateBlueprint(ctx).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
+> BlueprintsCreateBlueprint201Response CreateBlueprint(ctx).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
 
 Create Blueprint
 
@@ -124,7 +124,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.CreateBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateBlueprint`: InlineObject5
+	// response from `CreateBlueprint`: BlueprintsCreateBlueprint201Response
 	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.CreateBlueprint`: %v\n", resp)
 }
 ```
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject5**](InlineObject5.md)
+[**BlueprintsCreateBlueprint201Response**](BlueprintsCreateBlueprint201Response.md)
 
 ### Authorization
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## GetBlueprint
 
-> InlineObject6 GetBlueprint(ctx, blueprintId).Execute()
+> BlueprintsGetBlueprint200Response GetBlueprint(ctx, blueprintId).Execute()
 
 Get Blueprint
 
@@ -263,7 +263,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.GetBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBlueprint`: InlineObject6
+	// response from `GetBlueprint`: BlueprintsGetBlueprint200Response
 	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.GetBlueprint`: %v\n", resp)
 }
 ```
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject6**](InlineObject6.md)
+[**BlueprintsGetBlueprint200Response**](BlueprintsGetBlueprint200Response.md)
 
 ### Authorization
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ## ListBlueprints
 
-> InlineObject2 ListBlueprints(ctx).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response ListBlueprints(ctx).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
 
 List Blueprints
 
@@ -473,7 +473,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.ListBlueprints``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListBlueprints`: InlineObject2
+	// response from `ListBlueprints`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.ListBlueprints`: %v\n", resp)
 }
 ```
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject2**](InlineObject2.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ## ListLibraryItems
 
-> InlineObject2 ListLibraryItems(ctx, blueprintId).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response ListLibraryItems(ctx, blueprintId).Execute()
 
 List Library Items
 
@@ -543,7 +543,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.ListLibraryItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListLibraryItems`: InlineObject2
+	// response from `ListLibraryItems`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.ListLibraryItems`: %v\n", resp)
 }
 ```
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject2**](InlineObject2.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ## UpdateBlueprint
 
-> InlineObject7 UpdateBlueprint(ctx, blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
+> BlueprintsUpdateBlueprint200Response UpdateBlueprint(ctx, blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
 
 Update Blueprint
 
@@ -689,7 +689,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.UpdateBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateBlueprint`: InlineObject7
+	// response from `UpdateBlueprint`: BlueprintsUpdateBlueprint200Response
 	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.UpdateBlueprint`: %v\n", resp)
 }
 ```
@@ -717,7 +717,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject7**](InlineObject7.md)
+[**BlueprintsUpdateBlueprint200Response**](BlueprintsUpdateBlueprint200Response.md)
 
 ### Authorization
 

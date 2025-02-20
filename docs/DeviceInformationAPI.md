@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## GetDevice
 
-> InlineObject8 GetDevice(ctx, deviceId).Execute()
+> DeviceInformationGetDevice200Response GetDevice(ctx, deviceId).Execute()
 
 Get Device
 
@@ -116,7 +116,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDevice`: InlineObject8
+	// response from `GetDevice`: DeviceInformationGetDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDevice`: %v\n", resp)
 }
 ```
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject8**](InlineObject8.md)
+[**DeviceInformationGetDevice200Response**](DeviceInformationGetDevice200Response.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceActivity
 
-> InlineObject12 GetDeviceActivity(ctx, deviceId).Limit(limit).Offset(offset).Execute()
+> DeviceInformationGetDeviceActivity200Response GetDeviceActivity(ctx, deviceId).Limit(limit).Offset(offset).Execute()
 
 Get Device Activity
 
@@ -188,7 +188,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceActivity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceActivity`: InlineObject12
+	// response from `GetDeviceActivity`: DeviceInformationGetDeviceActivity200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceActivity`: %v\n", resp)
 }
 ```
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject12**](InlineObject12.md)
+[**DeviceInformationGetDeviceActivity200Response**](DeviceInformationGetDeviceActivity200Response.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceApps
 
-> InlineObject13 GetDeviceApps(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceApps200Response GetDeviceApps(ctx, deviceId).Execute()
 
 Get Device Apps
 
@@ -260,7 +260,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceApps`: InlineObject13
+	// response from `GetDeviceApps`: DeviceInformationGetDeviceApps200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceApps`: %v\n", resp)
 }
 ```
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject13**](InlineObject13.md)
+[**DeviceInformationGetDeviceApps200Response**](DeviceInformationGetDeviceApps200Response.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceDetails
 
-> InlineObject10 GetDeviceDetails(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceDetails200Response GetDeviceDetails(ctx, deviceId).Execute()
 
 Get Device Details
 
@@ -330,7 +330,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceDetails`: InlineObject10
+	// response from `GetDeviceDetails`: DeviceInformationGetDeviceDetails200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceDetails`: %v\n", resp)
 }
 ```
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject10**](InlineObject10.md)
+[**DeviceInformationGetDeviceDetails200Response**](DeviceInformationGetDeviceDetails200Response.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceLibraryItems
 
-> InlineObject14 GetDeviceLibraryItems(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceLibraryItems200Response GetDeviceLibraryItems(ctx, deviceId).Execute()
 
 Get Device Library Items
 
@@ -400,7 +400,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceLibraryItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceLibraryItems`: InlineObject14
+	// response from `GetDeviceLibraryItems`: DeviceInformationGetDeviceLibraryItems200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceLibraryItems`: %v\n", resp)
 }
 ```
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject14**](InlineObject14.md)
+[**DeviceInformationGetDeviceLibraryItems200Response**](DeviceInformationGetDeviceLibraryItems200Response.md)
 
 ### Authorization
 
@@ -442,7 +442,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceLostModeDetails
 
-> InlineObject11 GetDeviceLostModeDetails(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceLostModeDetails200Response GetDeviceLostModeDetails(ctx, deviceId).Execute()
 
 Get Device Lost Mode details
 
@@ -470,7 +470,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceLostModeDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceLostModeDetails`: InlineObject11
+	// response from `GetDeviceLostModeDetails`: DeviceInformationGetDeviceLostModeDetails200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceLostModeDetails`: %v\n", resp)
 }
 ```
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject11**](InlineObject11.md)
+[**DeviceInformationGetDeviceLostModeDetails200Response**](DeviceInformationGetDeviceLostModeDetails200Response.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceParameters
 
-> InlineObject15 GetDeviceParameters(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceParameters200Response GetDeviceParameters(ctx, deviceId).Execute()
 
 Get Device Parameters
 
@@ -540,7 +540,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceParameters``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceParameters`: InlineObject15
+	// response from `GetDeviceParameters`: DeviceInformationGetDeviceParameters200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceParameters`: %v\n", resp)
 }
 ```
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject15**](InlineObject15.md)
+[**DeviceInformationGetDeviceParameters200Response**](DeviceInformationGetDeviceParameters200Response.md)
 
 ### Authorization
 
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceStatus
 
-> InlineObject16 GetDeviceStatus(ctx, deviceId).Execute()
+> DeviceInformationGetDeviceStatus200Response GetDeviceStatus(ctx, deviceId).Execute()
 
 Get Device Status
 
@@ -610,7 +610,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.GetDeviceStatus``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceStatus`: InlineObject16
+	// response from `GetDeviceStatus`: DeviceInformationGetDeviceStatus200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.GetDeviceStatus`: %v\n", resp)
 }
 ```
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject16**](InlineObject16.md)
+[**DeviceInformationGetDeviceStatus200Response**](DeviceInformationGetDeviceStatus200Response.md)
 
 ### Authorization
 
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDevice
 
-> InlineObject9 UpdateDevice(ctx, deviceId).Body(body).Execute()
+> DeviceInformationUpdateDevice200Response UpdateDevice(ctx, deviceId).Body(body).Execute()
 
 Update Device
 
@@ -778,7 +778,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{user=5344c996-8823-4b37-8d6e-8515fc7c3a0a, asset_tag=1040, blueprint_id=be1a4d67-91d8-4d19-a927-c8be6e77b6b2, tags=[tag1, tag2, tag3, tag4, tag5]}" // string |  (optional)
+	body := "{"user":"5344c996-8823-4b37-8d6e-8515fc7c3a0a","asset_tag":"1040","blueprint_id":"be1a4d67-91d8-4d19-a927-c8be6e77b6b2","tags":["tag1","tag2","tag3","tag4","tag5"]}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -787,7 +787,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.UpdateDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateDevice`: InlineObject9
+	// response from `UpdateDevice`: DeviceInformationUpdateDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `DeviceInformationAPI.UpdateDevice`: %v\n", resp)
 }
 ```
@@ -812,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject9**](InlineObject9.md)
+[**DeviceInformationUpdateDevice200Response**](DeviceInformationUpdateDevice200Response.md)
 
 ### Authorization
 

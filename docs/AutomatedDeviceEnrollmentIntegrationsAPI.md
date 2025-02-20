@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateAdeIntegration
 
-> InlineObject CreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response CreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
 
 Create ADE integration
 
@@ -51,7 +51,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateAdeIntegration`: InlineObject
+	// response from `CreateAdeIntegration`: AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration`: %v\n", resp)
 }
 ```
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject**](InlineObject.md)
+[**AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response**](AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ Other parameters are passed through a pointer to a apiDownloadAdePublicKeyReques
 
 ## GetAdeDevice
 
-> InlineObject4 GetAdeDevice(ctx, deviceId).Execute()
+> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response GetAdeDevice(ctx, deviceId).Execute()
 
 Get ADE device
 
@@ -249,7 +249,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAdeDevice`: InlineObject4
+	// response from `GetAdeDevice`: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.GetAdeDevice`: %v\n", resp)
 }
 ```
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject4**](InlineObject4.md)
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ## ListAdeDevices
 
-> InlineObject2 ListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response ListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
 
 List ADE devices
 
@@ -395,7 +395,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAdeDevices`: InlineObject2
+	// response from `ListAdeDevices`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices`: %v\n", resp)
 }
 ```
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject2**](InlineObject2.md)
+[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
 
 ### Authorization
 
@@ -500,7 +500,7 @@ Other parameters are passed through a pointer to a apiListAdeIntegrationsRequest
 
 ## ListDevicesAssociatedToAdeToken
 
-> InlineObject1 ListDevicesAssociatedToAdeToken(ctx, adeTokenId).Page(page).Execute()
+> AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response ListDevicesAssociatedToAdeToken(ctx, adeTokenId).Page(page).Execute()
 
 List devices associated to ADE token
 
@@ -529,7 +529,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListDevicesAssociatedToAdeToken``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDevicesAssociatedToAdeToken`: InlineObject1
+	// response from `ListDevicesAssociatedToAdeToken`: AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.ListDevicesAssociatedToAdeToken`: %v\n", resp)
 }
 ```
@@ -554,7 +554,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject1**](InlineObject1.md)
+[**AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response**](AutomatedDeviceEnrollmentIntegrationsListDevicesAssociatedToAdeToken200Response.md)
 
 ### Authorization
 
@@ -648,7 +648,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAdeDevice
 
-> InlineObject4 UpdateAdeDevice(ctx, deviceId).Body(body).Execute()
+> AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response UpdateAdeDevice(ctx, deviceId).Body(body).Execute()
 
 Update ADE device
 
@@ -668,7 +668,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{blueprint_id=3013eb7c-d0c1-4689-852a-50776a92036b, asset_tag=123456, user_id=5344c996-8823-4b37-8d6e-8515fc7c3a0a}" // string |  (optional)
+	body := "{"blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","asset_tag":"123456","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -677,7 +677,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeDevice``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateAdeDevice`: InlineObject4
+	// response from `UpdateAdeDevice`: AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.UpdateAdeDevice`: %v\n", resp)
 }
 ```
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject4**](InlineObject4.md)
+[**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response.md)
 
 ### Authorization
 
@@ -740,7 +740,7 @@ import (
 
 func main() {
 	adeTokenId := "adeTokenId_example" // string | 
-	body := "{blueprint_id=bf21d9cf-17cf-48b3-890d-7bc27c241bb7, phone=1234567890, email=example@accuhive.io}" // string |  (optional)
+	body := "{"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","phone":"1234567890","email":"example@accuhive.io"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

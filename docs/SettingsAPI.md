@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## Licensing
 
-> InlineObject38 Licensing(ctx).Execute()
+> SettingsLicensing200Response Licensing(ctx).Execute()
 
 Licensing
 
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.Licensing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Licensing`: InlineObject38
+	// response from `Licensing`: SettingsLicensing200Response
 	fmt.Fprintf(os.Stdout, "Response from `SettingsAPI.Licensing`: %v\n", resp)
 }
 ```
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiLicensingRequest struct vi
 
 ### Return type
 
-[**InlineObject38**](InlineObject38.md)
+[**SettingsLicensing200Response**](SettingsLicensing200Response.md)
 
 ### Authorization
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## GetVulnerabilityDescription
 
-> InlineObject35 GetVulnerabilityDescription(ctx, cveId).Execute()
+> VulnerabilitiesGetVulnerabilityDescription200Response GetVulnerabilityDescription(ctx, cveId).Execute()
 
 Get Vulnerability Description
 
@@ -42,7 +42,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.GetVulnerabilityDescription``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetVulnerabilityDescription`: InlineObject35
+	// response from `GetVulnerabilityDescription`: VulnerabilitiesGetVulnerabilityDescription200Response
 	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.GetVulnerabilityDescription`: %v\n", resp)
 }
 ```
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject35**](InlineObject35.md)
+[**VulnerabilitiesGetVulnerabilityDescription200Response**](VulnerabilitiesGetVulnerabilityDescription200Response.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ## ListDetections
 
-> InlineObject33 ListDetections(ctx).After(after).Limit(limit).Filter(filter).Execute()
+> VulnerabilitiesListDetections200Response ListDetections(ctx).After(after).Limit(limit).Filter(filter).Execute()
 
 List Detections
 
@@ -270,7 +270,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListDetections``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListDetections`: InlineObject33
+	// response from `ListDetections`: VulnerabilitiesListDetections200Response
 	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListDetections`: %v\n", resp)
 }
 ```
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject33**](InlineObject33.md)
+[**VulnerabilitiesListDetections200Response**](VulnerabilitiesListDetections200Response.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## ListVulnerabilities
 
-> InlineObject34 ListVulnerabilities(ctx).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+> VulnerabilitiesListVulnerabilities200Response ListVulnerabilities(ctx).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
 
 List Vulnerabilities
 
@@ -341,7 +341,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListVulnerabilities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListVulnerabilities`: InlineObject34
+	// response from `ListVulnerabilities`: VulnerabilitiesListVulnerabilities200Response
 	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListVulnerabilities`: %v\n", resp)
 }
 ```
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineObject34**](InlineObject34.md)
+[**VulnerabilitiesListVulnerabilities200Response**](VulnerabilitiesListVulnerabilities200Response.md)
 
 ### Authorization
 

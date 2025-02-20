@@ -33,8 +33,8 @@ type SettingsAPI interface {
 	Licensing(ctx context.Context) ApiLicensingRequest
 
 	// LicensingExecute executes the request
-	//  @return InlineObject38
-	LicensingExecute(r ApiLicensingRequest) (*InlineObject38, *http.Response, error)
+	//  @return SettingsLicensing200Response
+	LicensingExecute(r ApiLicensingRequest) (*SettingsLicensing200Response, *http.Response, error)
 }
 
 // SettingsAPIService SettingsAPI service
@@ -45,7 +45,7 @@ type ApiLicensingRequest struct {
 	ApiService SettingsAPI
 }
 
-func (r ApiLicensingRequest) Execute() (*InlineObject38, *http.Response, error) {
+func (r ApiLicensingRequest) Execute() (*SettingsLicensing200Response, *http.Response, error) {
 	return r.ApiService.LicensingExecute(r)
 }
 
@@ -65,13 +65,13 @@ func (a *SettingsAPIService) Licensing(ctx context.Context) ApiLicensingRequest 
 }
 
 // Execute executes the request
-//  @return InlineObject38
-func (a *SettingsAPIService) LicensingExecute(r ApiLicensingRequest) (*InlineObject38, *http.Response, error) {
+//  @return SettingsLicensing200Response
+func (a *SettingsAPIService) LicensingExecute(r ApiLicensingRequest) (*SettingsLicensing200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *InlineObject38
+		localVarReturnValue  *SettingsLicensing200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.Licensing")
