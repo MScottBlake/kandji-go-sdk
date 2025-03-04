@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **FilevaultEnabled** | Pointer to **interface{}** |  | [optional] 
-**FilevaultRecoverykeyType** | Pointer to **string** |  | [optional] 
-**FilevaultPrkEscrowed** | Pointer to **int32** |  | [optional] 
 **FilevaultNextRotation** | Pointer to **string** |  | [optional] 
+**FilevaultPrkEscrowed** | Pointer to **int32** |  | [optional] 
+**FilevaultRecoverykeyType** | Pointer to **string** |  | [optional] 
 **FilevaultRegenRequired** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -64,30 +64,30 @@ HasFilevaultEnabled returns a boolean if a field has been set.
 `func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) UnsetFilevaultEnabled()`
 
 UnsetFilevaultEnabled ensures that no value is present for FilevaultEnabled, not even an explicit nil
-### GetFilevaultRecoverykeyType
+### GetFilevaultNextRotation
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyType() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotation() string`
 
-GetFilevaultRecoverykeyType returns the FilevaultRecoverykeyType field if non-nil, zero value otherwise.
+GetFilevaultNextRotation returns the FilevaultNextRotation field if non-nil, zero value otherwise.
 
-### GetFilevaultRecoverykeyTypeOk
+### GetFilevaultNextRotationOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyTypeOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotationOk() (*string, bool)`
 
-GetFilevaultRecoverykeyTypeOk returns a tuple with the FilevaultRecoverykeyType field if it's non-nil, zero value otherwise
+GetFilevaultNextRotationOk returns a tuple with the FilevaultNextRotation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFilevaultRecoverykeyType
+### SetFilevaultNextRotation
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultRecoverykeyType(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultNextRotation(v string)`
 
-SetFilevaultRecoverykeyType sets FilevaultRecoverykeyType field to given value.
+SetFilevaultNextRotation sets FilevaultNextRotation field to given value.
 
-### HasFilevaultRecoverykeyType
+### HasFilevaultNextRotation
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultRecoverykeyType() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultNextRotation() bool`
 
-HasFilevaultRecoverykeyType returns a boolean if a field has been set.
+HasFilevaultNextRotation returns a boolean if a field has been set.
 
 ### GetFilevaultPrkEscrowed
 
@@ -114,30 +114,30 @@ SetFilevaultPrkEscrowed sets FilevaultPrkEscrowed field to given value.
 
 HasFilevaultPrkEscrowed returns a boolean if a field has been set.
 
-### GetFilevaultNextRotation
+### GetFilevaultRecoverykeyType
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotation() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyType() string`
 
-GetFilevaultNextRotation returns the FilevaultNextRotation field if non-nil, zero value otherwise.
+GetFilevaultRecoverykeyType returns the FilevaultRecoverykeyType field if non-nil, zero value otherwise.
 
-### GetFilevaultNextRotationOk
+### GetFilevaultRecoverykeyTypeOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotationOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyTypeOk() (*string, bool)`
 
-GetFilevaultNextRotationOk returns a tuple with the FilevaultNextRotation field if it's non-nil, zero value otherwise
+GetFilevaultRecoverykeyTypeOk returns a tuple with the FilevaultRecoverykeyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFilevaultNextRotation
+### SetFilevaultRecoverykeyType
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultNextRotation(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultRecoverykeyType(v string)`
 
-SetFilevaultNextRotation sets FilevaultNextRotation field to given value.
+SetFilevaultRecoverykeyType sets FilevaultRecoverykeyType field to given value.
 
-### HasFilevaultNextRotation
+### HasFilevaultRecoverykeyType
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultNextRotation() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultRecoverykeyType() bool`
 
-HasFilevaultNextRotation returns a boolean if a field has been set.
+HasFilevaultRecoverykeyType returns a boolean if a field has been set.
 
 ### GetFilevaultRegenRequired
 

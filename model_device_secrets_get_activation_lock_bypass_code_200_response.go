@@ -20,8 +20,8 @@ var _ MappedNullable = &DeviceSecretsGetActivationLockBypassCode200Response{}
 
 // DeviceSecretsGetActivationLockBypassCode200Response struct for DeviceSecretsGetActivationLockBypassCode200Response
 type DeviceSecretsGetActivationLockBypassCode200Response struct {
-	UserBasedAlbc *string `json:"user_based_albc,omitempty"`
 	DeviceBasedAlbc *string `json:"device_based_albc,omitempty"`
+	UserBasedAlbc *string `json:"user_based_albc,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,38 +42,6 @@ func NewDeviceSecretsGetActivationLockBypassCode200Response() *DeviceSecretsGetA
 func NewDeviceSecretsGetActivationLockBypassCode200ResponseWithDefaults() *DeviceSecretsGetActivationLockBypassCode200Response {
 	this := DeviceSecretsGetActivationLockBypassCode200Response{}
 	return &this
-}
-
-// GetUserBasedAlbc returns the UserBasedAlbc field value if set, zero value otherwise.
-func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbc() string {
-	if o == nil || IsNil(o.UserBasedAlbc) {
-		var ret string
-		return ret
-	}
-	return *o.UserBasedAlbc
-}
-
-// GetUserBasedAlbcOk returns a tuple with the UserBasedAlbc field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbcOk() (*string, bool) {
-	if o == nil || IsNil(o.UserBasedAlbc) {
-		return nil, false
-	}
-	return o.UserBasedAlbc, true
-}
-
-// HasUserBasedAlbc returns a boolean if a field has been set.
-func (o *DeviceSecretsGetActivationLockBypassCode200Response) HasUserBasedAlbc() bool {
-	if o != nil && !IsNil(o.UserBasedAlbc) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserBasedAlbc gets a reference to the given string and assigns it to the UserBasedAlbc field.
-func (o *DeviceSecretsGetActivationLockBypassCode200Response) SetUserBasedAlbc(v string) {
-	o.UserBasedAlbc = &v
 }
 
 // GetDeviceBasedAlbc returns the DeviceBasedAlbc field value if set, zero value otherwise.
@@ -108,6 +76,38 @@ func (o *DeviceSecretsGetActivationLockBypassCode200Response) SetDeviceBasedAlbc
 	o.DeviceBasedAlbc = &v
 }
 
+// GetUserBasedAlbc returns the UserBasedAlbc field value if set, zero value otherwise.
+func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbc() string {
+	if o == nil || IsNil(o.UserBasedAlbc) {
+		var ret string
+		return ret
+	}
+	return *o.UserBasedAlbc
+}
+
+// GetUserBasedAlbcOk returns a tuple with the UserBasedAlbc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbcOk() (*string, bool) {
+	if o == nil || IsNil(o.UserBasedAlbc) {
+		return nil, false
+	}
+	return o.UserBasedAlbc, true
+}
+
+// HasUserBasedAlbc returns a boolean if a field has been set.
+func (o *DeviceSecretsGetActivationLockBypassCode200Response) HasUserBasedAlbc() bool {
+	if o != nil && !IsNil(o.UserBasedAlbc) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserBasedAlbc gets a reference to the given string and assigns it to the UserBasedAlbc field.
+func (o *DeviceSecretsGetActivationLockBypassCode200Response) SetUserBasedAlbc(v string) {
+	o.UserBasedAlbc = &v
+}
+
 func (o DeviceSecretsGetActivationLockBypassCode200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -118,11 +118,11 @@ func (o DeviceSecretsGetActivationLockBypassCode200Response) MarshalJSON() ([]by
 
 func (o DeviceSecretsGetActivationLockBypassCode200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserBasedAlbc) {
-		toSerialize["user_based_albc"] = o.UserBasedAlbc
-	}
 	if !IsNil(o.DeviceBasedAlbc) {
 		toSerialize["device_based_albc"] = o.DeviceBasedAlbc
+	}
+	if !IsNil(o.UserBasedAlbc) {
+		toSerialize["user_based_albc"] = o.UserBasedAlbc
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -146,8 +146,8 @@ func (o *DeviceSecretsGetActivationLockBypassCode200Response) UnmarshalJSON(data
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "user_based_albc")
 		delete(additionalProperties, "device_based_albc")
+		delete(additionalProperties, "user_based_albc")
 		o.AdditionalProperties = additionalProperties
 	}
 

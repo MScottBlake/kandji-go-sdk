@@ -64,8 +64,8 @@ type TagsAPI interface {
 	GetTags(ctx context.Context) ApiGetTagsRequest
 
 	// GetTagsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	GetTagsExecute(r ApiGetTagsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
+	//  @return BlueprintsListBlueprints200Response
+	GetTagsExecute(r ApiGetTagsRequest) (*BlueprintsListBlueprints200Response, *http.Response, error)
 
 	/*
 	UpdateTag Update Tag
@@ -301,7 +301,7 @@ func (r ApiGetTagsRequest) Search(search string) ApiGetTagsRequest {
 	return r
 }
 
-func (r ApiGetTagsRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+func (r ApiGetTagsRequest) Execute() (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	return r.ApiService.GetTagsExecute(r)
 }
 
@@ -321,13 +321,13 @@ func (a *TagsAPIService) GetTags(ctx context.Context) ApiGetTagsRequest {
 }
 
 // Execute executes the request
-//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+//  @return BlueprintsListBlueprints200Response
+func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+		localVarReturnValue  *BlueprintsListBlueprints200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TagsAPIService.GetTags")

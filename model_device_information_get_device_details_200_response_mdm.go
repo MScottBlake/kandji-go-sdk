@@ -20,11 +20,11 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseMdm{}
 
 // DeviceInformationGetDeviceDetails200ResponseMdm struct for DeviceInformationGetDeviceDetails200ResponseMdm
 type DeviceInformationGetDeviceDetails200ResponseMdm struct {
-	MdmEnabled *string `json:"mdm_enabled,omitempty"`
-	Supervised *string `json:"supervised,omitempty"`
 	InstallDate *string `json:"install_date,omitempty"`
 	LastCheckIn *string `json:"last_check_in,omitempty"`
+	MdmEnabled *string `json:"mdm_enabled,omitempty"`
 	MdmEnabledUser interface{} `json:"mdm_enabled_user,omitempty"`
+	Supervised *string `json:"supervised,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,70 +45,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseMdm() *DeviceInformationGetD
 func NewDeviceInformationGetDeviceDetails200ResponseMdmWithDefaults() *DeviceInformationGetDeviceDetails200ResponseMdm {
 	this := DeviceInformationGetDeviceDetails200ResponseMdm{}
 	return &this
-}
-
-// GetMdmEnabled returns the MdmEnabled field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabled() string {
-	if o == nil || IsNil(o.MdmEnabled) {
-		var ret string
-		return ret
-	}
-	return *o.MdmEnabled
-}
-
-// GetMdmEnabledOk returns a tuple with the MdmEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabledOk() (*string, bool) {
-	if o == nil || IsNil(o.MdmEnabled) {
-		return nil, false
-	}
-	return o.MdmEnabled, true
-}
-
-// HasMdmEnabled returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasMdmEnabled() bool {
-	if o != nil && !IsNil(o.MdmEnabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetMdmEnabled gets a reference to the given string and assigns it to the MdmEnabled field.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetMdmEnabled(v string) {
-	o.MdmEnabled = &v
-}
-
-// GetSupervised returns the Supervised field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervised() string {
-	if o == nil || IsNil(o.Supervised) {
-		var ret string
-		return ret
-	}
-	return *o.Supervised
-}
-
-// GetSupervisedOk returns a tuple with the Supervised field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervisedOk() (*string, bool) {
-	if o == nil || IsNil(o.Supervised) {
-		return nil, false
-	}
-	return o.Supervised, true
-}
-
-// HasSupervised returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasSupervised() bool {
-	if o != nil && !IsNil(o.Supervised) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupervised gets a reference to the given string and assigns it to the Supervised field.
-func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetSupervised(v string) {
-	o.Supervised = &v
 }
 
 // GetInstallDate returns the InstallDate field value if set, zero value otherwise.
@@ -175,6 +111,38 @@ func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetLastCheckIn(v strin
 	o.LastCheckIn = &v
 }
 
+// GetMdmEnabled returns the MdmEnabled field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabled() string {
+	if o == nil || IsNil(o.MdmEnabled) {
+		var ret string
+		return ret
+	}
+	return *o.MdmEnabled
+}
+
+// GetMdmEnabledOk returns a tuple with the MdmEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabledOk() (*string, bool) {
+	if o == nil || IsNil(o.MdmEnabled) {
+		return nil, false
+	}
+	return o.MdmEnabled, true
+}
+
+// HasMdmEnabled returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasMdmEnabled() bool {
+	if o != nil && !IsNil(o.MdmEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetMdmEnabled gets a reference to the given string and assigns it to the MdmEnabled field.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetMdmEnabled(v string) {
+	o.MdmEnabled = &v
+}
+
 // GetMdmEnabledUser returns the MdmEnabledUser field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabledUser() interface{} {
 	if o == nil {
@@ -208,6 +176,38 @@ func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetMdmEnabledUser(v in
 	o.MdmEnabledUser = v
 }
 
+// GetSupervised returns the Supervised field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervised() string {
+	if o == nil || IsNil(o.Supervised) {
+		var ret string
+		return ret
+	}
+	return *o.Supervised
+}
+
+// GetSupervisedOk returns a tuple with the Supervised field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervisedOk() (*string, bool) {
+	if o == nil || IsNil(o.Supervised) {
+		return nil, false
+	}
+	return o.Supervised, true
+}
+
+// HasSupervised returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasSupervised() bool {
+	if o != nil && !IsNil(o.Supervised) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupervised gets a reference to the given string and assigns it to the Supervised field.
+func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetSupervised(v string) {
+	o.Supervised = &v
+}
+
 func (o DeviceInformationGetDeviceDetails200ResponseMdm) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -218,20 +218,20 @@ func (o DeviceInformationGetDeviceDetails200ResponseMdm) MarshalJSON() ([]byte, 
 
 func (o DeviceInformationGetDeviceDetails200ResponseMdm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MdmEnabled) {
-		toSerialize["mdm_enabled"] = o.MdmEnabled
-	}
-	if !IsNil(o.Supervised) {
-		toSerialize["supervised"] = o.Supervised
-	}
 	if !IsNil(o.InstallDate) {
 		toSerialize["install_date"] = o.InstallDate
 	}
 	if !IsNil(o.LastCheckIn) {
 		toSerialize["last_check_in"] = o.LastCheckIn
 	}
+	if !IsNil(o.MdmEnabled) {
+		toSerialize["mdm_enabled"] = o.MdmEnabled
+	}
 	if o.MdmEnabledUser != nil {
 		toSerialize["mdm_enabled_user"] = o.MdmEnabledUser
+	}
+	if !IsNil(o.Supervised) {
+		toSerialize["supervised"] = o.Supervised
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -255,11 +255,11 @@ func (o *DeviceInformationGetDeviceDetails200ResponseMdm) UnmarshalJSON(data []b
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "mdm_enabled")
-		delete(additionalProperties, "supervised")
 		delete(additionalProperties, "install_date")
 		delete(additionalProperties, "last_check_in")
+		delete(additionalProperties, "mdm_enabled")
 		delete(additionalProperties, "mdm_enabled_user")
+		delete(additionalProperties, "supervised")
 		o.AdditionalProperties = additionalProperties
 	}
 

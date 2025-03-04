@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Count** | Pointer to **int32** |  | [optional] 
+**MalwareCount** | Pointer to **int32** |  | [optional] 
 **Next** | Pointer to **interface{}** |  | [optional] 
 **Previous** | Pointer to **interface{}** |  | [optional] 
-**MalwareCount** | Pointer to **int32** |  | [optional] 
 **PupCount** | Pointer to **int32** |  | [optional] 
 **Results** | Pointer to **interface{}** |  | [optional] 
 
@@ -54,6 +54,31 @@ SetCount sets Count field to given value.
 `func (o *ThreatsGetThreatDetails200Response) HasCount() bool`
 
 HasCount returns a boolean if a field has been set.
+
+### GetMalwareCount
+
+`func (o *ThreatsGetThreatDetails200Response) GetMalwareCount() int32`
+
+GetMalwareCount returns the MalwareCount field if non-nil, zero value otherwise.
+
+### GetMalwareCountOk
+
+`func (o *ThreatsGetThreatDetails200Response) GetMalwareCountOk() (*int32, bool)`
+
+GetMalwareCountOk returns a tuple with the MalwareCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMalwareCount
+
+`func (o *ThreatsGetThreatDetails200Response) SetMalwareCount(v int32)`
+
+SetMalwareCount sets MalwareCount field to given value.
+
+### HasMalwareCount
+
+`func (o *ThreatsGetThreatDetails200Response) HasMalwareCount() bool`
+
+HasMalwareCount returns a boolean if a field has been set.
 
 ### GetNext
 
@@ -125,31 +150,6 @@ HasPrevious returns a boolean if a field has been set.
 `func (o *ThreatsGetThreatDetails200Response) UnsetPrevious()`
 
 UnsetPrevious ensures that no value is present for Previous, not even an explicit nil
-### GetMalwareCount
-
-`func (o *ThreatsGetThreatDetails200Response) GetMalwareCount() int32`
-
-GetMalwareCount returns the MalwareCount field if non-nil, zero value otherwise.
-
-### GetMalwareCountOk
-
-`func (o *ThreatsGetThreatDetails200Response) GetMalwareCountOk() (*int32, bool)`
-
-GetMalwareCountOk returns a tuple with the MalwareCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMalwareCount
-
-`func (o *ThreatsGetThreatDetails200Response) SetMalwareCount(v int32)`
-
-SetMalwareCount sets MalwareCount field to given value.
-
-### HasMalwareCount
-
-`func (o *ThreatsGetThreatDetails200Response) HasMalwareCount() bool`
-
-HasMalwareCount returns a boolean if a field has been set.
-
 ### GetPupCount
 
 `func (o *ThreatsGetThreatDetails200Response) GetPupCount() int32`

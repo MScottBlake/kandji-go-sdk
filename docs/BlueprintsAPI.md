@@ -39,7 +39,7 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	body := "{"library_item_id":"{library_item_id}","assignment_node_id":"{assignment_node_id}"}" // string |  (optional)
+	body := "{"assignment_node_id":"{assignment_node_id}","library_item_id":"{library_item_id}"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## CreateBlueprint
 
-> BlueprintsCreateBlueprint201Response CreateBlueprint(ctx).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
+> BlueprintsCreateBlueprint201Response CreateBlueprint(ctx).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Name(name).SourceId(sourceId).SourceType(sourceType).Type_(type_).Execute()
 
 Create Blueprint
 
@@ -110,16 +110,16 @@ import (
 )
 
 func main() {
-	name := "name_example" // string | (required) Set the name of the Blueprint. The name provided must be unique.
-	enrollmentCodeIsActive := "enrollmentCodeIsActive_example" // string | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal
 	enrollmentCodeCode := "enrollmentCodeCode_example" // string | Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
-	sourceType := "sourceType_example" // string | Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.
+	enrollmentCodeIsActive := "enrollmentCodeIsActive_example" // string | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal
+	name := "name_example" // string | (required) Set the name of the Blueprint. The name provided must be unique.
 	sourceId := "sourceId_example" // string | Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.
+	sourceType := "sourceType_example" // string | Set the source to create the blueprint from. Possible options: <code>template</code> and <code>blueprint</code>.
 	type_ := "type__example" // string | Choose the type of blueprint to create. Options: <code>classic</code> or <code>map</code>
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.CreateBlueprint(context.Background()).Name(name).EnrollmentCodeIsActive(enrollmentCodeIsActive).EnrollmentCodeCode(enrollmentCodeCode).SourceType(sourceType).SourceId(sourceId).Type_(type_).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.CreateBlueprint(context.Background()).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Name(name).SourceId(sourceId).SourceType(sourceType).Type_(type_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.CreateBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -140,11 +140,11 @@ Other parameters are passed through a pointer to a apiCreateBlueprintRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | (required) Set the name of the Blueprint. The name provided must be unique. | 
- **enrollmentCodeIsActive** | **string** | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal | 
  **enrollmentCodeCode** | **string** | Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app. | 
- **sourceType** | **string** | Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. | 
+ **enrollmentCodeIsActive** | **string** | (required) Enable or Disable the Blueprint for manual device enrollment from the enrollment portal | 
+ **name** | **string** | (required) Set the name of the Blueprint. The name provided must be unique. | 
  **sourceId** | **string** | Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint. | 
+ **sourceType** | **string** | Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;. | 
  **type_** | **string** | Choose the type of blueprint to create. Options: &lt;code&gt;classic&lt;/code&gt; or &lt;code&gt;map&lt;/code&gt; | 
 
 ### Return type
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ## ListBlueprints
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response ListBlueprints(ctx).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
+> BlueprintsListBlueprints200Response ListBlueprints(ctx).Id(id).IdIn(idIn).Name(name).Limit(limit).Offset(offset).Execute()
 
 List Blueprints
 
@@ -473,7 +473,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.ListBlueprints``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListBlueprints`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `ListBlueprints`: BlueprintsListBlueprints200Response
 	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.ListBlueprints`: %v\n", resp)
 }
 ```
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 
 ## ListLibraryItems
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response ListLibraryItems(ctx, blueprintId).Execute()
+> BlueprintsListBlueprints200Response ListLibraryItems(ctx, blueprintId).Execute()
 
 List Library Items
 
@@ -543,7 +543,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.ListLibraryItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListLibraryItems`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `ListLibraryItems`: BlueprintsListBlueprints200Response
 	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.ListLibraryItems`: %v\n", resp)
 }
 ```
@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -605,7 +605,7 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	body := "{library_item_id={library_item_id}, assignment_node_id={assignment_node_id}}" // string |  (optional)
+	body := "{assignment_node_id={assignment_node_id}, library_item_id={library_item_id}}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ## UpdateBlueprint
 
-> BlueprintsUpdateBlueprint200Response UpdateBlueprint(ctx, blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
+> BlueprintsUpdateBlueprint200Response UpdateBlueprint(ctx, blueprintId).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Name(name).Execute()
 
 Update Blueprint
 
@@ -677,14 +677,14 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	name := "name_example" // string | Update the name of the Blueprint
 	description := "description_example" // string | Update the description of the Blueprint 
 	enrollmentCodeCode := "enrollmentCodeCode_example" // string | Update the enrollment code of the Blueprint 
 	enrollmentCodeIsActive := "enrollmentCodeIsActive_example" // string | Disable the Blueprint for manual device enrollment from the enrollment portal.
+	name := "name_example" // string | Update the name of the Blueprint
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.UpdateBlueprint(context.Background(), blueprintId).Name(name).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Execute()
+	resp, r, err := apiClient.BlueprintsAPI.UpdateBlueprint(context.Background(), blueprintId).Description(description).EnrollmentCodeCode(enrollmentCodeCode).EnrollmentCodeIsActive(enrollmentCodeIsActive).Name(name).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.UpdateBlueprint``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -710,10 +710,10 @@ Other parameters are passed through a pointer to a apiUpdateBlueprintRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **name** | **string** | Update the name of the Blueprint | 
  **description** | **string** | Update the description of the Blueprint  | 
  **enrollmentCodeCode** | **string** | Update the enrollment code of the Blueprint  | 
  **enrollmentCodeIsActive** | **string** | Disable the Blueprint for manual device enrollment from the enrollment portal. | 
+ **name** | **string** | Update the name of the Blueprint | 
 
 ### Return type
 

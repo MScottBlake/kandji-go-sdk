@@ -20,15 +20,15 @@ var _ MappedNullable = &BlueprintsUpdateBlueprint200Response{}
 
 // BlueprintsUpdateBlueprint200Response struct for BlueprintsUpdateBlueprint200Response
 type BlueprintsUpdateBlueprint200Response struct {
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Icon *string `json:"icon,omitempty"`
 	Color *string `json:"color,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Params map[string]interface{} `json:"params,omitempty"`
 	ComputersCount *int32 `json:"computers_count,omitempty"`
-	MissingComputersCount *int32 `json:"missing_computers_count,omitempty"`
+	Description *string `json:"description,omitempty"`
 	EnrollmentCode *BlueprintsCreateBlueprint201ResponseEnrollmentCode `json:"enrollment_code,omitempty"`
+	Icon *string `json:"icon,omitempty"`
+	Id *string `json:"id,omitempty"`
+	MissingComputersCount *int32 `json:"missing_computers_count,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Params map[string]interface{} `json:"params,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,102 +49,6 @@ func NewBlueprintsUpdateBlueprint200Response() *BlueprintsUpdateBlueprint200Resp
 func NewBlueprintsUpdateBlueprint200ResponseWithDefaults() *BlueprintsUpdateBlueprint200Response {
 	this := BlueprintsUpdateBlueprint200Response{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *BlueprintsUpdateBlueprint200Response) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintsUpdateBlueprint200Response) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *BlueprintsUpdateBlueprint200Response) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *BlueprintsUpdateBlueprint200Response) SetId(v string) {
-	o.Id = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *BlueprintsUpdateBlueprint200Response) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintsUpdateBlueprint200Response) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *BlueprintsUpdateBlueprint200Response) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *BlueprintsUpdateBlueprint200Response) SetName(v string) {
-	o.Name = &v
-}
-
-// GetIcon returns the Icon field value if set, zero value otherwise.
-func (o *BlueprintsUpdateBlueprint200Response) GetIcon() string {
-	if o == nil || IsNil(o.Icon) {
-		var ret string
-		return ret
-	}
-	return *o.Icon
-}
-
-// GetIconOk returns a tuple with the Icon field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintsUpdateBlueprint200Response) GetIconOk() (*string, bool) {
-	if o == nil || IsNil(o.Icon) {
-		return nil, false
-	}
-	return o.Icon, true
-}
-
-// HasIcon returns a boolean if a field has been set.
-func (o *BlueprintsUpdateBlueprint200Response) HasIcon() bool {
-	if o != nil && !IsNil(o.Icon) {
-		return true
-	}
-
-	return false
-}
-
-// SetIcon gets a reference to the given string and assigns it to the Icon field.
-func (o *BlueprintsUpdateBlueprint200Response) SetIcon(v string) {
-	o.Icon = &v
 }
 
 // GetColor returns the Color field value if set, zero value otherwise.
@@ -179,70 +83,6 @@ func (o *BlueprintsUpdateBlueprint200Response) SetColor(v string) {
 	o.Color = &v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *BlueprintsUpdateBlueprint200Response) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
-		var ret string
-		return ret
-	}
-	return *o.Description
-}
-
-// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintsUpdateBlueprint200Response) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
-		return nil, false
-	}
-	return o.Description, true
-}
-
-// HasDescription returns a boolean if a field has been set.
-func (o *BlueprintsUpdateBlueprint200Response) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
-		return true
-	}
-
-	return false
-}
-
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *BlueprintsUpdateBlueprint200Response) SetDescription(v string) {
-	o.Description = &v
-}
-
-// GetParams returns the Params field value if set, zero value otherwise.
-func (o *BlueprintsUpdateBlueprint200Response) GetParams() map[string]interface{} {
-	if o == nil || IsNil(o.Params) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Params
-}
-
-// GetParamsOk returns a tuple with the Params field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BlueprintsUpdateBlueprint200Response) GetParamsOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Params) {
-		return map[string]interface{}{}, false
-	}
-	return o.Params, true
-}
-
-// HasParams returns a boolean if a field has been set.
-func (o *BlueprintsUpdateBlueprint200Response) HasParams() bool {
-	if o != nil && !IsNil(o.Params) {
-		return true
-	}
-
-	return false
-}
-
-// SetParams gets a reference to the given map[string]interface{} and assigns it to the Params field.
-func (o *BlueprintsUpdateBlueprint200Response) SetParams(v map[string]interface{}) {
-	o.Params = v
-}
-
 // GetComputersCount returns the ComputersCount field value if set, zero value otherwise.
 func (o *BlueprintsUpdateBlueprint200Response) GetComputersCount() int32 {
 	if o == nil || IsNil(o.ComputersCount) {
@@ -275,36 +115,36 @@ func (o *BlueprintsUpdateBlueprint200Response) SetComputersCount(v int32) {
 	o.ComputersCount = &v
 }
 
-// GetMissingComputersCount returns the MissingComputersCount field value if set, zero value otherwise.
-func (o *BlueprintsUpdateBlueprint200Response) GetMissingComputersCount() int32 {
-	if o == nil || IsNil(o.MissingComputersCount) {
-		var ret int32
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *BlueprintsUpdateBlueprint200Response) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
 		return ret
 	}
-	return *o.MissingComputersCount
+	return *o.Description
 }
 
-// GetMissingComputersCountOk returns a tuple with the MissingComputersCount field value if set, nil otherwise
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BlueprintsUpdateBlueprint200Response) GetMissingComputersCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.MissingComputersCount) {
+func (o *BlueprintsUpdateBlueprint200Response) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
-	return o.MissingComputersCount, true
+	return o.Description, true
 }
 
-// HasMissingComputersCount returns a boolean if a field has been set.
-func (o *BlueprintsUpdateBlueprint200Response) HasMissingComputersCount() bool {
-	if o != nil && !IsNil(o.MissingComputersCount) {
+// HasDescription returns a boolean if a field has been set.
+func (o *BlueprintsUpdateBlueprint200Response) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
 		return true
 	}
 
 	return false
 }
 
-// SetMissingComputersCount gets a reference to the given int32 and assigns it to the MissingComputersCount field.
-func (o *BlueprintsUpdateBlueprint200Response) SetMissingComputersCount(v int32) {
-	o.MissingComputersCount = &v
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *BlueprintsUpdateBlueprint200Response) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetEnrollmentCode returns the EnrollmentCode field value if set, zero value otherwise.
@@ -339,6 +179,166 @@ func (o *BlueprintsUpdateBlueprint200Response) SetEnrollmentCode(v BlueprintsCre
 	o.EnrollmentCode = &v
 }
 
+// GetIcon returns the Icon field value if set, zero value otherwise.
+func (o *BlueprintsUpdateBlueprint200Response) GetIcon() string {
+	if o == nil || IsNil(o.Icon) {
+		var ret string
+		return ret
+	}
+	return *o.Icon
+}
+
+// GetIconOk returns a tuple with the Icon field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BlueprintsUpdateBlueprint200Response) GetIconOk() (*string, bool) {
+	if o == nil || IsNil(o.Icon) {
+		return nil, false
+	}
+	return o.Icon, true
+}
+
+// HasIcon returns a boolean if a field has been set.
+func (o *BlueprintsUpdateBlueprint200Response) HasIcon() bool {
+	if o != nil && !IsNil(o.Icon) {
+		return true
+	}
+
+	return false
+}
+
+// SetIcon gets a reference to the given string and assigns it to the Icon field.
+func (o *BlueprintsUpdateBlueprint200Response) SetIcon(v string) {
+	o.Icon = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *BlueprintsUpdateBlueprint200Response) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BlueprintsUpdateBlueprint200Response) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *BlueprintsUpdateBlueprint200Response) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *BlueprintsUpdateBlueprint200Response) SetId(v string) {
+	o.Id = &v
+}
+
+// GetMissingComputersCount returns the MissingComputersCount field value if set, zero value otherwise.
+func (o *BlueprintsUpdateBlueprint200Response) GetMissingComputersCount() int32 {
+	if o == nil || IsNil(o.MissingComputersCount) {
+		var ret int32
+		return ret
+	}
+	return *o.MissingComputersCount
+}
+
+// GetMissingComputersCountOk returns a tuple with the MissingComputersCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BlueprintsUpdateBlueprint200Response) GetMissingComputersCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.MissingComputersCount) {
+		return nil, false
+	}
+	return o.MissingComputersCount, true
+}
+
+// HasMissingComputersCount returns a boolean if a field has been set.
+func (o *BlueprintsUpdateBlueprint200Response) HasMissingComputersCount() bool {
+	if o != nil && !IsNil(o.MissingComputersCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetMissingComputersCount gets a reference to the given int32 and assigns it to the MissingComputersCount field.
+func (o *BlueprintsUpdateBlueprint200Response) SetMissingComputersCount(v int32) {
+	o.MissingComputersCount = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BlueprintsUpdateBlueprint200Response) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BlueprintsUpdateBlueprint200Response) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BlueprintsUpdateBlueprint200Response) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BlueprintsUpdateBlueprint200Response) SetName(v string) {
+	o.Name = &v
+}
+
+// GetParams returns the Params field value if set, zero value otherwise.
+func (o *BlueprintsUpdateBlueprint200Response) GetParams() map[string]interface{} {
+	if o == nil || IsNil(o.Params) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.Params
+}
+
+// GetParamsOk returns a tuple with the Params field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BlueprintsUpdateBlueprint200Response) GetParamsOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Params) {
+		return map[string]interface{}{}, false
+	}
+	return o.Params, true
+}
+
+// HasParams returns a boolean if a field has been set.
+func (o *BlueprintsUpdateBlueprint200Response) HasParams() bool {
+	if o != nil && !IsNil(o.Params) {
+		return true
+	}
+
+	return false
+}
+
+// SetParams gets a reference to the given map[string]interface{} and assigns it to the Params field.
+func (o *BlueprintsUpdateBlueprint200Response) SetParams(v map[string]interface{}) {
+	o.Params = v
+}
+
 func (o BlueprintsUpdateBlueprint200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -349,32 +349,32 @@ func (o BlueprintsUpdateBlueprint200Response) MarshalJSON() ([]byte, error) {
 
 func (o BlueprintsUpdateBlueprint200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Icon) {
-		toSerialize["icon"] = o.Icon
-	}
 	if !IsNil(o.Color) {
 		toSerialize["color"] = o.Color
-	}
-	if !IsNil(o.Description) {
-		toSerialize["description"] = o.Description
-	}
-	if !IsNil(o.Params) {
-		toSerialize["params"] = o.Params
 	}
 	if !IsNil(o.ComputersCount) {
 		toSerialize["computers_count"] = o.ComputersCount
 	}
-	if !IsNil(o.MissingComputersCount) {
-		toSerialize["missing_computers_count"] = o.MissingComputersCount
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
 	}
 	if !IsNil(o.EnrollmentCode) {
 		toSerialize["enrollment_code"] = o.EnrollmentCode
+	}
+	if !IsNil(o.Icon) {
+		toSerialize["icon"] = o.Icon
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.MissingComputersCount) {
+		toSerialize["missing_computers_count"] = o.MissingComputersCount
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Params) {
+		toSerialize["params"] = o.Params
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -398,15 +398,15 @@ func (o *BlueprintsUpdateBlueprint200Response) UnmarshalJSON(data []byte) (err e
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "icon")
 		delete(additionalProperties, "color")
-		delete(additionalProperties, "description")
-		delete(additionalProperties, "params")
 		delete(additionalProperties, "computers_count")
-		delete(additionalProperties, "missing_computers_count")
+		delete(additionalProperties, "description")
 		delete(additionalProperties, "enrollment_code")
+		delete(additionalProperties, "icon")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "missing_computers_count")
+		delete(additionalProperties, "name")
+		delete(additionalProperties, "params")
 		o.AdditionalProperties = additionalProperties
 	}
 

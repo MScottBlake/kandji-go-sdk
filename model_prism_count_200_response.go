@@ -20,8 +20,8 @@ var _ MappedNullable = &PrismCount200Response{}
 
 // PrismCount200Response struct for PrismCount200Response
 type PrismCount200Response struct {
-	Count *int32 `json:"count,omitempty"`
 	Approximate *int32 `json:"approximate,omitempty"`
+	Count *int32 `json:"count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,38 +42,6 @@ func NewPrismCount200Response() *PrismCount200Response {
 func NewPrismCount200ResponseWithDefaults() *PrismCount200Response {
 	this := PrismCount200Response{}
 	return &this
-}
-
-// GetCount returns the Count field value if set, zero value otherwise.
-func (o *PrismCount200Response) GetCount() int32 {
-	if o == nil || IsNil(o.Count) {
-		var ret int32
-		return ret
-	}
-	return *o.Count
-}
-
-// GetCountOk returns a tuple with the Count field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismCount200Response) GetCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.Count) {
-		return nil, false
-	}
-	return o.Count, true
-}
-
-// HasCount returns a boolean if a field has been set.
-func (o *PrismCount200Response) HasCount() bool {
-	if o != nil && !IsNil(o.Count) {
-		return true
-	}
-
-	return false
-}
-
-// SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *PrismCount200Response) SetCount(v int32) {
-	o.Count = &v
 }
 
 // GetApproximate returns the Approximate field value if set, zero value otherwise.
@@ -108,6 +76,38 @@ func (o *PrismCount200Response) SetApproximate(v int32) {
 	o.Approximate = &v
 }
 
+// GetCount returns the Count field value if set, zero value otherwise.
+func (o *PrismCount200Response) GetCount() int32 {
+	if o == nil || IsNil(o.Count) {
+		var ret int32
+		return ret
+	}
+	return *o.Count
+}
+
+// GetCountOk returns a tuple with the Count field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismCount200Response) GetCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.Count) {
+		return nil, false
+	}
+	return o.Count, true
+}
+
+// HasCount returns a boolean if a field has been set.
+func (o *PrismCount200Response) HasCount() bool {
+	if o != nil && !IsNil(o.Count) {
+		return true
+	}
+
+	return false
+}
+
+// SetCount gets a reference to the given int32 and assigns it to the Count field.
+func (o *PrismCount200Response) SetCount(v int32) {
+	o.Count = &v
+}
+
 func (o PrismCount200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -118,11 +118,11 @@ func (o PrismCount200Response) MarshalJSON() ([]byte, error) {
 
 func (o PrismCount200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Count) {
-		toSerialize["count"] = o.Count
-	}
 	if !IsNil(o.Approximate) {
 		toSerialize["approximate"] = o.Approximate
+	}
+	if !IsNil(o.Count) {
+		toSerialize["count"] = o.Count
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -146,8 +146,8 @@ func (o *PrismCount200Response) UnmarshalJSON(data []byte) (err error) {
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "count")
 		delete(additionalProperties, "approximate")
+		delete(additionalProperties, "count")
 		o.AdditionalProperties = additionalProperties
 	}
 

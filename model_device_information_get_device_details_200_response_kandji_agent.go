@@ -21,9 +21,9 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseKandjiAgent{
 // DeviceInformationGetDeviceDetails200ResponseKandjiAgent struct for DeviceInformationGetDeviceDetails200ResponseKandjiAgent
 type DeviceInformationGetDeviceDetails200ResponseKandjiAgent struct {
 	AgentInstalled *string `json:"agent_installed,omitempty"`
+	AgentVersion *string `json:"agent_version,omitempty"`
 	InstallDate *string `json:"install_date,omitempty"`
 	LastCheckIn *string `json:"last_check_in,omitempty"`
-	AgentVersion *string `json:"agent_version,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,6 +76,38 @@ func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) HasAgentInstal
 // SetAgentInstalled gets a reference to the given string and assigns it to the AgentInstalled field.
 func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) SetAgentInstalled(v string) {
 	o.AgentInstalled = &v
+}
+
+// GetAgentVersion returns the AgentVersion field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) GetAgentVersion() string {
+	if o == nil || IsNil(o.AgentVersion) {
+		var ret string
+		return ret
+	}
+	return *o.AgentVersion
+}
+
+// GetAgentVersionOk returns a tuple with the AgentVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) GetAgentVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.AgentVersion) {
+		return nil, false
+	}
+	return o.AgentVersion, true
+}
+
+// HasAgentVersion returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) HasAgentVersion() bool {
+	if o != nil && !IsNil(o.AgentVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetAgentVersion gets a reference to the given string and assigns it to the AgentVersion field.
+func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) SetAgentVersion(v string) {
+	o.AgentVersion = &v
 }
 
 // GetInstallDate returns the InstallDate field value if set, zero value otherwise.
@@ -142,38 +174,6 @@ func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) SetLastCheckIn
 	o.LastCheckIn = &v
 }
 
-// GetAgentVersion returns the AgentVersion field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) GetAgentVersion() string {
-	if o == nil || IsNil(o.AgentVersion) {
-		var ret string
-		return ret
-	}
-	return *o.AgentVersion
-}
-
-// GetAgentVersionOk returns a tuple with the AgentVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) GetAgentVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.AgentVersion) {
-		return nil, false
-	}
-	return o.AgentVersion, true
-}
-
-// HasAgentVersion returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) HasAgentVersion() bool {
-	if o != nil && !IsNil(o.AgentVersion) {
-		return true
-	}
-
-	return false
-}
-
-// SetAgentVersion gets a reference to the given string and assigns it to the AgentVersion field.
-func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) SetAgentVersion(v string) {
-	o.AgentVersion = &v
-}
-
 func (o DeviceInformationGetDeviceDetails200ResponseKandjiAgent) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -187,14 +187,14 @@ func (o DeviceInformationGetDeviceDetails200ResponseKandjiAgent) ToMap() (map[st
 	if !IsNil(o.AgentInstalled) {
 		toSerialize["agent_installed"] = o.AgentInstalled
 	}
+	if !IsNil(o.AgentVersion) {
+		toSerialize["agent_version"] = o.AgentVersion
+	}
 	if !IsNil(o.InstallDate) {
 		toSerialize["install_date"] = o.InstallDate
 	}
 	if !IsNil(o.LastCheckIn) {
 		toSerialize["last_check_in"] = o.LastCheckIn
-	}
-	if !IsNil(o.AgentVersion) {
-		toSerialize["agent_version"] = o.AgentVersion
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -219,9 +219,9 @@ func (o *DeviceInformationGetDeviceDetails200ResponseKandjiAgent) UnmarshalJSON(
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "agent_installed")
+		delete(additionalProperties, "agent_version")
 		delete(additionalProperties, "install_date")
 		delete(additionalProperties, "last_check_in")
-		delete(additionalProperties, "agent_version")
 		o.AdditionalProperties = additionalProperties
 	}
 

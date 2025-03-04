@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Activity** | Pointer to [**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md) |  | [optional] 
 **DeviceId** | Pointer to **string** |  | [optional] 
-**Activity** | Pointer to [**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md) |  | [optional] 
 
 ## Methods
 
@@ -25,6 +25,31 @@ will change when the set of required properties is changed
 NewDeviceInformationGetDeviceActivity200ResponseWithDefaults instantiates a new DeviceInformationGetDeviceActivity200Response object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetActivity
+
+`func (o *DeviceInformationGetDeviceActivity200Response) GetActivity() BlueprintsListBlueprints200Response`
+
+GetActivity returns the Activity field if non-nil, zero value otherwise.
+
+### GetActivityOk
+
+`func (o *DeviceInformationGetDeviceActivity200Response) GetActivityOk() (*BlueprintsListBlueprints200Response, bool)`
+
+GetActivityOk returns a tuple with the Activity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActivity
+
+`func (o *DeviceInformationGetDeviceActivity200Response) SetActivity(v BlueprintsListBlueprints200Response)`
+
+SetActivity sets Activity field to given value.
+
+### HasActivity
+
+`func (o *DeviceInformationGetDeviceActivity200Response) HasActivity() bool`
+
+HasActivity returns a boolean if a field has been set.
 
 ### GetDeviceId
 
@@ -50,31 +75,6 @@ SetDeviceId sets DeviceId field to given value.
 `func (o *DeviceInformationGetDeviceActivity200Response) HasDeviceId() bool`
 
 HasDeviceId returns a boolean if a field has been set.
-
-### GetActivity
-
-`func (o *DeviceInformationGetDeviceActivity200Response) GetActivity() AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response`
-
-GetActivity returns the Activity field if non-nil, zero value otherwise.
-
-### GetActivityOk
-
-`func (o *DeviceInformationGetDeviceActivity200Response) GetActivityOk() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, bool)`
-
-GetActivityOk returns a tuple with the Activity field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActivity
-
-`func (o *DeviceInformationGetDeviceActivity200Response) SetActivity(v AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response)`
-
-SetActivity sets Activity field to given value.
-
-### HasActivity
-
-`func (o *DeviceInformationGetDeviceActivity200Response) HasActivity() bool`
-
-HasActivity returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

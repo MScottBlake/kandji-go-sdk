@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ## GetTags
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response GetTags(ctx).Search(search).Execute()
+> BlueprintsListBlueprints200Response GetTags(ctx).Search(search).Execute()
 
 Get Tags
 
@@ -175,7 +175,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.GetTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTags`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `GetTags`: BlueprintsListBlueprints200Response
 	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.GetTags`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 

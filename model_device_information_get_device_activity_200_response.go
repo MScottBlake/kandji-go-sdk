@@ -20,8 +20,8 @@ var _ MappedNullable = &DeviceInformationGetDeviceActivity200Response{}
 
 // DeviceInformationGetDeviceActivity200Response struct for DeviceInformationGetDeviceActivity200Response
 type DeviceInformationGetDeviceActivity200Response struct {
+	Activity *BlueprintsListBlueprints200Response `json:"activity,omitempty"`
 	DeviceId *string `json:"device_id,omitempty"`
-	Activity *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response `json:"activity,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,6 +42,38 @@ func NewDeviceInformationGetDeviceActivity200Response() *DeviceInformationGetDev
 func NewDeviceInformationGetDeviceActivity200ResponseWithDefaults() *DeviceInformationGetDeviceActivity200Response {
 	this := DeviceInformationGetDeviceActivity200Response{}
 	return &this
+}
+
+// GetActivity returns the Activity field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceActivity200Response) GetActivity() BlueprintsListBlueprints200Response {
+	if o == nil || IsNil(o.Activity) {
+		var ret BlueprintsListBlueprints200Response
+		return ret
+	}
+	return *o.Activity
+}
+
+// GetActivityOk returns a tuple with the Activity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceActivity200Response) GetActivityOk() (*BlueprintsListBlueprints200Response, bool) {
+	if o == nil || IsNil(o.Activity) {
+		return nil, false
+	}
+	return o.Activity, true
+}
+
+// HasActivity returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceActivity200Response) HasActivity() bool {
+	if o != nil && !IsNil(o.Activity) {
+		return true
+	}
+
+	return false
+}
+
+// SetActivity gets a reference to the given BlueprintsListBlueprints200Response and assigns it to the Activity field.
+func (o *DeviceInformationGetDeviceActivity200Response) SetActivity(v BlueprintsListBlueprints200Response) {
+	o.Activity = &v
 }
 
 // GetDeviceId returns the DeviceId field value if set, zero value otherwise.
@@ -76,38 +108,6 @@ func (o *DeviceInformationGetDeviceActivity200Response) SetDeviceId(v string) {
 	o.DeviceId = &v
 }
 
-// GetActivity returns the Activity field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceActivity200Response) GetActivity() AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response {
-	if o == nil || IsNil(o.Activity) {
-		var ret AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-		return ret
-	}
-	return *o.Activity
-}
-
-// GetActivityOk returns a tuple with the Activity field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceActivity200Response) GetActivityOk() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, bool) {
-	if o == nil || IsNil(o.Activity) {
-		return nil, false
-	}
-	return o.Activity, true
-}
-
-// HasActivity returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceActivity200Response) HasActivity() bool {
-	if o != nil && !IsNil(o.Activity) {
-		return true
-	}
-
-	return false
-}
-
-// SetActivity gets a reference to the given AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response and assigns it to the Activity field.
-func (o *DeviceInformationGetDeviceActivity200Response) SetActivity(v AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response) {
-	o.Activity = &v
-}
-
 func (o DeviceInformationGetDeviceActivity200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -118,11 +118,11 @@ func (o DeviceInformationGetDeviceActivity200Response) MarshalJSON() ([]byte, er
 
 func (o DeviceInformationGetDeviceActivity200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DeviceId) {
-		toSerialize["device_id"] = o.DeviceId
-	}
 	if !IsNil(o.Activity) {
 		toSerialize["activity"] = o.Activity
+	}
+	if !IsNil(o.DeviceId) {
+		toSerialize["device_id"] = o.DeviceId
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -146,8 +146,8 @@ func (o *DeviceInformationGetDeviceActivity200Response) UnmarshalJSON(data []byt
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_id")
 		delete(additionalProperties, "activity")
+		delete(additionalProperties, "device_id")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -9,12 +9,12 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** |  | [optional] 
 **Department** | Pointer to **interface{}** |  | [optional] 
 **DeprecatedUserId** | Pointer to **string** |  | [optional] 
+**DeviceCount** | Pointer to **int32** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **Integration** | Pointer to [**UsersGetUser200ResponseIntegration**](UsersGetUser200ResponseIntegration.md) |  | [optional] 
 **JobTitle** | Pointer to **interface{}** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**DeviceCount** | Pointer to **int32** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -171,6 +171,31 @@ SetDeprecatedUserId sets DeprecatedUserId field to given value.
 
 HasDeprecatedUserId returns a boolean if a field has been set.
 
+### GetDeviceCount
+
+`func (o *UsersGetUser200Response) GetDeviceCount() int32`
+
+GetDeviceCount returns the DeviceCount field if non-nil, zero value otherwise.
+
+### GetDeviceCountOk
+
+`func (o *UsersGetUser200Response) GetDeviceCountOk() (*int32, bool)`
+
+GetDeviceCountOk returns a tuple with the DeviceCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeviceCount
+
+`func (o *UsersGetUser200Response) SetDeviceCount(v int32)`
+
+SetDeviceCount sets DeviceCount field to given value.
+
+### HasDeviceCount
+
+`func (o *UsersGetUser200Response) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
+
 ### GetEmail
 
 `func (o *UsersGetUser200Response) GetEmail() string`
@@ -305,31 +330,6 @@ SetName sets Name field to given value.
 `func (o *UsersGetUser200Response) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetDeviceCount
-
-`func (o *UsersGetUser200Response) GetDeviceCount() int32`
-
-GetDeviceCount returns the DeviceCount field if non-nil, zero value otherwise.
-
-### GetDeviceCountOk
-
-`func (o *UsersGetUser200Response) GetDeviceCountOk() (*int32, bool)`
-
-GetDeviceCountOk returns a tuple with the DeviceCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeviceCount
-
-`func (o *UsersGetUser200Response) SetDeviceCount(v int32)`
-
-SetDeviceCount sets DeviceCount field to given value.
-
-### HasDeviceCount
-
-`func (o *UsersGetUser200Response) HasDeviceCount() bool`
-
-HasDeviceCount returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

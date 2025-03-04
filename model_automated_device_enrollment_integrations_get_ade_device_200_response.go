@@ -20,28 +20,28 @@ var _ MappedNullable = &AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Resp
 
 // AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response struct for AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response
 type AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response struct {
-	BlueprintId *string `json:"blueprint_id,omitempty"`
-	MdmDevice *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice `json:"mdm_device,omitempty"`
-	UserId *string `json:"user_id,omitempty"`
-	DepAccount *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount `json:"dep_account,omitempty"`
 	AssetTag *string `json:"asset_tag,omitempty"`
+	AssignmentStatusReceivedAt *string `json:"assignment_status_received_at,omitempty"`
+	Blueprint *string `json:"blueprint,omitempty"`
+	BlueprintId *string `json:"blueprint_id,omitempty"`
 	Color *string `json:"color,omitempty"`
+	DepAccount *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount `json:"dep_account,omitempty"`
 	Description *string `json:"description,omitempty"`
 	DeviceAssignedBy *string `json:"device_assigned_by,omitempty"`
 	DeviceAssignedDate *string `json:"device_assigned_date,omitempty"`
 	DeviceFamily *string `json:"device_family,omitempty"`
+	FailedAssignmentAttempts *int32 `json:"failed_assignment_attempts,omitempty"`
+	Id *string `json:"id,omitempty"`
+	LastAssignmentStatus *string `json:"last_assignment_status,omitempty"`
+	MdmDevice *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice `json:"mdm_device,omitempty"`
 	Model *string `json:"model,omitempty"`
 	Os *string `json:"os,omitempty"`
 	ProfileAssignTime *string `json:"profile_assign_time,omitempty"`
 	ProfilePushTime *string `json:"profile_push_time,omitempty"`
 	ProfileStatus *string `json:"profile_status,omitempty"`
 	SerialNumber *string `json:"serial_number,omitempty"`
-	Id *string `json:"id,omitempty"`
-	LastAssignmentStatus *string `json:"last_assignment_status,omitempty"`
-	FailedAssignmentAttempts *int32 `json:"failed_assignment_attempts,omitempty"`
-	AssignmentStatusReceivedAt *string `json:"assignment_status_received_at,omitempty"`
-	Blueprint *string `json:"blueprint,omitempty"`
 	User *string `json:"user,omitempty"`
+	UserId *string `json:"user_id,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -62,134 +62,6 @@ func NewAutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response() *Automate
 func NewAutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseWithDefaults() *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response {
 	this := AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response{}
 	return &this
-}
-
-// GetBlueprintId returns the BlueprintId field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintId() string {
-	if o == nil || IsNil(o.BlueprintId) {
-		var ret string
-		return ret
-	}
-	return *o.BlueprintId
-}
-
-// GetBlueprintIdOk returns a tuple with the BlueprintId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BlueprintId) {
-		return nil, false
-	}
-	return o.BlueprintId, true
-}
-
-// HasBlueprintId returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprintId() bool {
-	if o != nil && !IsNil(o.BlueprintId) {
-		return true
-	}
-
-	return false
-}
-
-// SetBlueprintId gets a reference to the given string and assigns it to the BlueprintId field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprintId(v string) {
-	o.BlueprintId = &v
-}
-
-// GetMdmDevice returns the MdmDevice field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDevice() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice {
-	if o == nil || IsNil(o.MdmDevice) {
-		var ret AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice
-		return ret
-	}
-	return *o.MdmDevice
-}
-
-// GetMdmDeviceOk returns a tuple with the MdmDevice field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDeviceOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice, bool) {
-	if o == nil || IsNil(o.MdmDevice) {
-		return nil, false
-	}
-	return o.MdmDevice, true
-}
-
-// HasMdmDevice returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasMdmDevice() bool {
-	if o != nil && !IsNil(o.MdmDevice) {
-		return true
-	}
-
-	return false
-}
-
-// SetMdmDevice gets a reference to the given AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice and assigns it to the MdmDevice field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetMdmDevice(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) {
-	o.MdmDevice = &v
-}
-
-// GetUserId returns the UserId field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserId() string {
-	if o == nil || IsNil(o.UserId) {
-		var ret string
-		return ret
-	}
-	return *o.UserId
-}
-
-// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UserId) {
-		return nil, false
-	}
-	return o.UserId, true
-}
-
-// HasUserId returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasUserId() bool {
-	if o != nil && !IsNil(o.UserId) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserId gets a reference to the given string and assigns it to the UserId field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetUserId(v string) {
-	o.UserId = &v
-}
-
-// GetDepAccount returns the DepAccount field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccount() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount {
-	if o == nil || IsNil(o.DepAccount) {
-		var ret AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount
-		return ret
-	}
-	return *o.DepAccount
-}
-
-// GetDepAccountOk returns a tuple with the DepAccount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccountOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount, bool) {
-	if o == nil || IsNil(o.DepAccount) {
-		return nil, false
-	}
-	return o.DepAccount, true
-}
-
-// HasDepAccount returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasDepAccount() bool {
-	if o != nil && !IsNil(o.DepAccount) {
-		return true
-	}
-
-	return false
-}
-
-// SetDepAccount gets a reference to the given AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount and assigns it to the DepAccount field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetDepAccount(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount) {
-	o.DepAccount = &v
 }
 
 // GetAssetTag returns the AssetTag field value if set, zero value otherwise.
@@ -224,6 +96,102 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetAssetT
 	o.AssetTag = &v
 }
 
+// GetAssignmentStatusReceivedAt returns the AssignmentStatusReceivedAt field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAt() string {
+	if o == nil || IsNil(o.AssignmentStatusReceivedAt) {
+		var ret string
+		return ret
+	}
+	return *o.AssignmentStatusReceivedAt
+}
+
+// GetAssignmentStatusReceivedAtOk returns a tuple with the AssignmentStatusReceivedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.AssignmentStatusReceivedAt) {
+		return nil, false
+	}
+	return o.AssignmentStatusReceivedAt, true
+}
+
+// HasAssignmentStatusReceivedAt returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasAssignmentStatusReceivedAt() bool {
+	if o != nil && !IsNil(o.AssignmentStatusReceivedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetAssignmentStatusReceivedAt gets a reference to the given string and assigns it to the AssignmentStatusReceivedAt field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetAssignmentStatusReceivedAt(v string) {
+	o.AssignmentStatusReceivedAt = &v
+}
+
+// GetBlueprint returns the Blueprint field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprint() string {
+	if o == nil || IsNil(o.Blueprint) {
+		var ret string
+		return ret
+	}
+	return *o.Blueprint
+}
+
+// GetBlueprintOk returns a tuple with the Blueprint field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintOk() (*string, bool) {
+	if o == nil || IsNil(o.Blueprint) {
+		return nil, false
+	}
+	return o.Blueprint, true
+}
+
+// HasBlueprint returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprint() bool {
+	if o != nil && !IsNil(o.Blueprint) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlueprint gets a reference to the given string and assigns it to the Blueprint field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprint(v string) {
+	o.Blueprint = &v
+}
+
+// GetBlueprintId returns the BlueprintId field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintId() string {
+	if o == nil || IsNil(o.BlueprintId) {
+		var ret string
+		return ret
+	}
+	return *o.BlueprintId
+}
+
+// GetBlueprintIdOk returns a tuple with the BlueprintId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintIdOk() (*string, bool) {
+	if o == nil || IsNil(o.BlueprintId) {
+		return nil, false
+	}
+	return o.BlueprintId, true
+}
+
+// HasBlueprintId returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprintId() bool {
+	if o != nil && !IsNil(o.BlueprintId) {
+		return true
+	}
+
+	return false
+}
+
+// SetBlueprintId gets a reference to the given string and assigns it to the BlueprintId field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprintId(v string) {
+	o.BlueprintId = &v
+}
+
 // GetColor returns the Color field value if set, zero value otherwise.
 func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetColor() string {
 	if o == nil || IsNil(o.Color) {
@@ -254,6 +222,38 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasColor(
 // SetColor gets a reference to the given string and assigns it to the Color field.
 func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetColor(v string) {
 	o.Color = &v
+}
+
+// GetDepAccount returns the DepAccount field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccount() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount {
+	if o == nil || IsNil(o.DepAccount) {
+		var ret AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount
+		return ret
+	}
+	return *o.DepAccount
+}
+
+// GetDepAccountOk returns a tuple with the DepAccount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccountOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount, bool) {
+	if o == nil || IsNil(o.DepAccount) {
+		return nil, false
+	}
+	return o.DepAccount, true
+}
+
+// HasDepAccount returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasDepAccount() bool {
+	if o != nil && !IsNil(o.DepAccount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepAccount gets a reference to the given AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount and assigns it to the DepAccount field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetDepAccount(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount) {
+	o.DepAccount = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -382,6 +382,134 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasDevice
 // SetDeviceFamily gets a reference to the given string and assigns it to the DeviceFamily field.
 func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetDeviceFamily(v string) {
 	o.DeviceFamily = &v
+}
+
+// GetFailedAssignmentAttempts returns the FailedAssignmentAttempts field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttempts() int32 {
+	if o == nil || IsNil(o.FailedAssignmentAttempts) {
+		var ret int32
+		return ret
+	}
+	return *o.FailedAssignmentAttempts
+}
+
+// GetFailedAssignmentAttemptsOk returns a tuple with the FailedAssignmentAttempts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttemptsOk() (*int32, bool) {
+	if o == nil || IsNil(o.FailedAssignmentAttempts) {
+		return nil, false
+	}
+	return o.FailedAssignmentAttempts, true
+}
+
+// HasFailedAssignmentAttempts returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasFailedAssignmentAttempts() bool {
+	if o != nil && !IsNil(o.FailedAssignmentAttempts) {
+		return true
+	}
+
+	return false
+}
+
+// SetFailedAssignmentAttempts gets a reference to the given int32 and assigns it to the FailedAssignmentAttempts field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetFailedAssignmentAttempts(v int32) {
+	o.FailedAssignmentAttempts = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetId(v string) {
+	o.Id = &v
+}
+
+// GetLastAssignmentStatus returns the LastAssignmentStatus field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatus() string {
+	if o == nil || IsNil(o.LastAssignmentStatus) {
+		var ret string
+		return ret
+	}
+	return *o.LastAssignmentStatus
+}
+
+// GetLastAssignmentStatusOk returns a tuple with the LastAssignmentStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.LastAssignmentStatus) {
+		return nil, false
+	}
+	return o.LastAssignmentStatus, true
+}
+
+// HasLastAssignmentStatus returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasLastAssignmentStatus() bool {
+	if o != nil && !IsNil(o.LastAssignmentStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastAssignmentStatus gets a reference to the given string and assigns it to the LastAssignmentStatus field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetLastAssignmentStatus(v string) {
+	o.LastAssignmentStatus = &v
+}
+
+// GetMdmDevice returns the MdmDevice field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDevice() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice {
+	if o == nil || IsNil(o.MdmDevice) {
+		var ret AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice
+		return ret
+	}
+	return *o.MdmDevice
+}
+
+// GetMdmDeviceOk returns a tuple with the MdmDevice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDeviceOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice, bool) {
+	if o == nil || IsNil(o.MdmDevice) {
+		return nil, false
+	}
+	return o.MdmDevice, true
+}
+
+// HasMdmDevice returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasMdmDevice() bool {
+	if o != nil && !IsNil(o.MdmDevice) {
+		return true
+	}
+
+	return false
+}
+
+// SetMdmDevice gets a reference to the given AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice and assigns it to the MdmDevice field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetMdmDevice(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) {
+	o.MdmDevice = &v
 }
 
 // GetModel returns the Model field value if set, zero value otherwise.
@@ -576,166 +704,6 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetSerial
 	o.SerialNumber = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetId(v string) {
-	o.Id = &v
-}
-
-// GetLastAssignmentStatus returns the LastAssignmentStatus field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatus() string {
-	if o == nil || IsNil(o.LastAssignmentStatus) {
-		var ret string
-		return ret
-	}
-	return *o.LastAssignmentStatus
-}
-
-// GetLastAssignmentStatusOk returns a tuple with the LastAssignmentStatus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.LastAssignmentStatus) {
-		return nil, false
-	}
-	return o.LastAssignmentStatus, true
-}
-
-// HasLastAssignmentStatus returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasLastAssignmentStatus() bool {
-	if o != nil && !IsNil(o.LastAssignmentStatus) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastAssignmentStatus gets a reference to the given string and assigns it to the LastAssignmentStatus field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetLastAssignmentStatus(v string) {
-	o.LastAssignmentStatus = &v
-}
-
-// GetFailedAssignmentAttempts returns the FailedAssignmentAttempts field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttempts() int32 {
-	if o == nil || IsNil(o.FailedAssignmentAttempts) {
-		var ret int32
-		return ret
-	}
-	return *o.FailedAssignmentAttempts
-}
-
-// GetFailedAssignmentAttemptsOk returns a tuple with the FailedAssignmentAttempts field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttemptsOk() (*int32, bool) {
-	if o == nil || IsNil(o.FailedAssignmentAttempts) {
-		return nil, false
-	}
-	return o.FailedAssignmentAttempts, true
-}
-
-// HasFailedAssignmentAttempts returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasFailedAssignmentAttempts() bool {
-	if o != nil && !IsNil(o.FailedAssignmentAttempts) {
-		return true
-	}
-
-	return false
-}
-
-// SetFailedAssignmentAttempts gets a reference to the given int32 and assigns it to the FailedAssignmentAttempts field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetFailedAssignmentAttempts(v int32) {
-	o.FailedAssignmentAttempts = &v
-}
-
-// GetAssignmentStatusReceivedAt returns the AssignmentStatusReceivedAt field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAt() string {
-	if o == nil || IsNil(o.AssignmentStatusReceivedAt) {
-		var ret string
-		return ret
-	}
-	return *o.AssignmentStatusReceivedAt
-}
-
-// GetAssignmentStatusReceivedAtOk returns a tuple with the AssignmentStatusReceivedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAtOk() (*string, bool) {
-	if o == nil || IsNil(o.AssignmentStatusReceivedAt) {
-		return nil, false
-	}
-	return o.AssignmentStatusReceivedAt, true
-}
-
-// HasAssignmentStatusReceivedAt returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasAssignmentStatusReceivedAt() bool {
-	if o != nil && !IsNil(o.AssignmentStatusReceivedAt) {
-		return true
-	}
-
-	return false
-}
-
-// SetAssignmentStatusReceivedAt gets a reference to the given string and assigns it to the AssignmentStatusReceivedAt field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetAssignmentStatusReceivedAt(v string) {
-	o.AssignmentStatusReceivedAt = &v
-}
-
-// GetBlueprint returns the Blueprint field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprint() string {
-	if o == nil || IsNil(o.Blueprint) {
-		var ret string
-		return ret
-	}
-	return *o.Blueprint
-}
-
-// GetBlueprintOk returns a tuple with the Blueprint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintOk() (*string, bool) {
-	if o == nil || IsNil(o.Blueprint) {
-		return nil, false
-	}
-	return o.Blueprint, true
-}
-
-// HasBlueprint returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprint() bool {
-	if o != nil && !IsNil(o.Blueprint) {
-		return true
-	}
-
-	return false
-}
-
-// SetBlueprint gets a reference to the given string and assigns it to the Blueprint field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprint(v string) {
-	o.Blueprint = &v
-}
-
 // GetUser returns the User field value if set, zero value otherwise.
 func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUser() string {
 	if o == nil || IsNil(o.User) {
@@ -768,6 +736,38 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetUser(v
 	o.User = &v
 }
 
+// GetUserId returns the UserId field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserId() string {
+	if o == nil || IsNil(o.UserId) {
+		var ret string
+		return ret
+	}
+	return *o.UserId
+}
+
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserIdOk() (*string, bool) {
+	if o == nil || IsNil(o.UserId) {
+		return nil, false
+	}
+	return o.UserId, true
+}
+
+// HasUserId returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasUserId() bool {
+	if o != nil && !IsNil(o.UserId) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetUserId(v string) {
+	o.UserId = &v
+}
+
 func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -778,23 +778,23 @@ func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) MarshalJSO
 
 func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BlueprintId) {
-		toSerialize["blueprint_id"] = o.BlueprintId
-	}
-	if !IsNil(o.MdmDevice) {
-		toSerialize["mdm_device"] = o.MdmDevice
-	}
-	if !IsNil(o.UserId) {
-		toSerialize["user_id"] = o.UserId
-	}
-	if !IsNil(o.DepAccount) {
-		toSerialize["dep_account"] = o.DepAccount
-	}
 	if !IsNil(o.AssetTag) {
 		toSerialize["asset_tag"] = o.AssetTag
 	}
+	if !IsNil(o.AssignmentStatusReceivedAt) {
+		toSerialize["assignment_status_received_at"] = o.AssignmentStatusReceivedAt
+	}
+	if !IsNil(o.Blueprint) {
+		toSerialize["blueprint"] = o.Blueprint
+	}
+	if !IsNil(o.BlueprintId) {
+		toSerialize["blueprint_id"] = o.BlueprintId
+	}
 	if !IsNil(o.Color) {
 		toSerialize["color"] = o.Color
+	}
+	if !IsNil(o.DepAccount) {
+		toSerialize["dep_account"] = o.DepAccount
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -807,6 +807,18 @@ func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) ToMap() (m
 	}
 	if !IsNil(o.DeviceFamily) {
 		toSerialize["device_family"] = o.DeviceFamily
+	}
+	if !IsNil(o.FailedAssignmentAttempts) {
+		toSerialize["failed_assignment_attempts"] = o.FailedAssignmentAttempts
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.LastAssignmentStatus) {
+		toSerialize["last_assignment_status"] = o.LastAssignmentStatus
+	}
+	if !IsNil(o.MdmDevice) {
+		toSerialize["mdm_device"] = o.MdmDevice
 	}
 	if !IsNil(o.Model) {
 		toSerialize["model"] = o.Model
@@ -826,23 +838,11 @@ func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) ToMap() (m
 	if !IsNil(o.SerialNumber) {
 		toSerialize["serial_number"] = o.SerialNumber
 	}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !IsNil(o.LastAssignmentStatus) {
-		toSerialize["last_assignment_status"] = o.LastAssignmentStatus
-	}
-	if !IsNil(o.FailedAssignmentAttempts) {
-		toSerialize["failed_assignment_attempts"] = o.FailedAssignmentAttempts
-	}
-	if !IsNil(o.AssignmentStatusReceivedAt) {
-		toSerialize["assignment_status_received_at"] = o.AssignmentStatusReceivedAt
-	}
-	if !IsNil(o.Blueprint) {
-		toSerialize["blueprint"] = o.Blueprint
-	}
 	if !IsNil(o.User) {
 		toSerialize["user"] = o.User
+	}
+	if !IsNil(o.UserId) {
+		toSerialize["user_id"] = o.UserId
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -866,28 +866,28 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) Unmarshal
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "blueprint_id")
-		delete(additionalProperties, "mdm_device")
-		delete(additionalProperties, "user_id")
-		delete(additionalProperties, "dep_account")
 		delete(additionalProperties, "asset_tag")
+		delete(additionalProperties, "assignment_status_received_at")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "blueprint_id")
 		delete(additionalProperties, "color")
+		delete(additionalProperties, "dep_account")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "device_assigned_by")
 		delete(additionalProperties, "device_assigned_date")
 		delete(additionalProperties, "device_family")
+		delete(additionalProperties, "failed_assignment_attempts")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "last_assignment_status")
+		delete(additionalProperties, "mdm_device")
 		delete(additionalProperties, "model")
 		delete(additionalProperties, "os")
 		delete(additionalProperties, "profile_assign_time")
 		delete(additionalProperties, "profile_push_time")
 		delete(additionalProperties, "profile_status")
 		delete(additionalProperties, "serial_number")
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "last_assignment_status")
-		delete(additionalProperties, "failed_assignment_attempts")
-		delete(additionalProperties, "assignment_status_received_at")
-		delete(additionalProperties, "blueprint")
 		delete(additionalProperties, "user")
+		delete(additionalProperties, "user_id")
 		o.AdditionalProperties = additionalProperties
 	}
 

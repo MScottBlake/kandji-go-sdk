@@ -25,12 +25,12 @@ type UsersGetUser200Response struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	Department interface{} `json:"department,omitempty"`
 	DeprecatedUserId *string `json:"deprecated_user_id,omitempty"`
+	DeviceCount *int32 `json:"device_count,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Integration *UsersGetUser200ResponseIntegration `json:"integration,omitempty"`
 	JobTitle interface{} `json:"job_title,omitempty"`
 	Name *string `json:"name,omitempty"`
-	DeviceCount *int32 `json:"device_count,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -215,6 +215,38 @@ func (o *UsersGetUser200Response) SetDeprecatedUserId(v string) {
 	o.DeprecatedUserId = &v
 }
 
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
+func (o *UsersGetUser200Response) GetDeviceCount() int32 {
+	if o == nil || IsNil(o.DeviceCount) {
+		var ret int32
+		return ret
+	}
+	return *o.DeviceCount
+}
+
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UsersGetUser200Response) GetDeviceCountOk() (*int32, bool) {
+	if o == nil || IsNil(o.DeviceCount) {
+		return nil, false
+	}
+	return o.DeviceCount, true
+}
+
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *UsersGetUser200Response) HasDeviceCount() bool {
+	if o != nil && !IsNil(o.DeviceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given int32 and assigns it to the DeviceCount field.
+func (o *UsersGetUser200Response) SetDeviceCount(v int32) {
+	o.DeviceCount = &v
+}
+
 // GetEmail returns the Email field value if set, zero value otherwise.
 func (o *UsersGetUser200Response) GetEmail() string {
 	if o == nil || IsNil(o.Email) {
@@ -376,38 +408,6 @@ func (o *UsersGetUser200Response) SetName(v string) {
 	o.Name = &v
 }
 
-// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
-func (o *UsersGetUser200Response) GetDeviceCount() int32 {
-	if o == nil || IsNil(o.DeviceCount) {
-		var ret int32
-		return ret
-	}
-	return *o.DeviceCount
-}
-
-// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UsersGetUser200Response) GetDeviceCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.DeviceCount) {
-		return nil, false
-	}
-	return o.DeviceCount, true
-}
-
-// HasDeviceCount returns a boolean if a field has been set.
-func (o *UsersGetUser200Response) HasDeviceCount() bool {
-	if o != nil && !IsNil(o.DeviceCount) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceCount gets a reference to the given int32 and assigns it to the DeviceCount field.
-func (o *UsersGetUser200Response) SetDeviceCount(v int32) {
-	o.DeviceCount = &v
-}
-
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
 func (o *UsersGetUser200Response) GetUpdatedAt() string {
 	if o == nil || IsNil(o.UpdatedAt) {
@@ -465,6 +465,9 @@ func (o UsersGetUser200Response) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeprecatedUserId) {
 		toSerialize["deprecated_user_id"] = o.DeprecatedUserId
 	}
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
+	}
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
@@ -479,9 +482,6 @@ func (o UsersGetUser200Response) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.DeviceCount) {
-		toSerialize["device_count"] = o.DeviceCount
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt
@@ -513,12 +513,12 @@ func (o *UsersGetUser200Response) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "department")
 		delete(additionalProperties, "deprecated_user_id")
+		delete(additionalProperties, "device_count")
 		delete(additionalProperties, "email")
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "integration")
 		delete(additionalProperties, "job_title")
 		delete(additionalProperties, "name")
-		delete(additionalProperties, "device_count")
 		delete(additionalProperties, "updated_at")
 		o.AdditionalProperties = additionalProperties
 	}

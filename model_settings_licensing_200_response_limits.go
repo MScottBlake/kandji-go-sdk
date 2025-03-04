@@ -20,9 +20,9 @@ var _ MappedNullable = &SettingsLicensing200ResponseLimits{}
 
 // SettingsLicensing200ResponseLimits struct for SettingsLicensing200ResponseLimits
 type SettingsLicensing200ResponseLimits struct {
-	PlanType *string `json:"plan_type,omitempty"`
 	MaxDevices *int32 `json:"max_devices,omitempty"`
 	MaxDevicesPerPlatform *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform `json:"max_devices_per_platform,omitempty"`
+	PlanType *string `json:"plan_type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,38 +43,6 @@ func NewSettingsLicensing200ResponseLimits() *SettingsLicensing200ResponseLimits
 func NewSettingsLicensing200ResponseLimitsWithDefaults() *SettingsLicensing200ResponseLimits {
 	this := SettingsLicensing200ResponseLimits{}
 	return &this
-}
-
-// GetPlanType returns the PlanType field value if set, zero value otherwise.
-func (o *SettingsLicensing200ResponseLimits) GetPlanType() string {
-	if o == nil || IsNil(o.PlanType) {
-		var ret string
-		return ret
-	}
-	return *o.PlanType
-}
-
-// GetPlanTypeOk returns a tuple with the PlanType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SettingsLicensing200ResponseLimits) GetPlanTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.PlanType) {
-		return nil, false
-	}
-	return o.PlanType, true
-}
-
-// HasPlanType returns a boolean if a field has been set.
-func (o *SettingsLicensing200ResponseLimits) HasPlanType() bool {
-	if o != nil && !IsNil(o.PlanType) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlanType gets a reference to the given string and assigns it to the PlanType field.
-func (o *SettingsLicensing200ResponseLimits) SetPlanType(v string) {
-	o.PlanType = &v
 }
 
 // GetMaxDevices returns the MaxDevices field value if set, zero value otherwise.
@@ -141,6 +109,38 @@ func (o *SettingsLicensing200ResponseLimits) SetMaxDevicesPerPlatform(v Settings
 	o.MaxDevicesPerPlatform = &v
 }
 
+// GetPlanType returns the PlanType field value if set, zero value otherwise.
+func (o *SettingsLicensing200ResponseLimits) GetPlanType() string {
+	if o == nil || IsNil(o.PlanType) {
+		var ret string
+		return ret
+	}
+	return *o.PlanType
+}
+
+// GetPlanTypeOk returns a tuple with the PlanType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SettingsLicensing200ResponseLimits) GetPlanTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.PlanType) {
+		return nil, false
+	}
+	return o.PlanType, true
+}
+
+// HasPlanType returns a boolean if a field has been set.
+func (o *SettingsLicensing200ResponseLimits) HasPlanType() bool {
+	if o != nil && !IsNil(o.PlanType) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlanType gets a reference to the given string and assigns it to the PlanType field.
+func (o *SettingsLicensing200ResponseLimits) SetPlanType(v string) {
+	o.PlanType = &v
+}
+
 func (o SettingsLicensing200ResponseLimits) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -151,14 +151,14 @@ func (o SettingsLicensing200ResponseLimits) MarshalJSON() ([]byte, error) {
 
 func (o SettingsLicensing200ResponseLimits) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlanType) {
-		toSerialize["plan_type"] = o.PlanType
-	}
 	if !IsNil(o.MaxDevices) {
 		toSerialize["max_devices"] = o.MaxDevices
 	}
 	if !IsNil(o.MaxDevicesPerPlatform) {
 		toSerialize["max_devices_per_platform"] = o.MaxDevicesPerPlatform
+	}
+	if !IsNil(o.PlanType) {
+		toSerialize["plan_type"] = o.PlanType
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -182,9 +182,9 @@ func (o *SettingsLicensing200ResponseLimits) UnmarshalJSON(data []byte) (err err
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "plan_type")
 		delete(additionalProperties, "max_devices")
 		delete(additionalProperties, "max_devices_per_platform")
+		delete(additionalProperties, "plan_type")
 		o.AdditionalProperties = additionalProperties
 	}
 

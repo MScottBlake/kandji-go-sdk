@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## CreateAdeIntegration
 
-> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response CreateAdeIntegration(ctx).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+> AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response CreateAdeIntegration(ctx).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
 
 Create ADE integration
 
@@ -40,13 +40,13 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	phone := "phone_example" // string | 
 	email := "email_example" // string | 
 	file := os.NewFile(1234, "some_file") // *os.File | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
+	phone := "phone_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration(context.Background()).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+	resp, r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration(context.Background()).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.CreateAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,9 +68,9 @@ Other parameters are passed through a pointer to a apiCreateAdeIntegrationReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprintId** | **string** |  | 
- **phone** | **string** |  | 
  **email** | **string** |  | 
  **file** | ***os.File** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
+ **phone** | **string** |  | 
 
 ### Return type
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ## ListAdeDevices
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response ListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
+> BlueprintsListBlueprints200Response ListAdeDevices(ctx).BlueprintId(blueprintId).UserId(userId).DepAccount(depAccount).DeviceFamily(deviceFamily).Model(model).Os(os).ProfileStatus(profileStatus).SerialNumber(serialNumber).Page(page).Execute()
 
 List ADE devices
 
@@ -395,7 +395,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAdeDevices`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `ListAdeDevices`: BlueprintsListBlueprints200Response
 	fmt.Fprintf(os.Stdout, "Response from `AutomatedDeviceEnrollmentIntegrationsAPI.ListAdeDevices`: %v\n", resp)
 }
 ```
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ## RenewAdeIntegration
 
-> RenewAdeIntegration(ctx, adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+> RenewAdeIntegration(ctx, adeTokenId).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
 
 Renew ADE integration
 
@@ -593,13 +593,13 @@ import (
 func main() {
 	adeTokenId := "adeTokenId_example" // string | 
 	blueprintId := "blueprintId_example" // string | 
-	phone := "phone_example" // string | 
 	email := "email_example" // string | 
 	file := os.NewFile(1234, "some_file") // *os.File | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
+	phone := "phone_example" // string | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration(context.Background(), adeTokenId).BlueprintId(blueprintId).Phone(phone).Email(email).File(file).Execute()
+	r, err := apiClient.AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration(context.Background(), adeTokenId).BlueprintId(blueprintId).Email(email).File(file).Phone(phone).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AutomatedDeviceEnrollmentIntegrationsAPI.RenewAdeIntegration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -624,9 +624,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **blueprintId** | **string** |  | 
- **phone** | **string** |  | 
  **email** | **string** |  | 
  **file** | ***os.File** | This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API. | 
+ **phone** | **string** |  | 
 
 ### Return type
 
@@ -668,7 +668,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","asset_tag":"123456","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"}" // string |  (optional)
+	body := "{"asset_tag":"123456","blueprint_id":"3013eb7c-d0c1-4689-852a-50776a92036b","user_id":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -740,7 +740,7 @@ import (
 
 func main() {
 	adeTokenId := "adeTokenId_example" // string | 
-	body := "{"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","phone":"1234567890","email":"example@accuhive.io"}" // string |  (optional)
+	body := "{"blueprint_id":"bf21d9cf-17cf-48b3-890d-7bc27c241bb7","email":"example@accuhive.io","phone":"1234567890"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

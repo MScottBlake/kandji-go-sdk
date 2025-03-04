@@ -20,23 +20,23 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseGeneral{}
 
 // DeviceInformationGetDeviceDetails200ResponseGeneral struct for DeviceInformationGetDeviceDetails200ResponseGeneral
 type DeviceInformationGetDeviceDetails200ResponseGeneral struct {
-	DeviceId *string `json:"device_id,omitempty"`
-	DeviceName *string `json:"device_name,omitempty"`
-	LastEnrollment *string `json:"last_enrollment,omitempty"`
-	FirstEnrollment *string `json:"first_enrollment,omitempty"`
-	Model *string `json:"model,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	OsVersion *string `json:"os_version,omitempty"`
-	SupplementalBuildVersion *string `json:"supplemental_build_version,omitempty"`
-	SupplementalOsVersionExtra *string `json:"supplemental_os_version_extra,omitempty"`
-	SystemVersion *string `json:"system_version,omitempty"`
-	BootVolume *string `json:"boot_volume,omitempty"`
-	TimeSinceBoot *string `json:"time_since_boot,omitempty"`
-	LastUser *string `json:"last_user,omitempty"`
 	AssetTag *string `json:"asset_tag,omitempty"`
 	AssignedUser *string `json:"assigned_user,omitempty"`
 	BlueprintName *string `json:"blueprint_name,omitempty"`
 	BlueprintUuid *string `json:"blueprint_uuid,omitempty"`
+	BootVolume *string `json:"boot_volume,omitempty"`
+	DeviceId *string `json:"device_id,omitempty"`
+	DeviceName *string `json:"device_name,omitempty"`
+	FirstEnrollment *string `json:"first_enrollment,omitempty"`
+	LastEnrollment *string `json:"last_enrollment,omitempty"`
+	LastUser *string `json:"last_user,omitempty"`
+	Model *string `json:"model,omitempty"`
+	OsVersion *string `json:"os_version,omitempty"`
+	Platform *string `json:"platform,omitempty"`
+	SupplementalBuildVersion *string `json:"supplemental_build_version,omitempty"`
+	SupplementalOsVersionExtra *string `json:"supplemental_os_version_extra,omitempty"`
+	SystemVersion *string `json:"system_version,omitempty"`
+	TimeSinceBoot *string `json:"time_since_boot,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,422 +57,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseGeneral() *DeviceInformation
 func NewDeviceInformationGetDeviceDetails200ResponseGeneralWithDefaults() *DeviceInformationGetDeviceDetails200ResponseGeneral {
 	this := DeviceInformationGetDeviceDetails200ResponseGeneral{}
 	return &this
-}
-
-// GetDeviceId returns the DeviceId field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceId() string {
-	if o == nil || IsNil(o.DeviceId) {
-		var ret string
-		return ret
-	}
-	return *o.DeviceId
-}
-
-// GetDeviceIdOk returns a tuple with the DeviceId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DeviceId) {
-		return nil, false
-	}
-	return o.DeviceId, true
-}
-
-// HasDeviceId returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasDeviceId() bool {
-	if o != nil && !IsNil(o.DeviceId) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceId gets a reference to the given string and assigns it to the DeviceId field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetDeviceId(v string) {
-	o.DeviceId = &v
-}
-
-// GetDeviceName returns the DeviceName field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceName() string {
-	if o == nil || IsNil(o.DeviceName) {
-		var ret string
-		return ret
-	}
-	return *o.DeviceName
-}
-
-// GetDeviceNameOk returns a tuple with the DeviceName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DeviceName) {
-		return nil, false
-	}
-	return o.DeviceName, true
-}
-
-// HasDeviceName returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasDeviceName() bool {
-	if o != nil && !IsNil(o.DeviceName) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceName gets a reference to the given string and assigns it to the DeviceName field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetDeviceName(v string) {
-	o.DeviceName = &v
-}
-
-// GetLastEnrollment returns the LastEnrollment field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastEnrollment() string {
-	if o == nil || IsNil(o.LastEnrollment) {
-		var ret string
-		return ret
-	}
-	return *o.LastEnrollment
-}
-
-// GetLastEnrollmentOk returns a tuple with the LastEnrollment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastEnrollmentOk() (*string, bool) {
-	if o == nil || IsNil(o.LastEnrollment) {
-		return nil, false
-	}
-	return o.LastEnrollment, true
-}
-
-// HasLastEnrollment returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasLastEnrollment() bool {
-	if o != nil && !IsNil(o.LastEnrollment) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastEnrollment gets a reference to the given string and assigns it to the LastEnrollment field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetLastEnrollment(v string) {
-	o.LastEnrollment = &v
-}
-
-// GetFirstEnrollment returns the FirstEnrollment field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetFirstEnrollment() string {
-	if o == nil || IsNil(o.FirstEnrollment) {
-		var ret string
-		return ret
-	}
-	return *o.FirstEnrollment
-}
-
-// GetFirstEnrollmentOk returns a tuple with the FirstEnrollment field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetFirstEnrollmentOk() (*string, bool) {
-	if o == nil || IsNil(o.FirstEnrollment) {
-		return nil, false
-	}
-	return o.FirstEnrollment, true
-}
-
-// HasFirstEnrollment returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasFirstEnrollment() bool {
-	if o != nil && !IsNil(o.FirstEnrollment) {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstEnrollment gets a reference to the given string and assigns it to the FirstEnrollment field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetFirstEnrollment(v string) {
-	o.FirstEnrollment = &v
-}
-
-// GetModel returns the Model field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModel() string {
-	if o == nil || IsNil(o.Model) {
-		var ret string
-		return ret
-	}
-	return *o.Model
-}
-
-// GetModelOk returns a tuple with the Model field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelOk() (*string, bool) {
-	if o == nil || IsNil(o.Model) {
-		return nil, false
-	}
-	return o.Model, true
-}
-
-// HasModel returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasModel() bool {
-	if o != nil && !IsNil(o.Model) {
-		return true
-	}
-
-	return false
-}
-
-// SetModel gets a reference to the given string and assigns it to the Model field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetModel(v string) {
-	o.Model = &v
-}
-
-// GetPlatform returns the Platform field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetPlatform() string {
-	if o == nil || IsNil(o.Platform) {
-		var ret string
-		return ret
-	}
-	return *o.Platform
-}
-
-// GetPlatformOk returns a tuple with the Platform field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetPlatformOk() (*string, bool) {
-	if o == nil || IsNil(o.Platform) {
-		return nil, false
-	}
-	return o.Platform, true
-}
-
-// HasPlatform returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasPlatform() bool {
-	if o != nil && !IsNil(o.Platform) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlatform gets a reference to the given string and assigns it to the Platform field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetPlatform(v string) {
-	o.Platform = &v
-}
-
-// GetOsVersion returns the OsVersion field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsVersion() string {
-	if o == nil || IsNil(o.OsVersion) {
-		var ret string
-		return ret
-	}
-	return *o.OsVersion
-}
-
-// GetOsVersionOk returns a tuple with the OsVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.OsVersion) {
-		return nil, false
-	}
-	return o.OsVersion, true
-}
-
-// HasOsVersion returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasOsVersion() bool {
-	if o != nil && !IsNil(o.OsVersion) {
-		return true
-	}
-
-	return false
-}
-
-// SetOsVersion gets a reference to the given string and assigns it to the OsVersion field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetOsVersion(v string) {
-	o.OsVersion = &v
-}
-
-// GetSupplementalBuildVersion returns the SupplementalBuildVersion field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersion() string {
-	if o == nil || IsNil(o.SupplementalBuildVersion) {
-		var ret string
-		return ret
-	}
-	return *o.SupplementalBuildVersion
-}
-
-// GetSupplementalBuildVersionOk returns a tuple with the SupplementalBuildVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.SupplementalBuildVersion) {
-		return nil, false
-	}
-	return o.SupplementalBuildVersion, true
-}
-
-// HasSupplementalBuildVersion returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalBuildVersion() bool {
-	if o != nil && !IsNil(o.SupplementalBuildVersion) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupplementalBuildVersion gets a reference to the given string and assigns it to the SupplementalBuildVersion field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalBuildVersion(v string) {
-	o.SupplementalBuildVersion = &v
-}
-
-// GetSupplementalOsVersionExtra returns the SupplementalOsVersionExtra field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtra() string {
-	if o == nil || IsNil(o.SupplementalOsVersionExtra) {
-		var ret string
-		return ret
-	}
-	return *o.SupplementalOsVersionExtra
-}
-
-// GetSupplementalOsVersionExtraOk returns a tuple with the SupplementalOsVersionExtra field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtraOk() (*string, bool) {
-	if o == nil || IsNil(o.SupplementalOsVersionExtra) {
-		return nil, false
-	}
-	return o.SupplementalOsVersionExtra, true
-}
-
-// HasSupplementalOsVersionExtra returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalOsVersionExtra() bool {
-	if o != nil && !IsNil(o.SupplementalOsVersionExtra) {
-		return true
-	}
-
-	return false
-}
-
-// SetSupplementalOsVersionExtra gets a reference to the given string and assigns it to the SupplementalOsVersionExtra field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalOsVersionExtra(v string) {
-	o.SupplementalOsVersionExtra = &v
-}
-
-// GetSystemVersion returns the SystemVersion field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersion() string {
-	if o == nil || IsNil(o.SystemVersion) {
-		var ret string
-		return ret
-	}
-	return *o.SystemVersion
-}
-
-// GetSystemVersionOk returns a tuple with the SystemVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.SystemVersion) {
-		return nil, false
-	}
-	return o.SystemVersion, true
-}
-
-// HasSystemVersion returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSystemVersion() bool {
-	if o != nil && !IsNil(o.SystemVersion) {
-		return true
-	}
-
-	return false
-}
-
-// SetSystemVersion gets a reference to the given string and assigns it to the SystemVersion field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSystemVersion(v string) {
-	o.SystemVersion = &v
-}
-
-// GetBootVolume returns the BootVolume field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolume() string {
-	if o == nil || IsNil(o.BootVolume) {
-		var ret string
-		return ret
-	}
-	return *o.BootVolume
-}
-
-// GetBootVolumeOk returns a tuple with the BootVolume field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolumeOk() (*string, bool) {
-	if o == nil || IsNil(o.BootVolume) {
-		return nil, false
-	}
-	return o.BootVolume, true
-}
-
-// HasBootVolume returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasBootVolume() bool {
-	if o != nil && !IsNil(o.BootVolume) {
-		return true
-	}
-
-	return false
-}
-
-// SetBootVolume gets a reference to the given string and assigns it to the BootVolume field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetBootVolume(v string) {
-	o.BootVolume = &v
-}
-
-// GetTimeSinceBoot returns the TimeSinceBoot field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBoot() string {
-	if o == nil || IsNil(o.TimeSinceBoot) {
-		var ret string
-		return ret
-	}
-	return *o.TimeSinceBoot
-}
-
-// GetTimeSinceBootOk returns a tuple with the TimeSinceBoot field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBootOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeSinceBoot) {
-		return nil, false
-	}
-	return o.TimeSinceBoot, true
-}
-
-// HasTimeSinceBoot returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasTimeSinceBoot() bool {
-	if o != nil && !IsNil(o.TimeSinceBoot) {
-		return true
-	}
-
-	return false
-}
-
-// SetTimeSinceBoot gets a reference to the given string and assigns it to the TimeSinceBoot field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetTimeSinceBoot(v string) {
-	o.TimeSinceBoot = &v
-}
-
-// GetLastUser returns the LastUser field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUser() string {
-	if o == nil || IsNil(o.LastUser) {
-		var ret string
-		return ret
-	}
-	return *o.LastUser
-}
-
-// GetLastUserOk returns a tuple with the LastUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUserOk() (*string, bool) {
-	if o == nil || IsNil(o.LastUser) {
-		return nil, false
-	}
-	return o.LastUser, true
-}
-
-// HasLastUser returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasLastUser() bool {
-	if o != nil && !IsNil(o.LastUser) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastUser gets a reference to the given string and assigns it to the LastUser field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetLastUser(v string) {
-	o.LastUser = &v
 }
 
 // GetAssetTag returns the AssetTag field value if set, zero value otherwise.
@@ -603,6 +187,422 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetBlueprintUuid(v
 	o.BlueprintUuid = &v
 }
 
+// GetBootVolume returns the BootVolume field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolume() string {
+	if o == nil || IsNil(o.BootVolume) {
+		var ret string
+		return ret
+	}
+	return *o.BootVolume
+}
+
+// GetBootVolumeOk returns a tuple with the BootVolume field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolumeOk() (*string, bool) {
+	if o == nil || IsNil(o.BootVolume) {
+		return nil, false
+	}
+	return o.BootVolume, true
+}
+
+// HasBootVolume returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasBootVolume() bool {
+	if o != nil && !IsNil(o.BootVolume) {
+		return true
+	}
+
+	return false
+}
+
+// SetBootVolume gets a reference to the given string and assigns it to the BootVolume field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetBootVolume(v string) {
+	o.BootVolume = &v
+}
+
+// GetDeviceId returns the DeviceId field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceId() string {
+	if o == nil || IsNil(o.DeviceId) {
+		var ret string
+		return ret
+	}
+	return *o.DeviceId
+}
+
+// GetDeviceIdOk returns a tuple with the DeviceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.DeviceId) {
+		return nil, false
+	}
+	return o.DeviceId, true
+}
+
+// HasDeviceId returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasDeviceId() bool {
+	if o != nil && !IsNil(o.DeviceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceId gets a reference to the given string and assigns it to the DeviceId field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetDeviceId(v string) {
+	o.DeviceId = &v
+}
+
+// GetDeviceName returns the DeviceName field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceName() string {
+	if o == nil || IsNil(o.DeviceName) {
+		var ret string
+		return ret
+	}
+	return *o.DeviceName
+}
+
+// GetDeviceNameOk returns a tuple with the DeviceName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceNameOk() (*string, bool) {
+	if o == nil || IsNil(o.DeviceName) {
+		return nil, false
+	}
+	return o.DeviceName, true
+}
+
+// HasDeviceName returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasDeviceName() bool {
+	if o != nil && !IsNil(o.DeviceName) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceName gets a reference to the given string and assigns it to the DeviceName field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetDeviceName(v string) {
+	o.DeviceName = &v
+}
+
+// GetFirstEnrollment returns the FirstEnrollment field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetFirstEnrollment() string {
+	if o == nil || IsNil(o.FirstEnrollment) {
+		var ret string
+		return ret
+	}
+	return *o.FirstEnrollment
+}
+
+// GetFirstEnrollmentOk returns a tuple with the FirstEnrollment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetFirstEnrollmentOk() (*string, bool) {
+	if o == nil || IsNil(o.FirstEnrollment) {
+		return nil, false
+	}
+	return o.FirstEnrollment, true
+}
+
+// HasFirstEnrollment returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasFirstEnrollment() bool {
+	if o != nil && !IsNil(o.FirstEnrollment) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstEnrollment gets a reference to the given string and assigns it to the FirstEnrollment field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetFirstEnrollment(v string) {
+	o.FirstEnrollment = &v
+}
+
+// GetLastEnrollment returns the LastEnrollment field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastEnrollment() string {
+	if o == nil || IsNil(o.LastEnrollment) {
+		var ret string
+		return ret
+	}
+	return *o.LastEnrollment
+}
+
+// GetLastEnrollmentOk returns a tuple with the LastEnrollment field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastEnrollmentOk() (*string, bool) {
+	if o == nil || IsNil(o.LastEnrollment) {
+		return nil, false
+	}
+	return o.LastEnrollment, true
+}
+
+// HasLastEnrollment returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasLastEnrollment() bool {
+	if o != nil && !IsNil(o.LastEnrollment) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastEnrollment gets a reference to the given string and assigns it to the LastEnrollment field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetLastEnrollment(v string) {
+	o.LastEnrollment = &v
+}
+
+// GetLastUser returns the LastUser field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUser() string {
+	if o == nil || IsNil(o.LastUser) {
+		var ret string
+		return ret
+	}
+	return *o.LastUser
+}
+
+// GetLastUserOk returns a tuple with the LastUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUserOk() (*string, bool) {
+	if o == nil || IsNil(o.LastUser) {
+		return nil, false
+	}
+	return o.LastUser, true
+}
+
+// HasLastUser returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasLastUser() bool {
+	if o != nil && !IsNil(o.LastUser) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUser gets a reference to the given string and assigns it to the LastUser field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetLastUser(v string) {
+	o.LastUser = &v
+}
+
+// GetModel returns the Model field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModel() string {
+	if o == nil || IsNil(o.Model) {
+		var ret string
+		return ret
+	}
+	return *o.Model
+}
+
+// GetModelOk returns a tuple with the Model field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelOk() (*string, bool) {
+	if o == nil || IsNil(o.Model) {
+		return nil, false
+	}
+	return o.Model, true
+}
+
+// HasModel returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasModel() bool {
+	if o != nil && !IsNil(o.Model) {
+		return true
+	}
+
+	return false
+}
+
+// SetModel gets a reference to the given string and assigns it to the Model field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetModel(v string) {
+	o.Model = &v
+}
+
+// GetOsVersion returns the OsVersion field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsVersion() string {
+	if o == nil || IsNil(o.OsVersion) {
+		var ret string
+		return ret
+	}
+	return *o.OsVersion
+}
+
+// GetOsVersionOk returns a tuple with the OsVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.OsVersion) {
+		return nil, false
+	}
+	return o.OsVersion, true
+}
+
+// HasOsVersion returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasOsVersion() bool {
+	if o != nil && !IsNil(o.OsVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetOsVersion gets a reference to the given string and assigns it to the OsVersion field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetOsVersion(v string) {
+	o.OsVersion = &v
+}
+
+// GetPlatform returns the Platform field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetPlatform() string {
+	if o == nil || IsNil(o.Platform) {
+		var ret string
+		return ret
+	}
+	return *o.Platform
+}
+
+// GetPlatformOk returns a tuple with the Platform field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetPlatformOk() (*string, bool) {
+	if o == nil || IsNil(o.Platform) {
+		return nil, false
+	}
+	return o.Platform, true
+}
+
+// HasPlatform returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasPlatform() bool {
+	if o != nil && !IsNil(o.Platform) {
+		return true
+	}
+
+	return false
+}
+
+// SetPlatform gets a reference to the given string and assigns it to the Platform field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetPlatform(v string) {
+	o.Platform = &v
+}
+
+// GetSupplementalBuildVersion returns the SupplementalBuildVersion field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersion() string {
+	if o == nil || IsNil(o.SupplementalBuildVersion) {
+		var ret string
+		return ret
+	}
+	return *o.SupplementalBuildVersion
+}
+
+// GetSupplementalBuildVersionOk returns a tuple with the SupplementalBuildVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.SupplementalBuildVersion) {
+		return nil, false
+	}
+	return o.SupplementalBuildVersion, true
+}
+
+// HasSupplementalBuildVersion returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalBuildVersion() bool {
+	if o != nil && !IsNil(o.SupplementalBuildVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupplementalBuildVersion gets a reference to the given string and assigns it to the SupplementalBuildVersion field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalBuildVersion(v string) {
+	o.SupplementalBuildVersion = &v
+}
+
+// GetSupplementalOsVersionExtra returns the SupplementalOsVersionExtra field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtra() string {
+	if o == nil || IsNil(o.SupplementalOsVersionExtra) {
+		var ret string
+		return ret
+	}
+	return *o.SupplementalOsVersionExtra
+}
+
+// GetSupplementalOsVersionExtraOk returns a tuple with the SupplementalOsVersionExtra field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtraOk() (*string, bool) {
+	if o == nil || IsNil(o.SupplementalOsVersionExtra) {
+		return nil, false
+	}
+	return o.SupplementalOsVersionExtra, true
+}
+
+// HasSupplementalOsVersionExtra returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalOsVersionExtra() bool {
+	if o != nil && !IsNil(o.SupplementalOsVersionExtra) {
+		return true
+	}
+
+	return false
+}
+
+// SetSupplementalOsVersionExtra gets a reference to the given string and assigns it to the SupplementalOsVersionExtra field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalOsVersionExtra(v string) {
+	o.SupplementalOsVersionExtra = &v
+}
+
+// GetSystemVersion returns the SystemVersion field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersion() string {
+	if o == nil || IsNil(o.SystemVersion) {
+		var ret string
+		return ret
+	}
+	return *o.SystemVersion
+}
+
+// GetSystemVersionOk returns a tuple with the SystemVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.SystemVersion) {
+		return nil, false
+	}
+	return o.SystemVersion, true
+}
+
+// HasSystemVersion returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSystemVersion() bool {
+	if o != nil && !IsNil(o.SystemVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetSystemVersion gets a reference to the given string and assigns it to the SystemVersion field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSystemVersion(v string) {
+	o.SystemVersion = &v
+}
+
+// GetTimeSinceBoot returns the TimeSinceBoot field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBoot() string {
+	if o == nil || IsNil(o.TimeSinceBoot) {
+		var ret string
+		return ret
+	}
+	return *o.TimeSinceBoot
+}
+
+// GetTimeSinceBootOk returns a tuple with the TimeSinceBoot field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBootOk() (*string, bool) {
+	if o == nil || IsNil(o.TimeSinceBoot) {
+		return nil, false
+	}
+	return o.TimeSinceBoot, true
+}
+
+// HasTimeSinceBoot returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasTimeSinceBoot() bool {
+	if o != nil && !IsNil(o.TimeSinceBoot) {
+		return true
+	}
+
+	return false
+}
+
+// SetTimeSinceBoot gets a reference to the given string and assigns it to the TimeSinceBoot field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetTimeSinceBoot(v string) {
+	o.TimeSinceBoot = &v
+}
+
 func (o DeviceInformationGetDeviceDetails200ResponseGeneral) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -613,45 +613,6 @@ func (o DeviceInformationGetDeviceDetails200ResponseGeneral) MarshalJSON() ([]by
 
 func (o DeviceInformationGetDeviceDetails200ResponseGeneral) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DeviceId) {
-		toSerialize["device_id"] = o.DeviceId
-	}
-	if !IsNil(o.DeviceName) {
-		toSerialize["device_name"] = o.DeviceName
-	}
-	if !IsNil(o.LastEnrollment) {
-		toSerialize["last_enrollment"] = o.LastEnrollment
-	}
-	if !IsNil(o.FirstEnrollment) {
-		toSerialize["first_enrollment"] = o.FirstEnrollment
-	}
-	if !IsNil(o.Model) {
-		toSerialize["model"] = o.Model
-	}
-	if !IsNil(o.Platform) {
-		toSerialize["platform"] = o.Platform
-	}
-	if !IsNil(o.OsVersion) {
-		toSerialize["os_version"] = o.OsVersion
-	}
-	if !IsNil(o.SupplementalBuildVersion) {
-		toSerialize["supplemental_build_version"] = o.SupplementalBuildVersion
-	}
-	if !IsNil(o.SupplementalOsVersionExtra) {
-		toSerialize["supplemental_os_version_extra"] = o.SupplementalOsVersionExtra
-	}
-	if !IsNil(o.SystemVersion) {
-		toSerialize["system_version"] = o.SystemVersion
-	}
-	if !IsNil(o.BootVolume) {
-		toSerialize["boot_volume"] = o.BootVolume
-	}
-	if !IsNil(o.TimeSinceBoot) {
-		toSerialize["time_since_boot"] = o.TimeSinceBoot
-	}
-	if !IsNil(o.LastUser) {
-		toSerialize["last_user"] = o.LastUser
-	}
 	if !IsNil(o.AssetTag) {
 		toSerialize["asset_tag"] = o.AssetTag
 	}
@@ -663,6 +624,45 @@ func (o DeviceInformationGetDeviceDetails200ResponseGeneral) ToMap() (map[string
 	}
 	if !IsNil(o.BlueprintUuid) {
 		toSerialize["blueprint_uuid"] = o.BlueprintUuid
+	}
+	if !IsNil(o.BootVolume) {
+		toSerialize["boot_volume"] = o.BootVolume
+	}
+	if !IsNil(o.DeviceId) {
+		toSerialize["device_id"] = o.DeviceId
+	}
+	if !IsNil(o.DeviceName) {
+		toSerialize["device_name"] = o.DeviceName
+	}
+	if !IsNil(o.FirstEnrollment) {
+		toSerialize["first_enrollment"] = o.FirstEnrollment
+	}
+	if !IsNil(o.LastEnrollment) {
+		toSerialize["last_enrollment"] = o.LastEnrollment
+	}
+	if !IsNil(o.LastUser) {
+		toSerialize["last_user"] = o.LastUser
+	}
+	if !IsNil(o.Model) {
+		toSerialize["model"] = o.Model
+	}
+	if !IsNil(o.OsVersion) {
+		toSerialize["os_version"] = o.OsVersion
+	}
+	if !IsNil(o.Platform) {
+		toSerialize["platform"] = o.Platform
+	}
+	if !IsNil(o.SupplementalBuildVersion) {
+		toSerialize["supplemental_build_version"] = o.SupplementalBuildVersion
+	}
+	if !IsNil(o.SupplementalOsVersionExtra) {
+		toSerialize["supplemental_os_version_extra"] = o.SupplementalOsVersionExtra
+	}
+	if !IsNil(o.SystemVersion) {
+		toSerialize["system_version"] = o.SystemVersion
+	}
+	if !IsNil(o.TimeSinceBoot) {
+		toSerialize["time_since_boot"] = o.TimeSinceBoot
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -686,23 +686,23 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) UnmarshalJSON(data
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_id")
-		delete(additionalProperties, "device_name")
-		delete(additionalProperties, "last_enrollment")
-		delete(additionalProperties, "first_enrollment")
-		delete(additionalProperties, "model")
-		delete(additionalProperties, "platform")
-		delete(additionalProperties, "os_version")
-		delete(additionalProperties, "supplemental_build_version")
-		delete(additionalProperties, "supplemental_os_version_extra")
-		delete(additionalProperties, "system_version")
-		delete(additionalProperties, "boot_volume")
-		delete(additionalProperties, "time_since_boot")
-		delete(additionalProperties, "last_user")
 		delete(additionalProperties, "asset_tag")
 		delete(additionalProperties, "assigned_user")
 		delete(additionalProperties, "blueprint_name")
 		delete(additionalProperties, "blueprint_uuid")
+		delete(additionalProperties, "boot_volume")
+		delete(additionalProperties, "device_id")
+		delete(additionalProperties, "device_name")
+		delete(additionalProperties, "first_enrollment")
+		delete(additionalProperties, "last_enrollment")
+		delete(additionalProperties, "last_user")
+		delete(additionalProperties, "model")
+		delete(additionalProperties, "os_version")
+		delete(additionalProperties, "platform")
+		delete(additionalProperties, "supplemental_build_version")
+		delete(additionalProperties, "supplemental_os_version_extra")
+		delete(additionalProperties, "system_version")
+		delete(additionalProperties, "time_since_boot")
 		o.AdditionalProperties = additionalProperties
 	}
 

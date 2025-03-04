@@ -20,19 +20,19 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseLostMode{}
 
 // DeviceInformationGetDeviceDetails200ResponseLostMode struct for DeviceInformationGetDeviceDetails200ResponseLostMode
 type DeviceInformationGetDeviceDetails200ResponseLostMode struct {
-	LostModeStatus *string `json:"lost_mode_status,omitempty"`
-	EnabledBy *string `json:"enabled_by,omitempty"`
-	EnableStatusAt *string `json:"enable_status_at,omitempty"`
-	LockScreenMessage *string `json:"lock_screen_message,omitempty"`
-	LockScreenPhoneNumber *string `json:"lock_screen_phone_number,omitempty"`
-	LockScreenFootnote *string `json:"lock_screen_footnote,omitempty"`
 	DisableStatus *string `json:"disable_status,omitempty"`
-	DisabledBy *string `json:"disabled_by,omitempty"`
 	DisableStatusAt *string `json:"disable_status_at,omitempty"`
-	LastLocationStatus *string `json:"last_location_status,omitempty"`
-	LastLocationStatusAt *string `json:"last_location_status_at,omitempty"`
+	DisabledBy *string `json:"disabled_by,omitempty"`
+	EnableStatusAt *string `json:"enable_status_at,omitempty"`
+	EnabledBy *string `json:"enabled_by,omitempty"`
 	LastLocation *DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation `json:"last_location,omitempty"`
 	LastLocationAt *string `json:"last_location_at,omitempty"`
+	LastLocationStatus *string `json:"last_location_status,omitempty"`
+	LastLocationStatusAt *string `json:"last_location_status_at,omitempty"`
+	LockScreenFootnote *string `json:"lock_screen_footnote,omitempty"`
+	LockScreenMessage *string `json:"lock_screen_message,omitempty"`
+	LockScreenPhoneNumber *string `json:"lock_screen_phone_number,omitempty"`
+	LostModeStatus *string `json:"lost_mode_status,omitempty"`
 	SoundStatus *string `json:"sound_status,omitempty"`
 	SoundStatusAt *string `json:"sound_status_at,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -55,198 +55,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseLostMode() *DeviceInformatio
 func NewDeviceInformationGetDeviceDetails200ResponseLostModeWithDefaults() *DeviceInformationGetDeviceDetails200ResponseLostMode {
 	this := DeviceInformationGetDeviceDetails200ResponseLostMode{}
 	return &this
-}
-
-// GetLostModeStatus returns the LostModeStatus field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLostModeStatus() string {
-	if o == nil || IsNil(o.LostModeStatus) {
-		var ret string
-		return ret
-	}
-	return *o.LostModeStatus
-}
-
-// GetLostModeStatusOk returns a tuple with the LostModeStatus field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLostModeStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.LostModeStatus) {
-		return nil, false
-	}
-	return o.LostModeStatus, true
-}
-
-// HasLostModeStatus returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLostModeStatus() bool {
-	if o != nil && !IsNil(o.LostModeStatus) {
-		return true
-	}
-
-	return false
-}
-
-// SetLostModeStatus gets a reference to the given string and assigns it to the LostModeStatus field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLostModeStatus(v string) {
-	o.LostModeStatus = &v
-}
-
-// GetEnabledBy returns the EnabledBy field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnabledBy() string {
-	if o == nil || IsNil(o.EnabledBy) {
-		var ret string
-		return ret
-	}
-	return *o.EnabledBy
-}
-
-// GetEnabledByOk returns a tuple with the EnabledBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnabledByOk() (*string, bool) {
-	if o == nil || IsNil(o.EnabledBy) {
-		return nil, false
-	}
-	return o.EnabledBy, true
-}
-
-// HasEnabledBy returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasEnabledBy() bool {
-	if o != nil && !IsNil(o.EnabledBy) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnabledBy gets a reference to the given string and assigns it to the EnabledBy field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetEnabledBy(v string) {
-	o.EnabledBy = &v
-}
-
-// GetEnableStatusAt returns the EnableStatusAt field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnableStatusAt() string {
-	if o == nil || IsNil(o.EnableStatusAt) {
-		var ret string
-		return ret
-	}
-	return *o.EnableStatusAt
-}
-
-// GetEnableStatusAtOk returns a tuple with the EnableStatusAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnableStatusAtOk() (*string, bool) {
-	if o == nil || IsNil(o.EnableStatusAt) {
-		return nil, false
-	}
-	return o.EnableStatusAt, true
-}
-
-// HasEnableStatusAt returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasEnableStatusAt() bool {
-	if o != nil && !IsNil(o.EnableStatusAt) {
-		return true
-	}
-
-	return false
-}
-
-// SetEnableStatusAt gets a reference to the given string and assigns it to the EnableStatusAt field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetEnableStatusAt(v string) {
-	o.EnableStatusAt = &v
-}
-
-// GetLockScreenMessage returns the LockScreenMessage field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenMessage() string {
-	if o == nil || IsNil(o.LockScreenMessage) {
-		var ret string
-		return ret
-	}
-	return *o.LockScreenMessage
-}
-
-// GetLockScreenMessageOk returns a tuple with the LockScreenMessage field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenMessageOk() (*string, bool) {
-	if o == nil || IsNil(o.LockScreenMessage) {
-		return nil, false
-	}
-	return o.LockScreenMessage, true
-}
-
-// HasLockScreenMessage returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLockScreenMessage() bool {
-	if o != nil && !IsNil(o.LockScreenMessage) {
-		return true
-	}
-
-	return false
-}
-
-// SetLockScreenMessage gets a reference to the given string and assigns it to the LockScreenMessage field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLockScreenMessage(v string) {
-	o.LockScreenMessage = &v
-}
-
-// GetLockScreenPhoneNumber returns the LockScreenPhoneNumber field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenPhoneNumber() string {
-	if o == nil || IsNil(o.LockScreenPhoneNumber) {
-		var ret string
-		return ret
-	}
-	return *o.LockScreenPhoneNumber
-}
-
-// GetLockScreenPhoneNumberOk returns a tuple with the LockScreenPhoneNumber field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenPhoneNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.LockScreenPhoneNumber) {
-		return nil, false
-	}
-	return o.LockScreenPhoneNumber, true
-}
-
-// HasLockScreenPhoneNumber returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLockScreenPhoneNumber() bool {
-	if o != nil && !IsNil(o.LockScreenPhoneNumber) {
-		return true
-	}
-
-	return false
-}
-
-// SetLockScreenPhoneNumber gets a reference to the given string and assigns it to the LockScreenPhoneNumber field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLockScreenPhoneNumber(v string) {
-	o.LockScreenPhoneNumber = &v
-}
-
-// GetLockScreenFootnote returns the LockScreenFootnote field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenFootnote() string {
-	if o == nil || IsNil(o.LockScreenFootnote) {
-		var ret string
-		return ret
-	}
-	return *o.LockScreenFootnote
-}
-
-// GetLockScreenFootnoteOk returns a tuple with the LockScreenFootnote field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenFootnoteOk() (*string, bool) {
-	if o == nil || IsNil(o.LockScreenFootnote) {
-		return nil, false
-	}
-	return o.LockScreenFootnote, true
-}
-
-// HasLockScreenFootnote returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLockScreenFootnote() bool {
-	if o != nil && !IsNil(o.LockScreenFootnote) {
-		return true
-	}
-
-	return false
-}
-
-// SetLockScreenFootnote gets a reference to the given string and assigns it to the LockScreenFootnote field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLockScreenFootnote(v string) {
-	o.LockScreenFootnote = &v
 }
 
 // GetDisableStatus returns the DisableStatus field value if set, zero value otherwise.
@@ -281,6 +89,38 @@ func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetDisableStatus(
 	o.DisableStatus = &v
 }
 
+// GetDisableStatusAt returns the DisableStatusAt field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetDisableStatusAt() string {
+	if o == nil || IsNil(o.DisableStatusAt) {
+		var ret string
+		return ret
+	}
+	return *o.DisableStatusAt
+}
+
+// GetDisableStatusAtOk returns a tuple with the DisableStatusAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetDisableStatusAtOk() (*string, bool) {
+	if o == nil || IsNil(o.DisableStatusAt) {
+		return nil, false
+	}
+	return o.DisableStatusAt, true
+}
+
+// HasDisableStatusAt returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasDisableStatusAt() bool {
+	if o != nil && !IsNil(o.DisableStatusAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisableStatusAt gets a reference to the given string and assigns it to the DisableStatusAt field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetDisableStatusAt(v string) {
+	o.DisableStatusAt = &v
+}
+
 // GetDisabledBy returns the DisabledBy field value if set, zero value otherwise.
 func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetDisabledBy() string {
 	if o == nil || IsNil(o.DisabledBy) {
@@ -313,36 +153,132 @@ func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetDisabledBy(v s
 	o.DisabledBy = &v
 }
 
-// GetDisableStatusAt returns the DisableStatusAt field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetDisableStatusAt() string {
-	if o == nil || IsNil(o.DisableStatusAt) {
+// GetEnableStatusAt returns the EnableStatusAt field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnableStatusAt() string {
+	if o == nil || IsNil(o.EnableStatusAt) {
 		var ret string
 		return ret
 	}
-	return *o.DisableStatusAt
+	return *o.EnableStatusAt
 }
 
-// GetDisableStatusAtOk returns a tuple with the DisableStatusAt field value if set, nil otherwise
+// GetEnableStatusAtOk returns a tuple with the EnableStatusAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetDisableStatusAtOk() (*string, bool) {
-	if o == nil || IsNil(o.DisableStatusAt) {
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnableStatusAtOk() (*string, bool) {
+	if o == nil || IsNil(o.EnableStatusAt) {
 		return nil, false
 	}
-	return o.DisableStatusAt, true
+	return o.EnableStatusAt, true
 }
 
-// HasDisableStatusAt returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasDisableStatusAt() bool {
-	if o != nil && !IsNil(o.DisableStatusAt) {
+// HasEnableStatusAt returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasEnableStatusAt() bool {
+	if o != nil && !IsNil(o.EnableStatusAt) {
 		return true
 	}
 
 	return false
 }
 
-// SetDisableStatusAt gets a reference to the given string and assigns it to the DisableStatusAt field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetDisableStatusAt(v string) {
-	o.DisableStatusAt = &v
+// SetEnableStatusAt gets a reference to the given string and assigns it to the EnableStatusAt field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetEnableStatusAt(v string) {
+	o.EnableStatusAt = &v
+}
+
+// GetEnabledBy returns the EnabledBy field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnabledBy() string {
+	if o == nil || IsNil(o.EnabledBy) {
+		var ret string
+		return ret
+	}
+	return *o.EnabledBy
+}
+
+// GetEnabledByOk returns a tuple with the EnabledBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetEnabledByOk() (*string, bool) {
+	if o == nil || IsNil(o.EnabledBy) {
+		return nil, false
+	}
+	return o.EnabledBy, true
+}
+
+// HasEnabledBy returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasEnabledBy() bool {
+	if o != nil && !IsNil(o.EnabledBy) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabledBy gets a reference to the given string and assigns it to the EnabledBy field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetEnabledBy(v string) {
+	o.EnabledBy = &v
+}
+
+// GetLastLocation returns the LastLocation field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocation() DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation {
+	if o == nil || IsNil(o.LastLocation) {
+		var ret DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation
+		return ret
+	}
+	return *o.LastLocation
+}
+
+// GetLastLocationOk returns a tuple with the LastLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocationOk() (*DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation, bool) {
+	if o == nil || IsNil(o.LastLocation) {
+		return nil, false
+	}
+	return o.LastLocation, true
+}
+
+// HasLastLocation returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLastLocation() bool {
+	if o != nil && !IsNil(o.LastLocation) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastLocation gets a reference to the given DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation and assigns it to the LastLocation field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLastLocation(v DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation) {
+	o.LastLocation = &v
+}
+
+// GetLastLocationAt returns the LastLocationAt field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocationAt() string {
+	if o == nil || IsNil(o.LastLocationAt) {
+		var ret string
+		return ret
+	}
+	return *o.LastLocationAt
+}
+
+// GetLastLocationAtOk returns a tuple with the LastLocationAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocationAtOk() (*string, bool) {
+	if o == nil || IsNil(o.LastLocationAt) {
+		return nil, false
+	}
+	return o.LastLocationAt, true
+}
+
+// HasLastLocationAt returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLastLocationAt() bool {
+	if o != nil && !IsNil(o.LastLocationAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastLocationAt gets a reference to the given string and assigns it to the LastLocationAt field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLastLocationAt(v string) {
+	o.LastLocationAt = &v
 }
 
 // GetLastLocationStatus returns the LastLocationStatus field value if set, zero value otherwise.
@@ -409,68 +345,132 @@ func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLastLocationSt
 	o.LastLocationStatusAt = &v
 }
 
-// GetLastLocation returns the LastLocation field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocation() DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation {
-	if o == nil || IsNil(o.LastLocation) {
-		var ret DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation
-		return ret
-	}
-	return *o.LastLocation
-}
-
-// GetLastLocationOk returns a tuple with the LastLocation field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocationOk() (*DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation, bool) {
-	if o == nil || IsNil(o.LastLocation) {
-		return nil, false
-	}
-	return o.LastLocation, true
-}
-
-// HasLastLocation returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLastLocation() bool {
-	if o != nil && !IsNil(o.LastLocation) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastLocation gets a reference to the given DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation and assigns it to the LastLocation field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLastLocation(v DeviceInformationGetDeviceDetails200ResponseLostModeLastLocation) {
-	o.LastLocation = &v
-}
-
-// GetLastLocationAt returns the LastLocationAt field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocationAt() string {
-	if o == nil || IsNil(o.LastLocationAt) {
+// GetLockScreenFootnote returns the LockScreenFootnote field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenFootnote() string {
+	if o == nil || IsNil(o.LockScreenFootnote) {
 		var ret string
 		return ret
 	}
-	return *o.LastLocationAt
+	return *o.LockScreenFootnote
 }
 
-// GetLastLocationAtOk returns a tuple with the LastLocationAt field value if set, nil otherwise
+// GetLockScreenFootnoteOk returns a tuple with the LockScreenFootnote field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLastLocationAtOk() (*string, bool) {
-	if o == nil || IsNil(o.LastLocationAt) {
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenFootnoteOk() (*string, bool) {
+	if o == nil || IsNil(o.LockScreenFootnote) {
 		return nil, false
 	}
-	return o.LastLocationAt, true
+	return o.LockScreenFootnote, true
 }
 
-// HasLastLocationAt returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLastLocationAt() bool {
-	if o != nil && !IsNil(o.LastLocationAt) {
+// HasLockScreenFootnote returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLockScreenFootnote() bool {
+	if o != nil && !IsNil(o.LockScreenFootnote) {
 		return true
 	}
 
 	return false
 }
 
-// SetLastLocationAt gets a reference to the given string and assigns it to the LastLocationAt field.
-func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLastLocationAt(v string) {
-	o.LastLocationAt = &v
+// SetLockScreenFootnote gets a reference to the given string and assigns it to the LockScreenFootnote field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLockScreenFootnote(v string) {
+	o.LockScreenFootnote = &v
+}
+
+// GetLockScreenMessage returns the LockScreenMessage field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenMessage() string {
+	if o == nil || IsNil(o.LockScreenMessage) {
+		var ret string
+		return ret
+	}
+	return *o.LockScreenMessage
+}
+
+// GetLockScreenMessageOk returns a tuple with the LockScreenMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenMessageOk() (*string, bool) {
+	if o == nil || IsNil(o.LockScreenMessage) {
+		return nil, false
+	}
+	return o.LockScreenMessage, true
+}
+
+// HasLockScreenMessage returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLockScreenMessage() bool {
+	if o != nil && !IsNil(o.LockScreenMessage) {
+		return true
+	}
+
+	return false
+}
+
+// SetLockScreenMessage gets a reference to the given string and assigns it to the LockScreenMessage field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLockScreenMessage(v string) {
+	o.LockScreenMessage = &v
+}
+
+// GetLockScreenPhoneNumber returns the LockScreenPhoneNumber field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenPhoneNumber() string {
+	if o == nil || IsNil(o.LockScreenPhoneNumber) {
+		var ret string
+		return ret
+	}
+	return *o.LockScreenPhoneNumber
+}
+
+// GetLockScreenPhoneNumberOk returns a tuple with the LockScreenPhoneNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLockScreenPhoneNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.LockScreenPhoneNumber) {
+		return nil, false
+	}
+	return o.LockScreenPhoneNumber, true
+}
+
+// HasLockScreenPhoneNumber returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLockScreenPhoneNumber() bool {
+	if o != nil && !IsNil(o.LockScreenPhoneNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetLockScreenPhoneNumber gets a reference to the given string and assigns it to the LockScreenPhoneNumber field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLockScreenPhoneNumber(v string) {
+	o.LockScreenPhoneNumber = &v
+}
+
+// GetLostModeStatus returns the LostModeStatus field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLostModeStatus() string {
+	if o == nil || IsNil(o.LostModeStatus) {
+		var ret string
+		return ret
+	}
+	return *o.LostModeStatus
+}
+
+// GetLostModeStatusOk returns a tuple with the LostModeStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) GetLostModeStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.LostModeStatus) {
+		return nil, false
+	}
+	return o.LostModeStatus, true
+}
+
+// HasLostModeStatus returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) HasLostModeStatus() bool {
+	if o != nil && !IsNil(o.LostModeStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetLostModeStatus gets a reference to the given string and assigns it to the LostModeStatus field.
+func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) SetLostModeStatus(v string) {
+	o.LostModeStatus = &v
 }
 
 // GetSoundStatus returns the SoundStatus field value if set, zero value otherwise.
@@ -547,32 +547,26 @@ func (o DeviceInformationGetDeviceDetails200ResponseLostMode) MarshalJSON() ([]b
 
 func (o DeviceInformationGetDeviceDetails200ResponseLostMode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LostModeStatus) {
-		toSerialize["lost_mode_status"] = o.LostModeStatus
-	}
-	if !IsNil(o.EnabledBy) {
-		toSerialize["enabled_by"] = o.EnabledBy
-	}
-	if !IsNil(o.EnableStatusAt) {
-		toSerialize["enable_status_at"] = o.EnableStatusAt
-	}
-	if !IsNil(o.LockScreenMessage) {
-		toSerialize["lock_screen_message"] = o.LockScreenMessage
-	}
-	if !IsNil(o.LockScreenPhoneNumber) {
-		toSerialize["lock_screen_phone_number"] = o.LockScreenPhoneNumber
-	}
-	if !IsNil(o.LockScreenFootnote) {
-		toSerialize["lock_screen_footnote"] = o.LockScreenFootnote
-	}
 	if !IsNil(o.DisableStatus) {
 		toSerialize["disable_status"] = o.DisableStatus
+	}
+	if !IsNil(o.DisableStatusAt) {
+		toSerialize["disable_status_at"] = o.DisableStatusAt
 	}
 	if !IsNil(o.DisabledBy) {
 		toSerialize["disabled_by"] = o.DisabledBy
 	}
-	if !IsNil(o.DisableStatusAt) {
-		toSerialize["disable_status_at"] = o.DisableStatusAt
+	if !IsNil(o.EnableStatusAt) {
+		toSerialize["enable_status_at"] = o.EnableStatusAt
+	}
+	if !IsNil(o.EnabledBy) {
+		toSerialize["enabled_by"] = o.EnabledBy
+	}
+	if !IsNil(o.LastLocation) {
+		toSerialize["last_location"] = o.LastLocation
+	}
+	if !IsNil(o.LastLocationAt) {
+		toSerialize["last_location_at"] = o.LastLocationAt
 	}
 	if !IsNil(o.LastLocationStatus) {
 		toSerialize["last_location_status"] = o.LastLocationStatus
@@ -580,11 +574,17 @@ func (o DeviceInformationGetDeviceDetails200ResponseLostMode) ToMap() (map[strin
 	if !IsNil(o.LastLocationStatusAt) {
 		toSerialize["last_location_status_at"] = o.LastLocationStatusAt
 	}
-	if !IsNil(o.LastLocation) {
-		toSerialize["last_location"] = o.LastLocation
+	if !IsNil(o.LockScreenFootnote) {
+		toSerialize["lock_screen_footnote"] = o.LockScreenFootnote
 	}
-	if !IsNil(o.LastLocationAt) {
-		toSerialize["last_location_at"] = o.LastLocationAt
+	if !IsNil(o.LockScreenMessage) {
+		toSerialize["lock_screen_message"] = o.LockScreenMessage
+	}
+	if !IsNil(o.LockScreenPhoneNumber) {
+		toSerialize["lock_screen_phone_number"] = o.LockScreenPhoneNumber
+	}
+	if !IsNil(o.LostModeStatus) {
+		toSerialize["lost_mode_status"] = o.LostModeStatus
 	}
 	if !IsNil(o.SoundStatus) {
 		toSerialize["sound_status"] = o.SoundStatus
@@ -614,19 +614,19 @@ func (o *DeviceInformationGetDeviceDetails200ResponseLostMode) UnmarshalJSON(dat
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "lost_mode_status")
-		delete(additionalProperties, "enabled_by")
-		delete(additionalProperties, "enable_status_at")
-		delete(additionalProperties, "lock_screen_message")
-		delete(additionalProperties, "lock_screen_phone_number")
-		delete(additionalProperties, "lock_screen_footnote")
 		delete(additionalProperties, "disable_status")
-		delete(additionalProperties, "disabled_by")
 		delete(additionalProperties, "disable_status_at")
-		delete(additionalProperties, "last_location_status")
-		delete(additionalProperties, "last_location_status_at")
+		delete(additionalProperties, "disabled_by")
+		delete(additionalProperties, "enable_status_at")
+		delete(additionalProperties, "enabled_by")
 		delete(additionalProperties, "last_location")
 		delete(additionalProperties, "last_location_at")
+		delete(additionalProperties, "last_location_status")
+		delete(additionalProperties, "last_location_status_at")
+		delete(additionalProperties, "lock_screen_footnote")
+		delete(additionalProperties, "lock_screen_message")
+		delete(additionalProperties, "lock_screen_phone_number")
+		delete(additionalProperties, "lost_mode_status")
 		delete(additionalProperties, "sound_status")
 		delete(additionalProperties, "sound_status_at")
 		o.AdditionalProperties = additionalProperties

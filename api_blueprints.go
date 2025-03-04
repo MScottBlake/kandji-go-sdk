@@ -181,8 +181,8 @@ type BlueprintsAPI interface {
 	ListBlueprints(ctx context.Context) ApiListBlueprintsRequest
 
 	// ListBlueprintsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	ListBlueprintsExecute(r ApiListBlueprintsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
+	//  @return BlueprintsListBlueprints200Response
+	ListBlueprintsExecute(r ApiListBlueprintsRequest) (*BlueprintsListBlueprints200Response, *http.Response, error)
 
 	/*
 	ListLibraryItems List Library Items
@@ -215,8 +215,8 @@ type BlueprintsAPI interface {
 	ListLibraryItems(ctx context.Context, blueprintId string) ApiListLibraryItemsRequest
 
 	// ListLibraryItemsExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
+	//  @return BlueprintsListBlueprints200Response
+	ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*BlueprintsListBlueprints200Response, *http.Response, error)
 
 	/*
 	RemoveLibraryItem Remove Library Item
@@ -453,17 +453,17 @@ func (a *BlueprintsAPIService) AssignLibraryItemExecute(r ApiAssignLibraryItemRe
 type ApiCreateBlueprintRequest struct {
 	ctx context.Context
 	ApiService BlueprintsAPI
-	name *string
-	enrollmentCodeIsActive *string
 	enrollmentCodeCode *string
-	sourceType *string
+	enrollmentCodeIsActive *string
+	name *string
 	sourceId *string
+	sourceType *string
 	type_ *string
 }
 
-// (required) Set the name of the Blueprint. The name provided must be unique.
-func (r ApiCreateBlueprintRequest) Name(name string) ApiCreateBlueprintRequest {
-	r.name = &name
+// Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
+func (r ApiCreateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiCreateBlueprintRequest {
+	r.enrollmentCodeCode = &enrollmentCodeCode
 	return r
 }
 
@@ -473,21 +473,21 @@ func (r ApiCreateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive
 	return r
 }
 
-// Optionally, set the enrollment code of the Blueprint. This key is not required. If an enrollment code is not supplied in the payload body, it will be randomly generated. The enrollment code will be returned in the response and visible in the Web app.
-func (r ApiCreateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string) ApiCreateBlueprintRequest {
-	r.enrollmentCodeCode = &enrollmentCodeCode
-	return r
-}
-
-// Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;.
-func (r ApiCreateBlueprintRequest) SourceType(sourceType string) ApiCreateBlueprintRequest {
-	r.sourceType = &sourceType
+// (required) Set the name of the Blueprint. The name provided must be unique.
+func (r ApiCreateBlueprintRequest) Name(name string) ApiCreateBlueprintRequest {
+	r.name = &name
 	return r
 }
 
 // Set either the source template ID, or the source Blueprint ID to clone an existing template or blueprint.
 func (r ApiCreateBlueprintRequest) SourceId(sourceId string) ApiCreateBlueprintRequest {
 	r.sourceId = &sourceId
+	return r
+}
+
+// Set the source to create the blueprint from. Possible options: &lt;code&gt;template&lt;/code&gt; and &lt;code&gt;blueprint&lt;/code&gt;.
+func (r ApiCreateBlueprintRequest) SourceType(sourceType string) ApiCreateBlueprintRequest {
+	r.sourceType = &sourceType
 	return r
 }
 
@@ -538,20 +538,20 @@ func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.name == nil {
-		return localVarReturnValue, nil, reportError("name is required and must be specified")
+	if r.enrollmentCodeCode == nil {
+		return localVarReturnValue, nil, reportError("enrollmentCodeCode is required and must be specified")
 	}
 	if r.enrollmentCodeIsActive == nil {
 		return localVarReturnValue, nil, reportError("enrollmentCodeIsActive is required and must be specified")
 	}
-	if r.enrollmentCodeCode == nil {
-		return localVarReturnValue, nil, reportError("enrollmentCodeCode is required and must be specified")
-	}
-	if r.sourceType == nil {
-		return localVarReturnValue, nil, reportError("sourceType is required and must be specified")
+	if r.name == nil {
+		return localVarReturnValue, nil, reportError("name is required and must be specified")
 	}
 	if r.sourceId == nil {
 		return localVarReturnValue, nil, reportError("sourceId is required and must be specified")
+	}
+	if r.sourceType == nil {
+		return localVarReturnValue, nil, reportError("sourceType is required and must be specified")
 	}
 	if r.type_ == nil {
 		return localVarReturnValue, nil, reportError("type_ is required and must be specified")
@@ -574,11 +574,11 @@ func (a *BlueprintsAPIService) CreateBlueprintExecute(r ApiCreateBlueprintReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.is_active", r.enrollmentCodeIsActive, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.code", r.enrollmentCodeCode, "", "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "source.type", r.sourceType, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.is_active", r.enrollmentCodeIsActive, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "source.id", r.sourceId, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "source.type", r.sourceType, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "type", r.type_, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1098,7 +1098,7 @@ func (r ApiListBlueprintsRequest) Offset(offset string) ApiListBlueprintsRequest
 	return r
 }
 
-func (r ApiListBlueprintsRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+func (r ApiListBlueprintsRequest) Execute() (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	return r.ApiService.ListBlueprintsExecute(r)
 }
 
@@ -1118,13 +1118,13 @@ func (a *BlueprintsAPIService) ListBlueprints(ctx context.Context) ApiListBluepr
 }
 
 // Execute executes the request
-//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+//  @return BlueprintsListBlueprints200Response
+func (a *BlueprintsAPIService) ListBlueprintsExecute(r ApiListBlueprintsRequest) (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+		localVarReturnValue  *BlueprintsListBlueprints200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.ListBlueprints")
@@ -1213,7 +1213,7 @@ type ApiListLibraryItemsRequest struct {
 	blueprintId string
 }
 
-func (r ApiListLibraryItemsRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+func (r ApiListLibraryItemsRequest) Execute() (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	return r.ApiService.ListLibraryItemsExecute(r)
 }
 
@@ -1254,13 +1254,13 @@ func (a *BlueprintsAPIService) ListLibraryItems(ctx context.Context, blueprintId
 }
 
 // Execute executes the request
-//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+//  @return BlueprintsListBlueprints200Response
+func (a *BlueprintsAPIService) ListLibraryItemsExecute(r ApiListLibraryItemsRequest) (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+		localVarReturnValue  *BlueprintsListBlueprints200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.ListLibraryItems")
@@ -1485,16 +1485,10 @@ type ApiUpdateBlueprintRequest struct {
 	ctx context.Context
 	ApiService BlueprintsAPI
 	blueprintId string
-	name *string
 	description *string
 	enrollmentCodeCode *string
 	enrollmentCodeIsActive *string
-}
-
-// Update the name of the Blueprint
-func (r ApiUpdateBlueprintRequest) Name(name string) ApiUpdateBlueprintRequest {
-	r.name = &name
-	return r
+	name *string
 }
 
 // Update the description of the Blueprint 
@@ -1512,6 +1506,12 @@ func (r ApiUpdateBlueprintRequest) EnrollmentCodeCode(enrollmentCodeCode string)
 // Disable the Blueprint for manual device enrollment from the enrollment portal.
 func (r ApiUpdateBlueprintRequest) EnrollmentCodeIsActive(enrollmentCodeIsActive string) ApiUpdateBlueprintRequest {
 	r.enrollmentCodeIsActive = &enrollmentCodeIsActive
+	return r
+}
+
+// Update the name of the Blueprint
+func (r ApiUpdateBlueprintRequest) Name(name string) ApiUpdateBlueprintRequest {
+	r.name = &name
 	return r
 }
 
@@ -1559,9 +1559,6 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.name == nil {
-		return localVarReturnValue, nil, reportError("name is required and must be specified")
-	}
 	if r.description == nil {
 		return localVarReturnValue, nil, reportError("description is required and must be specified")
 	}
@@ -1570,6 +1567,9 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 	}
 	if r.enrollmentCodeIsActive == nil {
 		return localVarReturnValue, nil, reportError("enrollmentCodeIsActive is required and must be specified")
+	}
+	if r.name == nil {
+		return localVarReturnValue, nil, reportError("name is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1589,10 +1589,10 @@ func (a *BlueprintsAPIService) UpdateBlueprintExecute(r ApiUpdateBlueprintReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "description", r.description, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.code", r.enrollmentCodeCode, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "enrollment_code.is_active", r.enrollmentCodeIsActive, "", "")
+	parameterAddToHeaderOrQuery(localVarFormParams, "name", r.name, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

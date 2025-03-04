@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** |  | [optional] 
-**Category** | Pointer to **string** |  | [optional] 
 **Args** | Pointer to [**PrismRequestCategoryExport200ResponseArgs**](PrismRequestCategoryExport200ResponseArgs.md) |  | [optional] 
+**Category** | Pointer to **string** |  | [optional] 
+**CreatedAt** | Pointer to **string** |  | [optional] 
 **ErrorMsg** | Pointer to **interface{}** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 
 **SignedUrl** | Pointer to **string** |  | [optional] 
-**CreatedAt** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **string** |  | [optional] 
 **UpdatedAt** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -33,55 +33,30 @@ NewPrismGetCategoryExport200ResponseWithDefaults instantiates a new PrismGetCate
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetArgs
 
-`func (o *PrismGetCategoryExport200Response) GetId() string`
+`func (o *PrismGetCategoryExport200Response) GetArgs() PrismRequestCategoryExport200ResponseArgs`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetArgs returns the Args field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetArgsOk
 
-`func (o *PrismGetCategoryExport200Response) GetIdOk() (*string, bool)`
+`func (o *PrismGetCategoryExport200Response) GetArgsOk() (*PrismRequestCategoryExport200ResponseArgs, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetArgs
 
-`func (o *PrismGetCategoryExport200Response) SetId(v string)`
+`func (o *PrismGetCategoryExport200Response) SetArgs(v PrismRequestCategoryExport200ResponseArgs)`
 
-SetId sets Id field to given value.
+SetArgs sets Args field to given value.
 
-### HasId
+### HasArgs
 
-`func (o *PrismGetCategoryExport200Response) HasId() bool`
+`func (o *PrismGetCategoryExport200Response) HasArgs() bool`
 
-HasId returns a boolean if a field has been set.
-
-### GetStatus
-
-`func (o *PrismGetCategoryExport200Response) GetStatus() string`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *PrismGetCategoryExport200Response) GetStatusOk() (*string, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *PrismGetCategoryExport200Response) SetStatus(v string)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *PrismGetCategoryExport200Response) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
+HasArgs returns a boolean if a field has been set.
 
 ### GetCategory
 
@@ -108,30 +83,30 @@ SetCategory sets Category field to given value.
 
 HasCategory returns a boolean if a field has been set.
 
-### GetArgs
+### GetCreatedAt
 
-`func (o *PrismGetCategoryExport200Response) GetArgs() PrismRequestCategoryExport200ResponseArgs`
+`func (o *PrismGetCategoryExport200Response) GetCreatedAt() string`
 
-GetArgs returns the Args field if non-nil, zero value otherwise.
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
-### GetArgsOk
+### GetCreatedAtOk
 
-`func (o *PrismGetCategoryExport200Response) GetArgsOk() (*PrismRequestCategoryExport200ResponseArgs, bool)`
+`func (o *PrismGetCategoryExport200Response) GetCreatedAtOk() (*string, bool)`
 
-GetArgsOk returns a tuple with the Args field if it's non-nil, zero value otherwise
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetArgs
+### SetCreatedAt
 
-`func (o *PrismGetCategoryExport200Response) SetArgs(v PrismRequestCategoryExport200ResponseArgs)`
+`func (o *PrismGetCategoryExport200Response) SetCreatedAt(v string)`
 
-SetArgs sets Args field to given value.
+SetCreatedAt sets CreatedAt field to given value.
 
-### HasArgs
+### HasCreatedAt
 
-`func (o *PrismGetCategoryExport200Response) HasArgs() bool`
+`func (o *PrismGetCategoryExport200Response) HasCreatedAt() bool`
 
-HasArgs returns a boolean if a field has been set.
+HasCreatedAt returns a boolean if a field has been set.
 
 ### GetErrorMsg
 
@@ -168,6 +143,31 @@ HasErrorMsg returns a boolean if a field has been set.
 `func (o *PrismGetCategoryExport200Response) UnsetErrorMsg()`
 
 UnsetErrorMsg ensures that no value is present for ErrorMsg, not even an explicit nil
+### GetId
+
+`func (o *PrismGetCategoryExport200Response) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PrismGetCategoryExport200Response) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PrismGetCategoryExport200Response) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *PrismGetCategoryExport200Response) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
 ### GetPath
 
 `func (o *PrismGetCategoryExport200Response) GetPath() string`
@@ -218,30 +218,30 @@ SetSignedUrl sets SignedUrl field to given value.
 
 HasSignedUrl returns a boolean if a field has been set.
 
-### GetCreatedAt
+### GetStatus
 
-`func (o *PrismGetCategoryExport200Response) GetCreatedAt() string`
+`func (o *PrismGetCategoryExport200Response) GetStatus() string`
 
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+GetStatus returns the Status field if non-nil, zero value otherwise.
 
-### GetCreatedAtOk
+### GetStatusOk
 
-`func (o *PrismGetCategoryExport200Response) GetCreatedAtOk() (*string, bool)`
+`func (o *PrismGetCategoryExport200Response) GetStatusOk() (*string, bool)`
 
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreatedAt
+### SetStatus
 
-`func (o *PrismGetCategoryExport200Response) SetCreatedAt(v string)`
+`func (o *PrismGetCategoryExport200Response) SetStatus(v string)`
 
-SetCreatedAt sets CreatedAt field to given value.
+SetStatus sets Status field to given value.
 
-### HasCreatedAt
+### HasStatus
 
-`func (o *PrismGetCategoryExport200Response) HasCreatedAt() bool`
+`func (o *PrismGetCategoryExport200Response) HasStatus() bool`
 
-HasCreatedAt returns a boolean if a field has been set.
+HasStatus returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 

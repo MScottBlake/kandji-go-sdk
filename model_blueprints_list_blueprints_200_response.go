@@ -15,41 +15,39 @@ import (
 	"encoding/json"
 )
 
-// checks if the ThreatsGetThreatDetails200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ThreatsGetThreatDetails200Response{}
+// checks if the BlueprintsListBlueprints200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BlueprintsListBlueprints200Response{}
 
-// ThreatsGetThreatDetails200Response struct for ThreatsGetThreatDetails200Response
-type ThreatsGetThreatDetails200Response struct {
+// BlueprintsListBlueprints200Response struct for BlueprintsListBlueprints200Response
+type BlueprintsListBlueprints200Response struct {
 	Count *int32 `json:"count,omitempty"`
-	MalwareCount *int32 `json:"malware_count,omitempty"`
 	Next interface{} `json:"next,omitempty"`
 	Previous interface{} `json:"previous,omitempty"`
-	PupCount *int32 `json:"pup_count,omitempty"`
 	Results interface{} `json:"results,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _ThreatsGetThreatDetails200Response ThreatsGetThreatDetails200Response
+type _BlueprintsListBlueprints200Response BlueprintsListBlueprints200Response
 
-// NewThreatsGetThreatDetails200Response instantiates a new ThreatsGetThreatDetails200Response object
+// NewBlueprintsListBlueprints200Response instantiates a new BlueprintsListBlueprints200Response object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewThreatsGetThreatDetails200Response() *ThreatsGetThreatDetails200Response {
-	this := ThreatsGetThreatDetails200Response{}
+func NewBlueprintsListBlueprints200Response() *BlueprintsListBlueprints200Response {
+	this := BlueprintsListBlueprints200Response{}
 	return &this
 }
 
-// NewThreatsGetThreatDetails200ResponseWithDefaults instantiates a new ThreatsGetThreatDetails200Response object
+// NewBlueprintsListBlueprints200ResponseWithDefaults instantiates a new BlueprintsListBlueprints200Response object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewThreatsGetThreatDetails200ResponseWithDefaults() *ThreatsGetThreatDetails200Response {
-	this := ThreatsGetThreatDetails200Response{}
+func NewBlueprintsListBlueprints200ResponseWithDefaults() *BlueprintsListBlueprints200Response {
+	this := BlueprintsListBlueprints200Response{}
 	return &this
 }
 
 // GetCount returns the Count field value if set, zero value otherwise.
-func (o *ThreatsGetThreatDetails200Response) GetCount() int32 {
+func (o *BlueprintsListBlueprints200Response) GetCount() int32 {
 	if o == nil || IsNil(o.Count) {
 		var ret int32
 		return ret
@@ -59,7 +57,7 @@ func (o *ThreatsGetThreatDetails200Response) GetCount() int32 {
 
 // GetCountOk returns a tuple with the Count field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ThreatsGetThreatDetails200Response) GetCountOk() (*int32, bool) {
+func (o *BlueprintsListBlueprints200Response) GetCountOk() (*int32, bool) {
 	if o == nil || IsNil(o.Count) {
 		return nil, false
 	}
@@ -67,7 +65,7 @@ func (o *ThreatsGetThreatDetails200Response) GetCountOk() (*int32, bool) {
 }
 
 // HasCount returns a boolean if a field has been set.
-func (o *ThreatsGetThreatDetails200Response) HasCount() bool {
+func (o *BlueprintsListBlueprints200Response) HasCount() bool {
 	if o != nil && !IsNil(o.Count) {
 		return true
 	}
@@ -76,44 +74,12 @@ func (o *ThreatsGetThreatDetails200Response) HasCount() bool {
 }
 
 // SetCount gets a reference to the given int32 and assigns it to the Count field.
-func (o *ThreatsGetThreatDetails200Response) SetCount(v int32) {
+func (o *BlueprintsListBlueprints200Response) SetCount(v int32) {
 	o.Count = &v
 }
 
-// GetMalwareCount returns the MalwareCount field value if set, zero value otherwise.
-func (o *ThreatsGetThreatDetails200Response) GetMalwareCount() int32 {
-	if o == nil || IsNil(o.MalwareCount) {
-		var ret int32
-		return ret
-	}
-	return *o.MalwareCount
-}
-
-// GetMalwareCountOk returns a tuple with the MalwareCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ThreatsGetThreatDetails200Response) GetMalwareCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.MalwareCount) {
-		return nil, false
-	}
-	return o.MalwareCount, true
-}
-
-// HasMalwareCount returns a boolean if a field has been set.
-func (o *ThreatsGetThreatDetails200Response) HasMalwareCount() bool {
-	if o != nil && !IsNil(o.MalwareCount) {
-		return true
-	}
-
-	return false
-}
-
-// SetMalwareCount gets a reference to the given int32 and assigns it to the MalwareCount field.
-func (o *ThreatsGetThreatDetails200Response) SetMalwareCount(v int32) {
-	o.MalwareCount = &v
-}
-
 // GetNext returns the Next field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ThreatsGetThreatDetails200Response) GetNext() interface{} {
+func (o *BlueprintsListBlueprints200Response) GetNext() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
@@ -124,7 +90,7 @@ func (o *ThreatsGetThreatDetails200Response) GetNext() interface{} {
 // GetNextOk returns a tuple with the Next field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ThreatsGetThreatDetails200Response) GetNextOk() (*interface{}, bool) {
+func (o *BlueprintsListBlueprints200Response) GetNextOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.Next) {
 		return nil, false
 	}
@@ -132,7 +98,7 @@ func (o *ThreatsGetThreatDetails200Response) GetNextOk() (*interface{}, bool) {
 }
 
 // HasNext returns a boolean if a field has been set.
-func (o *ThreatsGetThreatDetails200Response) HasNext() bool {
+func (o *BlueprintsListBlueprints200Response) HasNext() bool {
 	if o != nil && !IsNil(o.Next) {
 		return true
 	}
@@ -141,12 +107,12 @@ func (o *ThreatsGetThreatDetails200Response) HasNext() bool {
 }
 
 // SetNext gets a reference to the given interface{} and assigns it to the Next field.
-func (o *ThreatsGetThreatDetails200Response) SetNext(v interface{}) {
+func (o *BlueprintsListBlueprints200Response) SetNext(v interface{}) {
 	o.Next = v
 }
 
 // GetPrevious returns the Previous field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ThreatsGetThreatDetails200Response) GetPrevious() interface{} {
+func (o *BlueprintsListBlueprints200Response) GetPrevious() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
@@ -157,7 +123,7 @@ func (o *ThreatsGetThreatDetails200Response) GetPrevious() interface{} {
 // GetPreviousOk returns a tuple with the Previous field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ThreatsGetThreatDetails200Response) GetPreviousOk() (*interface{}, bool) {
+func (o *BlueprintsListBlueprints200Response) GetPreviousOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.Previous) {
 		return nil, false
 	}
@@ -165,7 +131,7 @@ func (o *ThreatsGetThreatDetails200Response) GetPreviousOk() (*interface{}, bool
 }
 
 // HasPrevious returns a boolean if a field has been set.
-func (o *ThreatsGetThreatDetails200Response) HasPrevious() bool {
+func (o *BlueprintsListBlueprints200Response) HasPrevious() bool {
 	if o != nil && !IsNil(o.Previous) {
 		return true
 	}
@@ -174,44 +140,12 @@ func (o *ThreatsGetThreatDetails200Response) HasPrevious() bool {
 }
 
 // SetPrevious gets a reference to the given interface{} and assigns it to the Previous field.
-func (o *ThreatsGetThreatDetails200Response) SetPrevious(v interface{}) {
+func (o *BlueprintsListBlueprints200Response) SetPrevious(v interface{}) {
 	o.Previous = v
 }
 
-// GetPupCount returns the PupCount field value if set, zero value otherwise.
-func (o *ThreatsGetThreatDetails200Response) GetPupCount() int32 {
-	if o == nil || IsNil(o.PupCount) {
-		var ret int32
-		return ret
-	}
-	return *o.PupCount
-}
-
-// GetPupCountOk returns a tuple with the PupCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ThreatsGetThreatDetails200Response) GetPupCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.PupCount) {
-		return nil, false
-	}
-	return o.PupCount, true
-}
-
-// HasPupCount returns a boolean if a field has been set.
-func (o *ThreatsGetThreatDetails200Response) HasPupCount() bool {
-	if o != nil && !IsNil(o.PupCount) {
-		return true
-	}
-
-	return false
-}
-
-// SetPupCount gets a reference to the given int32 and assigns it to the PupCount field.
-func (o *ThreatsGetThreatDetails200Response) SetPupCount(v int32) {
-	o.PupCount = &v
-}
-
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ThreatsGetThreatDetails200Response) GetResults() interface{} {
+func (o *BlueprintsListBlueprints200Response) GetResults() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
@@ -222,7 +156,7 @@ func (o *ThreatsGetThreatDetails200Response) GetResults() interface{} {
 // GetResultsOk returns a tuple with the Results field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ThreatsGetThreatDetails200Response) GetResultsOk() (*interface{}, bool) {
+func (o *BlueprintsListBlueprints200Response) GetResultsOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.Results) {
 		return nil, false
 	}
@@ -230,7 +164,7 @@ func (o *ThreatsGetThreatDetails200Response) GetResultsOk() (*interface{}, bool)
 }
 
 // HasResults returns a boolean if a field has been set.
-func (o *ThreatsGetThreatDetails200Response) HasResults() bool {
+func (o *BlueprintsListBlueprints200Response) HasResults() bool {
 	if o != nil && !IsNil(o.Results) {
 		return true
 	}
@@ -239,11 +173,11 @@ func (o *ThreatsGetThreatDetails200Response) HasResults() bool {
 }
 
 // SetResults gets a reference to the given interface{} and assigns it to the Results field.
-func (o *ThreatsGetThreatDetails200Response) SetResults(v interface{}) {
+func (o *BlueprintsListBlueprints200Response) SetResults(v interface{}) {
 	o.Results = v
 }
 
-func (o ThreatsGetThreatDetails200Response) MarshalJSON() ([]byte, error) {
+func (o BlueprintsListBlueprints200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -251,22 +185,16 @@ func (o ThreatsGetThreatDetails200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o ThreatsGetThreatDetails200Response) ToMap() (map[string]interface{}, error) {
+func (o BlueprintsListBlueprints200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Count) {
 		toSerialize["count"] = o.Count
-	}
-	if !IsNil(o.MalwareCount) {
-		toSerialize["malware_count"] = o.MalwareCount
 	}
 	if o.Next != nil {
 		toSerialize["next"] = o.Next
 	}
 	if o.Previous != nil {
 		toSerialize["previous"] = o.Previous
-	}
-	if !IsNil(o.PupCount) {
-		toSerialize["pup_count"] = o.PupCount
 	}
 	if o.Results != nil {
 		toSerialize["results"] = o.Results
@@ -279,25 +207,23 @@ func (o ThreatsGetThreatDetails200Response) ToMap() (map[string]interface{}, err
 	return toSerialize, nil
 }
 
-func (o *ThreatsGetThreatDetails200Response) UnmarshalJSON(data []byte) (err error) {
-	varThreatsGetThreatDetails200Response := _ThreatsGetThreatDetails200Response{}
+func (o *BlueprintsListBlueprints200Response) UnmarshalJSON(data []byte) (err error) {
+	varBlueprintsListBlueprints200Response := _BlueprintsListBlueprints200Response{}
 
-	err = json.Unmarshal(data, &varThreatsGetThreatDetails200Response)
+	err = json.Unmarshal(data, &varBlueprintsListBlueprints200Response)
 
 	if err != nil {
 		return err
 	}
 
-	*o = ThreatsGetThreatDetails200Response(varThreatsGetThreatDetails200Response)
+	*o = BlueprintsListBlueprints200Response(varBlueprintsListBlueprints200Response)
 
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "count")
-		delete(additionalProperties, "malware_count")
 		delete(additionalProperties, "next")
 		delete(additionalProperties, "previous")
-		delete(additionalProperties, "pup_count")
 		delete(additionalProperties, "results")
 		o.AdditionalProperties = additionalProperties
 	}
@@ -305,38 +231,38 @@ func (o *ThreatsGetThreatDetails200Response) UnmarshalJSON(data []byte) (err err
 	return err
 }
 
-type NullableThreatsGetThreatDetails200Response struct {
-	value *ThreatsGetThreatDetails200Response
+type NullableBlueprintsListBlueprints200Response struct {
+	value *BlueprintsListBlueprints200Response
 	isSet bool
 }
 
-func (v NullableThreatsGetThreatDetails200Response) Get() *ThreatsGetThreatDetails200Response {
+func (v NullableBlueprintsListBlueprints200Response) Get() *BlueprintsListBlueprints200Response {
 	return v.value
 }
 
-func (v *NullableThreatsGetThreatDetails200Response) Set(val *ThreatsGetThreatDetails200Response) {
+func (v *NullableBlueprintsListBlueprints200Response) Set(val *BlueprintsListBlueprints200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableThreatsGetThreatDetails200Response) IsSet() bool {
+func (v NullableBlueprintsListBlueprints200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableThreatsGetThreatDetails200Response) Unset() {
+func (v *NullableBlueprintsListBlueprints200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableThreatsGetThreatDetails200Response(val *ThreatsGetThreatDetails200Response) *NullableThreatsGetThreatDetails200Response {
-	return &NullableThreatsGetThreatDetails200Response{value: val, isSet: true}
+func NewNullableBlueprintsListBlueprints200Response(val *BlueprintsListBlueprints200Response) *NullableBlueprintsListBlueprints200Response {
+	return &NullableBlueprintsListBlueprints200Response{value: val, isSet: true}
 }
 
-func (v NullableThreatsGetThreatDetails200Response) MarshalJSON() ([]byte, error) {
+func (v NullableBlueprintsListBlueprints200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableThreatsGetThreatDetails200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableBlueprintsListBlueprints200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RecoveryLockEnabled** | Pointer to **int32** |  | [optional] 
 **FirmwarePasswordExist** | Pointer to **int32** |  | [optional] 
 **FirmwarePasswordPending** | Pointer to **int32** |  | [optional] 
 **PasswordRotationScheduled** | Pointer to **interface{}** |  | [optional] 
+**RecoveryLockEnabled** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -27,31 +27,6 @@ will change when the set of required properties is changed
 NewDeviceInformationGetDeviceDetails200ResponseRecoveryInformationWithDefaults instantiates a new DeviceInformationGetDeviceDetails200ResponseRecoveryInformation object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetRecoveryLockEnabled
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabled() int32`
-
-GetRecoveryLockEnabled returns the RecoveryLockEnabled field if non-nil, zero value otherwise.
-
-### GetRecoveryLockEnabledOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabledOk() (*int32, bool)`
-
-GetRecoveryLockEnabledOk returns a tuple with the RecoveryLockEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRecoveryLockEnabled
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) SetRecoveryLockEnabled(v int32)`
-
-SetRecoveryLockEnabled sets RecoveryLockEnabled field to given value.
-
-### HasRecoveryLockEnabled
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) HasRecoveryLockEnabled() bool`
-
-HasRecoveryLockEnabled returns a boolean if a field has been set.
 
 ### GetFirmwarePasswordExist
 
@@ -138,6 +113,31 @@ HasPasswordRotationScheduled returns a boolean if a field has been set.
 `func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) UnsetPasswordRotationScheduled()`
 
 UnsetPasswordRotationScheduled ensures that no value is present for PasswordRotationScheduled, not even an explicit nil
+### GetRecoveryLockEnabled
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabled() int32`
+
+GetRecoveryLockEnabled returns the RecoveryLockEnabled field if non-nil, zero value otherwise.
+
+### GetRecoveryLockEnabledOk
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabledOk() (*int32, bool)`
+
+GetRecoveryLockEnabledOk returns a tuple with the RecoveryLockEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecoveryLockEnabled
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) SetRecoveryLockEnabled(v int32)`
+
+SetRecoveryLockEnabled sets RecoveryLockEnabled field to given value.
+
+### HasRecoveryLockEnabled
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) HasRecoveryLockEnabled() bool`
+
+HasRecoveryLockEnabled returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

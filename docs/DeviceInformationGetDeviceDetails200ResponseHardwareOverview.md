@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Uuid** | Pointer to **string** |  | [optional] 
-**SerialNumber** | Pointer to **string** |  | [optional] 
 **ModelIdentifier** | Pointer to **string** |  | [optional] 
+**SerialNumber** | Pointer to **string** |  | [optional] 
+**Uuid** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewDeviceInformationGetDeviceDetails200ResponseHardwareOverviewWithDefaults inst
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUuid
+### GetModelIdentifier
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuid() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetModelIdentifier() string`
 
-GetUuid returns the Uuid field if non-nil, zero value otherwise.
+GetModelIdentifier returns the ModelIdentifier field if non-nil, zero value otherwise.
 
-### GetUuidOk
+### GetModelIdentifierOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuidOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetModelIdentifierOk() (*string, bool)`
 
-GetUuidOk returns a tuple with the Uuid field if it's non-nil, zero value otherwise
+GetModelIdentifierOk returns a tuple with the ModelIdentifier field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUuid
+### SetModelIdentifier
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetUuid(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetModelIdentifier(v string)`
 
-SetUuid sets Uuid field to given value.
+SetModelIdentifier sets ModelIdentifier field to given value.
 
-### HasUuid
+### HasModelIdentifier
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasUuid() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasModelIdentifier() bool`
 
-HasUuid returns a boolean if a field has been set.
+HasModelIdentifier returns a boolean if a field has been set.
 
 ### GetSerialNumber
 
@@ -77,30 +77,30 @@ SetSerialNumber sets SerialNumber field to given value.
 
 HasSerialNumber returns a boolean if a field has been set.
 
-### GetModelIdentifier
+### GetUuid
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetModelIdentifier() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuid() string`
 
-GetModelIdentifier returns the ModelIdentifier field if non-nil, zero value otherwise.
+GetUuid returns the Uuid field if non-nil, zero value otherwise.
 
-### GetModelIdentifierOk
+### GetUuidOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetModelIdentifierOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuidOk() (*string, bool)`
 
-GetModelIdentifierOk returns a tuple with the ModelIdentifier field if it's non-nil, zero value otherwise
+GetUuidOk returns a tuple with the Uuid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetModelIdentifier
+### SetUuid
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetModelIdentifier(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetUuid(v string)`
 
-SetModelIdentifier sets ModelIdentifier field to given value.
+SetUuid sets Uuid field to given value.
 
-### HasModelIdentifier
+### HasUuid
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasModelIdentifier() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasUuid() bool`
 
-HasModelIdentifier returns a boolean if a field has been set.
+HasUuid returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

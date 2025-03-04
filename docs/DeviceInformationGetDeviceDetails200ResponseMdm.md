@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MdmEnabled** | Pointer to **string** |  | [optional] 
-**Supervised** | Pointer to **string** |  | [optional] 
 **InstallDate** | Pointer to **string** |  | [optional] 
 **LastCheckIn** | Pointer to **string** |  | [optional] 
+**MdmEnabled** | Pointer to **string** |  | [optional] 
 **MdmEnabledUser** | Pointer to **interface{}** |  | [optional] 
+**Supervised** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,56 +28,6 @@ will change when the set of required properties is changed
 NewDeviceInformationGetDeviceDetails200ResponseMdmWithDefaults instantiates a new DeviceInformationGetDeviceDetails200ResponseMdm object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMdmEnabled
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabled() string`
-
-GetMdmEnabled returns the MdmEnabled field if non-nil, zero value otherwise.
-
-### GetMdmEnabledOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabledOk() (*string, bool)`
-
-GetMdmEnabledOk returns a tuple with the MdmEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMdmEnabled
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetMdmEnabled(v string)`
-
-SetMdmEnabled sets MdmEnabled field to given value.
-
-### HasMdmEnabled
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasMdmEnabled() bool`
-
-HasMdmEnabled returns a boolean if a field has been set.
-
-### GetSupervised
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervised() string`
-
-GetSupervised returns the Supervised field if non-nil, zero value otherwise.
-
-### GetSupervisedOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervisedOk() (*string, bool)`
-
-GetSupervisedOk returns a tuple with the Supervised field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSupervised
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetSupervised(v string)`
-
-SetSupervised sets Supervised field to given value.
-
-### HasSupervised
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasSupervised() bool`
-
-HasSupervised returns a boolean if a field has been set.
 
 ### GetInstallDate
 
@@ -129,6 +79,31 @@ SetLastCheckIn sets LastCheckIn field to given value.
 
 HasLastCheckIn returns a boolean if a field has been set.
 
+### GetMdmEnabled
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabled() string`
+
+GetMdmEnabled returns the MdmEnabled field if non-nil, zero value otherwise.
+
+### GetMdmEnabledOk
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabledOk() (*string, bool)`
+
+GetMdmEnabledOk returns a tuple with the MdmEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMdmEnabled
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetMdmEnabled(v string)`
+
+SetMdmEnabled sets MdmEnabled field to given value.
+
+### HasMdmEnabled
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasMdmEnabled() bool`
+
+HasMdmEnabled returns a boolean if a field has been set.
+
 ### GetMdmEnabledUser
 
 `func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetMdmEnabledUser() interface{}`
@@ -164,6 +139,31 @@ HasMdmEnabledUser returns a boolean if a field has been set.
 `func (o *DeviceInformationGetDeviceDetails200ResponseMdm) UnsetMdmEnabledUser()`
 
 UnsetMdmEnabledUser ensures that no value is present for MdmEnabledUser, not even an explicit nil
+### GetSupervised
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervised() string`
+
+GetSupervised returns the Supervised field if non-nil, zero value otherwise.
+
+### GetSupervisedOk
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) GetSupervisedOk() (*string, bool)`
+
+GetSupervisedOk returns a tuple with the Supervised field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupervised
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) SetSupervised(v string)`
+
+SetSupervised sets Supervised field to given value.
+
+### HasSupervised
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseMdm) HasSupervised() bool`
+
+HasSupervised returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

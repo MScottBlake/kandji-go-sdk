@@ -20,11 +20,11 @@ var _ MappedNullable = &PrismRequestCategoryExport200ResponseArgs{}
 
 // PrismRequestCategoryExport200ResponseArgs struct for PrismRequestCategoryExport200ResponseArgs
 type PrismRequestCategoryExport200ResponseArgs struct {
-	Filter map[string]interface{} `json:"filter,omitempty"`
-	Columns interface{} `json:"columns,omitempty"`
-	SortBy *string `json:"sort_by,omitempty"`
 	BlueprintIds interface{} `json:"blueprint_ids,omitempty"`
+	Columns interface{} `json:"columns,omitempty"`
 	DeviceFamilies interface{} `json:"device_families,omitempty"`
+	Filter map[string]interface{} `json:"filter,omitempty"`
+	SortBy *string `json:"sort_by,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,103 +45,6 @@ func NewPrismRequestCategoryExport200ResponseArgs() *PrismRequestCategoryExport2
 func NewPrismRequestCategoryExport200ResponseArgsWithDefaults() *PrismRequestCategoryExport200ResponseArgs {
 	this := PrismRequestCategoryExport200ResponseArgs{}
 	return &this
-}
-
-// GetFilter returns the Filter field value if set, zero value otherwise.
-func (o *PrismRequestCategoryExport200ResponseArgs) GetFilter() map[string]interface{} {
-	if o == nil || IsNil(o.Filter) {
-		var ret map[string]interface{}
-		return ret
-	}
-	return o.Filter
-}
-
-// GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismRequestCategoryExport200ResponseArgs) GetFilterOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Filter) {
-		return map[string]interface{}{}, false
-	}
-	return o.Filter, true
-}
-
-// HasFilter returns a boolean if a field has been set.
-func (o *PrismRequestCategoryExport200ResponseArgs) HasFilter() bool {
-	if o != nil && !IsNil(o.Filter) {
-		return true
-	}
-
-	return false
-}
-
-// SetFilter gets a reference to the given map[string]interface{} and assigns it to the Filter field.
-func (o *PrismRequestCategoryExport200ResponseArgs) SetFilter(v map[string]interface{}) {
-	o.Filter = v
-}
-
-// GetColumns returns the Columns field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PrismRequestCategoryExport200ResponseArgs) GetColumns() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Columns
-}
-
-// GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PrismRequestCategoryExport200ResponseArgs) GetColumnsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Columns) {
-		return nil, false
-	}
-	return &o.Columns, true
-}
-
-// HasColumns returns a boolean if a field has been set.
-func (o *PrismRequestCategoryExport200ResponseArgs) HasColumns() bool {
-	if o != nil && !IsNil(o.Columns) {
-		return true
-	}
-
-	return false
-}
-
-// SetColumns gets a reference to the given interface{} and assigns it to the Columns field.
-func (o *PrismRequestCategoryExport200ResponseArgs) SetColumns(v interface{}) {
-	o.Columns = v
-}
-
-// GetSortBy returns the SortBy field value if set, zero value otherwise.
-func (o *PrismRequestCategoryExport200ResponseArgs) GetSortBy() string {
-	if o == nil || IsNil(o.SortBy) {
-		var ret string
-		return ret
-	}
-	return *o.SortBy
-}
-
-// GetSortByOk returns a tuple with the SortBy field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismRequestCategoryExport200ResponseArgs) GetSortByOk() (*string, bool) {
-	if o == nil || IsNil(o.SortBy) {
-		return nil, false
-	}
-	return o.SortBy, true
-}
-
-// HasSortBy returns a boolean if a field has been set.
-func (o *PrismRequestCategoryExport200ResponseArgs) HasSortBy() bool {
-	if o != nil && !IsNil(o.SortBy) {
-		return true
-	}
-
-	return false
-}
-
-// SetSortBy gets a reference to the given string and assigns it to the SortBy field.
-func (o *PrismRequestCategoryExport200ResponseArgs) SetSortBy(v string) {
-	o.SortBy = &v
 }
 
 // GetBlueprintIds returns the BlueprintIds field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -177,6 +80,39 @@ func (o *PrismRequestCategoryExport200ResponseArgs) SetBlueprintIds(v interface{
 	o.BlueprintIds = v
 }
 
+// GetColumns returns the Columns field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PrismRequestCategoryExport200ResponseArgs) GetColumns() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Columns
+}
+
+// GetColumnsOk returns a tuple with the Columns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PrismRequestCategoryExport200ResponseArgs) GetColumnsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Columns) {
+		return nil, false
+	}
+	return &o.Columns, true
+}
+
+// HasColumns returns a boolean if a field has been set.
+func (o *PrismRequestCategoryExport200ResponseArgs) HasColumns() bool {
+	if o != nil && !IsNil(o.Columns) {
+		return true
+	}
+
+	return false
+}
+
+// SetColumns gets a reference to the given interface{} and assigns it to the Columns field.
+func (o *PrismRequestCategoryExport200ResponseArgs) SetColumns(v interface{}) {
+	o.Columns = v
+}
+
 // GetDeviceFamilies returns the DeviceFamilies field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PrismRequestCategoryExport200ResponseArgs) GetDeviceFamilies() interface{} {
 	if o == nil {
@@ -210,6 +146,70 @@ func (o *PrismRequestCategoryExport200ResponseArgs) SetDeviceFamilies(v interfac
 	o.DeviceFamilies = v
 }
 
+// GetFilter returns the Filter field value if set, zero value otherwise.
+func (o *PrismRequestCategoryExport200ResponseArgs) GetFilter() map[string]interface{} {
+	if o == nil || IsNil(o.Filter) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.Filter
+}
+
+// GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismRequestCategoryExport200ResponseArgs) GetFilterOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.Filter) {
+		return map[string]interface{}{}, false
+	}
+	return o.Filter, true
+}
+
+// HasFilter returns a boolean if a field has been set.
+func (o *PrismRequestCategoryExport200ResponseArgs) HasFilter() bool {
+	if o != nil && !IsNil(o.Filter) {
+		return true
+	}
+
+	return false
+}
+
+// SetFilter gets a reference to the given map[string]interface{} and assigns it to the Filter field.
+func (o *PrismRequestCategoryExport200ResponseArgs) SetFilter(v map[string]interface{}) {
+	o.Filter = v
+}
+
+// GetSortBy returns the SortBy field value if set, zero value otherwise.
+func (o *PrismRequestCategoryExport200ResponseArgs) GetSortBy() string {
+	if o == nil || IsNil(o.SortBy) {
+		var ret string
+		return ret
+	}
+	return *o.SortBy
+}
+
+// GetSortByOk returns a tuple with the SortBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismRequestCategoryExport200ResponseArgs) GetSortByOk() (*string, bool) {
+	if o == nil || IsNil(o.SortBy) {
+		return nil, false
+	}
+	return o.SortBy, true
+}
+
+// HasSortBy returns a boolean if a field has been set.
+func (o *PrismRequestCategoryExport200ResponseArgs) HasSortBy() bool {
+	if o != nil && !IsNil(o.SortBy) {
+		return true
+	}
+
+	return false
+}
+
+// SetSortBy gets a reference to the given string and assigns it to the SortBy field.
+func (o *PrismRequestCategoryExport200ResponseArgs) SetSortBy(v string) {
+	o.SortBy = &v
+}
+
 func (o PrismRequestCategoryExport200ResponseArgs) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -220,20 +220,20 @@ func (o PrismRequestCategoryExport200ResponseArgs) MarshalJSON() ([]byte, error)
 
 func (o PrismRequestCategoryExport200ResponseArgs) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Filter) {
-		toSerialize["filter"] = o.Filter
+	if o.BlueprintIds != nil {
+		toSerialize["blueprint_ids"] = o.BlueprintIds
 	}
 	if o.Columns != nil {
 		toSerialize["columns"] = o.Columns
 	}
-	if !IsNil(o.SortBy) {
-		toSerialize["sort_by"] = o.SortBy
-	}
-	if o.BlueprintIds != nil {
-		toSerialize["blueprint_ids"] = o.BlueprintIds
-	}
 	if o.DeviceFamilies != nil {
 		toSerialize["device_families"] = o.DeviceFamilies
+	}
+	if !IsNil(o.Filter) {
+		toSerialize["filter"] = o.Filter
+	}
+	if !IsNil(o.SortBy) {
+		toSerialize["sort_by"] = o.SortBy
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -257,11 +257,11 @@ func (o *PrismRequestCategoryExport200ResponseArgs) UnmarshalJSON(data []byte) (
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "filter")
-		delete(additionalProperties, "columns")
-		delete(additionalProperties, "sort_by")
 		delete(additionalProperties, "blueprint_ids")
+		delete(additionalProperties, "columns")
 		delete(additionalProperties, "device_families")
+		delete(additionalProperties, "filter")
+		delete(additionalProperties, "sort_by")
 		o.AdditionalProperties = additionalProperties
 	}
 

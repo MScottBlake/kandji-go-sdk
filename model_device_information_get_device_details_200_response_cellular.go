@@ -20,10 +20,10 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseCellular{}
 
 // DeviceInformationGetDeviceDetails200ResponseCellular struct for DeviceInformationGetDeviceDetails200ResponseCellular
 type DeviceInformationGetDeviceDetails200ResponseCellular struct {
-	VoiceRoaming *int32 `json:"voice_roaming,omitempty"`
-	DataRoaming *int32 `json:"data_roaming,omitempty"`
 	CellularTechnology *int32 `json:"cellular_technology,omitempty"`
+	DataRoaming *int32 `json:"data_roaming,omitempty"`
 	Subscriptions interface{} `json:"subscriptions,omitempty"`
+	VoiceRoaming *int32 `json:"voice_roaming,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,70 +44,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseCellular() *DeviceInformatio
 func NewDeviceInformationGetDeviceDetails200ResponseCellularWithDefaults() *DeviceInformationGetDeviceDetails200ResponseCellular {
 	this := DeviceInformationGetDeviceDetails200ResponseCellular{}
 	return &this
-}
-
-// GetVoiceRoaming returns the VoiceRoaming field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoaming() int32 {
-	if o == nil || IsNil(o.VoiceRoaming) {
-		var ret int32
-		return ret
-	}
-	return *o.VoiceRoaming
-}
-
-// GetVoiceRoamingOk returns a tuple with the VoiceRoaming field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoamingOk() (*int32, bool) {
-	if o == nil || IsNil(o.VoiceRoaming) {
-		return nil, false
-	}
-	return o.VoiceRoaming, true
-}
-
-// HasVoiceRoaming returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasVoiceRoaming() bool {
-	if o != nil && !IsNil(o.VoiceRoaming) {
-		return true
-	}
-
-	return false
-}
-
-// SetVoiceRoaming gets a reference to the given int32 and assigns it to the VoiceRoaming field.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetVoiceRoaming(v int32) {
-	o.VoiceRoaming = &v
-}
-
-// GetDataRoaming returns the DataRoaming field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoaming() int32 {
-	if o == nil || IsNil(o.DataRoaming) {
-		var ret int32
-		return ret
-	}
-	return *o.DataRoaming
-}
-
-// GetDataRoamingOk returns a tuple with the DataRoaming field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoamingOk() (*int32, bool) {
-	if o == nil || IsNil(o.DataRoaming) {
-		return nil, false
-	}
-	return o.DataRoaming, true
-}
-
-// HasDataRoaming returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasDataRoaming() bool {
-	if o != nil && !IsNil(o.DataRoaming) {
-		return true
-	}
-
-	return false
-}
-
-// SetDataRoaming gets a reference to the given int32 and assigns it to the DataRoaming field.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetDataRoaming(v int32) {
-	o.DataRoaming = &v
 }
 
 // GetCellularTechnology returns the CellularTechnology field value if set, zero value otherwise.
@@ -140,6 +76,38 @@ func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasCellularTechno
 // SetCellularTechnology gets a reference to the given int32 and assigns it to the CellularTechnology field.
 func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetCellularTechnology(v int32) {
 	o.CellularTechnology = &v
+}
+
+// GetDataRoaming returns the DataRoaming field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoaming() int32 {
+	if o == nil || IsNil(o.DataRoaming) {
+		var ret int32
+		return ret
+	}
+	return *o.DataRoaming
+}
+
+// GetDataRoamingOk returns a tuple with the DataRoaming field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoamingOk() (*int32, bool) {
+	if o == nil || IsNil(o.DataRoaming) {
+		return nil, false
+	}
+	return o.DataRoaming, true
+}
+
+// HasDataRoaming returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasDataRoaming() bool {
+	if o != nil && !IsNil(o.DataRoaming) {
+		return true
+	}
+
+	return false
+}
+
+// SetDataRoaming gets a reference to the given int32 and assigns it to the DataRoaming field.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetDataRoaming(v int32) {
+	o.DataRoaming = &v
 }
 
 // GetSubscriptions returns the Subscriptions field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -175,6 +143,38 @@ func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetSubscriptions(
 	o.Subscriptions = v
 }
 
+// GetVoiceRoaming returns the VoiceRoaming field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoaming() int32 {
+	if o == nil || IsNil(o.VoiceRoaming) {
+		var ret int32
+		return ret
+	}
+	return *o.VoiceRoaming
+}
+
+// GetVoiceRoamingOk returns a tuple with the VoiceRoaming field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoamingOk() (*int32, bool) {
+	if o == nil || IsNil(o.VoiceRoaming) {
+		return nil, false
+	}
+	return o.VoiceRoaming, true
+}
+
+// HasVoiceRoaming returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasVoiceRoaming() bool {
+	if o != nil && !IsNil(o.VoiceRoaming) {
+		return true
+	}
+
+	return false
+}
+
+// SetVoiceRoaming gets a reference to the given int32 and assigns it to the VoiceRoaming field.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetVoiceRoaming(v int32) {
+	o.VoiceRoaming = &v
+}
+
 func (o DeviceInformationGetDeviceDetails200ResponseCellular) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -185,17 +185,17 @@ func (o DeviceInformationGetDeviceDetails200ResponseCellular) MarshalJSON() ([]b
 
 func (o DeviceInformationGetDeviceDetails200ResponseCellular) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.VoiceRoaming) {
-		toSerialize["voice_roaming"] = o.VoiceRoaming
+	if !IsNil(o.CellularTechnology) {
+		toSerialize["cellular_technology"] = o.CellularTechnology
 	}
 	if !IsNil(o.DataRoaming) {
 		toSerialize["data_roaming"] = o.DataRoaming
 	}
-	if !IsNil(o.CellularTechnology) {
-		toSerialize["cellular_technology"] = o.CellularTechnology
-	}
 	if o.Subscriptions != nil {
 		toSerialize["subscriptions"] = o.Subscriptions
+	}
+	if !IsNil(o.VoiceRoaming) {
+		toSerialize["voice_roaming"] = o.VoiceRoaming
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -219,10 +219,10 @@ func (o *DeviceInformationGetDeviceDetails200ResponseCellular) UnmarshalJSON(dat
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "voice_roaming")
-		delete(additionalProperties, "data_roaming")
 		delete(additionalProperties, "cellular_technology")
+		delete(additionalProperties, "data_roaming")
 		delete(additionalProperties, "subscriptions")
+		delete(additionalProperties, "voice_roaming")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -20,10 +20,10 @@ var _ MappedNullable = &VulnerabilitiesListVulnerabilities200Response{}
 
 // VulnerabilitiesListVulnerabilities200Response struct for VulnerabilitiesListVulnerabilities200Response
 type VulnerabilitiesListVulnerabilities200Response struct {
-	Total *int32 `json:"total,omitempty"`
 	Next interface{} `json:"next,omitempty"`
 	Previous interface{} `json:"previous,omitempty"`
 	Results interface{} `json:"results,omitempty"`
+	Total *int32 `json:"total,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,38 +44,6 @@ func NewVulnerabilitiesListVulnerabilities200Response() *VulnerabilitiesListVuln
 func NewVulnerabilitiesListVulnerabilities200ResponseWithDefaults() *VulnerabilitiesListVulnerabilities200Response {
 	this := VulnerabilitiesListVulnerabilities200Response{}
 	return &this
-}
-
-// GetTotal returns the Total field value if set, zero value otherwise.
-func (o *VulnerabilitiesListVulnerabilities200Response) GetTotal() int32 {
-	if o == nil || IsNil(o.Total) {
-		var ret int32
-		return ret
-	}
-	return *o.Total
-}
-
-// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VulnerabilitiesListVulnerabilities200Response) GetTotalOk() (*int32, bool) {
-	if o == nil || IsNil(o.Total) {
-		return nil, false
-	}
-	return o.Total, true
-}
-
-// HasTotal returns a boolean if a field has been set.
-func (o *VulnerabilitiesListVulnerabilities200Response) HasTotal() bool {
-	if o != nil && !IsNil(o.Total) {
-		return true
-	}
-
-	return false
-}
-
-// SetTotal gets a reference to the given int32 and assigns it to the Total field.
-func (o *VulnerabilitiesListVulnerabilities200Response) SetTotal(v int32) {
-	o.Total = &v
 }
 
 // GetNext returns the Next field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -177,6 +145,38 @@ func (o *VulnerabilitiesListVulnerabilities200Response) SetResults(v interface{}
 	o.Results = v
 }
 
+// GetTotal returns the Total field value if set, zero value otherwise.
+func (o *VulnerabilitiesListVulnerabilities200Response) GetTotal() int32 {
+	if o == nil || IsNil(o.Total) {
+		var ret int32
+		return ret
+	}
+	return *o.Total
+}
+
+// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VulnerabilitiesListVulnerabilities200Response) GetTotalOk() (*int32, bool) {
+	if o == nil || IsNil(o.Total) {
+		return nil, false
+	}
+	return o.Total, true
+}
+
+// HasTotal returns a boolean if a field has been set.
+func (o *VulnerabilitiesListVulnerabilities200Response) HasTotal() bool {
+	if o != nil && !IsNil(o.Total) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotal gets a reference to the given int32 and assigns it to the Total field.
+func (o *VulnerabilitiesListVulnerabilities200Response) SetTotal(v int32) {
+	o.Total = &v
+}
+
 func (o VulnerabilitiesListVulnerabilities200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -187,9 +187,6 @@ func (o VulnerabilitiesListVulnerabilities200Response) MarshalJSON() ([]byte, er
 
 func (o VulnerabilitiesListVulnerabilities200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Total) {
-		toSerialize["total"] = o.Total
-	}
 	if o.Next != nil {
 		toSerialize["next"] = o.Next
 	}
@@ -198,6 +195,9 @@ func (o VulnerabilitiesListVulnerabilities200Response) ToMap() (map[string]inter
 	}
 	if o.Results != nil {
 		toSerialize["results"] = o.Results
+	}
+	if !IsNil(o.Total) {
+		toSerialize["total"] = o.Total
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -221,10 +221,10 @@ func (o *VulnerabilitiesListVulnerabilities200Response) UnmarshalJSON(data []byt
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "total")
 		delete(additionalProperties, "next")
 		delete(additionalProperties, "previous")
 		delete(additionalProperties, "results")
+		delete(additionalProperties, "total")
 		o.AdditionalProperties = additionalProperties
 	}
 

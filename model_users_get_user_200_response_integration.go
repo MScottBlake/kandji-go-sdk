@@ -22,8 +22,8 @@ var _ MappedNullable = &UsersGetUser200ResponseIntegration{}
 type UsersGetUser200ResponseIntegration struct {
 	Id *int32 `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Uuid *string `json:"uuid,omitempty"`
 	Type *string `json:"type,omitempty"`
+	Uuid *string `json:"uuid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -110,38 +110,6 @@ func (o *UsersGetUser200ResponseIntegration) SetName(v string) {
 	o.Name = &v
 }
 
-// GetUuid returns the Uuid field value if set, zero value otherwise.
-func (o *UsersGetUser200ResponseIntegration) GetUuid() string {
-	if o == nil || IsNil(o.Uuid) {
-		var ret string
-		return ret
-	}
-	return *o.Uuid
-}
-
-// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *UsersGetUser200ResponseIntegration) GetUuidOk() (*string, bool) {
-	if o == nil || IsNil(o.Uuid) {
-		return nil, false
-	}
-	return o.Uuid, true
-}
-
-// HasUuid returns a boolean if a field has been set.
-func (o *UsersGetUser200ResponseIntegration) HasUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
-// SetUuid gets a reference to the given string and assigns it to the Uuid field.
-func (o *UsersGetUser200ResponseIntegration) SetUuid(v string) {
-	o.Uuid = &v
-}
-
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *UsersGetUser200ResponseIntegration) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -174,6 +142,38 @@ func (o *UsersGetUser200ResponseIntegration) SetType(v string) {
 	o.Type = &v
 }
 
+// GetUuid returns the Uuid field value if set, zero value otherwise.
+func (o *UsersGetUser200ResponseIntegration) GetUuid() string {
+	if o == nil || IsNil(o.Uuid) {
+		var ret string
+		return ret
+	}
+	return *o.Uuid
+}
+
+// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UsersGetUser200ResponseIntegration) GetUuidOk() (*string, bool) {
+	if o == nil || IsNil(o.Uuid) {
+		return nil, false
+	}
+	return o.Uuid, true
+}
+
+// HasUuid returns a boolean if a field has been set.
+func (o *UsersGetUser200ResponseIntegration) HasUuid() bool {
+	if o != nil && !IsNil(o.Uuid) {
+		return true
+	}
+
+	return false
+}
+
+// SetUuid gets a reference to the given string and assigns it to the Uuid field.
+func (o *UsersGetUser200ResponseIntegration) SetUuid(v string) {
+	o.Uuid = &v
+}
+
 func (o UsersGetUser200ResponseIntegration) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -190,11 +190,11 @@ func (o UsersGetUser200ResponseIntegration) ToMap() (map[string]interface{}, err
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
-	if !IsNil(o.Uuid) {
-		toSerialize["uuid"] = o.Uuid
-	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Uuid) {
+		toSerialize["uuid"] = o.Uuid
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -220,8 +220,8 @@ func (o *UsersGetUser200ResponseIntegration) UnmarshalJSON(data []byte) (err err
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "name")
-		delete(additionalProperties, "uuid")
 		delete(additionalProperties, "type")
+		delete(additionalProperties, "uuid")
 		o.AdditionalProperties = additionalProperties
 	}
 

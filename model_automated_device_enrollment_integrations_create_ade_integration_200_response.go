@@ -20,25 +20,25 @@ var _ MappedNullable = &AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegratio
 
 // AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response struct for AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response
 type AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response struct {
-	Id *string `json:"id,omitempty"`
-	Blueprint *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint `json:"blueprint,omitempty"`
 	AccessTokenExpiry *string `json:"access_token_expiry,omitempty"`
+	AdminId *string `json:"admin_id,omitempty"`
+	Blueprint *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint `json:"blueprint,omitempty"`
+	DaysLeft *int32 `json:"days_left,omitempty"`
+	Defaults *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults `json:"defaults,omitempty"`
+	DeviceCounts *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts `json:"device_counts,omitempty"`
+	Id *string `json:"id,omitempty"`
+	LastDeviceSync interface{} `json:"last_device_sync,omitempty"`
+	OrgAddress *string `json:"org_address,omitempty"`
+	OrgEmail *string `json:"org_email,omitempty"`
+	OrgName *string `json:"org_name,omitempty"`
+	OrgPhone *string `json:"org_phone,omitempty"`
+	OrgType *string `json:"org_type,omitempty"`
 	ServerName *string `json:"server_name,omitempty"`
 	ServerUuid *string `json:"server_uuid,omitempty"`
-	AdminId *string `json:"admin_id,omitempty"`
-	OrgName *string `json:"org_name,omitempty"`
-	OrgEmail *string `json:"org_email,omitempty"`
-	OrgPhone *string `json:"org_phone,omitempty"`
-	OrgAddress *string `json:"org_address,omitempty"`
-	OrgType *string `json:"org_type,omitempty"`
-	StokenFileName *string `json:"stoken_file_name,omitempty"`
-	LastDeviceSync interface{} `json:"last_device_sync,omitempty"`
-	Defaults *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults `json:"defaults,omitempty"`
-	DaysLeft *int32 `json:"days_left,omitempty"`
 	Status *string `json:"status,omitempty"`
 	StatusReason interface{} `json:"status_reason,omitempty"`
 	StatusReceivedAt interface{} `json:"status_received_at,omitempty"`
-	DeviceCounts *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts `json:"device_counts,omitempty"`
+	StokenFileName *string `json:"stoken_file_name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -61,36 +61,68 @@ func NewAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseWith
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetId() string {
-	if o == nil || IsNil(o.Id) {
+// GetAccessTokenExpiry returns the AccessTokenExpiry field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAccessTokenExpiry() string {
+	if o == nil || IsNil(o.AccessTokenExpiry) {
 		var ret string
 		return ret
 	}
-	return *o.Id
+	return *o.AccessTokenExpiry
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetAccessTokenExpiryOk returns a tuple with the AccessTokenExpiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAccessTokenExpiryOk() (*string, bool) {
+	if o == nil || IsNil(o.AccessTokenExpiry) {
 		return nil, false
 	}
-	return o.Id, true
+	return o.AccessTokenExpiry, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
+// HasAccessTokenExpiry returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasAccessTokenExpiry() bool {
+	if o != nil && !IsNil(o.AccessTokenExpiry) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetId(v string) {
-	o.Id = &v
+// SetAccessTokenExpiry gets a reference to the given string and assigns it to the AccessTokenExpiry field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetAccessTokenExpiry(v string) {
+	o.AccessTokenExpiry = &v
+}
+
+// GetAdminId returns the AdminId field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAdminId() string {
+	if o == nil || IsNil(o.AdminId) {
+		var ret string
+		return ret
+	}
+	return *o.AdminId
+}
+
+// GetAdminIdOk returns a tuple with the AdminId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAdminIdOk() (*string, bool) {
+	if o == nil || IsNil(o.AdminId) {
+		return nil, false
+	}
+	return o.AdminId, true
+}
+
+// HasAdminId returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasAdminId() bool {
+	if o != nil && !IsNil(o.AdminId) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdminId gets a reference to the given string and assigns it to the AdminId field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetAdminId(v string) {
+	o.AdminId = &v
 }
 
 // GetBlueprint returns the Blueprint field value if set, zero value otherwise.
@@ -125,36 +157,325 @@ func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) S
 	o.Blueprint = &v
 }
 
-// GetAccessTokenExpiry returns the AccessTokenExpiry field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAccessTokenExpiry() string {
-	if o == nil || IsNil(o.AccessTokenExpiry) {
-		var ret string
+// GetDaysLeft returns the DaysLeft field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDaysLeft() int32 {
+	if o == nil || IsNil(o.DaysLeft) {
+		var ret int32
 		return ret
 	}
-	return *o.AccessTokenExpiry
+	return *o.DaysLeft
 }
 
-// GetAccessTokenExpiryOk returns a tuple with the AccessTokenExpiry field value if set, nil otherwise
+// GetDaysLeftOk returns a tuple with the DaysLeft field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAccessTokenExpiryOk() (*string, bool) {
-	if o == nil || IsNil(o.AccessTokenExpiry) {
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDaysLeftOk() (*int32, bool) {
+	if o == nil || IsNil(o.DaysLeft) {
 		return nil, false
 	}
-	return o.AccessTokenExpiry, true
+	return o.DaysLeft, true
 }
 
-// HasAccessTokenExpiry returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasAccessTokenExpiry() bool {
-	if o != nil && !IsNil(o.AccessTokenExpiry) {
+// HasDaysLeft returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasDaysLeft() bool {
+	if o != nil && !IsNil(o.DaysLeft) {
 		return true
 	}
 
 	return false
 }
 
-// SetAccessTokenExpiry gets a reference to the given string and assigns it to the AccessTokenExpiry field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetAccessTokenExpiry(v string) {
-	o.AccessTokenExpiry = &v
+// SetDaysLeft gets a reference to the given int32 and assigns it to the DaysLeft field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetDaysLeft(v int32) {
+	o.DaysLeft = &v
+}
+
+// GetDefaults returns the Defaults field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDefaults() AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults {
+	if o == nil || IsNil(o.Defaults) {
+		var ret AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults
+		return ret
+	}
+	return *o.Defaults
+}
+
+// GetDefaultsOk returns a tuple with the Defaults field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDefaultsOk() (*AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults, bool) {
+	if o == nil || IsNil(o.Defaults) {
+		return nil, false
+	}
+	return o.Defaults, true
+}
+
+// HasDefaults returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasDefaults() bool {
+	if o != nil && !IsNil(o.Defaults) {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaults gets a reference to the given AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults and assigns it to the Defaults field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetDefaults(v AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults) {
+	o.Defaults = &v
+}
+
+// GetDeviceCounts returns the DeviceCounts field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDeviceCounts() AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts {
+	if o == nil || IsNil(o.DeviceCounts) {
+		var ret AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts
+		return ret
+	}
+	return *o.DeviceCounts
+}
+
+// GetDeviceCountsOk returns a tuple with the DeviceCounts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDeviceCountsOk() (*AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts, bool) {
+	if o == nil || IsNil(o.DeviceCounts) {
+		return nil, false
+	}
+	return o.DeviceCounts, true
+}
+
+// HasDeviceCounts returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasDeviceCounts() bool {
+	if o != nil && !IsNil(o.DeviceCounts) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCounts gets a reference to the given AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts and assigns it to the DeviceCounts field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetDeviceCounts(v AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts) {
+	o.DeviceCounts = &v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetId(v string) {
+	o.Id = &v
+}
+
+// GetLastDeviceSync returns the LastDeviceSync field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetLastDeviceSync() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.LastDeviceSync
+}
+
+// GetLastDeviceSyncOk returns a tuple with the LastDeviceSync field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetLastDeviceSyncOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.LastDeviceSync) {
+		return nil, false
+	}
+	return &o.LastDeviceSync, true
+}
+
+// HasLastDeviceSync returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasLastDeviceSync() bool {
+	if o != nil && !IsNil(o.LastDeviceSync) {
+		return true
+	}
+
+	return false
+}
+
+// SetLastDeviceSync gets a reference to the given interface{} and assigns it to the LastDeviceSync field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetLastDeviceSync(v interface{}) {
+	o.LastDeviceSync = v
+}
+
+// GetOrgAddress returns the OrgAddress field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgAddress() string {
+	if o == nil || IsNil(o.OrgAddress) {
+		var ret string
+		return ret
+	}
+	return *o.OrgAddress
+}
+
+// GetOrgAddressOk returns a tuple with the OrgAddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgAddressOk() (*string, bool) {
+	if o == nil || IsNil(o.OrgAddress) {
+		return nil, false
+	}
+	return o.OrgAddress, true
+}
+
+// HasOrgAddress returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgAddress() bool {
+	if o != nil && !IsNil(o.OrgAddress) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrgAddress gets a reference to the given string and assigns it to the OrgAddress field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgAddress(v string) {
+	o.OrgAddress = &v
+}
+
+// GetOrgEmail returns the OrgEmail field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgEmail() string {
+	if o == nil || IsNil(o.OrgEmail) {
+		var ret string
+		return ret
+	}
+	return *o.OrgEmail
+}
+
+// GetOrgEmailOk returns a tuple with the OrgEmail field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgEmailOk() (*string, bool) {
+	if o == nil || IsNil(o.OrgEmail) {
+		return nil, false
+	}
+	return o.OrgEmail, true
+}
+
+// HasOrgEmail returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgEmail() bool {
+	if o != nil && !IsNil(o.OrgEmail) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrgEmail gets a reference to the given string and assigns it to the OrgEmail field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgEmail(v string) {
+	o.OrgEmail = &v
+}
+
+// GetOrgName returns the OrgName field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgName() string {
+	if o == nil || IsNil(o.OrgName) {
+		var ret string
+		return ret
+	}
+	return *o.OrgName
+}
+
+// GetOrgNameOk returns a tuple with the OrgName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgNameOk() (*string, bool) {
+	if o == nil || IsNil(o.OrgName) {
+		return nil, false
+	}
+	return o.OrgName, true
+}
+
+// HasOrgName returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgName() bool {
+	if o != nil && !IsNil(o.OrgName) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrgName gets a reference to the given string and assigns it to the OrgName field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgName(v string) {
+	o.OrgName = &v
+}
+
+// GetOrgPhone returns the OrgPhone field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgPhone() string {
+	if o == nil || IsNil(o.OrgPhone) {
+		var ret string
+		return ret
+	}
+	return *o.OrgPhone
+}
+
+// GetOrgPhoneOk returns a tuple with the OrgPhone field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgPhoneOk() (*string, bool) {
+	if o == nil || IsNil(o.OrgPhone) {
+		return nil, false
+	}
+	return o.OrgPhone, true
+}
+
+// HasOrgPhone returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgPhone() bool {
+	if o != nil && !IsNil(o.OrgPhone) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrgPhone gets a reference to the given string and assigns it to the OrgPhone field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgPhone(v string) {
+	o.OrgPhone = &v
+}
+
+// GetOrgType returns the OrgType field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgType() string {
+	if o == nil || IsNil(o.OrgType) {
+		var ret string
+		return ret
+	}
+	return *o.OrgType
+}
+
+// GetOrgTypeOk returns a tuple with the OrgType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.OrgType) {
+		return nil, false
+	}
+	return o.OrgType, true
+}
+
+// HasOrgType returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgType() bool {
+	if o != nil && !IsNil(o.OrgType) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrgType gets a reference to the given string and assigns it to the OrgType field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgType(v string) {
+	o.OrgType = &v
 }
 
 // GetServerName returns the ServerName field value if set, zero value otherwise.
@@ -219,327 +540,6 @@ func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) H
 // SetServerUuid gets a reference to the given string and assigns it to the ServerUuid field.
 func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetServerUuid(v string) {
 	o.ServerUuid = &v
-}
-
-// GetAdminId returns the AdminId field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAdminId() string {
-	if o == nil || IsNil(o.AdminId) {
-		var ret string
-		return ret
-	}
-	return *o.AdminId
-}
-
-// GetAdminIdOk returns a tuple with the AdminId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetAdminIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AdminId) {
-		return nil, false
-	}
-	return o.AdminId, true
-}
-
-// HasAdminId returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasAdminId() bool {
-	if o != nil && !IsNil(o.AdminId) {
-		return true
-	}
-
-	return false
-}
-
-// SetAdminId gets a reference to the given string and assigns it to the AdminId field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetAdminId(v string) {
-	o.AdminId = &v
-}
-
-// GetOrgName returns the OrgName field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgName() string {
-	if o == nil || IsNil(o.OrgName) {
-		var ret string
-		return ret
-	}
-	return *o.OrgName
-}
-
-// GetOrgNameOk returns a tuple with the OrgName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgNameOk() (*string, bool) {
-	if o == nil || IsNil(o.OrgName) {
-		return nil, false
-	}
-	return o.OrgName, true
-}
-
-// HasOrgName returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgName() bool {
-	if o != nil && !IsNil(o.OrgName) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrgName gets a reference to the given string and assigns it to the OrgName field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgName(v string) {
-	o.OrgName = &v
-}
-
-// GetOrgEmail returns the OrgEmail field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgEmail() string {
-	if o == nil || IsNil(o.OrgEmail) {
-		var ret string
-		return ret
-	}
-	return *o.OrgEmail
-}
-
-// GetOrgEmailOk returns a tuple with the OrgEmail field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgEmailOk() (*string, bool) {
-	if o == nil || IsNil(o.OrgEmail) {
-		return nil, false
-	}
-	return o.OrgEmail, true
-}
-
-// HasOrgEmail returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgEmail() bool {
-	if o != nil && !IsNil(o.OrgEmail) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrgEmail gets a reference to the given string and assigns it to the OrgEmail field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgEmail(v string) {
-	o.OrgEmail = &v
-}
-
-// GetOrgPhone returns the OrgPhone field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgPhone() string {
-	if o == nil || IsNil(o.OrgPhone) {
-		var ret string
-		return ret
-	}
-	return *o.OrgPhone
-}
-
-// GetOrgPhoneOk returns a tuple with the OrgPhone field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgPhoneOk() (*string, bool) {
-	if o == nil || IsNil(o.OrgPhone) {
-		return nil, false
-	}
-	return o.OrgPhone, true
-}
-
-// HasOrgPhone returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgPhone() bool {
-	if o != nil && !IsNil(o.OrgPhone) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrgPhone gets a reference to the given string and assigns it to the OrgPhone field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgPhone(v string) {
-	o.OrgPhone = &v
-}
-
-// GetOrgAddress returns the OrgAddress field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgAddress() string {
-	if o == nil || IsNil(o.OrgAddress) {
-		var ret string
-		return ret
-	}
-	return *o.OrgAddress
-}
-
-// GetOrgAddressOk returns a tuple with the OrgAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.OrgAddress) {
-		return nil, false
-	}
-	return o.OrgAddress, true
-}
-
-// HasOrgAddress returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgAddress() bool {
-	if o != nil && !IsNil(o.OrgAddress) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrgAddress gets a reference to the given string and assigns it to the OrgAddress field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgAddress(v string) {
-	o.OrgAddress = &v
-}
-
-// GetOrgType returns the OrgType field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgType() string {
-	if o == nil || IsNil(o.OrgType) {
-		var ret string
-		return ret
-	}
-	return *o.OrgType
-}
-
-// GetOrgTypeOk returns a tuple with the OrgType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetOrgTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.OrgType) {
-		return nil, false
-	}
-	return o.OrgType, true
-}
-
-// HasOrgType returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasOrgType() bool {
-	if o != nil && !IsNil(o.OrgType) {
-		return true
-	}
-
-	return false
-}
-
-// SetOrgType gets a reference to the given string and assigns it to the OrgType field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetOrgType(v string) {
-	o.OrgType = &v
-}
-
-// GetStokenFileName returns the StokenFileName field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetStokenFileName() string {
-	if o == nil || IsNil(o.StokenFileName) {
-		var ret string
-		return ret
-	}
-	return *o.StokenFileName
-}
-
-// GetStokenFileNameOk returns a tuple with the StokenFileName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetStokenFileNameOk() (*string, bool) {
-	if o == nil || IsNil(o.StokenFileName) {
-		return nil, false
-	}
-	return o.StokenFileName, true
-}
-
-// HasStokenFileName returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasStokenFileName() bool {
-	if o != nil && !IsNil(o.StokenFileName) {
-		return true
-	}
-
-	return false
-}
-
-// SetStokenFileName gets a reference to the given string and assigns it to the StokenFileName field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetStokenFileName(v string) {
-	o.StokenFileName = &v
-}
-
-// GetLastDeviceSync returns the LastDeviceSync field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetLastDeviceSync() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.LastDeviceSync
-}
-
-// GetLastDeviceSyncOk returns a tuple with the LastDeviceSync field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetLastDeviceSyncOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.LastDeviceSync) {
-		return nil, false
-	}
-	return &o.LastDeviceSync, true
-}
-
-// HasLastDeviceSync returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasLastDeviceSync() bool {
-	if o != nil && !IsNil(o.LastDeviceSync) {
-		return true
-	}
-
-	return false
-}
-
-// SetLastDeviceSync gets a reference to the given interface{} and assigns it to the LastDeviceSync field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetLastDeviceSync(v interface{}) {
-	o.LastDeviceSync = v
-}
-
-// GetDefaults returns the Defaults field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDefaults() AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults {
-	if o == nil || IsNil(o.Defaults) {
-		var ret AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults
-		return ret
-	}
-	return *o.Defaults
-}
-
-// GetDefaultsOk returns a tuple with the Defaults field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDefaultsOk() (*AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults, bool) {
-	if o == nil || IsNil(o.Defaults) {
-		return nil, false
-	}
-	return o.Defaults, true
-}
-
-// HasDefaults returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasDefaults() bool {
-	if o != nil && !IsNil(o.Defaults) {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaults gets a reference to the given AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults and assigns it to the Defaults field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetDefaults(v AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDefaults) {
-	o.Defaults = &v
-}
-
-// GetDaysLeft returns the DaysLeft field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDaysLeft() int32 {
-	if o == nil || IsNil(o.DaysLeft) {
-		var ret int32
-		return ret
-	}
-	return *o.DaysLeft
-}
-
-// GetDaysLeftOk returns a tuple with the DaysLeft field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDaysLeftOk() (*int32, bool) {
-	if o == nil || IsNil(o.DaysLeft) {
-		return nil, false
-	}
-	return o.DaysLeft, true
-}
-
-// HasDaysLeft returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasDaysLeft() bool {
-	if o != nil && !IsNil(o.DaysLeft) {
-		return true
-	}
-
-	return false
-}
-
-// SetDaysLeft gets a reference to the given int32 and assigns it to the DaysLeft field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetDaysLeft(v int32) {
-	o.DaysLeft = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -640,36 +640,36 @@ func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) S
 	o.StatusReceivedAt = v
 }
 
-// GetDeviceCounts returns the DeviceCounts field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDeviceCounts() AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts {
-	if o == nil || IsNil(o.DeviceCounts) {
-		var ret AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts
+// GetStokenFileName returns the StokenFileName field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetStokenFileName() string {
+	if o == nil || IsNil(o.StokenFileName) {
+		var ret string
 		return ret
 	}
-	return *o.DeviceCounts
+	return *o.StokenFileName
 }
 
-// GetDeviceCountsOk returns a tuple with the DeviceCounts field value if set, nil otherwise
+// GetStokenFileNameOk returns a tuple with the StokenFileName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetDeviceCountsOk() (*AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts, bool) {
-	if o == nil || IsNil(o.DeviceCounts) {
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) GetStokenFileNameOk() (*string, bool) {
+	if o == nil || IsNil(o.StokenFileName) {
 		return nil, false
 	}
-	return o.DeviceCounts, true
+	return o.StokenFileName, true
 }
 
-// HasDeviceCounts returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasDeviceCounts() bool {
-	if o != nil && !IsNil(o.DeviceCounts) {
+// HasStokenFileName returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) HasStokenFileName() bool {
+	if o != nil && !IsNil(o.StokenFileName) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeviceCounts gets a reference to the given AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts and assigns it to the DeviceCounts field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetDeviceCounts(v AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseDeviceCounts) {
-	o.DeviceCounts = &v
+// SetStokenFileName gets a reference to the given string and assigns it to the StokenFileName field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) SetStokenFileName(v string) {
+	o.StokenFileName = &v
 }
 
 func (o AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) MarshalJSON() ([]byte, error) {
@@ -682,50 +682,50 @@ func (o AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) Ma
 
 func (o AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if !IsNil(o.AccessTokenExpiry) {
+		toSerialize["access_token_expiry"] = o.AccessTokenExpiry
+	}
+	if !IsNil(o.AdminId) {
+		toSerialize["admin_id"] = o.AdminId
 	}
 	if !IsNil(o.Blueprint) {
 		toSerialize["blueprint"] = o.Blueprint
 	}
-	if !IsNil(o.AccessTokenExpiry) {
-		toSerialize["access_token_expiry"] = o.AccessTokenExpiry
+	if !IsNil(o.DaysLeft) {
+		toSerialize["days_left"] = o.DaysLeft
+	}
+	if !IsNil(o.Defaults) {
+		toSerialize["defaults"] = o.Defaults
+	}
+	if !IsNil(o.DeviceCounts) {
+		toSerialize["device_counts"] = o.DeviceCounts
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if o.LastDeviceSync != nil {
+		toSerialize["last_device_sync"] = o.LastDeviceSync
+	}
+	if !IsNil(o.OrgAddress) {
+		toSerialize["org_address"] = o.OrgAddress
+	}
+	if !IsNil(o.OrgEmail) {
+		toSerialize["org_email"] = o.OrgEmail
+	}
+	if !IsNil(o.OrgName) {
+		toSerialize["org_name"] = o.OrgName
+	}
+	if !IsNil(o.OrgPhone) {
+		toSerialize["org_phone"] = o.OrgPhone
+	}
+	if !IsNil(o.OrgType) {
+		toSerialize["org_type"] = o.OrgType
 	}
 	if !IsNil(o.ServerName) {
 		toSerialize["server_name"] = o.ServerName
 	}
 	if !IsNil(o.ServerUuid) {
 		toSerialize["server_uuid"] = o.ServerUuid
-	}
-	if !IsNil(o.AdminId) {
-		toSerialize["admin_id"] = o.AdminId
-	}
-	if !IsNil(o.OrgName) {
-		toSerialize["org_name"] = o.OrgName
-	}
-	if !IsNil(o.OrgEmail) {
-		toSerialize["org_email"] = o.OrgEmail
-	}
-	if !IsNil(o.OrgPhone) {
-		toSerialize["org_phone"] = o.OrgPhone
-	}
-	if !IsNil(o.OrgAddress) {
-		toSerialize["org_address"] = o.OrgAddress
-	}
-	if !IsNil(o.OrgType) {
-		toSerialize["org_type"] = o.OrgType
-	}
-	if !IsNil(o.StokenFileName) {
-		toSerialize["stoken_file_name"] = o.StokenFileName
-	}
-	if o.LastDeviceSync != nil {
-		toSerialize["last_device_sync"] = o.LastDeviceSync
-	}
-	if !IsNil(o.Defaults) {
-		toSerialize["defaults"] = o.Defaults
-	}
-	if !IsNil(o.DaysLeft) {
-		toSerialize["days_left"] = o.DaysLeft
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
@@ -736,8 +736,8 @@ func (o AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) To
 	if o.StatusReceivedAt != nil {
 		toSerialize["status_received_at"] = o.StatusReceivedAt
 	}
-	if !IsNil(o.DeviceCounts) {
-		toSerialize["device_counts"] = o.DeviceCounts
+	if !IsNil(o.StokenFileName) {
+		toSerialize["stoken_file_name"] = o.StokenFileName
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -761,25 +761,25 @@ func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response) U
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "blueprint")
 		delete(additionalProperties, "access_token_expiry")
+		delete(additionalProperties, "admin_id")
+		delete(additionalProperties, "blueprint")
+		delete(additionalProperties, "days_left")
+		delete(additionalProperties, "defaults")
+		delete(additionalProperties, "device_counts")
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "last_device_sync")
+		delete(additionalProperties, "org_address")
+		delete(additionalProperties, "org_email")
+		delete(additionalProperties, "org_name")
+		delete(additionalProperties, "org_phone")
+		delete(additionalProperties, "org_type")
 		delete(additionalProperties, "server_name")
 		delete(additionalProperties, "server_uuid")
-		delete(additionalProperties, "admin_id")
-		delete(additionalProperties, "org_name")
-		delete(additionalProperties, "org_email")
-		delete(additionalProperties, "org_phone")
-		delete(additionalProperties, "org_address")
-		delete(additionalProperties, "org_type")
-		delete(additionalProperties, "stoken_file_name")
-		delete(additionalProperties, "last_device_sync")
-		delete(additionalProperties, "defaults")
-		delete(additionalProperties, "days_left")
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "status_reason")
 		delete(additionalProperties, "status_received_at")
-		delete(additionalProperties, "device_counts")
+		delete(additionalProperties, "stoken_file_name")
 		o.AdditionalProperties = additionalProperties
 	}
 

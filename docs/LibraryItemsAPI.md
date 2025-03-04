@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetLibraryItemActivity
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response GetLibraryItemActivity(ctx, libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
+> BlueprintsListBlueprints200Response GetLibraryItemActivity(ctx, libraryItemId).ActivityType(activityType).UserId(userId).UserEmail(userEmail).Limit(limit).Offset(offset).Execute()
 
 Get Library Item Activity
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.GetLibraryItemActivity``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLibraryItemActivity`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `GetLibraryItemActivity`: BlueprintsListBlueprints200Response
 	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.GetLibraryItemActivity`: %v\n", resp)
 }
 ```
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## GetLibraryItemStatuses
 
-> AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response GetLibraryItemStatuses(ctx, libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
+> BlueprintsListBlueprints200Response GetLibraryItemStatuses(ctx, libraryItemId).ComputerId(computerId).Limit(limit).Offset(offset).Execute()
 
 Get Library Item Statuses
 
@@ -122,7 +122,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryItemsAPI.GetLibraryItemStatuses``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLibraryItemStatuses`: AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+	// response from `GetLibraryItemStatuses`: BlueprintsListBlueprints200Response
 	fmt.Fprintf(os.Stdout, "Response from `LibraryItemsAPI.GetLibraryItemStatuses`: %v\n", resp)
 }
 ```
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response**](AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response.md)
+[**BlueprintsListBlueprints200Response**](BlueprintsListBlueprints200Response.md)
 
 ### Authorization
 

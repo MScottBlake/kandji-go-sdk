@@ -20,9 +20,9 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseHardwareOver
 
 // DeviceInformationGetDeviceDetails200ResponseHardwareOverview struct for DeviceInformationGetDeviceDetails200ResponseHardwareOverview
 type DeviceInformationGetDeviceDetails200ResponseHardwareOverview struct {
-	Uuid *string `json:"uuid,omitempty"`
-	SerialNumber *string `json:"serial_number,omitempty"`
 	ModelIdentifier *string `json:"model_identifier,omitempty"`
+	SerialNumber *string `json:"serial_number,omitempty"`
+	Uuid *string `json:"uuid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,70 +43,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseHardwareOverview() *DeviceIn
 func NewDeviceInformationGetDeviceDetails200ResponseHardwareOverviewWithDefaults() *DeviceInformationGetDeviceDetails200ResponseHardwareOverview {
 	this := DeviceInformationGetDeviceDetails200ResponseHardwareOverview{}
 	return &this
-}
-
-// GetUuid returns the Uuid field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuid() string {
-	if o == nil || IsNil(o.Uuid) {
-		var ret string
-		return ret
-	}
-	return *o.Uuid
-}
-
-// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuidOk() (*string, bool) {
-	if o == nil || IsNil(o.Uuid) {
-		return nil, false
-	}
-	return o.Uuid, true
-}
-
-// HasUuid returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasUuid() bool {
-	if o != nil && !IsNil(o.Uuid) {
-		return true
-	}
-
-	return false
-}
-
-// SetUuid gets a reference to the given string and assigns it to the Uuid field.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetUuid(v string) {
-	o.Uuid = &v
-}
-
-// GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetSerialNumber() string {
-	if o == nil || IsNil(o.SerialNumber) {
-		var ret string
-		return ret
-	}
-	return *o.SerialNumber
-}
-
-// GetSerialNumberOk returns a tuple with the SerialNumber field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetSerialNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.SerialNumber) {
-		return nil, false
-	}
-	return o.SerialNumber, true
-}
-
-// HasSerialNumber returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasSerialNumber() bool {
-	if o != nil && !IsNil(o.SerialNumber) {
-		return true
-	}
-
-	return false
-}
-
-// SetSerialNumber gets a reference to the given string and assigns it to the SerialNumber field.
-func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetSerialNumber(v string) {
-	o.SerialNumber = &v
 }
 
 // GetModelIdentifier returns the ModelIdentifier field value if set, zero value otherwise.
@@ -141,6 +77,70 @@ func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetModelI
 	o.ModelIdentifier = &v
 }
 
+// GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetSerialNumber() string {
+	if o == nil || IsNil(o.SerialNumber) {
+		var ret string
+		return ret
+	}
+	return *o.SerialNumber
+}
+
+// GetSerialNumberOk returns a tuple with the SerialNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetSerialNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.SerialNumber) {
+		return nil, false
+	}
+	return o.SerialNumber, true
+}
+
+// HasSerialNumber returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasSerialNumber() bool {
+	if o != nil && !IsNil(o.SerialNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetSerialNumber gets a reference to the given string and assigns it to the SerialNumber field.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetSerialNumber(v string) {
+	o.SerialNumber = &v
+}
+
+// GetUuid returns the Uuid field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuid() string {
+	if o == nil || IsNil(o.Uuid) {
+		var ret string
+		return ret
+	}
+	return *o.Uuid
+}
+
+// GetUuidOk returns a tuple with the Uuid field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) GetUuidOk() (*string, bool) {
+	if o == nil || IsNil(o.Uuid) {
+		return nil, false
+	}
+	return o.Uuid, true
+}
+
+// HasUuid returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) HasUuid() bool {
+	if o != nil && !IsNil(o.Uuid) {
+		return true
+	}
+
+	return false
+}
+
+// SetUuid gets a reference to the given string and assigns it to the Uuid field.
+func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) SetUuid(v string) {
+	o.Uuid = &v
+}
+
 func (o DeviceInformationGetDeviceDetails200ResponseHardwareOverview) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -151,14 +151,14 @@ func (o DeviceInformationGetDeviceDetails200ResponseHardwareOverview) MarshalJSO
 
 func (o DeviceInformationGetDeviceDetails200ResponseHardwareOverview) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Uuid) {
-		toSerialize["uuid"] = o.Uuid
+	if !IsNil(o.ModelIdentifier) {
+		toSerialize["model_identifier"] = o.ModelIdentifier
 	}
 	if !IsNil(o.SerialNumber) {
 		toSerialize["serial_number"] = o.SerialNumber
 	}
-	if !IsNil(o.ModelIdentifier) {
-		toSerialize["model_identifier"] = o.ModelIdentifier
+	if !IsNil(o.Uuid) {
+		toSerialize["uuid"] = o.Uuid
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -182,9 +182,9 @@ func (o *DeviceInformationGetDeviceDetails200ResponseHardwareOverview) Unmarshal
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "uuid")
-		delete(additionalProperties, "serial_number")
 		delete(additionalProperties, "model_identifier")
+		delete(additionalProperties, "serial_number")
+		delete(additionalProperties, "uuid")
 		o.AdditionalProperties = additionalProperties
 	}
 

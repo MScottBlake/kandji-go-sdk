@@ -111,8 +111,8 @@ type AutomatedDeviceEnrollmentIntegrationsAPI interface {
 	ListAdeDevices(ctx context.Context) ApiListAdeDevicesRequest
 
 	// ListAdeDevicesExecute executes the request
-	//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-	ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error)
+	//  @return BlueprintsListBlueprints200Response
+	ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*BlueprintsListBlueprints200Response, *http.Response, error)
 
 	/*
 	ListAdeIntegrations List ADE integrations
@@ -199,18 +199,13 @@ type ApiCreateAdeIntegrationRequest struct {
 	ctx context.Context
 	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	blueprintId *string
-	phone *string
 	email *string
 	file *os.File
+	phone *string
 }
 
 func (r ApiCreateAdeIntegrationRequest) BlueprintId(blueprintId string) ApiCreateAdeIntegrationRequest {
 	r.blueprintId = &blueprintId
-	return r
-}
-
-func (r ApiCreateAdeIntegrationRequest) Phone(phone string) ApiCreateAdeIntegrationRequest {
-	r.phone = &phone
 	return r
 }
 
@@ -222,6 +217,11 @@ func (r ApiCreateAdeIntegrationRequest) Email(email string) ApiCreateAdeIntegrat
 // This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
 func (r ApiCreateAdeIntegrationRequest) File(file *os.File) ApiCreateAdeIntegrationRequest {
 	r.file = file
+	return r
+}
+
+func (r ApiCreateAdeIntegrationRequest) Phone(phone string) ApiCreateAdeIntegrationRequest {
+	r.phone = &phone
 	return r
 }
 
@@ -268,14 +268,14 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationEx
 	if r.blueprintId == nil {
 		return localVarReturnValue, nil, reportError("blueprintId is required and must be specified")
 	}
-	if r.phone == nil {
-		return localVarReturnValue, nil, reportError("phone is required and must be specified")
-	}
 	if r.email == nil {
 		return localVarReturnValue, nil, reportError("email is required and must be specified")
 	}
 	if r.file == nil {
 		return localVarReturnValue, nil, reportError("file is required and must be specified")
+	}
+	if r.phone == nil {
+		return localVarReturnValue, nil, reportError("phone is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -296,7 +296,6 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationEx
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "blueprint_id", r.blueprintId, "", "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "phone", r.phone, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "email", r.email, "", "")
 	var fileLocalVarFormFileName string
 	var fileLocalVarFileName     string
@@ -313,6 +312,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) CreateAdeIntegrationEx
 		fileLocalVarFile.Close()
 		formFiles = append(formFiles, formFile{fileBytes: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
 	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "phone", r.phone, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -808,7 +808,7 @@ func (r ApiListAdeDevicesRequest) Page(page string) ApiListAdeDevicesRequest {
 	return r
 }
 
-func (r ApiListAdeDevicesRequest) Execute() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+func (r ApiListAdeDevicesRequest) Execute() (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	return r.ApiService.ListAdeDevicesExecute(r)
 }
 
@@ -828,13 +828,13 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevices(ctx con
 }
 
 // Execute executes the request
-//  @return AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, *http.Response, error) {
+//  @return BlueprintsListBlueprints200Response
+func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) ListAdeDevicesExecute(r ApiListAdeDevicesRequest) (*BlueprintsListBlueprints200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
+		localVarReturnValue  *BlueprintsListBlueprints200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomatedDeviceEnrollmentIntegrationsAPIService.ListAdeDevices")
@@ -1147,18 +1147,13 @@ type ApiRenewAdeIntegrationRequest struct {
 	ApiService AutomatedDeviceEnrollmentIntegrationsAPI
 	adeTokenId string
 	blueprintId *string
-	phone *string
 	email *string
 	file *os.File
+	phone *string
 }
 
 func (r ApiRenewAdeIntegrationRequest) BlueprintId(blueprintId string) ApiRenewAdeIntegrationRequest {
 	r.blueprintId = &blueprintId
-	return r
-}
-
-func (r ApiRenewAdeIntegrationRequest) Phone(phone string) ApiRenewAdeIntegrationRequest {
-	r.phone = &phone
 	return r
 }
 
@@ -1170,6 +1165,11 @@ func (r ApiRenewAdeIntegrationRequest) Email(email string) ApiRenewAdeIntegratio
 // This is the MDM server token file(.p7m) download from ABM. Once downloaded from ABM, the file can be uploaded via API.
 func (r ApiRenewAdeIntegrationRequest) File(file *os.File) ApiRenewAdeIntegrationRequest {
 	r.file = file
+	return r
+}
+
+func (r ApiRenewAdeIntegrationRequest) Phone(phone string) ApiRenewAdeIntegrationRequest {
+	r.phone = &phone
 	return r
 }
 
@@ -1217,14 +1217,14 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegrationExe
 	if r.blueprintId == nil {
 		return nil, reportError("blueprintId is required and must be specified")
 	}
-	if r.phone == nil {
-		return nil, reportError("phone is required and must be specified")
-	}
 	if r.email == nil {
 		return nil, reportError("email is required and must be specified")
 	}
 	if r.file == nil {
 		return nil, reportError("file is required and must be specified")
+	}
+	if r.phone == nil {
+		return nil, reportError("phone is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1245,7 +1245,6 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegrationExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	parameterAddToHeaderOrQuery(localVarFormParams, "blueprint_id", r.blueprintId, "", "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "phone", r.phone, "", "")
 	parameterAddToHeaderOrQuery(localVarFormParams, "email", r.email, "", "")
 	var fileLocalVarFormFileName string
 	var fileLocalVarFileName     string
@@ -1262,6 +1261,7 @@ func (a *AutomatedDeviceEnrollmentIntegrationsAPIService) RenewAdeIntegrationExe
 		fileLocalVarFile.Close()
 		formFiles = append(formFiles, formFile{fileBytes: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
 	}
+	parameterAddToHeaderOrQuery(localVarFormParams, "phone", r.phone, "", "")
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err

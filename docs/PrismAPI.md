@@ -1096,7 +1096,7 @@ import (
 )
 
 func main() {
-	body := "{"blueprint_ids":["string","string","string"],"device_families":["Mac"],"category":"device_information","filter":{},"sort_by":"device__nam"}" // string |  (optional)
+	body := "{"blueprint_ids":["string","string","string"],"category":"device_information","device_families":["Mac"],"filter":{},"sort_by":"device__nam"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

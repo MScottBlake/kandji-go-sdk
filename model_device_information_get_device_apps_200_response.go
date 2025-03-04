@@ -20,8 +20,8 @@ var _ MappedNullable = &DeviceInformationGetDeviceApps200Response{}
 
 // DeviceInformationGetDeviceApps200Response struct for DeviceInformationGetDeviceApps200Response
 type DeviceInformationGetDeviceApps200Response struct {
-	DeviceId *string `json:"device_id,omitempty"`
 	Apps interface{} `json:"apps,omitempty"`
+	DeviceId *string `json:"device_id,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,38 +42,6 @@ func NewDeviceInformationGetDeviceApps200Response() *DeviceInformationGetDeviceA
 func NewDeviceInformationGetDeviceApps200ResponseWithDefaults() *DeviceInformationGetDeviceApps200Response {
 	this := DeviceInformationGetDeviceApps200Response{}
 	return &this
-}
-
-// GetDeviceId returns the DeviceId field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceApps200Response) GetDeviceId() string {
-	if o == nil || IsNil(o.DeviceId) {
-		var ret string
-		return ret
-	}
-	return *o.DeviceId
-}
-
-// GetDeviceIdOk returns a tuple with the DeviceId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceApps200Response) GetDeviceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DeviceId) {
-		return nil, false
-	}
-	return o.DeviceId, true
-}
-
-// HasDeviceId returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceApps200Response) HasDeviceId() bool {
-	if o != nil && !IsNil(o.DeviceId) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceId gets a reference to the given string and assigns it to the DeviceId field.
-func (o *DeviceInformationGetDeviceApps200Response) SetDeviceId(v string) {
-	o.DeviceId = &v
 }
 
 // GetApps returns the Apps field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -109,6 +77,38 @@ func (o *DeviceInformationGetDeviceApps200Response) SetApps(v interface{}) {
 	o.Apps = v
 }
 
+// GetDeviceId returns the DeviceId field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceApps200Response) GetDeviceId() string {
+	if o == nil || IsNil(o.DeviceId) {
+		var ret string
+		return ret
+	}
+	return *o.DeviceId
+}
+
+// GetDeviceIdOk returns a tuple with the DeviceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceApps200Response) GetDeviceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.DeviceId) {
+		return nil, false
+	}
+	return o.DeviceId, true
+}
+
+// HasDeviceId returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceApps200Response) HasDeviceId() bool {
+	if o != nil && !IsNil(o.DeviceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceId gets a reference to the given string and assigns it to the DeviceId field.
+func (o *DeviceInformationGetDeviceApps200Response) SetDeviceId(v string) {
+	o.DeviceId = &v
+}
+
 func (o DeviceInformationGetDeviceApps200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -119,11 +119,11 @@ func (o DeviceInformationGetDeviceApps200Response) MarshalJSON() ([]byte, error)
 
 func (o DeviceInformationGetDeviceApps200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DeviceId) {
-		toSerialize["device_id"] = o.DeviceId
-	}
 	if o.Apps != nil {
 		toSerialize["apps"] = o.Apps
+	}
+	if !IsNil(o.DeviceId) {
+		toSerialize["device_id"] = o.DeviceId
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -147,8 +147,8 @@ func (o *DeviceInformationGetDeviceApps200Response) UnmarshalJSON(data []byte) (
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_id")
 		delete(additionalProperties, "apps")
+		delete(additionalProperties, "device_id")
 		o.AdditionalProperties = additionalProperties
 	}
 

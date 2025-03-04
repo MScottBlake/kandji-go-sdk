@@ -250,7 +250,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"PIN":"123456","PreserveDataPlan":true,"DisallowProximitySetup":false,"ReturnToService":{"Enabled":false,"ProfileId":""}}" // string |  (optional)
+	body := "{"DisallowProximitySetup":false,"PIN":"123456","PreserveDataPlan":true,"ReturnToService":{"Enabled":false,"ProfileId":""}}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -672,7 +672,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"RebuildKernelCache":false,"NotifyUser":false}" // string |  (optional)
+	body := "{"NotifyUser":false,"RebuildKernelCache":false}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

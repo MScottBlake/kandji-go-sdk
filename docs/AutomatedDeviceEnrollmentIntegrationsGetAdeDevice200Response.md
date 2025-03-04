@@ -4,28 +4,28 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BlueprintId** | Pointer to **string** |  | [optional] 
-**MdmDevice** | Pointer to [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice.md) |  | [optional] 
-**UserId** | Pointer to **string** |  | [optional] 
-**DepAccount** | Pointer to [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount.md) |  | [optional] 
 **AssetTag** | Pointer to **string** |  | [optional] 
+**AssignmentStatusReceivedAt** | Pointer to **string** |  | [optional] 
+**Blueprint** | Pointer to **string** |  | [optional] 
+**BlueprintId** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
+**DepAccount** | Pointer to [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DeviceAssignedBy** | Pointer to **string** |  | [optional] 
 **DeviceAssignedDate** | Pointer to **string** |  | [optional] 
 **DeviceFamily** | Pointer to **string** |  | [optional] 
+**FailedAssignmentAttempts** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**LastAssignmentStatus** | Pointer to **string** |  | [optional] 
+**MdmDevice** | Pointer to [**AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice**](AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice.md) |  | [optional] 
 **Model** | Pointer to **string** |  | [optional] 
 **Os** | Pointer to **string** |  | [optional] 
 **ProfileAssignTime** | Pointer to **string** |  | [optional] 
 **ProfilePushTime** | Pointer to **string** |  | [optional] 
 **ProfileStatus** | Pointer to **string** |  | [optional] 
 **SerialNumber** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**LastAssignmentStatus** | Pointer to **string** |  | [optional] 
-**FailedAssignmentAttempts** | Pointer to **int32** |  | [optional] 
-**AssignmentStatusReceivedAt** | Pointer to **string** |  | [optional] 
-**Blueprint** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **string** |  | [optional] 
+**UserId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -45,106 +45,6 @@ will change when the set of required properties is changed
 NewAutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseWithDefaults instantiates a new AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetBlueprintId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintId() string`
-
-GetBlueprintId returns the BlueprintId field if non-nil, zero value otherwise.
-
-### GetBlueprintIdOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintIdOk() (*string, bool)`
-
-GetBlueprintIdOk returns a tuple with the BlueprintId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBlueprintId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprintId(v string)`
-
-SetBlueprintId sets BlueprintId field to given value.
-
-### HasBlueprintId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprintId() bool`
-
-HasBlueprintId returns a boolean if a field has been set.
-
-### GetMdmDevice
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDevice() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice`
-
-GetMdmDevice returns the MdmDevice field if non-nil, zero value otherwise.
-
-### GetMdmDeviceOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDeviceOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice, bool)`
-
-GetMdmDeviceOk returns a tuple with the MdmDevice field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMdmDevice
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetMdmDevice(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice)`
-
-SetMdmDevice sets MdmDevice field to given value.
-
-### HasMdmDevice
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasMdmDevice() bool`
-
-HasMdmDevice returns a boolean if a field has been set.
-
-### GetUserId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserId() string`
-
-GetUserId returns the UserId field if non-nil, zero value otherwise.
-
-### GetUserIdOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserIdOk() (*string, bool)`
-
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetUserId(v string)`
-
-SetUserId sets UserId field to given value.
-
-### HasUserId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasUserId() bool`
-
-HasUserId returns a boolean if a field has been set.
-
-### GetDepAccount
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccount() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount`
-
-GetDepAccount returns the DepAccount field if non-nil, zero value otherwise.
-
-### GetDepAccountOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccountOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount, bool)`
-
-GetDepAccountOk returns a tuple with the DepAccount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDepAccount
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetDepAccount(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount)`
-
-SetDepAccount sets DepAccount field to given value.
-
-### HasDepAccount
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasDepAccount() bool`
-
-HasDepAccount returns a boolean if a field has been set.
 
 ### GetAssetTag
 
@@ -171,6 +71,81 @@ SetAssetTag sets AssetTag field to given value.
 
 HasAssetTag returns a boolean if a field has been set.
 
+### GetAssignmentStatusReceivedAt
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAt() string`
+
+GetAssignmentStatusReceivedAt returns the AssignmentStatusReceivedAt field if non-nil, zero value otherwise.
+
+### GetAssignmentStatusReceivedAtOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAtOk() (*string, bool)`
+
+GetAssignmentStatusReceivedAtOk returns a tuple with the AssignmentStatusReceivedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssignmentStatusReceivedAt
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetAssignmentStatusReceivedAt(v string)`
+
+SetAssignmentStatusReceivedAt sets AssignmentStatusReceivedAt field to given value.
+
+### HasAssignmentStatusReceivedAt
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasAssignmentStatusReceivedAt() bool`
+
+HasAssignmentStatusReceivedAt returns a boolean if a field has been set.
+
+### GetBlueprint
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprint() string`
+
+GetBlueprint returns the Blueprint field if non-nil, zero value otherwise.
+
+### GetBlueprintOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintOk() (*string, bool)`
+
+GetBlueprintOk returns a tuple with the Blueprint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlueprint
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprint(v string)`
+
+SetBlueprint sets Blueprint field to given value.
+
+### HasBlueprint
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprint() bool`
+
+HasBlueprint returns a boolean if a field has been set.
+
+### GetBlueprintId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintId() string`
+
+GetBlueprintId returns the BlueprintId field if non-nil, zero value otherwise.
+
+### GetBlueprintIdOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintIdOk() (*string, bool)`
+
+GetBlueprintIdOk returns a tuple with the BlueprintId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlueprintId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprintId(v string)`
+
+SetBlueprintId sets BlueprintId field to given value.
+
+### HasBlueprintId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprintId() bool`
+
+HasBlueprintId returns a boolean if a field has been set.
+
 ### GetColor
 
 `func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetColor() string`
@@ -195,6 +170,31 @@ SetColor sets Color field to given value.
 `func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasColor() bool`
 
 HasColor returns a boolean if a field has been set.
+
+### GetDepAccount
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccount() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount`
+
+GetDepAccount returns the DepAccount field if non-nil, zero value otherwise.
+
+### GetDepAccountOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetDepAccountOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount, bool)`
+
+GetDepAccountOk returns a tuple with the DepAccount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDepAccount
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetDepAccount(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseDepAccount)`
+
+SetDepAccount sets DepAccount field to given value.
+
+### HasDepAccount
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasDepAccount() bool`
+
+HasDepAccount returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -295,6 +295,106 @@ SetDeviceFamily sets DeviceFamily field to given value.
 `func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasDeviceFamily() bool`
 
 HasDeviceFamily returns a boolean if a field has been set.
+
+### GetFailedAssignmentAttempts
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttempts() int32`
+
+GetFailedAssignmentAttempts returns the FailedAssignmentAttempts field if non-nil, zero value otherwise.
+
+### GetFailedAssignmentAttemptsOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttemptsOk() (*int32, bool)`
+
+GetFailedAssignmentAttemptsOk returns a tuple with the FailedAssignmentAttempts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFailedAssignmentAttempts
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetFailedAssignmentAttempts(v int32)`
+
+SetFailedAssignmentAttempts sets FailedAssignmentAttempts field to given value.
+
+### HasFailedAssignmentAttempts
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasFailedAssignmentAttempts() bool`
+
+HasFailedAssignmentAttempts returns a boolean if a field has been set.
+
+### GetId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetId() string`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetIdOk() (*string, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetId(v string)`
+
+SetId sets Id field to given value.
+
+### HasId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasId() bool`
+
+HasId returns a boolean if a field has been set.
+
+### GetLastAssignmentStatus
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatus() string`
+
+GetLastAssignmentStatus returns the LastAssignmentStatus field if non-nil, zero value otherwise.
+
+### GetLastAssignmentStatusOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatusOk() (*string, bool)`
+
+GetLastAssignmentStatusOk returns a tuple with the LastAssignmentStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastAssignmentStatus
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetLastAssignmentStatus(v string)`
+
+SetLastAssignmentStatus sets LastAssignmentStatus field to given value.
+
+### HasLastAssignmentStatus
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasLastAssignmentStatus() bool`
+
+HasLastAssignmentStatus returns a boolean if a field has been set.
+
+### GetMdmDevice
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDevice() AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice`
+
+GetMdmDevice returns the MdmDevice field if non-nil, zero value otherwise.
+
+### GetMdmDeviceOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetMdmDeviceOk() (*AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice, bool)`
+
+GetMdmDeviceOk returns a tuple with the MdmDevice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMdmDevice
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetMdmDevice(v AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice)`
+
+SetMdmDevice sets MdmDevice field to given value.
+
+### HasMdmDevice
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasMdmDevice() bool`
+
+HasMdmDevice returns a boolean if a field has been set.
 
 ### GetModel
 
@@ -446,131 +546,6 @@ SetSerialNumber sets SerialNumber field to given value.
 
 HasSerialNumber returns a boolean if a field has been set.
 
-### GetId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasId() bool`
-
-HasId returns a boolean if a field has been set.
-
-### GetLastAssignmentStatus
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatus() string`
-
-GetLastAssignmentStatus returns the LastAssignmentStatus field if non-nil, zero value otherwise.
-
-### GetLastAssignmentStatusOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetLastAssignmentStatusOk() (*string, bool)`
-
-GetLastAssignmentStatusOk returns a tuple with the LastAssignmentStatus field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLastAssignmentStatus
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetLastAssignmentStatus(v string)`
-
-SetLastAssignmentStatus sets LastAssignmentStatus field to given value.
-
-### HasLastAssignmentStatus
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasLastAssignmentStatus() bool`
-
-HasLastAssignmentStatus returns a boolean if a field has been set.
-
-### GetFailedAssignmentAttempts
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttempts() int32`
-
-GetFailedAssignmentAttempts returns the FailedAssignmentAttempts field if non-nil, zero value otherwise.
-
-### GetFailedAssignmentAttemptsOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetFailedAssignmentAttemptsOk() (*int32, bool)`
-
-GetFailedAssignmentAttemptsOk returns a tuple with the FailedAssignmentAttempts field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFailedAssignmentAttempts
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetFailedAssignmentAttempts(v int32)`
-
-SetFailedAssignmentAttempts sets FailedAssignmentAttempts field to given value.
-
-### HasFailedAssignmentAttempts
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasFailedAssignmentAttempts() bool`
-
-HasFailedAssignmentAttempts returns a boolean if a field has been set.
-
-### GetAssignmentStatusReceivedAt
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAt() string`
-
-GetAssignmentStatusReceivedAt returns the AssignmentStatusReceivedAt field if non-nil, zero value otherwise.
-
-### GetAssignmentStatusReceivedAtOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetAssignmentStatusReceivedAtOk() (*string, bool)`
-
-GetAssignmentStatusReceivedAtOk returns a tuple with the AssignmentStatusReceivedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAssignmentStatusReceivedAt
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetAssignmentStatusReceivedAt(v string)`
-
-SetAssignmentStatusReceivedAt sets AssignmentStatusReceivedAt field to given value.
-
-### HasAssignmentStatusReceivedAt
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasAssignmentStatusReceivedAt() bool`
-
-HasAssignmentStatusReceivedAt returns a boolean if a field has been set.
-
-### GetBlueprint
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprint() string`
-
-GetBlueprint returns the Blueprint field if non-nil, zero value otherwise.
-
-### GetBlueprintOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetBlueprintOk() (*string, bool)`
-
-GetBlueprintOk returns a tuple with the Blueprint field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBlueprint
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetBlueprint(v string)`
-
-SetBlueprint sets Blueprint field to given value.
-
-### HasBlueprint
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasBlueprint() bool`
-
-HasBlueprint returns a boolean if a field has been set.
-
 ### GetUser
 
 `func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUser() string`
@@ -595,6 +570,31 @@ SetUser sets User field to given value.
 `func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasUser() bool`
 
 HasUser returns a boolean if a field has been set.
+
+### GetUserId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserId() string`
+
+GetUserId returns the UserId field if non-nil, zero value otherwise.
+
+### GetUserIdOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) GetUserIdOk() (*string, bool)`
+
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) SetUserId(v string)`
+
+SetUserId sets UserId field to given value.
+
+### HasUserId
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Response) HasUserId() bool`
+
+HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

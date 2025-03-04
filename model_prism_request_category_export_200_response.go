@@ -20,14 +20,14 @@ var _ MappedNullable = &PrismRequestCategoryExport200Response{}
 
 // PrismRequestCategoryExport200Response struct for PrismRequestCategoryExport200Response
 type PrismRequestCategoryExport200Response struct {
-	Id *string `json:"id,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Category *string `json:"category,omitempty"`
 	Args *PrismRequestCategoryExport200ResponseArgs `json:"args,omitempty"`
+	Category *string `json:"category,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
 	ErrorMsg interface{} `json:"error_msg,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Path interface{} `json:"path,omitempty"`
 	SignedUrl interface{} `json:"signed_url,omitempty"`
-	CreatedAt *string `json:"created_at,omitempty"`
+	Status *string `json:"status,omitempty"`
 	UpdatedAt *string `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -49,102 +49,6 @@ func NewPrismRequestCategoryExport200Response() *PrismRequestCategoryExport200Re
 func NewPrismRequestCategoryExport200ResponseWithDefaults() *PrismRequestCategoryExport200Response {
 	this := PrismRequestCategoryExport200Response{}
 	return &this
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *PrismRequestCategoryExport200Response) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismRequestCategoryExport200Response) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *PrismRequestCategoryExport200Response) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *PrismRequestCategoryExport200Response) SetId(v string) {
-	o.Id = &v
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PrismRequestCategoryExport200Response) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
-		var ret string
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismRequestCategoryExport200Response) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
-		return nil, false
-	}
-	return o.Status, true
-}
-
-// HasStatus returns a boolean if a field has been set.
-func (o *PrismRequestCategoryExport200Response) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PrismRequestCategoryExport200Response) SetStatus(v string) {
-	o.Status = &v
-}
-
-// GetCategory returns the Category field value if set, zero value otherwise.
-func (o *PrismRequestCategoryExport200Response) GetCategory() string {
-	if o == nil || IsNil(o.Category) {
-		var ret string
-		return ret
-	}
-	return *o.Category
-}
-
-// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismRequestCategoryExport200Response) GetCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.Category) {
-		return nil, false
-	}
-	return o.Category, true
-}
-
-// HasCategory returns a boolean if a field has been set.
-func (o *PrismRequestCategoryExport200Response) HasCategory() bool {
-	if o != nil && !IsNil(o.Category) {
-		return true
-	}
-
-	return false
-}
-
-// SetCategory gets a reference to the given string and assigns it to the Category field.
-func (o *PrismRequestCategoryExport200Response) SetCategory(v string) {
-	o.Category = &v
 }
 
 // GetArgs returns the Args field value if set, zero value otherwise.
@@ -179,6 +83,70 @@ func (o *PrismRequestCategoryExport200Response) SetArgs(v PrismRequestCategoryEx
 	o.Args = &v
 }
 
+// GetCategory returns the Category field value if set, zero value otherwise.
+func (o *PrismRequestCategoryExport200Response) GetCategory() string {
+	if o == nil || IsNil(o.Category) {
+		var ret string
+		return ret
+	}
+	return *o.Category
+}
+
+// GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismRequestCategoryExport200Response) GetCategoryOk() (*string, bool) {
+	if o == nil || IsNil(o.Category) {
+		return nil, false
+	}
+	return o.Category, true
+}
+
+// HasCategory returns a boolean if a field has been set.
+func (o *PrismRequestCategoryExport200Response) HasCategory() bool {
+	if o != nil && !IsNil(o.Category) {
+		return true
+	}
+
+	return false
+}
+
+// SetCategory gets a reference to the given string and assigns it to the Category field.
+func (o *PrismRequestCategoryExport200Response) SetCategory(v string) {
+	o.Category = &v
+}
+
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
+func (o *PrismRequestCategoryExport200Response) GetCreatedAt() string {
+	if o == nil || IsNil(o.CreatedAt) {
+		var ret string
+		return ret
+	}
+	return *o.CreatedAt
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismRequestCategoryExport200Response) GetCreatedAtOk() (*string, bool) {
+	if o == nil || IsNil(o.CreatedAt) {
+		return nil, false
+	}
+	return o.CreatedAt, true
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *PrismRequestCategoryExport200Response) HasCreatedAt() bool {
+	if o != nil && !IsNil(o.CreatedAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
+func (o *PrismRequestCategoryExport200Response) SetCreatedAt(v string) {
+	o.CreatedAt = &v
+}
+
 // GetErrorMsg returns the ErrorMsg field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PrismRequestCategoryExport200Response) GetErrorMsg() interface{} {
 	if o == nil {
@@ -210,6 +178,38 @@ func (o *PrismRequestCategoryExport200Response) HasErrorMsg() bool {
 // SetErrorMsg gets a reference to the given interface{} and assigns it to the ErrorMsg field.
 func (o *PrismRequestCategoryExport200Response) SetErrorMsg(v interface{}) {
 	o.ErrorMsg = v
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *PrismRequestCategoryExport200Response) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismRequestCategoryExport200Response) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *PrismRequestCategoryExport200Response) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *PrismRequestCategoryExport200Response) SetId(v string) {
+	o.Id = &v
 }
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -278,36 +278,36 @@ func (o *PrismRequestCategoryExport200Response) SetSignedUrl(v interface{}) {
 	o.SignedUrl = v
 }
 
-// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *PrismRequestCategoryExport200Response) GetCreatedAt() string {
-	if o == nil || IsNil(o.CreatedAt) {
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *PrismRequestCategoryExport200Response) GetStatus() string {
+	if o == nil || IsNil(o.Status) {
 		var ret string
 		return ret
 	}
-	return *o.CreatedAt
+	return *o.Status
 }
 
-// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrismRequestCategoryExport200Response) GetCreatedAtOk() (*string, bool) {
-	if o == nil || IsNil(o.CreatedAt) {
+func (o *PrismRequestCategoryExport200Response) GetStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
-	return o.CreatedAt, true
+	return o.Status, true
 }
 
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *PrismRequestCategoryExport200Response) HasCreatedAt() bool {
-	if o != nil && !IsNil(o.CreatedAt) {
+// HasStatus returns a boolean if a field has been set.
+func (o *PrismRequestCategoryExport200Response) HasStatus() bool {
+	if o != nil && !IsNil(o.Status) {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
-func (o *PrismRequestCategoryExport200Response) SetCreatedAt(v string) {
-	o.CreatedAt = &v
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *PrismRequestCategoryExport200Response) SetStatus(v string) {
+	o.Status = &v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
@@ -352,20 +352,20 @@ func (o PrismRequestCategoryExport200Response) MarshalJSON() ([]byte, error) {
 
 func (o PrismRequestCategoryExport200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !IsNil(o.Status) {
-		toSerialize["status"] = o.Status
+	if !IsNil(o.Args) {
+		toSerialize["args"] = o.Args
 	}
 	if !IsNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.Args) {
-		toSerialize["args"] = o.Args
+	if !IsNil(o.CreatedAt) {
+		toSerialize["created_at"] = o.CreatedAt
 	}
 	if o.ErrorMsg != nil {
 		toSerialize["error_msg"] = o.ErrorMsg
+	}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
@@ -373,8 +373,8 @@ func (o PrismRequestCategoryExport200Response) ToMap() (map[string]interface{}, 
 	if o.SignedUrl != nil {
 		toSerialize["signed_url"] = o.SignedUrl
 	}
-	if !IsNil(o.CreatedAt) {
-		toSerialize["created_at"] = o.CreatedAt
+	if !IsNil(o.Status) {
+		toSerialize["status"] = o.Status
 	}
 	if !IsNil(o.UpdatedAt) {
 		toSerialize["updated_at"] = o.UpdatedAt
@@ -401,14 +401,14 @@ func (o *PrismRequestCategoryExport200Response) UnmarshalJSON(data []byte) (err 
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "status")
-		delete(additionalProperties, "category")
 		delete(additionalProperties, "args")
+		delete(additionalProperties, "category")
+		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "error_msg")
+		delete(additionalProperties, "id")
 		delete(additionalProperties, "path")
 		delete(additionalProperties, "signed_url")
-		delete(additionalProperties, "created_at")
+		delete(additionalProperties, "status")
 		delete(additionalProperties, "updated_at")
 		o.AdditionalProperties = additionalProperties
 	}

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** |  | [optional] 
-**EnrolledAt** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**EnrollmentStatus** | Pointer to **int32** |  | [optional] 
 **DeferredInstall** | Pointer to **int32** |  | [optional] 
+**EnrolledAt** | Pointer to **string** |  | [optional] 
+**EnrollmentStatus** | Pointer to **int32** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
 **IsMissing** | Pointer to **int32** |  | [optional] 
 **IsRemoved** | Pointer to **int32** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -31,30 +31,30 @@ NewAutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDeviceWithDefa
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetId
+### GetDeferredInstall
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetId() string`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstall() int32`
 
-GetId returns the Id field if non-nil, zero value otherwise.
+GetDeferredInstall returns the DeferredInstall field if non-nil, zero value otherwise.
 
-### GetIdOk
+### GetDeferredInstallOk
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetIdOk() (*string, bool)`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstallOk() (*int32, bool)`
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+GetDeferredInstallOk returns a tuple with the DeferredInstall field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetDeferredInstall
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetId(v string)`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetDeferredInstall(v int32)`
 
-SetId sets Id field to given value.
+SetDeferredInstall sets DeferredInstall field to given value.
 
-### HasId
+### HasDeferredInstall
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasId() bool`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasDeferredInstall() bool`
 
-HasId returns a boolean if a field has been set.
+HasDeferredInstall returns a boolean if a field has been set.
 
 ### GetEnrolledAt
 
@@ -81,31 +81,6 @@ SetEnrolledAt sets EnrolledAt field to given value.
 
 HasEnrolledAt returns a boolean if a field has been set.
 
-### GetName
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetName() string`
-
-GetName returns the Name field if non-nil, zero value otherwise.
-
-### GetNameOk
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetNameOk() (*string, bool)`
-
-GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetName
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetName(v string)`
-
-SetName sets Name field to given value.
-
-### HasName
-
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasName() bool`
-
-HasName returns a boolean if a field has been set.
-
 ### GetEnrollmentStatus
 
 `func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetEnrollmentStatus() int32`
@@ -131,30 +106,30 @@ SetEnrollmentStatus sets EnrollmentStatus field to given value.
 
 HasEnrollmentStatus returns a boolean if a field has been set.
 
-### GetDeferredInstall
+### GetId
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstall() int32`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetId() string`
 
-GetDeferredInstall returns the DeferredInstall field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetDeferredInstallOk
+### GetIdOk
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstallOk() (*int32, bool)`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetIdOk() (*string, bool)`
 
-GetDeferredInstallOk returns a tuple with the DeferredInstall field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDeferredInstall
+### SetId
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetDeferredInstall(v int32)`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetId(v string)`
 
-SetDeferredInstall sets DeferredInstall field to given value.
+SetId sets Id field to given value.
 
-### HasDeferredInstall
+### HasId
 
-`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasDeferredInstall() bool`
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasId() bool`
 
-HasDeferredInstall returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetIsMissing
 
@@ -205,6 +180,31 @@ SetIsRemoved sets IsRemoved field to given value.
 `func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasIsRemoved() bool`
 
 HasIsRemoved returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

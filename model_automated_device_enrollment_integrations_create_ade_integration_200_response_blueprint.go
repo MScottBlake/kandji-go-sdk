@@ -20,10 +20,10 @@ var _ MappedNullable = &AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegratio
 
 // AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint struct for AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint
 type AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint struct {
+	Color *string `json:"color,omitempty"`
+	Icon *string `json:"icon,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
-	Icon *string `json:"icon,omitempty"`
-	Color *string `json:"color,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,6 +44,70 @@ func NewAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlue
 func NewAutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprintWithDefaults() *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint {
 	this := AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint{}
 	return &this
+}
+
+// GetColor returns the Color field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetColor() string {
+	if o == nil || IsNil(o.Color) {
+		var ret string
+		return ret
+	}
+	return *o.Color
+}
+
+// GetColorOk returns a tuple with the Color field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetColorOk() (*string, bool) {
+	if o == nil || IsNil(o.Color) {
+		return nil, false
+	}
+	return o.Color, true
+}
+
+// HasColor returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) HasColor() bool {
+	if o != nil && !IsNil(o.Color) {
+		return true
+	}
+
+	return false
+}
+
+// SetColor gets a reference to the given string and assigns it to the Color field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) SetColor(v string) {
+	o.Color = &v
+}
+
+// GetIcon returns the Icon field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetIcon() string {
+	if o == nil || IsNil(o.Icon) {
+		var ret string
+		return ret
+	}
+	return *o.Icon
+}
+
+// GetIconOk returns a tuple with the Icon field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetIconOk() (*string, bool) {
+	if o == nil || IsNil(o.Icon) {
+		return nil, false
+	}
+	return o.Icon, true
+}
+
+// HasIcon returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) HasIcon() bool {
+	if o != nil && !IsNil(o.Icon) {
+		return true
+	}
+
+	return false
+}
+
+// SetIcon gets a reference to the given string and assigns it to the Icon field.
+func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) SetIcon(v string) {
+	o.Icon = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -110,70 +174,6 @@ func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlu
 	o.Name = &v
 }
 
-// GetIcon returns the Icon field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetIcon() string {
-	if o == nil || IsNil(o.Icon) {
-		var ret string
-		return ret
-	}
-	return *o.Icon
-}
-
-// GetIconOk returns a tuple with the Icon field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetIconOk() (*string, bool) {
-	if o == nil || IsNil(o.Icon) {
-		return nil, false
-	}
-	return o.Icon, true
-}
-
-// HasIcon returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) HasIcon() bool {
-	if o != nil && !IsNil(o.Icon) {
-		return true
-	}
-
-	return false
-}
-
-// SetIcon gets a reference to the given string and assigns it to the Icon field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) SetIcon(v string) {
-	o.Icon = &v
-}
-
-// GetColor returns the Color field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetColor() string {
-	if o == nil || IsNil(o.Color) {
-		var ret string
-		return ret
-	}
-	return *o.Color
-}
-
-// GetColorOk returns a tuple with the Color field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) GetColorOk() (*string, bool) {
-	if o == nil || IsNil(o.Color) {
-		return nil, false
-	}
-	return o.Color, true
-}
-
-// HasColor returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) HasColor() bool {
-	if o != nil && !IsNil(o.Color) {
-		return true
-	}
-
-	return false
-}
-
-// SetColor gets a reference to the given string and assigns it to the Color field.
-func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) SetColor(v string) {
-	o.Color = &v
-}
-
 func (o AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -184,17 +184,17 @@ func (o AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlue
 
 func (o AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Color) {
+		toSerialize["color"] = o.Color
+	}
+	if !IsNil(o.Icon) {
+		toSerialize["icon"] = o.Icon
+	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
-	}
-	if !IsNil(o.Icon) {
-		toSerialize["icon"] = o.Icon
-	}
-	if !IsNil(o.Color) {
-		toSerialize["color"] = o.Color
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -218,10 +218,10 @@ func (o *AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlu
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "color")
+		delete(additionalProperties, "icon")
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "name")
-		delete(additionalProperties, "icon")
-		delete(additionalProperties, "color")
 		o.AdditionalProperties = additionalProperties
 	}
 

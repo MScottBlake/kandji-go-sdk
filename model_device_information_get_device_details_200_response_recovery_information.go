@@ -20,10 +20,10 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseRecoveryInfo
 
 // DeviceInformationGetDeviceDetails200ResponseRecoveryInformation struct for DeviceInformationGetDeviceDetails200ResponseRecoveryInformation
 type DeviceInformationGetDeviceDetails200ResponseRecoveryInformation struct {
-	RecoveryLockEnabled *int32 `json:"recovery_lock_enabled,omitempty"`
 	FirmwarePasswordExist *int32 `json:"firmware_password_exist,omitempty"`
 	FirmwarePasswordPending *int32 `json:"firmware_password_pending,omitempty"`
 	PasswordRotationScheduled interface{} `json:"password_rotation_scheduled,omitempty"`
+	RecoveryLockEnabled *int32 `json:"recovery_lock_enabled,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,38 +44,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseRecoveryInformation() *Devic
 func NewDeviceInformationGetDeviceDetails200ResponseRecoveryInformationWithDefaults() *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation {
 	this := DeviceInformationGetDeviceDetails200ResponseRecoveryInformation{}
 	return &this
-}
-
-// GetRecoveryLockEnabled returns the RecoveryLockEnabled field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabled() int32 {
-	if o == nil || IsNil(o.RecoveryLockEnabled) {
-		var ret int32
-		return ret
-	}
-	return *o.RecoveryLockEnabled
-}
-
-// GetRecoveryLockEnabledOk returns a tuple with the RecoveryLockEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabledOk() (*int32, bool) {
-	if o == nil || IsNil(o.RecoveryLockEnabled) {
-		return nil, false
-	}
-	return o.RecoveryLockEnabled, true
-}
-
-// HasRecoveryLockEnabled returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) HasRecoveryLockEnabled() bool {
-	if o != nil && !IsNil(o.RecoveryLockEnabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetRecoveryLockEnabled gets a reference to the given int32 and assigns it to the RecoveryLockEnabled field.
-func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) SetRecoveryLockEnabled(v int32) {
-	o.RecoveryLockEnabled = &v
 }
 
 // GetFirmwarePasswordExist returns the FirmwarePasswordExist field value if set, zero value otherwise.
@@ -175,6 +143,38 @@ func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) SetPas
 	o.PasswordRotationScheduled = v
 }
 
+// GetRecoveryLockEnabled returns the RecoveryLockEnabled field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabled() int32 {
+	if o == nil || IsNil(o.RecoveryLockEnabled) {
+		var ret int32
+		return ret
+	}
+	return *o.RecoveryLockEnabled
+}
+
+// GetRecoveryLockEnabledOk returns a tuple with the RecoveryLockEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) GetRecoveryLockEnabledOk() (*int32, bool) {
+	if o == nil || IsNil(o.RecoveryLockEnabled) {
+		return nil, false
+	}
+	return o.RecoveryLockEnabled, true
+}
+
+// HasRecoveryLockEnabled returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) HasRecoveryLockEnabled() bool {
+	if o != nil && !IsNil(o.RecoveryLockEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetRecoveryLockEnabled gets a reference to the given int32 and assigns it to the RecoveryLockEnabled field.
+func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) SetRecoveryLockEnabled(v int32) {
+	o.RecoveryLockEnabled = &v
+}
+
 func (o DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -185,9 +185,6 @@ func (o DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) Marshal
 
 func (o DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RecoveryLockEnabled) {
-		toSerialize["recovery_lock_enabled"] = o.RecoveryLockEnabled
-	}
 	if !IsNil(o.FirmwarePasswordExist) {
 		toSerialize["firmware_password_exist"] = o.FirmwarePasswordExist
 	}
@@ -196,6 +193,9 @@ func (o DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) ToMap()
 	}
 	if o.PasswordRotationScheduled != nil {
 		toSerialize["password_rotation_scheduled"] = o.PasswordRotationScheduled
+	}
+	if !IsNil(o.RecoveryLockEnabled) {
+		toSerialize["recovery_lock_enabled"] = o.RecoveryLockEnabled
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -219,10 +219,10 @@ func (o *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation) Unmars
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "recovery_lock_enabled")
 		delete(additionalProperties, "firmware_password_exist")
 		delete(additionalProperties, "firmware_password_pending")
 		delete(additionalProperties, "password_rotation_scheduled")
+		delete(additionalProperties, "recovery_lock_enabled")
 		o.AdditionalProperties = additionalProperties
 	}
 

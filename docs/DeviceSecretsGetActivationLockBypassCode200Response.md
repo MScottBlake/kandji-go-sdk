@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserBasedAlbc** | Pointer to **string** |  | [optional] 
 **DeviceBasedAlbc** | Pointer to **string** |  | [optional] 
+**UserBasedAlbc** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewDeviceSecretsGetActivationLockBypassCode200ResponseWithDefaults instantiates a new DeviceSecretsGetActivationLockBypassCode200Response object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetUserBasedAlbc
-
-`func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbc() string`
-
-GetUserBasedAlbc returns the UserBasedAlbc field if non-nil, zero value otherwise.
-
-### GetUserBasedAlbcOk
-
-`func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbcOk() (*string, bool)`
-
-GetUserBasedAlbcOk returns a tuple with the UserBasedAlbc field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserBasedAlbc
-
-`func (o *DeviceSecretsGetActivationLockBypassCode200Response) SetUserBasedAlbc(v string)`
-
-SetUserBasedAlbc sets UserBasedAlbc field to given value.
-
-### HasUserBasedAlbc
-
-`func (o *DeviceSecretsGetActivationLockBypassCode200Response) HasUserBasedAlbc() bool`
-
-HasUserBasedAlbc returns a boolean if a field has been set.
 
 ### GetDeviceBasedAlbc
 
@@ -75,6 +50,31 @@ SetDeviceBasedAlbc sets DeviceBasedAlbc field to given value.
 `func (o *DeviceSecretsGetActivationLockBypassCode200Response) HasDeviceBasedAlbc() bool`
 
 HasDeviceBasedAlbc returns a boolean if a field has been set.
+
+### GetUserBasedAlbc
+
+`func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbc() string`
+
+GetUserBasedAlbc returns the UserBasedAlbc field if non-nil, zero value otherwise.
+
+### GetUserBasedAlbcOk
+
+`func (o *DeviceSecretsGetActivationLockBypassCode200Response) GetUserBasedAlbcOk() (*string, bool)`
+
+GetUserBasedAlbcOk returns a tuple with the UserBasedAlbc field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserBasedAlbc
+
+`func (o *DeviceSecretsGetActivationLockBypassCode200Response) SetUserBasedAlbc(v string)`
+
+SetUserBasedAlbc sets UserBasedAlbc field to given value.
+
+### HasUserBasedAlbc
+
+`func (o *DeviceSecretsGetActivationLockBypassCode200Response) HasUserBasedAlbc() bool`
+
+HasUserBasedAlbc returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

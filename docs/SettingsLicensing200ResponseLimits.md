@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PlanType** | Pointer to **string** |  | [optional] 
 **MaxDevices** | Pointer to **int32** |  | [optional] 
 **MaxDevicesPerPlatform** | Pointer to [**SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform**](SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.md) |  | [optional] 
+**PlanType** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -26,31 +26,6 @@ will change when the set of required properties is changed
 NewSettingsLicensing200ResponseLimitsWithDefaults instantiates a new SettingsLicensing200ResponseLimits object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetPlanType
-
-`func (o *SettingsLicensing200ResponseLimits) GetPlanType() string`
-
-GetPlanType returns the PlanType field if non-nil, zero value otherwise.
-
-### GetPlanTypeOk
-
-`func (o *SettingsLicensing200ResponseLimits) GetPlanTypeOk() (*string, bool)`
-
-GetPlanTypeOk returns a tuple with the PlanType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPlanType
-
-`func (o *SettingsLicensing200ResponseLimits) SetPlanType(v string)`
-
-SetPlanType sets PlanType field to given value.
-
-### HasPlanType
-
-`func (o *SettingsLicensing200ResponseLimits) HasPlanType() bool`
-
-HasPlanType returns a boolean if a field has been set.
 
 ### GetMaxDevices
 
@@ -101,6 +76,31 @@ SetMaxDevicesPerPlatform sets MaxDevicesPerPlatform field to given value.
 `func (o *SettingsLicensing200ResponseLimits) HasMaxDevicesPerPlatform() bool`
 
 HasMaxDevicesPerPlatform returns a boolean if a field has been set.
+
+### GetPlanType
+
+`func (o *SettingsLicensing200ResponseLimits) GetPlanType() string`
+
+GetPlanType returns the PlanType field if non-nil, zero value otherwise.
+
+### GetPlanTypeOk
+
+`func (o *SettingsLicensing200ResponseLimits) GetPlanTypeOk() (*string, bool)`
+
+GetPlanTypeOk returns a tuple with the PlanType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlanType
+
+`func (o *SettingsLicensing200ResponseLimits) SetPlanType(v string)`
+
+SetPlanType sets PlanType field to given value.
+
+### HasPlanType
+
+`func (o *SettingsLicensing200ResponseLimits) HasPlanType() bool`
+
+HasPlanType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -20,23 +20,23 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200Response{}
 
 // DeviceInformationGetDeviceDetails200Response struct for DeviceInformationGetDeviceDetails200Response
 type DeviceInformationGetDeviceDetails200Response struct {
-	General *DeviceInformationGetDeviceDetails200ResponseGeneral `json:"general,omitempty"`
-	Mdm *DeviceInformationGetDeviceDetails200ResponseMdm `json:"mdm,omitempty"`
 	ActivationLock *DeviceInformationGetDeviceDetails200ResponseActivationLock `json:"activation_lock,omitempty"`
-	Filevault *DeviceInformationGetDeviceDetails200ResponseFilevault `json:"filevault,omitempty"`
-	LostMode *DeviceInformationGetDeviceDetails200ResponseLostMode `json:"lost_mode,omitempty"`
+	AppleBusinessManager *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager `json:"apple_business_manager,omitempty"`
 	AutomatedDeviceEnrollment *DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment `json:"automated_device_enrollment,omitempty"`
-	KandjiAgent *DeviceInformationGetDeviceDetails200ResponseKandjiAgent `json:"kandji_agent,omitempty"`
+	Cellular *DeviceInformationGetDeviceDetails200ResponseCellular `json:"cellular,omitempty"`
+	Filevault *DeviceInformationGetDeviceDetails200ResponseFilevault `json:"filevault,omitempty"`
+	General *DeviceInformationGetDeviceDetails200ResponseGeneral `json:"general,omitempty"`
 	HardwareOverview *DeviceInformationGetDeviceDetails200ResponseHardwareOverview `json:"hardware_overview,omitempty"`
-	Volumes interface{} `json:"volumes,omitempty"`
+	InstalledProfiles interface{} `json:"installed_profiles,omitempty"`
+	KandjiAgent *DeviceInformationGetDeviceDetails200ResponseKandjiAgent `json:"kandji_agent,omitempty"`
+	LostMode *DeviceInformationGetDeviceDetails200ResponseLostMode `json:"lost_mode,omitempty"`
+	Mdm *DeviceInformationGetDeviceDetails200ResponseMdm `json:"mdm,omitempty"`
 	Network map[string]interface{} `json:"network,omitempty"`
 	RecoveryInformation *DeviceInformationGetDeviceDetails200ResponseRecoveryInformation `json:"recovery_information,omitempty"`
-	Users *DeviceInformationGetDeviceDetails200ResponseUsers `json:"users,omitempty"`
-	InstalledProfiles interface{} `json:"installed_profiles,omitempty"`
-	AppleBusinessManager *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager `json:"apple_business_manager,omitempty"`
 	SecurityInformation *DeviceInformationGetDeviceDetails200ResponseSecurityInformation `json:"security_information,omitempty"`
-	Cellular *DeviceInformationGetDeviceDetails200ResponseCellular `json:"cellular,omitempty"`
 	Tags interface{} `json:"tags,omitempty"`
+	Users *DeviceInformationGetDeviceDetails200ResponseUsers `json:"users,omitempty"`
+	Volumes interface{} `json:"volumes,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,70 +57,6 @@ func NewDeviceInformationGetDeviceDetails200Response() *DeviceInformationGetDevi
 func NewDeviceInformationGetDeviceDetails200ResponseWithDefaults() *DeviceInformationGetDeviceDetails200Response {
 	this := DeviceInformationGetDeviceDetails200Response{}
 	return &this
-}
-
-// GetGeneral returns the General field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetGeneral() DeviceInformationGetDeviceDetails200ResponseGeneral {
-	if o == nil || IsNil(o.General) {
-		var ret DeviceInformationGetDeviceDetails200ResponseGeneral
-		return ret
-	}
-	return *o.General
-}
-
-// GetGeneralOk returns a tuple with the General field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetGeneralOk() (*DeviceInformationGetDeviceDetails200ResponseGeneral, bool) {
-	if o == nil || IsNil(o.General) {
-		return nil, false
-	}
-	return o.General, true
-}
-
-// HasGeneral returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasGeneral() bool {
-	if o != nil && !IsNil(o.General) {
-		return true
-	}
-
-	return false
-}
-
-// SetGeneral gets a reference to the given DeviceInformationGetDeviceDetails200ResponseGeneral and assigns it to the General field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetGeneral(v DeviceInformationGetDeviceDetails200ResponseGeneral) {
-	o.General = &v
-}
-
-// GetMdm returns the Mdm field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetMdm() DeviceInformationGetDeviceDetails200ResponseMdm {
-	if o == nil || IsNil(o.Mdm) {
-		var ret DeviceInformationGetDeviceDetails200ResponseMdm
-		return ret
-	}
-	return *o.Mdm
-}
-
-// GetMdmOk returns a tuple with the Mdm field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetMdmOk() (*DeviceInformationGetDeviceDetails200ResponseMdm, bool) {
-	if o == nil || IsNil(o.Mdm) {
-		return nil, false
-	}
-	return o.Mdm, true
-}
-
-// HasMdm returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasMdm() bool {
-	if o != nil && !IsNil(o.Mdm) {
-		return true
-	}
-
-	return false
-}
-
-// SetMdm gets a reference to the given DeviceInformationGetDeviceDetails200ResponseMdm and assigns it to the Mdm field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetMdm(v DeviceInformationGetDeviceDetails200ResponseMdm) {
-	o.Mdm = &v
 }
 
 // GetActivationLock returns the ActivationLock field value if set, zero value otherwise.
@@ -155,68 +91,36 @@ func (o *DeviceInformationGetDeviceDetails200Response) SetActivationLock(v Devic
 	o.ActivationLock = &v
 }
 
-// GetFilevault returns the Filevault field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetFilevault() DeviceInformationGetDeviceDetails200ResponseFilevault {
-	if o == nil || IsNil(o.Filevault) {
-		var ret DeviceInformationGetDeviceDetails200ResponseFilevault
+// GetAppleBusinessManager returns the AppleBusinessManager field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetAppleBusinessManager() DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager {
+	if o == nil || IsNil(o.AppleBusinessManager) {
+		var ret DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager
 		return ret
 	}
-	return *o.Filevault
+	return *o.AppleBusinessManager
 }
 
-// GetFilevaultOk returns a tuple with the Filevault field value if set, nil otherwise
+// GetAppleBusinessManagerOk returns a tuple with the AppleBusinessManager field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetFilevaultOk() (*DeviceInformationGetDeviceDetails200ResponseFilevault, bool) {
-	if o == nil || IsNil(o.Filevault) {
+func (o *DeviceInformationGetDeviceDetails200Response) GetAppleBusinessManagerOk() (*DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager, bool) {
+	if o == nil || IsNil(o.AppleBusinessManager) {
 		return nil, false
 	}
-	return o.Filevault, true
+	return o.AppleBusinessManager, true
 }
 
-// HasFilevault returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasFilevault() bool {
-	if o != nil && !IsNil(o.Filevault) {
+// HasAppleBusinessManager returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasAppleBusinessManager() bool {
+	if o != nil && !IsNil(o.AppleBusinessManager) {
 		return true
 	}
 
 	return false
 }
 
-// SetFilevault gets a reference to the given DeviceInformationGetDeviceDetails200ResponseFilevault and assigns it to the Filevault field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetFilevault(v DeviceInformationGetDeviceDetails200ResponseFilevault) {
-	o.Filevault = &v
-}
-
-// GetLostMode returns the LostMode field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetLostMode() DeviceInformationGetDeviceDetails200ResponseLostMode {
-	if o == nil || IsNil(o.LostMode) {
-		var ret DeviceInformationGetDeviceDetails200ResponseLostMode
-		return ret
-	}
-	return *o.LostMode
-}
-
-// GetLostModeOk returns a tuple with the LostMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetLostModeOk() (*DeviceInformationGetDeviceDetails200ResponseLostMode, bool) {
-	if o == nil || IsNil(o.LostMode) {
-		return nil, false
-	}
-	return o.LostMode, true
-}
-
-// HasLostMode returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasLostMode() bool {
-	if o != nil && !IsNil(o.LostMode) {
-		return true
-	}
-
-	return false
-}
-
-// SetLostMode gets a reference to the given DeviceInformationGetDeviceDetails200ResponseLostMode and assigns it to the LostMode field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetLostMode(v DeviceInformationGetDeviceDetails200ResponseLostMode) {
-	o.LostMode = &v
+// SetAppleBusinessManager gets a reference to the given DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager and assigns it to the AppleBusinessManager field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetAppleBusinessManager(v DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) {
+	o.AppleBusinessManager = &v
 }
 
 // GetAutomatedDeviceEnrollment returns the AutomatedDeviceEnrollment field value if set, zero value otherwise.
@@ -251,36 +155,100 @@ func (o *DeviceInformationGetDeviceDetails200Response) SetAutomatedDeviceEnrollm
 	o.AutomatedDeviceEnrollment = &v
 }
 
-// GetKandjiAgent returns the KandjiAgent field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetKandjiAgent() DeviceInformationGetDeviceDetails200ResponseKandjiAgent {
-	if o == nil || IsNil(o.KandjiAgent) {
-		var ret DeviceInformationGetDeviceDetails200ResponseKandjiAgent
+// GetCellular returns the Cellular field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetCellular() DeviceInformationGetDeviceDetails200ResponseCellular {
+	if o == nil || IsNil(o.Cellular) {
+		var ret DeviceInformationGetDeviceDetails200ResponseCellular
 		return ret
 	}
-	return *o.KandjiAgent
+	return *o.Cellular
 }
 
-// GetKandjiAgentOk returns a tuple with the KandjiAgent field value if set, nil otherwise
+// GetCellularOk returns a tuple with the Cellular field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetKandjiAgentOk() (*DeviceInformationGetDeviceDetails200ResponseKandjiAgent, bool) {
-	if o == nil || IsNil(o.KandjiAgent) {
+func (o *DeviceInformationGetDeviceDetails200Response) GetCellularOk() (*DeviceInformationGetDeviceDetails200ResponseCellular, bool) {
+	if o == nil || IsNil(o.Cellular) {
 		return nil, false
 	}
-	return o.KandjiAgent, true
+	return o.Cellular, true
 }
 
-// HasKandjiAgent returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasKandjiAgent() bool {
-	if o != nil && !IsNil(o.KandjiAgent) {
+// HasCellular returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasCellular() bool {
+	if o != nil && !IsNil(o.Cellular) {
 		return true
 	}
 
 	return false
 }
 
-// SetKandjiAgent gets a reference to the given DeviceInformationGetDeviceDetails200ResponseKandjiAgent and assigns it to the KandjiAgent field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetKandjiAgent(v DeviceInformationGetDeviceDetails200ResponseKandjiAgent) {
-	o.KandjiAgent = &v
+// SetCellular gets a reference to the given DeviceInformationGetDeviceDetails200ResponseCellular and assigns it to the Cellular field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetCellular(v DeviceInformationGetDeviceDetails200ResponseCellular) {
+	o.Cellular = &v
+}
+
+// GetFilevault returns the Filevault field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetFilevault() DeviceInformationGetDeviceDetails200ResponseFilevault {
+	if o == nil || IsNil(o.Filevault) {
+		var ret DeviceInformationGetDeviceDetails200ResponseFilevault
+		return ret
+	}
+	return *o.Filevault
+}
+
+// GetFilevaultOk returns a tuple with the Filevault field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) GetFilevaultOk() (*DeviceInformationGetDeviceDetails200ResponseFilevault, bool) {
+	if o == nil || IsNil(o.Filevault) {
+		return nil, false
+	}
+	return o.Filevault, true
+}
+
+// HasFilevault returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasFilevault() bool {
+	if o != nil && !IsNil(o.Filevault) {
+		return true
+	}
+
+	return false
+}
+
+// SetFilevault gets a reference to the given DeviceInformationGetDeviceDetails200ResponseFilevault and assigns it to the Filevault field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetFilevault(v DeviceInformationGetDeviceDetails200ResponseFilevault) {
+	o.Filevault = &v
+}
+
+// GetGeneral returns the General field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetGeneral() DeviceInformationGetDeviceDetails200ResponseGeneral {
+	if o == nil || IsNil(o.General) {
+		var ret DeviceInformationGetDeviceDetails200ResponseGeneral
+		return ret
+	}
+	return *o.General
+}
+
+// GetGeneralOk returns a tuple with the General field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) GetGeneralOk() (*DeviceInformationGetDeviceDetails200ResponseGeneral, bool) {
+	if o == nil || IsNil(o.General) {
+		return nil, false
+	}
+	return o.General, true
+}
+
+// HasGeneral returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasGeneral() bool {
+	if o != nil && !IsNil(o.General) {
+		return true
+	}
+
+	return false
+}
+
+// SetGeneral gets a reference to the given DeviceInformationGetDeviceDetails200ResponseGeneral and assigns it to the General field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetGeneral(v DeviceInformationGetDeviceDetails200ResponseGeneral) {
+	o.General = &v
 }
 
 // GetHardwareOverview returns the HardwareOverview field value if set, zero value otherwise.
@@ -315,37 +283,133 @@ func (o *DeviceInformationGetDeviceDetails200Response) SetHardwareOverview(v Dev
 	o.HardwareOverview = &v
 }
 
-// GetVolumes returns the Volumes field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DeviceInformationGetDeviceDetails200Response) GetVolumes() interface{} {
+// GetInstalledProfiles returns the InstalledProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DeviceInformationGetDeviceDetails200Response) GetInstalledProfiles() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-	return o.Volumes
+	return o.InstalledProfiles
 }
 
-// GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
+// GetInstalledProfilesOk returns a tuple with the InstalledProfiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DeviceInformationGetDeviceDetails200Response) GetVolumesOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Volumes) {
+func (o *DeviceInformationGetDeviceDetails200Response) GetInstalledProfilesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.InstalledProfiles) {
 		return nil, false
 	}
-	return &o.Volumes, true
+	return &o.InstalledProfiles, true
 }
 
-// HasVolumes returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasVolumes() bool {
-	if o != nil && !IsNil(o.Volumes) {
+// HasInstalledProfiles returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasInstalledProfiles() bool {
+	if o != nil && !IsNil(o.InstalledProfiles) {
 		return true
 	}
 
 	return false
 }
 
-// SetVolumes gets a reference to the given interface{} and assigns it to the Volumes field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetVolumes(v interface{}) {
-	o.Volumes = v
+// SetInstalledProfiles gets a reference to the given interface{} and assigns it to the InstalledProfiles field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetInstalledProfiles(v interface{}) {
+	o.InstalledProfiles = v
+}
+
+// GetKandjiAgent returns the KandjiAgent field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetKandjiAgent() DeviceInformationGetDeviceDetails200ResponseKandjiAgent {
+	if o == nil || IsNil(o.KandjiAgent) {
+		var ret DeviceInformationGetDeviceDetails200ResponseKandjiAgent
+		return ret
+	}
+	return *o.KandjiAgent
+}
+
+// GetKandjiAgentOk returns a tuple with the KandjiAgent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) GetKandjiAgentOk() (*DeviceInformationGetDeviceDetails200ResponseKandjiAgent, bool) {
+	if o == nil || IsNil(o.KandjiAgent) {
+		return nil, false
+	}
+	return o.KandjiAgent, true
+}
+
+// HasKandjiAgent returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasKandjiAgent() bool {
+	if o != nil && !IsNil(o.KandjiAgent) {
+		return true
+	}
+
+	return false
+}
+
+// SetKandjiAgent gets a reference to the given DeviceInformationGetDeviceDetails200ResponseKandjiAgent and assigns it to the KandjiAgent field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetKandjiAgent(v DeviceInformationGetDeviceDetails200ResponseKandjiAgent) {
+	o.KandjiAgent = &v
+}
+
+// GetLostMode returns the LostMode field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetLostMode() DeviceInformationGetDeviceDetails200ResponseLostMode {
+	if o == nil || IsNil(o.LostMode) {
+		var ret DeviceInformationGetDeviceDetails200ResponseLostMode
+		return ret
+	}
+	return *o.LostMode
+}
+
+// GetLostModeOk returns a tuple with the LostMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) GetLostModeOk() (*DeviceInformationGetDeviceDetails200ResponseLostMode, bool) {
+	if o == nil || IsNil(o.LostMode) {
+		return nil, false
+	}
+	return o.LostMode, true
+}
+
+// HasLostMode returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasLostMode() bool {
+	if o != nil && !IsNil(o.LostMode) {
+		return true
+	}
+
+	return false
+}
+
+// SetLostMode gets a reference to the given DeviceInformationGetDeviceDetails200ResponseLostMode and assigns it to the LostMode field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetLostMode(v DeviceInformationGetDeviceDetails200ResponseLostMode) {
+	o.LostMode = &v
+}
+
+// GetMdm returns the Mdm field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetMdm() DeviceInformationGetDeviceDetails200ResponseMdm {
+	if o == nil || IsNil(o.Mdm) {
+		var ret DeviceInformationGetDeviceDetails200ResponseMdm
+		return ret
+	}
+	return *o.Mdm
+}
+
+// GetMdmOk returns a tuple with the Mdm field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) GetMdmOk() (*DeviceInformationGetDeviceDetails200ResponseMdm, bool) {
+	if o == nil || IsNil(o.Mdm) {
+		return nil, false
+	}
+	return o.Mdm, true
+}
+
+// HasMdm returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasMdm() bool {
+	if o != nil && !IsNil(o.Mdm) {
+		return true
+	}
+
+	return false
+}
+
+// SetMdm gets a reference to the given DeviceInformationGetDeviceDetails200ResponseMdm and assigns it to the Mdm field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetMdm(v DeviceInformationGetDeviceDetails200ResponseMdm) {
+	o.Mdm = &v
 }
 
 // GetNetwork returns the Network field value if set, zero value otherwise.
@@ -412,103 +476,6 @@ func (o *DeviceInformationGetDeviceDetails200Response) SetRecoveryInformation(v 
 	o.RecoveryInformation = &v
 }
 
-// GetUsers returns the Users field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetUsers() DeviceInformationGetDeviceDetails200ResponseUsers {
-	if o == nil || IsNil(o.Users) {
-		var ret DeviceInformationGetDeviceDetails200ResponseUsers
-		return ret
-	}
-	return *o.Users
-}
-
-// GetUsersOk returns a tuple with the Users field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetUsersOk() (*DeviceInformationGetDeviceDetails200ResponseUsers, bool) {
-	if o == nil || IsNil(o.Users) {
-		return nil, false
-	}
-	return o.Users, true
-}
-
-// HasUsers returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasUsers() bool {
-	if o != nil && !IsNil(o.Users) {
-		return true
-	}
-
-	return false
-}
-
-// SetUsers gets a reference to the given DeviceInformationGetDeviceDetails200ResponseUsers and assigns it to the Users field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetUsers(v DeviceInformationGetDeviceDetails200ResponseUsers) {
-	o.Users = &v
-}
-
-// GetInstalledProfiles returns the InstalledProfiles field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DeviceInformationGetDeviceDetails200Response) GetInstalledProfiles() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.InstalledProfiles
-}
-
-// GetInstalledProfilesOk returns a tuple with the InstalledProfiles field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DeviceInformationGetDeviceDetails200Response) GetInstalledProfilesOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.InstalledProfiles) {
-		return nil, false
-	}
-	return &o.InstalledProfiles, true
-}
-
-// HasInstalledProfiles returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasInstalledProfiles() bool {
-	if o != nil && !IsNil(o.InstalledProfiles) {
-		return true
-	}
-
-	return false
-}
-
-// SetInstalledProfiles gets a reference to the given interface{} and assigns it to the InstalledProfiles field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetInstalledProfiles(v interface{}) {
-	o.InstalledProfiles = v
-}
-
-// GetAppleBusinessManager returns the AppleBusinessManager field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetAppleBusinessManager() DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager {
-	if o == nil || IsNil(o.AppleBusinessManager) {
-		var ret DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager
-		return ret
-	}
-	return *o.AppleBusinessManager
-}
-
-// GetAppleBusinessManagerOk returns a tuple with the AppleBusinessManager field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetAppleBusinessManagerOk() (*DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager, bool) {
-	if o == nil || IsNil(o.AppleBusinessManager) {
-		return nil, false
-	}
-	return o.AppleBusinessManager, true
-}
-
-// HasAppleBusinessManager returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasAppleBusinessManager() bool {
-	if o != nil && !IsNil(o.AppleBusinessManager) {
-		return true
-	}
-
-	return false
-}
-
-// SetAppleBusinessManager gets a reference to the given DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager and assigns it to the AppleBusinessManager field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetAppleBusinessManager(v DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) {
-	o.AppleBusinessManager = &v
-}
-
 // GetSecurityInformation returns the SecurityInformation field value if set, zero value otherwise.
 func (o *DeviceInformationGetDeviceDetails200Response) GetSecurityInformation() DeviceInformationGetDeviceDetails200ResponseSecurityInformation {
 	if o == nil || IsNil(o.SecurityInformation) {
@@ -539,38 +506,6 @@ func (o *DeviceInformationGetDeviceDetails200Response) HasSecurityInformation() 
 // SetSecurityInformation gets a reference to the given DeviceInformationGetDeviceDetails200ResponseSecurityInformation and assigns it to the SecurityInformation field.
 func (o *DeviceInformationGetDeviceDetails200Response) SetSecurityInformation(v DeviceInformationGetDeviceDetails200ResponseSecurityInformation) {
 	o.SecurityInformation = &v
-}
-
-// GetCellular returns the Cellular field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200Response) GetCellular() DeviceInformationGetDeviceDetails200ResponseCellular {
-	if o == nil || IsNil(o.Cellular) {
-		var ret DeviceInformationGetDeviceDetails200ResponseCellular
-		return ret
-	}
-	return *o.Cellular
-}
-
-// GetCellularOk returns a tuple with the Cellular field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) GetCellularOk() (*DeviceInformationGetDeviceDetails200ResponseCellular, bool) {
-	if o == nil || IsNil(o.Cellular) {
-		return nil, false
-	}
-	return o.Cellular, true
-}
-
-// HasCellular returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200Response) HasCellular() bool {
-	if o != nil && !IsNil(o.Cellular) {
-		return true
-	}
-
-	return false
-}
-
-// SetCellular gets a reference to the given DeviceInformationGetDeviceDetails200ResponseCellular and assigns it to the Cellular field.
-func (o *DeviceInformationGetDeviceDetails200Response) SetCellular(v DeviceInformationGetDeviceDetails200ResponseCellular) {
-	o.Cellular = &v
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -606,6 +541,71 @@ func (o *DeviceInformationGetDeviceDetails200Response) SetTags(v interface{}) {
 	o.Tags = v
 }
 
+// GetUsers returns the Users field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200Response) GetUsers() DeviceInformationGetDeviceDetails200ResponseUsers {
+	if o == nil || IsNil(o.Users) {
+		var ret DeviceInformationGetDeviceDetails200ResponseUsers
+		return ret
+	}
+	return *o.Users
+}
+
+// GetUsersOk returns a tuple with the Users field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) GetUsersOk() (*DeviceInformationGetDeviceDetails200ResponseUsers, bool) {
+	if o == nil || IsNil(o.Users) {
+		return nil, false
+	}
+	return o.Users, true
+}
+
+// HasUsers returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasUsers() bool {
+	if o != nil && !IsNil(o.Users) {
+		return true
+	}
+
+	return false
+}
+
+// SetUsers gets a reference to the given DeviceInformationGetDeviceDetails200ResponseUsers and assigns it to the Users field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetUsers(v DeviceInformationGetDeviceDetails200ResponseUsers) {
+	o.Users = &v
+}
+
+// GetVolumes returns the Volumes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DeviceInformationGetDeviceDetails200Response) GetVolumes() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Volumes
+}
+
+// GetVolumesOk returns a tuple with the Volumes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *DeviceInformationGetDeviceDetails200Response) GetVolumesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Volumes) {
+		return nil, false
+	}
+	return &o.Volumes, true
+}
+
+// HasVolumes returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200Response) HasVolumes() bool {
+	if o != nil && !IsNil(o.Volumes) {
+		return true
+	}
+
+	return false
+}
+
+// SetVolumes gets a reference to the given interface{} and assigns it to the Volumes field.
+func (o *DeviceInformationGetDeviceDetails200Response) SetVolumes(v interface{}) {
+	o.Volumes = v
+}
+
 func (o DeviceInformationGetDeviceDetails200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -616,32 +616,38 @@ func (o DeviceInformationGetDeviceDetails200Response) MarshalJSON() ([]byte, err
 
 func (o DeviceInformationGetDeviceDetails200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.General) {
-		toSerialize["general"] = o.General
-	}
-	if !IsNil(o.Mdm) {
-		toSerialize["mdm"] = o.Mdm
-	}
 	if !IsNil(o.ActivationLock) {
 		toSerialize["activation_lock"] = o.ActivationLock
 	}
-	if !IsNil(o.Filevault) {
-		toSerialize["filevault"] = o.Filevault
-	}
-	if !IsNil(o.LostMode) {
-		toSerialize["lost_mode"] = o.LostMode
+	if !IsNil(o.AppleBusinessManager) {
+		toSerialize["apple_business_manager"] = o.AppleBusinessManager
 	}
 	if !IsNil(o.AutomatedDeviceEnrollment) {
 		toSerialize["automated_device_enrollment"] = o.AutomatedDeviceEnrollment
 	}
-	if !IsNil(o.KandjiAgent) {
-		toSerialize["kandji_agent"] = o.KandjiAgent
+	if !IsNil(o.Cellular) {
+		toSerialize["cellular"] = o.Cellular
+	}
+	if !IsNil(o.Filevault) {
+		toSerialize["filevault"] = o.Filevault
+	}
+	if !IsNil(o.General) {
+		toSerialize["general"] = o.General
 	}
 	if !IsNil(o.HardwareOverview) {
 		toSerialize["hardware_overview"] = o.HardwareOverview
 	}
-	if o.Volumes != nil {
-		toSerialize["volumes"] = o.Volumes
+	if o.InstalledProfiles != nil {
+		toSerialize["installed_profiles"] = o.InstalledProfiles
+	}
+	if !IsNil(o.KandjiAgent) {
+		toSerialize["kandji_agent"] = o.KandjiAgent
+	}
+	if !IsNil(o.LostMode) {
+		toSerialize["lost_mode"] = o.LostMode
+	}
+	if !IsNil(o.Mdm) {
+		toSerialize["mdm"] = o.Mdm
 	}
 	if !IsNil(o.Network) {
 		toSerialize["network"] = o.Network
@@ -649,23 +655,17 @@ func (o DeviceInformationGetDeviceDetails200Response) ToMap() (map[string]interf
 	if !IsNil(o.RecoveryInformation) {
 		toSerialize["recovery_information"] = o.RecoveryInformation
 	}
-	if !IsNil(o.Users) {
-		toSerialize["users"] = o.Users
-	}
-	if o.InstalledProfiles != nil {
-		toSerialize["installed_profiles"] = o.InstalledProfiles
-	}
-	if !IsNil(o.AppleBusinessManager) {
-		toSerialize["apple_business_manager"] = o.AppleBusinessManager
-	}
 	if !IsNil(o.SecurityInformation) {
 		toSerialize["security_information"] = o.SecurityInformation
 	}
-	if !IsNil(o.Cellular) {
-		toSerialize["cellular"] = o.Cellular
-	}
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
+	}
+	if !IsNil(o.Users) {
+		toSerialize["users"] = o.Users
+	}
+	if o.Volumes != nil {
+		toSerialize["volumes"] = o.Volumes
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -689,23 +689,23 @@ func (o *DeviceInformationGetDeviceDetails200Response) UnmarshalJSON(data []byte
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "general")
-		delete(additionalProperties, "mdm")
 		delete(additionalProperties, "activation_lock")
-		delete(additionalProperties, "filevault")
-		delete(additionalProperties, "lost_mode")
+		delete(additionalProperties, "apple_business_manager")
 		delete(additionalProperties, "automated_device_enrollment")
-		delete(additionalProperties, "kandji_agent")
+		delete(additionalProperties, "cellular")
+		delete(additionalProperties, "filevault")
+		delete(additionalProperties, "general")
 		delete(additionalProperties, "hardware_overview")
-		delete(additionalProperties, "volumes")
+		delete(additionalProperties, "installed_profiles")
+		delete(additionalProperties, "kandji_agent")
+		delete(additionalProperties, "lost_mode")
+		delete(additionalProperties, "mdm")
 		delete(additionalProperties, "network")
 		delete(additionalProperties, "recovery_information")
-		delete(additionalProperties, "users")
-		delete(additionalProperties, "installed_profiles")
-		delete(additionalProperties, "apple_business_manager")
 		delete(additionalProperties, "security_information")
-		delete(additionalProperties, "cellular")
 		delete(additionalProperties, "tags")
+		delete(additionalProperties, "users")
+		delete(additionalProperties, "volumes")
 		o.AdditionalProperties = additionalProperties
 	}
 

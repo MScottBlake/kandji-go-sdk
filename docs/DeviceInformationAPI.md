@@ -778,7 +778,7 @@ import (
 
 func main() {
 	deviceId := "deviceId_example" // string | 
-	body := "{"user":"5344c996-8823-4b37-8d6e-8515fc7c3a0a","asset_tag":"1040","blueprint_id":"be1a4d67-91d8-4d19-a927-c8be6e77b6b2","tags":["tag1","tag2","tag3","tag4","tag5"]}" // string |  (optional)
+	body := "{"asset_tag":"1040","blueprint_id":"be1a4d67-91d8-4d19-a927-c8be6e77b6b2","tags":["tag1","tag2","tag3","tag4","tag5"],"user":"5344c996-8823-4b37-8d6e-8515fc7c3a0a"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

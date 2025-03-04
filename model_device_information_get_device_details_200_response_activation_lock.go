@@ -20,11 +20,11 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseActivationLo
 
 // DeviceInformationGetDeviceDetails200ResponseActivationLock struct for DeviceInformationGetDeviceDetails200ResponseActivationLock
 type DeviceInformationGetDeviceDetails200ResponseActivationLock struct {
-	BypassCodeFailed *int32 `json:"bypass_code_failed,omitempty"`
-	UserActivationLockEnabled *int32 `json:"user_activation_lock_enabled,omitempty"`
-	DeviceActivationLockEnabled *int32 `json:"device_activation_lock_enabled,omitempty"`
 	ActivationLockAllowedWhileSupervised *int32 `json:"activation_lock_allowed_while_supervised,omitempty"`
 	ActivationLockSupported *int32 `json:"activation_lock_supported,omitempty"`
+	BypassCodeFailed *int32 `json:"bypass_code_failed,omitempty"`
+	DeviceActivationLockEnabled *int32 `json:"device_activation_lock_enabled,omitempty"`
+	UserActivationLockEnabled *int32 `json:"user_activation_lock_enabled,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,102 +45,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseActivationLock() *DeviceInfo
 func NewDeviceInformationGetDeviceDetails200ResponseActivationLockWithDefaults() *DeviceInformationGetDeviceDetails200ResponseActivationLock {
 	this := DeviceInformationGetDeviceDetails200ResponseActivationLock{}
 	return &this
-}
-
-// GetBypassCodeFailed returns the BypassCodeFailed field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetBypassCodeFailed() int32 {
-	if o == nil || IsNil(o.BypassCodeFailed) {
-		var ret int32
-		return ret
-	}
-	return *o.BypassCodeFailed
-}
-
-// GetBypassCodeFailedOk returns a tuple with the BypassCodeFailed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetBypassCodeFailedOk() (*int32, bool) {
-	if o == nil || IsNil(o.BypassCodeFailed) {
-		return nil, false
-	}
-	return o.BypassCodeFailed, true
-}
-
-// HasBypassCodeFailed returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) HasBypassCodeFailed() bool {
-	if o != nil && !IsNil(o.BypassCodeFailed) {
-		return true
-	}
-
-	return false
-}
-
-// SetBypassCodeFailed gets a reference to the given int32 and assigns it to the BypassCodeFailed field.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) SetBypassCodeFailed(v int32) {
-	o.BypassCodeFailed = &v
-}
-
-// GetUserActivationLockEnabled returns the UserActivationLockEnabled field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetUserActivationLockEnabled() int32 {
-	if o == nil || IsNil(o.UserActivationLockEnabled) {
-		var ret int32
-		return ret
-	}
-	return *o.UserActivationLockEnabled
-}
-
-// GetUserActivationLockEnabledOk returns a tuple with the UserActivationLockEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetUserActivationLockEnabledOk() (*int32, bool) {
-	if o == nil || IsNil(o.UserActivationLockEnabled) {
-		return nil, false
-	}
-	return o.UserActivationLockEnabled, true
-}
-
-// HasUserActivationLockEnabled returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) HasUserActivationLockEnabled() bool {
-	if o != nil && !IsNil(o.UserActivationLockEnabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserActivationLockEnabled gets a reference to the given int32 and assigns it to the UserActivationLockEnabled field.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) SetUserActivationLockEnabled(v int32) {
-	o.UserActivationLockEnabled = &v
-}
-
-// GetDeviceActivationLockEnabled returns the DeviceActivationLockEnabled field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetDeviceActivationLockEnabled() int32 {
-	if o == nil || IsNil(o.DeviceActivationLockEnabled) {
-		var ret int32
-		return ret
-	}
-	return *o.DeviceActivationLockEnabled
-}
-
-// GetDeviceActivationLockEnabledOk returns a tuple with the DeviceActivationLockEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetDeviceActivationLockEnabledOk() (*int32, bool) {
-	if o == nil || IsNil(o.DeviceActivationLockEnabled) {
-		return nil, false
-	}
-	return o.DeviceActivationLockEnabled, true
-}
-
-// HasDeviceActivationLockEnabled returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) HasDeviceActivationLockEnabled() bool {
-	if o != nil && !IsNil(o.DeviceActivationLockEnabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceActivationLockEnabled gets a reference to the given int32 and assigns it to the DeviceActivationLockEnabled field.
-func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) SetDeviceActivationLockEnabled(v int32) {
-	o.DeviceActivationLockEnabled = &v
 }
 
 // GetActivationLockAllowedWhileSupervised returns the ActivationLockAllowedWhileSupervised field value if set, zero value otherwise.
@@ -207,6 +111,102 @@ func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) SetActivati
 	o.ActivationLockSupported = &v
 }
 
+// GetBypassCodeFailed returns the BypassCodeFailed field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetBypassCodeFailed() int32 {
+	if o == nil || IsNil(o.BypassCodeFailed) {
+		var ret int32
+		return ret
+	}
+	return *o.BypassCodeFailed
+}
+
+// GetBypassCodeFailedOk returns a tuple with the BypassCodeFailed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetBypassCodeFailedOk() (*int32, bool) {
+	if o == nil || IsNil(o.BypassCodeFailed) {
+		return nil, false
+	}
+	return o.BypassCodeFailed, true
+}
+
+// HasBypassCodeFailed returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) HasBypassCodeFailed() bool {
+	if o != nil && !IsNil(o.BypassCodeFailed) {
+		return true
+	}
+
+	return false
+}
+
+// SetBypassCodeFailed gets a reference to the given int32 and assigns it to the BypassCodeFailed field.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) SetBypassCodeFailed(v int32) {
+	o.BypassCodeFailed = &v
+}
+
+// GetDeviceActivationLockEnabled returns the DeviceActivationLockEnabled field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetDeviceActivationLockEnabled() int32 {
+	if o == nil || IsNil(o.DeviceActivationLockEnabled) {
+		var ret int32
+		return ret
+	}
+	return *o.DeviceActivationLockEnabled
+}
+
+// GetDeviceActivationLockEnabledOk returns a tuple with the DeviceActivationLockEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetDeviceActivationLockEnabledOk() (*int32, bool) {
+	if o == nil || IsNil(o.DeviceActivationLockEnabled) {
+		return nil, false
+	}
+	return o.DeviceActivationLockEnabled, true
+}
+
+// HasDeviceActivationLockEnabled returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) HasDeviceActivationLockEnabled() bool {
+	if o != nil && !IsNil(o.DeviceActivationLockEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceActivationLockEnabled gets a reference to the given int32 and assigns it to the DeviceActivationLockEnabled field.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) SetDeviceActivationLockEnabled(v int32) {
+	o.DeviceActivationLockEnabled = &v
+}
+
+// GetUserActivationLockEnabled returns the UserActivationLockEnabled field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetUserActivationLockEnabled() int32 {
+	if o == nil || IsNil(o.UserActivationLockEnabled) {
+		var ret int32
+		return ret
+	}
+	return *o.UserActivationLockEnabled
+}
+
+// GetUserActivationLockEnabledOk returns a tuple with the UserActivationLockEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) GetUserActivationLockEnabledOk() (*int32, bool) {
+	if o == nil || IsNil(o.UserActivationLockEnabled) {
+		return nil, false
+	}
+	return o.UserActivationLockEnabled, true
+}
+
+// HasUserActivationLockEnabled returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) HasUserActivationLockEnabled() bool {
+	if o != nil && !IsNil(o.UserActivationLockEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetUserActivationLockEnabled gets a reference to the given int32 and assigns it to the UserActivationLockEnabled field.
+func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) SetUserActivationLockEnabled(v int32) {
+	o.UserActivationLockEnabled = &v
+}
+
 func (o DeviceInformationGetDeviceDetails200ResponseActivationLock) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -217,20 +217,20 @@ func (o DeviceInformationGetDeviceDetails200ResponseActivationLock) MarshalJSON(
 
 func (o DeviceInformationGetDeviceDetails200ResponseActivationLock) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BypassCodeFailed) {
-		toSerialize["bypass_code_failed"] = o.BypassCodeFailed
-	}
-	if !IsNil(o.UserActivationLockEnabled) {
-		toSerialize["user_activation_lock_enabled"] = o.UserActivationLockEnabled
-	}
-	if !IsNil(o.DeviceActivationLockEnabled) {
-		toSerialize["device_activation_lock_enabled"] = o.DeviceActivationLockEnabled
-	}
 	if !IsNil(o.ActivationLockAllowedWhileSupervised) {
 		toSerialize["activation_lock_allowed_while_supervised"] = o.ActivationLockAllowedWhileSupervised
 	}
 	if !IsNil(o.ActivationLockSupported) {
 		toSerialize["activation_lock_supported"] = o.ActivationLockSupported
+	}
+	if !IsNil(o.BypassCodeFailed) {
+		toSerialize["bypass_code_failed"] = o.BypassCodeFailed
+	}
+	if !IsNil(o.DeviceActivationLockEnabled) {
+		toSerialize["device_activation_lock_enabled"] = o.DeviceActivationLockEnabled
+	}
+	if !IsNil(o.UserActivationLockEnabled) {
+		toSerialize["user_activation_lock_enabled"] = o.UserActivationLockEnabled
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -254,11 +254,11 @@ func (o *DeviceInformationGetDeviceDetails200ResponseActivationLock) UnmarshalJS
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "bypass_code_failed")
-		delete(additionalProperties, "user_activation_lock_enabled")
-		delete(additionalProperties, "device_activation_lock_enabled")
 		delete(additionalProperties, "activation_lock_allowed_while_supervised")
 		delete(additionalProperties, "activation_lock_supported")
+		delete(additionalProperties, "bypass_code_failed")
+		delete(additionalProperties, "device_activation_lock_enabled")
+		delete(additionalProperties, "user_activation_lock_enabled")
 		o.AdditionalProperties = additionalProperties
 	}
 

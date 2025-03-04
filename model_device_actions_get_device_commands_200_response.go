@@ -20,8 +20,8 @@ var _ MappedNullable = &DeviceActionsGetDeviceCommands200Response{}
 
 // DeviceActionsGetDeviceCommands200Response struct for DeviceActionsGetDeviceCommands200Response
 type DeviceActionsGetDeviceCommands200Response struct {
+	Commands *BlueprintsListBlueprints200Response `json:"commands,omitempty"`
 	DeviceId *string `json:"device_id,omitempty"`
-	Commands *AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response `json:"commands,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,6 +42,38 @@ func NewDeviceActionsGetDeviceCommands200Response() *DeviceActionsGetDeviceComma
 func NewDeviceActionsGetDeviceCommands200ResponseWithDefaults() *DeviceActionsGetDeviceCommands200Response {
 	this := DeviceActionsGetDeviceCommands200Response{}
 	return &this
+}
+
+// GetCommands returns the Commands field value if set, zero value otherwise.
+func (o *DeviceActionsGetDeviceCommands200Response) GetCommands() BlueprintsListBlueprints200Response {
+	if o == nil || IsNil(o.Commands) {
+		var ret BlueprintsListBlueprints200Response
+		return ret
+	}
+	return *o.Commands
+}
+
+// GetCommandsOk returns a tuple with the Commands field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceActionsGetDeviceCommands200Response) GetCommandsOk() (*BlueprintsListBlueprints200Response, bool) {
+	if o == nil || IsNil(o.Commands) {
+		return nil, false
+	}
+	return o.Commands, true
+}
+
+// HasCommands returns a boolean if a field has been set.
+func (o *DeviceActionsGetDeviceCommands200Response) HasCommands() bool {
+	if o != nil && !IsNil(o.Commands) {
+		return true
+	}
+
+	return false
+}
+
+// SetCommands gets a reference to the given BlueprintsListBlueprints200Response and assigns it to the Commands field.
+func (o *DeviceActionsGetDeviceCommands200Response) SetCommands(v BlueprintsListBlueprints200Response) {
+	o.Commands = &v
 }
 
 // GetDeviceId returns the DeviceId field value if set, zero value otherwise.
@@ -76,38 +108,6 @@ func (o *DeviceActionsGetDeviceCommands200Response) SetDeviceId(v string) {
 	o.DeviceId = &v
 }
 
-// GetCommands returns the Commands field value if set, zero value otherwise.
-func (o *DeviceActionsGetDeviceCommands200Response) GetCommands() AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response {
-	if o == nil || IsNil(o.Commands) {
-		var ret AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response
-		return ret
-	}
-	return *o.Commands
-}
-
-// GetCommandsOk returns a tuple with the Commands field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceActionsGetDeviceCommands200Response) GetCommandsOk() (*AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response, bool) {
-	if o == nil || IsNil(o.Commands) {
-		return nil, false
-	}
-	return o.Commands, true
-}
-
-// HasCommands returns a boolean if a field has been set.
-func (o *DeviceActionsGetDeviceCommands200Response) HasCommands() bool {
-	if o != nil && !IsNil(o.Commands) {
-		return true
-	}
-
-	return false
-}
-
-// SetCommands gets a reference to the given AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response and assigns it to the Commands field.
-func (o *DeviceActionsGetDeviceCommands200Response) SetCommands(v AutomatedDeviceEnrollmentIntegrationsListAdeDevices200Response) {
-	o.Commands = &v
-}
-
 func (o DeviceActionsGetDeviceCommands200Response) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -118,11 +118,11 @@ func (o DeviceActionsGetDeviceCommands200Response) MarshalJSON() ([]byte, error)
 
 func (o DeviceActionsGetDeviceCommands200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DeviceId) {
-		toSerialize["device_id"] = o.DeviceId
-	}
 	if !IsNil(o.Commands) {
 		toSerialize["commands"] = o.Commands
+	}
+	if !IsNil(o.DeviceId) {
+		toSerialize["device_id"] = o.DeviceId
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -146,8 +146,8 @@ func (o *DeviceActionsGetDeviceCommands200Response) UnmarshalJSON(data []byte) (
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "device_id")
 		delete(additionalProperties, "commands")
+		delete(additionalProperties, "device_id")
 		o.AdditionalProperties = additionalProperties
 	}
 

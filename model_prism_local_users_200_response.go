@@ -20,11 +20,11 @@ var _ MappedNullable = &PrismLocalUsers200Response{}
 
 // PrismLocalUsers200Response struct for PrismLocalUsers200Response
 type PrismLocalUsers200Response struct {
-	Offset *int32 `json:"offset,omitempty"`
-	Limit *int32 `json:"limit,omitempty"`
-	Total *int32 `json:"total,omitempty"`
-	Data interface{} `json:"data,omitempty"`
 	Cursor *string `json:"cursor,omitempty"`
+	Data interface{} `json:"data,omitempty"`
+	Limit *int32 `json:"limit,omitempty"`
+	Offset *int32 `json:"offset,omitempty"`
+	Total *int32 `json:"total,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -47,100 +47,36 @@ func NewPrismLocalUsers200ResponseWithDefaults() *PrismLocalUsers200Response {
 	return &this
 }
 
-// GetOffset returns the Offset field value if set, zero value otherwise.
-func (o *PrismLocalUsers200Response) GetOffset() int32 {
-	if o == nil || IsNil(o.Offset) {
-		var ret int32
+// GetCursor returns the Cursor field value if set, zero value otherwise.
+func (o *PrismLocalUsers200Response) GetCursor() string {
+	if o == nil || IsNil(o.Cursor) {
+		var ret string
 		return ret
 	}
-	return *o.Offset
+	return *o.Cursor
 }
 
-// GetOffsetOk returns a tuple with the Offset field value if set, nil otherwise
+// GetCursorOk returns a tuple with the Cursor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrismLocalUsers200Response) GetOffsetOk() (*int32, bool) {
-	if o == nil || IsNil(o.Offset) {
+func (o *PrismLocalUsers200Response) GetCursorOk() (*string, bool) {
+	if o == nil || IsNil(o.Cursor) {
 		return nil, false
 	}
-	return o.Offset, true
+	return o.Cursor, true
 }
 
-// HasOffset returns a boolean if a field has been set.
-func (o *PrismLocalUsers200Response) HasOffset() bool {
-	if o != nil && !IsNil(o.Offset) {
+// HasCursor returns a boolean if a field has been set.
+func (o *PrismLocalUsers200Response) HasCursor() bool {
+	if o != nil && !IsNil(o.Cursor) {
 		return true
 	}
 
 	return false
 }
 
-// SetOffset gets a reference to the given int32 and assigns it to the Offset field.
-func (o *PrismLocalUsers200Response) SetOffset(v int32) {
-	o.Offset = &v
-}
-
-// GetLimit returns the Limit field value if set, zero value otherwise.
-func (o *PrismLocalUsers200Response) GetLimit() int32 {
-	if o == nil || IsNil(o.Limit) {
-		var ret int32
-		return ret
-	}
-	return *o.Limit
-}
-
-// GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismLocalUsers200Response) GetLimitOk() (*int32, bool) {
-	if o == nil || IsNil(o.Limit) {
-		return nil, false
-	}
-	return o.Limit, true
-}
-
-// HasLimit returns a boolean if a field has been set.
-func (o *PrismLocalUsers200Response) HasLimit() bool {
-	if o != nil && !IsNil(o.Limit) {
-		return true
-	}
-
-	return false
-}
-
-// SetLimit gets a reference to the given int32 and assigns it to the Limit field.
-func (o *PrismLocalUsers200Response) SetLimit(v int32) {
-	o.Limit = &v
-}
-
-// GetTotal returns the Total field value if set, zero value otherwise.
-func (o *PrismLocalUsers200Response) GetTotal() int32 {
-	if o == nil || IsNil(o.Total) {
-		var ret int32
-		return ret
-	}
-	return *o.Total
-}
-
-// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PrismLocalUsers200Response) GetTotalOk() (*int32, bool) {
-	if o == nil || IsNil(o.Total) {
-		return nil, false
-	}
-	return o.Total, true
-}
-
-// HasTotal returns a boolean if a field has been set.
-func (o *PrismLocalUsers200Response) HasTotal() bool {
-	if o != nil && !IsNil(o.Total) {
-		return true
-	}
-
-	return false
-}
-
-// SetTotal gets a reference to the given int32 and assigns it to the Total field.
-func (o *PrismLocalUsers200Response) SetTotal(v int32) {
-	o.Total = &v
+// SetCursor gets a reference to the given string and assigns it to the Cursor field.
+func (o *PrismLocalUsers200Response) SetCursor(v string) {
+	o.Cursor = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -176,36 +112,100 @@ func (o *PrismLocalUsers200Response) SetData(v interface{}) {
 	o.Data = v
 }
 
-// GetCursor returns the Cursor field value if set, zero value otherwise.
-func (o *PrismLocalUsers200Response) GetCursor() string {
-	if o == nil || IsNil(o.Cursor) {
-		var ret string
+// GetLimit returns the Limit field value if set, zero value otherwise.
+func (o *PrismLocalUsers200Response) GetLimit() int32 {
+	if o == nil || IsNil(o.Limit) {
+		var ret int32
 		return ret
 	}
-	return *o.Cursor
+	return *o.Limit
 }
 
-// GetCursorOk returns a tuple with the Cursor field value if set, nil otherwise
+// GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrismLocalUsers200Response) GetCursorOk() (*string, bool) {
-	if o == nil || IsNil(o.Cursor) {
+func (o *PrismLocalUsers200Response) GetLimitOk() (*int32, bool) {
+	if o == nil || IsNil(o.Limit) {
 		return nil, false
 	}
-	return o.Cursor, true
+	return o.Limit, true
 }
 
-// HasCursor returns a boolean if a field has been set.
-func (o *PrismLocalUsers200Response) HasCursor() bool {
-	if o != nil && !IsNil(o.Cursor) {
+// HasLimit returns a boolean if a field has been set.
+func (o *PrismLocalUsers200Response) HasLimit() bool {
+	if o != nil && !IsNil(o.Limit) {
 		return true
 	}
 
 	return false
 }
 
-// SetCursor gets a reference to the given string and assigns it to the Cursor field.
-func (o *PrismLocalUsers200Response) SetCursor(v string) {
-	o.Cursor = &v
+// SetLimit gets a reference to the given int32 and assigns it to the Limit field.
+func (o *PrismLocalUsers200Response) SetLimit(v int32) {
+	o.Limit = &v
+}
+
+// GetOffset returns the Offset field value if set, zero value otherwise.
+func (o *PrismLocalUsers200Response) GetOffset() int32 {
+	if o == nil || IsNil(o.Offset) {
+		var ret int32
+		return ret
+	}
+	return *o.Offset
+}
+
+// GetOffsetOk returns a tuple with the Offset field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismLocalUsers200Response) GetOffsetOk() (*int32, bool) {
+	if o == nil || IsNil(o.Offset) {
+		return nil, false
+	}
+	return o.Offset, true
+}
+
+// HasOffset returns a boolean if a field has been set.
+func (o *PrismLocalUsers200Response) HasOffset() bool {
+	if o != nil && !IsNil(o.Offset) {
+		return true
+	}
+
+	return false
+}
+
+// SetOffset gets a reference to the given int32 and assigns it to the Offset field.
+func (o *PrismLocalUsers200Response) SetOffset(v int32) {
+	o.Offset = &v
+}
+
+// GetTotal returns the Total field value if set, zero value otherwise.
+func (o *PrismLocalUsers200Response) GetTotal() int32 {
+	if o == nil || IsNil(o.Total) {
+		var ret int32
+		return ret
+	}
+	return *o.Total
+}
+
+// GetTotalOk returns a tuple with the Total field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PrismLocalUsers200Response) GetTotalOk() (*int32, bool) {
+	if o == nil || IsNil(o.Total) {
+		return nil, false
+	}
+	return o.Total, true
+}
+
+// HasTotal returns a boolean if a field has been set.
+func (o *PrismLocalUsers200Response) HasTotal() bool {
+	if o != nil && !IsNil(o.Total) {
+		return true
+	}
+
+	return false
+}
+
+// SetTotal gets a reference to the given int32 and assigns it to the Total field.
+func (o *PrismLocalUsers200Response) SetTotal(v int32) {
+	o.Total = &v
 }
 
 func (o PrismLocalUsers200Response) MarshalJSON() ([]byte, error) {
@@ -218,20 +218,20 @@ func (o PrismLocalUsers200Response) MarshalJSON() ([]byte, error) {
 
 func (o PrismLocalUsers200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Offset) {
-		toSerialize["offset"] = o.Offset
-	}
-	if !IsNil(o.Limit) {
-		toSerialize["limit"] = o.Limit
-	}
-	if !IsNil(o.Total) {
-		toSerialize["total"] = o.Total
+	if !IsNil(o.Cursor) {
+		toSerialize["cursor"] = o.Cursor
 	}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	if !IsNil(o.Cursor) {
-		toSerialize["cursor"] = o.Cursor
+	if !IsNil(o.Limit) {
+		toSerialize["limit"] = o.Limit
+	}
+	if !IsNil(o.Offset) {
+		toSerialize["offset"] = o.Offset
+	}
+	if !IsNil(o.Total) {
+		toSerialize["total"] = o.Total
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -255,11 +255,11 @@ func (o *PrismLocalUsers200Response) UnmarshalJSON(data []byte) (err error) {
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "offset")
-		delete(additionalProperties, "limit")
-		delete(additionalProperties, "total")
-		delete(additionalProperties, "data")
 		delete(additionalProperties, "cursor")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "limit")
+		delete(additionalProperties, "offset")
+		delete(additionalProperties, "total")
 		o.AdditionalProperties = additionalProperties
 	}
 

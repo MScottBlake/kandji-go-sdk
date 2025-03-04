@@ -20,14 +20,14 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseAppleBusines
 
 // DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager struct for DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager
 type DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager struct {
-	Model *string `json:"model,omitempty"`
 	Color *string `json:"color,omitempty"`
 	Description *string `json:"description,omitempty"`
-	SerialNumber *string `json:"serial_number,omitempty"`
-	DeviceFamily *string `json:"device_family,omitempty"`
-	Os *string `json:"os,omitempty"`
-	DeviceAssignedDate *string `json:"device_assigned_date,omitempty"`
 	DeviceAssignedBy *string `json:"device_assigned_by,omitempty"`
+	DeviceAssignedDate *string `json:"device_assigned_date,omitempty"`
+	DeviceFamily *string `json:"device_family,omitempty"`
+	Model *string `json:"model,omitempty"`
+	Os *string `json:"os,omitempty"`
+	SerialNumber *string `json:"serial_number,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -48,38 +48,6 @@ func NewDeviceInformationGetDeviceDetails200ResponseAppleBusinessManager() *Devi
 func NewDeviceInformationGetDeviceDetails200ResponseAppleBusinessManagerWithDefaults() *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager {
 	this := DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager{}
 	return &this
-}
-
-// GetModel returns the Model field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetModel() string {
-	if o == nil || IsNil(o.Model) {
-		var ret string
-		return ret
-	}
-	return *o.Model
-}
-
-// GetModelOk returns a tuple with the Model field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetModelOk() (*string, bool) {
-	if o == nil || IsNil(o.Model) {
-		return nil, false
-	}
-	return o.Model, true
-}
-
-// HasModel returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasModel() bool {
-	if o != nil && !IsNil(o.Model) {
-		return true
-	}
-
-	return false
-}
-
-// SetModel gets a reference to the given string and assigns it to the Model field.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetModel(v string) {
-	o.Model = &v
 }
 
 // GetColor returns the Color field value if set, zero value otherwise.
@@ -146,100 +114,36 @@ func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetDe
 	o.Description = &v
 }
 
-// GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetSerialNumber() string {
-	if o == nil || IsNil(o.SerialNumber) {
+// GetDeviceAssignedBy returns the DeviceAssignedBy field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceAssignedBy() string {
+	if o == nil || IsNil(o.DeviceAssignedBy) {
 		var ret string
 		return ret
 	}
-	return *o.SerialNumber
+	return *o.DeviceAssignedBy
 }
 
-// GetSerialNumberOk returns a tuple with the SerialNumber field value if set, nil otherwise
+// GetDeviceAssignedByOk returns a tuple with the DeviceAssignedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetSerialNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.SerialNumber) {
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceAssignedByOk() (*string, bool) {
+	if o == nil || IsNil(o.DeviceAssignedBy) {
 		return nil, false
 	}
-	return o.SerialNumber, true
+	return o.DeviceAssignedBy, true
 }
 
-// HasSerialNumber returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasSerialNumber() bool {
-	if o != nil && !IsNil(o.SerialNumber) {
+// HasDeviceAssignedBy returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasDeviceAssignedBy() bool {
+	if o != nil && !IsNil(o.DeviceAssignedBy) {
 		return true
 	}
 
 	return false
 }
 
-// SetSerialNumber gets a reference to the given string and assigns it to the SerialNumber field.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetSerialNumber(v string) {
-	o.SerialNumber = &v
-}
-
-// GetDeviceFamily returns the DeviceFamily field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceFamily() string {
-	if o == nil || IsNil(o.DeviceFamily) {
-		var ret string
-		return ret
-	}
-	return *o.DeviceFamily
-}
-
-// GetDeviceFamilyOk returns a tuple with the DeviceFamily field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceFamilyOk() (*string, bool) {
-	if o == nil || IsNil(o.DeviceFamily) {
-		return nil, false
-	}
-	return o.DeviceFamily, true
-}
-
-// HasDeviceFamily returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasDeviceFamily() bool {
-	if o != nil && !IsNil(o.DeviceFamily) {
-		return true
-	}
-
-	return false
-}
-
-// SetDeviceFamily gets a reference to the given string and assigns it to the DeviceFamily field.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetDeviceFamily(v string) {
-	o.DeviceFamily = &v
-}
-
-// GetOs returns the Os field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetOs() string {
-	if o == nil || IsNil(o.Os) {
-		var ret string
-		return ret
-	}
-	return *o.Os
-}
-
-// GetOsOk returns a tuple with the Os field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetOsOk() (*string, bool) {
-	if o == nil || IsNil(o.Os) {
-		return nil, false
-	}
-	return o.Os, true
-}
-
-// HasOs returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasOs() bool {
-	if o != nil && !IsNil(o.Os) {
-		return true
-	}
-
-	return false
-}
-
-// SetOs gets a reference to the given string and assigns it to the Os field.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetOs(v string) {
-	o.Os = &v
+// SetDeviceAssignedBy gets a reference to the given string and assigns it to the DeviceAssignedBy field.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetDeviceAssignedBy(v string) {
+	o.DeviceAssignedBy = &v
 }
 
 // GetDeviceAssignedDate returns the DeviceAssignedDate field value if set, zero value otherwise.
@@ -274,36 +178,132 @@ func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetDe
 	o.DeviceAssignedDate = &v
 }
 
-// GetDeviceAssignedBy returns the DeviceAssignedBy field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceAssignedBy() string {
-	if o == nil || IsNil(o.DeviceAssignedBy) {
+// GetDeviceFamily returns the DeviceFamily field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceFamily() string {
+	if o == nil || IsNil(o.DeviceFamily) {
 		var ret string
 		return ret
 	}
-	return *o.DeviceAssignedBy
+	return *o.DeviceFamily
 }
 
-// GetDeviceAssignedByOk returns a tuple with the DeviceAssignedBy field value if set, nil otherwise
+// GetDeviceFamilyOk returns a tuple with the DeviceFamily field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceAssignedByOk() (*string, bool) {
-	if o == nil || IsNil(o.DeviceAssignedBy) {
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetDeviceFamilyOk() (*string, bool) {
+	if o == nil || IsNil(o.DeviceFamily) {
 		return nil, false
 	}
-	return o.DeviceAssignedBy, true
+	return o.DeviceFamily, true
 }
 
-// HasDeviceAssignedBy returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasDeviceAssignedBy() bool {
-	if o != nil && !IsNil(o.DeviceAssignedBy) {
+// HasDeviceFamily returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasDeviceFamily() bool {
+	if o != nil && !IsNil(o.DeviceFamily) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeviceAssignedBy gets a reference to the given string and assigns it to the DeviceAssignedBy field.
-func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetDeviceAssignedBy(v string) {
-	o.DeviceAssignedBy = &v
+// SetDeviceFamily gets a reference to the given string and assigns it to the DeviceFamily field.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetDeviceFamily(v string) {
+	o.DeviceFamily = &v
+}
+
+// GetModel returns the Model field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetModel() string {
+	if o == nil || IsNil(o.Model) {
+		var ret string
+		return ret
+	}
+	return *o.Model
+}
+
+// GetModelOk returns a tuple with the Model field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetModelOk() (*string, bool) {
+	if o == nil || IsNil(o.Model) {
+		return nil, false
+	}
+	return o.Model, true
+}
+
+// HasModel returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasModel() bool {
+	if o != nil && !IsNil(o.Model) {
+		return true
+	}
+
+	return false
+}
+
+// SetModel gets a reference to the given string and assigns it to the Model field.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetModel(v string) {
+	o.Model = &v
+}
+
+// GetOs returns the Os field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetOs() string {
+	if o == nil || IsNil(o.Os) {
+		var ret string
+		return ret
+	}
+	return *o.Os
+}
+
+// GetOsOk returns a tuple with the Os field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetOsOk() (*string, bool) {
+	if o == nil || IsNil(o.Os) {
+		return nil, false
+	}
+	return o.Os, true
+}
+
+// HasOs returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasOs() bool {
+	if o != nil && !IsNil(o.Os) {
+		return true
+	}
+
+	return false
+}
+
+// SetOs gets a reference to the given string and assigns it to the Os field.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetOs(v string) {
+	o.Os = &v
+}
+
+// GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetSerialNumber() string {
+	if o == nil || IsNil(o.SerialNumber) {
+		var ret string
+		return ret
+	}
+	return *o.SerialNumber
+}
+
+// GetSerialNumberOk returns a tuple with the SerialNumber field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) GetSerialNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.SerialNumber) {
+		return nil, false
+	}
+	return o.SerialNumber, true
+}
+
+// HasSerialNumber returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) HasSerialNumber() bool {
+	if o != nil && !IsNil(o.SerialNumber) {
+		return true
+	}
+
+	return false
+}
+
+// SetSerialNumber gets a reference to the given string and assigns it to the SerialNumber field.
+func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) SetSerialNumber(v string) {
+	o.SerialNumber = &v
 }
 
 func (o DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) MarshalJSON() ([]byte, error) {
@@ -316,29 +316,29 @@ func (o DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) Marsha
 
 func (o DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Model) {
-		toSerialize["model"] = o.Model
-	}
 	if !IsNil(o.Color) {
 		toSerialize["color"] = o.Color
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.SerialNumber) {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if !IsNil(o.DeviceFamily) {
-		toSerialize["device_family"] = o.DeviceFamily
-	}
-	if !IsNil(o.Os) {
-		toSerialize["os"] = o.Os
+	if !IsNil(o.DeviceAssignedBy) {
+		toSerialize["device_assigned_by"] = o.DeviceAssignedBy
 	}
 	if !IsNil(o.DeviceAssignedDate) {
 		toSerialize["device_assigned_date"] = o.DeviceAssignedDate
 	}
-	if !IsNil(o.DeviceAssignedBy) {
-		toSerialize["device_assigned_by"] = o.DeviceAssignedBy
+	if !IsNil(o.DeviceFamily) {
+		toSerialize["device_family"] = o.DeviceFamily
+	}
+	if !IsNil(o.Model) {
+		toSerialize["model"] = o.Model
+	}
+	if !IsNil(o.Os) {
+		toSerialize["os"] = o.Os
+	}
+	if !IsNil(o.SerialNumber) {
+		toSerialize["serial_number"] = o.SerialNumber
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -362,14 +362,14 @@ func (o *DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager) Unmar
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "model")
 		delete(additionalProperties, "color")
 		delete(additionalProperties, "description")
-		delete(additionalProperties, "serial_number")
-		delete(additionalProperties, "device_family")
-		delete(additionalProperties, "os")
-		delete(additionalProperties, "device_assigned_date")
 		delete(additionalProperties, "device_assigned_by")
+		delete(additionalProperties, "device_assigned_date")
+		delete(additionalProperties, "device_family")
+		delete(additionalProperties, "model")
+		delete(additionalProperties, "os")
+		delete(additionalProperties, "serial_number")
 		o.AdditionalProperties = additionalProperties
 	}
 

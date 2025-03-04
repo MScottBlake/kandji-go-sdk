@@ -21,9 +21,9 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseFilevault{}
 // DeviceInformationGetDeviceDetails200ResponseFilevault struct for DeviceInformationGetDeviceDetails200ResponseFilevault
 type DeviceInformationGetDeviceDetails200ResponseFilevault struct {
 	FilevaultEnabled interface{} `json:"filevault_enabled,omitempty"`
-	FilevaultRecoverykeyType *string `json:"filevault_recoverykey_type,omitempty"`
-	FilevaultPrkEscrowed *int32 `json:"filevault_prk_escrowed,omitempty"`
 	FilevaultNextRotation *string `json:"filevault_next_rotation,omitempty"`
+	FilevaultPrkEscrowed *int32 `json:"filevault_prk_escrowed,omitempty"`
+	FilevaultRecoverykeyType *string `json:"filevault_recoverykey_type,omitempty"`
 	FilevaultRegenRequired *int32 `json:"filevault_regen_required,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -80,36 +80,36 @@ func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultEnab
 	o.FilevaultEnabled = v
 }
 
-// GetFilevaultRecoverykeyType returns the FilevaultRecoverykeyType field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyType() string {
-	if o == nil || IsNil(o.FilevaultRecoverykeyType) {
+// GetFilevaultNextRotation returns the FilevaultNextRotation field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotation() string {
+	if o == nil || IsNil(o.FilevaultNextRotation) {
 		var ret string
 		return ret
 	}
-	return *o.FilevaultRecoverykeyType
+	return *o.FilevaultNextRotation
 }
 
-// GetFilevaultRecoverykeyTypeOk returns a tuple with the FilevaultRecoverykeyType field value if set, nil otherwise
+// GetFilevaultNextRotationOk returns a tuple with the FilevaultNextRotation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.FilevaultRecoverykeyType) {
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotationOk() (*string, bool) {
+	if o == nil || IsNil(o.FilevaultNextRotation) {
 		return nil, false
 	}
-	return o.FilevaultRecoverykeyType, true
+	return o.FilevaultNextRotation, true
 }
 
-// HasFilevaultRecoverykeyType returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultRecoverykeyType() bool {
-	if o != nil && !IsNil(o.FilevaultRecoverykeyType) {
+// HasFilevaultNextRotation returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultNextRotation() bool {
+	if o != nil && !IsNil(o.FilevaultNextRotation) {
 		return true
 	}
 
 	return false
 }
 
-// SetFilevaultRecoverykeyType gets a reference to the given string and assigns it to the FilevaultRecoverykeyType field.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultRecoverykeyType(v string) {
-	o.FilevaultRecoverykeyType = &v
+// SetFilevaultNextRotation gets a reference to the given string and assigns it to the FilevaultNextRotation field.
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultNextRotation(v string) {
+	o.FilevaultNextRotation = &v
 }
 
 // GetFilevaultPrkEscrowed returns the FilevaultPrkEscrowed field value if set, zero value otherwise.
@@ -144,36 +144,36 @@ func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultPrkE
 	o.FilevaultPrkEscrowed = &v
 }
 
-// GetFilevaultNextRotation returns the FilevaultNextRotation field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotation() string {
-	if o == nil || IsNil(o.FilevaultNextRotation) {
+// GetFilevaultRecoverykeyType returns the FilevaultRecoverykeyType field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyType() string {
+	if o == nil || IsNil(o.FilevaultRecoverykeyType) {
 		var ret string
 		return ret
 	}
-	return *o.FilevaultNextRotation
+	return *o.FilevaultRecoverykeyType
 }
 
-// GetFilevaultNextRotationOk returns a tuple with the FilevaultNextRotation field value if set, nil otherwise
+// GetFilevaultRecoverykeyTypeOk returns a tuple with the FilevaultRecoverykeyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultNextRotationOk() (*string, bool) {
-	if o == nil || IsNil(o.FilevaultNextRotation) {
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) GetFilevaultRecoverykeyTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.FilevaultRecoverykeyType) {
 		return nil, false
 	}
-	return o.FilevaultNextRotation, true
+	return o.FilevaultRecoverykeyType, true
 }
 
-// HasFilevaultNextRotation returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultNextRotation() bool {
-	if o != nil && !IsNil(o.FilevaultNextRotation) {
+// HasFilevaultRecoverykeyType returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) HasFilevaultRecoverykeyType() bool {
+	if o != nil && !IsNil(o.FilevaultRecoverykeyType) {
 		return true
 	}
 
 	return false
 }
 
-// SetFilevaultNextRotation gets a reference to the given string and assigns it to the FilevaultNextRotation field.
-func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultNextRotation(v string) {
-	o.FilevaultNextRotation = &v
+// SetFilevaultRecoverykeyType gets a reference to the given string and assigns it to the FilevaultRecoverykeyType field.
+func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) SetFilevaultRecoverykeyType(v string) {
+	o.FilevaultRecoverykeyType = &v
 }
 
 // GetFilevaultRegenRequired returns the FilevaultRegenRequired field value if set, zero value otherwise.
@@ -221,14 +221,14 @@ func (o DeviceInformationGetDeviceDetails200ResponseFilevault) ToMap() (map[stri
 	if o.FilevaultEnabled != nil {
 		toSerialize["filevault_enabled"] = o.FilevaultEnabled
 	}
-	if !IsNil(o.FilevaultRecoverykeyType) {
-		toSerialize["filevault_recoverykey_type"] = o.FilevaultRecoverykeyType
+	if !IsNil(o.FilevaultNextRotation) {
+		toSerialize["filevault_next_rotation"] = o.FilevaultNextRotation
 	}
 	if !IsNil(o.FilevaultPrkEscrowed) {
 		toSerialize["filevault_prk_escrowed"] = o.FilevaultPrkEscrowed
 	}
-	if !IsNil(o.FilevaultNextRotation) {
-		toSerialize["filevault_next_rotation"] = o.FilevaultNextRotation
+	if !IsNil(o.FilevaultRecoverykeyType) {
+		toSerialize["filevault_recoverykey_type"] = o.FilevaultRecoverykeyType
 	}
 	if !IsNil(o.FilevaultRegenRequired) {
 		toSerialize["filevault_regen_required"] = o.FilevaultRegenRequired
@@ -256,9 +256,9 @@ func (o *DeviceInformationGetDeviceDetails200ResponseFilevault) UnmarshalJSON(da
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "filevault_enabled")
-		delete(additionalProperties, "filevault_recoverykey_type")
-		delete(additionalProperties, "filevault_prk_escrowed")
 		delete(additionalProperties, "filevault_next_rotation")
+		delete(additionalProperties, "filevault_prk_escrowed")
+		delete(additionalProperties, "filevault_recoverykey_type")
 		delete(additionalProperties, "filevault_regen_required")
 		o.AdditionalProperties = additionalProperties
 	}

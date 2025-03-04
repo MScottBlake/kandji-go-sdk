@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Offset** | Pointer to **int32** |  | [optional] 
-**Limit** | Pointer to **int32** |  | [optional] 
-**Total** | Pointer to **int32** |  | [optional] 
-**Data** | Pointer to **interface{}** |  | [optional] 
 **Cursor** | Pointer to **interface{}** |  | [optional] 
+**Data** | Pointer to **interface{}** |  | [optional] 
+**Limit** | Pointer to **int32** |  | [optional] 
+**Offset** | Pointer to **int32** |  | [optional] 
+**Total** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -29,116 +29,6 @@ NewPrismDeviceInformation200ResponseWithDefaults instantiates a new PrismDeviceI
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetOffset
-
-`func (o *PrismDeviceInformation200Response) GetOffset() int32`
-
-GetOffset returns the Offset field if non-nil, zero value otherwise.
-
-### GetOffsetOk
-
-`func (o *PrismDeviceInformation200Response) GetOffsetOk() (*int32, bool)`
-
-GetOffsetOk returns a tuple with the Offset field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOffset
-
-`func (o *PrismDeviceInformation200Response) SetOffset(v int32)`
-
-SetOffset sets Offset field to given value.
-
-### HasOffset
-
-`func (o *PrismDeviceInformation200Response) HasOffset() bool`
-
-HasOffset returns a boolean if a field has been set.
-
-### GetLimit
-
-`func (o *PrismDeviceInformation200Response) GetLimit() int32`
-
-GetLimit returns the Limit field if non-nil, zero value otherwise.
-
-### GetLimitOk
-
-`func (o *PrismDeviceInformation200Response) GetLimitOk() (*int32, bool)`
-
-GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLimit
-
-`func (o *PrismDeviceInformation200Response) SetLimit(v int32)`
-
-SetLimit sets Limit field to given value.
-
-### HasLimit
-
-`func (o *PrismDeviceInformation200Response) HasLimit() bool`
-
-HasLimit returns a boolean if a field has been set.
-
-### GetTotal
-
-`func (o *PrismDeviceInformation200Response) GetTotal() int32`
-
-GetTotal returns the Total field if non-nil, zero value otherwise.
-
-### GetTotalOk
-
-`func (o *PrismDeviceInformation200Response) GetTotalOk() (*int32, bool)`
-
-GetTotalOk returns a tuple with the Total field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotal
-
-`func (o *PrismDeviceInformation200Response) SetTotal(v int32)`
-
-SetTotal sets Total field to given value.
-
-### HasTotal
-
-`func (o *PrismDeviceInformation200Response) HasTotal() bool`
-
-HasTotal returns a boolean if a field has been set.
-
-### GetData
-
-`func (o *PrismDeviceInformation200Response) GetData() interface{}`
-
-GetData returns the Data field if non-nil, zero value otherwise.
-
-### GetDataOk
-
-`func (o *PrismDeviceInformation200Response) GetDataOk() (*interface{}, bool)`
-
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetData
-
-`func (o *PrismDeviceInformation200Response) SetData(v interface{})`
-
-SetData sets Data field to given value.
-
-### HasData
-
-`func (o *PrismDeviceInformation200Response) HasData() bool`
-
-HasData returns a boolean if a field has been set.
-
-### SetDataNil
-
-`func (o *PrismDeviceInformation200Response) SetDataNil(b bool)`
-
- SetDataNil sets the value for Data to be an explicit nil
-
-### UnsetData
-`func (o *PrismDeviceInformation200Response) UnsetData()`
-
-UnsetData ensures that no value is present for Data, not even an explicit nil
 ### GetCursor
 
 `func (o *PrismDeviceInformation200Response) GetCursor() interface{}`
@@ -174,6 +64,116 @@ HasCursor returns a boolean if a field has been set.
 `func (o *PrismDeviceInformation200Response) UnsetCursor()`
 
 UnsetCursor ensures that no value is present for Cursor, not even an explicit nil
+### GetData
+
+`func (o *PrismDeviceInformation200Response) GetData() interface{}`
+
+GetData returns the Data field if non-nil, zero value otherwise.
+
+### GetDataOk
+
+`func (o *PrismDeviceInformation200Response) GetDataOk() (*interface{}, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetData
+
+`func (o *PrismDeviceInformation200Response) SetData(v interface{})`
+
+SetData sets Data field to given value.
+
+### HasData
+
+`func (o *PrismDeviceInformation200Response) HasData() bool`
+
+HasData returns a boolean if a field has been set.
+
+### SetDataNil
+
+`func (o *PrismDeviceInformation200Response) SetDataNil(b bool)`
+
+ SetDataNil sets the value for Data to be an explicit nil
+
+### UnsetData
+`func (o *PrismDeviceInformation200Response) UnsetData()`
+
+UnsetData ensures that no value is present for Data, not even an explicit nil
+### GetLimit
+
+`func (o *PrismDeviceInformation200Response) GetLimit() int32`
+
+GetLimit returns the Limit field if non-nil, zero value otherwise.
+
+### GetLimitOk
+
+`func (o *PrismDeviceInformation200Response) GetLimitOk() (*int32, bool)`
+
+GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLimit
+
+`func (o *PrismDeviceInformation200Response) SetLimit(v int32)`
+
+SetLimit sets Limit field to given value.
+
+### HasLimit
+
+`func (o *PrismDeviceInformation200Response) HasLimit() bool`
+
+HasLimit returns a boolean if a field has been set.
+
+### GetOffset
+
+`func (o *PrismDeviceInformation200Response) GetOffset() int32`
+
+GetOffset returns the Offset field if non-nil, zero value otherwise.
+
+### GetOffsetOk
+
+`func (o *PrismDeviceInformation200Response) GetOffsetOk() (*int32, bool)`
+
+GetOffsetOk returns a tuple with the Offset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOffset
+
+`func (o *PrismDeviceInformation200Response) SetOffset(v int32)`
+
+SetOffset sets Offset field to given value.
+
+### HasOffset
+
+`func (o *PrismDeviceInformation200Response) HasOffset() bool`
+
+HasOffset returns a boolean if a field has been set.
+
+### GetTotal
+
+`func (o *PrismDeviceInformation200Response) GetTotal() int32`
+
+GetTotal returns the Total field if non-nil, zero value otherwise.
+
+### GetTotalOk
+
+`func (o *PrismDeviceInformation200Response) GetTotalOk() (*int32, bool)`
+
+GetTotalOk returns a tuple with the Total field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTotal
+
+`func (o *PrismDeviceInformation200Response) SetTotal(v int32)`
+
+SetTotal sets Total field to given value.
+
+### HasTotal
+
+`func (o *PrismDeviceInformation200Response) HasTotal() bool`
+
+HasTotal returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -21,9 +21,9 @@ var _ MappedNullable = &DeviceInformationGetDevice200ResponseUser{}
 // DeviceInformationGetDevice200ResponseUser struct for DeviceInformationGetDevice200ResponseUser
 type DeviceInformationGetDevice200ResponseUser struct {
 	Email *string `json:"email,omitempty"`
-	Name *string `json:"name,omitempty"`
 	Id *string `json:"id,omitempty"`
 	IsArchived *int32 `json:"is_archived,omitempty"`
+	Name *string `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,38 +76,6 @@ func (o *DeviceInformationGetDevice200ResponseUser) HasEmail() bool {
 // SetEmail gets a reference to the given string and assigns it to the Email field.
 func (o *DeviceInformationGetDevice200ResponseUser) SetEmail(v string) {
 	o.Email = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *DeviceInformationGetDevice200ResponseUser) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDevice200ResponseUser) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *DeviceInformationGetDevice200ResponseUser) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *DeviceInformationGetDevice200ResponseUser) SetName(v string) {
-	o.Name = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -174,6 +142,38 @@ func (o *DeviceInformationGetDevice200ResponseUser) SetIsArchived(v int32) {
 	o.IsArchived = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *DeviceInformationGetDevice200ResponseUser) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDevice200ResponseUser) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *DeviceInformationGetDevice200ResponseUser) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *DeviceInformationGetDevice200ResponseUser) SetName(v string) {
+	o.Name = &v
+}
+
 func (o DeviceInformationGetDevice200ResponseUser) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -187,14 +187,14 @@ func (o DeviceInformationGetDevice200ResponseUser) ToMap() (map[string]interface
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.IsArchived) {
 		toSerialize["is_archived"] = o.IsArchived
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -219,9 +219,9 @@ func (o *DeviceInformationGetDevice200ResponseUser) UnmarshalJSON(data []byte) (
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "email")
-		delete(additionalProperties, "name")
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "is_archived")
+		delete(additionalProperties, "name")
 		o.AdditionalProperties = additionalProperties
 	}
 

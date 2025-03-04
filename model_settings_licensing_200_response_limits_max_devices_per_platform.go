@@ -20,8 +20,8 @@ var _ MappedNullable = &SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform{
 
 // SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform struct for SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform
 type SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform struct {
-	Macos *int32 `json:"macos,omitempty"`
 	IosIpados *int32 `json:"ios_ipados,omitempty"`
+	Macos *int32 `json:"macos,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,38 +42,6 @@ func NewSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform() *SettingsLicen
 func NewSettingsLicensing200ResponseLimitsMaxDevicesPerPlatformWithDefaults() *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform {
 	this := SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform{}
 	return &this
-}
-
-// GetMacos returns the Macos field value if set, zero value otherwise.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetMacos() int32 {
-	if o == nil || IsNil(o.Macos) {
-		var ret int32
-		return ret
-	}
-	return *o.Macos
-}
-
-// GetMacosOk returns a tuple with the Macos field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetMacosOk() (*int32, bool) {
-	if o == nil || IsNil(o.Macos) {
-		return nil, false
-	}
-	return o.Macos, true
-}
-
-// HasMacos returns a boolean if a field has been set.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) HasMacos() bool {
-	if o != nil && !IsNil(o.Macos) {
-		return true
-	}
-
-	return false
-}
-
-// SetMacos gets a reference to the given int32 and assigns it to the Macos field.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) SetMacos(v int32) {
-	o.Macos = &v
 }
 
 // GetIosIpados returns the IosIpados field value if set, zero value otherwise.
@@ -108,6 +76,38 @@ func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) SetIosIpados(v
 	o.IosIpados = &v
 }
 
+// GetMacos returns the Macos field value if set, zero value otherwise.
+func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetMacos() int32 {
+	if o == nil || IsNil(o.Macos) {
+		var ret int32
+		return ret
+	}
+	return *o.Macos
+}
+
+// GetMacosOk returns a tuple with the Macos field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetMacosOk() (*int32, bool) {
+	if o == nil || IsNil(o.Macos) {
+		return nil, false
+	}
+	return o.Macos, true
+}
+
+// HasMacos returns a boolean if a field has been set.
+func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) HasMacos() bool {
+	if o != nil && !IsNil(o.Macos) {
+		return true
+	}
+
+	return false
+}
+
+// SetMacos gets a reference to the given int32 and assigns it to the Macos field.
+func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) SetMacos(v int32) {
+	o.Macos = &v
+}
+
 func (o SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -118,11 +118,11 @@ func (o SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) MarshalJSON() (
 
 func (o SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Macos) {
-		toSerialize["macos"] = o.Macos
-	}
 	if !IsNil(o.IosIpados) {
 		toSerialize["ios_ipados"] = o.IosIpados
+	}
+	if !IsNil(o.Macos) {
+		toSerialize["macos"] = o.Macos
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -146,8 +146,8 @@ func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) UnmarshalJSON(
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "macos")
 		delete(additionalProperties, "ios_ipados")
+		delete(additionalProperties, "macos")
 		o.AdditionalProperties = additionalProperties
 	}
 

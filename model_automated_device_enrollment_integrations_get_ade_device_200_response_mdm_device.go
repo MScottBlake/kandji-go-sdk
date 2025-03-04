@@ -20,13 +20,13 @@ var _ MappedNullable = &AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200Resp
 
 // AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice struct for AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice
 type AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice struct {
-	Id *string `json:"id,omitempty"`
-	EnrolledAt *string `json:"enrolled_at,omitempty"`
-	Name *string `json:"name,omitempty"`
-	EnrollmentStatus *int32 `json:"enrollment_status,omitempty"`
 	DeferredInstall *int32 `json:"deferred_install,omitempty"`
+	EnrolledAt *string `json:"enrolled_at,omitempty"`
+	EnrollmentStatus *int32 `json:"enrollment_status,omitempty"`
+	Id *string `json:"id,omitempty"`
 	IsMissing *int32 `json:"is_missing,omitempty"`
 	IsRemoved *int32 `json:"is_removed,omitempty"`
+	Name *string `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -49,36 +49,36 @@ func NewAutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDeviceWit
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetId() string {
-	if o == nil || IsNil(o.Id) {
-		var ret string
+// GetDeferredInstall returns the DeferredInstall field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstall() int32 {
+	if o == nil || IsNil(o.DeferredInstall) {
+		var ret int32
 		return ret
 	}
-	return *o.Id
+	return *o.DeferredInstall
 }
 
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// GetDeferredInstallOk returns a tuple with the DeferredInstall field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstallOk() (*int32, bool) {
+	if o == nil || IsNil(o.DeferredInstall) {
 		return nil, false
 	}
-	return o.Id, true
+	return o.DeferredInstall, true
 }
 
-// HasId returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
+// HasDeferredInstall returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasDeferredInstall() bool {
+	if o != nil && !IsNil(o.DeferredInstall) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetId(v string) {
-	o.Id = &v
+// SetDeferredInstall gets a reference to the given int32 and assigns it to the DeferredInstall field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetDeferredInstall(v int32) {
+	o.DeferredInstall = &v
 }
 
 // GetEnrolledAt returns the EnrolledAt field value if set, zero value otherwise.
@@ -113,38 +113,6 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) 
 	o.EnrolledAt = &v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetName() string {
-	if o == nil || IsNil(o.Name) {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.Name) {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasName() bool {
-	if o != nil && !IsNil(o.Name) {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetName(v string) {
-	o.Name = &v
-}
-
 // GetEnrollmentStatus returns the EnrollmentStatus field value if set, zero value otherwise.
 func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetEnrollmentStatus() int32 {
 	if o == nil || IsNil(o.EnrollmentStatus) {
@@ -177,36 +145,36 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) 
 	o.EnrollmentStatus = &v
 }
 
-// GetDeferredInstall returns the DeferredInstall field value if set, zero value otherwise.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstall() int32 {
-	if o == nil || IsNil(o.DeferredInstall) {
-		var ret int32
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetId() string {
+	if o == nil || IsNil(o.Id) {
+		var ret string
 		return ret
 	}
-	return *o.DeferredInstall
+	return *o.Id
 }
 
-// GetDeferredInstallOk returns a tuple with the DeferredInstall field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetDeferredInstallOk() (*int32, bool) {
-	if o == nil || IsNil(o.DeferredInstall) {
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetIdOk() (*string, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.DeferredInstall, true
+	return o.Id, true
 }
 
-// HasDeferredInstall returns a boolean if a field has been set.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasDeferredInstall() bool {
-	if o != nil && !IsNil(o.DeferredInstall) {
+// HasId returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeferredInstall gets a reference to the given int32 and assigns it to the DeferredInstall field.
-func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetDeferredInstall(v int32) {
-	o.DeferredInstall = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetId(v string) {
+	o.Id = &v
 }
 
 // GetIsMissing returns the IsMissing field value if set, zero value otherwise.
@@ -273,6 +241,38 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) 
 	o.IsRemoved = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetName() string {
+	if o == nil || IsNil(o.Name) {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) GetNameOk() (*string, bool) {
+	if o == nil || IsNil(o.Name) {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) SetName(v string) {
+	o.Name = &v
+}
+
 func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -283,26 +283,26 @@ func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) M
 
 func (o AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
-		toSerialize["id"] = o.Id
+	if !IsNil(o.DeferredInstall) {
+		toSerialize["deferred_install"] = o.DeferredInstall
 	}
 	if !IsNil(o.EnrolledAt) {
 		toSerialize["enrolled_at"] = o.EnrolledAt
 	}
-	if !IsNil(o.Name) {
-		toSerialize["name"] = o.Name
-	}
 	if !IsNil(o.EnrollmentStatus) {
 		toSerialize["enrollment_status"] = o.EnrollmentStatus
 	}
-	if !IsNil(o.DeferredInstall) {
-		toSerialize["deferred_install"] = o.DeferredInstall
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
 	}
 	if !IsNil(o.IsMissing) {
 		toSerialize["is_missing"] = o.IsMissing
 	}
 	if !IsNil(o.IsRemoved) {
 		toSerialize["is_removed"] = o.IsRemoved
+	}
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -326,13 +326,13 @@ func (o *AutomatedDeviceEnrollmentIntegrationsGetAdeDevice200ResponseMdmDevice) 
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
-		delete(additionalProperties, "enrolled_at")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "enrollment_status")
 		delete(additionalProperties, "deferred_install")
+		delete(additionalProperties, "enrolled_at")
+		delete(additionalProperties, "enrollment_status")
+		delete(additionalProperties, "id")
 		delete(additionalProperties, "is_missing")
 		delete(additionalProperties, "is_removed")
+		delete(additionalProperties, "name")
 		o.AdditionalProperties = additionalProperties
 	}
 
