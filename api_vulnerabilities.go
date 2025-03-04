@@ -39,19 +39,19 @@ type VulnerabilitiesAPI interface {
 	GetVulnerabilityDescriptionExecute(r ApiGetVulnerabilityDescriptionRequest) (*VulnerabilitiesGetVulnerabilityDescription200Response, *http.Response, error)
 
 	/*
-	ListAffectedApplications List Affected Applications
+	ListAffectedApps List Affected Apps
 
 	This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param cveId
-	@return ApiListAffectedApplicationsRequest
+	@return ApiListAffectedAppsRequest
 	*/
-	ListAffectedApplications(ctx context.Context, cveId string) ApiListAffectedApplicationsRequest
+	ListAffectedApps(ctx context.Context, cveId string) ApiListAffectedAppsRequest
 
-	// ListAffectedApplicationsExecute executes the request
+	// ListAffectedAppsExecute executes the request
 	//  @return map[string]interface{}
-	ListAffectedApplicationsExecute(r ApiListAffectedApplicationsRequest) (map[string]interface{}, *http.Response, error)
+	ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 	ListAffectedDevices List Affected Devices
@@ -203,7 +203,7 @@ func (a *VulnerabilitiesAPIService) GetVulnerabilityDescriptionExecute(r ApiGetV
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListAffectedApplicationsRequest struct {
+type ApiListAffectedAppsRequest struct {
 	ctx context.Context
 	ApiService VulnerabilitiesAPI
 	cveId string
@@ -214,44 +214,44 @@ type ApiListAffectedApplicationsRequest struct {
 }
 
 // The page number of the response.
-func (r ApiListAffectedApplicationsRequest) Page(page string) ApiListAffectedApplicationsRequest {
+func (r ApiListAffectedAppsRequest) Page(page string) ApiListAffectedAppsRequest {
 	r.page = &page
 	return r
 }
 
 // A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-func (r ApiListAffectedApplicationsRequest) Size(size string) ApiListAffectedApplicationsRequest {
+func (r ApiListAffectedAppsRequest) Size(size string) ApiListAffectedAppsRequest {
 	r.size = &size
 	return r
 }
 
 // Field to sort by. Example: sort_by&#x3D;app_name.
-func (r ApiListAffectedApplicationsRequest) SortBy(sortBy string) ApiListAffectedApplicationsRequest {
+func (r ApiListAffectedAppsRequest) SortBy(sortBy string) ApiListAffectedAppsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Filterable columns: blueprint_id updated_at
-func (r ApiListAffectedApplicationsRequest) Filter(filter string) ApiListAffectedApplicationsRequest {
+func (r ApiListAffectedAppsRequest) Filter(filter string) ApiListAffectedAppsRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListAffectedApplicationsRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.ListAffectedApplicationsExecute(r)
+func (r ApiListAffectedAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ListAffectedAppsExecute(r)
 }
 
 /*
-ListAffectedApplications List Affected Applications
+ListAffectedApps List Affected Apps
 
 This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cveId
- @return ApiListAffectedApplicationsRequest
+ @return ApiListAffectedAppsRequest
 */
-func (a *VulnerabilitiesAPIService) ListAffectedApplications(ctx context.Context, cveId string) ApiListAffectedApplicationsRequest {
-	return ApiListAffectedApplicationsRequest{
+func (a *VulnerabilitiesAPIService) ListAffectedApps(ctx context.Context, cveId string) ApiListAffectedAppsRequest {
+	return ApiListAffectedAppsRequest{
 		ApiService: a,
 		ctx: ctx,
 		cveId: cveId,
@@ -260,7 +260,7 @@ func (a *VulnerabilitiesAPIService) ListAffectedApplications(ctx context.Context
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *VulnerabilitiesAPIService) ListAffectedApplicationsExecute(r ApiListAffectedApplicationsRequest) (map[string]interface{}, *http.Response, error) {
+func (a *VulnerabilitiesAPIService) ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -268,7 +268,7 @@ func (a *VulnerabilitiesAPIService) ListAffectedApplicationsExecute(r ApiListAff
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedApplications")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedApps")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

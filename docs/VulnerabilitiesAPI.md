@@ -5,7 +5,7 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetVulnerabilityDescription**](VulnerabilitiesAPI.md#GetVulnerabilityDescription) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id} | Get Vulnerability Description
-[**ListAffectedApplications**](VulnerabilitiesAPI.md#ListAffectedApplications) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Applications
+[**ListAffectedApps**](VulnerabilitiesAPI.md#ListAffectedApps) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Apps
 [**ListAffectedDevices**](VulnerabilitiesAPI.md#ListAffectedDevices) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices | List Affected Devices
 [**ListDetections**](VulnerabilitiesAPI.md#ListDetections) | **Get** /api/v1/vulnerability-management/detections | List Detections
 [**ListVulnerabilities**](VulnerabilitiesAPI.md#ListVulnerabilities) | **Get** /api/v1/vulnerability-management/vulnerabilities | List Vulnerabilities
@@ -82,11 +82,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListAffectedApplications
+## ListAffectedApps
 
-> map[string]interface{} ListAffectedApplications(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+> map[string]interface{} ListAffectedApps(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
 
-List Affected Applications
+List Affected Apps
 
 
 
@@ -111,13 +111,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VulnerabilitiesAPI.ListAffectedApplications(context.Background(), cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+	resp, r, err := apiClient.VulnerabilitiesAPI.ListAffectedApps(context.Background(), cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListAffectedApplications``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListAffectedApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAffectedApplications`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListAffectedApplications`: %v\n", resp)
+	// response from `ListAffectedApps`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListAffectedApps`: %v\n", resp)
 }
 ```
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListAffectedApplicationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAffectedAppsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
