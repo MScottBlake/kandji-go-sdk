@@ -493,7 +493,7 @@ type ApiListDetectionsRequest struct {
 	ctx context.Context
 	ApiService VulnerabilitiesAPI
 	after *string
-	limit *string
+	size *string
 	filter *string
 }
 
@@ -504,8 +504,8 @@ func (r ApiListDetectionsRequest) After(after string) ApiListDetectionsRequest {
 }
 
 // A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-func (r ApiListDetectionsRequest) Limit(limit string) ApiListDetectionsRequest {
-	r.limit = &limit
+func (r ApiListDetectionsRequest) Size(size string) ApiListDetectionsRequest {
+	r.size = &size
 	return r
 }
 
@@ -558,8 +558,8 @@ func (a *VulnerabilitiesAPIService) ListDetectionsExecute(r ApiListDetectionsReq
 	if r.after != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "after", r.after, "form", "")
 	}
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
+	if r.size != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "size", r.size, "form", "")
 	}
 	if r.filter != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "form", "")

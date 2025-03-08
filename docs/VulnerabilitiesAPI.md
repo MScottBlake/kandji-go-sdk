@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ## ListDetections
 
-> VulnerabilitiesListDetections200Response ListDetections(ctx).After(after).Limit(limit).Filter(filter).Execute()
+> VulnerabilitiesListDetections200Response ListDetections(ctx).After(after).Size(size).Filter(filter).Execute()
 
 List Detections
 
@@ -260,12 +260,12 @@ import (
 
 func main() {
 	after := "after_example" // string | Cursor token. (optional)
-	limit := "300" // string | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+	size := "300" // string | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 	filter := "device_serial_number" // string | Can filter on any key attribute within the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VulnerabilitiesAPI.ListDetections(context.Background()).After(after).Limit(limit).Filter(filter).Execute()
+	resp, r, err := apiClient.VulnerabilitiesAPI.ListDetections(context.Background()).After(after).Size(size).Filter(filter).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListDetections``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -287,7 +287,7 @@ Other parameters are passed through a pointer to a apiListDetectionsRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **after** | **string** | Cursor token. | 
- **limit** | **string** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
+ **size** | **string** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
  **filter** | **string** | Can filter on any key attribute within the response. | 
 
 ### Return type

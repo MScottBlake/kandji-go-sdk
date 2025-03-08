@@ -18075,7 +18075,7 @@ paths:
         example: "300"
         explode: true
         in: query
-        name: limit
+        name: size
         required: false
         schema:
           type: string
