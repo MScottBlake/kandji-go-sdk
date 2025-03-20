@@ -84,6 +84,7 @@ docs/SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform.md
 docs/TagsAPI.md
 docs/TagsCreateTag201Response.md
 docs/ThreatsAPI.md
+docs/ThreatsGetBehavioralDetections200Response.md
 docs/ThreatsGetThreatDetails200Response.md
 docs/UsersAPI.md
 docs/UsersGetUser200Response.md
@@ -154,6 +155,7 @@ model_settings_licensing_200_response_counts.go
 model_settings_licensing_200_response_limits.go
 model_settings_licensing_200_response_limits_max_devices_per_platform.go
 model_tags_create_tag_201_response.go
+model_threats_get_behavioral_detections_200_response.go
 model_threats_get_threat_details_200_response.go
 model_users_get_user_200_response.go
 model_users_get_user_200_response_integration.go

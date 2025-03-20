@@ -23,6 +23,20 @@ import (
 type ThreatsAPI interface {
 
 	/*
+	GetBehavioralDetections Get Behavioral Detections
+
+	Get Behavioral Detections.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetBehavioralDetectionsRequest
+	*/
+	GetBehavioralDetections(ctx context.Context) ApiGetBehavioralDetectionsRequest
+
+	// GetBehavioralDetectionsExecute executes the request
+	//  @return ThreatsGetBehavioralDetections200Response
+	GetBehavioralDetectionsExecute(r ApiGetBehavioralDetectionsRequest) (*ThreatsGetBehavioralDetections200Response, *http.Response, error)
+
+	/*
 	GetThreatDetails Get Threat Details
 
 	Get threat details.
@@ -39,6 +53,245 @@ type ThreatsAPI interface {
 
 // ThreatsAPIService ThreatsAPI service
 type ThreatsAPIService service
+
+type ApiGetBehavioralDetectionsRequest struct {
+	ctx context.Context
+	ApiService ThreatsAPI
+	threatId *string
+	classification *string
+	status *string
+	dateRange *string
+	detectionDate *string
+	deviceId *string
+	malwareFamily *string
+	parentProcessName *string
+	targetProcessName *string
+	informationalTags *string
+	term *string
+	sortBy *string
+	limit *string
+	offset *string
+}
+
+// Filter by a specific threat ID (threat_id&#x3D;Kandji_BD_0096).
+func (r ApiGetBehavioralDetectionsRequest) ThreatId(threatId string) ApiGetBehavioralDetectionsRequest {
+	r.threatId = &threatId
+	return r
+}
+
+// Filter by threat classification (classification&#x3D;malicious).
+func (r ApiGetBehavioralDetectionsRequest) Classification(classification string) ApiGetBehavioralDetectionsRequest {
+	r.classification = &classification
+	return r
+}
+
+// Filter by threat status (threat_status&#x3D;blocked)
+func (r ApiGetBehavioralDetectionsRequest) Status(status string) ApiGetBehavioralDetectionsRequest {
+	r.status = &status
+	return r
+}
+
+// Return all records within a specified number of days (Int)
+func (r ApiGetBehavioralDetectionsRequest) DateRange(dateRange string) ApiGetBehavioralDetectionsRequest {
+	r.dateRange = &dateRange
+	return r
+}
+
+// two query params detection_date_from and detection_date_to
+func (r ApiGetBehavioralDetectionsRequest) DetectionDate(detectionDate string) ApiGetBehavioralDetectionsRequest {
+	r.detectionDate = &detectionDate
+	return r
+}
+
+// Search for a specific device by the device id (uuid).
+func (r ApiGetBehavioralDetectionsRequest) DeviceId(deviceId string) ApiGetBehavioralDetectionsRequest {
+	r.deviceId = &deviceId
+	return r
+}
+
+// Filter by malware family (malware_family&#x3D;TrickBot).
+func (r ApiGetBehavioralDetectionsRequest) MalwareFamily(malwareFamily string) ApiGetBehavioralDetectionsRequest {
+	r.malwareFamily = &malwareFamily
+	return r
+}
+
+// Filter by parent process (parent_process_name&#x3D;bash).
+func (r ApiGetBehavioralDetectionsRequest) ParentProcessName(parentProcessName string) ApiGetBehavioralDetectionsRequest {
+	r.parentProcessName = &parentProcessName
+	return r
+}
+
+// Filter by target process (target_process_name&#x3D;python).
+func (r ApiGetBehavioralDetectionsRequest) TargetProcessName(targetProcessName string) ApiGetBehavioralDetectionsRequest {
+	r.targetProcessName = &targetProcessName
+	return r
+}
+
+// Filter by tags (informational_tags&#x3D;exploit,privilege_escalation).
+func (r ApiGetBehavioralDetectionsRequest) InformationalTags(informationalTags string) ApiGetBehavioralDetectionsRequest {
+	r.informationalTags = &informationalTags
+	return r
+}
+
+// Search term to filter threat results. Device name, file hash, image path
+func (r ApiGetBehavioralDetectionsRequest) Term(term string) ApiGetBehavioralDetectionsRequest {
+	r.term = &term
+	return r
+}
+
+// &lt;p&gt;Detections can be sorted by any of the following keys. Prepending a dash (-) to the parameter value will reverse the order of the returned results. ?sort_by&#x3D;-device_name will order the response by device_name in descending order.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;threat_id&lt;/li&gt; &lt;li&gt;classification&lt;/li&gt; &lt;li&gt;device_name&lt;/li&gt; &lt;li&gt;parent_process_name&lt;/li&gt; &lt;li&gt;target_process_name&lt;/li&gt; &lt;li&gt;detection_date&lt;/li&gt; &lt;li&gt;status&lt;/li&gt; &lt;/ul&gt;
+func (r ApiGetBehavioralDetectionsRequest) SortBy(sortBy string) ApiGetBehavioralDetectionsRequest {
+	r.sortBy = &sortBy
+	return r
+}
+
+// A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 1000 records returned per request. If more records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters.  Additionally, parameter queries can be added to a request to limit the results.
+func (r ApiGetBehavioralDetectionsRequest) Limit(limit string) ApiGetBehavioralDetectionsRequest {
+	r.limit = &limit
+	return r
+}
+
+// Specify the starting record to return.
+func (r ApiGetBehavioralDetectionsRequest) Offset(offset string) ApiGetBehavioralDetectionsRequest {
+	r.offset = &offset
+	return r
+}
+
+func (r ApiGetBehavioralDetectionsRequest) Execute() (*ThreatsGetBehavioralDetections200Response, *http.Response, error) {
+	return r.ApiService.GetBehavioralDetectionsExecute(r)
+}
+
+/*
+GetBehavioralDetections Get Behavioral Detections
+
+Get Behavioral Detections.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiGetBehavioralDetectionsRequest
+*/
+func (a *ThreatsAPIService) GetBehavioralDetections(ctx context.Context) ApiGetBehavioralDetectionsRequest {
+	return ApiGetBehavioralDetectionsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ThreatsGetBehavioralDetections200Response
+func (a *ThreatsAPIService) GetBehavioralDetectionsExecute(r ApiGetBehavioralDetectionsRequest) (*ThreatsGetBehavioralDetections200Response, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ThreatsGetBehavioralDetections200Response
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ThreatsAPIService.GetBehavioralDetections")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v1/behavioral-detections"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.threatId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "threat_id", r.threatId, "form", "")
+	}
+	if r.classification != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "classification", r.classification, "form", "")
+	}
+	if r.status != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "status", r.status, "form", "")
+	}
+	if r.dateRange != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "date_range", r.dateRange, "form", "")
+	}
+	if r.detectionDate != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "detection_date", r.detectionDate, "form", "")
+	}
+	if r.deviceId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "device_id", r.deviceId, "form", "")
+	}
+	if r.malwareFamily != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "malware_family", r.malwareFamily, "form", "")
+	}
+	if r.parentProcessName != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "parent_process_name", r.parentProcessName, "form", "")
+	}
+	if r.targetProcessName != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "target_process_name", r.targetProcessName, "form", "")
+	}
+	if r.informationalTags != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "informational_tags", r.informationalTags, "form", "")
+	}
+	if r.term != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "form", "")
+	}
+	if r.sortBy != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort_by", r.sortBy, "form", "")
+	}
+	if r.limit != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type ApiGetThreatDetailsRequest struct {
 	ctx context.Context

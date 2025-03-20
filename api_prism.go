@@ -66,6 +66,20 @@ type PrismAPI interface {
 	ApplicationsExecute(r ApiApplicationsRequest) (*PrismApplications200Response, *http.Response, error)
 
 	/*
+	Cellular Cellular
+
+	Get Cellular attributes for devices.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiCellularRequest
+	*/
+	Cellular(ctx context.Context) ApiCellularRequest
+
+	// CellularExecute executes the request
+	//  @return map[string]interface{}
+	CellularExecute(r ApiCellularRequest) (map[string]interface{}, *http.Response, error)
+
+	/*
 	Certificates Certificates
 
 	Get certificate details.
@@ -728,6 +742,165 @@ func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (*PrismA
 	}
 
 	localVarPath := localBasePath + "/api/v1/prism/apps"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.blueprintIds != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "blueprint_ids", r.blueprintIds, "form", "")
+	}
+	if r.deviceFamilies != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "device_families", r.deviceFamilies, "form", "")
+	}
+	if r.filter != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "form", "")
+	}
+	if r.sortBy != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sort_by", r.sortBy, "form", "")
+	}
+	if r.limit != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCellularRequest struct {
+	ctx context.Context
+	ApiService PrismAPI
+	blueprintIds *string
+	deviceFamilies *string
+	filter *string
+	sortBy *string
+	limit *string
+	offset *string
+}
+
+// Filter results by one or more blueprint IDs separated by commas.
+func (r ApiCellularRequest) BlueprintIds(blueprintIds string) ApiCellularRequest {
+	r.blueprintIds = &blueprintIds
+	return r
+}
+
+// Filter results by one or more device families separate by commas.
+func (r ApiCellularRequest) DeviceFamilies(deviceFamilies string) ApiCellularRequest {
+	r.deviceFamilies = &deviceFamilies
+	return r
+}
+
+// JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc.
+func (r ApiCellularRequest) Filter(filter string) ApiCellularRequest {
+	r.filter = &filter
+	return r
+}
+
+// Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order.
+func (r ApiCellularRequest) SortBy(sortBy string) ApiCellularRequest {
+	r.sortBy = &sortBy
+	return r
+}
+
+// A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results.
+func (r ApiCellularRequest) Limit(limit string) ApiCellularRequest {
+	r.limit = &limit
+	return r
+}
+
+// Specify the starting record to return.
+func (r ApiCellularRequest) Offset(offset string) ApiCellularRequest {
+	r.offset = &offset
+	return r
+}
+
+func (r ApiCellularRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.CellularExecute(r)
+}
+
+/*
+Cellular Cellular
+
+Get Cellular attributes for devices.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCellularRequest
+*/
+func (a *PrismAPIService) Cellular(ctx context.Context) ApiCellularRequest {
+	return ApiCellularRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return map[string]interface{}
+func (a *PrismAPIService) CellularExecute(r ApiCellularRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Cellular")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v1/prism/cellular"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

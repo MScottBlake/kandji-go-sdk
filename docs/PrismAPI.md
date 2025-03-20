@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ActivationLock**](PrismAPI.md#ActivationLock) | **Get** /api/v1/prism/activation_lock | Activation lock
 [**ApplicationFirewall**](PrismAPI.md#ApplicationFirewall) | **Get** /api/v1/prism/application_firewall | Application firewall
 [**Applications**](PrismAPI.md#Applications) | **Get** /api/v1/prism/apps | Applications
+[**Cellular**](PrismAPI.md#Cellular) | **Get** /api/v1/prism/cellular | Cellular
 [**Certificates**](PrismAPI.md#Certificates) | **Get** /api/v1/prism/certificates | Certificates
 [**Count**](PrismAPI.md#Count) | **Get** /api/v1/prism/count | Count
 [**DesktopAndScreensaver**](PrismAPI.md#DesktopAndScreensaver) | **Get** /api/v1/prism/desktop_and_screensaver | Desktop and Screensaver
@@ -238,6 +239,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PrismApplications200Response**](PrismApplications200Response.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Cellular
+
+> map[string]interface{} Cellular(ctx).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+
+Cellular
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/MScottBlake/kandji-go-sdk"
+)
+
+func main() {
+	blueprintIds := "blueprint_id, blueprint_id,blueprint_id" // string | Filter results by one or more blueprint IDs separated by commas. (optional)
+	deviceFamilies := "Mac,iPhone,iPad,tvOS" // string | Filter results by one or more device families separate by commas. (optional)
+	filter := "filter_example" // string | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. (optional)
+	sortBy := "sortBy_example" // string | Sort results by the name of a given response body key in either ascending (default behavior) or descending(<code>-</code>) order. (optional)
+	limit := "limit_example" // string | A hard upper <code>limit</code> is set at 300 device records returned per request. If more device records are expected, pagination should be used using the <code>limit</code> and <code>offset</code> parameters. Additionally, parameter queries can be added to a request to limit the results. (optional)
+	offset := "offset_example" // string | Specify the starting record to return. (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.PrismAPI.Cellular(context.Background()).BlueprintIds(blueprintIds).DeviceFamilies(deviceFamilies).Filter(filter).SortBy(sortBy).Limit(limit).Offset(offset).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `PrismAPI.Cellular``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Cellular`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `PrismAPI.Cellular`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCellularRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **blueprintIds** | **string** | Filter results by one or more blueprint IDs separated by commas. | 
+ **deviceFamilies** | **string** | Filter results by one or more device families separate by commas. | 
+ **filter** | **string** | JSON schema object containing one or more key value pairs. Note: For detailed information on fiters, see the Filters section at the begining of the Visibility API endpoints in this doc. | 
+ **sortBy** | **string** | Sort results by the name of a given response body key in either ascending (default behavior) or descending(&lt;code&gt;-&lt;/code&gt;) order. | 
+ **limit** | **string** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300 device records returned per request. If more device records are expected, pagination should be used using the &lt;code&gt;limit&lt;/code&gt; and &lt;code&gt;offset&lt;/code&gt; parameters. Additionally, parameter queries can be added to a request to limit the results. | 
+ **offset** | **string** | Specify the starting record to return. | 
+
+### Return type
+
+**map[string]interface{}**
 
 ### Authorization
 
