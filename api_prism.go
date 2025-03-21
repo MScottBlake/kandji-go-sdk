@@ -48,8 +48,8 @@ type PrismAPI interface {
 	ApplicationFirewall(ctx context.Context) ApiApplicationFirewallRequest
 
 	// ApplicationFirewallExecute executes the request
-	//  @return PrismActivationLock200Response
-	ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (*PrismActivationLock200Response, *http.Response, error)
+	//  @return PrismApplicationFirewall200Response
+	ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (*PrismApplicationFirewall200Response, *http.Response, error)
 
 	/*
 	Applications Applications
@@ -62,8 +62,8 @@ type PrismAPI interface {
 	Applications(ctx context.Context) ApiApplicationsRequest
 
 	// ApplicationsExecute executes the request
-	//  @return PrismApplications200Response
-	ApplicationsExecute(r ApiApplicationsRequest) (*PrismApplications200Response, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	ApplicationsExecute(r ApiApplicationsRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	Cellular Cellular
@@ -76,8 +76,8 @@ type PrismAPI interface {
 	Cellular(ctx context.Context) ApiCellularRequest
 
 	// CellularExecute executes the request
-	//  @return map[string]interface{}
-	CellularExecute(r ApiCellularRequest) (map[string]interface{}, *http.Response, error)
+	//  @return PrismApplicationFirewall200Response
+	CellularExecute(r ApiCellularRequest) (*PrismApplicationFirewall200Response, *http.Response, error)
 
 	/*
 	Certificates Certificates
@@ -90,8 +90,8 @@ type PrismAPI interface {
 	Certificates(ctx context.Context) ApiCertificatesRequest
 
 	// CertificatesExecute executes the request
-	//  @return PrismActivationLock200Response
-	CertificatesExecute(r ApiCertificatesRequest) (*PrismActivationLock200Response, *http.Response, error)
+	//  @return PrismApplicationFirewall200Response
+	CertificatesExecute(r ApiCertificatesRequest) (*PrismApplicationFirewall200Response, *http.Response, error)
 
 	/*
 	Count Count
@@ -134,8 +134,8 @@ type PrismAPI interface {
 	DeviceInformation(ctx context.Context) ApiDeviceInformationRequest
 
 	// DeviceInformationExecute executes the request
-	//  @return PrismDeviceInformation200Response
-	DeviceInformationExecute(r ApiDeviceInformationRequest) (*PrismDeviceInformation200Response, *http.Response, error)
+	//  @return PrismActivationLock200Response
+	DeviceInformationExecute(r ApiDeviceInformationRequest) (*PrismActivationLock200Response, *http.Response, error)
 
 	/*
 	Filevault FileVault
@@ -148,8 +148,8 @@ type PrismAPI interface {
 	Filevault(ctx context.Context) ApiFilevaultRequest
 
 	// FilevaultExecute executes the request
-	//  @return PrismDeviceInformation200Response
-	FilevaultExecute(r ApiFilevaultRequest) (*PrismDeviceInformation200Response, *http.Response, error)
+	//  @return PrismApplicationFirewall200Response
+	FilevaultExecute(r ApiFilevaultRequest) (*PrismApplicationFirewall200Response, *http.Response, error)
 
 	/*
 	GatekeeperAndXprotect Gatekeeper and XProtect
@@ -162,8 +162,8 @@ type PrismAPI interface {
 	GatekeeperAndXprotect(ctx context.Context) ApiGatekeeperAndXprotectRequest
 
 	// GatekeeperAndXprotectExecute executes the request
-	//  @return PrismActivationLock200Response
-	GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (*PrismActivationLock200Response, *http.Response, error)
+	//  @return PrismApplicationFirewall200Response
+	GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (*PrismApplicationFirewall200Response, *http.Response, error)
 
 	/*
 	GetCategoryExport Get category export
@@ -548,7 +548,7 @@ func (r ApiApplicationFirewallRequest) Offset(offset string) ApiApplicationFirew
 	return r
 }
 
-func (r ApiApplicationFirewallRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
+func (r ApiApplicationFirewallRequest) Execute() (*PrismApplicationFirewall200Response, *http.Response, error) {
 	return r.ApiService.ApplicationFirewallExecute(r)
 }
 
@@ -568,13 +568,13 @@ func (a *PrismAPIService) ApplicationFirewall(ctx context.Context) ApiApplicatio
 }
 
 // Execute executes the request
-//  @return PrismActivationLock200Response
-func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (*PrismActivationLock200Response, *http.Response, error) {
+//  @return PrismApplicationFirewall200Response
+func (a *PrismAPIService) ApplicationFirewallExecute(r ApiApplicationFirewallRequest) (*PrismApplicationFirewall200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PrismActivationLock200Response
+		localVarReturnValue  *PrismApplicationFirewall200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.ApplicationFirewall")
@@ -707,7 +707,7 @@ func (r ApiApplicationsRequest) Offset(offset string) ApiApplicationsRequest {
 	return r
 }
 
-func (r ApiApplicationsRequest) Execute() (*PrismApplications200Response, *http.Response, error) {
+func (r ApiApplicationsRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.ApplicationsExecute(r)
 }
 
@@ -727,13 +727,13 @@ func (a *PrismAPIService) Applications(ctx context.Context) ApiApplicationsReque
 }
 
 // Execute executes the request
-//  @return PrismApplications200Response
-func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (*PrismApplications200Response, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) ApplicationsExecute(r ApiApplicationsRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PrismApplications200Response
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Applications")
@@ -866,7 +866,7 @@ func (r ApiCellularRequest) Offset(offset string) ApiCellularRequest {
 	return r
 }
 
-func (r ApiCellularRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiCellularRequest) Execute() (*PrismApplicationFirewall200Response, *http.Response, error) {
 	return r.ApiService.CellularExecute(r)
 }
 
@@ -886,13 +886,13 @@ func (a *PrismAPIService) Cellular(ctx context.Context) ApiCellularRequest {
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *PrismAPIService) CellularExecute(r ApiCellularRequest) (map[string]interface{}, *http.Response, error) {
+//  @return PrismApplicationFirewall200Response
+func (a *PrismAPIService) CellularExecute(r ApiCellularRequest) (*PrismApplicationFirewall200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *PrismApplicationFirewall200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Cellular")
@@ -1025,7 +1025,7 @@ func (r ApiCertificatesRequest) Offset(offset string) ApiCertificatesRequest {
 	return r
 }
 
-func (r ApiCertificatesRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
+func (r ApiCertificatesRequest) Execute() (*PrismApplicationFirewall200Response, *http.Response, error) {
 	return r.ApiService.CertificatesExecute(r)
 }
 
@@ -1045,13 +1045,13 @@ func (a *PrismAPIService) Certificates(ctx context.Context) ApiCertificatesReque
 }
 
 // Execute executes the request
-//  @return PrismActivationLock200Response
-func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (*PrismActivationLock200Response, *http.Response, error) {
+//  @return PrismApplicationFirewall200Response
+func (a *PrismAPIService) CertificatesExecute(r ApiCertificatesRequest) (*PrismApplicationFirewall200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PrismActivationLock200Response
+		localVarReturnValue  *PrismApplicationFirewall200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Certificates")
@@ -1461,7 +1461,7 @@ func (r ApiDeviceInformationRequest) Body(body string) ApiDeviceInformationReque
 	return r
 }
 
-func (r ApiDeviceInformationRequest) Execute() (*PrismDeviceInformation200Response, *http.Response, error) {
+func (r ApiDeviceInformationRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
 	return r.ApiService.DeviceInformationExecute(r)
 }
 
@@ -1481,13 +1481,13 @@ func (a *PrismAPIService) DeviceInformation(ctx context.Context) ApiDeviceInform
 }
 
 // Execute executes the request
-//  @return PrismDeviceInformation200Response
-func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest) (*PrismDeviceInformation200Response, *http.Response, error) {
+//  @return PrismActivationLock200Response
+func (a *PrismAPIService) DeviceInformationExecute(r ApiDeviceInformationRequest) (*PrismActivationLock200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PrismDeviceInformation200Response
+		localVarReturnValue  *PrismActivationLock200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.DeviceInformation")
@@ -1622,7 +1622,7 @@ func (r ApiFilevaultRequest) Offset(offset string) ApiFilevaultRequest {
 	return r
 }
 
-func (r ApiFilevaultRequest) Execute() (*PrismDeviceInformation200Response, *http.Response, error) {
+func (r ApiFilevaultRequest) Execute() (*PrismApplicationFirewall200Response, *http.Response, error) {
 	return r.ApiService.FilevaultExecute(r)
 }
 
@@ -1642,13 +1642,13 @@ func (a *PrismAPIService) Filevault(ctx context.Context) ApiFilevaultRequest {
 }
 
 // Execute executes the request
-//  @return PrismDeviceInformation200Response
-func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (*PrismDeviceInformation200Response, *http.Response, error) {
+//  @return PrismApplicationFirewall200Response
+func (a *PrismAPIService) FilevaultExecute(r ApiFilevaultRequest) (*PrismApplicationFirewall200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PrismDeviceInformation200Response
+		localVarReturnValue  *PrismApplicationFirewall200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.Filevault")
@@ -1781,7 +1781,7 @@ func (r ApiGatekeeperAndXprotectRequest) Offset(offset string) ApiGatekeeperAndX
 	return r
 }
 
-func (r ApiGatekeeperAndXprotectRequest) Execute() (*PrismActivationLock200Response, *http.Response, error) {
+func (r ApiGatekeeperAndXprotectRequest) Execute() (*PrismApplicationFirewall200Response, *http.Response, error) {
 	return r.ApiService.GatekeeperAndXprotectExecute(r)
 }
 
@@ -1801,13 +1801,13 @@ func (a *PrismAPIService) GatekeeperAndXprotect(ctx context.Context) ApiGatekeep
 }
 
 // Execute executes the request
-//  @return PrismActivationLock200Response
-func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (*PrismActivationLock200Response, *http.Response, error) {
+//  @return PrismApplicationFirewall200Response
+func (a *PrismAPIService) GatekeeperAndXprotectExecute(r ApiGatekeeperAndXprotectRequest) (*PrismApplicationFirewall200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PrismActivationLock200Response
+		localVarReturnValue  *PrismApplicationFirewall200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrismAPIService.GatekeeperAndXprotect")

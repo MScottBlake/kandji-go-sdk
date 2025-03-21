@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ListUsers
 
-> UsersListUsers200Response ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
+> UsersListUsers200Response ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Cursor(cursor).Execute()
 
 List Users
 
@@ -173,10 +173,11 @@ func main() {
 	id := "69c009ca-1f78-4bdf-bb93-08d6d39041db" // string | Search for a user matching the provided UUID value. (optional)
 	integrationId := "f7461096-4ef9-43aa-88e9-ca1967ba0b38" // string | Search for a integration matching the provided UUID value. (optional)
 	archived := "false" // string | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
+	cursor := "cursor_example" // string | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.ListUsers(context.Background()).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Execute()
+	resp, r, err := apiClient.UsersAPI.ListUsers(context.Background()).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Cursor(cursor).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.ListUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -201,6 +202,7 @@ Name | Type | Description  | Notes
  **id** | **string** | Search for a user matching the provided UUID value. | 
  **integrationId** | **string** | Search for a integration matching the provided UUID value. | 
  **archived** | **string** | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | 
+ **cursor** | **string** | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. | 
 
 ### Return type
 

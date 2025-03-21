@@ -297,6 +297,7 @@ type ApiListUsersRequest struct {
 	id *string
 	integrationId *string
 	archived *string
+	cursor *string
 }
 
 // Returns users with email addresses containing the provided string.
@@ -320,6 +321,12 @@ func (r ApiListUsersRequest) IntegrationId(integrationId string) ApiListUsersReq
 // Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab.
 func (r ApiListUsersRequest) Archived(archived string) ApiListUsersRequest {
 	r.archived = &archived
+	return r
+}
+
+// Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.
+func (r ApiListUsersRequest) Cursor(cursor string) ApiListUsersRequest {
+	r.cursor = &cursor
 	return r
 }
 
@@ -375,6 +382,9 @@ func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*UsersListUse
 	}
 	if r.archived != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "archived", r.archived, "form", "")
+	}
+	if r.cursor != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cursor", r.cursor, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
