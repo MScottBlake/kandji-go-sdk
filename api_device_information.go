@@ -1692,7 +1692,7 @@ func (r ApiListDevicesRequest) Ordering(ordering string) ApiListDevicesRequest {
 	return r
 }
 
-// Return all device records with the specified OS version
+// Return all device records containing the specified OS version
 func (r ApiListDevicesRequest) OsVersion(osVersion string) ApiListDevicesRequest {
 	r.osVersion = &osVersion
 	return r
@@ -1746,7 +1746,7 @@ func (r ApiListDevicesRequest) UserEmail(userEmail string) ApiListDevicesRequest
 	return r
 }
 
-// &amp;quot;exact&amp;quot; match on kandji user ID number
+// &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
 func (r ApiListDevicesRequest) UserId(userId string) ApiListDevicesRequest {
 	r.userId = &userId
 	return r

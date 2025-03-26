@@ -760,7 +760,7 @@ func (r ApiListAdeDevicesRequest) BlueprintId(blueprintId string) ApiListAdeDevi
 	return r
 }
 
-// &amp;quot;exact&amp;quot; match on kandji user ID number
+// &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
 func (r ApiListAdeDevicesRequest) UserId(userId string) ApiListAdeDevicesRequest {
 	r.userId = &userId
 	return r
