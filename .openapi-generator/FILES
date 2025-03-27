@@ -2,6 +2,7 @@
 .travis.yml
 README.md
 api/openapi.yaml
+api_audit_log.go
 api_automated_device_enrollment_integrations.go
 api_blueprints.go
 api_device_actions.go
@@ -16,6 +17,8 @@ api_users.go
 api_vulnerabilities.go
 client.go
 configuration.go
+docs/AuditLogAPI.md
+docs/AuditLogListAuditEvents200Response.md
 docs/AutomatedDeviceEnrollmentIntegrationsAPI.md
 docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200Response.md
 docs/AutomatedDeviceEnrollmentIntegrationsCreateAdeIntegration200ResponseBlueprint.md
@@ -88,7 +91,6 @@ docs/ThreatsGetThreatDetails200Response.md
 docs/UsersAPI.md
 docs/UsersGetUser200Response.md
 docs/UsersGetUser200ResponseIntegration.md
-docs/UsersListUsers200Response.md
 docs/VulnerabilitiesAPI.md
 docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
 docs/VulnerabilitiesListDetections200Response.md
@@ -96,6 +98,7 @@ docs/VulnerabilitiesListVulnerabilities200Response.md
 git_push.sh
 go.mod
 go.sum
+model_audit_log_list_audit_events_200_response.go
 model_automated_device_enrollment_integrations_create_ade_integration_200_response.go
 model_automated_device_enrollment_integrations_create_ade_integration_200_response_blueprint.go
 model_automated_device_enrollment_integrations_create_ade_integration_200_response_defaults.go
@@ -157,9 +160,9 @@ model_threats_get_behavioral_detections_200_response.go
 model_threats_get_threat_details_200_response.go
 model_users_get_user_200_response.go
 model_users_get_user_200_response_integration.go
-model_users_list_users_200_response.go
 model_vulnerabilities_get_vulnerability_description_200_response.go
 model_vulnerabilities_list_detections_200_response.go
 model_vulnerabilities_list_vulnerabilities_200_response.go
 response.go
+test/api_audit_log_test.go
 utils.go

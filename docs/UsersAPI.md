@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## ListUsers
 
-> UsersListUsers200Response ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Cursor(cursor).Execute()
+> AuditLogListAuditEvents200Response ListUsers(ctx).Email(email).Id(id).IntegrationId(integrationId).Archived(archived).Cursor(cursor).Execute()
 
 List Users
 
@@ -182,7 +182,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.ListUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListUsers`: UsersListUsers200Response
+	// response from `ListUsers`: AuditLogListAuditEvents200Response
 	fmt.Fprintf(os.Stdout, "Response from `UsersAPI.ListUsers`: %v\n", resp)
 }
 ```
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UsersListUsers200Response**](UsersListUsers200Response.md)
+[**AuditLogListAuditEvents200Response**](AuditLogListAuditEvents200Response.md)
 
 ### Authorization
 

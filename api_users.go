@@ -71,8 +71,8 @@ type UsersAPI interface {
 	ListUsers(ctx context.Context) ApiListUsersRequest
 
 	// ListUsersExecute executes the request
-	//  @return UsersListUsers200Response
-	ListUsersExecute(r ApiListUsersRequest) (*UsersListUsers200Response, *http.Response, error)
+	//  @return AuditLogListAuditEvents200Response
+	ListUsersExecute(r ApiListUsersRequest) (*AuditLogListAuditEvents200Response, *http.Response, error)
 }
 
 // UsersAPIService UsersAPI service
@@ -330,7 +330,7 @@ func (r ApiListUsersRequest) Cursor(cursor string) ApiListUsersRequest {
 	return r
 }
 
-func (r ApiListUsersRequest) Execute() (*UsersListUsers200Response, *http.Response, error) {
+func (r ApiListUsersRequest) Execute() (*AuditLogListAuditEvents200Response, *http.Response, error) {
 	return r.ApiService.ListUsersExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *UsersAPIService) ListUsers(ctx context.Context) ApiListUsersRequest {
 }
 
 // Execute executes the request
-//  @return UsersListUsers200Response
-func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*UsersListUsers200Response, *http.Response, error) {
+//  @return AuditLogListAuditEvents200Response
+func (a *UsersAPIService) ListUsersExecute(r ApiListUsersRequest) (*AuditLogListAuditEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UsersListUsers200Response
+		localVarReturnValue  *AuditLogListAuditEvents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.ListUsers")
