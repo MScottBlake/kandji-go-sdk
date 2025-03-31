@@ -25,7 +25,7 @@ type AuditLogAPI interface {
 	/*
 	ListAuditEvents List audit events
 
-	<p>List Audit log events from the Kandji Activity module.</p>
+	<p>List audit log events from the Kandji Activity module.</p>
 <p>Returns events related to</p>
 <ul>
 <li><p>Blueprint and Library Item creation, updates, and deletions (CUD)</p>
@@ -104,7 +104,7 @@ func (r ApiListAuditEventsRequest) Execute() (*AuditLogListAuditEvents200Respons
 /*
 ListAuditEvents List audit events
 
-<p>List Audit log events from the Kandji Activity module.</p>
+<p>List audit log events from the Kandji Activity module.</p>
 <p>Returns events related to</p>
 <ul>
 <li><p>Blueprint and Library Item creation, updates, and deletions (CUD)</p>
