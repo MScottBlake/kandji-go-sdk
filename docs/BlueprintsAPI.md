@@ -4,7 +4,6 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AssignLibraryItem**](BlueprintsAPI.md#AssignLibraryItem) | **Post** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
 [**CreateBlueprint**](BlueprintsAPI.md#CreateBlueprint) | **Post** /api/v1/blueprints | Create Blueprint
 [**DeleteBlueprint**](BlueprintsAPI.md#DeleteBlueprint) | **Delete** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
 [**GetBlueprint**](BlueprintsAPI.md#GetBlueprint) | **Get** /api/v1/blueprints/{blueprint_id} | Get Blueprint
@@ -12,81 +11,9 @@ Method | HTTP request | Description
 [**GetManualEnrollmentProfile**](BlueprintsAPI.md#GetManualEnrollmentProfile) | **Get** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
 [**ListBlueprints**](BlueprintsAPI.md#ListBlueprints) | **Get** /api/v1/blueprints | List Blueprints
 [**ListLibraryItems**](BlueprintsAPI.md#ListLibraryItems) | **Get** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
-[**RemoveLibraryItem**](BlueprintsAPI.md#RemoveLibraryItem) | **Post** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
+[**RemoveLibraryItem**](BlueprintsAPI.md#RemoveLibraryItem) | **Post** /api/v1/blueprints/{blueprint_id}/assign-library-item | Remove Library Item
 [**UpdateBlueprint**](BlueprintsAPI.md#UpdateBlueprint) | **Patch** /api/v1/blueprints/{blueprint_id} | Update Blueprint
 
-
-
-## AssignLibraryItem
-
-> map[string]interface{} AssignLibraryItem(ctx, blueprintId).Body(body).Execute()
-
-Assign Library Item
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/MScottBlake/kandji-go-sdk"
-)
-
-func main() {
-	blueprintId := "blueprintId_example" // string | 
-	body := "{"assignment_node_id":"{assignment_node_id}","library_item_id":"{library_item_id}"}" // string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlueprintsAPI.AssignLibraryItem(context.Background(), blueprintId).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlueprintsAPI.AssignLibraryItem``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `AssignLibraryItem`: map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlueprintsAPI.AssignLibraryItem`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**blueprintId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAssignLibraryItemRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | **string** |  | 
-
-### Return type
-
-**map[string]interface{}**
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
 
 
 ## CreateBlueprint
@@ -605,7 +532,7 @@ import (
 
 func main() {
 	blueprintId := "blueprintId_example" // string | 
-	body := "{assignment_node_id={assignment_node_id}, library_item_id={library_item_id}}" // string |  (optional)
+	body := "{"assignment_node_id":"{assignment_node_id}","library_item_id":"{library_item_id}"}" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

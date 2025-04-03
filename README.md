@@ -223,7 +223,6 @@ Class | Method | HTTP request | Description
 *AutomatedDeviceEnrollmentIntegrationsAPI* | [**RenewAdeIntegration**](docs/AutomatedDeviceEnrollmentIntegrationsAPI.md#renewadeintegration) | **Post** /api/v1/integrations/apple/ade/{ade_token_id}/renew | Renew ADE integration
 *AutomatedDeviceEnrollmentIntegrationsAPI* | [**UpdateAdeDevice**](docs/AutomatedDeviceEnrollmentIntegrationsAPI.md#updateadedevice) | **Patch** /api/v1/integrations/apple/ade/devices/{device_id} | Update ADE device
 *AutomatedDeviceEnrollmentIntegrationsAPI* | [**UpdateAdeIntegration**](docs/AutomatedDeviceEnrollmentIntegrationsAPI.md#updateadeintegration) | **Patch** /api/v1/integrations/apple/ade/{ade_token_id} | Update ADE integration
-*BlueprintsAPI* | [**AssignLibraryItem**](docs/BlueprintsAPI.md#assignlibraryitem) | **Post** /api/v1/blueprints/{blueprint_id}/assign-library-item | Assign Library Item
 *BlueprintsAPI* | [**CreateBlueprint**](docs/BlueprintsAPI.md#createblueprint) | **Post** /api/v1/blueprints | Create Blueprint
 *BlueprintsAPI* | [**DeleteBlueprint**](docs/BlueprintsAPI.md#deleteblueprint) | **Delete** /api/v1/blueprints/{blueprint_id} | Delete Blueprint
 *BlueprintsAPI* | [**GetBlueprint**](docs/BlueprintsAPI.md#getblueprint) | **Get** /api/v1/blueprints/{blueprint_id} | Get Blueprint
@@ -231,7 +230,7 @@ Class | Method | HTTP request | Description
 *BlueprintsAPI* | [**GetManualEnrollmentProfile**](docs/BlueprintsAPI.md#getmanualenrollmentprofile) | **Get** /api/v1/blueprints/{blueprint_id}/ota-enrollment-profile | Get Manual Enrollment Profile
 *BlueprintsAPI* | [**ListBlueprints**](docs/BlueprintsAPI.md#listblueprints) | **Get** /api/v1/blueprints | List Blueprints
 *BlueprintsAPI* | [**ListLibraryItems**](docs/BlueprintsAPI.md#listlibraryitems) | **Get** /api/v1/blueprints/{blueprint_id}/list-library-items | List Library Items
-*BlueprintsAPI* | [**RemoveLibraryItem**](docs/BlueprintsAPI.md#removelibraryitem) | **Post** /api/v1/blueprints/{blueprint_id}/remove-library-item | Remove Library Item
+*BlueprintsAPI* | [**RemoveLibraryItem**](docs/BlueprintsAPI.md#removelibraryitem) | **Post** /api/v1/blueprints/{blueprint_id}/assign-library-item | Remove Library Item
 *BlueprintsAPI* | [**UpdateBlueprint**](docs/BlueprintsAPI.md#updateblueprint) | **Patch** /api/v1/blueprints/{blueprint_id} | Update Blueprint
 *DeviceActionsAPI* | [**ClearPasscode**](docs/DeviceActionsAPI.md#clearpasscode) | **Post** /api/v1/devices/{device_id}/action/clearpasscode | Clear Passcode
 *DeviceActionsAPI* | [**DeleteDevice**](docs/DeviceActionsAPI.md#deletedevice) | **Delete** /api/v1/devices/{device_id} | Delete Device

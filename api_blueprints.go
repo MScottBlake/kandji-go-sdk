@@ -24,65 +24,6 @@ import (
 type BlueprintsAPI interface {
 
 	/*
-	AssignLibraryItem Assign Library Item
-
-	<p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-<h3 id=&quot;request-body&quot;>Request Body</h3>
-<ul>
-<li><p><code>library_item_id</code> (string, required)</p>
-</li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
-<ul>
-<li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li>
-</ul>
-</li>
-</ul>
-<h3 id=&quot;error-responses&quot;>Error responses</h3>
-<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
-<thead>
-<tr>
-<th><strong>Code</strong></th>
-<th><strong>Body</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400 - Bad Request</td>
-<td>Bad Request</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists on Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists in Assignment Node&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param blueprintId
-	@return ApiAssignLibraryItemRequest
-	*/
-	AssignLibraryItem(ctx context.Context, blueprintId string) ApiAssignLibraryItemRequest
-
-	// AssignLibraryItemExecute executes the request
-	//  @return map[string]interface{}
-	AssignLibraryItemExecute(r ApiAssignLibraryItemRequest) (map[string]interface{}, *http.Response, error)
-
-	/*
 	CreateBlueprint Create Blueprint
 
 	<p>This request creates a new empty Blueprint or a new Blueprint from a template. The keys <code>name</code> and <code>enrollment_code</code> <code>is_active</code> are required, and the blueprint name key must be unique from the existing blueprint names in the Kandji tenant.</p>
@@ -104,8 +45,6 @@ type BlueprintsAPI interface {
 	<h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
 <p>This is a HIGHLY destructive action.</p>
 <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param blueprintId
@@ -119,9 +58,7 @@ type BlueprintsAPI interface {
 	/*
 	GetBlueprint Get Blueprint
 
-	<p>This request returns information about a specific blueprint based on blueprint ID.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+	This request returns information about a specific blueprint based on blueprint ID.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param blueprintId
@@ -157,8 +94,6 @@ type BlueprintsAPI interface {
 </li>
 </ul>
 <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param blueprintId
@@ -188,8 +123,6 @@ type BlueprintsAPI interface {
 	ListLibraryItems List Library Items
 
 	<p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 <h3 id=&quot;response-fields&quot;>Response fields</h3>
 <ul>
 <li><p><code>count</code> (int): The total count of library items.</p>
@@ -222,13 +155,14 @@ type BlueprintsAPI interface {
 	RemoveLibraryItem Remove Library Item
 
 	<p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 <h3 id=&quot;request-body&quot;>Request Body</h3>
 <ul>
 <li><p><code>library_item_id</code> (string, required)</p>
 </li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
+<li><p><code>assignment_node_id</code> (string, for maps)</p>
+<ul>
+<li>NOT required for assigning to assignment maps if the map does not have conditional logic.</li>
+</ul>
 </li>
 </ul>
 <h3 id=&quot;error-responses&quot;>Error responses</h3>
@@ -277,9 +211,7 @@ type BlueprintsAPI interface {
 	/*
 	UpdateBlueprint Update Blueprint
 
-	<p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+	This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param blueprintId
@@ -294,161 +226,6 @@ type BlueprintsAPI interface {
 
 // BlueprintsAPIService BlueprintsAPI service
 type BlueprintsAPIService service
-
-type ApiAssignLibraryItemRequest struct {
-	ctx context.Context
-	ApiService BlueprintsAPI
-	blueprintId string
-	body *string
-}
-
-func (r ApiAssignLibraryItemRequest) Body(body string) ApiAssignLibraryItemRequest {
-	r.body = &body
-	return r
-}
-
-func (r ApiAssignLibraryItemRequest) Execute() (map[string]interface{}, *http.Response, error) {
-	return r.ApiService.AssignLibraryItemExecute(r)
-}
-
-/*
-AssignLibraryItem Assign Library Item
-
-<p>This endpoint allows assigning a library item to a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
-<h3 id=&quot;request-body&quot;>Request Body</h3>
-<ul>
-<li><p><code>library_item_id</code> (string, required)</p>
-</li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
-<ul>
-<li>Note: To find the assignment_node_id, view the map in a browser. Then, on your keyboard, press and hold the Option ⌥ key. Each node ID remains fixed for the lifespan of the node on the map.</li>
-</ul>
-</li>
-</ul>
-<h3 id=&quot;error-responses&quot;>Error responses</h3>
-<div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
-<thead>
-<tr>
-<th><strong>Code</strong></th>
-<th><strong>Body</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400 - Bad Request</td>
-<td>Bad Request</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists on Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Library Item already exists in Assignment Node&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;assignment_node_id cannot be provided for Classic Blueprint&quot;</td>
-</tr>
-<tr>
-<td></td>
-<td>&quot;Must provide assignment_node_id for Assignment Map Blueprint&quot;</td>
-</tr>
-</tbody>
-</table>
-</div>
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param blueprintId
- @return ApiAssignLibraryItemRequest
-*/
-func (a *BlueprintsAPIService) AssignLibraryItem(ctx context.Context, blueprintId string) ApiAssignLibraryItemRequest {
-	return ApiAssignLibraryItemRequest{
-		ApiService: a,
-		ctx: ctx,
-		blueprintId: blueprintId,
-	}
-}
-
-// Execute executes the request
-//  @return map[string]interface{}
-func (a *BlueprintsAPIService) AssignLibraryItemExecute(r ApiAssignLibraryItemRequest) (map[string]interface{}, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BlueprintsAPIService.AssignLibraryItem")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/api/v1/blueprints/{blueprint_id}/assign-library-item"
-	localVarPath = strings.Replace(localVarPath, "{"+"blueprint_id"+"}", url.PathEscape(parameterValueToString(r.blueprintId, "blueprintId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
 
 type ApiCreateBlueprintRequest struct {
 	ctx context.Context
@@ -643,8 +420,6 @@ DeleteBlueprint Delete Blueprint
 <h1 id=&quot;warning&quot;><strong>WARNING!</strong></h1>
 <p>This is a HIGHLY destructive action.</p>
 <p>Deleting a Blueprint will un-manage ALL devices assigned to the Blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
@@ -736,9 +511,7 @@ func (r ApiGetBlueprintRequest) Execute() (*BlueprintsGetBlueprint200Response, *
 /*
 GetBlueprint Get Blueprint
 
-<p>This request returns information about a specific blueprint based on blueprint ID.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+This request returns information about a specific blueprint based on blueprint ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
@@ -964,8 +737,6 @@ GetManualEnrollmentProfile Get Manual Enrollment Profile
 </li>
 </ul>
 <p>An optional query parameter <code>sso=true</code> can be used to return a URL for SSO authentication instead. If this query parameter is used for a Blueprint that does not require authentication, then the enrollment profile will be returned.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
@@ -1221,8 +992,6 @@ func (r ApiListLibraryItemsRequest) Execute() (*BlueprintsListBlueprints200Respo
 ListLibraryItems List Library Items
 
 <p>This API endpoint retrieves a list of library items associated with a specific blueprint. (classic and maps). Requires that the blueprint ID is passed as a path parameter in the URL.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 <h3 id=&quot;response-fields&quot;>Response fields</h3>
 <ul>
 <li><p><code>count</code> (int): The total count of library items.</p>
@@ -1349,13 +1118,14 @@ func (r ApiRemoveLibraryItemRequest) Execute() (map[string]interface{}, *http.Re
 RemoveLibraryItem Remove Library Item
 
 <p>This endpoint allows removing a library item from a specific blueprint (classic and maps). The response will include a list of library item IDs assigned to the blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
 <h3 id=&quot;request-body&quot;>Request Body</h3>
 <ul>
 <li><p><code>library_item_id</code> (string, required)</p>
 </li>
-<li><p><code>assignment_node_id</code> (string, required for maps)</p>
+<li><p><code>assignment_node_id</code> (string, for maps)</p>
+<ul>
+<li>NOT required for assigning to assignment maps if the map does not have conditional logic.</li>
+</ul>
 </li>
 </ul>
 <h3 id=&quot;error-responses&quot;>Error responses</h3>
@@ -1418,7 +1188,7 @@ func (a *BlueprintsAPIService) RemoveLibraryItemExecute(r ApiRemoveLibraryItemRe
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/blueprints/{blueprint_id}/remove-library-item"
+	localVarPath := localBasePath + "/api/v1/blueprints/{blueprint_id}/assign-library-item"
 	localVarPath = strings.Replace(localVarPath, "{"+"blueprint_id"+"}", url.PathEscape(parameterValueToString(r.blueprintId, "blueprintId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1522,9 +1292,7 @@ func (r ApiUpdateBlueprintRequest) Execute() (*BlueprintsUpdateBlueprint200Respo
 /*
 UpdateBlueprint Update Blueprint
 
-<p>This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.</p>
-<h3 id=&quot;request-parameters&quot;>Request Parameters</h3>
-<p><code>blueprint_id</code> (path parameter): The unique identifier of the blueprint.</p>
+This requests allows updating of the name, icon, icon color, description, enrollment code, and active status on an existing blueprint.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param blueprintId
