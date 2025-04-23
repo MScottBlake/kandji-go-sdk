@@ -772,7 +772,7 @@ func (r ApiListAdeDevicesRequest) DepAccount(depAccount string) ApiListAdeDevice
 	return r
 }
 
-// Mac, iPhone, iPad, AppleTV, iPod
+// iPad, iPhone, iPod, Mac, AppleTV, or Vision
 func (r ApiListAdeDevicesRequest) DeviceFamily(deviceFamily string) ApiListAdeDevicesRequest {
 	r.deviceFamily = &deviceFamily
 	return r
@@ -784,7 +784,7 @@ func (r ApiListAdeDevicesRequest) Model(model string) ApiListAdeDevicesRequest {
 	return r
 }
 
-// OSX, iOS, tvOS
+// iOS, iPadOS, OSX, tvOS, or visionOS
 func (r ApiListAdeDevicesRequest) Os(os string) ApiListAdeDevicesRequest {
 	r.os = &os
 	return r
