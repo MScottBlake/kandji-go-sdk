@@ -26,7 +26,7 @@ type VulnerabilitiesAPI interface {
 	/*
 	GetVulnerabilityDescription Get Vulnerability Description
 
-	This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+	Retrieve information about a CVE.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param cveId
@@ -50,13 +50,13 @@ type VulnerabilitiesAPI interface {
 	ListAffectedApps(ctx context.Context, cveId string) ApiListAffectedAppsRequest
 
 	// ListAffectedAppsExecute executes the request
-	//  @return map[string]interface{}
-	ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (map[string]interface{}, *http.Response, error)
+	//  @return VulnerabilitiesListAffectedApps200Response
+	ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error)
 
 	/*
 	ListAffectedDevices List Affected Devices
 
-	This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+	Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param cveId
@@ -65,13 +65,13 @@ type VulnerabilitiesAPI interface {
 	ListAffectedDevices(ctx context.Context, cveId string) ApiListAffectedDevicesRequest
 
 	// ListAffectedDevicesExecute executes the request
-	//  @return map[string]interface{}
-	ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (map[string]interface{}, *http.Response, error)
+	//  @return VulnerabilitiesListAffectedApps200Response
+	ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error)
 
 	/*
 	ListDetections List Detections
 
-	This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+	Retrieve a list of all vulnerability detections across the device fleet.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListDetectionsRequest
@@ -85,7 +85,7 @@ type VulnerabilitiesAPI interface {
 	/*
 	ListVulnerabilities List Vulnerabilities
 
-	This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+	Retrieve a list of all vulnerabilities grouped by cve.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListVulnerabilitiesRequest
@@ -93,8 +93,8 @@ type VulnerabilitiesAPI interface {
 	ListVulnerabilities(ctx context.Context) ApiListVulnerabilitiesRequest
 
 	// ListVulnerabilitiesExecute executes the request
-	//  @return VulnerabilitiesListVulnerabilities200Response
-	ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error)
+	//  @return map[string]interface{}
+	ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (map[string]interface{}, *http.Response, error)
 }
 
 // VulnerabilitiesAPIService VulnerabilitiesAPI service
@@ -113,7 +113,7 @@ func (r ApiGetVulnerabilityDescriptionRequest) Execute() (*VulnerabilitiesGetVul
 /*
 GetVulnerabilityDescription Get Vulnerability Description
 
-This endpoint makes a request to retrieve information about a cve and summary information about detections for a tenants fleet.
+Retrieve information about a CVE.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cveId
@@ -231,13 +231,13 @@ func (r ApiListAffectedAppsRequest) SortBy(sortBy string) ApiListAffectedAppsReq
 	return r
 }
 
-// Filterable columns: blueprint_id updated_at
+// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedAppsRequest) Filter(filter string) ApiListAffectedAppsRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListAffectedAppsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiListAffectedAppsRequest) Execute() (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
 	return r.ApiService.ListAffectedAppsExecute(r)
 }
 
@@ -259,13 +259,13 @@ func (a *VulnerabilitiesAPIService) ListAffectedApps(ctx context.Context, cveId 
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *VulnerabilitiesAPIService) ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (map[string]interface{}, *http.Response, error) {
+//  @return VulnerabilitiesListAffectedApps200Response
+func (a *VulnerabilitiesAPIService) ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *VulnerabilitiesListAffectedApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedApps")
@@ -374,20 +374,20 @@ func (r ApiListAffectedDevicesRequest) SortBy(sortBy string) ApiListAffectedDevi
 	return r
 }
 
-// Filterable columns: blueprint_id updated_at
+// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedDevicesRequest) Filter(filter string) ApiListAffectedDevicesRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListAffectedDevicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiListAffectedDevicesRequest) Execute() (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
 	return r.ApiService.ListAffectedDevicesExecute(r)
 }
 
 /*
 ListAffectedDevices List Affected Devices
 
-This endpoint makes a request to retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cveId
@@ -402,13 +402,13 @@ func (a *VulnerabilitiesAPIService) ListAffectedDevices(ctx context.Context, cve
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *VulnerabilitiesAPIService) ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return VulnerabilitiesListAffectedApps200Response
+func (a *VulnerabilitiesAPIService) ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *VulnerabilitiesListAffectedApps200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedDevices")
@@ -509,7 +509,7 @@ func (r ApiListDetectionsRequest) Size(size string) ApiListDetectionsRequest {
 	return r
 }
 
-// Can filter on any key attribute within the response.
+// &lt;p&gt;Filter on any key attribute within the response.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;device_id&lt;/li&gt; &lt;li&gt;device_name&lt;/li&gt; &lt;li&gt;device_serial_number&lt;/li&gt; &lt;li&gt;device_model&lt;/li&gt; &lt;li&gt;device_os_version&lt;/li&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;blueprint_name&lt;/li&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;path&lt;/li&gt; &lt;li&gt;version&lt;/li&gt; &lt;li&gt;bundle_id&lt;/li&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;cve_description&lt;/li&gt; &lt;li&gt;cve_link&lt;/li&gt; &lt;li&gt;cvss_score&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;li&gt;cve_published_at&lt;/li&gt; &lt;li&gt;cve_modified_at&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListDetectionsRequest) Filter(filter string) ApiListDetectionsRequest {
 	r.filter = &filter
 	return r
@@ -522,7 +522,7 @@ func (r ApiListDetectionsRequest) Execute() (*VulnerabilitiesListDetections200Re
 /*
 ListDetections List Detections
 
-This endpoint makes a request to retrieve a list of all vulnerability detections across the device fleet.
+Retrieve a list of all vulnerability detections across the device fleet.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListDetectionsRequest
@@ -639,26 +639,26 @@ func (r ApiListVulnerabilitiesRequest) Size(size string) ApiListVulnerabilitiesR
 	return r
 }
 
-// Field to sort by. Example: sort_by&#x3D;cve_id.
+// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListVulnerabilitiesRequest) SortBy(sortBy string) ApiListVulnerabilitiesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;p&gt;cve_id app_name severity first_detection_date latest_detection_date&lt;/p&gt;
+// &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListVulnerabilitiesRequest) Filter(filter string) ApiListVulnerabilitiesRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListVulnerabilitiesRequest) Execute() (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error) {
+func (r ApiListVulnerabilitiesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.ListVulnerabilitiesExecute(r)
 }
 
 /*
 ListVulnerabilities List Vulnerabilities
 
-This endpoint makes a request to retrieve a list of all vulnerabilities grouped by cve.
+Retrieve a list of all vulnerabilities grouped by cve.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListVulnerabilitiesRequest
@@ -671,13 +671,13 @@ func (a *VulnerabilitiesAPIService) ListVulnerabilities(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return VulnerabilitiesListVulnerabilities200Response
-func (a *VulnerabilitiesAPIService) ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *VulnerabilitiesAPIService) ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VulnerabilitiesListVulnerabilities200Response
+		localVarReturnValue  map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListVulnerabilities")

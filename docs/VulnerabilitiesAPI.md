@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## ListAffectedApps
 
-> map[string]interface{} ListAffectedApps(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+> VulnerabilitiesListAffectedApps200Response ListAffectedApps(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
 
 List Affected Apps
 
@@ -107,7 +107,7 @@ func main() {
 	page := "page_example" // string | The page number of the response. (optional)
 	size := "50" // string | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 	sortBy := "cve_id" // string | Field to sort by. Example: sort_by=app_name. (optional)
-	filter := "device_serial_number" // string | Filterable columns: blueprint_id updated_at (optional)
+	filter := "device_serial_number" // string | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -116,7 +116,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListAffectedApps``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAffectedApps`: map[string]interface{}
+	// response from `ListAffectedApps`: VulnerabilitiesListAffectedApps200Response
 	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListAffectedApps`: %v\n", resp)
 }
 ```
@@ -140,11 +140,11 @@ Name | Type | Description  | Notes
  **page** | **string** | The page number of the response. | 
  **size** | **string** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
  **sortBy** | **string** | Field to sort by. Example: sort_by&#x3D;app_name. | 
- **filter** | **string** | Filterable columns: blueprint_id updated_at | 
+ **filter** | **string** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | 
 
 ### Return type
 
-**map[string]interface{}**
+[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## ListAffectedDevices
 
-> map[string]interface{} ListAffectedDevices(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+> VulnerabilitiesListAffectedApps200Response ListAffectedDevices(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
 
 List Affected Devices
 
@@ -185,7 +185,7 @@ func main() {
 	page := "page_example" // string | The page number of the response. (optional)
 	size := "50" // string | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
 	sortBy := "cve_id" // string | Field to sort by. Example: sort_by=app_name. (optional)
-	filter := "device_serial_number" // string | Filterable columns: blueprint_id updated_at (optional)
+	filter := "device_serial_number" // string | <p>Filterable columns:</p> <ul> <li>blueprint_id</li> <li>updated_at</li> </ul> (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -194,7 +194,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListAffectedDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAffectedDevices`: map[string]interface{}
+	// response from `ListAffectedDevices`: VulnerabilitiesListAffectedApps200Response
 	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListAffectedDevices`: %v\n", resp)
 }
 ```
@@ -218,11 +218,11 @@ Name | Type | Description  | Notes
  **page** | **string** | The page number of the response. | 
  **size** | **string** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
  **sortBy** | **string** | Field to sort by. Example: sort_by&#x3D;app_name. | 
- **filter** | **string** | Filterable columns: blueprint_id updated_at | 
+ **filter** | **string** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt; | 
 
 ### Return type
 
-**map[string]interface{}**
+[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ import (
 func main() {
 	after := "after_example" // string | Cursor token. (optional)
 	size := "300" // string | A hard upper <code>limit</code> is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-	filter := "device_serial_number" // string | Can filter on any key attribute within the response. (optional)
+	filter := "device_serial_number" // string | <p>Filter on any key attribute within the response.</p> <ul> <li>device_id</li> <li>device_name</li> <li>device_serial_number</li> <li>device_model</li> <li>device_os_version</li> <li>blueprint_id</li> <li>blueprint_name</li> <li>name</li> <li>path</li> <li>version</li> <li>bundle_id</li> <li>cve_id</li> <li>cve_description</li> <li>cve_link</li> <li>cvss_score</li> <li>cvss_severity</li> <li>detection_datetime</li> <li>cve_published_at</li> <li>cve_modified_at</li> </ul> (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **after** | **string** | Cursor token. | 
  **size** | **string** | A hard upper &lt;code&gt;limit&lt;/code&gt; is set at 300  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
- **filter** | **string** | Can filter on any key attribute within the response. | 
+ **filter** | **string** | &lt;p&gt;Filter on any key attribute within the response.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;device_id&lt;/li&gt; &lt;li&gt;device_name&lt;/li&gt; &lt;li&gt;device_serial_number&lt;/li&gt; &lt;li&gt;device_model&lt;/li&gt; &lt;li&gt;device_os_version&lt;/li&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;blueprint_name&lt;/li&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;path&lt;/li&gt; &lt;li&gt;version&lt;/li&gt; &lt;li&gt;bundle_id&lt;/li&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;cve_description&lt;/li&gt; &lt;li&gt;cve_link&lt;/li&gt; &lt;li&gt;cvss_score&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;li&gt;cve_published_at&lt;/li&gt; &lt;li&gt;cve_modified_at&lt;/li&gt; &lt;/ul&gt; | 
 
 ### Return type
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## ListVulnerabilities
 
-> VulnerabilitiesListVulnerabilities200Response ListVulnerabilities(ctx).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+> map[string]interface{} ListVulnerabilities(ctx).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
 
 List Vulnerabilities
 
@@ -331,8 +331,8 @@ import (
 func main() {
 	page := "page_example" // string | The page number of the response. (optional)
 	size := "50" // string | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-	sortBy := "cve_id" // string | Field to sort by. Example: sort_by=cve_id. (optional)
-	filter := "device_serial_number" // string | <p>Filterable columns:</p> <p>cve_id app_name severity first_detection_date latest_detection_date</p> (optional)
+	sortBy := "cve_id" // string | <p>Field to sort by.</p> <ul> <li>cve_id</li> <li>software (the name of the software)</li> <li>cvss_severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
+	filter := "device_serial_number" // string | <p>Filterable columns</p> <ul> <li>cve_id</li> <li>app_name</li> <li>severity</li> <li>first_detection_date</li> <li>latest_detection_date</li> </ul> (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -341,7 +341,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListVulnerabilities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListVulnerabilities`: VulnerabilitiesListVulnerabilities200Response
+	// response from `ListVulnerabilities`: map[string]interface{}
 	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListVulnerabilities`: %v\n", resp)
 }
 ```
@@ -359,12 +359,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **string** | The page number of the response. | 
  **size** | **string** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
- **sortBy** | **string** | Field to sort by. Example: sort_by&#x3D;cve_id. | 
- **filter** | **string** | &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;p&gt;cve_id app_name severity first_detection_date latest_detection_date&lt;/p&gt; | 
+ **sortBy** | **string** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | 
+ **filter** | **string** | &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt; | 
 
 ### Return type
 
-[**VulnerabilitiesListVulnerabilities200Response**](VulnerabilitiesListVulnerabilities200Response.md)
+**map[string]interface{}**
 
 ### Authorization
 
