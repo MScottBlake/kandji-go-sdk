@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 
 ## ListDevices
 
-> map[string]interface{} ListDevices(ctx).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserId(userId).UserName(userName).Offset(offset).Execute()
+> map[string]interface{} ListDevices(ctx).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserEmailExact(userEmailExact).UserId(userId).UserName(userName).Offset(offset).Execute()
 
 List Devices
 
@@ -689,13 +689,14 @@ func main() {
 	tagIdIn := "tagIdIn_example" // string | Return results for given tag IDs separated by commas. Case sensitive. (optional)
 	user := "Art Vandelay" // string | Return results &quot;containing&quot; the user name (optional)
 	userEmail := "someUser@Kandji.io" // string | Return results &quot;containing&quot; search on email address (optional)
+	userEmailExact := "someUser@Kandji.io" // string | Return results &quot;matching&quot; the specified email address (optional)
 	userId := "5344c996-8823-4b37-8d6e-8515fc7c3a0a" // string | &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
 	userName := "Vandelay" // string | Return results &quot;containing&quot; the assigned user Display Name (optional)
 	offset := "0" // string | Specify the starting record to return (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DeviceInformationAPI.ListDevices(context.Background()).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserId(userId).UserName(userName).Offset(offset).Execute()
+	resp, r, err := apiClient.DeviceInformationAPI.ListDevices(context.Background()).Limit(limit).AssetTag(assetTag).BlueprintId(blueprintId).DeviceId(deviceId).DeviceName(deviceName).FilevaultEnabled(filevaultEnabled).MacAddress(macAddress).Model(model).Ordering(ordering).OsVersion(osVersion).Platform(platform).SerialNumber(serialNumber).TagName(tagName).TagNameIn(tagNameIn).TagId(tagId).TagIdIn(tagIdIn).User(user).UserEmail(userEmail).UserEmailExact(userEmailExact).UserId(userId).UserName(userName).Offset(offset).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DeviceInformationAPI.ListDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -734,6 +735,7 @@ Name | Type | Description  | Notes
  **tagIdIn** | **string** | Return results for given tag IDs separated by commas. Case sensitive. | 
  **user** | **string** | Return results &amp;quot;containing&amp;quot; the user name | 
  **userEmail** | **string** | Return results &amp;quot;containing&amp;quot; search on email address | 
+ **userEmailExact** | **string** | Return results &amp;quot;matching&amp;quot; the specified email address | 
  **userId** | **string** | &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | 
  **userName** | **string** | Return results &amp;quot;containing&amp;quot; the assigned user Display Name | 
  **offset** | **string** | Specify the starting record to return | 

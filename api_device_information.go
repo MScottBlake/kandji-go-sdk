@@ -1633,6 +1633,7 @@ type ApiListDevicesRequest struct {
 	tagIdIn *string
 	user *string
 	userEmail *string
+	userEmailExact *string
 	userId *string
 	userName *string
 	offset *string
@@ -1743,6 +1744,12 @@ func (r ApiListDevicesRequest) User(user string) ApiListDevicesRequest {
 // Return results &amp;quot;containing&amp;quot; search on email address
 func (r ApiListDevicesRequest) UserEmail(userEmail string) ApiListDevicesRequest {
 	r.userEmail = &userEmail
+	return r
+}
+
+// Return results &amp;quot;matching&amp;quot; the specified email address
+func (r ApiListDevicesRequest) UserEmailExact(userEmailExact string) ApiListDevicesRequest {
+	r.userEmailExact = &userEmailExact
 	return r
 }
 
@@ -1858,6 +1865,9 @@ func (a *DeviceInformationAPIService) ListDevicesExecute(r ApiListDevicesRequest
 	}
 	if r.userEmail != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "user_email", r.userEmail, "form", "")
+	}
+	if r.userEmailExact != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "user_email_exact", r.userEmailExact, "form", "")
 	}
 	if r.userId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "user_id", r.userId, "form", "")
