@@ -442,7 +442,7 @@ paths:
         <p>List audit log events from the Kandji Activity module.</p>
         <p>Returns events related to</p>
         <ul>
-        <li><p>Blueprint and Library Item creation, updates, and deletions (CUD)</p>
+        <li><p>Blueprint and Library Item creation, updates, and deletions (Create, Update, Delete)</p>
         </li>
         <li><p>Access to sensitive data (such as FileVault keys and recovery keys)</p>
         </li>
@@ -450,11 +450,13 @@ paths:
         </li>
         <li><p>User directory events (including directory user deletions)</p>
         </li>
-        <li><p>Administrative actions (tenant owner updates, API token management (CUD))</p>
+        <li><p>Administrative actions (tenant owner updates, API token management (Create, Update, Delete))</p>
         </li>
         <li><p>Admin user management activities</p>
         </li>
-        <li><p>Vulnerability management detections and remediations (for customers with this feature)</p>
+        <li><p>Vulnerability management events for detections and remediations (for customers with this feature)</p>
+        </li>
+        <li><p>Endpoint Detection and Response events for detections, remediations, and admin actions (for customers with this feature)</p>
         </li>
         </ul>
       externalDocs:
@@ -747,7 +749,7 @@ paths:
                     target_id: a0726ca3-717d-41b9-a3af-c7d0bad8b784
                     target_type: api_token
               schema:
-                $ref: '#/components/schemas/auditLog_listAuditEvents_200_response'
+                $ref: "#/components/schemas/auditLog_listAuditEvents_200_response"
           description: OK
           headers:
             Content-Type:
@@ -1082,7 +1084,7 @@ paths:
                   suspicious_count: 34
                   total_count: 71
               schema:
-                $ref: '#/components/schemas/threats_getBehavioralDetections_200_response'
+                $ref: "#/components/schemas/threats_getBehavioralDetections_200_response"
           description: OK
           headers:
             Content-Type:
@@ -1204,7 +1206,7 @@ paths:
                     params: {}
                     type: map
               schema:
-                $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+                $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
           description: OK
           headers:
             Allow:
@@ -1354,7 +1356,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/blueprints_createBlueprint_request'
+              $ref: "#/components/schemas/blueprints_createBlueprint_request"
         required: false
       responses:
         "201":
@@ -1373,7 +1375,7 @@ paths:
                   params: {}
                   type: map
               schema:
-                $ref: '#/components/schemas/blueprints_createBlueprint_201_response'
+                $ref: "#/components/schemas/blueprints_createBlueprint_201_response"
           description: Created
           headers:
             Content-Type:
@@ -1511,7 +1513,7 @@ paths:
                   params: {}
                   type: classic
               schema:
-                $ref: '#/components/schemas/blueprints_getBlueprint_200_response'
+                $ref: "#/components/schemas/blueprints_getBlueprint_200_response"
           description: OK
           headers:
             Allow:
@@ -1669,7 +1671,7 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/blueprints_updateBlueprint_request'
+              $ref: "#/components/schemas/blueprints_updateBlueprint_request"
         required: false
       responses:
         "200":
@@ -1689,7 +1691,7 @@ paths:
                   name: Default Blueprint
                   params: {}
               schema:
-                $ref: '#/components/schemas/blueprints_updateBlueprint_200_response'
+                $ref: "#/components/schemas/blueprints_updateBlueprint_200_response"
           description: OK
           headers:
             Allow:
@@ -2083,7 +2085,7 @@ paths:
                   - id: 994dbaf3-839a-4c11-8f80-3e0b6daee473
                     name: agent_debug_logging
               schema:
-                $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+                $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
           description: OK
           headers:
             Accept-Ranges:
@@ -3150,7 +3152,7 @@ paths:
                     is_archived: false
                     name: acchuhive admin
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDevice_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDevice_200_response"
           description: OK
           headers:
             Allow:
@@ -3377,7 +3379,7 @@ paths:
                   tags: []
                   user: ""
               schema:
-                $ref: '#/components/schemas/deviceInformation_updateDevice_200_response'
+                $ref: "#/components/schemas/deviceInformation_updateDevice_200_response"
           description: OK
           headers:
             Content-Type:
@@ -3890,7 +3892,7 @@ paths:
                 value:
                   PIN: "496406"
               schema:
-                $ref: '#/components/schemas/deviceActions_lockDevice_200_response'
+                $ref: "#/components/schemas/deviceActions_lockDevice_200_response"
           description: OK
           headers:
             Allow:
@@ -6510,7 +6512,7 @@ paths:
                       user: null
                   device_id: 9d6eda80-6058-40bb-94f0-3c7ba4a63eb6
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceActivity_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDeviceActivity_200_response"
           description: OK
           headers:
             Allow:
@@ -6688,7 +6690,7 @@ paths:
                     version: "47"
                   device_id: 4820db3b-dec7-40b2-9c8f-eb771ac1a250
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceApps_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDeviceApps_200_response"
           description: OK
           headers:
             Allow:
@@ -6999,7 +7001,7 @@ paths:
                     - {}
                   device_id: 0bc8f610-5b88-49a6-b9ef-a68bf04e1e59
               schema:
-                $ref: '#/components/schemas/deviceActions_getDeviceCommands_200_response'
+                $ref: "#/components/schemas/deviceActions_getDeviceCommands_200_response"
           description: OK
           headers:
             Content-Type:
@@ -7143,7 +7145,7 @@ paths:
                     name: ""
                     percent_used: 8%
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response"
           description: OK
           headers:
             Content-Type:
@@ -7231,7 +7233,7 @@ paths:
                     sound_status: SUCCESS
                     sound_status_at: 2022-12-13T20:21:38.992261Z
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceLostModeDetails_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDeviceLostModeDetails_200_response"
           description: OK
           headers:
             Content-Type:
@@ -7381,7 +7383,7 @@ paths:
                     status: PENDING
                     type: threat-security-policy
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceLibraryItems_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDeviceLibraryItems_200_response"
           description: OK
           headers:
             Allow:
@@ -7595,7 +7597,7 @@ paths:
                     status: PASS
                     subcategory: User Accounts
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceParameters_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDeviceParameters_200_response"
           description: OK
           headers:
             Allow:
@@ -7763,7 +7765,7 @@ paths:
                   device_based_albc: A00M6-04XTY-YDMG-JNTE-EMZ3-FTJ5
                   user_based_albc: A00M6-04XTY-YDMG-JNTE-EMZ3-FTJ5
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getActivationLockBypassCode_200_response'
+                $ref: "#/components/schemas/deviceSecrets_getActivationLockBypassCode_200_response"
           description: OK
           headers:
             Allow:
@@ -7928,7 +7930,7 @@ paths:
                 value:
                   key: 9A2U-CDK6-P6NH-FAB3-LTUH-2MYP
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getFilevaultRecoveryKey_200_response'
+                $ref: "#/components/schemas/deviceSecrets_getFilevaultRecoveryKey_200_response"
           description: OK
           headers:
             Allow:
@@ -8094,7 +8096,7 @@ paths:
                 value:
                   recovery_password: AAAAA-BBBBB-CCCC-1111-2222-3333
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getRecoveryLockPassword_200_response'
+                $ref: "#/components/schemas/deviceSecrets_getRecoveryLockPassword_200_response"
           description: OK
           headers:
             Allow:
@@ -8259,7 +8261,7 @@ paths:
                 value:
                   pin: "192746"
               schema:
-                $ref: '#/components/schemas/deviceSecrets_getUnlockPin_200_response'
+                $ref: "#/components/schemas/deviceSecrets_getUnlockPin_200_response"
           description: OK
           headers:
             Allow:
@@ -8641,7 +8643,7 @@ paths:
                     status: PASS
                     subcategory: User Accounts
               schema:
-                $ref: '#/components/schemas/deviceInformation_getDeviceStatus_200_response'
+                $ref: "#/components/schemas/deviceInformation_getDeviceStatus_200_response"
           description: OK
           headers:
             Allow:
@@ -8806,7 +8808,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_request'
+              $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_request"
         required: false
       responses:
         "200":
@@ -8841,7 +8843,7 @@ paths:
                   status_received_at: null
                   stoken_file_name: stage 2_Token_2022-06-15T00-06-08Z_smime.p7m
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response'
+                $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response"
           description: OK
           headers:
             Allow:
@@ -9146,7 +9148,7 @@ paths:
                     user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
                     user_id: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
-                $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+                $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
           description: OK
           headers:
             Content-Type:
@@ -9166,7 +9168,7 @@ paths:
                   dep_account:
                   - Enter a valid UUID.
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_400_response'
+                $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_listAdeDevices_400_response"
           description: Bad Request
           headers:
             Content-Type:
@@ -9238,7 +9240,7 @@ paths:
                   user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
                   user_id: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response'
+                $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response"
           description: OK
           headers:
             Content-Type:
@@ -9322,7 +9324,7 @@ paths:
                   user: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
                   user_id: 5344c996-8823-4b37-8d6e-8515fc7c3a0a
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response'
+                $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response"
           description: OK
           headers:
             Content-Type:
@@ -10437,7 +10439,7 @@ paths:
                     serial_number: M6A8ZWAX93MG
                     user: null
               schema:
-                $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_listDevicesAssociatedToAdeToken_200_response'
+                $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_listDevicesAssociatedToAdeToken_200_response"
           description: OK
           headers:
             Allow:
@@ -10608,7 +10610,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_renewAdeIntegration_request'
+              $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_renewAdeIntegration_request"
         required: false
       responses:
         "200":
@@ -10764,7 +10766,7 @@ paths:
                     user_email: accuhive@kandji.io`
                     user_id: 4b9b080b-f82b-41e9-814b-a5668fdd8a3e
               schema:
-                $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+                $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
           description: OK
           headers:
             Accept-Ranges:
@@ -11181,7 +11183,7 @@ paths:
                     status: PENDING
                     type: threat-security-policy
               schema:
-                $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+                $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
           description: OK
           headers:
             Accept-Ranges:
@@ -11614,7 +11616,7 @@ paths:
                   offset: null
                   total: 10
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Accept-Ranges:
@@ -11953,7 +11955,7 @@ paths:
                   offset: 0
                   total: null
               schema:
-                $ref: '#/components/schemas/prism_applicationFirewall_200_response'
+                $ref: "#/components/schemas/prism_applicationFirewall_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -12324,7 +12326,7 @@ paths:
                   offset: null
                   total: 165
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Accept-Ranges:
@@ -12691,7 +12693,7 @@ paths:
                   offset: 0
                   total: null
               schema:
-                $ref: '#/components/schemas/prism_applicationFirewall_200_response'
+                $ref: "#/components/schemas/prism_applicationFirewall_200_response"
           description: OK
           headers:
             Accept-Ranges:
@@ -13062,7 +13064,7 @@ paths:
                   offset: 0
                   total: null
               schema:
-                $ref: '#/components/schemas/prism_applicationFirewall_200_response'
+                $ref: "#/components/schemas/prism_applicationFirewall_200_response"
           description: OK
           headers:
             Accept-Ranges:
@@ -13312,7 +13314,7 @@ paths:
                   approximate: false
                   count: 82
               schema:
-                $ref: '#/components/schemas/prism_count_200_response'
+                $ref: "#/components/schemas/prism_count_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -13615,7 +13617,7 @@ paths:
                   offset: null
                   total: 3
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -13927,7 +13929,7 @@ paths:
                   offset: null
                   total: 1
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -14178,7 +14180,7 @@ paths:
                   status: pending
                   updated_at: 2023-09-15T17:26:33.578350+00:00
               schema:
-                $ref: '#/components/schemas/prism_requestCategoryExport_200_response'
+                $ref: "#/components/schemas/prism_requestCategoryExport_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -14341,7 +14343,7 @@ paths:
                 value:
                   detail: "Invalid category: application_firewal"
               schema:
-                $ref: '#/components/schemas/prism_requestCategoryExport_400_response'
+                $ref: "#/components/schemas/prism_requestCategoryExport_400_response"
           description: Bad Request
           headers:
             Access-Control-Allow-Origin:
@@ -14534,7 +14536,7 @@ paths:
                   status: success
                   updated_at: 2023-09-14T20:58:00.341603+00:00
               schema:
-                $ref: '#/components/schemas/prism_getCategoryExport_200_response'
+                $ref: "#/components/schemas/prism_getCategoryExport_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -14816,7 +14818,7 @@ paths:
                   offset: 0
                   total: null
               schema:
-                $ref: '#/components/schemas/prism_applicationFirewall_200_response'
+                $ref: "#/components/schemas/prism_applicationFirewall_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -15100,7 +15102,7 @@ paths:
                   offset: 0
                   total: null
               schema:
-                $ref: '#/components/schemas/prism_applicationFirewall_200_response'
+                $ref: "#/components/schemas/prism_applicationFirewall_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -15395,7 +15397,7 @@ paths:
                   offset: null
                   total: 17
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -15655,7 +15657,7 @@ paths:
                   offset: null
                   total: 0
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -15965,7 +15967,7 @@ paths:
                   offset: null
                   total: 10
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -16262,7 +16264,7 @@ paths:
                   offset: 0
                   total: 117
               schema:
-                $ref: '#/components/schemas/prism_localUsers_200_response'
+                $ref: "#/components/schemas/prism_localUsers_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -16550,7 +16552,7 @@ paths:
                   offset: null
                   total: 9
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -16837,7 +16839,7 @@ paths:
                   offset: null
                   total: 9
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -17121,7 +17123,7 @@ paths:
                   offset: null
                   total: 8
               schema:
-                $ref: '#/components/schemas/prism_activationLock_200_response'
+                $ref: "#/components/schemas/prism_activationLock_200_response"
           description: OK
           headers:
             Access-Control-Allow-Origin:
@@ -17309,7 +17311,7 @@ paths:
                     plan_type: single_limit
                   tenantOverLicenseLimit: false
               schema:
-                $ref: '#/components/schemas/settings_licensing_200_response'
+                $ref: "#/components/schemas/settings_licensing_200_response"
           description: OK
           headers:
             Content-Type:
@@ -17361,7 +17363,7 @@ paths:
                   - id: 4fe23c39-7a9a-435c-bab3-d2e9fd1974c6
                     name: accuhive_02
               schema:
-                $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+                $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
           description: OK
           headers:
             Content-Type:
@@ -17401,7 +17403,7 @@ paths:
                   id: 1467cc35-39e3-435d-8816-34c849c15bc3
                   name: accuhive_01
               schema:
-                $ref: '#/components/schemas/tags_createTag_201_response'
+                $ref: "#/components/schemas/tags_createTag_201_response"
           description: Created
           headers:
             Content-Type:
@@ -17482,7 +17484,7 @@ paths:
                   id: 4fe23c39-7a9a-435c-bab3-d2e9fd1974c6
                   name: accuhive_02
               schema:
-                $ref: '#/components/schemas/tags_createTag_201_response'
+                $ref: "#/components/schemas/tags_createTag_201_response"
           description: OK
           headers:
             Content-Type:
@@ -17663,7 +17665,7 @@ paths:
                     status: QUARANTINED
                     threat_name: malware_5
               schema:
-                $ref: '#/components/schemas/threats_getThreatDetails_200_response'
+                $ref: "#/components/schemas/threats_getThreatDetails_200_response"
           description: OK
           headers:
             Content-Type:
@@ -17794,7 +17796,7 @@ paths:
                     name: test_user_02
                     updated_at: 2024-09-06T17:00:04.503814Z
               schema:
-                $ref: '#/components/schemas/auditLog_listAuditEvents_200_response'
+                $ref: "#/components/schemas/auditLog_listAuditEvents_200_response"
           description: OK
           headers:
             Content-Type:
@@ -17856,7 +17858,7 @@ paths:
                 value:
                   detail: User still assigned to one or more devices.
               schema:
-                $ref: '#/components/schemas/prism_requestCategoryExport_400_response'
+                $ref: "#/components/schemas/prism_requestCategoryExport_400_response"
           description: Bad Request
           headers:
             Content-Type:
@@ -17913,7 +17915,7 @@ paths:
                   name: test_user_01
                   updated_at: 2024-09-06T21:00:04.304280Z
               schema:
-                $ref: '#/components/schemas/users_getUser_200_response'
+                $ref: "#/components/schemas/users_getUser_200_response"
           description: OK
           headers:
             Content-Type:
@@ -18028,7 +18030,7 @@ paths:
                     path: /path/to/app
                     version: 1.0.0
               schema:
-                $ref: '#/components/schemas/vulnerabilities_listDetections_200_response'
+                $ref: "#/components/schemas/vulnerabilities_listDetections_200_response"
           description: OK
           headers:
             Content-Type:
@@ -18187,7 +18189,7 @@ paths:
                   severity: Low
                   software_count: 3
               schema:
-                $ref: '#/components/schemas/vulnerabilities_getVulnerabilityDescription_200_response'
+                $ref: "#/components/schemas/vulnerabilities_getVulnerabilityDescription_200_response"
           description: OK
           headers:
             Content-Type:
@@ -18310,7 +18312,7 @@ paths:
                   size: 50
                   total: 1
               schema:
-                $ref: '#/components/schemas/vulnerabilities_listAffectedApps_200_response'
+                $ref: "#/components/schemas/vulnerabilities_listAffectedApps_200_response"
           description: OK
           headers:
             Content-Type:
@@ -18426,7 +18428,7 @@ paths:
                   size: 50
                   total: 2
               schema:
-                $ref: '#/components/schemas/vulnerabilities_listAffectedApps_200_response'
+                $ref: "#/components/schemas/vulnerabilities_listAffectedApps_200_response"
           description: OK
           headers:
             Content-Type:
@@ -18455,7 +18457,7 @@ components:
           results: ""
       properties:
         commands:
-          $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+          $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
         device_id:
           type: string
     settings_licensing_200_response:
@@ -18475,9 +18477,9 @@ components:
             macos: 9
       properties:
         counts:
-          $ref: '#/components/schemas/settings_licensing_200_response_counts'
+          $ref: "#/components/schemas/settings_licensing_200_response_counts"
         limits:
-          $ref: '#/components/schemas/settings_licensing_200_response_limits'
+          $ref: "#/components/schemas/settings_licensing_200_response_limits"
         tenantOverLicenseLimit:
           type: integer
     deviceInformation_getDeviceDetails_200_response_activation_lock:
@@ -18530,7 +18532,7 @@ components:
         status: status
       properties:
         args:
-          $ref: '#/components/schemas/prism_requestCategoryExport_200_response_args'
+          $ref: "#/components/schemas/prism_requestCategoryExport_200_response_args"
         category:
           type: string
         created_at:
@@ -18667,7 +18669,7 @@ components:
           type: string
         tags: {}
         user:
-          $ref: '#/components/schemas/deviceInformation_getDevice_200_response_user'
+          $ref: "#/components/schemas/deviceInformation_getDevice_200_response_user"
     prism_requestCategoryExport_400_response:
       example:
         detail: detail
@@ -18709,7 +18711,7 @@ components:
         id:
           type: string
         integration:
-          $ref: '#/components/schemas/users_getUser_200_response_integration'
+          $ref: "#/components/schemas/users_getUser_200_response_integration"
         job_title: {}
         name:
           type: string
@@ -18733,7 +18735,7 @@ components:
         description:
           type: string
         enrollment_code:
-          $ref: '#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code'
+          $ref: "#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code"
         icon:
           type: string
         id:
@@ -19072,7 +19074,7 @@ components:
         color:
           type: string
         dep_account:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_dep_account'
+          $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_dep_account"
         description:
           type: string
         device_assigned_by:
@@ -19088,7 +19090,7 @@ components:
         last_assignment_status:
           type: string
         mdm_device:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_mdm_device'
+          $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_getAdeDevice_200_response_mdm_device"
         model:
           type: string
         os:
@@ -19126,7 +19128,7 @@ components:
         description:
           type: string
         enrollment_code:
-          $ref: '#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code'
+          $ref: "#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code"
         icon:
           type: string
         id:
@@ -19156,7 +19158,7 @@ components:
         status: status
       properties:
         args:
-          $ref: '#/components/schemas/prism_requestCategoryExport_200_response_args'
+          $ref: "#/components/schemas/prism_requestCategoryExport_200_response_args"
         category:
           type: string
         created_at:
@@ -19323,7 +19325,7 @@ components:
         description:
           type: string
         enrollment_code:
-          $ref: '#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code'
+          $ref: "#/components/schemas/blueprints_createBlueprint_201_response_enrollment_code"
         icon:
           type: string
         id:
@@ -19448,36 +19450,36 @@ components:
           recovery_lock_enabled: 1
       properties:
         activation_lock:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_activation_lock'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_activation_lock"
         apple_business_manager:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_apple_business_manager'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_apple_business_manager"
         automated_device_enrollment:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_automated_device_enrollment'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_automated_device_enrollment"
         cellular:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_cellular'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_cellular"
         filevault:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_filevault'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_filevault"
         general:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_general'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_general"
         hardware_overview:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_hardware_overview'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_hardware_overview"
         installed_profiles: {}
         kandji_agent:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_kandji_agent'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_kandji_agent"
         lost_mode:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode"
         mdm:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_mdm'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_mdm"
         network:
           properties: {}
           type: object
         recovery_information:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_recovery_information'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_recovery_information"
         security_information:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_security_information'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_security_information"
         tags: {}
         users:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_users'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_users"
         volumes: {}
     blueprints_listBlueprints_200_response:
       example:
@@ -19558,7 +19560,7 @@ components:
         device_id: device_id
       properties:
         activity:
-          $ref: '#/components/schemas/blueprints_listBlueprints_200_response'
+          $ref: "#/components/schemas/blueprints_listBlueprints_200_response"
         device_id:
           type: string
     prism_localUsers_200_response:
@@ -19617,7 +19619,7 @@ components:
         device_id:
           type: string
         lost_mode:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode"
     deviceInformation_getDeviceDetails_200_response_general:
       example:
         asset_tag: asset_tag
@@ -19715,13 +19717,13 @@ components:
         admin_id:
           type: string
         blueprint:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_blueprint'
+          $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_blueprint"
         days_left:
           type: integer
         defaults:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_defaults'
+          $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_defaults"
         device_counts:
-          $ref: '#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_device_counts'
+          $ref: "#/components/schemas/automatedDeviceEnrollmentIntegrations_createAdeIntegration_200_response_device_counts"
         id:
           type: string
         last_device_sync: {}
@@ -19756,7 +19758,7 @@ components:
         max_devices:
           type: integer
         max_devices_per_platform:
-          $ref: '#/components/schemas/settings_licensing_200_response_limits_max_devices_per_platform'
+          $ref: "#/components/schemas/settings_licensing_200_response_limits_max_devices_per_platform"
         plan_type:
           type: string
     deviceInformation_getDeviceDetails_200_response_lost_mode:
@@ -19790,7 +19792,7 @@ components:
         enabled_by:
           type: string
         last_location:
-          $ref: '#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode_last_location'
+          $ref: "#/components/schemas/deviceInformation_getDeviceDetails_200_response_lost_mode_last_location"
         last_location_at:
           type: string
         last_location_status:
