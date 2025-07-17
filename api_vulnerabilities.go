@@ -231,7 +231,7 @@ func (r ApiListAffectedAppsRequest) SortBy(sortBy string) ApiListAffectedAppsReq
 	return r
 }
 
-// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt;
+// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;created_at&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedAppsRequest) Filter(filter string) ApiListAffectedAppsRequest {
 	r.filter = &filter
 	return r
@@ -374,7 +374,7 @@ func (r ApiListAffectedDevicesRequest) SortBy(sortBy string) ApiListAffectedDevi
 	return r
 }
 
-// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;updated_at&lt;/li&gt; &lt;/ul&gt;
+// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedDevicesRequest) Filter(filter string) ApiListAffectedDevicesRequest {
 	r.filter = &filter
 	return r
