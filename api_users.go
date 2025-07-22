@@ -324,7 +324,7 @@ func (r ApiListUsersRequest) Archived(archived string) ApiListUsersRequest {
 	return r
 }
 
-// Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response.
+// Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response.
 func (r ApiListUsersRequest) Cursor(cursor string) ApiListUsersRequest {
 	r.cursor = &cursor
 	return r

@@ -173,7 +173,7 @@ func main() {
 	id := "69c009ca-1f78-4bdf-bb93-08d6d39041db" // string | Search for a user matching the provided UUID value. (optional)
 	integrationId := "f7461096-4ef9-43aa-88e9-ca1967ba0b38" // string | Search for a integration matching the provided UUID value. (optional)
 	archived := "false" // string | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. (optional)
-	cursor := "cursor_example" // string | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. (optional)
+	cursor := "cursor_example" // string | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
  **id** | **string** | Search for a user matching the provided UUID value. | 
  **integrationId** | **string** | Search for a integration matching the provided UUID value. | 
  **archived** | **string** | Return only users that are either archived (true) or not archived (false). Archived users are users that appear in the Kandji Users module under the Archived tab. | 
- **cursor** | **string** | Cursor for the next or previous page or results. Can also store the URL from the next and previous fields in the response. | 
+ **cursor** | **string** | Cursor for the next or previous page of results. Can also store the URL in the next and previous fields in the response. | 
 
 ### Return type
 
