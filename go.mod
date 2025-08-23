@@ -1,6 +1,6 @@
 module github.com/MScottBlake/kandji-go-sdk
 
-go 1.18
+go 1.23
 
 require (
 )
