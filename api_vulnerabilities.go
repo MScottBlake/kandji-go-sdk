@@ -85,7 +85,7 @@ type VulnerabilitiesAPI interface {
 	/*
 	ListVulnerabilities List Vulnerabilities
 
-	Retrieve a list of all vulnerabilities grouped by cve.
+	Retrieve a list of all vulnerabilities grouped by CVE.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListVulnerabilitiesRequest
@@ -93,8 +93,8 @@ type VulnerabilitiesAPI interface {
 	ListVulnerabilities(ctx context.Context) ApiListVulnerabilitiesRequest
 
 	// ListVulnerabilitiesExecute executes the request
-	//  @return map[string]interface{}
-	ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (map[string]interface{}, *http.Response, error)
+	//  @return VulnerabilitiesListVulnerabilities200Response
+	ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error)
 }
 
 // VulnerabilitiesAPIService VulnerabilitiesAPI service
@@ -225,13 +225,13 @@ func (r ApiListAffectedAppsRequest) Size(size string) ApiListAffectedAppsRequest
 	return r
 }
 
-// Field to sort by. Example: sort_by&#x3D;app_name.
+// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedAppsRequest) SortBy(sortBy string) ApiListAffectedAppsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;created_at&lt;/li&gt; &lt;/ul&gt;
+// &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedAppsRequest) Filter(filter string) ApiListAffectedAppsRequest {
 	r.filter = &filter
 	return r
@@ -368,13 +368,13 @@ func (r ApiListAffectedDevicesRequest) Size(size string) ApiListAffectedDevicesR
 	return r
 }
 
-// Field to sort by. Example: sort_by&#x3D;app_name.
+// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name (device name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedDevicesRequest) SortBy(sortBy string) ApiListAffectedDevicesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
+// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListAffectedDevicesRequest) Filter(filter string) ApiListAffectedDevicesRequest {
 	r.filter = &filter
 	return r
@@ -639,26 +639,26 @@ func (r ApiListVulnerabilitiesRequest) Size(size string) ApiListVulnerabilitiesR
 	return r
 }
 
-// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software (the name of the software)&lt;/li&gt; &lt;li&gt;cvss_severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt;
+// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;p&gt;age&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;cve_id&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;cvss_score&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;device_count&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;known_exploit&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;software (software name)&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;severity&lt;/p&gt; &lt;/li&gt; &lt;li&gt;&lt;p&gt;status&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
 func (r ApiListVulnerabilitiesRequest) SortBy(sortBy string) ApiListVulnerabilitiesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-// &lt;p&gt;Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;app_name&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;latest_detection_date&lt;/li&gt; &lt;/ul&gt;
+// &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;cve_id&lt;/li&gt; &lt;li&gt;software&lt;/li&gt; &lt;li&gt;severity&lt;/li&gt; &lt;li&gt;first_detection_date&lt;/li&gt; &lt;li&gt;status&lt;/li&gt; &lt;/ul&gt;
 func (r ApiListVulnerabilitiesRequest) Filter(filter string) ApiListVulnerabilitiesRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListVulnerabilitiesRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r ApiListVulnerabilitiesRequest) Execute() (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error) {
 	return r.ApiService.ListVulnerabilitiesExecute(r)
 }
 
 /*
 ListVulnerabilities List Vulnerabilities
 
-Retrieve a list of all vulnerabilities grouped by cve.
+Retrieve a list of all vulnerabilities grouped by CVE.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListVulnerabilitiesRequest
@@ -671,13 +671,13 @@ func (a *VulnerabilitiesAPIService) ListVulnerabilities(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *VulnerabilitiesAPIService) ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (map[string]interface{}, *http.Response, error) {
+//  @return VulnerabilitiesListVulnerabilities200Response
+func (a *VulnerabilitiesAPIService) ListVulnerabilitiesExecute(r ApiListVulnerabilitiesRequest) (*VulnerabilitiesListVulnerabilities200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarReturnValue  *VulnerabilitiesListVulnerabilities200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListVulnerabilities")

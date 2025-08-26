@@ -20,9 +20,8 @@ var _ MappedNullable = &VulnerabilitiesListVulnerabilities200Response{}
 
 // VulnerabilitiesListVulnerabilities200Response struct for VulnerabilitiesListVulnerabilities200Response
 type VulnerabilitiesListVulnerabilities200Response struct {
-	Next interface{} `json:"next,omitempty"`
-	Previous interface{} `json:"previous,omitempty"`
 	Results interface{} `json:"results,omitempty"`
+	Size *int32 `json:"size,omitempty"`
 	Total *int32 `json:"total,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -44,72 +43,6 @@ func NewVulnerabilitiesListVulnerabilities200Response() *VulnerabilitiesListVuln
 func NewVulnerabilitiesListVulnerabilities200ResponseWithDefaults() *VulnerabilitiesListVulnerabilities200Response {
 	this := VulnerabilitiesListVulnerabilities200Response{}
 	return &this
-}
-
-// GetNext returns the Next field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VulnerabilitiesListVulnerabilities200Response) GetNext() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Next
-}
-
-// GetNextOk returns a tuple with the Next field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VulnerabilitiesListVulnerabilities200Response) GetNextOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Next) {
-		return nil, false
-	}
-	return &o.Next, true
-}
-
-// HasNext returns a boolean if a field has been set.
-func (o *VulnerabilitiesListVulnerabilities200Response) HasNext() bool {
-	if o != nil && !IsNil(o.Next) {
-		return true
-	}
-
-	return false
-}
-
-// SetNext gets a reference to the given interface{} and assigns it to the Next field.
-func (o *VulnerabilitiesListVulnerabilities200Response) SetNext(v interface{}) {
-	o.Next = v
-}
-
-// GetPrevious returns the Previous field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *VulnerabilitiesListVulnerabilities200Response) GetPrevious() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Previous
-}
-
-// GetPreviousOk returns a tuple with the Previous field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *VulnerabilitiesListVulnerabilities200Response) GetPreviousOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Previous) {
-		return nil, false
-	}
-	return &o.Previous, true
-}
-
-// HasPrevious returns a boolean if a field has been set.
-func (o *VulnerabilitiesListVulnerabilities200Response) HasPrevious() bool {
-	if o != nil && !IsNil(o.Previous) {
-		return true
-	}
-
-	return false
-}
-
-// SetPrevious gets a reference to the given interface{} and assigns it to the Previous field.
-func (o *VulnerabilitiesListVulnerabilities200Response) SetPrevious(v interface{}) {
-	o.Previous = v
 }
 
 // GetResults returns the Results field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -143,6 +76,38 @@ func (o *VulnerabilitiesListVulnerabilities200Response) HasResults() bool {
 // SetResults gets a reference to the given interface{} and assigns it to the Results field.
 func (o *VulnerabilitiesListVulnerabilities200Response) SetResults(v interface{}) {
 	o.Results = v
+}
+
+// GetSize returns the Size field value if set, zero value otherwise.
+func (o *VulnerabilitiesListVulnerabilities200Response) GetSize() int32 {
+	if o == nil || IsNil(o.Size) {
+		var ret int32
+		return ret
+	}
+	return *o.Size
+}
+
+// GetSizeOk returns a tuple with the Size field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VulnerabilitiesListVulnerabilities200Response) GetSizeOk() (*int32, bool) {
+	if o == nil || IsNil(o.Size) {
+		return nil, false
+	}
+	return o.Size, true
+}
+
+// HasSize returns a boolean if a field has been set.
+func (o *VulnerabilitiesListVulnerabilities200Response) HasSize() bool {
+	if o != nil && !IsNil(o.Size) {
+		return true
+	}
+
+	return false
+}
+
+// SetSize gets a reference to the given int32 and assigns it to the Size field.
+func (o *VulnerabilitiesListVulnerabilities200Response) SetSize(v int32) {
+	o.Size = &v
 }
 
 // GetTotal returns the Total field value if set, zero value otherwise.
@@ -187,14 +152,11 @@ func (o VulnerabilitiesListVulnerabilities200Response) MarshalJSON() ([]byte, er
 
 func (o VulnerabilitiesListVulnerabilities200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Next != nil {
-		toSerialize["next"] = o.Next
-	}
-	if o.Previous != nil {
-		toSerialize["previous"] = o.Previous
-	}
 	if o.Results != nil {
 		toSerialize["results"] = o.Results
+	}
+	if !IsNil(o.Size) {
+		toSerialize["size"] = o.Size
 	}
 	if !IsNil(o.Total) {
 		toSerialize["total"] = o.Total
@@ -221,9 +183,8 @@ func (o *VulnerabilitiesListVulnerabilities200Response) UnmarshalJSON(data []byt
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "next")
-		delete(additionalProperties, "previous")
 		delete(additionalProperties, "results")
+		delete(additionalProperties, "size")
 		delete(additionalProperties, "total")
 		o.AdditionalProperties = additionalProperties
 	}

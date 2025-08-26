@@ -18050,7 +18050,7 @@ paths:
   /api/v1/vulnerability-management/vulnerabilities:
     get:
       deprecated: false
-      description: Retrieve a list of all vulnerabilities grouped by cve.
+      description: Retrieve a list of all vulnerabilities grouped by CVE.
       externalDocs:
         url: https://api-docs.kandji.io/#f483cda1-23ab-4f7b-839f-a3f47a46529d
       operationId: vulnerabilities_listVulnerabilities
@@ -18088,11 +18088,22 @@ paths:
         description: |-
           <p>Field to sort by.</p>
           <ul>
-          <li>cve_id</li>
-          <li>software (the name of the software)</li>
-          <li>cvss_severity</li>
-          <li>first_detection_date</li>
-          <li>latest_detection_date</li>
+          <li><p>age</p>
+          </li>
+          <li><p>cve_id</p>
+          </li>
+          <li><p>cvss_score</p>
+          </li>
+          <li><p>device_count</p>
+          </li>
+          <li><p>known_exploit</p>
+          </li>
+          <li><p>software (software name)</p>
+          </li>
+          <li><p>severity</p>
+          </li>
+          <li><p>status</p>
+          </li>
           </ul>
         example: cve_id
         explode: true
@@ -18106,13 +18117,14 @@ paths:
         allowReserved: false
         deprecated: false
         description: |-
-          <p>Filterable columns</p>
+          <p>Filter results. Similar to prism filters.
+          Filterable columns</p>
           <ul>
           <li>cve_id</li>
-          <li>app_name</li>
+          <li>software</li>
           <li>severity</li>
           <li>first_detection_date</li>
-          <li>latest_detection_date</li>
+          <li>status</li>
           </ul>
         example: "{\"cve_id\":{\"in\":[\"CVE-2024-24795\"]}}"
         explode: true
@@ -18127,15 +18139,23 @@ paths:
           content:
             application/json:
               example:
-                value: "{\"total\": 2,\"size\": 50,\"total\": 1,\"results\": [{  \
-                  \   \"cve_id\": \"CVE-2024-12345\",\"severity\": \"Low\",\"cvss_score\"\
-                  : 3.2,\"kev_score\": 0,\"cve_link\": \"https://nvd.nist.gov/vuln/detail/CVE-2024-12345\"\
-                  ,\"first_detection_date\": \"2023-10-13 16:15:00.000000\",\"cve_description\"\
-                  : \"description of the cve from nvd\",\"latest_detection_date\"\
-                  : \"2023-10-13 16:15:00.000000\",        \"software\": ['software_1',\
-                  \ 'software_2', 'software_3']}]}"
+                value:
+                  results:
+                  - cve_id: CVE-2024-24795
+                    cve_link: https://nvd.nist.gov/vuln/detail/CVE-2018-25032
+                    cvss_score: 7.5
+                    device_count: 1
+                    first_detection_date: 2025-05-23T13:21:37.792889Z
+                    kev_score: 0
+                    latest_detection_date: 2025-05-23T13:21:37.831775Z
+                    severity: High
+                    software:
+                    - macOS 12 Monterey
+                    status: Active
+                  size: 50
+                  total: 1
               schema:
-                type: object
+                $ref: "#/components/schemas/vulnerabilities_listVulnerabilities_200_response"
           description: OK
           headers:
             Content-Type:
@@ -18254,8 +18274,13 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: "Field to sort by. Example: sort_by=app_name."
-        example: cve_id
+        description: |-
+          <p>Field to sort by.</p>
+          <ul>
+          <li>software (software name)</li>
+          <li>detection_datetime</li>
+          </ul>
+        example: software
         explode: true
         in: query
         name: sort_by
@@ -18267,12 +18292,14 @@ paths:
         allowReserved: false
         deprecated: false
         description: |-
-          <p>Filterable columns:</p>
+          <p>Filter results. Similar to prism filters.
+          Filterable columns</p>
           <ul>
           <li>blueprint_id</li>
-          <li>created_at</li>
+          <li>detection_datetime</li>
           </ul>
-        example: "{\"created_at\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"}}"
+        example: "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"\
+          }}"
         explode: true
         in: query
         name: filter
@@ -18309,6 +18336,17 @@ paths:
                       latest_detection_date: 2023-10-13 16:15:00.000000
                       version: 1.3.1
                     type: null
+                  - cve_id: CVE-2018-25032
+                    cve_link: https://nvd.nist.gov/vuln/detail/CVE-2018-25032
+                    cvss_score: 7.5
+                    device_count: 1
+                    first_detection_date: 2025-05-23T13:21:37.792889Z
+                    kev_score: 0
+                    latest_detection_date: 2025-05-23T13:21:37.831775Z
+                    severity: High
+                    software:
+                    - macOS 12 Monterey
+                    status: Active
                   size: 50
                   total: 1
               schema:
@@ -18377,8 +18415,13 @@ paths:
       - allowEmptyValue: false
         allowReserved: false
         deprecated: false
-        description: "Field to sort by. Example: sort_by=app_name."
-        example: cve_id
+        description: |-
+          <p>Field to sort by.</p>
+          <ul>
+          <li>name (device name)</li>
+          <li>detection_datetime</li>
+          </ul>
+        example: software_name
         explode: true
         in: query
         name: sort_by
@@ -18392,7 +18435,7 @@ paths:
         description: |-
           <p>Filterable columns:</p>
           <ul>
-          <li>blueprint_id</li>
+          <li>name</li>
           <li>detection_datetime</li>
           </ul>
         example: "{\"detection_datetime\":{\"gte\":\"2025-05-23T17:11:31.816587Z\"\
@@ -19812,6 +19855,17 @@ components:
           type: string
         sound_status_at:
           type: string
+    vulnerabilities_listVulnerabilities_200_response:
+      example:
+        total: 6
+        size: 0
+        results: ""
+      properties:
+        results: {}
+        size:
+          type: integer
+        total:
+          type: integer
     deviceInformation_getDeviceDetails_200_response_mdm:
       example:
         supervised: supervised

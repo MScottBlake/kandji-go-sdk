@@ -95,6 +95,7 @@ docs/VulnerabilitiesAPI.md
 docs/VulnerabilitiesGetVulnerabilityDescription200Response.md
 docs/VulnerabilitiesListAffectedApps200Response.md
 docs/VulnerabilitiesListDetections200Response.md
+docs/VulnerabilitiesListVulnerabilities200Response.md
 git_push.sh
 go.mod
 go.sum
@@ -163,5 +164,6 @@ model_users_get_user_200_response_integration.go
 model_vulnerabilities_get_vulnerability_description_200_response.go
 model_vulnerabilities_list_affected_apps_200_response.go
 model_vulnerabilities_list_detections_200_response.go
+model_vulnerabilities_list_vulnerabilities_200_response.go
 response.go
 utils.go
