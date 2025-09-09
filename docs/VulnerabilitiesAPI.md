@@ -5,8 +5,8 @@ All URIs are relative to *https://&lt;sub_domain&gt;.api.kandji.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetVulnerabilityDescription**](VulnerabilitiesAPI.md#GetVulnerabilityDescription) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id} | Get Vulnerability Description
-[**ListAffectedApps**](VulnerabilitiesAPI.md#ListAffectedApps) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications | List Affected Apps
 [**ListAffectedDevices**](VulnerabilitiesAPI.md#ListAffectedDevices) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices | List Affected Devices
+[**ListAffectedSoftware**](VulnerabilitiesAPI.md#ListAffectedSoftware) | **Get** /api/v1/vulnerability-management/vulnerabilities/{cve_id}/software | List Affected Software
 [**ListDetections**](VulnerabilitiesAPI.md#ListDetections) | **Get** /api/v1/vulnerability-management/detections | List Detections
 [**ListVulnerabilities**](VulnerabilitiesAPI.md#ListVulnerabilities) | **Get** /api/v1/vulnerability-management/vulnerabilities | List Vulnerabilities
 
@@ -82,87 +82,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListAffectedApps
-
-> VulnerabilitiesListAffectedApps200Response ListAffectedApps(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
-
-List Affected Apps
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/MScottBlake/kandji-go-sdk"
-)
-
-func main() {
-	cveId := "cveId_example" // string | 
-	page := "page_example" // string | The page number of the response. (optional)
-	size := "50" // string | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
-	sortBy := "software" // string | <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul> (optional)
-	filter := "{"detection_datetime":{"gte":"2025-05-23T17:11:31.816587Z"}}" // string | <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul> (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VulnerabilitiesAPI.ListAffectedApps(context.Background(), cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListAffectedApps``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListAffectedApps`: VulnerabilitiesListAffectedApps200Response
-	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListAffectedApps`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cveId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListAffectedAppsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **page** | **string** | The page number of the response. | 
- **size** | **string** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
- **sortBy** | **string** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | 
- **filter** | **string** | &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | 
-
-### Return type
-
-[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## ListAffectedDevices
 
-> VulnerabilitiesListAffectedApps200Response ListAffectedDevices(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+> VulnerabilitiesListAffectedDevices200Response ListAffectedDevices(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
 
 List Affected Devices
 
@@ -194,7 +116,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListAffectedDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAffectedDevices`: VulnerabilitiesListAffectedApps200Response
+	// response from `ListAffectedDevices`: VulnerabilitiesListAffectedDevices200Response
 	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListAffectedDevices`: %v\n", resp)
 }
 ```
@@ -222,7 +144,85 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VulnerabilitiesListAffectedApps200Response**](VulnerabilitiesListAffectedApps200Response.md)
+[**VulnerabilitiesListAffectedDevices200Response**](VulnerabilitiesListAffectedDevices200Response.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListAffectedSoftware
+
+> VulnerabilitiesListAffectedDevices200Response ListAffectedSoftware(ctx, cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+
+List Affected Software
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/MScottBlake/kandji-go-sdk"
+)
+
+func main() {
+	cveId := "cveId_example" // string | 
+	page := "page_example" // string | The page number of the response. (optional)
+	size := "50" // string | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. (optional)
+	sortBy := "software" // string | <p>Field to sort by.</p> <ul> <li>software (software name)</li> <li>detection_datetime</li> </ul> (optional)
+	filter := "{"detection_datetime":{"gte":"2025-05-23T17:11:31.816587Z"}}" // string | <p>Filter results. Similar to prism filters. Filterable columns</p> <ul> <li>blueprint_id</li> <li>detection_datetime</li> </ul> (optional)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.VulnerabilitiesAPI.ListAffectedSoftware(context.Background(), cveId).Page(page).Size(size).SortBy(sortBy).Filter(filter).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `VulnerabilitiesAPI.ListAffectedSoftware``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListAffectedSoftware`: VulnerabilitiesListAffectedDevices200Response
+	fmt.Fprintf(os.Stdout, "Response from `VulnerabilitiesAPI.ListAffectedSoftware`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cveId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListAffectedSoftwareRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **page** | **string** | The page number of the response. | 
+ **size** | **string** | A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results. | 
+ **sortBy** | **string** | &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | 
+ **filter** | **string** | &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt; | 
+
+### Return type
+
+[**VulnerabilitiesListAffectedDevices200Response**](VulnerabilitiesListAffectedDevices200Response.md)
 
 ### Authorization
 

@@ -39,21 +39,6 @@ type VulnerabilitiesAPI interface {
 	GetVulnerabilityDescriptionExecute(r ApiGetVulnerabilityDescriptionRequest) (*VulnerabilitiesGetVulnerabilityDescription200Response, *http.Response, error)
 
 	/*
-	ListAffectedApps List Affected Apps
-
-	This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cveId
-	@return ApiListAffectedAppsRequest
-	*/
-	ListAffectedApps(ctx context.Context, cveId string) ApiListAffectedAppsRequest
-
-	// ListAffectedAppsExecute executes the request
-	//  @return VulnerabilitiesListAffectedApps200Response
-	ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error)
-
-	/*
 	ListAffectedDevices List Affected Devices
 
 	Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
@@ -65,8 +50,23 @@ type VulnerabilitiesAPI interface {
 	ListAffectedDevices(ctx context.Context, cveId string) ApiListAffectedDevicesRequest
 
 	// ListAffectedDevicesExecute executes the request
-	//  @return VulnerabilitiesListAffectedApps200Response
-	ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error)
+	//  @return VulnerabilitiesListAffectedDevices200Response
+	ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (*VulnerabilitiesListAffectedDevices200Response, *http.Response, error)
+
+	/*
+	ListAffectedSoftware List Affected Software
+
+	This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cveId
+	@return ApiListAffectedSoftwareRequest
+	*/
+	ListAffectedSoftware(ctx context.Context, cveId string) ApiListAffectedSoftwareRequest
+
+	// ListAffectedSoftwareExecute executes the request
+	//  @return VulnerabilitiesListAffectedDevices200Response
+	ListAffectedSoftwareExecute(r ApiListAffectedSoftwareRequest) (*VulnerabilitiesListAffectedDevices200Response, *http.Response, error)
 
 	/*
 	ListDetections List Detections
@@ -203,7 +203,7 @@ func (a *VulnerabilitiesAPIService) GetVulnerabilityDescriptionExecute(r ApiGetV
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListAffectedAppsRequest struct {
+type ApiListAffectedDevicesRequest struct {
 	ctx context.Context
 	ApiService VulnerabilitiesAPI
 	cveId string
@@ -214,44 +214,44 @@ type ApiListAffectedAppsRequest struct {
 }
 
 // The page number of the response.
-func (r ApiListAffectedAppsRequest) Page(page string) ApiListAffectedAppsRequest {
+func (r ApiListAffectedDevicesRequest) Page(page string) ApiListAffectedDevicesRequest {
 	r.page = &page
 	return r
 }
 
 // A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-func (r ApiListAffectedAppsRequest) Size(size string) ApiListAffectedAppsRequest {
+func (r ApiListAffectedDevicesRequest) Size(size string) ApiListAffectedDevicesRequest {
 	r.size = &size
 	return r
 }
 
-// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
-func (r ApiListAffectedAppsRequest) SortBy(sortBy string) ApiListAffectedAppsRequest {
+// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name (device name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
+func (r ApiListAffectedDevicesRequest) SortBy(sortBy string) ApiListAffectedDevicesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-// &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
-func (r ApiListAffectedAppsRequest) Filter(filter string) ApiListAffectedAppsRequest {
+// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
+func (r ApiListAffectedDevicesRequest) Filter(filter string) ApiListAffectedDevicesRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListAffectedAppsRequest) Execute() (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
-	return r.ApiService.ListAffectedAppsExecute(r)
+func (r ApiListAffectedDevicesRequest) Execute() (*VulnerabilitiesListAffectedDevices200Response, *http.Response, error) {
+	return r.ApiService.ListAffectedDevicesExecute(r)
 }
 
 /*
-ListAffectedApps List Affected Apps
+ListAffectedDevices List Affected Devices
 
-This endpoint makes a request to retrieve a list of applications impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cveId
- @return ApiListAffectedAppsRequest
+ @return ApiListAffectedDevicesRequest
 */
-func (a *VulnerabilitiesAPIService) ListAffectedApps(ctx context.Context, cveId string) ApiListAffectedAppsRequest {
-	return ApiListAffectedAppsRequest{
+func (a *VulnerabilitiesAPIService) ListAffectedDevices(ctx context.Context, cveId string) ApiListAffectedDevicesRequest {
+	return ApiListAffectedDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 		cveId: cveId,
@@ -259,21 +259,21 @@ func (a *VulnerabilitiesAPIService) ListAffectedApps(ctx context.Context, cveId 
 }
 
 // Execute executes the request
-//  @return VulnerabilitiesListAffectedApps200Response
-func (a *VulnerabilitiesAPIService) ListAffectedAppsExecute(r ApiListAffectedAppsRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
+//  @return VulnerabilitiesListAffectedDevices200Response
+func (a *VulnerabilitiesAPIService) ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (*VulnerabilitiesListAffectedDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VulnerabilitiesListAffectedApps200Response
+		localVarReturnValue  *VulnerabilitiesListAffectedDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedApps")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedDevices")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/applications"
+	localVarPath := localBasePath + "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices"
 	localVarPath = strings.Replace(localVarPath, "{"+"cve_id"+"}", url.PathEscape(parameterValueToString(r.cveId, "cveId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -346,7 +346,7 @@ func (a *VulnerabilitiesAPIService) ListAffectedAppsExecute(r ApiListAffectedApp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiListAffectedDevicesRequest struct {
+type ApiListAffectedSoftwareRequest struct {
 	ctx context.Context
 	ApiService VulnerabilitiesAPI
 	cveId string
@@ -357,44 +357,44 @@ type ApiListAffectedDevicesRequest struct {
 }
 
 // The page number of the response.
-func (r ApiListAffectedDevicesRequest) Page(page string) ApiListAffectedDevicesRequest {
+func (r ApiListAffectedSoftwareRequest) Page(page string) ApiListAffectedSoftwareRequest {
 	r.page = &page
 	return r
 }
 
 // A hard upper limit is set at 50  records returned per request. If more records are expected, pagination should be used using the URL value returned in the next attribute. Additionally, filters can be added to a request to limit the results.
-func (r ApiListAffectedDevicesRequest) Size(size string) ApiListAffectedDevicesRequest {
+func (r ApiListAffectedSoftwareRequest) Size(size string) ApiListAffectedSoftwareRequest {
 	r.size = &size
 	return r
 }
 
-// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name (device name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
-func (r ApiListAffectedDevicesRequest) SortBy(sortBy string) ApiListAffectedDevicesRequest {
+// &lt;p&gt;Field to sort by.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;software (software name)&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
+func (r ApiListAffectedSoftwareRequest) SortBy(sortBy string) ApiListAffectedSoftwareRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-// &lt;p&gt;Filterable columns:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;name&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
-func (r ApiListAffectedDevicesRequest) Filter(filter string) ApiListAffectedDevicesRequest {
+// &lt;p&gt;Filter results. Similar to prism filters. Filterable columns&lt;/p&gt; &lt;ul&gt; &lt;li&gt;blueprint_id&lt;/li&gt; &lt;li&gt;detection_datetime&lt;/li&gt; &lt;/ul&gt;
+func (r ApiListAffectedSoftwareRequest) Filter(filter string) ApiListAffectedSoftwareRequest {
 	r.filter = &filter
 	return r
 }
 
-func (r ApiListAffectedDevicesRequest) Execute() (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
-	return r.ApiService.ListAffectedDevicesExecute(r)
+func (r ApiListAffectedSoftwareRequest) Execute() (*VulnerabilitiesListAffectedDevices200Response, *http.Response, error) {
+	return r.ApiService.ListAffectedSoftwareExecute(r)
 }
 
 /*
-ListAffectedDevices List Affected Devices
+ListAffectedSoftware List Affected Software
 
-Retrieve a list of devices impacted by a specified <code>cve_id</code> vulnerability for a tenants fleet.
+This endpoint makes a request to retrieve a list of software impacted by a specified <code>cve_id</code> vulnerability for a tenant's fleet.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param cveId
- @return ApiListAffectedDevicesRequest
+ @return ApiListAffectedSoftwareRequest
 */
-func (a *VulnerabilitiesAPIService) ListAffectedDevices(ctx context.Context, cveId string) ApiListAffectedDevicesRequest {
-	return ApiListAffectedDevicesRequest{
+func (a *VulnerabilitiesAPIService) ListAffectedSoftware(ctx context.Context, cveId string) ApiListAffectedSoftwareRequest {
+	return ApiListAffectedSoftwareRequest{
 		ApiService: a,
 		ctx: ctx,
 		cveId: cveId,
@@ -402,21 +402,21 @@ func (a *VulnerabilitiesAPIService) ListAffectedDevices(ctx context.Context, cve
 }
 
 // Execute executes the request
-//  @return VulnerabilitiesListAffectedApps200Response
-func (a *VulnerabilitiesAPIService) ListAffectedDevicesExecute(r ApiListAffectedDevicesRequest) (*VulnerabilitiesListAffectedApps200Response, *http.Response, error) {
+//  @return VulnerabilitiesListAffectedDevices200Response
+func (a *VulnerabilitiesAPIService) ListAffectedSoftwareExecute(r ApiListAffectedSoftwareRequest) (*VulnerabilitiesListAffectedDevices200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VulnerabilitiesListAffectedApps200Response
+		localVarReturnValue  *VulnerabilitiesListAffectedDevices200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedDevices")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VulnerabilitiesAPIService.ListAffectedSoftware")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/devices"
+	localVarPath := localBasePath + "/api/v1/vulnerability-management/vulnerabilities/{cve_id}/software"
 	localVarPath = strings.Replace(localVarPath, "{"+"cve_id"+"}", url.PathEscape(parameterValueToString(r.cveId, "cveId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
