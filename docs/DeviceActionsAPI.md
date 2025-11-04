@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**EraseDevice**](DeviceActionsAPI.md#EraseDevice) | **Post** /api/v1/devices/{device_id}/action/erase | Erase Device
 [**GetDeviceCommands**](DeviceActionsAPI.md#GetDeviceCommands) | **Get** /api/v1/devices/{device_id}/commands | Get Device Commands
 [**LockDevice**](DeviceActionsAPI.md#LockDevice) | **Post** /api/v1/devices/{device_id}/action/lock | Lock Device
+[**PerformDailyCheckin**](DeviceActionsAPI.md#PerformDailyCheckin) | **Post** /api/v1/devices/{device_id}/action/dailycheckin | Perform Daily Check-in
 [**ReinstallAgent**](DeviceActionsAPI.md#ReinstallAgent) | **Post** /api/v1/devices/{device_id}/action/reinstallagent | Reinstall Agent
 [**RemoteDesktop**](DeviceActionsAPI.md#RemoteDesktop) | **Post** /api/v1/devices/{device_id}/action/remotedesktop | Remote Desktop
 [**RenewMdmProfile**](DeviceActionsAPI.md#RenewMdmProfile) | **Post** /api/v1/devices/{device_id}/action/renewmdmprofile | Renew MDM Profile
@@ -438,6 +439,74 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PerformDailyCheckin
+
+> PerformDailyCheckin(ctx, deviceId).Execute()
+
+Perform Daily Check-in
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/MScottBlake/kandji-go-sdk"
+)
+
+func main() {
+	deviceId := "deviceId_example" // string | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.DeviceActionsAPI.PerformDailyCheckin(context.Background(), deviceId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `DeviceActionsAPI.PerformDailyCheckin``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**deviceId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPerformDailyCheckinRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

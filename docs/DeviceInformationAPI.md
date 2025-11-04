@@ -681,7 +681,7 @@ func main() {
 	model := "MacBook Air (M1, 2020)" // string | Return model results &quot;containing&quot; the specified model string. (optional)
 	ordering := "device_id" // string | <p>The <code>ordering</code> parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.</p> <p><code>?ordering=-serial_number</code> will order the response by serial_number in descending order.</p> <p><strong>Possible values</strong></p> <ul> <li><code>asset_tag</code></li> <li><code>blueprint_id</code></li> <li><code>device_id</code></li> <li><code>device_name</code></li> <li><code>last_check_in</code> - agent checkin</li> <li><code>model</code></li> <li><code>platform</code></li> <li><code>os_version</code></li> <li><code>serial_number</code></li> <li><code>user</code></li> </ul> <p>Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.</p> <p><code>?ordering=serial_number,platform</code></p> (optional)
 	osVersion := "13.2.3" // string | Return all device records containing the specified OS version (optional)
-	platform := "iPad" // string | Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code> (optional)
+	platform := "iPad" // string | Return all records matching a specific platform. Possible values:<code>Mac</code>, <code>iPad</code>, <code>iPhone</code>, <code>AppleTV</code>, <code>Android</code>, <code>Windows</code> (optional)
 	serialNumber := "VMC5qeJ5pDkp" // string | Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. (optional)
 	tagName := "accuhive_01" // string | Return results for given tag name. Case sensitive. (optional)
 	tagNameIn := "accuhive_01, accuhive_02" // string | Return results for given tag names separate by commas. Case sensitive. (optional)
@@ -690,7 +690,7 @@ func main() {
 	user := "Art Vandelay" // string | Return results &quot;containing&quot; the user name (optional)
 	userEmail := "someUser@Kandji.io" // string | Return results &quot;containing&quot; search on email address (optional)
 	userEmailExact := "someUser@Kandji.io" // string | Return results &quot;matching&quot; the specified email address (optional)
-	userId := "5344c996-8823-4b37-8d6e-8515fc7c3a0a" // string | &quot;exact&quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+	userId := "5344c996-8823-4b37-8d6e-8515fc7c3a0a" // string | &quot;exact&quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
 	userName := "Vandelay" // string | Return results &quot;containing&quot; the assigned user Display Name (optional)
 	offset := "0" // string | Specify the starting record to return (optional)
 
@@ -727,7 +727,7 @@ Name | Type | Description  | Notes
  **model** | **string** | Return model results &amp;quot;containing&amp;quot; the specified model string. | 
  **ordering** | **string** | &lt;p&gt;The &lt;code&gt;ordering&lt;/code&gt; parameter can be used to define how the device records are ordered in the response. Prepending a dash (-) to the parameter value will reverse the order of the returned results.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;-serial_number&lt;/code&gt; will order the response by serial_number in descending order.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Possible values&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;code&gt;asset_tag&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;blueprint_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_id&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;device_name&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;last_check_in&lt;/code&gt; - agent checkin&lt;/li&gt; &lt;li&gt;&lt;code&gt;model&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;platform&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;os_version&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;serial_number&lt;/code&gt;&lt;/li&gt; &lt;li&gt;&lt;code&gt;user&lt;/code&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;Additionally, multiple values can be combined in a comma separated list to further customize the ordering of the response.&lt;/p&gt; &lt;p&gt;&lt;code&gt;?ordering&#x3D;serial_number,platform&lt;/code&gt;&lt;/p&gt; | 
  **osVersion** | **string** | Return all device records containing the specified OS version | 
- **platform** | **string** | Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt; | 
+ **platform** | **string** | Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt;, &lt;code&gt;Android&lt;/code&gt;, &lt;code&gt;Windows&lt;/code&gt; | 
  **serialNumber** | **string** | Search for a specific device by Serial Number. If partial serial number is provided in the query, all device containing the partial string will be returned. | 
  **tagName** | **string** | Return results for given tag name. Case sensitive. | 
  **tagNameIn** | **string** | Return results for given tag names separate by commas. Case sensitive. | 
@@ -736,7 +736,7 @@ Name | Type | Description  | Notes
  **user** | **string** | Return results &amp;quot;containing&amp;quot; the user name | 
  **userEmail** | **string** | Return results &amp;quot;containing&amp;quot; search on email address | 
  **userEmailExact** | **string** | Return results &amp;quot;matching&amp;quot; the specified email address | 
- **userId** | **string** | &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | 
+ **userId** | **string** | &amp;quot;exact&amp;quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | 
  **userName** | **string** | Return results &amp;quot;containing&amp;quot; the assigned user Display Name | 
  **offset** | **string** | Specify the starting record to return | 
 

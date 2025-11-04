@@ -1,7 +1,7 @@
 /*
-Kandji API
+Iru Endpoint Management API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1> <p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Iru tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
 Contact: mitchelsblake@gmail.com
@@ -20,10 +20,8 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseCellular{}
 
 // DeviceInformationGetDeviceDetails200ResponseCellular struct for DeviceInformationGetDeviceDetails200ResponseCellular
 type DeviceInformationGetDeviceDetails200ResponseCellular struct {
-	CellularTechnology *int32 `json:"cellular_technology,omitempty"`
-	DataRoaming *int32 `json:"data_roaming,omitempty"`
-	Subscriptions interface{} `json:"subscriptions,omitempty"`
-	VoiceRoaming *int32 `json:"voice_roaming,omitempty"`
+	Imei *string `json:"imei,omitempty"`
+	Meid *string `json:"meid,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,133 +44,68 @@ func NewDeviceInformationGetDeviceDetails200ResponseCellularWithDefaults() *Devi
 	return &this
 }
 
-// GetCellularTechnology returns the CellularTechnology field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetCellularTechnology() int32 {
-	if o == nil || IsNil(o.CellularTechnology) {
-		var ret int32
+// GetImei returns the Imei field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetImei() string {
+	if o == nil || IsNil(o.Imei) {
+		var ret string
 		return ret
 	}
-	return *o.CellularTechnology
+	return *o.Imei
 }
 
-// GetCellularTechnologyOk returns a tuple with the CellularTechnology field value if set, nil otherwise
+// GetImeiOk returns a tuple with the Imei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetCellularTechnologyOk() (*int32, bool) {
-	if o == nil || IsNil(o.CellularTechnology) {
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetImeiOk() (*string, bool) {
+	if o == nil || IsNil(o.Imei) {
 		return nil, false
 	}
-	return o.CellularTechnology, true
+	return o.Imei, true
 }
 
-// HasCellularTechnology returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasCellularTechnology() bool {
-	if o != nil && !IsNil(o.CellularTechnology) {
+// HasImei returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasImei() bool {
+	if o != nil && !IsNil(o.Imei) {
 		return true
 	}
 
 	return false
 }
 
-// SetCellularTechnology gets a reference to the given int32 and assigns it to the CellularTechnology field.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetCellularTechnology(v int32) {
-	o.CellularTechnology = &v
+// SetImei gets a reference to the given string and assigns it to the Imei field.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetImei(v string) {
+	o.Imei = &v
 }
 
-// GetDataRoaming returns the DataRoaming field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoaming() int32 {
-	if o == nil || IsNil(o.DataRoaming) {
-		var ret int32
+// GetMeid returns the Meid field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetMeid() string {
+	if o == nil || IsNil(o.Meid) {
+		var ret string
 		return ret
 	}
-	return *o.DataRoaming
+	return *o.Meid
 }
 
-// GetDataRoamingOk returns a tuple with the DataRoaming field value if set, nil otherwise
+// GetMeidOk returns a tuple with the Meid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoamingOk() (*int32, bool) {
-	if o == nil || IsNil(o.DataRoaming) {
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetMeidOk() (*string, bool) {
+	if o == nil || IsNil(o.Meid) {
 		return nil, false
 	}
-	return o.DataRoaming, true
+	return o.Meid, true
 }
 
-// HasDataRoaming returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasDataRoaming() bool {
-	if o != nil && !IsNil(o.DataRoaming) {
+// HasMeid returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasMeid() bool {
+	if o != nil && !IsNil(o.Meid) {
 		return true
 	}
 
 	return false
 }
 
-// SetDataRoaming gets a reference to the given int32 and assigns it to the DataRoaming field.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetDataRoaming(v int32) {
-	o.DataRoaming = &v
-}
-
-// GetSubscriptions returns the Subscriptions field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetSubscriptions() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Subscriptions
-}
-
-// GetSubscriptionsOk returns a tuple with the Subscriptions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetSubscriptionsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Subscriptions) {
-		return nil, false
-	}
-	return &o.Subscriptions, true
-}
-
-// HasSubscriptions returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasSubscriptions() bool {
-	if o != nil && !IsNil(o.Subscriptions) {
-		return true
-	}
-
-	return false
-}
-
-// SetSubscriptions gets a reference to the given interface{} and assigns it to the Subscriptions field.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetSubscriptions(v interface{}) {
-	o.Subscriptions = v
-}
-
-// GetVoiceRoaming returns the VoiceRoaming field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoaming() int32 {
-	if o == nil || IsNil(o.VoiceRoaming) {
-		var ret int32
-		return ret
-	}
-	return *o.VoiceRoaming
-}
-
-// GetVoiceRoamingOk returns a tuple with the VoiceRoaming field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoamingOk() (*int32, bool) {
-	if o == nil || IsNil(o.VoiceRoaming) {
-		return nil, false
-	}
-	return o.VoiceRoaming, true
-}
-
-// HasVoiceRoaming returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasVoiceRoaming() bool {
-	if o != nil && !IsNil(o.VoiceRoaming) {
-		return true
-	}
-
-	return false
-}
-
-// SetVoiceRoaming gets a reference to the given int32 and assigns it to the VoiceRoaming field.
-func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetVoiceRoaming(v int32) {
-	o.VoiceRoaming = &v
+// SetMeid gets a reference to the given string and assigns it to the Meid field.
+func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetMeid(v string) {
+	o.Meid = &v
 }
 
 func (o DeviceInformationGetDeviceDetails200ResponseCellular) MarshalJSON() ([]byte, error) {
@@ -185,17 +118,11 @@ func (o DeviceInformationGetDeviceDetails200ResponseCellular) MarshalJSON() ([]b
 
 func (o DeviceInformationGetDeviceDetails200ResponseCellular) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CellularTechnology) {
-		toSerialize["cellular_technology"] = o.CellularTechnology
+	if !IsNil(o.Imei) {
+		toSerialize["imei"] = o.Imei
 	}
-	if !IsNil(o.DataRoaming) {
-		toSerialize["data_roaming"] = o.DataRoaming
-	}
-	if o.Subscriptions != nil {
-		toSerialize["subscriptions"] = o.Subscriptions
-	}
-	if !IsNil(o.VoiceRoaming) {
-		toSerialize["voice_roaming"] = o.VoiceRoaming
+	if !IsNil(o.Meid) {
+		toSerialize["meid"] = o.Meid
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -219,10 +146,8 @@ func (o *DeviceInformationGetDeviceDetails200ResponseCellular) UnmarshalJSON(dat
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "cellular_technology")
-		delete(additionalProperties, "data_roaming")
-		delete(additionalProperties, "subscriptions")
-		delete(additionalProperties, "voice_roaming")
+		delete(additionalProperties, "imei")
+		delete(additionalProperties, "meid")
 		o.AdditionalProperties = additionalProperties
 	}
 

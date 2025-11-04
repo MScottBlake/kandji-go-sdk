@@ -15,100 +15,100 @@ import (
 	"encoding/json"
 )
 
-// checks if the SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform{}
+// checks if the DeviceInformationGetDeviceDetails200ResponseManagement type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseManagement{}
 
-// SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform struct for SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform
-type SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform struct {
-	IosIpados *int32 `json:"ios_ipados,omitempty"`
-	Macos *int32 `json:"macos,omitempty"`
+// DeviceInformationGetDeviceDetails200ResponseManagement struct for DeviceInformationGetDeviceDetails200ResponseManagement
+type DeviceInformationGetDeviceDetails200ResponseManagement struct {
+	ManagementMode *string `json:"management_mode,omitempty"`
+	Ownership *string `json:"ownership,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform
+type _DeviceInformationGetDeviceDetails200ResponseManagement DeviceInformationGetDeviceDetails200ResponseManagement
 
-// NewSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform instantiates a new SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform object
+// NewDeviceInformationGetDeviceDetails200ResponseManagement instantiates a new DeviceInformationGetDeviceDetails200ResponseManagement object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform() *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform {
-	this := SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform{}
+func NewDeviceInformationGetDeviceDetails200ResponseManagement() *DeviceInformationGetDeviceDetails200ResponseManagement {
+	this := DeviceInformationGetDeviceDetails200ResponseManagement{}
 	return &this
 }
 
-// NewSettingsLicensing200ResponseLimitsMaxDevicesPerPlatformWithDefaults instantiates a new SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform object
+// NewDeviceInformationGetDeviceDetails200ResponseManagementWithDefaults instantiates a new DeviceInformationGetDeviceDetails200ResponseManagement object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSettingsLicensing200ResponseLimitsMaxDevicesPerPlatformWithDefaults() *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform {
-	this := SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform{}
+func NewDeviceInformationGetDeviceDetails200ResponseManagementWithDefaults() *DeviceInformationGetDeviceDetails200ResponseManagement {
+	this := DeviceInformationGetDeviceDetails200ResponseManagement{}
 	return &this
 }
 
-// GetIosIpados returns the IosIpados field value if set, zero value otherwise.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetIosIpados() int32 {
-	if o == nil || IsNil(o.IosIpados) {
-		var ret int32
+// GetManagementMode returns the ManagementMode field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) GetManagementMode() string {
+	if o == nil || IsNil(o.ManagementMode) {
+		var ret string
 		return ret
 	}
-	return *o.IosIpados
+	return *o.ManagementMode
 }
 
-// GetIosIpadosOk returns a tuple with the IosIpados field value if set, nil otherwise
+// GetManagementModeOk returns a tuple with the ManagementMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetIosIpadosOk() (*int32, bool) {
-	if o == nil || IsNil(o.IosIpados) {
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) GetManagementModeOk() (*string, bool) {
+	if o == nil || IsNil(o.ManagementMode) {
 		return nil, false
 	}
-	return o.IosIpados, true
+	return o.ManagementMode, true
 }
 
-// HasIosIpados returns a boolean if a field has been set.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) HasIosIpados() bool {
-	if o != nil && !IsNil(o.IosIpados) {
+// HasManagementMode returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) HasManagementMode() bool {
+	if o != nil && !IsNil(o.ManagementMode) {
 		return true
 	}
 
 	return false
 }
 
-// SetIosIpados gets a reference to the given int32 and assigns it to the IosIpados field.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) SetIosIpados(v int32) {
-	o.IosIpados = &v
+// SetManagementMode gets a reference to the given string and assigns it to the ManagementMode field.
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) SetManagementMode(v string) {
+	o.ManagementMode = &v
 }
 
-// GetMacos returns the Macos field value if set, zero value otherwise.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetMacos() int32 {
-	if o == nil || IsNil(o.Macos) {
-		var ret int32
+// GetOwnership returns the Ownership field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) GetOwnership() string {
+	if o == nil || IsNil(o.Ownership) {
+		var ret string
 		return ret
 	}
-	return *o.Macos
+	return *o.Ownership
 }
 
-// GetMacosOk returns a tuple with the Macos field value if set, nil otherwise
+// GetOwnershipOk returns a tuple with the Ownership field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) GetMacosOk() (*int32, bool) {
-	if o == nil || IsNil(o.Macos) {
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) GetOwnershipOk() (*string, bool) {
+	if o == nil || IsNil(o.Ownership) {
 		return nil, false
 	}
-	return o.Macos, true
+	return o.Ownership, true
 }
 
-// HasMacos returns a boolean if a field has been set.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) HasMacos() bool {
-	if o != nil && !IsNil(o.Macos) {
+// HasOwnership returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) HasOwnership() bool {
+	if o != nil && !IsNil(o.Ownership) {
 		return true
 	}
 
 	return false
 }
 
-// SetMacos gets a reference to the given int32 and assigns it to the Macos field.
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) SetMacos(v int32) {
-	o.Macos = &v
+// SetOwnership gets a reference to the given string and assigns it to the Ownership field.
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) SetOwnership(v string) {
+	o.Ownership = &v
 }
 
-func (o SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) MarshalJSON() ([]byte, error) {
+func (o DeviceInformationGetDeviceDetails200ResponseManagement) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -116,13 +116,13 @@ func (o SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) MarshalJSON() (
 	return json.Marshal(toSerialize)
 }
 
-func (o SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) ToMap() (map[string]interface{}, error) {
+func (o DeviceInformationGetDeviceDetails200ResponseManagement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IosIpados) {
-		toSerialize["ios_ipados"] = o.IosIpados
+	if !IsNil(o.ManagementMode) {
+		toSerialize["management_mode"] = o.ManagementMode
 	}
-	if !IsNil(o.Macos) {
-		toSerialize["macos"] = o.Macos
+	if !IsNil(o.Ownership) {
+		toSerialize["ownership"] = o.Ownership
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -132,60 +132,60 @@ func (o SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) ToMap() (map[st
 	return toSerialize, nil
 }
 
-func (o *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) UnmarshalJSON(data []byte) (err error) {
-	varSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform := _SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform{}
+func (o *DeviceInformationGetDeviceDetails200ResponseManagement) UnmarshalJSON(data []byte) (err error) {
+	varDeviceInformationGetDeviceDetails200ResponseManagement := _DeviceInformationGetDeviceDetails200ResponseManagement{}
 
-	err = json.Unmarshal(data, &varSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform)
+	err = json.Unmarshal(data, &varDeviceInformationGetDeviceDetails200ResponseManagement)
 
 	if err != nil {
 		return err
 	}
 
-	*o = SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform(varSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform)
+	*o = DeviceInformationGetDeviceDetails200ResponseManagement(varDeviceInformationGetDeviceDetails200ResponseManagement)
 
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
-		delete(additionalProperties, "ios_ipados")
-		delete(additionalProperties, "macos")
+		delete(additionalProperties, "management_mode")
+		delete(additionalProperties, "ownership")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-type NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform struct {
-	value *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform
+type NullableDeviceInformationGetDeviceDetails200ResponseManagement struct {
+	value *DeviceInformationGetDeviceDetails200ResponseManagement
 	isSet bool
 }
 
-func (v NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) Get() *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform {
+func (v NullableDeviceInformationGetDeviceDetails200ResponseManagement) Get() *DeviceInformationGetDeviceDetails200ResponseManagement {
 	return v.value
 }
 
-func (v *NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) Set(val *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) {
+func (v *NullableDeviceInformationGetDeviceDetails200ResponseManagement) Set(val *DeviceInformationGetDeviceDetails200ResponseManagement) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) IsSet() bool {
+func (v NullableDeviceInformationGetDeviceDetails200ResponseManagement) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) Unset() {
+func (v *NullableDeviceInformationGetDeviceDetails200ResponseManagement) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform(val *SettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) *NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform {
-	return &NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform{value: val, isSet: true}
+func NewNullableDeviceInformationGetDeviceDetails200ResponseManagement(val *DeviceInformationGetDeviceDetails200ResponseManagement) *NullableDeviceInformationGetDeviceDetails200ResponseManagement {
+	return &NullableDeviceInformationGetDeviceDetails200ResponseManagement{value: val, isSet: true}
 }
 
-func (v NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) MarshalJSON() ([]byte, error) {
+func (v NullableDeviceInformationGetDeviceDetails200ResponseManagement) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableSettingsLicensing200ResponseLimitsMaxDevicesPerPlatform) UnmarshalJSON(src []byte) error {
+func (v *NullableDeviceInformationGetDeviceDetails200ResponseManagement) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

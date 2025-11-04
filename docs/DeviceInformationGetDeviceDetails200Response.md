@@ -4,23 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ActivationLock** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseActivationLock**](DeviceInformationGetDeviceDetails200ResponseActivationLock.md) |  | [optional] 
-**AppleBusinessManager** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager**](DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager.md) |  | [optional] 
-**AutomatedDeviceEnrollment** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment**](DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment.md) |  | [optional] 
 **Cellular** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseCellular**](DeviceInformationGetDeviceDetails200ResponseCellular.md) |  | [optional] 
-**Filevault** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseFilevault**](DeviceInformationGetDeviceDetails200ResponseFilevault.md) |  | [optional] 
 **General** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseGeneral**](DeviceInformationGetDeviceDetails200ResponseGeneral.md) |  | [optional] 
-**HardwareOverview** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseHardwareOverview**](DeviceInformationGetDeviceDetails200ResponseHardwareOverview.md) |  | [optional] 
-**InstalledProfiles** | Pointer to **interface{}** |  | [optional] 
-**KandjiAgent** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseKandjiAgent**](DeviceInformationGetDeviceDetails200ResponseKandjiAgent.md) |  | [optional] 
-**LostMode** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseLostMode**](DeviceInformationGetDeviceDetails200ResponseLostMode.md) |  | [optional] 
-**Mdm** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseMdm**](DeviceInformationGetDeviceDetails200ResponseMdm.md) |  | [optional] 
-**Network** | Pointer to **map[string]interface{}** |  | [optional] 
-**RecoveryInformation** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseRecoveryInformation**](DeviceInformationGetDeviceDetails200ResponseRecoveryInformation.md) |  | [optional] 
-**SecurityInformation** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseSecurityInformation**](DeviceInformationGetDeviceDetails200ResponseSecurityInformation.md) |  | [optional] 
+**Hardware** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseHardware**](DeviceInformationGetDeviceDetails200ResponseHardware.md) |  | [optional] 
+**Management** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseManagement**](DeviceInformationGetDeviceDetails200ResponseManagement.md) |  | [optional] 
+**Security** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseSecurity**](DeviceInformationGetDeviceDetails200ResponseSecurity.md) |  | [optional] 
 **Tags** | Pointer to **interface{}** |  | [optional] 
-**Users** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseUsers**](DeviceInformationGetDeviceDetails200ResponseUsers.md) |  | [optional] 
-**Volumes** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
@@ -40,81 +29,6 @@ will change when the set of required properties is changed
 NewDeviceInformationGetDeviceDetails200ResponseWithDefaults instantiates a new DeviceInformationGetDeviceDetails200Response object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetActivationLock
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetActivationLock() DeviceInformationGetDeviceDetails200ResponseActivationLock`
-
-GetActivationLock returns the ActivationLock field if non-nil, zero value otherwise.
-
-### GetActivationLockOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetActivationLockOk() (*DeviceInformationGetDeviceDetails200ResponseActivationLock, bool)`
-
-GetActivationLockOk returns a tuple with the ActivationLock field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetActivationLock
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetActivationLock(v DeviceInformationGetDeviceDetails200ResponseActivationLock)`
-
-SetActivationLock sets ActivationLock field to given value.
-
-### HasActivationLock
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasActivationLock() bool`
-
-HasActivationLock returns a boolean if a field has been set.
-
-### GetAppleBusinessManager
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetAppleBusinessManager() DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager`
-
-GetAppleBusinessManager returns the AppleBusinessManager field if non-nil, zero value otherwise.
-
-### GetAppleBusinessManagerOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetAppleBusinessManagerOk() (*DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager, bool)`
-
-GetAppleBusinessManagerOk returns a tuple with the AppleBusinessManager field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAppleBusinessManager
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetAppleBusinessManager(v DeviceInformationGetDeviceDetails200ResponseAppleBusinessManager)`
-
-SetAppleBusinessManager sets AppleBusinessManager field to given value.
-
-### HasAppleBusinessManager
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasAppleBusinessManager() bool`
-
-HasAppleBusinessManager returns a boolean if a field has been set.
-
-### GetAutomatedDeviceEnrollment
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetAutomatedDeviceEnrollment() DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment`
-
-GetAutomatedDeviceEnrollment returns the AutomatedDeviceEnrollment field if non-nil, zero value otherwise.
-
-### GetAutomatedDeviceEnrollmentOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetAutomatedDeviceEnrollmentOk() (*DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment, bool)`
-
-GetAutomatedDeviceEnrollmentOk returns a tuple with the AutomatedDeviceEnrollment field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAutomatedDeviceEnrollment
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetAutomatedDeviceEnrollment(v DeviceInformationGetDeviceDetails200ResponseAutomatedDeviceEnrollment)`
-
-SetAutomatedDeviceEnrollment sets AutomatedDeviceEnrollment field to given value.
-
-### HasAutomatedDeviceEnrollment
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasAutomatedDeviceEnrollment() bool`
-
-HasAutomatedDeviceEnrollment returns a boolean if a field has been set.
 
 ### GetCellular
 
@@ -141,31 +55,6 @@ SetCellular sets Cellular field to given value.
 
 HasCellular returns a boolean if a field has been set.
 
-### GetFilevault
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetFilevault() DeviceInformationGetDeviceDetails200ResponseFilevault`
-
-GetFilevault returns the Filevault field if non-nil, zero value otherwise.
-
-### GetFilevaultOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetFilevaultOk() (*DeviceInformationGetDeviceDetails200ResponseFilevault, bool)`
-
-GetFilevaultOk returns a tuple with the Filevault field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFilevault
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetFilevault(v DeviceInformationGetDeviceDetails200ResponseFilevault)`
-
-SetFilevault sets Filevault field to given value.
-
-### HasFilevault
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasFilevault() bool`
-
-HasFilevault returns a boolean if a field has been set.
-
 ### GetGeneral
 
 `func (o *DeviceInformationGetDeviceDetails200Response) GetGeneral() DeviceInformationGetDeviceDetails200ResponseGeneral`
@@ -191,215 +80,80 @@ SetGeneral sets General field to given value.
 
 HasGeneral returns a boolean if a field has been set.
 
-### GetHardwareOverview
+### GetHardware
 
-`func (o *DeviceInformationGetDeviceDetails200Response) GetHardwareOverview() DeviceInformationGetDeviceDetails200ResponseHardwareOverview`
+`func (o *DeviceInformationGetDeviceDetails200Response) GetHardware() DeviceInformationGetDeviceDetails200ResponseHardware`
 
-GetHardwareOverview returns the HardwareOverview field if non-nil, zero value otherwise.
+GetHardware returns the Hardware field if non-nil, zero value otherwise.
 
-### GetHardwareOverviewOk
+### GetHardwareOk
 
-`func (o *DeviceInformationGetDeviceDetails200Response) GetHardwareOverviewOk() (*DeviceInformationGetDeviceDetails200ResponseHardwareOverview, bool)`
+`func (o *DeviceInformationGetDeviceDetails200Response) GetHardwareOk() (*DeviceInformationGetDeviceDetails200ResponseHardware, bool)`
 
-GetHardwareOverviewOk returns a tuple with the HardwareOverview field if it's non-nil, zero value otherwise
+GetHardwareOk returns a tuple with the Hardware field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHardwareOverview
+### SetHardware
 
-`func (o *DeviceInformationGetDeviceDetails200Response) SetHardwareOverview(v DeviceInformationGetDeviceDetails200ResponseHardwareOverview)`
+`func (o *DeviceInformationGetDeviceDetails200Response) SetHardware(v DeviceInformationGetDeviceDetails200ResponseHardware)`
 
-SetHardwareOverview sets HardwareOverview field to given value.
+SetHardware sets Hardware field to given value.
 
-### HasHardwareOverview
+### HasHardware
 
-`func (o *DeviceInformationGetDeviceDetails200Response) HasHardwareOverview() bool`
+`func (o *DeviceInformationGetDeviceDetails200Response) HasHardware() bool`
 
-HasHardwareOverview returns a boolean if a field has been set.
+HasHardware returns a boolean if a field has been set.
 
-### GetInstalledProfiles
+### GetManagement
 
-`func (o *DeviceInformationGetDeviceDetails200Response) GetInstalledProfiles() interface{}`
+`func (o *DeviceInformationGetDeviceDetails200Response) GetManagement() DeviceInformationGetDeviceDetails200ResponseManagement`
 
-GetInstalledProfiles returns the InstalledProfiles field if non-nil, zero value otherwise.
+GetManagement returns the Management field if non-nil, zero value otherwise.
 
-### GetInstalledProfilesOk
+### GetManagementOk
 
-`func (o *DeviceInformationGetDeviceDetails200Response) GetInstalledProfilesOk() (*interface{}, bool)`
+`func (o *DeviceInformationGetDeviceDetails200Response) GetManagementOk() (*DeviceInformationGetDeviceDetails200ResponseManagement, bool)`
 
-GetInstalledProfilesOk returns a tuple with the InstalledProfiles field if it's non-nil, zero value otherwise
+GetManagementOk returns a tuple with the Management field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInstalledProfiles
+### SetManagement
 
-`func (o *DeviceInformationGetDeviceDetails200Response) SetInstalledProfiles(v interface{})`
+`func (o *DeviceInformationGetDeviceDetails200Response) SetManagement(v DeviceInformationGetDeviceDetails200ResponseManagement)`
 
-SetInstalledProfiles sets InstalledProfiles field to given value.
+SetManagement sets Management field to given value.
 
-### HasInstalledProfiles
+### HasManagement
 
-`func (o *DeviceInformationGetDeviceDetails200Response) HasInstalledProfiles() bool`
+`func (o *DeviceInformationGetDeviceDetails200Response) HasManagement() bool`
 
-HasInstalledProfiles returns a boolean if a field has been set.
+HasManagement returns a boolean if a field has been set.
 
-### SetInstalledProfilesNil
+### GetSecurity
 
-`func (o *DeviceInformationGetDeviceDetails200Response) SetInstalledProfilesNil(b bool)`
+`func (o *DeviceInformationGetDeviceDetails200Response) GetSecurity() DeviceInformationGetDeviceDetails200ResponseSecurity`
 
- SetInstalledProfilesNil sets the value for InstalledProfiles to be an explicit nil
+GetSecurity returns the Security field if non-nil, zero value otherwise.
 
-### UnsetInstalledProfiles
-`func (o *DeviceInformationGetDeviceDetails200Response) UnsetInstalledProfiles()`
+### GetSecurityOk
 
-UnsetInstalledProfiles ensures that no value is present for InstalledProfiles, not even an explicit nil
-### GetKandjiAgent
+`func (o *DeviceInformationGetDeviceDetails200Response) GetSecurityOk() (*DeviceInformationGetDeviceDetails200ResponseSecurity, bool)`
 
-`func (o *DeviceInformationGetDeviceDetails200Response) GetKandjiAgent() DeviceInformationGetDeviceDetails200ResponseKandjiAgent`
-
-GetKandjiAgent returns the KandjiAgent field if non-nil, zero value otherwise.
-
-### GetKandjiAgentOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetKandjiAgentOk() (*DeviceInformationGetDeviceDetails200ResponseKandjiAgent, bool)`
-
-GetKandjiAgentOk returns a tuple with the KandjiAgent field if it's non-nil, zero value otherwise
+GetSecurityOk returns a tuple with the Security field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetKandjiAgent
+### SetSecurity
 
-`func (o *DeviceInformationGetDeviceDetails200Response) SetKandjiAgent(v DeviceInformationGetDeviceDetails200ResponseKandjiAgent)`
+`func (o *DeviceInformationGetDeviceDetails200Response) SetSecurity(v DeviceInformationGetDeviceDetails200ResponseSecurity)`
 
-SetKandjiAgent sets KandjiAgent field to given value.
+SetSecurity sets Security field to given value.
 
-### HasKandjiAgent
+### HasSecurity
 
-`func (o *DeviceInformationGetDeviceDetails200Response) HasKandjiAgent() bool`
+`func (o *DeviceInformationGetDeviceDetails200Response) HasSecurity() bool`
 
-HasKandjiAgent returns a boolean if a field has been set.
-
-### GetLostMode
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetLostMode() DeviceInformationGetDeviceDetails200ResponseLostMode`
-
-GetLostMode returns the LostMode field if non-nil, zero value otherwise.
-
-### GetLostModeOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetLostModeOk() (*DeviceInformationGetDeviceDetails200ResponseLostMode, bool)`
-
-GetLostModeOk returns a tuple with the LostMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLostMode
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetLostMode(v DeviceInformationGetDeviceDetails200ResponseLostMode)`
-
-SetLostMode sets LostMode field to given value.
-
-### HasLostMode
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasLostMode() bool`
-
-HasLostMode returns a boolean if a field has been set.
-
-### GetMdm
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetMdm() DeviceInformationGetDeviceDetails200ResponseMdm`
-
-GetMdm returns the Mdm field if non-nil, zero value otherwise.
-
-### GetMdmOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetMdmOk() (*DeviceInformationGetDeviceDetails200ResponseMdm, bool)`
-
-GetMdmOk returns a tuple with the Mdm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMdm
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetMdm(v DeviceInformationGetDeviceDetails200ResponseMdm)`
-
-SetMdm sets Mdm field to given value.
-
-### HasMdm
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasMdm() bool`
-
-HasMdm returns a boolean if a field has been set.
-
-### GetNetwork
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetNetwork() map[string]interface{}`
-
-GetNetwork returns the Network field if non-nil, zero value otherwise.
-
-### GetNetworkOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetNetworkOk() (*map[string]interface{}, bool)`
-
-GetNetworkOk returns a tuple with the Network field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNetwork
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetNetwork(v map[string]interface{})`
-
-SetNetwork sets Network field to given value.
-
-### HasNetwork
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasNetwork() bool`
-
-HasNetwork returns a boolean if a field has been set.
-
-### GetRecoveryInformation
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetRecoveryInformation() DeviceInformationGetDeviceDetails200ResponseRecoveryInformation`
-
-GetRecoveryInformation returns the RecoveryInformation field if non-nil, zero value otherwise.
-
-### GetRecoveryInformationOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetRecoveryInformationOk() (*DeviceInformationGetDeviceDetails200ResponseRecoveryInformation, bool)`
-
-GetRecoveryInformationOk returns a tuple with the RecoveryInformation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRecoveryInformation
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetRecoveryInformation(v DeviceInformationGetDeviceDetails200ResponseRecoveryInformation)`
-
-SetRecoveryInformation sets RecoveryInformation field to given value.
-
-### HasRecoveryInformation
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasRecoveryInformation() bool`
-
-HasRecoveryInformation returns a boolean if a field has been set.
-
-### GetSecurityInformation
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetSecurityInformation() DeviceInformationGetDeviceDetails200ResponseSecurityInformation`
-
-GetSecurityInformation returns the SecurityInformation field if non-nil, zero value otherwise.
-
-### GetSecurityInformationOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetSecurityInformationOk() (*DeviceInformationGetDeviceDetails200ResponseSecurityInformation, bool)`
-
-GetSecurityInformationOk returns a tuple with the SecurityInformation field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSecurityInformation
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetSecurityInformation(v DeviceInformationGetDeviceDetails200ResponseSecurityInformation)`
-
-SetSecurityInformation sets SecurityInformation field to given value.
-
-### HasSecurityInformation
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasSecurityInformation() bool`
-
-HasSecurityInformation returns a boolean if a field has been set.
+HasSecurity returns a boolean if a field has been set.
 
 ### GetTags
 
@@ -436,66 +190,6 @@ HasTags returns a boolean if a field has been set.
 `func (o *DeviceInformationGetDeviceDetails200Response) UnsetTags()`
 
 UnsetTags ensures that no value is present for Tags, not even an explicit nil
-### GetUsers
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetUsers() DeviceInformationGetDeviceDetails200ResponseUsers`
-
-GetUsers returns the Users field if non-nil, zero value otherwise.
-
-### GetUsersOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetUsersOk() (*DeviceInformationGetDeviceDetails200ResponseUsers, bool)`
-
-GetUsersOk returns a tuple with the Users field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUsers
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetUsers(v DeviceInformationGetDeviceDetails200ResponseUsers)`
-
-SetUsers sets Users field to given value.
-
-### HasUsers
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasUsers() bool`
-
-HasUsers returns a boolean if a field has been set.
-
-### GetVolumes
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetVolumes() interface{}`
-
-GetVolumes returns the Volumes field if non-nil, zero value otherwise.
-
-### GetVolumesOk
-
-`func (o *DeviceInformationGetDeviceDetails200Response) GetVolumesOk() (*interface{}, bool)`
-
-GetVolumesOk returns a tuple with the Volumes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVolumes
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetVolumes(v interface{})`
-
-SetVolumes sets Volumes field to given value.
-
-### HasVolumes
-
-`func (o *DeviceInformationGetDeviceDetails200Response) HasVolumes() bool`
-
-HasVolumes returns a boolean if a field has been set.
-
-### SetVolumesNil
-
-`func (o *DeviceInformationGetDeviceDetails200Response) SetVolumesNil(b bool)`
-
- SetVolumesNil sets the value for Volumes to be an explicit nil
-
-### UnsetVolumes
-`func (o *DeviceInformationGetDeviceDetails200Response) UnsetVolumes()`
-
-UnsetVolumes ensures that no value is present for Volumes, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

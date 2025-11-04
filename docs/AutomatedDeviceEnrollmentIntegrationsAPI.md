@@ -379,7 +379,7 @@ import (
 
 func main() {
 	blueprintId := "fce0cc58-caa5-40d2-a0d7-a0b257127ec5" // string | Return results &quot;containing&quot; the specified blueprint id (optional)
-	userId := "5344c996-8823-4b37-8d6e-8515fc7c3a0a" // string | &quot;exact&quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
+	userId := "5344c996-8823-4b37-8d6e-8515fc7c3a0a" // string | &quot;exact&quot; match on user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) (optional)
 	depAccount := "depAccount_example" // string | The ADE token UUID (optional)
 	deviceFamily := "deviceFamily_example" // string | iPad, iPhone, iPod, Mac, AppleTV, or Vision (optional)
 	model := "MacBook Air" // string | Return model results &quot;containing&quot; the specified model string. - &quot;iPad (8th Generation)&quot;, &quot;MacBook Air&quot; (optional)
@@ -412,7 +412,7 @@ Other parameters are passed through a pointer to a apiListAdeDevicesRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blueprintId** | **string** | Return results &amp;quot;containing&amp;quot; the specified blueprint id | 
- **userId** | **string** | &amp;quot;exact&amp;quot; match on kandji user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | 
+ **userId** | **string** | &amp;quot;exact&amp;quot; match on user ID value (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a) | 
  **depAccount** | **string** | The ADE token UUID | 
  **deviceFamily** | **string** | iPad, iPhone, iPod, Mac, AppleTV, or Vision | 
  **model** | **string** | Return model results &amp;quot;containing&amp;quot; the specified model string. - &amp;quot;iPad (8th Generation)&amp;quot;, &amp;quot;MacBook Air&amp;quot; | 

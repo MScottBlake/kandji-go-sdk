@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceId** | Pointer to **string** |  | [optional] 
-**LostMode** | Pointer to [**DeviceInformationGetDeviceDetails200ResponseLostMode**](DeviceInformationGetDeviceDetails200ResponseLostMode.md) |  | [optional] 
+**LostMode** | Pointer to [**DeviceInformationGetDeviceLostModeDetails200ResponseLostMode**](DeviceInformationGetDeviceLostModeDetails200ResponseLostMode.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasDeviceId returns a boolean if a field has been set.
 
 ### GetLostMode
 
-`func (o *DeviceInformationGetDeviceLostModeDetails200Response) GetLostMode() DeviceInformationGetDeviceDetails200ResponseLostMode`
+`func (o *DeviceInformationGetDeviceLostModeDetails200Response) GetLostMode() DeviceInformationGetDeviceLostModeDetails200ResponseLostMode`
 
 GetLostMode returns the LostMode field if non-nil, zero value otherwise.
 
 ### GetLostModeOk
 
-`func (o *DeviceInformationGetDeviceLostModeDetails200Response) GetLostModeOk() (*DeviceInformationGetDeviceDetails200ResponseLostMode, bool)`
+`func (o *DeviceInformationGetDeviceLostModeDetails200Response) GetLostModeOk() (*DeviceInformationGetDeviceLostModeDetails200ResponseLostMode, bool)`
 
 GetLostModeOk returns a tuple with the LostMode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLostMode
 
-`func (o *DeviceInformationGetDeviceLostModeDetails200Response) SetLostMode(v DeviceInformationGetDeviceDetails200ResponseLostMode)`
+`func (o *DeviceInformationGetDeviceLostModeDetails200Response) SetLostMode(v DeviceInformationGetDeviceLostModeDetails200ResponseLostMode)`
 
 SetLostMode sets LostMode field to given value.
 

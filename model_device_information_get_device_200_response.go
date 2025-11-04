@@ -1,7 +1,7 @@
 /*
-Kandji API
+Iru Endpoint Management API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1> <p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Iru tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
 Contact: mitchelsblake@gmail.com
@@ -22,20 +22,24 @@ var _ MappedNullable = &DeviceInformationGetDevice200Response{}
 type DeviceInformationGetDevice200Response struct {
 	AgentInstalled *int32 `json:"agent_installed,omitempty"`
 	AgentVersion *string `json:"agent_version,omitempty"`
+	ApiLevel *string `json:"api_level,omitempty"`
 	AssetTag *string `json:"asset_tag,omitempty"`
 	BlueprintId *string `json:"blueprint_id,omitempty"`
 	BlueprintName *string `json:"blueprint_name,omitempty"`
 	DeviceId *string `json:"device_id,omitempty"`
 	DeviceName *string `json:"device_name,omitempty"`
 	FirstEnrollment *string `json:"first_enrollment,omitempty"`
+	FullSoftwareVersion *string `json:"full_software_version,omitempty"`
 	IsMissing *int32 `json:"is_missing,omitempty"`
 	IsRemoved *int32 `json:"is_removed,omitempty"`
 	LastCheckIn *string `json:"last_check_in,omitempty"`
 	LastEnrollment *string `json:"last_enrollment,omitempty"`
+	LostModeStatus *string `json:"lost_mode_status,omitempty"`
 	MdmEnabled *int32 `json:"mdm_enabled,omitempty"`
 	Model *string `json:"model,omitempty"`
 	OsVersion *string `json:"os_version,omitempty"`
 	Platform *string `json:"platform,omitempty"`
+	SecurityPatchLevel *string `json:"security_patch_level,omitempty"`
 	SerialNumber *string `json:"serial_number,omitempty"`
 	SupplementalBuildVersion *string `json:"supplemental_build_version,omitempty"`
 	SupplementalOsVersionExtra *string `json:"supplemental_os_version_extra,omitempty"`
@@ -125,6 +129,38 @@ func (o *DeviceInformationGetDevice200Response) HasAgentVersion() bool {
 // SetAgentVersion gets a reference to the given string and assigns it to the AgentVersion field.
 func (o *DeviceInformationGetDevice200Response) SetAgentVersion(v string) {
 	o.AgentVersion = &v
+}
+
+// GetApiLevel returns the ApiLevel field value if set, zero value otherwise.
+func (o *DeviceInformationGetDevice200Response) GetApiLevel() string {
+	if o == nil || IsNil(o.ApiLevel) {
+		var ret string
+		return ret
+	}
+	return *o.ApiLevel
+}
+
+// GetApiLevelOk returns a tuple with the ApiLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDevice200Response) GetApiLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiLevel) {
+		return nil, false
+	}
+	return o.ApiLevel, true
+}
+
+// HasApiLevel returns a boolean if a field has been set.
+func (o *DeviceInformationGetDevice200Response) HasApiLevel() bool {
+	if o != nil && !IsNil(o.ApiLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiLevel gets a reference to the given string and assigns it to the ApiLevel field.
+func (o *DeviceInformationGetDevice200Response) SetApiLevel(v string) {
+	o.ApiLevel = &v
 }
 
 // GetAssetTag returns the AssetTag field value if set, zero value otherwise.
@@ -319,6 +355,38 @@ func (o *DeviceInformationGetDevice200Response) SetFirstEnrollment(v string) {
 	o.FirstEnrollment = &v
 }
 
+// GetFullSoftwareVersion returns the FullSoftwareVersion field value if set, zero value otherwise.
+func (o *DeviceInformationGetDevice200Response) GetFullSoftwareVersion() string {
+	if o == nil || IsNil(o.FullSoftwareVersion) {
+		var ret string
+		return ret
+	}
+	return *o.FullSoftwareVersion
+}
+
+// GetFullSoftwareVersionOk returns a tuple with the FullSoftwareVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDevice200Response) GetFullSoftwareVersionOk() (*string, bool) {
+	if o == nil || IsNil(o.FullSoftwareVersion) {
+		return nil, false
+	}
+	return o.FullSoftwareVersion, true
+}
+
+// HasFullSoftwareVersion returns a boolean if a field has been set.
+func (o *DeviceInformationGetDevice200Response) HasFullSoftwareVersion() bool {
+	if o != nil && !IsNil(o.FullSoftwareVersion) {
+		return true
+	}
+
+	return false
+}
+
+// SetFullSoftwareVersion gets a reference to the given string and assigns it to the FullSoftwareVersion field.
+func (o *DeviceInformationGetDevice200Response) SetFullSoftwareVersion(v string) {
+	o.FullSoftwareVersion = &v
+}
+
 // GetIsMissing returns the IsMissing field value if set, zero value otherwise.
 func (o *DeviceInformationGetDevice200Response) GetIsMissing() int32 {
 	if o == nil || IsNil(o.IsMissing) {
@@ -447,6 +515,38 @@ func (o *DeviceInformationGetDevice200Response) SetLastEnrollment(v string) {
 	o.LastEnrollment = &v
 }
 
+// GetLostModeStatus returns the LostModeStatus field value if set, zero value otherwise.
+func (o *DeviceInformationGetDevice200Response) GetLostModeStatus() string {
+	if o == nil || IsNil(o.LostModeStatus) {
+		var ret string
+		return ret
+	}
+	return *o.LostModeStatus
+}
+
+// GetLostModeStatusOk returns a tuple with the LostModeStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDevice200Response) GetLostModeStatusOk() (*string, bool) {
+	if o == nil || IsNil(o.LostModeStatus) {
+		return nil, false
+	}
+	return o.LostModeStatus, true
+}
+
+// HasLostModeStatus returns a boolean if a field has been set.
+func (o *DeviceInformationGetDevice200Response) HasLostModeStatus() bool {
+	if o != nil && !IsNil(o.LostModeStatus) {
+		return true
+	}
+
+	return false
+}
+
+// SetLostModeStatus gets a reference to the given string and assigns it to the LostModeStatus field.
+func (o *DeviceInformationGetDevice200Response) SetLostModeStatus(v string) {
+	o.LostModeStatus = &v
+}
+
 // GetMdmEnabled returns the MdmEnabled field value if set, zero value otherwise.
 func (o *DeviceInformationGetDevice200Response) GetMdmEnabled() int32 {
 	if o == nil || IsNil(o.MdmEnabled) {
@@ -573,6 +673,38 @@ func (o *DeviceInformationGetDevice200Response) HasPlatform() bool {
 // SetPlatform gets a reference to the given string and assigns it to the Platform field.
 func (o *DeviceInformationGetDevice200Response) SetPlatform(v string) {
 	o.Platform = &v
+}
+
+// GetSecurityPatchLevel returns the SecurityPatchLevel field value if set, zero value otherwise.
+func (o *DeviceInformationGetDevice200Response) GetSecurityPatchLevel() string {
+	if o == nil || IsNil(o.SecurityPatchLevel) {
+		var ret string
+		return ret
+	}
+	return *o.SecurityPatchLevel
+}
+
+// GetSecurityPatchLevelOk returns a tuple with the SecurityPatchLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDevice200Response) GetSecurityPatchLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.SecurityPatchLevel) {
+		return nil, false
+	}
+	return o.SecurityPatchLevel, true
+}
+
+// HasSecurityPatchLevel returns a boolean if a field has been set.
+func (o *DeviceInformationGetDevice200Response) HasSecurityPatchLevel() bool {
+	if o != nil && !IsNil(o.SecurityPatchLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetSecurityPatchLevel gets a reference to the given string and assigns it to the SecurityPatchLevel field.
+func (o *DeviceInformationGetDevice200Response) SetSecurityPatchLevel(v string) {
+	o.SecurityPatchLevel = &v
 }
 
 // GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
@@ -752,6 +884,9 @@ func (o DeviceInformationGetDevice200Response) ToMap() (map[string]interface{}, 
 	if !IsNil(o.AgentVersion) {
 		toSerialize["agent_version"] = o.AgentVersion
 	}
+	if !IsNil(o.ApiLevel) {
+		toSerialize["api_level"] = o.ApiLevel
+	}
 	if !IsNil(o.AssetTag) {
 		toSerialize["asset_tag"] = o.AssetTag
 	}
@@ -770,6 +905,9 @@ func (o DeviceInformationGetDevice200Response) ToMap() (map[string]interface{}, 
 	if !IsNil(o.FirstEnrollment) {
 		toSerialize["first_enrollment"] = o.FirstEnrollment
 	}
+	if !IsNil(o.FullSoftwareVersion) {
+		toSerialize["full_software_version"] = o.FullSoftwareVersion
+	}
 	if !IsNil(o.IsMissing) {
 		toSerialize["is_missing"] = o.IsMissing
 	}
@@ -782,6 +920,9 @@ func (o DeviceInformationGetDevice200Response) ToMap() (map[string]interface{}, 
 	if !IsNil(o.LastEnrollment) {
 		toSerialize["last_enrollment"] = o.LastEnrollment
 	}
+	if !IsNil(o.LostModeStatus) {
+		toSerialize["lost_mode_status"] = o.LostModeStatus
+	}
 	if !IsNil(o.MdmEnabled) {
 		toSerialize["mdm_enabled"] = o.MdmEnabled
 	}
@@ -793,6 +934,9 @@ func (o DeviceInformationGetDevice200Response) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
+	}
+	if !IsNil(o.SecurityPatchLevel) {
+		toSerialize["security_patch_level"] = o.SecurityPatchLevel
 	}
 	if !IsNil(o.SerialNumber) {
 		toSerialize["serial_number"] = o.SerialNumber
@@ -833,20 +977,24 @@ func (o *DeviceInformationGetDevice200Response) UnmarshalJSON(data []byte) (err 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "agent_installed")
 		delete(additionalProperties, "agent_version")
+		delete(additionalProperties, "api_level")
 		delete(additionalProperties, "asset_tag")
 		delete(additionalProperties, "blueprint_id")
 		delete(additionalProperties, "blueprint_name")
 		delete(additionalProperties, "device_id")
 		delete(additionalProperties, "device_name")
 		delete(additionalProperties, "first_enrollment")
+		delete(additionalProperties, "full_software_version")
 		delete(additionalProperties, "is_missing")
 		delete(additionalProperties, "is_removed")
 		delete(additionalProperties, "last_check_in")
 		delete(additionalProperties, "last_enrollment")
+		delete(additionalProperties, "lost_mode_status")
 		delete(additionalProperties, "mdm_enabled")
 		delete(additionalProperties, "model")
 		delete(additionalProperties, "os_version")
 		delete(additionalProperties, "platform")
+		delete(additionalProperties, "security_patch_level")
 		delete(additionalProperties, "serial_number")
 		delete(additionalProperties, "supplemental_build_version")
 		delete(additionalProperties, "supplemental_os_version_extra")

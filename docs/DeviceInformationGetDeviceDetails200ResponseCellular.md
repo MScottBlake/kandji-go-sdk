@@ -4,10 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CellularTechnology** | Pointer to **int32** |  | [optional] 
-**DataRoaming** | Pointer to **int32** |  | [optional] 
-**Subscriptions** | Pointer to **interface{}** |  | [optional] 
-**VoiceRoaming** | Pointer to **int32** |  | [optional] 
+**Imei** | Pointer to **string** |  | [optional] 
+**Meid** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -28,115 +26,55 @@ NewDeviceInformationGetDeviceDetails200ResponseCellularWithDefaults instantiates
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCellularTechnology
+### GetImei
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetCellularTechnology() int32`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetImei() string`
 
-GetCellularTechnology returns the CellularTechnology field if non-nil, zero value otherwise.
+GetImei returns the Imei field if non-nil, zero value otherwise.
 
-### GetCellularTechnologyOk
+### GetImeiOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetCellularTechnologyOk() (*int32, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetImeiOk() (*string, bool)`
 
-GetCellularTechnologyOk returns a tuple with the CellularTechnology field if it's non-nil, zero value otherwise
+GetImeiOk returns a tuple with the Imei field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCellularTechnology
+### SetImei
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetCellularTechnology(v int32)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetImei(v string)`
 
-SetCellularTechnology sets CellularTechnology field to given value.
+SetImei sets Imei field to given value.
 
-### HasCellularTechnology
+### HasImei
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasCellularTechnology() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasImei() bool`
 
-HasCellularTechnology returns a boolean if a field has been set.
+HasImei returns a boolean if a field has been set.
 
-### GetDataRoaming
+### GetMeid
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoaming() int32`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetMeid() string`
 
-GetDataRoaming returns the DataRoaming field if non-nil, zero value otherwise.
+GetMeid returns the Meid field if non-nil, zero value otherwise.
 
-### GetDataRoamingOk
+### GetMeidOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetDataRoamingOk() (*int32, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetMeidOk() (*string, bool)`
 
-GetDataRoamingOk returns a tuple with the DataRoaming field if it's non-nil, zero value otherwise
+GetMeidOk returns a tuple with the Meid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDataRoaming
+### SetMeid
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetDataRoaming(v int32)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetMeid(v string)`
 
-SetDataRoaming sets DataRoaming field to given value.
+SetMeid sets Meid field to given value.
 
-### HasDataRoaming
+### HasMeid
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasDataRoaming() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasMeid() bool`
 
-HasDataRoaming returns a boolean if a field has been set.
-
-### GetSubscriptions
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetSubscriptions() interface{}`
-
-GetSubscriptions returns the Subscriptions field if non-nil, zero value otherwise.
-
-### GetSubscriptionsOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetSubscriptionsOk() (*interface{}, bool)`
-
-GetSubscriptionsOk returns a tuple with the Subscriptions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubscriptions
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetSubscriptions(v interface{})`
-
-SetSubscriptions sets Subscriptions field to given value.
-
-### HasSubscriptions
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasSubscriptions() bool`
-
-HasSubscriptions returns a boolean if a field has been set.
-
-### SetSubscriptionsNil
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetSubscriptionsNil(b bool)`
-
- SetSubscriptionsNil sets the value for Subscriptions to be an explicit nil
-
-### UnsetSubscriptions
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) UnsetSubscriptions()`
-
-UnsetSubscriptions ensures that no value is present for Subscriptions, not even an explicit nil
-### GetVoiceRoaming
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoaming() int32`
-
-GetVoiceRoaming returns the VoiceRoaming field if non-nil, zero value otherwise.
-
-### GetVoiceRoamingOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) GetVoiceRoamingOk() (*int32, bool)`
-
-GetVoiceRoamingOk returns a tuple with the VoiceRoaming field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVoiceRoaming
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) SetVoiceRoaming(v int32)`
-
-SetVoiceRoaming sets VoiceRoaming field to given value.
-
-### HasVoiceRoaming
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseCellular) HasVoiceRoaming() bool`
-
-HasVoiceRoaming returns a boolean if a field has been set.
+HasMeid returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

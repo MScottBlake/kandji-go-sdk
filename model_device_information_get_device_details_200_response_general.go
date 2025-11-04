@@ -1,7 +1,7 @@
 /*
-Kandji API
+Iru Endpoint Management API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1> <p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Iru tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
 Contact: mitchelsblake@gmail.com
@@ -20,23 +20,24 @@ var _ MappedNullable = &DeviceInformationGetDeviceDetails200ResponseGeneral{}
 
 // DeviceInformationGetDeviceDetails200ResponseGeneral struct for DeviceInformationGetDeviceDetails200ResponseGeneral
 type DeviceInformationGetDeviceDetails200ResponseGeneral struct {
+	ApiLevel *string `json:"api_level,omitempty"`
 	AssetTag *string `json:"asset_tag,omitempty"`
-	AssignedUser *string `json:"assigned_user,omitempty"`
+	AssignedUser interface{} `json:"assigned_user,omitempty"`
 	BlueprintName *string `json:"blueprint_name,omitempty"`
 	BlueprintUuid *string `json:"blueprint_uuid,omitempty"`
-	BootVolume *string `json:"boot_volume,omitempty"`
 	DeviceId *string `json:"device_id,omitempty"`
 	DeviceName *string `json:"device_name,omitempty"`
+	EnterpriseDeviceId *string `json:"enterprise_device_id,omitempty"`
+	EnterpriseId *string `json:"enterprise_id,omitempty"`
 	FirstEnrollment *string `json:"first_enrollment,omitempty"`
 	LastEnrollment *string `json:"last_enrollment,omitempty"`
-	LastUser *string `json:"last_user,omitempty"`
-	Model *string `json:"model,omitempty"`
+	Manufacturer *string `json:"manufacturer,omitempty"`
+	ModelName *string `json:"model_name,omitempty"`
+	OsBuild *string `json:"os_build,omitempty"`
 	OsVersion *string `json:"os_version,omitempty"`
 	Platform *string `json:"platform,omitempty"`
-	SupplementalBuildVersion *string `json:"supplemental_build_version,omitempty"`
-	SupplementalOsVersionExtra *string `json:"supplemental_os_version_extra,omitempty"`
-	SystemVersion *string `json:"system_version,omitempty"`
-	TimeSinceBoot *string `json:"time_since_boot,omitempty"`
+	SecurityPatchLevel *string `json:"security_patch_level,omitempty"`
+	SerialNumber *string `json:"serial_number,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,6 +58,38 @@ func NewDeviceInformationGetDeviceDetails200ResponseGeneral() *DeviceInformation
 func NewDeviceInformationGetDeviceDetails200ResponseGeneralWithDefaults() *DeviceInformationGetDeviceDetails200ResponseGeneral {
 	this := DeviceInformationGetDeviceDetails200ResponseGeneral{}
 	return &this
+}
+
+// GetApiLevel returns the ApiLevel field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetApiLevel() string {
+	if o == nil || IsNil(o.ApiLevel) {
+		var ret string
+		return ret
+	}
+	return *o.ApiLevel
+}
+
+// GetApiLevelOk returns a tuple with the ApiLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetApiLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.ApiLevel) {
+		return nil, false
+	}
+	return o.ApiLevel, true
+}
+
+// HasApiLevel returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasApiLevel() bool {
+	if o != nil && !IsNil(o.ApiLevel) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiLevel gets a reference to the given string and assigns it to the ApiLevel field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetApiLevel(v string) {
+	o.ApiLevel = &v
 }
 
 // GetAssetTag returns the AssetTag field value if set, zero value otherwise.
@@ -91,22 +124,23 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetAssetTag(v stri
 	o.AssetTag = &v
 }
 
-// GetAssignedUser returns the AssignedUser field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUser() string {
-	if o == nil || IsNil(o.AssignedUser) {
-		var ret string
+// GetAssignedUser returns the AssignedUser field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUser() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AssignedUser
+	return o.AssignedUser
 }
 
 // GetAssignedUserOk returns a tuple with the AssignedUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUserOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUserOk() (*interface{}, bool) {
 	if o == nil || IsNil(o.AssignedUser) {
 		return nil, false
 	}
-	return o.AssignedUser, true
+	return &o.AssignedUser, true
 }
 
 // HasAssignedUser returns a boolean if a field has been set.
@@ -118,9 +152,9 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasAssignedUser() 
 	return false
 }
 
-// SetAssignedUser gets a reference to the given string and assigns it to the AssignedUser field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetAssignedUser(v string) {
-	o.AssignedUser = &v
+// SetAssignedUser gets a reference to the given interface{} and assigns it to the AssignedUser field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetAssignedUser(v interface{}) {
+	o.AssignedUser = v
 }
 
 // GetBlueprintName returns the BlueprintName field value if set, zero value otherwise.
@@ -187,38 +221,6 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetBlueprintUuid(v
 	o.BlueprintUuid = &v
 }
 
-// GetBootVolume returns the BootVolume field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolume() string {
-	if o == nil || IsNil(o.BootVolume) {
-		var ret string
-		return ret
-	}
-	return *o.BootVolume
-}
-
-// GetBootVolumeOk returns a tuple with the BootVolume field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolumeOk() (*string, bool) {
-	if o == nil || IsNil(o.BootVolume) {
-		return nil, false
-	}
-	return o.BootVolume, true
-}
-
-// HasBootVolume returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasBootVolume() bool {
-	if o != nil && !IsNil(o.BootVolume) {
-		return true
-	}
-
-	return false
-}
-
-// SetBootVolume gets a reference to the given string and assigns it to the BootVolume field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetBootVolume(v string) {
-	o.BootVolume = &v
-}
-
 // GetDeviceId returns the DeviceId field value if set, zero value otherwise.
 func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetDeviceId() string {
 	if o == nil || IsNil(o.DeviceId) {
@@ -281,6 +283,70 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasDeviceName() bo
 // SetDeviceName gets a reference to the given string and assigns it to the DeviceName field.
 func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetDeviceName(v string) {
 	o.DeviceName = &v
+}
+
+// GetEnterpriseDeviceId returns the EnterpriseDeviceId field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseDeviceId() string {
+	if o == nil || IsNil(o.EnterpriseDeviceId) {
+		var ret string
+		return ret
+	}
+	return *o.EnterpriseDeviceId
+}
+
+// GetEnterpriseDeviceIdOk returns a tuple with the EnterpriseDeviceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseDeviceIdOk() (*string, bool) {
+	if o == nil || IsNil(o.EnterpriseDeviceId) {
+		return nil, false
+	}
+	return o.EnterpriseDeviceId, true
+}
+
+// HasEnterpriseDeviceId returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasEnterpriseDeviceId() bool {
+	if o != nil && !IsNil(o.EnterpriseDeviceId) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnterpriseDeviceId gets a reference to the given string and assigns it to the EnterpriseDeviceId field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetEnterpriseDeviceId(v string) {
+	o.EnterpriseDeviceId = &v
+}
+
+// GetEnterpriseId returns the EnterpriseId field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseId() string {
+	if o == nil || IsNil(o.EnterpriseId) {
+		var ret string
+		return ret
+	}
+	return *o.EnterpriseId
+}
+
+// GetEnterpriseIdOk returns a tuple with the EnterpriseId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseIdOk() (*string, bool) {
+	if o == nil || IsNil(o.EnterpriseId) {
+		return nil, false
+	}
+	return o.EnterpriseId, true
+}
+
+// HasEnterpriseId returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasEnterpriseId() bool {
+	if o != nil && !IsNil(o.EnterpriseId) {
+		return true
+	}
+
+	return false
+}
+
+// SetEnterpriseId gets a reference to the given string and assigns it to the EnterpriseId field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetEnterpriseId(v string) {
+	o.EnterpriseId = &v
 }
 
 // GetFirstEnrollment returns the FirstEnrollment field value if set, zero value otherwise.
@@ -347,68 +413,100 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetLastEnrollment(
 	o.LastEnrollment = &v
 }
 
-// GetLastUser returns the LastUser field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUser() string {
-	if o == nil || IsNil(o.LastUser) {
+// GetManufacturer returns the Manufacturer field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetManufacturer() string {
+	if o == nil || IsNil(o.Manufacturer) {
 		var ret string
 		return ret
 	}
-	return *o.LastUser
+	return *o.Manufacturer
 }
 
-// GetLastUserOk returns a tuple with the LastUser field value if set, nil otherwise
+// GetManufacturerOk returns a tuple with the Manufacturer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUserOk() (*string, bool) {
-	if o == nil || IsNil(o.LastUser) {
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetManufacturerOk() (*string, bool) {
+	if o == nil || IsNil(o.Manufacturer) {
 		return nil, false
 	}
-	return o.LastUser, true
+	return o.Manufacturer, true
 }
 
-// HasLastUser returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasLastUser() bool {
-	if o != nil && !IsNil(o.LastUser) {
+// HasManufacturer returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasManufacturer() bool {
+	if o != nil && !IsNil(o.Manufacturer) {
 		return true
 	}
 
 	return false
 }
 
-// SetLastUser gets a reference to the given string and assigns it to the LastUser field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetLastUser(v string) {
-	o.LastUser = &v
+// SetManufacturer gets a reference to the given string and assigns it to the Manufacturer field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetManufacturer(v string) {
+	o.Manufacturer = &v
 }
 
-// GetModel returns the Model field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModel() string {
-	if o == nil || IsNil(o.Model) {
+// GetModelName returns the ModelName field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelName() string {
+	if o == nil || IsNil(o.ModelName) {
 		var ret string
 		return ret
 	}
-	return *o.Model
+	return *o.ModelName
 }
 
-// GetModelOk returns a tuple with the Model field value if set, nil otherwise
+// GetModelNameOk returns a tuple with the ModelName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelOk() (*string, bool) {
-	if o == nil || IsNil(o.Model) {
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelNameOk() (*string, bool) {
+	if o == nil || IsNil(o.ModelName) {
 		return nil, false
 	}
-	return o.Model, true
+	return o.ModelName, true
 }
 
-// HasModel returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasModel() bool {
-	if o != nil && !IsNil(o.Model) {
+// HasModelName returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasModelName() bool {
+	if o != nil && !IsNil(o.ModelName) {
 		return true
 	}
 
 	return false
 }
 
-// SetModel gets a reference to the given string and assigns it to the Model field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetModel(v string) {
-	o.Model = &v
+// SetModelName gets a reference to the given string and assigns it to the ModelName field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetModelName(v string) {
+	o.ModelName = &v
+}
+
+// GetOsBuild returns the OsBuild field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsBuild() string {
+	if o == nil || IsNil(o.OsBuild) {
+		var ret string
+		return ret
+	}
+	return *o.OsBuild
+}
+
+// GetOsBuildOk returns a tuple with the OsBuild field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsBuildOk() (*string, bool) {
+	if o == nil || IsNil(o.OsBuild) {
+		return nil, false
+	}
+	return o.OsBuild, true
+}
+
+// HasOsBuild returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasOsBuild() bool {
+	if o != nil && !IsNil(o.OsBuild) {
+		return true
+	}
+
+	return false
+}
+
+// SetOsBuild gets a reference to the given string and assigns it to the OsBuild field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetOsBuild(v string) {
+	o.OsBuild = &v
 }
 
 // GetOsVersion returns the OsVersion field value if set, zero value otherwise.
@@ -475,132 +573,68 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetPlatform(v stri
 	o.Platform = &v
 }
 
-// GetSupplementalBuildVersion returns the SupplementalBuildVersion field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersion() string {
-	if o == nil || IsNil(o.SupplementalBuildVersion) {
+// GetSecurityPatchLevel returns the SecurityPatchLevel field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSecurityPatchLevel() string {
+	if o == nil || IsNil(o.SecurityPatchLevel) {
 		var ret string
 		return ret
 	}
-	return *o.SupplementalBuildVersion
+	return *o.SecurityPatchLevel
 }
 
-// GetSupplementalBuildVersionOk returns a tuple with the SupplementalBuildVersion field value if set, nil otherwise
+// GetSecurityPatchLevelOk returns a tuple with the SecurityPatchLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.SupplementalBuildVersion) {
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSecurityPatchLevelOk() (*string, bool) {
+	if o == nil || IsNil(o.SecurityPatchLevel) {
 		return nil, false
 	}
-	return o.SupplementalBuildVersion, true
+	return o.SecurityPatchLevel, true
 }
 
-// HasSupplementalBuildVersion returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalBuildVersion() bool {
-	if o != nil && !IsNil(o.SupplementalBuildVersion) {
+// HasSecurityPatchLevel returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSecurityPatchLevel() bool {
+	if o != nil && !IsNil(o.SecurityPatchLevel) {
 		return true
 	}
 
 	return false
 }
 
-// SetSupplementalBuildVersion gets a reference to the given string and assigns it to the SupplementalBuildVersion field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalBuildVersion(v string) {
-	o.SupplementalBuildVersion = &v
+// SetSecurityPatchLevel gets a reference to the given string and assigns it to the SecurityPatchLevel field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSecurityPatchLevel(v string) {
+	o.SecurityPatchLevel = &v
 }
 
-// GetSupplementalOsVersionExtra returns the SupplementalOsVersionExtra field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtra() string {
-	if o == nil || IsNil(o.SupplementalOsVersionExtra) {
+// GetSerialNumber returns the SerialNumber field value if set, zero value otherwise.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSerialNumber() string {
+	if o == nil || IsNil(o.SerialNumber) {
 		var ret string
 		return ret
 	}
-	return *o.SupplementalOsVersionExtra
+	return *o.SerialNumber
 }
 
-// GetSupplementalOsVersionExtraOk returns a tuple with the SupplementalOsVersionExtra field value if set, nil otherwise
+// GetSerialNumberOk returns a tuple with the SerialNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtraOk() (*string, bool) {
-	if o == nil || IsNil(o.SupplementalOsVersionExtra) {
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSerialNumberOk() (*string, bool) {
+	if o == nil || IsNil(o.SerialNumber) {
 		return nil, false
 	}
-	return o.SupplementalOsVersionExtra, true
+	return o.SerialNumber, true
 }
 
-// HasSupplementalOsVersionExtra returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalOsVersionExtra() bool {
-	if o != nil && !IsNil(o.SupplementalOsVersionExtra) {
+// HasSerialNumber returns a boolean if a field has been set.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSerialNumber() bool {
+	if o != nil && !IsNil(o.SerialNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetSupplementalOsVersionExtra gets a reference to the given string and assigns it to the SupplementalOsVersionExtra field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalOsVersionExtra(v string) {
-	o.SupplementalOsVersionExtra = &v
-}
-
-// GetSystemVersion returns the SystemVersion field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersion() string {
-	if o == nil || IsNil(o.SystemVersion) {
-		var ret string
-		return ret
-	}
-	return *o.SystemVersion
-}
-
-// GetSystemVersionOk returns a tuple with the SystemVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.SystemVersion) {
-		return nil, false
-	}
-	return o.SystemVersion, true
-}
-
-// HasSystemVersion returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSystemVersion() bool {
-	if o != nil && !IsNil(o.SystemVersion) {
-		return true
-	}
-
-	return false
-}
-
-// SetSystemVersion gets a reference to the given string and assigns it to the SystemVersion field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSystemVersion(v string) {
-	o.SystemVersion = &v
-}
-
-// GetTimeSinceBoot returns the TimeSinceBoot field value if set, zero value otherwise.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBoot() string {
-	if o == nil || IsNil(o.TimeSinceBoot) {
-		var ret string
-		return ret
-	}
-	return *o.TimeSinceBoot
-}
-
-// GetTimeSinceBootOk returns a tuple with the TimeSinceBoot field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBootOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeSinceBoot) {
-		return nil, false
-	}
-	return o.TimeSinceBoot, true
-}
-
-// HasTimeSinceBoot returns a boolean if a field has been set.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasTimeSinceBoot() bool {
-	if o != nil && !IsNil(o.TimeSinceBoot) {
-		return true
-	}
-
-	return false
-}
-
-// SetTimeSinceBoot gets a reference to the given string and assigns it to the TimeSinceBoot field.
-func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetTimeSinceBoot(v string) {
-	o.TimeSinceBoot = &v
+// SetSerialNumber gets a reference to the given string and assigns it to the SerialNumber field.
+func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSerialNumber(v string) {
+	o.SerialNumber = &v
 }
 
 func (o DeviceInformationGetDeviceDetails200ResponseGeneral) MarshalJSON() ([]byte, error) {
@@ -613,10 +647,13 @@ func (o DeviceInformationGetDeviceDetails200ResponseGeneral) MarshalJSON() ([]by
 
 func (o DeviceInformationGetDeviceDetails200ResponseGeneral) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ApiLevel) {
+		toSerialize["api_level"] = o.ApiLevel
+	}
 	if !IsNil(o.AssetTag) {
 		toSerialize["asset_tag"] = o.AssetTag
 	}
-	if !IsNil(o.AssignedUser) {
+	if o.AssignedUser != nil {
 		toSerialize["assigned_user"] = o.AssignedUser
 	}
 	if !IsNil(o.BlueprintName) {
@@ -625,14 +662,17 @@ func (o DeviceInformationGetDeviceDetails200ResponseGeneral) ToMap() (map[string
 	if !IsNil(o.BlueprintUuid) {
 		toSerialize["blueprint_uuid"] = o.BlueprintUuid
 	}
-	if !IsNil(o.BootVolume) {
-		toSerialize["boot_volume"] = o.BootVolume
-	}
 	if !IsNil(o.DeviceId) {
 		toSerialize["device_id"] = o.DeviceId
 	}
 	if !IsNil(o.DeviceName) {
 		toSerialize["device_name"] = o.DeviceName
+	}
+	if !IsNil(o.EnterpriseDeviceId) {
+		toSerialize["enterprise_device_id"] = o.EnterpriseDeviceId
+	}
+	if !IsNil(o.EnterpriseId) {
+		toSerialize["enterprise_id"] = o.EnterpriseId
 	}
 	if !IsNil(o.FirstEnrollment) {
 		toSerialize["first_enrollment"] = o.FirstEnrollment
@@ -640,11 +680,14 @@ func (o DeviceInformationGetDeviceDetails200ResponseGeneral) ToMap() (map[string
 	if !IsNil(o.LastEnrollment) {
 		toSerialize["last_enrollment"] = o.LastEnrollment
 	}
-	if !IsNil(o.LastUser) {
-		toSerialize["last_user"] = o.LastUser
+	if !IsNil(o.Manufacturer) {
+		toSerialize["manufacturer"] = o.Manufacturer
 	}
-	if !IsNil(o.Model) {
-		toSerialize["model"] = o.Model
+	if !IsNil(o.ModelName) {
+		toSerialize["model_name"] = o.ModelName
+	}
+	if !IsNil(o.OsBuild) {
+		toSerialize["os_build"] = o.OsBuild
 	}
 	if !IsNil(o.OsVersion) {
 		toSerialize["os_version"] = o.OsVersion
@@ -652,17 +695,11 @@ func (o DeviceInformationGetDeviceDetails200ResponseGeneral) ToMap() (map[string
 	if !IsNil(o.Platform) {
 		toSerialize["platform"] = o.Platform
 	}
-	if !IsNil(o.SupplementalBuildVersion) {
-		toSerialize["supplemental_build_version"] = o.SupplementalBuildVersion
+	if !IsNil(o.SecurityPatchLevel) {
+		toSerialize["security_patch_level"] = o.SecurityPatchLevel
 	}
-	if !IsNil(o.SupplementalOsVersionExtra) {
-		toSerialize["supplemental_os_version_extra"] = o.SupplementalOsVersionExtra
-	}
-	if !IsNil(o.SystemVersion) {
-		toSerialize["system_version"] = o.SystemVersion
-	}
-	if !IsNil(o.TimeSinceBoot) {
-		toSerialize["time_since_boot"] = o.TimeSinceBoot
+	if !IsNil(o.SerialNumber) {
+		toSerialize["serial_number"] = o.SerialNumber
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -686,23 +723,24 @@ func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) UnmarshalJSON(data
 	additionalProperties := make(map[string]interface{})
 
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
+		delete(additionalProperties, "api_level")
 		delete(additionalProperties, "asset_tag")
 		delete(additionalProperties, "assigned_user")
 		delete(additionalProperties, "blueprint_name")
 		delete(additionalProperties, "blueprint_uuid")
-		delete(additionalProperties, "boot_volume")
 		delete(additionalProperties, "device_id")
 		delete(additionalProperties, "device_name")
+		delete(additionalProperties, "enterprise_device_id")
+		delete(additionalProperties, "enterprise_id")
 		delete(additionalProperties, "first_enrollment")
 		delete(additionalProperties, "last_enrollment")
-		delete(additionalProperties, "last_user")
-		delete(additionalProperties, "model")
+		delete(additionalProperties, "manufacturer")
+		delete(additionalProperties, "model_name")
+		delete(additionalProperties, "os_build")
 		delete(additionalProperties, "os_version")
 		delete(additionalProperties, "platform")
-		delete(additionalProperties, "supplemental_build_version")
-		delete(additionalProperties, "supplemental_os_version_extra")
-		delete(additionalProperties, "system_version")
-		delete(additionalProperties, "time_since_boot")
+		delete(additionalProperties, "security_patch_level")
+		delete(additionalProperties, "serial_number")
 		o.AdditionalProperties = additionalProperties
 	}
 

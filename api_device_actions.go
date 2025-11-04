@@ -1,7 +1,7 @@
 /*
-Kandji API
+Iru Endpoint Management API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1> <p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Iru tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
 Contact: mitchelsblake@gmail.com
@@ -40,7 +40,8 @@ type DeviceActionsAPI interface {
 	/*
 	DeleteDevice Delete Device
 
-	This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.
+	<p>This endpoint deletes a device, which will remove the device record and unenroll the device from MDM.</p>
+<p>For macOS and Windows devices, the agent will automatically uninstall on the next agent checkin.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -73,8 +74,7 @@ type DeviceActionsAPI interface {
 	/*
 	EraseDevice Erase Device
 
-	<p>This endpoint sends an MDM command to erase the device.</p>
-<p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>
+	<p>This endpoint sends an MDM command to erase a device.</p>
 <p><strong>Request Body Parameters: application/json</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
@@ -115,6 +115,16 @@ type DeviceActionsAPI interface {
 <td><code>string</code></td>
 <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td>
 </tr>
+<tr>
+<td><code>erase_mode</code></td>
+<td><code>string</code></td>
+<td>For Windows devices, the following modes are supported:  <br />  <br /><code>WIPE</code> - Equivalent to running Reset this PC &gt; Remove everything from the Settings app, with Clean Data set to No and Delete Files set to Yes.  <br />  <br /><code>WIPE_CLOUD</code> - Perform a cloud-based remote wipe on the device.  <br />  <br /><code>WIPE_PROTECTED</code> - Performs a remote wipe on the device and fully cleans the internal drive. In some device configurations, this command may leave the device unable to boot. This is similar to WIPE but cannot be circumvented by power cycling the device.</td>
+</tr>
+<tr>
+<td><code>erase_flags</code></td>
+<td><code>string</code></td>
+<td>Optional erase options for Android devices, provided as a single comma separated list of the following strings:  <br />  <br /><code>WIPE_EXTERNAL_STORAGE</code> - Additionally wipe the device's external storage (such as SD cards).  <br />  <br /><code>WIPE_ESIMS</code> - For company-owned devices, this removes all eSIMs from the device when the device is wiped.  <br />  <br />Example value:  <br /><code>WIPE_EXTERNAL_STORAGE,WIPE_ESIMS</code></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -131,14 +141,19 @@ type DeviceActionsAPI interface {
 	/*
 	GetDeviceCommands Get Device Commands
 
-	<p>This endpoint sends a request to get information about the commands sent to a given device ID.</p>
+	<p>This endpoint sends a request to get information about the commands sent to a given Apple device.</p>
 <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3>
 <ul>
-<li>1 : Command is Pending</li>
-<li>2 : Command is running</li>
-<li>3 : Command completed</li>
-<li>4 : Command failed</li>
-<li>5 : Command received &quot;Not Now&quot; response</li>
+<li><p>1 : Command is Pending</p>
+</li>
+<li><p>2 : Command is running</p>
+</li>
+<li><p>3 : Command completed</p>
+</li>
+<li><p>4 : Command failed</p>
+</li>
+<li><p>5 : Command received &quot;Not Now&quot; response</p>
+</li>
 </ul>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -154,12 +169,12 @@ type DeviceActionsAPI interface {
 	/*
 	LockDevice Lock Device
 
-	<p>This endpoint sends an MDM command to remotely lock a device.</p>
+	<p>This endpoint sends an MDM command to remotely lock an Apple or Android device.</p>
 <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>
 <blockquote>
-<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p>
+<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em> </p>
 </blockquote>
-<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p>
+<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target Mac.</p>
 <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p>
 <h4 id=&quot;response-properties&quot;>Response properties</h4>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
@@ -191,9 +206,23 @@ type DeviceActionsAPI interface {
 	LockDeviceExecute(r ApiLockDeviceRequest) (*DeviceActionsLockDevice200Response, *http.Response, error)
 
 	/*
+	PerformDailyCheckin Perform Daily Check-in
+
+	This endpoint runs the daily MDM commands and MDM logic for Apple devices and initiates a full daily CSP sync for Windows devices.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deviceId
+	@return ApiPerformDailyCheckinRequest
+	*/
+	PerformDailyCheckin(ctx context.Context, deviceId string) ApiPerformDailyCheckinRequest
+
+	// PerformDailyCheckinExecute executes the request
+	PerformDailyCheckinExecute(r ApiPerformDailyCheckinRequest) (*http.Response, error)
+
+	/*
 	ReinstallAgent Reinstall Agent
 
-	This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.
+	This endpoint sends an MDM command reinstall the Kandji Agent on macOS devices.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -224,7 +253,7 @@ type DeviceActionsAPI interface {
 	/*
 	RenewMdmProfile Renew MDM Profile
 
-	This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
+	This endpoint sends an MDM command to re-install the existing root MDM profile for a given Apple device. This command will not impact any existing configurations, apps, or profiles.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -238,7 +267,7 @@ type DeviceActionsAPI interface {
 	/*
 	RestartDevice Restart Device
 
-	<p>This endpoint sends an MDM command to remotely restart a device.</p>
+	<p>This endpoint sends an MDM command to remotely restart an iPhone, iPad, Apple TV, or Mac.</p>
 <ul>
 <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p>
 </li>
@@ -258,7 +287,7 @@ type DeviceActionsAPI interface {
 	/*
 	SendBlankpush Send Blankpush
 
-	<p>This endpoint sends an MDM command to initiate a blank push.</p>
+	<p>This endpoint sends an MDM command to initiate a blank push for an Apple device.</p>
 <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -273,7 +302,7 @@ type DeviceActionsAPI interface {
 	/*
 	SetName Set Name
 
-	<p>This endpoint sends an MDM command to set the device name.</p>
+	<p>This endpoint sends an MDM command to set the device name for an Apple device.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
 <p><code>DeviceName</code> - <code>string</code></p>
@@ -290,7 +319,7 @@ type DeviceActionsAPI interface {
 	/*
 	Shutdown Shutdown
 
-	This endpoint sends an MDM command to shutdown a device.
+	This endpoint sends an MDM command to shutdown an iPhone, iPad, or Mac.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -304,7 +333,7 @@ type DeviceActionsAPI interface {
 	/*
 	UnlockAccount Unlock Account
 
-	<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p>
+	<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for Mac.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
 <p><code>UserName</code> - <code>string</code></p>
@@ -321,7 +350,8 @@ type DeviceActionsAPI interface {
 	/*
 	UpdateInventory Update Inventory
 
-	This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
+	<p>This endpoint runs the daily MDM commands and MDM logic for Apple devices.</p>
+<p><strong>Note:</strong> The newer <code>dailycheckin</code> endpoint can be used instead and also supports Windows devices.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -441,7 +471,8 @@ func (r ApiDeleteDeviceRequest) Execute() (*http.Response, error) {
 /*
 DeleteDevice Delete Device
 
-This endpoint sends an MDM command to delete a device. This will remove the device record from Kandji and send a Remove Management command. For macOS devices, it will also send an uninstall command to the Kandji Agent at the next agent checkin.
+<p>This endpoint deletes a device, which will remove the device record and unenroll the device from MDM.</p>
+<p>For macOS and Windows devices, the agent will automatically uninstall on the next agent checkin.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -644,8 +675,7 @@ func (r ApiEraseDeviceRequest) Execute() (*http.Response, error) {
 /*
 EraseDevice Erase Device
 
-<p>This endpoint sends an MDM command to erase the device.</p>
-<p>iOS 4.0+, iPadOS 4.0+, macOS 10.7+, tvOS 10.2+</p>
+<p>This endpoint sends an MDM command to erase a device.</p>
 <p><strong>Request Body Parameters: application/json</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
 <thead>
@@ -685,6 +715,16 @@ EraseDevice Erase Device
 <td>- <code>ProfileId</code></td>
 <td><code>string</code></td>
 <td>Profile ID value associated with a Wi-Fi profile payload. This is required when the device doesn’t have ethernet access.</td>
+</tr>
+<tr>
+<td><code>erase_mode</code></td>
+<td><code>string</code></td>
+<td>For Windows devices, the following modes are supported:  <br />  <br /><code>WIPE</code> - Equivalent to running Reset this PC &gt; Remove everything from the Settings app, with Clean Data set to No and Delete Files set to Yes.  <br />  <br /><code>WIPE_CLOUD</code> - Perform a cloud-based remote wipe on the device.  <br />  <br /><code>WIPE_PROTECTED</code> - Performs a remote wipe on the device and fully cleans the internal drive. In some device configurations, this command may leave the device unable to boot. This is similar to WIPE but cannot be circumvented by power cycling the device.</td>
+</tr>
+<tr>
+<td><code>erase_flags</code></td>
+<td><code>string</code></td>
+<td>Optional erase options for Android devices, provided as a single comma separated list of the following strings:  <br />  <br /><code>WIPE_EXTERNAL_STORAGE</code> - Additionally wipe the device's external storage (such as SD cards).  <br />  <br /><code>WIPE_ESIMS</code> - For company-owned devices, this removes all eSIMs from the device when the device is wiped.  <br />  <br />Example value:  <br /><code>WIPE_EXTERNAL_STORAGE,WIPE_ESIMS</code></td>
 </tr>
 </tbody>
 </table>
@@ -806,14 +846,19 @@ func (r ApiGetDeviceCommandsRequest) Execute() (*DeviceActionsGetDeviceCommands2
 /*
 GetDeviceCommands Get Device Commands
 
-<p>This endpoint sends a request to get information about the commands sent to a given device ID.</p>
+<p>This endpoint sends a request to get information about the commands sent to a given Apple device.</p>
 <h3 id=&quot;mdm-status-codes&quot;>MDM Status Codes</h3>
 <ul>
-<li>1 : Command is Pending</li>
-<li>2 : Command is running</li>
-<li>3 : Command completed</li>
-<li>4 : Command failed</li>
-<li>5 : Command received &quot;Not Now&quot; response</li>
+<li><p>1 : Command is Pending</p>
+</li>
+<li><p>2 : Command is running</p>
+</li>
+<li><p>3 : Command completed</p>
+</li>
+<li><p>4 : Command failed</p>
+</li>
+<li><p>5 : Command received &quot;Not Now&quot; response</p>
+</li>
 </ul>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -930,12 +975,12 @@ func (r ApiLockDeviceRequest) Execute() (*DeviceActionsLockDevice200Response, *h
 /*
 LockDevice Lock Device
 
-<p>This endpoint sends an MDM command to remotely lock a device.</p>
+<p>This endpoint sends an MDM command to remotely lock an Apple or Android device.</p>
 <p>For macOS clients, an unlock PIN will be created, and returned in the response.</p>
 <blockquote>
-<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em></p>
+<p><strong>Caution !!!</strong><br /><em>For a Mac with Apple silicon running a version of macOS before 11.5 will deactivate the Mac. To reactivate, the Mac requires a network connection and authentication by a Secure Token enabled local administrator.</em> </p>
 </blockquote>
-<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target device.</p>
+<p>Optionally, a JSON payload can be sent in the request to set a lock message and phone number on the target Mac.</p>
 <p><strong>Note:</strong> For macOS, although the lock message is displayed on all types of Mac computers, the phone number is displayed only on a Mac with Apple silicon.</p>
 <h4 id=&quot;response-properties&quot;>Response properties</h4>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
@@ -1056,6 +1101,98 @@ func (a *DeviceActionsAPIService) LockDeviceExecute(r ApiLockDeviceRequest) (*De
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiPerformDailyCheckinRequest struct {
+	ctx context.Context
+	ApiService DeviceActionsAPI
+	deviceId string
+}
+
+func (r ApiPerformDailyCheckinRequest) Execute() (*http.Response, error) {
+	return r.ApiService.PerformDailyCheckinExecute(r)
+}
+
+/*
+PerformDailyCheckin Perform Daily Check-in
+
+This endpoint runs the daily MDM commands and MDM logic for Apple devices and initiates a full daily CSP sync for Windows devices.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param deviceId
+ @return ApiPerformDailyCheckinRequest
+*/
+func (a *DeviceActionsAPIService) PerformDailyCheckin(ctx context.Context, deviceId string) ApiPerformDailyCheckinRequest {
+	return ApiPerformDailyCheckinRequest{
+		ApiService: a,
+		ctx: ctx,
+		deviceId: deviceId,
+	}
+}
+
+// Execute executes the request
+func (a *DeviceActionsAPIService) PerformDailyCheckinExecute(r ApiPerformDailyCheckinRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeviceActionsAPIService.PerformDailyCheckin")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v1/devices/{device_id}/action/dailycheckin"
+	localVarPath = strings.Replace(localVarPath, "{"+"device_id"+"}", url.PathEscape(parameterValueToString(r.deviceId, "deviceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type ApiReinstallAgentRequest struct {
 	ctx context.Context
 	ApiService DeviceActionsAPI
@@ -1069,7 +1206,7 @@ func (r ApiReinstallAgentRequest) Execute() (*http.Response, error) {
 /*
 ReinstallAgent Reinstall Agent
 
-This endpoint sends an MDM command reinstall the Kandji Agent. Available for macOS devices.
+This endpoint sends an MDM command reinstall the Kandji Agent on macOS devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -1264,7 +1401,7 @@ func (r ApiRenewMdmProfileRequest) Execute() (*http.Response, error) {
 /*
 RenewMdmProfile Renew MDM Profile
 
-This endpoint sends an MDM command to re-install the existing root MDM profile for a given device ID. This command will not impact any existing configurations, apps, or profiles.
+This endpoint sends an MDM command to re-install the existing root MDM profile for a given Apple device. This command will not impact any existing configurations, apps, or profiles.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -1362,7 +1499,7 @@ func (r ApiRestartDeviceRequest) Execute() (*http.Response, error) {
 /*
 RestartDevice Restart Device
 
-<p>This endpoint sends an MDM command to remotely restart a device.</p>
+<p>This endpoint sends an MDM command to remotely restart an iPhone, iPad, Apple TV, or Mac.</p>
 <ul>
 <li><p><code>RebuildKernelCache</code> - If <code>true</code>, the system rebuilds the kernel cache during a device restart. If <code>BootstrapTokenAllowedForAuthentication</code> is <code>true</code> inSecurityInfoResponse.SecurityInfo, the device requests the bootstrap token from MDM before executing this command. This value is available in macOS 11 and later. Default: false</p>
 </li>
@@ -1462,7 +1599,7 @@ func (r ApiSendBlankpushRequest) Execute() (*http.Response, error) {
 /*
 SendBlankpush Send Blankpush
 
-<p>This endpoint sends an MDM command to initiate a blank push.</p>
+<p>This endpoint sends an MDM command to initiate a blank push for an Apple device.</p>
 <p><a href=&quot;https://support.kandji.io/what-is-a-blank-push&quot;>Using the Blank Push command</a></p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -1561,7 +1698,7 @@ func (r ApiSetNameRequest) Execute() (*http.Response, error) {
 /*
 SetName Set Name
 
-<p>This endpoint sends an MDM command to set the device name.</p>
+<p>This endpoint sends an MDM command to set the device name for an Apple device.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
 <p><code>DeviceName</code> - <code>string</code></p>
@@ -1658,7 +1795,7 @@ func (r ApiShutdownRequest) Execute() (*http.Response, error) {
 /*
 Shutdown Shutdown
 
-This endpoint sends an MDM command to shutdown a device.
+This endpoint sends an MDM command to shutdown an iPhone, iPad, or Mac.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -1756,7 +1893,7 @@ func (r ApiUnlockAccountRequest) Execute() (*http.Response, error) {
 /*
 UnlockAccount Unlock Account
 
-<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for macOS.</p>
+<p>This endpoint sends an MDM command to unlock a user account that locked by the system because of too many failed password attempts. Available for Mac.</p>
 <p><strong>Request Body Parameters</strong>: application/json</p>
 <hr />
 <p><code>UserName</code> - <code>string</code></p>
@@ -1853,7 +1990,8 @@ func (r ApiUpdateInventoryRequest) Execute() (*http.Response, error) {
 /*
 UpdateInventory Update Inventory
 
-This endpoint sends an MDM command to start a check-in for a device, initiating the daily MDM commands and MDM logic.
+<p>This endpoint runs the daily MDM commands and MDM logic for Apple devices.</p>
+<p><strong>Note:</strong> The newer <code>dailycheckin</code> endpoint can be used instead and also supports Windows devices.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId

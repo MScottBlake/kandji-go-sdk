@@ -4,23 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApiLevel** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **string** |  | [optional] 
-**AssignedUser** | Pointer to **string** |  | [optional] 
+**AssignedUser** | Pointer to **interface{}** |  | [optional] 
 **BlueprintName** | Pointer to **string** |  | [optional] 
 **BlueprintUuid** | Pointer to **string** |  | [optional] 
-**BootVolume** | Pointer to **string** |  | [optional] 
 **DeviceId** | Pointer to **string** |  | [optional] 
 **DeviceName** | Pointer to **string** |  | [optional] 
+**EnterpriseDeviceId** | Pointer to **string** |  | [optional] 
+**EnterpriseId** | Pointer to **string** |  | [optional] 
 **FirstEnrollment** | Pointer to **string** |  | [optional] 
 **LastEnrollment** | Pointer to **string** |  | [optional] 
-**LastUser** | Pointer to **string** |  | [optional] 
-**Model** | Pointer to **string** |  | [optional] 
+**Manufacturer** | Pointer to **string** |  | [optional] 
+**ModelName** | Pointer to **string** |  | [optional] 
+**OsBuild** | Pointer to **string** |  | [optional] 
 **OsVersion** | Pointer to **string** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
-**SupplementalBuildVersion** | Pointer to **string** |  | [optional] 
-**SupplementalOsVersionExtra** | Pointer to **string** |  | [optional] 
-**SystemVersion** | Pointer to **string** |  | [optional] 
-**TimeSinceBoot** | Pointer to **string** |  | [optional] 
+**SecurityPatchLevel** | Pointer to **string** |  | [optional] 
+**SerialNumber** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -40,6 +41,31 @@ will change when the set of required properties is changed
 NewDeviceInformationGetDeviceDetails200ResponseGeneralWithDefaults instantiates a new DeviceInformationGetDeviceDetails200ResponseGeneral object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApiLevel
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetApiLevel() string`
+
+GetApiLevel returns the ApiLevel field if non-nil, zero value otherwise.
+
+### GetApiLevelOk
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetApiLevelOk() (*string, bool)`
+
+GetApiLevelOk returns a tuple with the ApiLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiLevel
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetApiLevel(v string)`
+
+SetApiLevel sets ApiLevel field to given value.
+
+### HasApiLevel
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasApiLevel() bool`
+
+HasApiLevel returns a boolean if a field has been set.
 
 ### GetAssetTag
 
@@ -68,20 +94,20 @@ HasAssetTag returns a boolean if a field has been set.
 
 ### GetAssignedUser
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUser() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUser() interface{}`
 
 GetAssignedUser returns the AssignedUser field if non-nil, zero value otherwise.
 
 ### GetAssignedUserOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUserOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetAssignedUserOk() (*interface{}, bool)`
 
 GetAssignedUserOk returns a tuple with the AssignedUser field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAssignedUser
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetAssignedUser(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetAssignedUser(v interface{})`
 
 SetAssignedUser sets AssignedUser field to given value.
 
@@ -91,6 +117,16 @@ SetAssignedUser sets AssignedUser field to given value.
 
 HasAssignedUser returns a boolean if a field has been set.
 
+### SetAssignedUserNil
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetAssignedUserNil(b bool)`
+
+ SetAssignedUserNil sets the value for AssignedUser to be an explicit nil
+
+### UnsetAssignedUser
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) UnsetAssignedUser()`
+
+UnsetAssignedUser ensures that no value is present for AssignedUser, not even an explicit nil
 ### GetBlueprintName
 
 `func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBlueprintName() string`
@@ -140,31 +176,6 @@ SetBlueprintUuid sets BlueprintUuid field to given value.
 `func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasBlueprintUuid() bool`
 
 HasBlueprintUuid returns a boolean if a field has been set.
-
-### GetBootVolume
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolume() string`
-
-GetBootVolume returns the BootVolume field if non-nil, zero value otherwise.
-
-### GetBootVolumeOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetBootVolumeOk() (*string, bool)`
-
-GetBootVolumeOk returns a tuple with the BootVolume field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBootVolume
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetBootVolume(v string)`
-
-SetBootVolume sets BootVolume field to given value.
-
-### HasBootVolume
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasBootVolume() bool`
-
-HasBootVolume returns a boolean if a field has been set.
 
 ### GetDeviceId
 
@@ -216,6 +227,56 @@ SetDeviceName sets DeviceName field to given value.
 
 HasDeviceName returns a boolean if a field has been set.
 
+### GetEnterpriseDeviceId
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseDeviceId() string`
+
+GetEnterpriseDeviceId returns the EnterpriseDeviceId field if non-nil, zero value otherwise.
+
+### GetEnterpriseDeviceIdOk
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseDeviceIdOk() (*string, bool)`
+
+GetEnterpriseDeviceIdOk returns a tuple with the EnterpriseDeviceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnterpriseDeviceId
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetEnterpriseDeviceId(v string)`
+
+SetEnterpriseDeviceId sets EnterpriseDeviceId field to given value.
+
+### HasEnterpriseDeviceId
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasEnterpriseDeviceId() bool`
+
+HasEnterpriseDeviceId returns a boolean if a field has been set.
+
+### GetEnterpriseId
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseId() string`
+
+GetEnterpriseId returns the EnterpriseId field if non-nil, zero value otherwise.
+
+### GetEnterpriseIdOk
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetEnterpriseIdOk() (*string, bool)`
+
+GetEnterpriseIdOk returns a tuple with the EnterpriseId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnterpriseId
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetEnterpriseId(v string)`
+
+SetEnterpriseId sets EnterpriseId field to given value.
+
+### HasEnterpriseId
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasEnterpriseId() bool`
+
+HasEnterpriseId returns a boolean if a field has been set.
+
 ### GetFirstEnrollment
 
 `func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetFirstEnrollment() string`
@@ -266,55 +327,80 @@ SetLastEnrollment sets LastEnrollment field to given value.
 
 HasLastEnrollment returns a boolean if a field has been set.
 
-### GetLastUser
+### GetManufacturer
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUser() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetManufacturer() string`
 
-GetLastUser returns the LastUser field if non-nil, zero value otherwise.
+GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
-### GetLastUserOk
+### GetManufacturerOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetLastUserOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetManufacturerOk() (*string, bool)`
 
-GetLastUserOk returns a tuple with the LastUser field if it's non-nil, zero value otherwise
+GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLastUser
+### SetManufacturer
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetLastUser(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetManufacturer(v string)`
 
-SetLastUser sets LastUser field to given value.
+SetManufacturer sets Manufacturer field to given value.
 
-### HasLastUser
+### HasManufacturer
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasLastUser() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasManufacturer() bool`
 
-HasLastUser returns a boolean if a field has been set.
+HasManufacturer returns a boolean if a field has been set.
 
-### GetModel
+### GetModelName
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModel() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelName() string`
 
-GetModel returns the Model field if non-nil, zero value otherwise.
+GetModelName returns the ModelName field if non-nil, zero value otherwise.
 
-### GetModelOk
+### GetModelNameOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetModelNameOk() (*string, bool)`
 
-GetModelOk returns a tuple with the Model field if it's non-nil, zero value otherwise
+GetModelNameOk returns a tuple with the ModelName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetModel
+### SetModelName
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetModel(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetModelName(v string)`
 
-SetModel sets Model field to given value.
+SetModelName sets ModelName field to given value.
 
-### HasModel
+### HasModelName
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasModel() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasModelName() bool`
 
-HasModel returns a boolean if a field has been set.
+HasModelName returns a boolean if a field has been set.
+
+### GetOsBuild
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsBuild() string`
+
+GetOsBuild returns the OsBuild field if non-nil, zero value otherwise.
+
+### GetOsBuildOk
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetOsBuildOk() (*string, bool)`
+
+GetOsBuildOk returns a tuple with the OsBuild field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOsBuild
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetOsBuild(v string)`
+
+SetOsBuild sets OsBuild field to given value.
+
+### HasOsBuild
+
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasOsBuild() bool`
+
+HasOsBuild returns a boolean if a field has been set.
 
 ### GetOsVersion
 
@@ -366,105 +452,55 @@ SetPlatform sets Platform field to given value.
 
 HasPlatform returns a boolean if a field has been set.
 
-### GetSupplementalBuildVersion
+### GetSecurityPatchLevel
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersion() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSecurityPatchLevel() string`
 
-GetSupplementalBuildVersion returns the SupplementalBuildVersion field if non-nil, zero value otherwise.
+GetSecurityPatchLevel returns the SecurityPatchLevel field if non-nil, zero value otherwise.
 
-### GetSupplementalBuildVersionOk
+### GetSecurityPatchLevelOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalBuildVersionOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSecurityPatchLevelOk() (*string, bool)`
 
-GetSupplementalBuildVersionOk returns a tuple with the SupplementalBuildVersion field if it's non-nil, zero value otherwise
+GetSecurityPatchLevelOk returns a tuple with the SecurityPatchLevel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSupplementalBuildVersion
+### SetSecurityPatchLevel
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalBuildVersion(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSecurityPatchLevel(v string)`
 
-SetSupplementalBuildVersion sets SupplementalBuildVersion field to given value.
+SetSecurityPatchLevel sets SecurityPatchLevel field to given value.
 
-### HasSupplementalBuildVersion
+### HasSecurityPatchLevel
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalBuildVersion() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSecurityPatchLevel() bool`
 
-HasSupplementalBuildVersion returns a boolean if a field has been set.
+HasSecurityPatchLevel returns a boolean if a field has been set.
 
-### GetSupplementalOsVersionExtra
+### GetSerialNumber
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtra() string`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSerialNumber() string`
 
-GetSupplementalOsVersionExtra returns the SupplementalOsVersionExtra field if non-nil, zero value otherwise.
+GetSerialNumber returns the SerialNumber field if non-nil, zero value otherwise.
 
-### GetSupplementalOsVersionExtraOk
+### GetSerialNumberOk
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSupplementalOsVersionExtraOk() (*string, bool)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSerialNumberOk() (*string, bool)`
 
-GetSupplementalOsVersionExtraOk returns a tuple with the SupplementalOsVersionExtra field if it's non-nil, zero value otherwise
+GetSerialNumberOk returns a tuple with the SerialNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSupplementalOsVersionExtra
+### SetSerialNumber
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSupplementalOsVersionExtra(v string)`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSerialNumber(v string)`
 
-SetSupplementalOsVersionExtra sets SupplementalOsVersionExtra field to given value.
+SetSerialNumber sets SerialNumber field to given value.
 
-### HasSupplementalOsVersionExtra
+### HasSerialNumber
 
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSupplementalOsVersionExtra() bool`
+`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSerialNumber() bool`
 
-HasSupplementalOsVersionExtra returns a boolean if a field has been set.
-
-### GetSystemVersion
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersion() string`
-
-GetSystemVersion returns the SystemVersion field if non-nil, zero value otherwise.
-
-### GetSystemVersionOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetSystemVersionOk() (*string, bool)`
-
-GetSystemVersionOk returns a tuple with the SystemVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSystemVersion
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetSystemVersion(v string)`
-
-SetSystemVersion sets SystemVersion field to given value.
-
-### HasSystemVersion
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasSystemVersion() bool`
-
-HasSystemVersion returns a boolean if a field has been set.
-
-### GetTimeSinceBoot
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBoot() string`
-
-GetTimeSinceBoot returns the TimeSinceBoot field if non-nil, zero value otherwise.
-
-### GetTimeSinceBootOk
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) GetTimeSinceBootOk() (*string, bool)`
-
-GetTimeSinceBootOk returns a tuple with the TimeSinceBoot field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTimeSinceBoot
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) SetTimeSinceBoot(v string)`
-
-SetTimeSinceBoot sets TimeSinceBoot field to given value.
-
-### HasTimeSinceBoot
-
-`func (o *DeviceInformationGetDeviceDetails200ResponseGeneral) HasTimeSinceBoot() bool`
-
-HasTimeSinceBoot returns a boolean if a field has been set.
+HasSerialNumber returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

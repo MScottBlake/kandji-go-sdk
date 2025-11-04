@@ -6,20 +6,24 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AgentInstalled** | Pointer to **int32** |  | [optional] 
 **AgentVersion** | Pointer to **string** |  | [optional] 
+**ApiLevel** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **string** |  | [optional] 
 **BlueprintId** | Pointer to **string** |  | [optional] 
 **BlueprintName** | Pointer to **string** |  | [optional] 
 **DeviceId** | Pointer to **string** |  | [optional] 
 **DeviceName** | Pointer to **string** |  | [optional] 
 **FirstEnrollment** | Pointer to **string** |  | [optional] 
+**FullSoftwareVersion** | Pointer to **string** |  | [optional] 
 **IsMissing** | Pointer to **int32** |  | [optional] 
 **IsRemoved** | Pointer to **int32** |  | [optional] 
 **LastCheckIn** | Pointer to **string** |  | [optional] 
 **LastEnrollment** | Pointer to **string** |  | [optional] 
+**LostModeStatus** | Pointer to **string** |  | [optional] 
 **MdmEnabled** | Pointer to **int32** |  | [optional] 
 **Model** | Pointer to **string** |  | [optional] 
 **OsVersion** | Pointer to **string** |  | [optional] 
 **Platform** | Pointer to **string** |  | [optional] 
+**SecurityPatchLevel** | Pointer to **string** |  | [optional] 
 **SerialNumber** | Pointer to **string** |  | [optional] 
 **SupplementalBuildVersion** | Pointer to **string** |  | [optional] 
 **SupplementalOsVersionExtra** | Pointer to **string** |  | [optional] 
@@ -94,6 +98,31 @@ SetAgentVersion sets AgentVersion field to given value.
 `func (o *DeviceInformationGetDevice200Response) HasAgentVersion() bool`
 
 HasAgentVersion returns a boolean if a field has been set.
+
+### GetApiLevel
+
+`func (o *DeviceInformationGetDevice200Response) GetApiLevel() string`
+
+GetApiLevel returns the ApiLevel field if non-nil, zero value otherwise.
+
+### GetApiLevelOk
+
+`func (o *DeviceInformationGetDevice200Response) GetApiLevelOk() (*string, bool)`
+
+GetApiLevelOk returns a tuple with the ApiLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiLevel
+
+`func (o *DeviceInformationGetDevice200Response) SetApiLevel(v string)`
+
+SetApiLevel sets ApiLevel field to given value.
+
+### HasApiLevel
+
+`func (o *DeviceInformationGetDevice200Response) HasApiLevel() bool`
+
+HasApiLevel returns a boolean if a field has been set.
 
 ### GetAssetTag
 
@@ -245,6 +274,31 @@ SetFirstEnrollment sets FirstEnrollment field to given value.
 
 HasFirstEnrollment returns a boolean if a field has been set.
 
+### GetFullSoftwareVersion
+
+`func (o *DeviceInformationGetDevice200Response) GetFullSoftwareVersion() string`
+
+GetFullSoftwareVersion returns the FullSoftwareVersion field if non-nil, zero value otherwise.
+
+### GetFullSoftwareVersionOk
+
+`func (o *DeviceInformationGetDevice200Response) GetFullSoftwareVersionOk() (*string, bool)`
+
+GetFullSoftwareVersionOk returns a tuple with the FullSoftwareVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullSoftwareVersion
+
+`func (o *DeviceInformationGetDevice200Response) SetFullSoftwareVersion(v string)`
+
+SetFullSoftwareVersion sets FullSoftwareVersion field to given value.
+
+### HasFullSoftwareVersion
+
+`func (o *DeviceInformationGetDevice200Response) HasFullSoftwareVersion() bool`
+
+HasFullSoftwareVersion returns a boolean if a field has been set.
+
 ### GetIsMissing
 
 `func (o *DeviceInformationGetDevice200Response) GetIsMissing() int32`
@@ -345,6 +399,31 @@ SetLastEnrollment sets LastEnrollment field to given value.
 
 HasLastEnrollment returns a boolean if a field has been set.
 
+### GetLostModeStatus
+
+`func (o *DeviceInformationGetDevice200Response) GetLostModeStatus() string`
+
+GetLostModeStatus returns the LostModeStatus field if non-nil, zero value otherwise.
+
+### GetLostModeStatusOk
+
+`func (o *DeviceInformationGetDevice200Response) GetLostModeStatusOk() (*string, bool)`
+
+GetLostModeStatusOk returns a tuple with the LostModeStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLostModeStatus
+
+`func (o *DeviceInformationGetDevice200Response) SetLostModeStatus(v string)`
+
+SetLostModeStatus sets LostModeStatus field to given value.
+
+### HasLostModeStatus
+
+`func (o *DeviceInformationGetDevice200Response) HasLostModeStatus() bool`
+
+HasLostModeStatus returns a boolean if a field has been set.
+
 ### GetMdmEnabled
 
 `func (o *DeviceInformationGetDevice200Response) GetMdmEnabled() int32`
@@ -444,6 +523,31 @@ SetPlatform sets Platform field to given value.
 `func (o *DeviceInformationGetDevice200Response) HasPlatform() bool`
 
 HasPlatform returns a boolean if a field has been set.
+
+### GetSecurityPatchLevel
+
+`func (o *DeviceInformationGetDevice200Response) GetSecurityPatchLevel() string`
+
+GetSecurityPatchLevel returns the SecurityPatchLevel field if non-nil, zero value otherwise.
+
+### GetSecurityPatchLevelOk
+
+`func (o *DeviceInformationGetDevice200Response) GetSecurityPatchLevelOk() (*string, bool)`
+
+GetSecurityPatchLevelOk returns a tuple with the SecurityPatchLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurityPatchLevel
+
+`func (o *DeviceInformationGetDevice200Response) SetSecurityPatchLevel(v string)`
+
+SetSecurityPatchLevel sets SecurityPatchLevel field to given value.
+
+### HasSecurityPatchLevel
+
+`func (o *DeviceInformationGetDevice200Response) HasSecurityPatchLevel() bool`
+
+HasSecurityPatchLevel returns a boolean if a field has been set.
 
 ### GetSerialNumber
 

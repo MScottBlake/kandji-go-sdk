@@ -1,7 +1,7 @@
 /*
-Kandji API
+Iru Endpoint Management API
 
-<html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Kandji API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the Kandji API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Kandji tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
+<html><head></head><body><h1 id=&quot;welcome-to-the-iru-endpoint-management-api-documentation&quot;>Welcome to the Iru Endpoint Management API Documentation</h1> <p><strong>Note:</strong> Kandji is now Iru, but many URLs and notes within this documentation will continue to reference Kandji for some time.</p> <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p> <ul> <li><p>US - <code>https://SubDomain.api.kandji.io</code></p> </li> <li><p>EU - <code>https://SubDomain.api.eu.kandji.io</code></p> </li> </ul> <p>For information on how to obtain an API token, please refer to the following support article.</p> <p><a href=&quot;https://support.kandji.io/api&quot;>https://support.kandji.io/api</a></p> <h4 id=&quot;rate-limit&quot;>Rate Limit</h4> <p>The Iru Endpoint Management API currently has an API rate limit of 10,000 requests per hour per customer.</p> <h4 id=&quot;request-methods&quot;>Request Methods</h4> <p>HTTP request methods supported by the API.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Method</th> <th>Definition</th> </tr> </thead> <tbody> <tr> <td>GET</td> <td>The <code>GET</code> method requests a representation of the specified resource.</td> </tr> <tr> <td>POST</td> <td>The <code>POST</code> method submits an entity to the specified resource.</td> </tr> <tr> <td>PATCH</td> <td>The <code>PATCH</code> method applies partial modifications to a resource.</td> </tr> <tr> <td>DELETE</td> <td>The <code>DELETE</code> method deletes the specified resource.</td> </tr> </tbody> </table> </div><h4 id=&quot;response-codes&quot;>Response codes</h4> <p>Not all response codes apply to every endpoint.</p> <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table> <thead> <tr> <th>Code</th> <th>Response</th> </tr> </thead> <tbody> <tr> <td>200</td> <td>OK</td> </tr> <tr> <td>201</td> <td>Created</td> </tr> <tr> <td>204</td> <td>No content</td> </tr> <tr> <td></td> <td>Typical response when sending the DELETE method.</td> </tr> <tr> <td>400</td> <td>Bad Request</td> </tr> <tr> <td></td> <td>&quot;Command already running&quot; - The command may already be running in a <em>Pending</em> state waiting on the device.</td> </tr> <tr> <td></td> <td>&quot;Command is not allowed for current device&quot; - The command may not be compatible with the target device.</td> </tr> <tr> <td></td> <td>&quot;JSON parse error - Expecting ',' delimiter: line 3 column 2 (char 65)&quot;</td> </tr> <tr> <td>401</td> <td>Unauthorized</td> </tr> <tr> <td></td> <td>This error can occur if the token is incorrect, was revoked, or the token has expired.</td> </tr> <tr> <td>403</td> <td>Forbidden</td> </tr> <tr> <td></td> <td>The request was understood but cannot be authorized.</td> </tr> <tr> <td>404</td> <td>Not found</td> </tr> <tr> <td></td> <td>Unable to locate the resource in the Iru tenant.</td> </tr> <tr> <td>415</td> <td>Unsupported Media Type</td> </tr> <tr> <td></td> <td>The request contains a media type which the server or resource does not support.</td> </tr> <tr> <td>500</td> <td>Internal server error</td> </tr> <tr> <td>503</td> <td>Service unavailable</td> </tr> <tr> <td></td> <td>This error can occur if a file upload is still being processed via the custom apps API.</td> </tr> </tbody> </table> </div><h4 id=&quot;data-structure&quot;>Data structure</h4> <p>The API returns all structured responses in JSON schema format.</p> <h4 id=&quot;examples&quot;>Examples</h4> <p>Code examples using the API can be found in the Iru Endpoint Management support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools&quot;>GitHub</a>.</p> </body></html>
 
 API version: 1.0.0
 Contact: mitchelsblake@gmail.com
@@ -40,7 +40,8 @@ type DeviceInformationAPI interface {
 	/*
 	GetDevice Get Device
 
-	This request returns the high-level information for a specified Device ID.
+	<p>This request returns the high-level information for a specified Device ID.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -55,7 +56,8 @@ type DeviceInformationAPI interface {
 	/*
 	GetDeviceActivity Get Device Activity
 
-	This request returns the device activity for a specified Device ID.
+	<p>This request returns the device activity for a specified Device ID.</p>
+<p>If Windows or Android management is turned on, additonal keys may be present in activity entries.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -72,6 +74,7 @@ type DeviceInformationAPI interface {
 
 	<p>This request returns a list of all installed apps for a specified Device ID.</p>
 <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -86,7 +89,8 @@ type DeviceInformationAPI interface {
 	/*
 	GetDeviceDetails Get Device Details
 
-	This request returns the device details for a specified Device ID.
+	<p>This request returns the device details for a specified Device ID.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param deviceId
@@ -210,8 +214,7 @@ type DeviceInformationAPI interface {
 	/*
 	GetDeviceParameters Get Device Parameters
 
-	<p>This request returns the parameters and their statuses for a specified Device ID</p>
-<p>This endpoint is only applicable to macOS clients.</p>
+	<p>This request returns the parameters and their statuses for a specified Device ID, and is only applicable to Mac.</p>
 <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
 <p><strong>Possible parameter status values</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
@@ -387,8 +390,9 @@ type DeviceInformationAPI interface {
 	/*
 	ListDevices List Devices
 
-	<p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p>
-<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+	<p>This request returns a list of devices in an Iru Endpoint Management tenant. Optionally, query parameters can be used to filter results.</p>
+<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Iru support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiListDevicesRequest
@@ -553,7 +557,8 @@ func (r ApiGetDeviceRequest) Execute() (*DeviceInformationGetDevice200Response, 
 /*
 GetDevice Get Device
 
-This request returns the high-level information for a specified Device ID.
+<p>This request returns the high-level information for a specified Device ID.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -670,7 +675,8 @@ func (r ApiGetDeviceActivityRequest) Execute() (*DeviceInformationGetDeviceActiv
 /*
 GetDeviceActivity Get Device Activity
 
-This request returns the device activity for a specified Device ID.
+<p>This request returns the device activity for a specified Device ID.</p>
+<p>If Windows or Android management is turned on, additonal keys may be present in activity entries.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -782,6 +788,7 @@ GetDeviceApps Get Device Apps
 
 <p>This request returns a list of all installed apps for a specified Device ID.</p>
 <p>For iPhone and iPad, the preinstalled Apple apps are not reported.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -884,7 +891,8 @@ func (r ApiGetDeviceDetailsRequest) Execute() (*DeviceInformationGetDeviceDetail
 /*
 GetDeviceDetails Get Device Details
 
-This request returns the device details for a specified Device ID.
+<p>This request returns the device details for a specified Device ID.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, the response will be tailored to the specific device family.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deviceId
@@ -1272,8 +1280,7 @@ func (r ApiGetDeviceParametersRequest) Execute() (*DeviceInformationGetDevicePar
 /*
 GetDeviceParameters Get Device Parameters
 
-<p>This request returns the parameters and their statuses for a specified Device ID</p>
-<p>This endpoint is only applicable to macOS clients.</p>
+<p>This request returns the parameters and their statuses for a specified Device ID, and is only applicable to Mac.</p>
 <p>The parameters will be returned as a list of IDs. These IDs can be correlated with the parameter names available here: <a href=&quot;https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations&quot;>https://github.com/kandji-inc/support/wiki/Devices-API---Parameter-Correlations</a></p>
 <p><strong>Possible parameter status values</strong></p>
 <div class=&quot;click-to-expand-wrapper is-table-wrapper&quot;><table>
@@ -1699,7 +1706,7 @@ func (r ApiListDevicesRequest) OsVersion(osVersion string) ApiListDevicesRequest
 	return r
 }
 
-// Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt;
+// Return all records matching a specific platform. Possible values:&lt;code&gt;Mac&lt;/code&gt;, &lt;code&gt;iPad&lt;/code&gt;, &lt;code&gt;iPhone&lt;/code&gt;, &lt;code&gt;AppleTV&lt;/code&gt;, &lt;code&gt;Android&lt;/code&gt;, &lt;code&gt;Windows&lt;/code&gt;
 func (r ApiListDevicesRequest) Platform(platform string) ApiListDevicesRequest {
 	r.platform = &platform
 	return r
@@ -1753,7 +1760,7 @@ func (r ApiListDevicesRequest) UserEmailExact(userEmailExact string) ApiListDevi
 	return r
 }
 
-// &amp;quot;exact&amp;quot; match on kandji user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
+// &amp;quot;exact&amp;quot; match on user ID (example: 5344c996-8823-4b37-8d6e-8515fc7c3a0a)
 func (r ApiListDevicesRequest) UserId(userId string) ApiListDevicesRequest {
 	r.userId = &userId
 	return r
@@ -1778,8 +1785,9 @@ func (r ApiListDevicesRequest) Execute() (map[string]interface{}, *http.Response
 /*
 ListDevices List Devices
 
-<p>This request returns a list of devices in a Kandji tenant. Optionally. query parameters can be used to filter results.</p>
-<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Kandji support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+<p>This request returns a list of devices in an Iru Endpoint Management tenant. Optionally, query parameters can be used to filter results.</p>
+<p>There is a hard upper limit of 300 results per request. To return addtional results pagination must be used. Pagination examples can be found in the Iru support <a href=&quot;https://github.com/kandji-inc/support/tree/main/api-tools/code-examples&quot;>GitHub</a>.</p>
+<p>This is a <strong>polymorphic</strong> endpoint. If Windows or Android management is turned on, additional fields will be returned in the response. All visible fields based on platform enablement status will be present for all device types, but values will be blank for non-applicable devices. For example, <code>lost_mode_status</code> only applies to iOS and iPadOS devices and will be blank for other platforms.</p>
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListDevicesRequest
